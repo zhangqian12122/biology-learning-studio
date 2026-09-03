@@ -6,6 +6,8 @@ import {
   Area,
   AreaChart,
   CartesianGrid,
+  ReferenceDot,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -18,7 +20,6 @@ import {
   BookOpen,
   BrainCircuit,
   Check,
-  ChevronRight,
   CircleAlert,
   CircleHelp,
   Dna,
@@ -34,7 +35,7 @@ import {
 
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
 
 type StudyView = 'home' | 'lab' | 'practice';
@@ -318,10 +319,9 @@ export default function Home() {
           </div>
 
           <nav className="order-3 flex w-full items-center gap-1 overflow-x-auto border-t border-[#e0eaea] pt-3 text-sm sm:order-none sm:w-auto sm:border-0 sm:pt-0" aria-label="主导航">
-            <HeaderNavButton active={view === 'home'} onClick={() => setView('home')}>首页</HeaderNavButton>
             <HeaderNavButton active={view === 'home'} onClick={() => setView('home')}>教材总览</HeaderNavButton>
-            <HeaderNavButton active={view === 'lab'} onClick={() => setView('lab')}>讲解工具</HeaderNavButton>
-            <HeaderNavButton active={view === 'practice'} onClick={() => setView('practice')}>最近练习</HeaderNavButton>
+            <HeaderNavButton active={view === 'lab'} onClick={() => setView('lab')}>互动实验</HeaderNavButton>
+            <HeaderNavButton active={view === 'practice'} onClick={() => setView('practice')}>题库与错题</HeaderNavButton>
           </nav>
 
           <div className="flex items-center gap-2 text-xs text-[#55737a] sm:text-sm">
@@ -338,55 +338,11 @@ export default function Home() {
 
       <div className="mx-auto grid max-w-[1440px] gap-5 px-4 py-5 sm:px-6 lg:grid-cols-[238px_minmax(0,1fr)] lg:px-8">
         <aside className="self-start rounded-lg border border-[#d5e4e5] bg-[#f9fcfc] p-3 lg:sticky lg:top-5">
-          <p className="px-2 pb-2 text-[11px] font-semibold tracking-[0.08em] text-[#66858b]">
-            学习导航
-          </p>
-          <nav className="grid gap-1 sm:grid-cols-2 lg:grid-cols-1" aria-label="学习模块">
-            <button
-              type="button"
-              onClick={() => setView('home')}
-              className={cn(
-                'flex min-h-10 items-center gap-3 rounded-md px-3 text-left text-sm transition-colors',
-                view === 'home'
-                  ? 'bg-[#dff1ef] font-medium text-[#095e66]'
-                  : 'text-[#49676e] hover:bg-[#edf5f5]',
-              )}
-            >
-              <BookOpen className="size-4" aria-hidden="true" />
-              教材总览
-              <ChevronRight className="ml-auto size-4 opacity-60" aria-hidden="true" />
-            </button>
-            <button
-              type="button"
-              onClick={() => setView('lab')}
-              className={cn(
-                'flex min-h-10 items-center gap-3 rounded-md px-3 text-left text-sm transition-colors',
-                view === 'lab'
-                  ? 'bg-[#dff1ef] font-medium text-[#095e66]'
-                  : 'text-[#49676e] hover:bg-[#edf5f5]',
-              )}
-            >
-              <FlaskConical className="size-4" aria-hidden="true" />
-              互动实验
-              <ChevronRight className="ml-auto size-4 opacity-60" aria-hidden="true" />
-            </button>
-            <button
-              type="button"
-              onClick={() => setView('practice')}
-              className={cn(
-                'flex min-h-10 items-center gap-3 rounded-md px-3 text-left text-sm transition-colors',
-                view === 'practice'
-                  ? 'bg-[#dff1ef] font-medium text-[#095e66]'
-                  : 'text-[#49676e] hover:bg-[#edf5f5]',
-              )}
-            >
-              <BrainCircuit className="size-4" aria-hidden="true" />
-              题库与错题
-              <ChevronRight className="ml-auto size-4 opacity-60" aria-hidden="true" />
-            </button>
-          </nav>
-
-          <div className="mt-5 border-t border-[#dce9e9] pt-4">
+          <div className="px-2 pb-3">
+            <p className="text-[11px] font-semibold tracking-[0.08em] text-[#66858b]">教材地图</p>
+            <p className="mt-1 text-xs leading-5 text-[#6b888e]">选择一本教材，直接进入对应练习。</p>
+          </div>
+          <div className="border-t border-[#dce9e9] pt-3">
             <div className="mb-2 flex items-center justify-between px-2">
               <p className="text-[11px] font-semibold tracking-[0.08em] text-[#66858b]">五册教材</p>
               <BookOpen className="size-3.5 text-[#66858b]" aria-hidden="true" />
@@ -426,7 +382,7 @@ export default function Home() {
           onValueChange={(value) => setView(value as StudyView)}
           className="min-w-0"
         >
-          <div className="mb-5 flex flex-wrap items-end justify-between gap-4">
+          <div className="mb-5">
             <div>
               <p className="text-xs font-semibold tracking-[0.1em] text-[#398086]">
                 {view === 'home' ? 'BIOLOGY COURSE MAP' : view === 'lab' ? 'BIOLOGY LAB' : 'BIOLOGY PRACTICE'}
@@ -435,20 +391,6 @@ export default function Home() {
                 {screenTitle}
               </h1>
             </div>
-            <TabsList className="rounded-lg border border-[#d5e4e5] bg-[#f9fcfc] p-1" aria-label="学习视图">
-              <TabsTrigger value="home" className="px-3 text-xs sm:text-sm">
-                <BookOpen className="size-3.5" aria-hidden="true" />
-                教材总览
-              </TabsTrigger>
-              <TabsTrigger value="lab" className="px-3 text-xs sm:text-sm">
-                <FlaskConical className="size-3.5" aria-hidden="true" />
-                实验台
-              </TabsTrigger>
-              <TabsTrigger value="practice" className="px-3 text-xs sm:text-sm">
-                <CircleHelp className="size-3.5" aria-hidden="true" />
-                练习与错题
-              </TabsTrigger>
-            </TabsList>
           </div>
 
           <TabsContent value="home" className="mt-0 space-y-5">
@@ -645,7 +587,10 @@ export default function Home() {
                         </defs>
                         <CartesianGrid stroke="#d8e9e8" strokeDasharray="4 4" vertical={false} />
                         <XAxis
+                          type="number"
                           dataKey="x"
+                          domain={activeExperiment === 'enzyme' ? [0, 80] : [0, 1000]}
+                          tickCount={activeExperiment === 'enzyme' ? 9 : 6}
                           tick={{ fill: '#6c858a', fontSize: 11 }}
                           tickLine={false}
                           axisLine={false}
@@ -678,6 +623,21 @@ export default function Home() {
                           }
                         />
                         <Area type="monotone" dataKey="rate" stroke="#0e797b" strokeWidth={2.5} fill="url(#biologyRate)" />
+                        <ReferenceLine
+                          x={activeExperiment === 'enzyme' ? temperature : light}
+                          stroke="#d39a2b"
+                          strokeWidth={1.5}
+                          strokeDasharray="4 4"
+                          label={{ value: '当前条件', position: 'insideTopRight', fill: '#9a731d', fontSize: 11 }}
+                        />
+                        <ReferenceDot
+                          x={activeExperiment === 'enzyme' ? temperature : light}
+                          y={currentRate}
+                          r={5}
+                          fill="#d39a2b"
+                          stroke="#ffffff"
+                          strokeWidth={2}
+                        />
                       </AreaChart>
                     </ResponsiveContainer>
                   </div>
@@ -731,7 +691,7 @@ export default function Home() {
           </TabsContent>
 
           <TabsContent value="practice" className="mt-0 space-y-5">
-            <div className="grid gap-5 xl:grid-cols-[minmax(0,1.2fr)_minmax(300px,0.8fr)]">
+            <div className="grid items-start gap-5 xl:grid-cols-[minmax(0,1.2fr)_minmax(300px,0.8fr)]">
               <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] shadow-[0_12px_30px_rgba(18,65,72,0.06)]">
                 <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[#dceaea] px-4 py-4 sm:px-5">
                   <div>
