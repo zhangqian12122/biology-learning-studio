@@ -30,7 +30,7 @@ import {
   Zap,
 } from 'lucide-react';
 
-import { experimentMeta, experimentOrder, textbooks, type ExperimentId } from '@/lib/curriculum';
+import { EXPERIMENT_CATEGORIES, experimentMeta, experimentOrder, textbooks, type ExperimentId } from '@/lib/curriculum';
 import { EnzymeLab } from '@/components/lab/enzyme-lab';
 import { PhotosynthesisLab } from '@/components/lab/photosynthesis-lab';
 import { PlasmolysisLab } from '@/components/lab/plasmolysis-lab';
@@ -203,10 +203,16 @@ const LAB_KEYFRAMES = `
 export function LabClient() {
   const [activeExperiment, setActiveExperiment] = useState<ExperimentId>('enzyme');
   const [resetCount, setResetCount] = useState(0);
+  const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
 
   const experiment = experimentMeta[activeExperiment];
   const ExperimentIcon = EXPERIMENT_ICONS[activeExperiment];
   const ActiveExperiment = EXPERIMENT_COMPONENTS[activeExperiment];
+
+  const visibleIds =
+    categoryFilter != null
+      ? (EXPERIMENT_CATEGORIES.find((c) => c.name === categoryFilter)?.ids ?? experimentOrder)
+      : experimentOrder;
 
   return (
     <div>
@@ -218,6 +224,68 @@ export function LabClient() {
       </div>
 
       <div className="space-y-5">
+        {/* 实验目录：按主题分类 */}
+        <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-4 shadow-[0_12px_30px_rgba(18,65,72,0.06)] sm:p-5">
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+            <h2 className="text-sm font-semibold text-[#173b42]">📋 实验目录（按主题分类 · 共 {experimentOrder.length} 个）</h2>
+            {categoryFilter ? (
+              <button
+                type="button"
+                onClick={() => setCategoryFilter(null)}
+                className="rounded-full bg-[#eef7f6] px-3 py-1 text-xs font-medium text-[#4b6c73] transition-colors hover:bg-[#e2f1ef]"
+              >
+                显示全部
+              </button>
+            ) : null}
+          </div>
+          <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-4">
+            {EXPERIMENT_CATEGORIES.map((cat) => {
+              const filtered = categoryFilter != null && categoryFilter !== cat.name;
+              const active = categoryFilter === cat.name;
+              return (
+                <div
+                  key={cat.name}
+                  className={`rounded-md border px-3 py-2.5 transition-colors ${
+                    active ? 'border-[#82c6c0] bg-[#e9f7f5]' : 'border-[#e2eeec] bg-white'
+                  } ${filtered ? 'opacity-45' : ''}`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setCategoryFilter(active ? null : cat.name)}
+                    aria-pressed={active}
+                    className="flex w-full items-center gap-2 text-left"
+                  >
+                    <span aria-hidden="true" className="text-base">{cat.icon}</span>
+                    <span className="text-xs font-bold text-[#173b42]">{cat.name}</span>
+                    <span className="ml-auto rounded-full bg-[#e8f4f3] px-2 text-[10px] font-semibold text-[#0c696f]">
+                      {cat.ids.length}
+                    </span>
+                  </button>
+                  <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-0.5">
+                    {cat.ids.map((id) => (
+                      <button
+                        key={id}
+                        type="button"
+                        onClick={() => {
+                          setActiveExperiment(id);
+                          setCategoryFilter(cat.name);
+                        }}
+                        className={`text-[11px] underline-offset-2 transition-colors ${
+                          id === activeExperiment
+                            ? 'font-semibold text-[#0a626a] underline'
+                            : 'text-[#59767c] hover:text-[#0a626a] hover:underline'
+                        }`}
+                      >
+                        {experimentMeta[id].title}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
         <section className="overflow-hidden rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] shadow-[0_12px_30px_rgba(18,65,72,0.06)]">
           <div className="flex flex-wrap items-start justify-between gap-4 border-b border-[#dceaea] px-4 py-4 sm:px-5">
             <div className="flex items-start gap-3">
@@ -242,11 +310,11 @@ export function LabClient() {
 
           <div className="border-b border-[#dceaea] px-4 py-4 sm:px-5">
             <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-[#67858b]">
-              选择实验（覆盖五册教材 · {experimentOrder.length} 个）
+              选择实验（{categoryFilter ? `分类：${categoryFilter} · ${visibleIds.length} 个` : `覆盖五册教材 · ${experimentOrder.length} 个`}）
             </p>
             <div className="grid grid-cols-2 gap-2 lg:grid-cols-3 xl:grid-cols-5">
               {textbooks.map((book) =>
-                experimentOrder
+                visibleIds
                   .filter((id) => experimentMeta[id].relatedBook === book.id)
                   .map((id) => {
                     const Icon = EXPERIMENT_ICONS[id];

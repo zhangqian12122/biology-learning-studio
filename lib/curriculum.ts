@@ -453,6 +453,50 @@ export const experimentMeta: Record<
   },
 };
 
+/** 实验目录分类：按教材实验主题归组，方便在 /lab 快速筛选 */
+export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: ExperimentId[] }[] = [
+  {
+    name: '显微观察类',
+    icon: '🔬',
+    ids: ['microscope', 'chloroplastStreaming', 'mitosisObservation'],
+  },
+  {
+    name: '物质检测与鉴定',
+    icon: '🧪',
+    ids: ['tissueDetection', 'dnaRnaDistribution', 'dnaExtract', 'cellSizeTransport'],
+  },
+  {
+    name: '酶与代谢',
+    icon: '⚗️',
+    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'pigment'],
+  },
+  {
+    name: '细胞与膜',
+    icon: '🫧',
+    ids: ['cellMembranePrep', 'plasmolysis'],
+  },
+  {
+    name: '遗传与进化',
+    icon: '🧬',
+    ids: ['genetics', 'dogma', 'selection', 'geneEngine'],
+  },
+  {
+    name: '稳态与调节',
+    icon: '⚡',
+    ids: ['impulse'],
+  },
+  {
+    name: '生态',
+    icon: '🌱',
+    ids: ['energy', 'population'],
+  },
+  {
+    name: '生物技术',
+    icon: '⚙️',
+    ids: ['pcr'],
+  },
+];
+
 export const experimentOrder: ExperimentId[] = [
   // 必修 1 · 分子与细胞（按课本章节先后排序）
   'microscope',

@@ -131,12 +131,7 @@ export function useOrganelleCanvas(
 
     const groups: Record<number, Group> = {};
     groupsRef.current = groups;
-    const built = build(groups);
-    scene.add(built);
-    // 调试句柄（临时）
-    (window as unknown as Record<string, unknown>).__cell3dScene = scene;
-    (window as unknown as Record<string, unknown>).__cell3dRenderer = renderer;
-    (window as unknown as Record<string, unknown>).__cell3dCamera = camera;
+    scene.add(build(groups));
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.autoRotate = false;

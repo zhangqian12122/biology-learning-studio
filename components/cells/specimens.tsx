@@ -935,9 +935,239 @@ function PhageSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= RNA 单链 ================= */
+
+function RnaStrandSvg({ active }: { active: number | null; open?: boolean }) {
+  // 单链：核糖-磷酸骨架折线 + 碱基（A U G C）
+  const bases = [
+    { b: 'A', x: 60, y: 92 },
+    { b: 'U', x: 120, y: 132 },
+    { b: 'G', x: 185, y: 100 },
+    { b: 'C', x: 248, y: 128 },
+    { b: 'A', x: 310, y: 96 },
+    { b: 'U', x: 372, y: 130 },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 骨架折线：磷酸（圆）- 核糖（五边形）交替 */}
+      <g style={dim(active, 0)}>
+        <polyline
+          points={bases.map((b) => `${b.x + 18},${b.y - 26}`).join(' ')}
+          fill="none"
+          stroke="#d8a04a"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        {bases.map((b, i) => (
+          <circle key={`p${i}`} cx={b.x + 18} cy={b.y - 26} r="8" fill="#e8c05a" stroke="#b5903a" strokeWidth="1.8" />
+        ))}
+      </g>
+      {/* 核糖五边形 + 碱基 */}
+      <g style={dim(active, 1)}>
+        {bases.map((b, i) => (
+          <g key={i}>
+            <polygon
+              points={`${b.x - 14},${b.y + 4} ${b.x - 5},${b.y - 8} ${b.x + 9},${b.y - 4} ${b.x + 9},${b.y + 12} ${b.x - 5},${b.y + 15}`}
+              fill="#8fb8d4"
+              stroke="#4d7ea8"
+              strokeWidth="1.6"
+            />
+            <line x1={b.x} y1={b.y + 16} x2={b.x} y2={b.y + 40} stroke="#c96a6a" strokeWidth="5" strokeLinecap="round" />
+            <rect x={b.x - 15} y={b.y + 40} width="30" height="22" rx="5" fill={b.b === 'U' ? '#e07a9a' : '#6aa8d8'} stroke="#3d6a94" strokeWidth="1.4" />
+            <text x={b.x} y={b.y + 56} textAnchor="middle" fontSize="12" fill="#ffffff" fontWeight="700">
+              {b.b}
+            </text>
+          </g>
+        ))}
+      </g>
+      {/* 标注 */}
+      <g style={dim(active, 2)}>
+        <line x1="98" y1="46" x2="70" y2="66" stroke="#b5903a" strokeWidth="1.4" />
+        <text x="14" y="60" fontSize="10.5" fill="#a5781e" fontWeight="700">磷酸基团</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <line x1="220" y1="108" x2="176" y2="72" stroke="#4d7ea8" strokeWidth="1.4" />
+        <text x="120" y="56" fontSize="10.5" fill="#2c6e94" fontWeight="700">核糖（五碳糖）</text>
+      </g>
+      <g style={dim(active, 4)}>
+        <line x1="392" y1="176" x2="392" y2="196" stroke="#c96a6a" strokeWidth="1.4" />
+        <text x="398" y="206" fontSize="10.5" fill="#c05a5a" fontWeight="700">碱基（A U G C）</text>
+        <text x="398" y="220" fontSize="9" fill="#d08a8a">注意：RNA 没有 T，用 U（尿嘧啶）</text>
+      </g>
+      <g style={dim(active, 4)}>
+        <text x="14" y="330" fontSize="10.5" fill="#a04a6a" fontWeight="700">RNA = 单链 · 核糖 · 碱基 A U G C</text>
+        <text x="14" y="346" fontSize="9.5" fill="#b57a8a">对比 DNA：双链 · 脱氧核糖 · 碱基 A T G C</text>
+      </g>
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">RNA 单链结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= ATP 分子 ================= */
+
+function AtpSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 腺嘌呤（双环） */}
+      <g style={dim(active, 0)}>
+        <polygon points="80,160 106,144 132,160 132,190 106,206 80,190" fill="#c9a8e2" stroke="#8a5a9f" strokeWidth="2.5" />
+        <polygon points="132,150 162,138 178,164 162,192 132,190" fill="#b48ad0" stroke="#8a5a9f" strokeWidth="2.5" />
+        <text x="122" y="180" textAnchor="middle" fontSize="11" fill="#5a2a72" fontWeight="700">腺嘌呤</text>
+      </g>
+      {/* 核糖（五边形） */}
+      <g style={dim(active, 1)}>
+        <polygon points="178,226 200,208 226,220 226,248 200,260 178,248" fill="#8fb8d4" stroke="#4d7ea8" strokeWidth="2.5" />
+        <text x="201" y="240" textAnchor="middle" fontSize="10" fill="#1e4a68" fontWeight="700">核糖</text>
+      </g>
+      {/* 三个磷酸基团（P 圆）+ 高能键波浪 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2].map((i) => {
+          const x = 268 + i * 62;
+          return (
+            <g key={i}>
+              {i > 0 ? (
+                <g>
+                  <path d={`M${x - 62 + 22} 232 q 20 -14 40 0`} fill="none" stroke="#e07840" strokeWidth="3.5" />
+                  <path d={`M${x - 62 + 22} 244 q 20 -14 40 0`} fill="none" stroke="#e07840" strokeWidth="3.5" />
+                </g>
+              ) : (
+                <line x1="226" y1="234" x2={x - 22} y2="234" stroke="#5a7a8a" strokeWidth="3" />
+              )}
+              <circle cx={x} cy="234" r="20" fill="#f0c05a" stroke="#c99a2e" strokeWidth="2.5" />
+              <text x={x} y="240" textAnchor="middle" fontSize="14" fill="#6a4a10" fontWeight="800">
+                P
+              </text>
+            </g>
+          );
+        })}
+        <text x="354" y="206" textAnchor="middle" fontSize="10" fill="#c05a20" fontWeight="700">高能磷酸键 ～</text>
+      </g>
+      {/* 标注 */}
+      <g style={dim(active, 0)}>
+        <text x="122" y="236" textAnchor="middle" fontSize="10.5" fill="#5a2a72" fontWeight="700">腺苷 = 腺嘌呤 + 核糖</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <line x1="392" y1="262" x2="392" y2="292" stroke="#e07840" strokeWidth="1.5" />
+        <text x="392" y="308" textAnchor="middle" fontSize="10.5" fill="#c05a20" fontWeight="700">
+          远离 A 的高能磷酸键很容易断裂与重建
+        </text>
+      </g>
+      {/* A-P~P~P 总式 */}
+      <g style={dim(active, 3)}>
+        <rect x="150" y="316" width="220" height="34" rx="8" fill="#fdf3dd" stroke="#d9c23e" strokeWidth="1.6" />
+        <text x="260" y="338" textAnchor="middle" fontSize="13" fill="#8a671b" fontWeight="800">
+          A — P ～ P ～ P
+        </text>
+      </g>
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">ATP 结构模式图（细胞的能量货币）</text>
+    </svg>
+  );
+}
+
+/* ================= HIV 病毒 ================= */
+
+function HivSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 包膜（外层大圆） */}
+      <g style={dim(active, 0)}>
+        <circle cx="260" cy="180" r="132" fill="#c9a0a0" stroke="#9a5a5a" strokeWidth="3.5" />
+        <circle cx="260" cy="180" r="132" fill="none" stroke="#b57a7a" strokeWidth="8" opacity="0.5" />
+      </g>
+      {/* 包膜糖蛋白（gp120 嘴突 + gp41 柄） */}
+      <g style={dim(active, 1)}>
+        {[
+          [158, 92, -40], [232, 62, -10], [312, 78, 25], [368, 138, 55],
+          [368, 226, 125], [312, 288, 155], [232, 300, -170], [158, 268, 215], [124, 180, -90],
+        ].map(([dx, dy, rot], i) => {
+          const x = dx as number;
+          const y = dy as number;
+          const r = rot as number;
+          return (
+            <g key={i} transform={`translate(${x} ${y}) rotate(${r})`}>
+              <line x1="0" y1="0" x2="0" y2="22" stroke="#8a4a4a" strokeWidth="4" />
+              <circle cx="0" cy="-4" r="9" fill="#d98a8a" stroke="#8a4a4a" strokeWidth="2" />
+            </g>
+          );
+        })}
+        <text x="404" y="66" fontSize="10" fill="#8a4a4a" fontWeight="700">包膜糖蛋白</text>
+        <line x1="400" y1="70" x2="318" y2="88" stroke="#8a4a4a" strokeWidth="1.3" />
+      </g>
+      {/* 衣壳（内层锥形/截圆） */}
+      <g style={dim(active, 2)}>
+        <path d="M196 130 L324 130 L296 236 L224 236 Z" fill="#8fb8d4" stroke="#3d6a94" strokeWidth="3" opacity="0.95" />
+        <text x="260" y="188" textAnchor="middle" fontSize="10" fill="#1e4a68" fontWeight="700">衣壳（蛋白质）</text>
+      </g>
+      {/* 两条 RNA + 逆转录酶 */}
+      <g style={dim(active, 3)}>
+        <path d="M238 160 q 11 -10 22 0 q 11 10 22 0" fill="none" stroke="#ff9f43" strokeWidth="4" strokeLinecap="round" />
+        <path d="M238 174 q 11 10 22 0 q 11 -10 22 0" fill="none" stroke="#ff9f43" strokeWidth="4" strokeLinecap="round" />
+        <circle cx="282" cy="212" r="9" fill="#7fb88a" stroke="#3f7f52" strokeWidth="2" />
+        <text x="282" y="216" textAnchor="middle" fontSize="8" fill="#1e4a2e" fontWeight="700">RT</text>
+      </g>
+      {/* 标注 */}
+      <g style={dim(active, 0)}>
+        <line x1="386" y1="160" x2="420" y2="150" stroke="#9a5a5a" strokeWidth="1.4" />
+        <text x="424" y="146" fontSize="10.5" fill="#8a4a4a" fontWeight="700">包膜（脂质）</text>
+        <text x="424" y="160" fontSize="9" fill="#a86a6a">来自宿主细胞膜</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <line x1="262" y1="168" x2="128" y2="140" stroke="#e07840" strokeWidth="1.4" />
+        <text x="16" y="132" fontSize="10.5" fill="#c97020" fontWeight="700">两条 RNA（遗传物质）</text>
+        <text x="16" y="146" fontSize="9.5" fill="#d08a4a">+ 逆转录酶（RNA → DNA）</text>
+      </g>
+      <text x="14" y="342" fontSize="10.5" fill="#8a4a4a" fontWeight="700">HIV 侵染 T 细胞：逆转录 → 整合 → 破坏免疫系统（艾滋病）</text>
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">HIV 病毒结构模式图</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'rnaStrand',
+    name: 'RNA 单链',
+    kicker: '核酸 · 结构模式图',
+    intro: '单链结构，用核糖而不是脱氧核糖，碱基里没有 T 而有 U——与 DNA 对比着记。',
+    parts: [
+      { name: '磷酸基团', desc: '交替连接核糖形成骨架；RNA 一般为单链，不像 DNA 形成双螺旋。' },
+      { name: '核糖（五碳糖）', desc: 'RNA 用核糖，DNA 用脱氧核糖——名称差异就在"脱氧"两个字上。' },
+      { name: '碱基（A U G C）', desc: 'RNA 的碱基是 A、U、G、C：没有胸腺嘧啶 T，用尿嘧啶 U 代替与 A 配对。' },
+      { name: '单链结构', desc: 'mRNA（信使）、tRNA（转运）、rRNA（核糖体组成）等多种 RNA 都以单链形式执行功能。' },
+      { name: '与 DNA 的对比', desc: '五碳糖不同（核糖/脱氧核糖）、碱基不同（U/T）、链数不同（单/双）——三大区别是常考点。' },
+    ],
+    Svg: RnaStrandSvg,
+  },
+  {
+    id: 'atpMolecule',
+    name: 'ATP 分子',
+    kicker: '能源物质 · 结构模式图',
+    intro: '三磷酸腺苷：腺苷 + 3 个磷酸基团。远离腺苷的高能磷酸键断裂释放能量，直接为细胞供能。',
+    parts: [
+      { name: '腺苷（腺嘌呤+核糖）', desc: 'ATP 的"A"；腺嘌呤与核糖结合成腺苷，是三种腺苷磷酸（AMP/ADP/ATP）的共同部分。' },
+      { name: '核糖（五碳糖）', desc: '连接腺嘌呤与磷酸链的五碳糖。' },
+      { name: '三个磷酸基团', desc: '磷酸基团之间带负电、相互排斥，故高能磷酸键储存大量化学能。' },
+      { name: '高能磷酸键', desc: '"～"表示高能磷酸键；远离腺苷的那个最容易断裂（ATP→ADP+Pi+能量），也最容易重建（ADP+Pi+能量→ATP）。' },
+      { name: 'ATP 与 ADP 的转化', desc: 'ATP ⇌ ADP + Pi + 能量：合成时储能，水解时放能——细胞能量的通用"货币"。' },
+    ],
+    Svg: AtpSvg,
+  },
+  {
+    id: 'hiv',
+    name: 'HIV 病毒',
+    kicker: '病毒 · 结构模式图',
+    intro: '艾滋病（AIDS）的病原体：包膜上糖蛋白吸附并侵染 T 淋巴细胞，内部两条 RNA 与逆转录酶——RNA 病毒。',
+    parts: [
+      { name: '包膜（脂质）', desc: '来自宿主（T 淋巴细胞）细胞膜的脂质层，包在病毒最外层。' },
+      { name: '包膜糖蛋白', desc: 'gp120/gp41 等糖蛋白，特异性识别并结合 T 细胞表面的受体（CD4），决定 HIV 专一性侵染 T 细胞。' },
+      { name: '衣壳（蛋白质）', desc: '保护内部 RNA 与酶的蛋白质外壳。' },
+      { name: '两条 RNA（遗传物质）', desc: 'HIV 的遗传物质是 RNA——它是一种逆转录病毒。' },
+      { name: '逆转录酶（RT）', desc: '能以 RNA 为模板逆转录合成 DNA，再整合到宿主染色体上——"中心法则"的补充路径。' },
+    ],
+    Svg: HivSvg,
+  },
   {
     id: 'dnaHelix',
     name: 'DNA 双螺旋',
