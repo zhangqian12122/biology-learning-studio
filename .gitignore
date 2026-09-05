@@ -40,3 +40,5 @@ next-env.d.ts
 # zcode session files
 /.zcode/
 *.tsbuildinfo
+/dist-ghpages/
+/test-web/
