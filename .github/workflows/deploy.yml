@@ -11,6 +11,9 @@ on:
 
 jobs:
   deploy:
+    # 需要先在仓库 Settings → Secrets 配置 CLOUDFLARE_API_TOKEN，
+    # 并在 Settings → Secrets and variables → Actions → Variables 添加 CLOUDFLARE_DEPLOY_ENABLED=1 启用本工作流
+    if: vars.CLOUDFLARE_DEPLOY_ENABLED == '1'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
