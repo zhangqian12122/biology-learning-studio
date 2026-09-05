@@ -58,10 +58,16 @@ function StaticApp() {
     }
   }, [tab]);
 
-  const activeByBook = BOOK_IDS.reduce<Record<BookId, number>>((acc, bookId) => {
-    acc[bookId] = builtinQuestions.filter((q) => q.bookId === bookId).length;
-    return acc;
-  }, {});
+  const activeByBook: Record<BookId, number> = {
+    molecules: 0,
+    genetics: 0,
+    regulation: 0,
+    ecology: 0,
+    technology: 0,
+  };
+  for (const bookId of BOOK_IDS) {
+    activeByBook[bookId] = builtinQuestions.filter((q) => q.bookId === bookId).length;
+  }
 
   const stats = {
     dbOk: false,

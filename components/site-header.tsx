@@ -9,7 +9,7 @@ export type HeaderNavKey = 'home' | 'lab' | 'cells' | 'practice' | 'teacher';
 const navItems: { key: HeaderNavKey; href: string; label: string }[] = [
   { key: 'home', href: '/', label: '教材总览' },
   { key: 'lab', href: '/lab', label: '互动实验' },
-  { key: 'cells', href: '/cells', label: '细胞图鉴' },
+  { key: 'cells', href: '/cells', label: '图鉴' },
   { key: 'practice', href: '/practice', label: '题库与错题' },
   { key: 'teacher', href: '/teacher', label: '教师中心' },
 ];

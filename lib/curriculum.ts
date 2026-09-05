@@ -258,11 +258,18 @@ export const builtinQuestions: Question[] = [
 export type ExperimentId =
   | 'microscope'
   | 'tissueDetection'
-  | 'enzyme'
+  | 'cellMembranePrep'
+  | 'chloroplastStreaming'
+  | 'dnaRnaDistribution'
+  | 'cellSizeTransport'
+  | 'plasmolysis'
   | 'catalase'
+  | 'amylaseSpecificity'
+  | 'yeastRespiration'
+  | 'enzyme'
   | 'photosynthesis'
   | 'pigment'
-  | 'plasmolysis'
+  | 'mitosisObservation'
   | 'genetics'
   | 'dogma'
   | 'selection'
@@ -290,6 +297,34 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: '细胞结构与物质运输',
   },
+  cellMembranePrep: {
+    title: '体验制备细胞膜的方法',
+    kicker: '必修 1 · 分子与细胞',
+    description: '亲手滴水：看红细胞吸水涨破，理解为什么选它做细胞膜材料。',
+    relatedBook: 'molecules',
+    relatedModule: '细胞结构与物质运输',
+  },
+  chloroplastStreaming: {
+    title: '观察叶绿体与细胞质流动',
+    kicker: '必修 1 · 分子与细胞',
+    description: '调温度看黑藻叶绿体随细胞质流动，流速实时跟随变化。',
+    relatedBook: 'molecules',
+    relatedModule: '细胞结构与物质运输',
+  },
+  dnaRnaDistribution: {
+    title: '观察 DNA 和 RNA 在细胞中的分布',
+    kicker: '必修 1 · 分子与细胞',
+    description: '试剂自己选、流程自己排：让细胞核变绿、细胞质变红。',
+    relatedBook: 'molecules',
+    relatedModule: '细胞结构与物质运输',
+  },
+  cellSizeTransport: {
+    title: '细胞大小与物质运输的关系',
+    kicker: '必修 1 · 分子与细胞',
+    description: '切琼脂块看扩散：边长变小，运输效率为什么反而升高？',
+    relatedBook: 'molecules',
+    relatedModule: '细胞结构与物质运输',
+  },
   tissueDetection: {
     title: '检测组织中的糖类、脂肪和蛋白质',
     kicker: '必修 1 · 分子与细胞',
@@ -311,6 +346,20 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
   },
+  amylaseSpecificity: {
+    title: '淀粉酶对淀粉和蔗糖的水解',
+    kicker: '必修 1 · 分子与细胞',
+    description: '底物和酶自由组合试错，斐林试剂验证酶的专一性。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+  },
+  yeastRespiration: {
+    title: '探究酵母菌细胞的呼吸方式',
+    kicker: '必修 1 · 分子与细胞',
+    description: '自己搭有氧/无氧装置，石灰水与重铬酸钾检验产物。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+  },
   photosynthesis: {
     title: '光合作用：光反应现场',
     kicker: '必修 1 · 分子与细胞',
@@ -324,6 +373,13 @@ export const experimentMeta: Record<
     description: '研磨、画线、层析，看四条色素带在滤纸条上依次展开。',
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
+  },
+  mitosisObservation: {
+    title: '观察根尖分生组织细胞的有丝分裂',
+    kicker: '必修 1 · 分子与细胞',
+    description: '选对取材区、排对装片流程，显微视野里认出各分裂期细胞。',
+    relatedBook: 'molecules',
+    relatedModule: '细胞增殖、分化与衰老',
   },
   plasmolysis: {
     title: '质壁分离与复原',
@@ -401,11 +457,18 @@ export const experimentOrder: ExperimentId[] = [
   // 必修 1 · 分子与细胞（按课本章节先后排序）
   'microscope',
   'tissueDetection',
+  'cellMembranePrep',
+  'chloroplastStreaming',
+  'dnaRnaDistribution',
+  'cellSizeTransport',
   'plasmolysis',
   'catalase',
+  'amylaseSpecificity',
+  'yeastRespiration',
   'enzyme',
   'pigment',
   'photosynthesis',
+  'mitosisObservation',
   // 必修 2 · 遗传与进化
   'genetics',
   'dogma',

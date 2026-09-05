@@ -5,11 +5,14 @@ import Link from 'next/link';
 import {
   ArrowRight,
   Bird,
+  Bubbles,
   Dna,
+  Droplet,
   Droplets,
   Flame,
   FlaskConical,
   FlaskRound,
+  KeyRound,
   Leaf,
   Lightbulb,
   Microscope,
@@ -17,10 +20,13 @@ import {
   Palette,
   RefreshCw,
   Repeat,
+  Ruler,
   Scissors,
   Sprout,
+  Target,
   TestTubes,
   TrendingUp,
+  Waves,
   Zap,
 } from 'lucide-react';
 
@@ -41,14 +47,28 @@ import { CatalaseLab } from '@/components/lab/catalase-lab';
 import { PigmentLab } from '@/components/lab/pigment-lab';
 import { GeneEngineLab } from '@/components/lab/gene-engineering-lab';
 import { DnaExtractLab } from '@/components/lab/dna-extraction-lab';
+import { CellMembranePrepLab } from '@/components/lab/cell-membrane-prep-lab';
+import { ChloroplastStreamingLab } from '@/components/lab/chloroplast-streaming-lab';
+import { DnaRnaDistributionLab } from '@/components/lab/dna-rna-distribution-lab';
+import { CellSizeTransportLab } from '@/components/lab/cell-size-transport-lab';
+import { AmylaseSpecificityLab } from '@/components/lab/amylase-specificity-lab';
+import { YeastRespirationLab } from '@/components/lab/yeast-respiration-lab';
+import { MitosisObservationLab } from '@/components/lab/mitosis-observation-lab';
 
 const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string }>> = {
   microscope: Microscope,
   tissueDetection: TestTubes,
+  cellMembranePrep: Droplet,
+  chloroplastStreaming: Waves,
+  dnaRnaDistribution: Dna,
+  cellSizeTransport: Ruler,
   enzyme: FlaskConical,
   catalase: Flame,
+  amylaseSpecificity: KeyRound,
+  yeastRespiration: Bubbles,
   photosynthesis: Sprout,
   pigment: Palette,
+  mitosisObservation: Target,
   plasmolysis: Droplets,
   genetics: Dna,
   dogma: Network,
@@ -64,10 +84,17 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
 const EXPERIMENT_COMPONENTS: Record<ExperimentId, ComponentType> = {
   microscope: MicroscopeLab,
   tissueDetection: TissueDetectionLab,
+  cellMembranePrep: CellMembranePrepLab,
+  chloroplastStreaming: ChloroplastStreamingLab,
+  dnaRnaDistribution: DnaRnaDistributionLab,
+  cellSizeTransport: CellSizeTransportLab,
   enzyme: EnzymeLab,
   catalase: CatalaseLab,
+  amylaseSpecificity: AmylaseSpecificityLab,
+  yeastRespiration: YeastRespirationLab,
   photosynthesis: PhotosynthesisLab,
   pigment: PigmentLab,
+  mitosisObservation: MitosisObservationLab,
   plasmolysis: PlasmolysisLab,
   genetics: GeneticsLab,
   dogma: CentralDogmaLab,
@@ -159,10 +186,17 @@ const LAB_KEYFRAMES = `
 /* DNA 粗提取：玻璃棒同向慢搅 */
 @keyframes bio-stir-sway { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(8deg); } }
 .bio-stir { animation: bio-stir-sway 2s ease-in-out infinite; }
+/* 细胞质环流 / 错误抖动 / 弹入 */
+@keyframes bio-stream-orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.bio-stream-orbit { animation-name: bio-stream-orbit; animation-iteration-count: infinite; animation-timing-function: linear; }
+@keyframes bio-shake-x { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+.bio-shake { animation: bio-shake-x 0.35s ease; }
+@keyframes bio-pop-in { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.bio-pop { animation: bio-pop-in 0.6s ease; }
 @media (prefers-reduced-motion: reduce) {
   .bio-substrate, .bio-substrate-inner, .bio-photon, .bio-co2, .bio-bubble, .bio-sun,
   .bio-energy, .bio-heat, .bio-impulse-right, .bio-impulse-left, .bio-boil, .bio-gas,
-  .bio-worm, .bio-stir { animation-iteration-count: 1; }
+  .bio-worm, .bio-stir, .bio-stream-orbit { animation-iteration-count: 1; }
 }
 `;
 

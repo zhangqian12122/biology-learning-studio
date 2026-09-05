@@ -32,7 +32,7 @@ export function CellsClient() {
       <div className="mb-5">
         <p className="text-xs font-semibold tracking-[0.1em] text-[#398086]">CELL ATLAS</p>
         <h1 className="mt-1 text-2xl font-semibold tracking-normal text-[#13333a] sm:text-3xl">
-          细胞图鉴：把结构看清楚
+          图鉴：把结构看清楚
         </h1>
         <p className="mt-2 max-w-3xl text-sm leading-6 text-[#59767c]">
           教学模式图对照课本绘制：点图中的编号或右侧的结构名，对应结构会在图中高亮并显示功能说明。

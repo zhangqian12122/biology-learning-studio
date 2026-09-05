@@ -726,9 +726,260 @@ function GuardCellSvg({ active, open = true }: { active: number | null; open?: b
   );
 }
 
+/* ================= DNA 双螺旋 ================= */
+
+function DnaHelixSvg({ active }: { active: number | null; open?: boolean }) {
+  // 双螺旋：两条相位差 180° 的正弦骨架 + 连接的碱基对横档
+  const A = 96;
+  const turns = 2.2;
+  const H = 300;
+  const Y0 = 40;
+  const samples = 60;
+  const strand = (phase: number) =>
+    Array.from({ length: samples + 1 }, (_, i) => {
+      const t = i / samples;
+      const y = Y0 + t * H;
+      const x = 260 + Math.sin(t * Math.PI * 2 * turns + phase) * A * 0.55;
+      return { x, y, z: Math.cos(t * Math.PI * 2 * turns + phase) };
+    });
+  const s1 = strand(0);
+  const s2 = strand(Math.PI);
+  const path = (pts: { x: number; y: number }[]) => pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ') + (pts.length ? '' : '');
+
+  // 碱基对：在若干 t 处连接两条链
+  const pairs = Array.from({ length: 9 }, (_, i) => {
+    const idx = Math.round(((i + 0.5) / 9) * samples);
+    return { p1: s1[idx], p2: s2[idx], i };
+  });
+  const BASES = ['A—T', 'T—A', 'G—C', 'C—G', 'A—T', 'T—A', 'G—C', 'C—G', 'A—T'];
+
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 碱基对（横档） */}
+      <g style={dim(active, 3)}>
+        {pairs.map(({ p1, p2, i }) => (
+          <g key={i}>
+            <line x1={p1.x} y1={p1.y} x2={p2.x} y2={p2.y} stroke="#9aa8d8" strokeWidth="7" strokeLinecap="round" opacity="0.9" />
+            <circle cx={(p1.x + p2.x) / 2} cy={(p1.y + p2.y) / 2} r="2.4" fill="#e8f0ff" />
+          </g>
+        ))}
+      </g>
+
+      {/* 骨架 1（脱氧核糖-磷酸） */}
+      <g style={dim(active, 0)}>
+        <path d={path(s1)} fill="none" stroke="#3f8fb8" strokeWidth="7" strokeLinecap="round" />
+        {s1.filter((_, i) => i % 6 === 0).map((p, i) => (
+          <circle key={i} cx={p.x} cy={p.y} r="5" fill="#2c6e94" />
+        ))}
+      </g>
+
+      {/* 骨架 2 */}
+      <g style={dim(active, 1)}>
+        <path d={path(s2)} fill="none" stroke="#d8a04a" strokeWidth="7" strokeLinecap="round" />
+        {s2.filter((_, i) => i % 6 === 0).map((p, i) => (
+          <circle key={i} cx={p.x} cy={p.y} r="5" fill="#b57f2e" />
+        ))}
+      </g>
+
+      {/* 碱基对标签 */}
+      <g style={dim(active, 2)}>
+        <line x1="392" y1="96" x2="330" y2="140" stroke="#7a8ab8" strokeWidth="1.4" />
+        <text x="398" y="92" fontSize="10.5" fill="#5a6ab8" fontWeight="700">碱基对</text>
+        <text x="398" y="106" fontSize="9" fill="#7a8ab8">A—T · G—C 配对</text>
+      </g>
+      <g style={dim(active, 4)}>
+        <line x1="128" y1="96" x2="70" y2="120" stroke="#3f8fb8" strokeWidth="1.4" />
+        <text x="12" y="112" fontSize="10" fill="#2c6e94" fontWeight="700">脱氧核糖</text>
+        <text x="12" y="126" fontSize="10" fill="#2c6e94" fontWeight="700">-磷酸骨架</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <line x1="392" y1="230" x2="316" y2="240" stroke="#d8a04a" strokeWidth="1.4" />
+        <text x="398" y="226" fontSize="10" fill="#b57f2e" fontWeight="700">另一条骨架</text>
+        <text x="398" y="240" fontSize="9" fill="#c9a05a">两条链反向平行</text>
+      </g>
+
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">DNA 双螺旋结构模式图（沃森与克里克，1953）</text>
+    </svg>
+  );
+}
+
+/* ================= 细胞膜流动镶嵌模型 ================= */
+
+function MembraneModelSvg({ active }: { active: number | null; open?: boolean }) {
+  // 磷脂双分子层：两层圆头（亲水头）+ 两条尾（疏水尾）
+  const heads = Array.from({ length: 16 }, (_, i) => 60 + i * 26);
+  const Y_TOP_HEAD = 128;
+  const Y_TOP_TAIL = 152;
+  const Y_BOT_HEAD = 232;
+  const Y_BOT_TAIL = 208;
+
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 上层磷脂 */}
+      <g style={dim(active, 0)}>
+        {heads.map((x) => (
+          <g key={`t${x}`}>
+            <line x1={x} y1={Y_TOP_HEAD + 10} x2={x} y2={Y_TOP_TAIL + 6} stroke="#d9a04a" strokeWidth="3" />
+            <circle cx={x} cy={Y_TOP_HEAD} r="9" fill="#5aa8c9" stroke="#3d7e9e" strokeWidth="1.6" />
+          </g>
+        ))}
+      </g>
+      {/* 下层磷脂 */}
+      <g style={dim(active, 0)}>
+        {heads.map((x) => (
+          <g key={`b${x}`}>
+            <line x1={x} y1={Y_BOT_HEAD - 10} x2={x} y2={Y_BOT_TAIL - 6} stroke="#d9a04a" strokeWidth="3" />
+            <circle cx={x} cy={Y_BOT_HEAD} r="9" fill="#5aa8c9" stroke="#3d7e9e" strokeWidth="1.6" />
+          </g>
+        ))}
+      </g>
+
+      {/* 蛋白质：镶嵌、贯穿、糖蛋白 */}
+      <g style={dim(active, 1)}>
+        {/* 镶嵌蛋白（上半嵌入） */}
+        <rect x="112" y="108" width="54" height="66" rx="16" fill="#c9749e" stroke="#9a4a74" strokeWidth="2" />
+        {/* 贯穿蛋白 */}
+        <rect x="236" y="100" width="58" height="160" rx="18" fill="#c9749e" stroke="#9a4a74" strokeWidth="2" />
+        {/* 镶嵌蛋白（下半嵌入） */}
+        <rect x="352" y="186" width="54" height="66" rx="16" fill="#c9749e" stroke="#9a4a74" strokeWidth="2" />
+      </g>
+
+      {/* 糖蛋白（糖被）：蛋白 + 分支糖链 */}
+      <g style={dim(active, 2)}>
+        <rect x="416" y="96" width="52" height="60" rx="16" fill="#c9749e" stroke="#9a4a74" strokeWidth="2" />
+        <line x1="442" y1="96" x2="442" y2="70" stroke="#6aa86a" strokeWidth="3.5" />
+        <line x1="442" y1="70" x2="428" y2="52" stroke="#6aa86a" strokeWidth="3.5" />
+        <line x1="442" y1="70" x2="458" y2="52" stroke="#6aa86a" strokeWidth="3.5" />
+        <circle cx="426" cy="48" r="6" fill="#8fc98f" />
+        <circle cx="460" cy="48" r="6" fill="#8fc98f" />
+        <text x="442" y="32" textAnchor="middle" fontSize="10" fill="#3f7a5e" fontWeight="700">糖链（糖被）</text>
+      </g>
+
+      {/* 胆固醇（黄色小分子） */}
+      <g style={dim(active, 3)}>
+        <rect x="180" y="150" width="14" height="60" rx="6" fill="#e8c94a" stroke="#b5a038" strokeWidth="1.6" />
+        <text x="187" y="290" textAnchor="middle" fontSize="9.5" fill="#8a7a20">胆固醇</text>
+      </g>
+
+      {/* 标签 */}
+      <g style={dim(active, 0)}>
+        <line x1="120" y1="166" x2="70" y2="196" stroke="#5aa8c9" strokeWidth="1.4" />
+        <text x="14" y="192" fontSize="10.5" fill="#2c6e94" fontWeight="700">磷脂分子</text>
+        <text x="14" y="206" fontSize="9" fill="#5a88a8">圆头=亲水 · 两条尾=疏水</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <line x1="265" y1="100" x2="300" y2="60" stroke="#c9749e" strokeWidth="1.4" />
+        <text x="306" y="56" fontSize="10.5" fill="#9a4a74" fontWeight="700">蛋白质</text>
+        <text x="306" y="70" fontSize="9" fill="#b56a94">镶嵌 / 贯穿 / 糖蛋白</text>
+      </g>
+      <text x="14" y="330" fontSize="10.5" fill="#3d7e9e" fontWeight="700">磷脂双分子层 = 膜的基本支架</text>
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">细胞膜流动镶嵌模型（Singer & Nicolson, 1972）</text>
+    </svg>
+  );
+}
+
+/* ================= T2 噬菌体 ================= */
+
+function PhageSvg({ active }: { active: number | null; open?: boolean }) {
+  // 头部（廿面体近似椭圆）+ 尾鞘 + 尾丝 + 内部 DNA
+  const HEAD_CX = 260;
+  const HEAD_CY = 118;
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 大肠杆菌（宿主，下方半透杆状） */}
+      <g style={dim(active, 4)}>
+        <rect x="120" y="268" width="290" height="76" rx="38" fill="#dcefe0" stroke="#6aa86a" strokeWidth="3" opacity="0.9" />
+        <text x="265" y="314" textAnchor="middle" fontSize="10.5" fill="#3f7f52" fontWeight="600">大肠杆菌（宿主细胞）</text>
+      </g>
+
+      {/* 内部 DNA（头部内螺旋线） */}
+      <g style={dim(active, 3)}>
+        <path d="M226 92 q 17 -12 34 0 q 17 12 34 0 q -17 14 -34 4 q -17 -10 -34 -4" fill="none" stroke="#ff9f43" strokeWidth="4" strokeLinecap="round" />
+        <path d="M232 112 q 14 10 28 2 q 14 -8 28 0" fill="none" stroke="#ff9f43" strokeWidth="4" strokeLinecap="round" />
+        <text x="352" y="86" fontSize="10" fill="#c97020" fontWeight="600">DNA</text>
+        <line x1="348" y1="90" x2="312" y2="102" stroke="#c97020" strokeWidth="1.3" />
+      </g>
+
+      {/* 头部（蛋白质外壳） */}
+      <g style={dim(active, 0)}>
+        <ellipse cx={HEAD_CX} cy={HEAD_CY} rx="62" ry="48" fill="#8fb8d4" stroke="#3d7e9e" strokeWidth="3.5" />
+        <text x={HEAD_CX} y={HEAD_CY + 4} textAnchor="middle" fontSize="10" fill="#1e4a68" fontWeight="700">蛋白质外壳</text>
+      </g>
+
+      {/* 尾鞘（收缩）+ 尾轴 */}
+      <g style={dim(active, 1)}>
+        <rect x={HEAD_CX - 16} y={HEAD_CY + 48} width="32" height="66" rx="6" fill="#6a9ec4" stroke="#3d7e9e" strokeWidth="2.5" />
+        <line x1={HEAD_CX - 8} y1={HEAD_CY + 52} x2={HEAD_CX - 8} y2={HEAD_CY + 112} stroke="#2c5a7e" strokeWidth="1.8" />
+        <line x1={HEAD_CX + 8} y1={HEAD_CY + 52} x2={HEAD_CX + 8} y2={HEAD_CY + 112} stroke="#2c5a7e" strokeWidth="1.8" />
+        <text x="352" y="176" fontSize="10" fill="#2c6e94" fontWeight="700">尾鞘</text>
+        <line x1="348" y1="172" x2="290" y2="164" stroke="#2c6e94" strokeWidth="1.3" />
+      </g>
+
+      {/* 基片 + 尾丝（扎向细菌表面） */}
+      <g style={dim(active, 2)}>
+        <rect x={HEAD_CX - 24} y={HEAD_CY + 116} width="48" height="10" rx="4" fill="#5a7a9e" />
+        {[-34, -17, 0, 17, 34].map((dx, i) => (
+          <line key={i} x1={HEAD_CX + dx} y1={HEAD_CY + 128} x2={HEAD_CX + dx * 1.35} y2={272} stroke="#5a7a9e" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        <text x="356" y="248" fontSize="10" fill="#3d6a8e" fontWeight="700">尾丝（吸附宿主）</text>
+        <line x1="352" y1="252" x2="310" y2="262" stroke="#3d6a8e" strokeWidth="1.3" />
+      </g>
+
+      {/* 侵染注解 */}
+      <text x="14" y="40" fontSize="11" fill="#3d6a8e" fontWeight="700">T2 噬菌体侵染大肠杆菌：</text>
+      <text x="14" y="58" fontSize="9.5" fill="#5a7a8e">吸附 → 注入 DNA → 合成 → 装配 → 释放</text>
+      <text x="14" y="76" fontSize="9.5" fill="#8a9aa8">蛋白质留在外面，DNA 进入细菌——证明 DNA 是遗传物质</text>
+
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">T2 噬菌体结构模式图（细菌病毒）</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'dnaHelix',
+    name: 'DNA 双螺旋',
+    kicker: '核酸 · 结构模式图',
+    intro: '两条脱氧核苷酸链反向平行盘旋成双螺旋；碱基对像螺旋梯子的横档——A 与 T 配对、G 与 C 配对。',
+    parts: [
+      { name: '脱氧核糖-磷酸骨架', desc: '两条长链的骨架，由脱氧核糖与磷酸交替连接而成，靠磷酸二酯键相连；两条链反向平行。' },
+      { name: '另一条骨架', desc: '与第一条反向平行；两条链绕同一轴盘旋成规则的双螺旋（螺旋直径约 2nm）。' },
+      { name: '碱基对', desc: '两条链上的碱基通过氢键配对"横档"：A（腺嘌呤）一定与 T（胸腺嘧啶）配对，G（鸟嘌呤）一定与 C（胞嘧啶）配对——碱基互补配对原则。' },
+      { name: '碱基配对（A-T / G-C）', desc: 'A-T 之间 2 个氢键，G-C 之间 3 个氢键；配对严谨，是 DNA 复制与转录保持遗传信息稳定的结构基础。' },
+      { name: '双螺旋整体形态', desc: '从端部看，两条骨架像旋转楼梯的两根扶手，碱基对就是一级级台阶；螺旋一圈约含 10 个碱基对。' },
+    ],
+    Svg: DnaHelixSvg,
+  },
+  {
+    id: 'membraneModel',
+    name: '细胞膜流动镶嵌模型',
+    kicker: '细胞膜 · 结构模式图',
+    intro: '磷脂双分子层构成膜的基本支架，蛋白质有的镶在表面、有的嵌入或贯穿整个磷脂双分子层——结构特点：具有一定的流动性。',
+    parts: [
+      { name: '磷脂分子（双分子层）', desc: '膜的基本支架：圆头（亲水）朝向两侧水环境，两条尾（疏水）相对藏在中间；磷脂分子可以侧向自由流动。' },
+      { name: '蛋白质', desc: '有的镶在磷脂双分子层表面，有的部分或全部嵌入，有的贯穿整个双分子层——大多数蛋白质分子也可运动。' },
+      { name: '糖链（糖被）', desc: '细胞膜外表面的糖蛋白/糖脂上的糖链，与细胞识别、免疫反应、信息传递密切相关。' },
+      { name: '胆固醇', desc: '动物细胞膜含有的脂质，调节膜的流动性与稳定性（高温防过流、低温防凝固）。' },
+      { name: '磷脂双分子层', desc: '结构特点：流动性（磷脂与大多数蛋白质可动）；功能特点：选择透过性——结构与功能相适应。' },
+    ],
+    Svg: MembraneModelSvg,
+  },
+  {
+    id: 'phage',
+    name: 'T2 噬菌体',
+    kicker: '病毒 · 结构模式图',
+    intro: '专门侵染大肠杆菌的细菌病毒：蛋白质外壳包裹 DNA，尾部吸附细菌后把 DNA 注入——赫尔希和蔡斯用它证明了 DNA 是遗传物质。',
+    parts: [
+      { name: '蛋白质外壳', desc: '保护内部核酸；在侵染过程中，蛋白质外壳留在细菌外面——这是"DNA 是遗传物质"实验的关键证据之一。' },
+      { name: '尾鞘', desc: '像注射器一样收缩，把头部的 DNA 注入宿主细菌内。' },
+      { name: '尾丝（吸附宿主）', desc: '末端吸附在大肠杆菌表面特定位点，决定噬菌体只能侵染对应的细菌（专一性）。' },
+      { name: 'DNA', desc: '头部内的遗传物质；侵染时只有 DNA 进入细菌，却能指导合成完整的子代噬菌体——直接证明 DNA 是遗传物质。' },
+      { name: '大肠杆菌（宿主细胞）', desc: '被侵染的对象；噬菌体在细菌内利用原料合成自身组件，最终细菌裂解并释放子代噬菌体。' },
+    ],
+    Svg: PhageSvg,
+  },
   {
     id: 'animal',
     name: '动物细胞',
