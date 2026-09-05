@@ -8,6 +8,7 @@ import {
   Bubbles,
   Dices,
   Dna,
+  Drumstick,
   Droplet,
   Droplets,
   Flame,
@@ -29,6 +30,7 @@ import {
   Scissors,
   Sprout,
   Target,
+  UtensilsCrossed,
   TestTubes,
   TrendingUp,
   TestTube2,
@@ -70,6 +72,10 @@ import { TissueCultureLab } from '@/components/lab/tissue-culture-lab';
 import { AuxinCuttingLab } from '@/components/lab/auxin-cutting-lab';
 import { YeastPopulationLab } from '@/components/lab/yeast-population-lab';
 import { LowTempPolyploidLab } from '@/components/lab/low-temp-polyploid-lab';
+import { MeiosisSlideLab } from '@/components/lab/meiosis-slide-lab';
+import { BloodSugarRegulationLab } from '@/components/lab/blood-sugar-regulation-lab';
+import { SoilFaunaSurveyLab } from '@/components/lab/soil-fauna-lab';
+import { PickleFermentLab } from '@/components/lab/pickle-lab';
 
 const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string }>> = {
   microscope: Microscope,
@@ -94,6 +100,10 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   auxinCutting: Flower2,
   yeastPopulation: LineChart,
   lowTempPolyploid: Layers,
+  meiosisSlide: Microscope,
+  bloodSugarRegulation: Droplets,
+  soilFaunaSurvey: Sprout,
+  pickleFerment: UtensilsCrossed,
   plasmolysis: Droplets,
   genetics: Dna,
   dogma: Network,
@@ -129,6 +139,10 @@ const EXPERIMENT_COMPONENTS: Record<ExperimentId, ComponentType> = {
   auxinCutting: AuxinCuttingLab,
   yeastPopulation: YeastPopulationLab,
   lowTempPolyploid: LowTempPolyploidLab,
+  meiosisSlide: MeiosisSlideLab,
+  bloodSugarRegulation: BloodSugarRegulationLab,
+  soilFaunaSurvey: SoilFaunaSurveyLab,
+  pickleFerment: PickleFermentLab,
   plasmolysis: PlasmolysisLab,
   genetics: GeneticsLab,
   dogma: CentralDogmaLab,

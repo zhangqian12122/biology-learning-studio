@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react';
 
 import { ExperimentPane, ObservationNote, SceneBox } from '@/components/lab/control-slider';
 import { LabReference, type LabReferenceSection } from '@/components/lab/lab-reference';
-import { GuideNextButton, LabModeToggle } from '@/components/lab/lab-mode-toggle';
 
 const REFERENCE: LabReferenceSection[] = [
   {
@@ -101,17 +100,8 @@ function cnChip(active: boolean) {
 }
 
 export function YeastPopulationLab() {
-  const [guided, setGuided] = useState(true);
   const [step, setStep] = useState(0); // 已观察的天数 1..7
   const day = step; // 当前观察到的天数
-
-  const GUIDE = [
-    { to: 1, label: '第 1 天取样计数', hint: '种群数量少——调整期。' },
-    { to: 3, label: '第 2~3 天连续取样', hint: '营养充足，进入对数期，数量快速翻倍。' },
-    { to: 5, label: '第 4~5 天取样', hint: '增长放缓——接近 K 值（环境容纳量）。' },
-    { to: 7, label: '第 6~7 天取样', hint: '数量在 K 值附近波动，随后可能进入衰亡期。' },
-    { to: 7, label: '得出结论', hint: '完整 S 型曲线：调整期→对数期→稳定期→衰亡期。' },
-  ];
   const guideDone = step >= 7;
 
   const popNow = step > 0 ? POP[step - 1] : 0;
@@ -143,20 +133,7 @@ export function YeastPopulationLab() {
       <ExperimentPane
         controls={
           <>
-            <LabModeToggle guided={guided} onChange={setGuided} />
 
-            {guided && !guideDone ? (
-              <GuideNextButton
-                step={Math.min(step >= 5 ? 4 : step <= 1 ? 0 : step >= 3 ? 1 : 2, 4)}
-                total={5}
-                label={GUIDE[Math.min(Math.floor((step - 1) / 2), 4)].label}
-                hint={GUIDE[Math.min(Math.floor((step - 1) / 2), 4)].hint}
-                onClick={() => {
-                  const gi = Math.min(Math.floor((step - 1) / 2), 4);
-                  setStep(GUIDE[gi].to);
-                }}
-              />
-            ) : null}
 
             <div className="grid grid-cols-2 gap-1.5">
               {DAYS.map((d) => (

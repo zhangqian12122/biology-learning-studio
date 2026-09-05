@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react';
 
 import { ControlSlider, ExperimentPane, ObservationNote, SceneBox } from '@/components/lab/control-slider';
 import { LabReference, type LabReferenceSection } from '@/components/lab/lab-reference';
-import { GuideNextButton, LabModeToggle } from '@/components/lab/lab-mode-toggle';
 
 const REFERENCE: LabReferenceSection[] = [
   {
@@ -54,7 +53,6 @@ function cnChip(active: boolean) {
 }
 
 export function TissueCultureLab() {
-  const [guided, setGuided] = useState(true);
   const [step, setStep] = useState(0);
   const [sterile, setSterile] = useState(true);
   const [ratio, setRatio] = useState(50); // 生长素占比 %（0~100）
@@ -68,16 +66,6 @@ export function TissueCultureLab() {
     if (r > 70) return 'roots';
     return 'callus';
   };
-
-  const GUIDE = [
-    { label: '制备 MS 培养基', hint: '按配方加入蔗糖、琼脂与两类激素，高温灭菌后分装到培养瓶。', action: () => undefined },
-    { label: '菊花茎段消毒', hint: '70% 酒精 + 0.1% 氯化汞依次消毒，无菌水冲洗——杂菌污染会让培养前功尽弃。', action: () => setSterile(true) },
-    { label: '接种外植体', hint: '在超净工作台把茎段插入培养基。', action: () => setGrowth('callus') },
-    { label: '脱分化培养 2 周', hint: '激素比例适中（50:50 左右）→ 形成疏松的愈伤组织。', action: () => setGrowth('callus') },
-    { label: '调整激素比例，再分化', hint: '左侧滑块：生长素调高 → 生根；调低 → 生芽。自己试试两个方向。', action: () => setGrowth(growthByRatio(ratio)) },
-    { label: '移栽驯化', hint: '幼苗长出根后移栽到土壤——一个茎段长成了完整植株，证明植物细胞具有全能性。', action: () => setGrowth(growthByRatio(ratio)) },
-  ];
-  const guideDone = step >= GUIDE.length;
 
   const observation = (() => {
     if (contaminated) return '❌ 培养基被杂菌污染（表面长霉、浑浊）——消毒不彻底是组织培养失败最常见的原因。点「重新消毒接种」再来一次。';
@@ -105,24 +93,8 @@ export function TissueCultureLab() {
       <ExperimentPane
         controls={
           <>
-            <LabModeToggle guided={guided} onChange={setGuided} />
 
-            {guided ? (
-              <GuideNextButton
-                step={step}
-                total={GUIDE.length}
-                label={guideDone ? '完成' : GUIDE[step].label}
-                hint={guideDone ? '实验完成！切到「自由操作」拖动激素滑块，看看不同配比会分化出什么。' : GUIDE[step].hint}
-                disabled={guideDone}
-                onClick={() => {
-                  if (!guideDone) {
-                    GUIDE[step].action();
-                    setStep((s) => s + 1);
-                  }
-                }}
-              />
-            ) : (
-              <>
+            <>
                 <button
                   type="button"
                   onClick={() => setSterile((v) => !v)}
@@ -135,7 +107,7 @@ export function TissueCultureLab() {
                   接种外植体 → 培养
                 </button>
               </>
-            )}
+            
 
             <ControlSlider
               label="生长素占比（生长素 : 细胞分裂素）"

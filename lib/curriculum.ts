@@ -287,6 +287,10 @@ export type ExperimentId =
   | 'auxinCutting'
   | 'yeastPopulation'
   | 'lowTempPolyploid'
+  | 'meiosisSlide'
+  | 'bloodSugarRegulation'
+  | 'soilFaunaSurvey'
+  | 'pickleFerment'
   | 'pcr';
 
 export const experimentMeta: Record<
@@ -516,6 +520,34 @@ export const experimentMeta: Record<
     relatedBook: 'genetics',
     relatedModule: '遗传规律与配子分析',
   },
+  meiosisSlide: {
+    title: '观察蝗虫精母细胞减数分裂',
+    kicker: '必修 2 · 遗传与进化',
+    description: '固定装片显微视野：判断细胞处于减数分裂的哪个时期。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+  },
+  bloodSugarRegulation: {
+    title: '血糖平衡的调节模拟',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '进食与运动后血糖偏离，胰岛素与胰高血糖素拮抗调节。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
+  soilFaunaSurvey: {
+    title: '土壤中小动物类群丰富度的研究',
+    kicker: '选择性必修 2 · 生物与环境',
+    description: '取样器取样法采集土壤小动物，统计类群丰富度。',
+    relatedBook: 'ecology',
+    relatedModule: '种群特征与群落结构',
+  },
+  pickleFerment: {
+    title: '泡菜的制作',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '乳酸菌无氧发酵制作泡菜，追踪亚硝酸盐含量变化。',
+    relatedBook: 'technology',
+    relatedModule: '发酵工程与过程控制',
+  },
   pcr: {
     title: 'PCR 基因扩增',
     kicker: '选择性必修 3 · 生物技术与工程',
@@ -550,22 +582,22 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'lowTempPolyploid', 'genetics', 'dogma', 'selection', 'geneEngine'],
+    ids: ['traitSeparation', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'dogma', 'selection', 'geneEngine'],
   },
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'auxinCutting', 'impulse'],
+    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse'],
   },
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'yeastPopulation', 'energy', 'population'],
+    ids: ['quadratMethod', 'yeastPopulation', 'soilFaunaSurvey', 'energy', 'population'],
   },
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'tissueCulture', 'pcr'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr'],
   },
 ];
 
@@ -588,16 +620,19 @@ export const experimentOrder: ExperimentId[] = [
   // 必修 2 · 遗传与进化
   'traitSeparation',
   'lowTempPolyploid',
+  'meiosisSlide',
   'genetics',
   'dogma',
   'selection',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
   'auxinCutting',
+  'bloodSugarRegulation',
   'impulse',
   // 选择性必修 2 · 生物与环境
   'quadratMethod',
   'yeastPopulation',
+  'soilFaunaSurvey',
   'energy',
   'population',
   // 选择性必修 3 · 生物技术与工程
@@ -605,6 +640,7 @@ export const experimentOrder: ExperimentId[] = [
   'dnaExtract',
   'plateStreak',
   'wineVinegar',
+  'pickleFerment',
   'tissueCulture',
   'pcr',
 ];

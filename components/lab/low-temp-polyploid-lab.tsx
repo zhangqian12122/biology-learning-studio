@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 import { ExperimentPane, ObservationNote, SceneBox } from '@/components/lab/control-slider';
 import { LabReference, type LabReferenceSection } from '@/components/lab/lab-reference';
-import { LabModeToggle } from '@/components/lab/lab-mode-toggle';
 
 const REFERENCE: LabReferenceSection[] = [
   {
@@ -54,7 +53,6 @@ function cnChip(active: boolean) {
 }
 
 export function LowTempPolyploidLab() {
-  const [guided, setGuided] = useState(true);
   const [view, setView] = useState<Group>('normal');
 
   const observation =
@@ -67,7 +65,6 @@ export function LowTempPolyploidLab() {
       <ExperimentPane
         controls={
           <>
-            <LabModeToggle guided={guided} onChange={setGuided} />
 
             <div>
               <p className="mb-2 text-sm font-medium text-[#37585f]">选择观察的装片</p>
