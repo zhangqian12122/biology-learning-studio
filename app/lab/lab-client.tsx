@@ -11,10 +11,12 @@ import {
   Droplet,
   Droplets,
   Flame,
+  Flower2,
   FlaskConical,
   FlaskRound,
   KeyRound,
   Leaf,
+  Layers,
   LineChart,
   LayoutGrid,
   Lightbulb,
@@ -65,6 +67,9 @@ import { UrineGlucoseTestLab } from '@/components/lab/urine-glucose-lab';
 import { PlateStreakLab } from '@/components/lab/plate-streak-lab';
 import { WineVinegarLab } from '@/components/lab/wine-vinegar-lab';
 import { TissueCultureLab } from '@/components/lab/tissue-culture-lab';
+import { AuxinCuttingLab } from '@/components/lab/auxin-cutting-lab';
+import { YeastPopulationLab } from '@/components/lab/yeast-population-lab';
+import { LowTempPolyploidLab } from '@/components/lab/low-temp-polyploid-lab';
 
 const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string }>> = {
   microscope: Microscope,
@@ -86,6 +91,9 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   plateStreak: FlaskConical,
   wineVinegar: Wine,
   tissueCulture: LineChart,
+  auxinCutting: Flower2,
+  yeastPopulation: LineChart,
+  lowTempPolyploid: Layers,
   plasmolysis: Droplets,
   genetics: Dna,
   dogma: Network,
@@ -118,6 +126,9 @@ const EXPERIMENT_COMPONENTS: Record<ExperimentId, ComponentType> = {
   plateStreak: PlateStreakLab,
   wineVinegar: WineVinegarLab,
   tissueCulture: TissueCultureLab,
+  auxinCutting: AuxinCuttingLab,
+  yeastPopulation: YeastPopulationLab,
+  lowTempPolyploid: LowTempPolyploidLab,
   plasmolysis: PlasmolysisLab,
   genetics: GeneticsLab,
   dogma: CentralDogmaLab,

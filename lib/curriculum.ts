@@ -284,6 +284,9 @@ export type ExperimentId =
   | 'plateStreak'
   | 'wineVinegar'
   | 'tissueCulture'
+  | 'auxinCutting'
+  | 'yeastPopulation'
+  | 'lowTempPolyploid'
   | 'pcr';
 
 export const experimentMeta: Record<
@@ -492,6 +495,27 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '发酵工程与过程控制',
   },
+  auxinCutting: {
+    title: '探索生长素类似物促进插条生根的最适浓度',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '不同浓度生长素类似物处理插条，找出促进生根的最适浓度。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
+  yeastPopulation: {
+    title: '培养液中酵母菌种群数量的变化',
+    kicker: '选择性必修 2 · 生物与环境',
+    description: '抽样计数酵母菌数量，观察 S 型增长与 K 值。',
+    relatedBook: 'ecology',
+    relatedModule: '种群特征与群落结构',
+  },
+  lowTempPolyploid: {
+    title: '低温诱导植物染色体数目的变化',
+    kicker: '必修 2 · 遗传与进化',
+    description: '低温抑制纺锤体形成，染色体数目加倍的原理验证。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+  },
   pcr: {
     title: 'PCR 基因扩增',
     kicker: '选择性必修 3 · 生物技术与工程',
@@ -526,17 +550,17 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'genetics', 'dogma', 'selection', 'geneEngine'],
+    ids: ['traitSeparation', 'lowTempPolyploid', 'genetics', 'dogma', 'selection', 'geneEngine'],
   },
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'impulse'],
+    ids: ['urineGlucoseTest', 'auxinCutting', 'impulse'],
   },
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'energy', 'population'],
+    ids: ['quadratMethod', 'yeastPopulation', 'energy', 'population'],
   },
   {
     name: '生物技术',
@@ -563,14 +587,17 @@ export const experimentOrder: ExperimentId[] = [
   'mitosisObservation',
   // 必修 2 · 遗传与进化
   'traitSeparation',
+  'lowTempPolyploid',
   'genetics',
   'dogma',
   'selection',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
+  'auxinCutting',
   'impulse',
   // 选择性必修 2 · 生物与环境
   'quadratMethod',
+  'yeastPopulation',
   'energy',
   'population',
   // 选择性必修 3 · 生物技术与工程
