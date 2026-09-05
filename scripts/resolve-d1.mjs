@@ -37,9 +37,11 @@ try {
 
 if (!dbId) {
   console.log(`D1 database "${DB_NAME}" not found, creating...`);
-  const created = extractJson(wranglerJson(`d1 create ${DB_NAME} --json`));
-  dbId = created.uuid ?? created.id;
-  if (!dbId) throw new Error(`could not read uuid from create output: ${JSON.stringify(created).slice(0, 300)}`);
+  // wrangler 4.x 的 d1 create 不支持 --json，从文本输出中提取 uuid
+  const out = wranglerJson(`d1 create ${DB_NAME}`);
+  const m = out.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i);
+  if (!m) throw new Error(`could not read database id from create output:\n${out.slice(0, 400)}`);
+  dbId = m[0];
 }
 
 const config = JSON.parse(readFileSync(CONFIG, 'utf8'));
