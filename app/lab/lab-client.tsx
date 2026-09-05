@@ -6,6 +6,7 @@ import {
   ArrowRight,
   Bird,
   Bubbles,
+  Dices,
   Dna,
   Droplet,
   Droplets,
@@ -14,6 +15,7 @@ import {
   FlaskRound,
   KeyRound,
   Leaf,
+  LayoutGrid,
   Lightbulb,
   Microscope,
   Network,
@@ -26,6 +28,7 @@ import {
   Target,
   TestTubes,
   TrendingUp,
+  TestTube2,
   Waves,
   Zap,
 } from 'lucide-react';
@@ -54,6 +57,9 @@ import { CellSizeTransportLab } from '@/components/lab/cell-size-transport-lab';
 import { AmylaseSpecificityLab } from '@/components/lab/amylase-specificity-lab';
 import { YeastRespirationLab } from '@/components/lab/yeast-respiration-lab';
 import { MitosisObservationLab } from '@/components/lab/mitosis-observation-lab';
+import { TraitSeparationLab } from '@/components/lab/trait-separation-lab';
+import { QuadratMethodLab } from '@/components/lab/quadrat-method-lab';
+import { UrineGlucoseTestLab } from '@/components/lab/urine-glucose-lab';
 
 const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string }>> = {
   microscope: Microscope,
@@ -69,6 +75,9 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   photosynthesis: Sprout,
   pigment: Palette,
   mitosisObservation: Target,
+  traitSeparation: Dices,
+  quadratMethod: LayoutGrid,
+  urineGlucoseTest: TestTube2,
   plasmolysis: Droplets,
   genetics: Dna,
   dogma: Network,
@@ -95,6 +104,9 @@ const EXPERIMENT_COMPONENTS: Record<ExperimentId, ComponentType> = {
   photosynthesis: PhotosynthesisLab,
   pigment: PigmentLab,
   mitosisObservation: MitosisObservationLab,
+  traitSeparation: TraitSeparationLab,
+  quadratMethod: QuadratMethodLab,
+  urineGlucoseTest: UrineGlucoseTestLab,
   plasmolysis: PlasmolysisLab,
   genetics: GeneticsLab,
   dogma: CentralDogmaLab,

@@ -270,6 +270,9 @@ export type ExperimentId =
   | 'photosynthesis'
   | 'pigment'
   | 'mitosisObservation'
+  | 'traitSeparation'
+  | 'quadratMethod'
+  | 'urineGlucoseTest'
   | 'genetics'
   | 'dogma'
   | 'selection'
@@ -373,6 +376,27 @@ export const experimentMeta: Record<
     description: '研磨、画线、层析，看四条色素带在滤纸条上依次展开。',
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
+  },
+  traitSeparation: {
+    title: '性状分离比的模拟',
+    kicker: '必修 2 · 遗传与进化',
+    description: '抓取雌雄配子随机结合，统计 DD、Dd、dd 后代比例趋近 1:2:1。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+  },
+  quadratMethod: {
+    title: '样方法调查种群密度',
+    kicker: '选择性必修 2 · 生物与环境',
+    description: '在草地分布图上随机放置样方计数，估算种群密度。',
+    relatedBook: 'ecology',
+    relatedModule: '种群特征与群落结构',
+  },
+  urineGlucoseTest: {
+    title: '模拟尿糖的检测',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '用尿糖试纸检测三份尿样，对照比色卡判断是否含糖。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
   },
   mitosisObservation: {
     title: '观察根尖分生组织细胞的有丝分裂',
@@ -478,17 +502,17 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['genetics', 'dogma', 'selection', 'geneEngine'],
+    ids: ['traitSeparation', 'genetics', 'dogma', 'selection', 'geneEngine'],
   },
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['impulse'],
+    ids: ['urineGlucoseTest', 'impulse'],
   },
   {
     name: '生态',
     icon: '🌱',
-    ids: ['energy', 'population'],
+    ids: ['quadratMethod', 'energy', 'population'],
   },
   {
     name: '生物技术',
@@ -514,12 +538,15 @@ export const experimentOrder: ExperimentId[] = [
   'photosynthesis',
   'mitosisObservation',
   // 必修 2 · 遗传与进化
+  'traitSeparation',
   'genetics',
   'dogma',
   'selection',
   // 选择性必修 1 · 稳态与调节
+  'urineGlucoseTest',
   'impulse',
   // 选择性必修 2 · 生物与环境
+  'quadratMethod',
   'energy',
   'population',
   // 选择性必修 3 · 生物技术与工程
