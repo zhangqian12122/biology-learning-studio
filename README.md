@@ -2,7 +2,11 @@
 
 人教版新课标 · 师生共享题库 · 互动实验 · 细胞图鉴 3D 模型
 
-🔗 **在线访问**：部署后由 Cloudflare Workers 提供 `*.workers.dev` 地址（见下方部署说明）。
+🔗 **在线演示（GitHub Pages，国内可直接打开）**：
+https://zhangqian12122.github.io/biology-learning-studio/
+
+> 静态演示版包含细胞图鉴 3D 模型、互动实验与内置题库练习；进度保存在浏览器本地。
+> 完整版（教师中心 + 共享题库云端同步）见下方 Cloudflare Workers 部署说明。
 
 ## 功能
 
