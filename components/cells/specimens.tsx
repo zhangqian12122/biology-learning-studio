@@ -1123,9 +1123,233 @@ function HivSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 神经元 ================= */
+
+function NeuronSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <path d="M150 170 Q 96 150 62 128 M 62 128 Q 44 118 30 118" fill="none" stroke="#9a6fb5" strokeWidth="6" strokeLinecap="round" />
+        <path d="M150 190 Q 92 190 58 196 M 58 196 Q 42 198 28 208" fill="none" stroke="#9a6fb5" strokeWidth="6" strokeLinecap="round" />
+        <path d="M158 210 Q 108 236 84 268" fill="none" stroke="#9a6fb5" strokeWidth="6" strokeLinecap="round" />
+        <text x="24" y="100" fontSize="10.5" fill="#7a4a8a" fontWeight="700">树突（接收信息）</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <circle cx="205" cy="190" r="52" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3" />
+        <circle cx="205" cy="190" r="17" fill="#8a5a9f" />
+        <text x="205" y="260" textAnchor="middle" fontSize="10.5" fill="#7a4a8a" fontWeight="700">细胞体（含细胞核）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <path d="M257 190 Q 320 190 380 186" fill="none" stroke="#9a6fb5" strokeWidth="7" strokeLinecap="round" />
+        {[288, 326, 362].map((x, i) => (
+          <ellipse key={i} cx={x} cy={188} rx="20" ry="13" fill="#e8c94a" stroke="#b5953a" strokeWidth="2" />
+        ))}
+        <text x="300" y="156" fontSize="10.5" fill="#8a7a20" fontWeight="700">轴突 + 髓鞘</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <path d="M380 186 Q 430 180 452 168 M 452 168 Q 470 160 486 162" fill="none" stroke="#9a6fb5" strokeWidth="6" strokeLinecap="round" />
+        <path d="M380 188 Q 436 200 484 206" fill="none" stroke="#9a6fb5" strokeWidth="6" strokeLinecap="round" />
+        <circle cx="490" cy="162" r="7" fill="#7a4a8a" />
+        <circle cx="490" cy="208" r="7" fill="#7a4a8a" />
+        <text x="420" y="240" fontSize="10.5" fill="#7a4a8a" fontWeight="700">神经末梢（传出信息）</text>
+      </g>
+      <text x="30" y="330" fontSize="11" fill="#5f7076" fontWeight="600">神经冲动传导方向：树突 → 细胞体 → 轴突 → 神经末梢</text>
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">神经元（神经细胞）结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 蓝细菌 ================= */
+
+function CyanobacteriaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <ellipse cx="260" cy="180" rx="160" ry="118" fill="#bfe0c9" stroke="#4d8a5e" strokeWidth="4" />
+        <ellipse cx="260" cy="180" rx="150" ry="108" fill="none" stroke="#3f7f52" strokeWidth="2" />
+        <text x="260" y="34" textAnchor="middle" fontSize="10.5" fill="#2f6b42" fontWeight="700">细胞壁（肽聚糖）+ 细胞膜</text>
+        <line x1="260" y1="40" x2="260" y2="62" stroke="#2f6b42" strokeWidth="1.3" />
+      </g>
+      <g style={dim(active, 5)}>
+        <path d="M208 170 C 236 146, 288 152, 292 184 C 296 208, 252 206, 258 228 C 264 246, 308 240, 304 214" fill="none" stroke="#8a5a9f" strokeWidth="4" strokeLinecap="round" />
+        <text x="260" y="282" textAnchor="middle" fontSize="10.5" fill="#7a5a92" fontWeight="700">拟核（DNA，无核膜包被）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3].map((i) => (
+          <g key={i}>
+            <rect x={150 + (i % 2) * 14} y={126 + i * 16} width={110 - i * 8} height="9" rx="4.5" fill="#3d9468" opacity="0.85" />
+            <rect x={310 - (i % 2) * 14} y={142 + i * 14} width={100 - i * 6} height="9" rx="4.5" fill="#3d9468" opacity="0.85" />
+          </g>
+        ))}
+        <text x="396" y="96" fontSize="10" fill="#2f7a52" fontWeight="700">光合膜片层</text>
+        <text x="396" y="110" fontSize="9" fill="#3f8a5a">含叶绿素和藻蓝素</text>
+        <line x1="392" y1="100" x2="330" y2="150" stroke="#3d9468" strokeWidth="1.3" />
+      </g>
+      <g style={dim(active, 6)}>
+        {[[176, 120], [212, 130], [348, 216], [168, 228], [330, 200], [218, 174]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="3.6" fill="#1e5a3c" />
+        ))}
+        <text x="430" y="292" fontSize="10" fill="#1e5a3c" fontWeight="600">核糖体</text>
+        <line x1="426" y1="288" x2="360" y2="238" stroke="#1e5a3c" strokeWidth="1.2" />
+      </g>
+      <text x="14" y="330" fontSize="10.5" fill="#2f6b42" fontWeight="700">蓝细菌 = 原核生物，但含叶绿素和藻蓝素，能进行光合作用</text>
+      <text x="14" y="348" fontSize="9.5" fill="#5f8a5e">没有叶绿体——光合结构是光合膜片层（区别于真核细胞）</text>
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">蓝细菌（原核细胞）结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 酵母菌 ================= */
+
+function YeastCellSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <ellipse cx="230" cy="180" rx="118" ry="96" fill="#e8d9a8" stroke="#b5903a" strokeWidth="3.5" />
+      </g>
+      <g style={dim(active, 2)}>
+        <circle cx="230" cy="170" r="26" fill="#b48ad0" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="230" y="175" textAnchor="middle" fontSize="9" fill="#ffffff" fontWeight="700">细胞核</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <ellipse cx="278" cy="212" rx="34" ry="24" fill="#f4ecd8" stroke="#c9a86a" strokeWidth="2" />
+        <text x="278" y="216" textAnchor="middle" fontSize="8.5" fill="#8a7a4a">液泡</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <ellipse cx="342" cy="108" rx="34" ry="28" fill="#e8d9a8" stroke="#b5903a" strokeWidth="2.5" />
+        <text x="342" y="112" textAnchor="middle" fontSize="8.5" fill="#8a671b">芽体</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <line x1="360" y1="76" x2="404" y2="52" stroke="#b5903a" strokeWidth="1.4" />
+        <text x="408" y="48" fontSize="10.5" fill="#8a671b" fontWeight="700">细胞壁</text>
+        <text x="408" y="62" fontSize="9" fill="#a58a4a">（真菌：几丁质）</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <line x1="130" y1="264" x2="92" y2="286" stroke="#c9a86a" strokeWidth="1.4" />
+        <text x="24" y="298" fontSize="10.5" fill="#8a671b" fontWeight="700">出芽生殖</text>
+        <text x="24" y="312" fontSize="9" fill="#a58a4a">芽体脱落后成为新个体</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="80" y="120" fontSize="10" fill="#8a5a9f" fontWeight="600">真核细胞：有细胞核和众多细胞器</text>
+      </g>
+      <text x="14" y="344" fontSize="10.5" fill="#8a671b" fontWeight="700">酵母菌：真核真菌 · 兼性厌氧 · 异养</text>
+      <text x="14" y="360" fontSize="9.5" fill="#a58a4a">果酒发酵的菌种；无氧产酒精，有氧大量繁殖</text>
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">酵母菌结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 分泌蛋白的合成与运输 ================= */
+
+function SecretoryProteinSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 4)}>
+        <path d="M60 40 Q 40 190 60 340" fill="none" stroke="#3d7e9e" strokeWidth="4" />
+        <text x="40" y="30" fontSize="10" fill="#2c6e94" fontWeight="700">细胞膜</text>
+      </g>
+      <g style={dim(active, 5)}>
+        <circle cx="130" cy="200" r="42" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3" />
+        <text x="130" y="204" textAnchor="middle" fontSize="9.5" fill="#ffffff" fontWeight="700">细胞核</text>
+      </g>
+      <g style={dim(active, 0)}>
+        {[[186, 120], [204, 140], [222, 160], [240, 180]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="5.5" fill="#1e5a8e" />
+        ))}
+        <text x="186" y="96" fontSize="10" fill="#1e5a8e" fontWeight="700">核糖体（合成肽链）</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <path d="M196 130 C 240 140, 262 156, 268 178" fill="none" stroke="#7fb8d4" strokeWidth="12" strokeLinecap="round" />
+        <text x="238" y="126" fontSize="10" fill="#2c6e94" fontWeight="700">内质网（初步加工）</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <circle cx="296" cy="170" r="12" fill="#a8d0e8" stroke="#4d7ea8" strokeWidth="2" />
+        <path d="M296 182 q 10 10 4 22" fill="none" stroke="#4d7ea8" strokeWidth="2" strokeDasharray="3 2" />
+      </g>
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M318 ${196 + i * 14} q 34 -14 68 0`} fill="none" stroke="#e0b06a" strokeWidth="7" strokeLinecap="round" />
+        ))}
+        <text x="352" y="266" textAnchor="middle" fontSize="10" fill="#8a671b" fontWeight="700">高尔基体（再加工包装）</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <circle cx="404" cy="256" r="11" fill="#a8d0e8" stroke="#4d7ea8" strokeWidth="2" />
+        <path d="M416 262 Q 436 282 452 296" fill="none" stroke="#4d7ea8" strokeWidth="2" strokeDasharray="3 2" />
+        <circle cx="458" cy="300" r="10" fill="#a8d0e8" stroke="#4d7ea8" strokeWidth="2" />
+        <text x="452" y="322" textAnchor="middle" fontSize="9" fill="#2c6e94">胞吐分泌</text>
+      </g>
+      <g style={dim(active, 5)}>
+        <g transform="rotate(-24 150 296)">
+          <ellipse cx="150" cy="296" rx="34" ry="18" fill="#f0a06a" stroke="#c2703d" strokeWidth="2.5" />
+          <path d="M128 296 q 8 -9 16 0 q 8 9 16 0" fill="none" stroke="#c2703d" strokeWidth="2" />
+        </g>
+        <text x="150" y="336" textAnchor="middle" fontSize="9.5" fill="#c2703d" fontWeight="600">线粒体（供能）</text>
+      </g>
+      <text x="14" y="34" fontSize="11" fill="#2c6e94" fontWeight="700">分泌蛋白的合成与运输路径：</text>
+      <text x="14" y="52" fontSize="10" fill="#4b6c73">核糖体（合成）→ 内质网（加工）→ 囊泡 → 高尔基体（再加工）→ 囊泡 → 细胞膜（胞吐）</text>
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">分泌蛋白合成运输模式图（如胰岛素、消化酶）</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'neuron',
+    name: '神经元',
+    kicker: '神经细胞 · 结构模式图',
+    intro: '神经系统结构与功能的基本单位：树突接收信息，轴突传出信息——神经冲动沿这个方向传导。',
+    parts: [
+      { name: '树突', desc: '短而多、呈树枝状分支，负责接收信息并把兴奋传向细胞体。' },
+      { name: '细胞体', desc: '含有细胞核的膨大部分，代谢与整合信息的中心。' },
+      { name: '轴突', desc: '一般只有一条、较长，把兴奋从细胞体传向神经末梢；有些外包髓鞘可加快传导。' },
+      { name: '髓鞘', desc: '包绕在轴突外的结构，像电线的绝缘层，能显著加快神经冲动传导速度。' },
+      { name: '神经末梢', desc: '轴突末端的细小分支，把兴奋传递给下一个神经元或效应器（支配的肌肉、腺体）。' },
+    ],
+    Svg: NeuronSvg,
+  },
+  {
+    id: 'cyanobacteria',
+    name: '蓝细菌',
+    kicker: '原核细胞 · 结构模式图',
+    intro: '旧称蓝藻：没有叶绿体，却含叶绿素和藻蓝素，是能进行光合作用的自养原核生物。',
+    parts: [
+      { name: '细胞壁（肽聚糖）', desc: '与大肠杆菌类似，主要成分是肽聚糖——与植物细胞壁成分（纤维素果胶）不同。' },
+      { name: '细胞膜', desc: '控制物质进出的边界，位于细胞壁内侧。' },
+      { name: '光合膜片层', desc: '含叶绿素和藻蓝素，能进行光合作用——"没有叶绿体也能光合作用"是高频考点。' },
+      { name: '拟核（DNA）', desc: '环状 DNA 集中区域，无核膜包被——原核细胞与真核细胞最根本的区别。' },
+      { name: '核糖体', desc: '原核细胞唯一拥有的细胞器，合成蛋白质。' },
+    ],
+    Svg: CyanobacteriaSvg,
+  },
+  {
+    id: 'yeast',
+    name: '酵母菌',
+    kicker: '真核真菌 · 结构模式图',
+    intro: '单细胞真核真菌，兼性厌氧——有氧大量繁殖、无氧发酵产酒精，是果酒制作的菌种。',
+    parts: [
+      { name: '细胞壁', desc: '主要成分是几丁质（真菌多糖），起保护和支持作用。' },
+      { name: '液泡', desc: '维持细胞渗透压、储存物质；真核细胞特有的成熟结构。' },
+      { name: '细胞核', desc: '有以核膜为界限的细胞核——是真核生物（真菌）的重要特征，与原核细菌不同。' },
+      { name: '出芽生殖', desc: '细胞上长出芽体，脱落后成为新个体——酵母菌典型的无性生殖方式。' },
+    ],
+    Svg: YeastCellSvg,
+  },
+  {
+    id: 'secretoryProtein',
+    name: '分泌蛋白的合成与运输',
+    kicker: '细胞器合作 · 过程模式图',
+    intro: '胰岛素、消化酶等分泌蛋白：核糖体合成 → 内质网加工 → 高尔基体包装 → 细胞膜胞吐——多种细胞器协调配合。',
+    parts: [
+      { name: '核糖体（附着）', desc: '附着在内质网上的核糖体合成肽链——分泌蛋白的"生产车间"。' },
+      { name: '内质网', desc: '对肽链进行折叠、组装与初步加工（如加糖基），以囊泡形式转运。' },
+      { name: '囊泡', desc: '内质网与高尔基体之间、高尔基体与细胞膜之间的"运输小泡"。' },
+      { name: '高尔基体', desc: '对蛋白质做进一步修饰加工、分类包装，再形成囊泡运向细胞膜。' },
+      { name: '线粒体（供能）', desc: '全过程需要能量，由线粒体有氧呼吸提供。' },
+    ],
+    Svg: SecretoryProteinSvg,
+  },
   {
     id: 'rnaStrand',
     name: 'RNA 单链',

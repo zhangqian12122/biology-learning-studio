@@ -281,6 +281,9 @@ export type ExperimentId =
   | 'population'
   | 'geneEngine'
   | 'dnaExtract'
+  | 'plateStreak'
+  | 'wineVinegar'
+  | 'tissueCulture'
   | 'pcr';
 
 export const experimentMeta: Record<
@@ -468,6 +471,27 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '基因工程与 PCR 技术',
   },
+  plateStreak: {
+    title: '微生物的平板划线培养',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '灼烧接种环，在平板上分区划线，培养后观察单菌落。',
+    relatedBook: 'technology',
+    relatedModule: '发酵工程与过程控制',
+  },
+  wineVinegar: {
+    title: '果酒与果醋的制作',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '酵母菌无氧发酵成果酒，醋酸菌有氧发酵把酒变醋。',
+    relatedBook: 'technology',
+    relatedModule: '发酵工程与过程控制',
+  },
+  tissueCulture: {
+    title: '菊花的组织培养',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '外植体脱分化成愈伤组织，激素配比决定再分化方向。',
+    relatedBook: 'technology',
+    relatedModule: '发酵工程与过程控制',
+  },
   pcr: {
     title: 'PCR 基因扩增',
     kicker: '选择性必修 3 · 生物技术与工程',
@@ -517,7 +541,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['pcr'],
+    ids: ['plateStreak', 'wineVinegar', 'tissueCulture', 'pcr'],
   },
 ];
 
@@ -552,5 +576,8 @@ export const experimentOrder: ExperimentId[] = [
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',
   'dnaExtract',
+  'plateStreak',
+  'wineVinegar',
+  'tissueCulture',
   'pcr',
 ];

@@ -15,6 +15,7 @@ import {
   FlaskRound,
   KeyRound,
   Leaf,
+  LineChart,
   LayoutGrid,
   Lightbulb,
   Microscope,
@@ -31,6 +32,7 @@ import {
   TestTube2,
   Waves,
   Zap,
+  Wine,
 } from 'lucide-react';
 
 import { EXPERIMENT_CATEGORIES, experimentMeta, experimentOrder, textbooks, type ExperimentId } from '@/lib/curriculum';
@@ -60,6 +62,9 @@ import { MitosisObservationLab } from '@/components/lab/mitosis-observation-lab'
 import { TraitSeparationLab } from '@/components/lab/trait-separation-lab';
 import { QuadratMethodLab } from '@/components/lab/quadrat-method-lab';
 import { UrineGlucoseTestLab } from '@/components/lab/urine-glucose-lab';
+import { PlateStreakLab } from '@/components/lab/plate-streak-lab';
+import { WineVinegarLab } from '@/components/lab/wine-vinegar-lab';
+import { TissueCultureLab } from '@/components/lab/tissue-culture-lab';
 
 const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string }>> = {
   microscope: Microscope,
@@ -78,6 +83,9 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   traitSeparation: Dices,
   quadratMethod: LayoutGrid,
   urineGlucoseTest: TestTube2,
+  plateStreak: FlaskConical,
+  wineVinegar: Wine,
+  tissueCulture: LineChart,
   plasmolysis: Droplets,
   genetics: Dna,
   dogma: Network,
@@ -107,6 +115,9 @@ const EXPERIMENT_COMPONENTS: Record<ExperimentId, ComponentType> = {
   traitSeparation: TraitSeparationLab,
   quadratMethod: QuadratMethodLab,
   urineGlucoseTest: UrineGlucoseTestLab,
+  plateStreak: PlateStreakLab,
+  wineVinegar: WineVinegarLab,
+  tissueCulture: TissueCultureLab,
   plasmolysis: PlasmolysisLab,
   genetics: GeneticsLab,
   dogma: CentralDogmaLab,
