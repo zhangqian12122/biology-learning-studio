@@ -84,7 +84,7 @@ export function CellsClient() {
                     type="button"
                     onClick={() => setStomaOpen(true)}
                     aria-pressed={stomaOpen}
-                    className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                    className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
                       stomaOpen ? 'bg-[#0e6f75] text-white' : 'bg-[#eef7f6] text-[#4b6c73] hover:bg-[#e2f1ef]'
                     }`}
                   >
@@ -94,7 +94,7 @@ export function CellsClient() {
                     type="button"
                     onClick={() => setStomaOpen(false)}
                     aria-pressed={!stomaOpen}
-                    className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                    className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
                       !stomaOpen ? 'bg-[#b0483a] text-white' : 'bg-[#eef7f6] text-[#4b6c73] hover:bg-[#e2f1ef]'
                     }`}
                   >
@@ -108,7 +108,7 @@ export function CellsClient() {
                     type="button"
                     onClick={() => setUseWebGL(false)}
                     aria-pressed={!useWebGL}
-                    className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                    className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
                       !useWebGL ? 'bg-[#0e6f75] text-white' : 'bg-[#eef7f6] text-[#4b6c73] hover:bg-[#e2f1ef]'
                     }`}
                   >
@@ -118,7 +118,7 @@ export function CellsClient() {
                     type="button"
                     onClick={() => setUseWebGL(true)}
                     aria-pressed={useWebGL}
-                    className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                    className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
                       useWebGL ? 'bg-[#0e6f75] text-white' : 'bg-[#eef7f6] text-[#4b6c73] hover:bg-[#e2f1ef]'
                     }`}
                   >
@@ -136,19 +136,21 @@ export function CellsClient() {
             </div>
 
             <div className="relative min-w-0 overflow-hidden rounded-md border border-[#dceaea] bg-gradient-to-b from-[#f2fafa] to-[#e7f3f1]">
-              <div className="relative mx-auto aspect-[52/38] w-full max-w-[620px]">
-                {specimen.StageWebGL && useWebGL ? (
-                  <>
-                    <specimen.StageWebGL active={activePart} open={stomaOpen} />
-                    <p className="pointer-events-none absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full bg-white/80 px-3 py-1 text-[11px] font-medium text-[#4b6c73] shadow-sm">
-                      🖐 拖拽旋转 · 滚轮缩放 · 松手后自动旋转
-                    </p>
-                  </>
-                ) : specimen.Stage3d ? (
-                  <specimen.Stage3d active={activePart} open={stomaOpen} />
-                ) : (
-                  <SpecimenSvg active={activePart} open={stomaOpen} />
-                )}
+              <div className="max-sm:overflow-x-auto">
+                <div className="relative mx-auto aspect-[52/38] w-full max-w-[620px] max-sm:w-[520px]">
+                  {specimen.StageWebGL && useWebGL ? (
+                    <>
+                      <specimen.StageWebGL active={activePart} open={stomaOpen} />
+                      <p className="pointer-events-none absolute bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full bg-white/80 px-3 py-1 text-[11px] font-medium text-[#4b6c73] shadow-sm">
+                        🖐 单指旋转 · 双指缩放 · 松手后自动摆动
+                      </p>
+                    </>
+                  ) : specimen.Stage3d ? (
+                    <specimen.Stage3d active={activePart} open={stomaOpen} />
+                  ) : (
+                    <SpecimenSvg active={activePart} open={stomaOpen} />
+                  )}
+                </div>
               </div>
             </div>
             {isStoma ? (
@@ -173,7 +175,7 @@ export function CellsClient() {
                     type="button"
                     onClick={() => setActivePart(current ? null : index)}
                     aria-pressed={current}
-                    className={`flex items-center gap-2 rounded-md border px-2.5 py-1.5 text-left text-xs font-medium transition-colors ${
+                    className={`flex items-center gap-2 rounded-md border px-2.5 py-2.5 text-left text-xs font-medium transition-colors ${
                       current
                         ? 'border-[#82c6c0] bg-[#e9f7f5] text-[#0a626a]'
                         : 'border-[#d9e7e7] bg-white text-[#537078] hover:border-[#b6d9d6]'

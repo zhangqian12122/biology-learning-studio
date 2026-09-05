@@ -496,7 +496,7 @@ export function PracticeClient({
                             aria-label={dotLabel}
                             title={dotLabel}
                             className={cn(
-                              'flex size-8 items-center justify-center rounded-md border text-xs font-semibold transition-colors',
+                              'flex size-9 items-center justify-center rounded-md border text-xs font-semibold transition-colors',
                               isCurrent
                                 ? 'border-[#0e7779] bg-[#0e7779] text-white'
                                 : isWrong

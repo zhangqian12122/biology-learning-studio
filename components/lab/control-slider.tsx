@@ -1,5 +1,7 @@
 'use client';
 
+import type { ReactNode } from 'react';
+
 import { Slider } from '@/components/ui/slider';
 
 export type ControlSliderProps = {
@@ -96,20 +98,26 @@ export function SceneBox({
   heightClass = 'h-[260px]',
 }: {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
   heightClass?: string;
 }) {
   return (
     <div>
       <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-[#67858b]">{label}</p>
-      <div
-        className={`relative min-w-0 overflow-hidden rounded-md border border-[#dceaea] bg-gradient-to-b from-[#f2fafa] to-[#e7f3f1] ${heightClass}`}
-      >
-        {children}
+      <style>{scenePanCss}</style>
+      <div className={`relative min-w-0 overflow-hidden rounded-md border border-[#dceaea] bg-gradient-to-b from-[#f2fafa] to-[#e7f3f1] ${heightClass}`}>
+        {/* 手机上场景按固定宽度渲染（字号可读），可左右拖动平移；桌面端自适应铺满 */}
+        <div className="scene-pan h-full">{children}</div>
       </div>
     </div>
   );
 }
+
+const scenePanCss = `
+@media (max-width: 640px) {
+  .scene-pan { width: 480px; overflow-x: auto; }
+}
+`;
 
 export function ObservationNote({ children }: { children: React.ReactNode }) {
   return (

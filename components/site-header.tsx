@@ -46,7 +46,7 @@ export function SiteHeader({
               href={item.href}
               aria-current={active === item.key ? 'page' : undefined}
               className={
-                'h-8 shrink-0 rounded-md px-3 text-sm font-medium leading-8 transition-colors ' +
+                'h-10 shrink-0 rounded-md px-3 text-sm font-medium leading-10 transition-colors ' +
                 (active === item.key
                   ? 'bg-[#e7f2f1] text-[#155f68]'
                   : 'text-[#59767c] hover:bg-[#edf5f5] hover:text-[#1e4f57]')

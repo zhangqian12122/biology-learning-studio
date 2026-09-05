@@ -184,7 +184,7 @@ export function HomeClient({
           <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-4 shadow-[0_12px_30px_rgba(18,65,72,0.06)] sm:p-5">
             <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.95fr)] lg:items-end">
               <div>
-                <p className="text-sm font-medium text-[#295c64]">
+                <p className="text-base font-medium text-[#295c64]">
                   按五册教材顺序进入，或直接搜索你要复习的知识点。
                 </p>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-[#66858b]">

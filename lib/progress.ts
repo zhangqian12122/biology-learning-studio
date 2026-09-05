@@ -85,7 +85,12 @@ export function saveLocalProgress(answers: Record<string, number>) {
   const stored = JSON.stringify({ answers });
   cachedProgressStorage = stored;
   cachedProgress = answers;
-  window.localStorage.setItem(progressStorageKey, stored);
+  // 微信/隐私模式下 localStorage 可能被禁用抛异常：内存缓存已更新，答题功能不受影响
+  try {
+    window.localStorage.setItem(progressStorageKey, stored);
+  } catch {
+    // 忽略存储失败，保持会话内可用
+  }
   window.dispatchEvent(new Event(progressChangeEvent));
 }
 

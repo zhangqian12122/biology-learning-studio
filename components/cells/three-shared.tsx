@@ -156,13 +156,20 @@ export function useOrganelleCanvas(
       lastInteraction = performance.now();
     });
 
-    // 渲染循环：rAF 优先；嵌入式环境暂停 rAF 时退化为定时器驱动
+    let hidden = false;
+    const onVisibility = () => {
+      hidden = document.hidden;
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+
+    // 渲染循环：rAF 优先；嵌入式环境暂停 rAF 时退化为定时器驱动；页面隐藏时暂停渲染省电
     let raf = 0;
     let useInterval = false;
     let interval: ReturnType<typeof setInterval> | null = null;
     let lastFrame = performance.now();
     const frame = () => {
       lastFrame = performance.now();
+      if (hidden) return;
       applyGlow(groupsRef.current, activeRef.current, lastFrame / 1000);
       if (!interacting && lastFrame - lastInteraction > 2200) {
         // 缓慢摆动：目标方位角 ±60° 正弦往复
@@ -195,6 +202,7 @@ export function useOrganelleCanvas(
       cancelAnimationFrame(raf);
       if (interval) clearInterval(interval);
       clearInterval(watchdog);
+      document.removeEventListener('visibilitychange', onVisibility);
       controls.dispose();
       renderer.dispose();
       scene.traverse((obj) => {
