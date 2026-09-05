@@ -175,7 +175,7 @@ export function CatalaseLab() {
                     <g>
                       <rect x={cx - 32} y="92" width="64" height="96" rx="6" fill="#d8edf6" />
                       <rect x={cx - 32} y="92" width="64" height="96" rx="6" fill="none" stroke="#7fa9bb" strokeWidth="2" />
-                      <text x={cx} y="206" textAnchor="middle" fontSize="9" fill="#3f7183">
+                      <text x={cx} y="206" textAnchor="middle" fontSize="14" fill="#3f7183">
                         90 ℃ 水浴
                       </text>
                     </g>
@@ -227,16 +227,16 @@ export function CatalaseLab() {
                       ) : (
                         <circle cx={cx + 26} cy="36" r="4" fill="#e07b28" opacity="0.55" className="bio-fail" />
                       )}
-                      <text x={cx + 26} y="12" textAnchor="middle" fontSize="10" fill="#8a671b" fontWeight="600">
+                      <text x={cx + 26} y="12" textAnchor="middle" fontSize="15" fill="#8a671b" fontWeight="600">
                         {rate >= 0.45 ? '复燃！' : '不复燃'}
                       </text>
                     </g>
                   ) : null}
 
-                  <text x={cx} y="226" textAnchor="middle" fontSize="10.5" fill="#4b6c73" fontWeight="600">
+                  <text x={cx} y="226" textAnchor="middle" fontSize="15" fill="#4b6c73" fontWeight="600">
                     {tube.name}
                   </text>
-                  <text x={cx} y="242" textAnchor="middle" fontSize="9" fill="#799398">
+                  <text x={cx} y="242" textAnchor="middle" fontSize="14" fill="#799398">
                     {tube.id === 4 && boiled && started ? '（已煮沸 → 酶失活）' : tube.detail}
                   </text>
                 </g>

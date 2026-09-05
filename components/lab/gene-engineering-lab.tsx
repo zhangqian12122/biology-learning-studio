@@ -118,7 +118,7 @@ function DnaLadder({
       {gene ? (
         <>
           <rect x={x + 84} y={y - 7} width="130" height="42" rx="6" fill="#e6913c1f" stroke="#e6913c" strokeWidth="1.5" strokeDasharray="5 3" />
-          <text x={x + 149} y={y + 52} textAnchor="middle" fontSize="10.5" fill="#b06a17" fontWeight="600">
+          <text x={x + 149} y={y + 52} textAnchor="middle" fontSize="15" fill="#b06a17" fontWeight="600">
             目的基因（Bt 抗虫基因）
           </text>
         </>
@@ -336,22 +336,22 @@ export function GeneEngineLab() {
             {/* ============ 第一步：切割 ============ */}
             {step === 0 ? (
               <g>
-                <text x="24" y="30" fontSize="11" fill="#4b6c73" fontWeight="600">
+                <text x="24" y="30" fontSize="15" fill="#4b6c73" fontWeight="600">
                   含目的基因的 DNA
                 </text>
                 <DnaLadder x={24} y={44} w={382} gene />
                 <g className="bio-snip" style={{ transformOrigin: '300px 57px' }}>
                   <circle cx="300" cy="30" r="15" fill={enzymeInfo.color} />
-                  <text x="300" y="34" textAnchor="middle" fontSize="9" fill="#ffffff" fontWeight="700">
+                  <text x="300" y="34" textAnchor="middle" fontSize="14" fill="#ffffff" fontWeight="700">
                     {enzymeInfo.name}
                   </text>
                 </g>
-                <text x="300" y="112" textAnchor="middle" fontSize="9.5" fill="#b0483a" fontFamily="monospace">
+                <text x="300" y="112" textAnchor="middle" fontSize="14.5" fill="#b0483a" fontFamily="monospace">
                   {enzymeInfo.site}
                 </text>
 
                 {/* 质粒 */}
-                <text x="150" y="152" fontSize="11" fill="#4b6c73" fontWeight="600">
+                <text x="150" y="152" fontSize="15" fill="#4b6c73" fontWeight="600">
                   质粒（载体）
                 </text>
                 <circle cx="220" cy="228" r="36" fill="none" stroke="#2b6f8f" strokeWidth="7" />
@@ -359,7 +359,7 @@ export function GeneEngineLab() {
                 <path d={arcPath(220, 228, 36, 80, 160)} fill="none" stroke="#5b64c7" strokeWidth="7" />
                 <path d={arcPath(220, 228, 36, 25, 55)} fill="none" stroke="#b0483a" strokeWidth="7" />
                 <circle cx="256" cy="228" r="6" fill={enzymeInfo.color} className="bio-fade" />
-                <text x="220" y="282" textAnchor="middle" fontSize="9.5" fill="#799398">
+                <text x="220" y="282" textAnchor="middle" fontSize="14.5" fill="#799398">
                   绿=启动子 · 红=终止子 · 紫=标记基因 · 缺口处为 {enzymeInfo.name} 识别位点
                 </text>
               </g>
@@ -373,13 +373,13 @@ export function GeneEngineLab() {
                 <path d={arcPath(150, 190, 40, 85, 150)} fill="none" stroke="#5b64c7" strokeWidth="7" />
                 {!ligated ? (
                   <g>
-                    <text x="118" y="268" fontSize="9" fill="#5b64c7" fontWeight="600">
+                    <text x="118" y="268" fontSize="14" fill="#5b64c7" fontWeight="600">
                       标记基因
                     </text>
-                    <text x={198} y={166} fontSize="9" fill="#e6913c" fontWeight="600">
+                    <text x={198} y={166} fontSize="14" fill="#e6913c" fontWeight="600">
                       {enzymeInfo.sticky ? `${enzymeInfo.overhang}` : '平口'}
                     </text>
-                    <text x={198} y={222} fontSize="9" fill="#e6913c" fontWeight="600">
+                    <text x={198} y={222} fontSize="14" fill="#e6913c" fontWeight="600">
                       {enzymeInfo.sticky ? '互补链' : '平口'}
                     </text>
                   </g>
@@ -400,14 +400,14 @@ export function GeneEngineLab() {
                     topExtra={enzymeInfo.sticky ? 14 : 0}
                     bottomExtra={enzymeInfo.sticky ? 14 : 0}
                   />
-                  <text x={343} y={50} textAnchor="middle" fontSize="10" fill="#b06a17" fontWeight="600">
+                  <text x={343} y={50} textAnchor="middle" fontSize="15" fill="#b06a17" fontWeight="600">
                     目的基因片段
                   </text>
                 </g>
                 {/* 连接酶 */}
                 <g className={ligated ? 'bio-fade' : 'opacity-30'}>
                   <circle cx="245" cy="116" r="15" fill="#38a169" />
-                  <text x="245" y="120" textAnchor="middle" fontSize="8.5" fill="#ffffff" fontWeight="700">
+                  <text x="245" y="120" textAnchor="middle" fontSize="14" fill="#ffffff" fontWeight="700">
                     连接酶
                   </text>
                 </g>
@@ -419,30 +419,30 @@ export function GeneEngineLab() {
                     <path d={arcPath(150, 190, 40, -115, -30)} fill="none" stroke="#38a169" strokeWidth="7" />
                     <path d={arcPath(150, 190, 40, 30, 58)} fill="none" stroke="#b0483a" strokeWidth="7" />
                     <path d={arcPath(150, 190, 40, 85, 150)} fill="none" stroke="#5b64c7" strokeWidth="7" />
-                    <text x="150" y="194" textAnchor="middle" fontSize="10" fill="#13333a" fontWeight="700">
+                    <text x="150" y="194" textAnchor="middle" fontSize="15" fill="#13333a" fontWeight="700">
                       重组质粒
                     </text>
-                    <text x={218} y={176} fontSize="9.5" fill="#b06a17" fontWeight="600">
+                    <text x={218} y={176} fontSize="14.5" fill="#b06a17" fontWeight="600">
                       目的基因
                     </text>
-                    <text x={60} y={122} fontSize="9.5" fill="#2f7a4d" fontWeight="600">
+                    <text x={60} y={122} fontSize="14.5" fill="#2f7a4d" fontWeight="600">
                       启动子
                     </text>
-                    <text x={196} y={256} fontSize="9.5" fill="#b0483a" fontWeight="600">
+                    <text x={196} y={256} fontSize="14.5" fill="#b0483a" fontWeight="600">
                       终止子
                     </text>
-                    <text x={40} y={250} fontSize="9.5" fill="#5b64c7" fontWeight="600">
+                    <text x={40} y={250} fontSize="14.5" fill="#5b64c7" fontWeight="600">
                       标记基因
                     </text>
-                    <text x={330} y={230} fontSize="10.5" fill="#0a626a" fontWeight="600">
+                    <text x={330} y={230} fontSize="15" fill="#0a626a" fontWeight="600">
                       ✅ 基因表达载体
                     </text>
-                    <text x={330} y={246} fontSize="9.5" fill="#799398">
+                    <text x={330} y={246} fontSize="14.5" fill="#799398">
                       构建完成
                     </text>
                   </g>
                 ) : null}
-                <text x="220" y="288" textAnchor="middle" fontSize="9.5" fill="#799398">
+                <text x="220" y="288" textAnchor="middle" fontSize="14.5" fill="#799398">
                   {ligated
                     ? '连接酶缝合磷酸二酯键，环重新闭合'
                     : enzymeInfo.sticky
@@ -460,10 +460,10 @@ export function GeneEngineLab() {
                     <rect x="270" y="70" width="140" height="130" rx="18" fill="#f2f6ee" stroke="#6b8f5e" strokeWidth="4" />
                     <rect x="277" y="77" width="126" height="116" rx="14" fill="none" stroke="#9dbf8e" strokeWidth="1.5" />
                     <circle cx="340" cy="140" r="27" fill="#a97fb526" stroke="#8a5a8f" strokeWidth="2" />
-                    <text x="340" y="144" textAnchor="middle" fontSize="9" fill="#8a5a8f">
+                    <text x="340" y="144" textAnchor="middle" fontSize="14" fill="#8a5a8f">
                       细胞核
                     </text>
-                    <text x="340" y="220" textAnchor="middle" fontSize="10" fill="#4b6c73" fontWeight="600">
+                    <text x="340" y="220" textAnchor="middle" fontSize="15" fill="#4b6c73" fontWeight="600">
                       棉花叶肉细胞
                     </text>
                     {/* 农杆菌 */}
@@ -476,19 +476,19 @@ export function GeneEngineLab() {
                     >
                       <rect x="70" y="96" width="76" height="26" rx="13" fill="#38a169" />
                       <circle cx="104" cy="109" r="8" fill="none" stroke="#f4d06a" strokeWidth="2.5" />
-                      <text x="70" y="86" fontSize="9.5" fill="#2f7a4d" fontWeight="600">
+                      <text x="70" y="86" fontSize="14.5" fill="#2f7a4d" fontWeight="600">
                         农杆菌（含 Ti 质粒）
                       </text>
                     </g>
                     {imported ? (
                       <g className="bio-fade" style={{ animationDelay: '1.9s' }}>
                         <circle cx="340" cy="140" r="7" fill="#e6913c" />
-                        <text x="340" y="166" textAnchor="middle" fontSize="9" fill="#b06a17" fontWeight="600">
+                        <text x="340" y="166" textAnchor="middle" fontSize="14" fill="#b06a17" fontWeight="600">
                           T-DNA 整合
                         </text>
                       </g>
                     ) : null}
-                    <text x="150" y="240" fontSize="9.5" fill="#799398">
+                    <text x="150" y="240" fontSize="14.5" fill="#799398">
                       {imported ? 'T-DNA 携带目的基因整合到棉花细胞染色体 DNA 上' : '点击「导入」，农杆菌感染细胞并转移 T-DNA'}
                     </text>
                   </g>
@@ -506,19 +506,19 @@ export function GeneEngineLab() {
                         ) : null}
                       </g>
                     ))}
-                    <text x="335" y="240" textAnchor="middle" fontSize="10" fill="#4b6c73" fontWeight="600">
+                    <text x="335" y="240" textAnchor="middle" fontSize="15" fill="#4b6c73" fontWeight="600">
                       Ca²⁺ 处理后的大肠杆菌（感受态）
                     </text>
                     <g style={imported ? { transform: 'translate(150px, 20px)', transition: 'transform 1.4s ease-in-out' } : { transform: 'none' }}>
                       <circle cx="120" cy="140" r="13" fill="none" stroke="#e6913c" strokeWidth="4" />
-                      <text x="120" y="120" textAnchor="middle" fontSize="9.5" fill="#b06a17" fontWeight="600">
+                      <text x="120" y="120" textAnchor="middle" fontSize="14.5" fill="#b06a17" fontWeight="600">
                         重组质粒
                       </text>
                     </g>
-                    <text x="150" y="240" fontSize="9.5" fill="#799398">
+                    <text x="150" y="240" fontSize="14.5" fill="#799398">
                       {imported ? '感受态细胞吸收周围环境中的重组质粒' : '点击「导入」，重组质粒被感受态细胞吸收'}
                     </text>
-                    <text x="205" y="170" fontSize="13" fill="#5b64c7" fontWeight="700" className={imported ? 'opacity-40' : ''}>
+                    <text x="205" y="170" fontSize="15" fill="#5b64c7" fontWeight="700" className={imported ? 'opacity-40' : ''}>
                       Ca²⁺
                     </text>
                   </g>
@@ -526,7 +526,7 @@ export function GeneEngineLab() {
                   <g>
                     <circle cx="330" cy="150" r="56" fill="#fbdce3" stroke="#d98a99" strokeWidth="3" />
                     <circle cx="330" cy="150" r="24" fill="#a97fb526" stroke="#8a5a8f" strokeWidth="2" />
-                    <text x="330" y="226" textAnchor="middle" fontSize="10" fill="#4b6c73" fontWeight="600">
+                    <text x="330" y="226" textAnchor="middle" fontSize="15" fill="#4b6c73" fontWeight="600">
                       动物受精卵
                     </text>
                     <g
@@ -537,14 +537,14 @@ export function GeneEngineLab() {
                       }
                     >
                       <path d="M300 30 L312 30 L309 130 L303 130 Z" fill="#c4d6da" stroke="#8aa7ad" strokeWidth="1.5" />
-                      <text x="306" y="24" textAnchor="middle" fontSize="9.5" fill="#4b6c73" fontWeight="600">
+                      <text x="306" y="24" textAnchor="middle" fontSize="14.5" fill="#4b6c73" fontWeight="600">
                         显微注射针
                       </text>
                     </g>
                     {imported ? (
                       <circle cx="330" cy="128" r="8" fill="none" stroke="#e6913c" strokeWidth="3.5" className="bio-fade" style={{ animationDelay: '1.4s' }} />
                     ) : null}
-                    <text x="150" y="240" fontSize="9.5" fill="#799398">
+                    <text x="150" y="240" fontSize="14.5" fill="#799398">
                       {imported ? '重组 DNA 已被直接注入受精卵中' : '点击「导入」，显微注射针将重组 DNA 注入受精卵'}
                     </text>
                   </g>
@@ -555,7 +555,7 @@ export function GeneEngineLab() {
             {/* ============ 第四步：检测与鉴定 ============ */}
             {step === 3 ? (
               <g>
-                <text x="220" y="34" textAnchor="middle" fontSize="11" fill="#4b6c73" fontWeight="600">
+                <text x="220" y="34" textAnchor="middle" fontSize="15" fill="#4b6c73" fontWeight="600">
                   {molecular && individual
                     ? '两级检测全部通过 🎉'
                     : molecular
@@ -567,7 +567,7 @@ export function GeneEngineLab() {
                 {molecular ? (
                   <g>
                     <rect x="30" y="56" width="150" height="130" rx="8" fill="#10262c" />
-                    <text x="105" y="76" textAnchor="middle" fontSize="9.5" fill="#9fc6cf">
+                    <text x="105" y="76" textAnchor="middle" fontSize="14.5" fill="#9fc6cf">
                       DNA 分子杂交膜
                     </text>
                     {[92, 130, 162].map((bandY, index) => (
@@ -585,7 +585,7 @@ export function GeneEngineLab() {
                       />
                     ))}
                     {molecular ? (
-                      <text x="105" y="152" textAnchor="middle" fontSize="9" fill="#f4d06a" fontWeight="700" className="bio-fade" style={{ animationDelay: '1.3s' }}>
+                      <text x="105" y="152" textAnchor="middle" fontSize="14" fill="#f4d06a" fontWeight="700" className="bio-fade" style={{ animationDelay: '1.3s' }}>
                         ✳ 探针结合 → 杂交带
                       </text>
                     ) : null}
@@ -600,7 +600,7 @@ export function GeneEngineLab() {
                       {[[-6, 34], [12, 44], [24, 30]].map(([hx, hy], index) => (
                         <circle key={index} cx={hx} cy={hy} r="5" fill="#f2fafa" className="bio-fade" style={{ animationDelay: `${0.6 + index * 0.5}s` }} />
                       ))}
-                      <text x="2" y="100" textAnchor="middle" fontSize="9.5" fill="#4b6c73" fontWeight="600">
+                      <text x="2" y="100" textAnchor="middle" fontSize="14.5" fill="#4b6c73" fontWeight="600">
                         正常棉叶（对照）
                       </text>
                     </g>
@@ -608,7 +608,7 @@ export function GeneEngineLab() {
                     <g transform={molecular ? 'translate(402 66) scale(0.82)' : 'translate(365 70)'}>
                       <path d="M20 10 C -10 -6, -44 14, -34 46 C -26 72, 16 80, 36 54 C 50 32, 46 14, 20 10 Z" fill="#dff0d2" stroke="#3f7f4f" strokeWidth="3" />
                       <path d="M14 16 L 2 52 M2 52 L -16 40 M2 52 L 20 38" stroke="#8fae7c" strokeWidth="1.5" fill="none" />
-                      <text x="2" y="100" textAnchor="middle" fontSize="9.5" fill="#2f7a4d" fontWeight="600">
+                      <text x="2" y="100" textAnchor="middle" fontSize="14.5" fill="#2f7a4d" fontWeight="600">
                         转基因棉叶 ✓
                       </text>
                     </g>
@@ -619,7 +619,7 @@ export function GeneEngineLab() {
                   </g>
                 ) : null}
                 {!molecular && !individual ? (
-                  <text x="220" y="170" textAnchor="middle" fontSize="10.5" fill="#799398">
+                  <text x="220" y="170" textAnchor="middle" fontSize="15" fill="#799398">
                     分子水平确认「基因进去了」；个体水平确认「性状表达出来了」
                   </text>
                 ) : null}

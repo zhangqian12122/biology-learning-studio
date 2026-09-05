@@ -95,7 +95,7 @@ export function PhotosynthesisLab() {
                 ))}
               </g>
             ))}
-            <text x="540" y="228" fontSize="12" fill="#4c7a51" fontWeight="600">
+            <text x="540" y="228" fontSize="17" fill="#4c7a51" fontWeight="600">
               叶绿体
             </text>
           </svg>

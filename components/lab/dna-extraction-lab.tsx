@@ -211,7 +211,7 @@ export function DnaExtractLab() {
                   ].map(([cx, cy, rx, ry], index) => (
                     <ellipse key={index} cx={cx} cy={cy} rx={rx} ry={ry} fill="#7fae6c" stroke="#5f8f4e" strokeWidth="1.5" />
                   ))}
-                  <text x="120" y="196" textAnchor="middle" fontSize="9.5" fill="#5f8f4e" fontWeight="600">
+                  <text x="120" y="196" textAnchor="middle" fontSize="14.5" fill="#5f8f4e" fontWeight="600">
                     洋葱碎块
                   </text>
                 </g>
@@ -222,14 +222,14 @@ export function DnaExtractLab() {
                   {[70, 95, 120, 145, 168].map((cx, index) => (
                     <circle key={cx} cx={cx} cy={168 + (index % 2) * 12} r="4" fill="#ffffff" opacity="0.7" className="bio-boil" style={{ animationDelay: `${index * 0.4}s`, animationDuration: '2.6s' }} />
                   ))}
-                  <text x="120" y="200" textAnchor="middle" fontSize="9.5" fill="#6d7d5e" fontWeight="600">
+                  <text x="120" y="200" textAnchor="middle" fontSize="14.5" fill="#6d7d5e" fontWeight="600">
                     浑浊研磨液（DNA 已溶解）
                   </text>
                 </g>
               ) : null}
               {/* 阶段三起：澄清滤液 */}
               {step >= 2 ? (
-                <text x="120" y="236" textAnchor="middle" fontSize="9.5" fill="#799398">
+                <text x="120" y="236" textAnchor="middle" fontSize="14.5" fill="#799398">
                   {step === 2 ? '滤液（2 mol/L NaCl，含 DNA）' : '加入蒸馏水后 → 0.14 mol/L'}
                 </text>
               ) : null}
@@ -239,7 +239,7 @@ export function DnaExtractLab() {
                   <g className="bio-fade">
                     <path d="M120 150 C 150 165, 92 180, 122 196 C 150 210, 96 222, 124 234" stroke="#ffffff" strokeWidth="3.5" fill="none" strokeLinecap="round" />
                     <path d="M112 152 C 142 168, 86 184, 116 198" stroke="#f0f5f2" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                    <text x="120" y="142" textAnchor="middle" fontSize="9.5" fill="#4b6c73" fontWeight="600">
+                    <text x="120" y="142" textAnchor="middle" fontSize="14.5" fill="#4b6c73" fontWeight="600">
                       ✨ 白色丝状物（DNA）
                     </text>
                   </g>
@@ -255,7 +255,7 @@ export function DnaExtractLab() {
                     ].map(([x1, y1, rot], index) => (
                       <line key={index} x1={x1} y1={y1} x2={x1 + 20} y2={y1 - 4} stroke="#ffffff" strokeWidth="3" strokeLinecap="round" transform={`rotate(${rot} ${x1} ${y1})`} />
                     ))}
-                    <text x="120" y="152" textAnchor="middle" fontSize="9.5" fill="#b0483a" fontWeight="600">
+                    <text x="120" y="152" textAnchor="middle" fontSize="14.5" fill="#b0483a" fontWeight="600">
                       ⚠ 长链被打断，丝状物碎散
                     </text>
                   </g>
@@ -267,7 +267,7 @@ export function DnaExtractLab() {
             {step === 3 ? (
               <g className="bio-fade">
                 <path d="M232 96 Q 200 108 176 136" stroke="#9fc6cf" strokeWidth="5" fill="none" strokeLinecap="round" strokeDasharray="1 9" />
-                <text x="248" y="100" fontSize="10" fill="#3f7183" fontWeight="600">
+                <text x="248" y="100" fontSize="15" fill="#3f7183" fontWeight="600">
                   蒸馏水 ×2 体积
                 </text>
               </g>
@@ -280,7 +280,7 @@ export function DnaExtractLab() {
                 {step >= 3 && stirMode === 'slow' ? (
                   <path d="M176 168 C 196 176, 210 186, 202 200" stroke="#ffffff" strokeWidth="3" fill="none" strokeLinecap="round" />
                 ) : null}
-                <text x="214" y="128" fontSize="9" fill="#4b6c73">
+                <text x="214" y="128" fontSize="14" fill="#4b6c73">
                   玻璃棒
                 </text>
               </g>
@@ -300,7 +300,7 @@ export function DnaExtractLab() {
                   <circle key={cx} cx={cx} cy="232" r="2.6" fill="#ffffff" opacity="0.9" className="bio-boil" style={{ animationDelay: `${index * 0.45}s`, animationDuration: '1.5s' }} />
                 ))}
                 <rect x="296" y="176" width="80" height="64" rx="6" fill="none" stroke="#7fa9bb" strokeWidth="2.5" />
-                <text x="336" y="252" textAnchor="middle" fontSize="9.5" fill="#3f7183">
+                <text x="336" y="252" textAnchor="middle" fontSize="14.5" fill="#3f7183">
                   沸水浴约 5 min
                 </text>
                 {/* 试管 */}
@@ -318,10 +318,10 @@ export function DnaExtractLab() {
                     style={{ animationDelay: '1.2s', animationDuration: '2.4s' }}
                   />
                 </g>
-                <text x="336" y="106" textAnchor="middle" fontSize="9.5" fill="#4b6c73" fontWeight="600">
+                <text x="336" y="106" textAnchor="middle" fontSize="14.5" fill="#4b6c73" fontWeight="600">
                   二苯胺试剂 + 丝状物
                 </text>
-                <text x="336" y="92" textAnchor="middle" fontSize="11" fill="#2b5d94" fontWeight="700" className="bio-fade" style={{ animationDelay: '2.2s' }}>
+                <text x="336" y="92" textAnchor="middle" fontSize="15" fill="#2b5d94" fontWeight="700" className="bio-fade" style={{ animationDelay: '2.2s' }}>
                   变蓝 → 含 DNA ✅
                 </text>
               </g>
@@ -329,29 +329,29 @@ export function DnaExtractLab() {
               <g>
                 {/* 阶段道具：洗涤剂与食盐 */}
                 <rect x="250" y="150" width="44" height="66" rx="8" fill="#e9f4f7" stroke="#8aa7ad" strokeWidth="2" />
-                <text x="272" y="180" textAnchor="middle" fontSize="9" fill="#4b6c73">
+                <text x="272" y="180" textAnchor="middle" fontSize="14" fill="#4b6c73">
                   洗涤剂
                 </text>
-                <text x="272" y="194" textAnchor="middle" fontSize="8" fill="#799398">
+                <text x="272" y="194" textAnchor="middle" fontSize="14" fill="#799398">
                   溶解细胞膜
                 </text>
                 <rect x="322" y="158" width="48" height="58" rx="6" fill="#fdf6e4" stroke="#c9ab5f" strokeWidth="2" />
-                <text x="346" y="184" textAnchor="middle" fontSize="9" fill="#8a671b">
+                <text x="346" y="184" textAnchor="middle" fontSize="14" fill="#8a671b">
                   食盐 NaCl
                 </text>
-                <text x="346" y="198" textAnchor="middle" fontSize="8" fill="#a9894a">
+                <text x="346" y="198" textAnchor="middle" fontSize="14" fill="#a9894a">
                   2 mol/L 溶解 DNA
                 </text>
                 {step === 0 ? (
-                  <text x="316" y="248" textAnchor="middle" fontSize="9.5" fill="#799398">
+                  <text x="316" y="248" textAnchor="middle" fontSize="14.5" fill="#799398">
                     点「① 研磨」开始实验
                   </text>
                 ) : step === 1 ? (
-                  <text x="316" y="248" textAnchor="middle" fontSize="9.5" fill="#799398">
+                  <text x="316" y="248" textAnchor="middle" fontSize="14.5" fill="#799398">
                     准备尼龙布过滤
                   </text>
                 ) : (
-                  <text x="316" y="248" textAnchor="middle" fontSize="9.5" fill="#799398">
+                  <text x="316" y="248" textAnchor="middle" fontSize="14.5" fill="#799398">
                     盐浓度降低 → DNA 析出
                   </text>
                 )}

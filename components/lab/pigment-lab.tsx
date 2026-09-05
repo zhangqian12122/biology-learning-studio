@@ -177,11 +177,11 @@ export function PigmentLab() {
                 <rect x="204" y="30" width="12" height="86" rx="6" fill="#c4d6da" stroke="#8aa7ad" strokeWidth="2" />
                 <circle cx="210" cy="28" r="9" fill="#c4d6da" stroke="#8aa7ad" strokeWidth="2" />
               </g>
-              <text x="210" y="216" textAnchor="middle" fontSize="11" fill="#4b6c73" fontWeight="600">
+              <text x="210" y="216" textAnchor="middle" fontSize="15" fill="#4b6c73" fontWeight="600">
                 菠菜叶碎 + SiO₂ + {addedCaco3 ? 'CaCO₃' : '（漏加 CaCO₃！）'} + 无水乙醇
               </text>
               {!addedCaco3 ? (
-                <text x="210" y="232" textAnchor="middle" fontSize="10" fill="#b0483a">
+                <text x="210" y="232" textAnchor="middle" fontSize="15" fill="#b0483a">
                   有机酸将破坏叶绿素 → 滤液偏黄褐
                 </text>
               ) : null}
@@ -202,7 +202,7 @@ export function PigmentLab() {
                 style={{ transition: 'opacity 1.2s ease', opacity: step >= 2 ? 0.95 : 0 }}
               />
               {step >= 2 ? (
-                <text x="142" y={SOLVENT_Y + 14} fontSize="9" fill="#3f7183">
+                <text x="142" y={SOLVENT_Y + 14} fontSize="14" fill="#3f7183">
                   层析液
                 </text>
               ) : null}
@@ -252,7 +252,7 @@ export function PigmentLab() {
               {step >= 2 ? (
                 <g className="bio-fade" style={{ animationDelay: '6.4s' }}>
                   <line x1="170" y1="52" x2="250" y2="52" stroke="#7fa9bb" strokeWidth="1.5" strokeDasharray="5 4" />
-                  <text x="256" y="55" fontSize="9" fill="#3f7183">
+                  <text x="256" y="55" fontSize="14" fill="#3f7183">
                     层析液前沿
                   </text>
                 </g>
@@ -265,7 +265,7 @@ export function PigmentLab() {
                       key={band.name}
                       x="252"
                       y={BASELINE_Y - band.rise + band.height / 2 + 3}
-                      fontSize="9.5"
+                      fontSize="14.5"
                       fill={(!addedCaco3 && index >= 2) ? '#a89a5a' : '#4b6c73'}
                       className="bio-fade"
                       style={{ animationDelay: `${6.2 + index * 0.12}s` }}
@@ -276,13 +276,13 @@ export function PigmentLab() {
                 : null}
 
               {/* 步骤提示 */}
-              <text x="40" y="80" fontSize="11" fill="#4b6c73" fontWeight="600">
+              <text x="40" y="80" fontSize="15" fill="#4b6c73" fontWeight="600">
                 {step === 1 ? '滤液细线：细 · 直 · 齐' : '色素带分离完成'}
               </text>
-              <text x="40" y="98" fontSize="9.5" fill="#799398">
+              <text x="40" y="98" fontSize="14.5" fill="#799398">
                 {step === 1 ? `已画 ${lineCount} 次，干燥后再重复` : '自上而下：溶解度依次降低'}
               </text>
-              <text x="40" y="170" fontSize="9.5" fill="#b0483a">
+              <text x="40" y="170" fontSize="14.5" fill="#b0483a">
                 层析液液面低于细线
               </text>
             </svg>
