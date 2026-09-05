@@ -1,0 +1,856 @@
+'use client';
+
+import type { ComponentType } from 'react';
+
+import {
+  AnimalCellWebGLModel,
+  EColiWebGLModel,
+  ParameciumWebGLModel,
+  PlantCellWebGLModel,
+  StomaWebGLModel,
+} from '@/components/cells/cell-models-webgl';
+import { Chloroplast3d } from '@/components/cells/chloroplast-3d';
+import { ChloroplastWebGLModel, MitochondrionWebGLModel } from '@/components/cells/organelle-webgl';
+import { Mitochondrion3d } from '@/components/cells/mitochondrion-3d';
+
+export type CellPart = {
+  name: string;
+  desc: string;
+};
+
+export type Specimen = {
+  id: string;
+  name: string;
+  kicker: string;
+  intro: string;
+  parts: CellPart[];
+  Svg: ComponentType<{ active: number | null; open?: boolean }>;
+  /** 立体剖面（SVG 伪 3D，默认展示，所有角度都清晰） */
+  Stage3d?: ComponentType<{ active: number | null; open?: boolean }>;
+  /** 实景 3D（three.js 渲染，可自由旋转缩放，按需加载） */
+  StageWebGL?: ComponentType<{ active: number | null; open?: boolean }>;
+};
+
+/** 选中结构高亮：未选中的整体调淡。 */
+function dim(active: number | null, idx: number) {
+  return { opacity: active == null || active === idx ? 1 : 0.24, transition: 'opacity 0.25s ease' };
+}
+
+/** 编号圆标。 */
+function Badge({ n, x, y }: { n: number; x: number; y: number }) {
+  return (
+    <g style={{ pointerEvents: 'none' }}>
+      <circle cx={x} cy={y} r="9.5" fill="#0e6f75" stroke="#ffffff" strokeWidth="2" />
+      <text x={x} y={y + 3.5} textAnchor="middle" fontSize="10.5" fill="#ffffff" fontWeight="700">
+        {n}
+      </text>
+    </g>
+  );
+}
+
+/* ================= 动物细胞 ================= */
+
+function AnimalCellSvg({ active }: { active: number | null; open?: boolean }) {
+  const ribosomes: [number, number][] = [
+    [310, 130], [330, 145], [296, 160], [345, 170], [320, 185], [355, 150],
+    [130, 220], [150, 240], [120, 260], [165, 262], [250, 310], [280, 320],
+    [330, 300], [230, 120], [255, 105],
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 细胞膜 + 细胞质 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="260" cy="195" rx="216" ry="162" fill="#f4f8ef" stroke="#4a7a6a" strokeWidth="3.5" />
+      </g>
+      <g style={dim(active, 1)}>
+        <text x="112" y="332" fontSize="11" fill="#6d8a70" fontWeight="600">细胞质（胶状基质）</text>
+      </g>
+
+      {/* 细胞核 */}
+      <g style={dim(active, 2)}>
+        <circle cx="185" cy="150" r="56" fill="#e9def3" stroke="#8a5a8f" strokeWidth="3" />
+        <circle cx="185" cy="140" r="15" fill="#8a5a8f" />
+        <path d="M150 178 q 15 -12 30 0 q 15 12 30 0" stroke="#a97fb5" strokeWidth="2.5" fill="none" />
+        <path d="M155 192 q 14 -10 28 0 q 14 10 28 0" stroke="#a97fb5" strokeWidth="2.5" fill="none" />
+        <path d="M170 120 q 12 -9 24 0" stroke="#a97fb5" strokeWidth="2" fill="none" />
+        <text x="185" y="225" textAnchor="middle" fontSize="10.5" fill="#7a5a92" fontWeight="600">细胞核</text>
+      </g>
+
+      {/* 线粒体 ×2（立体剖面迷你版） */}
+      <g style={dim(active, 3)}>
+        <MiniMito cx={365} cy={115} rx={42} ry={23} rotate={-18} />
+        <MiniMito cx={142} cy={286} rx={35} ry={19} rotate={14} />
+      </g>
+
+      {/* 内质网（粗面） */}
+      <g style={dim(active, 5)}>
+        <path d="M252 128 C 300 122, 326 150, 306 178 C 290 200, 308 224, 336 232" stroke="#7fa6bd" strokeWidth="3" fill="none" />
+        <path d="M260 142 C 300 138, 318 158, 302 182" stroke="#7fa6bd" strokeWidth="3" fill="none" />
+        <path d="M262 156 C 296 152, 310 166, 298 186" stroke="#7fa6bd" strokeWidth="3" fill="none" />
+        {[[292, 150], [308, 168], [288, 174], [318, 226], [302, 214]].map(([x, y]) => (
+          <circle key={`${x}-${y}`} cx={x} cy={y} r="3" fill="#4a7a6a" />
+        ))}
+        <text x="322" y="206" fontSize="10" fill="#4b7a91" fontWeight="600">内质网</text>
+      </g>
+
+      {/* 核糖体 */}
+      <g style={dim(active, 4)}>
+        {ribosomes.map(([x, y]) => (
+          <circle key={`${x}-${y}`} cx={x} cy={y} r="2.6" fill="#3f6b74" />
+        ))}
+      </g>
+
+      {/* 高尔基体 */}
+      <g style={dim(active, 6)}>
+        <path d="M368 240 Q 398 228 426 244" stroke="#b06a17" strokeWidth="3" fill="none" />
+        <path d="M366 252 Q 400 241 430 258" stroke="#b06a17" strokeWidth="3" fill="none" />
+        <path d="M368 264 Q 402 255 428 271" stroke="#b06a17" strokeWidth="3" fill="none" />
+        <circle cx="366" cy="278" r="4" fill="none" stroke="#b06a17" strokeWidth="2" />
+        <circle cx="436" cy="248" r="4" fill="none" stroke="#b06a17" strokeWidth="2" />
+        <text x="398" y="290" textAnchor="middle" fontSize="10" fill="#8a5a1b" fontWeight="600">高尔基体</text>
+      </g>
+
+      {/* 中心体 */}
+      <g style={dim(active, 7)}>
+        <rect x="288" y="296" width="16" height="6" rx="2" fill="none" stroke="#4b6c73" strokeWidth="2" />
+        <rect x="293" y="291" width="6" height="16" rx="2" fill="none" stroke="#4b6c73" strokeWidth="2" />
+        <text x="296" y="326" textAnchor="middle" fontSize="10" fill="#4b6c73" fontWeight="600">中心体</text>
+      </g>
+
+      {/* 溶酶体 */}
+      <g style={dim(active, 8)}>
+        <circle cx="436" cy="148" r="15" fill="#f0d5d5" stroke="#b0483a" strokeWidth="2.5" />
+        <circle cx="431" cy="144" r="2.4" fill="#b0483a" />
+        <circle cx="440" cy="152" r="2.4" fill="#b0483a" />
+        <circle cx="434" cy="155" r="2.4" fill="#b0483a" />
+        <text x="436" y="180" textAnchor="middle" fontSize="10" fill="#b0483a" fontWeight="600">溶酶体</text>
+      </g>
+
+      <Badge n={1} x={52} y={196} />
+      <Badge n={2} x={112} y={312} />
+      <Badge n={3} x={185} y={78} />
+      <Badge n={4} x={378} y={86} />
+      <Badge n={5} x={346} y={116} />
+      <Badge n={6} x={266} y={118} />
+      <Badge n={7} x={398} y={222} />
+      <Badge n={8} x={296} y={280} />
+      <Badge n={9} x={436} y={118} />
+    </svg>
+  );
+}
+
+/* ================= 植物细胞 ================= */
+
+function PlantCellSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 细胞壁 */}
+      <g style={dim(active, 0)}>
+        <rect x="46" y="44" width="428" height="292" rx="22" fill="#f2f7ec" stroke="#6b8f5e" strokeWidth="6" />
+      </g>
+      {/* 细胞膜 */}
+      <g style={dim(active, 1)}>
+        <rect x="58" y="56" width="404" height="268" rx="16" fill="none" stroke="#4a7a6a" strokeWidth="2.5" />
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="92" y="308" fontSize="11" fill="#6d8a70" fontWeight="600">细胞质</text>
+      </g>
+
+      {/* 大液泡 */}
+      <g style={dim(active, 5)}>
+        <path d="M240 92 C 320 84, 420 120, 432 190 C 442 252, 386 300, 306 300 C 250 300, 226 262, 232 210 C 236 160, 210 100, 240 92 Z" fill="#dcebf7" stroke="#7fa9bb" strokeWidth="3" />
+        <text x="330" y="205" textAnchor="middle" fontSize="12" fill="#4b7a91" fontWeight="600">大液泡</text>
+        <text x="330" y="222" textAnchor="middle" fontSize="9.5" fill="#7fa9bb">细胞液（含糖类、无机盐、色素等）</text>
+      </g>
+
+      {/* 细胞核 */}
+      <g style={dim(active, 3)}>
+        <circle cx="152" cy="212" r="46" fill="#e9def3" stroke="#8a5a8f" strokeWidth="3" />
+        <circle cx="152" cy="204" r="12" fill="#8a5a8f" />
+        <path d="M126 230 q 12 -9 24 0 q 12 9 24 0" stroke="#a97fb5" strokeWidth="2.2" fill="none" />
+        <text x="152" y="274" textAnchor="middle" fontSize="10.5" fill="#7a5a92" fontWeight="600">细胞核</text>
+      </g>
+
+      {/* 叶绿体 ×3 */}
+      <g style={dim(active, 4)}>
+        {[
+          { x: 130, y: 100, r: -14 },
+          { x: 232, y: 88, r: 8 },
+          { x: 396, y: 92, r: -6 },
+        ].map((c, index) => (
+          <g key={index} transform={`rotate(${c.r} ${c.x} ${c.y})`}>
+            <ellipse cx={c.x} cy={c.y} rx="27" ry="15" fill="#5f9e57" stroke="#2f6b42" strokeWidth="2.5" />
+            {[[c.x - 12, c.y - 3], [c.x + 2, c.y + 3], [c.x + 13, c.y - 2]].map(([gx, gy], gi) => (
+              <circle key={gi} cx={gx} cy={gy} r="3.4" fill="#2f6b42" />
+            ))}
+          </g>
+        ))}
+        <text x="185" y="66" fontSize="10.5" fill="#2f6b42" fontWeight="600">叶绿体（含基粒）</text>
+      </g>
+
+      {/* 线粒体（立体剖面迷你版） */}
+      <g style={dim(active, 6)}>
+        <MiniMito cx={300} cy={322} rx={34} ry={17} rotate={12} />
+      </g>
+
+      <Badge n={1} x={260} y={30} />
+      <Badge n={2} x={330} y={30} />
+      <Badge n={3} x={152} y={150} />
+      <Badge n={4} x={160} y={66} />
+      <Badge n={5} x={330} y={168} />
+      <Badge n={6} x={240} y={332} />
+      <Badge n={7} x={80} y={266} />
+      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">植物细胞模式图（平面）</text>
+    </svg>
+  );
+}
+
+/* ================= 叶绿体 ================= */
+
+function ChloroplastSvg({ active }: { active: number | null; open?: boolean }) {
+  const grana = [
+    { x: 168, y: 132 },
+    { x: 330, y: 112 },
+    { x: 185, y: 244 },
+    { x: 348, y: 232 },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 外膜 / 内膜 / 基质 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="260" cy="190" rx="206" ry="126" fill="#eaf4e2" stroke="#2f6b42" strokeWidth="3.5" />
+      </g>
+      <g style={dim(active, 1)}>
+        <ellipse cx="260" cy="190" rx="192" ry="112" fill="#dff0d2" stroke="#5f9e57" strokeWidth="2.5" />
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="260" y="308" textAnchor="middle" fontSize="10.5" fill="#3f7f4f" fontWeight="600">基质（暗反应场所）</text>
+      </g>
+
+      {/* 基质类囊体（连丝） */}
+      <g style={dim(active, 4)}>
+        <path d="M192 138 C 240 122, 280 116, 306 116" stroke="#5f9e57" strokeWidth="2.5" fill="none" />
+        <path d="M209 250 C 250 262, 300 252, 324 238" stroke="#5f9e57" strokeWidth="2.5" fill="none" />
+        <path d="M178 158 C 176 196, 178 216, 182 224" stroke="#5f9e57" strokeWidth="2.5" fill="none" />
+      </g>
+
+      {/* 基粒（类囊体堆叠） */}
+      <g style={dim(active, 3)}>
+        {grana.map((g, index) => (
+          <g key={index}>
+            {[0, 1, 2, 3, 4].map((i) => (
+              <ellipse key={i} cx={g.x} cy={g.y + i * 10} rx="26" ry="5.5" fill="#4c8f5f" stroke="#2f6b42" strokeWidth="1.8" />
+            ))}
+          </g>
+        ))}
+        <text x="352" y="178" textAnchor="middle" fontSize="10.5" fill="#2f6b42" fontWeight="600">基粒（类囊体堆叠）</text>
+        <text x="352" y="192" textAnchor="middle" fontSize="9" fill="#3f7f4f">光反应在类囊体薄膜上进行</text>
+      </g>
+
+      {/* DNA 与核糖体 */}
+      <g style={dim(active, 5)}>
+        <circle cx="262" cy="188" r="13" fill="none" stroke="#8a5a8f" strokeWidth="2.5" strokeDasharray="5 3" />
+        <text x="262" y="192" textAnchor="middle" fontSize="8" fill="#8a5a8f">DNA</text>
+        {[[246, 214], [282, 214], [262, 232], [238, 176], [288, 172]].map(([x, y]) => (
+          <circle key={`${x}-${y}`} cx={x} cy={y} r="2.6" fill="#4b6c73" />
+        ))}
+      </g>
+
+      <Badge n={1} x={260} y={52} />
+      <Badge n={2} x={330} y={62} />
+      <Badge n={3} x={260} y={286} />
+      <Badge n={4} x={168} y={94} />
+      <Badge n={5} x={240} y={104} />
+      <Badge n={6} x={292} y={192} />
+      <text x="500" y="364" textAnchor="end" fontSize="9.5" fill="#799398">叶绿体剖面模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 线粒体 ================= */
+
+/** 迷你线粒体：细胞模式图内的小尺寸版本（青绿立体感 + 波浪嵴）。 */
+function MiniMito({ cx, cy, rx, ry, rotate = 0 }: { cx: number; cy: number; rx: number; ry: number; rotate?: number }) {
+  return (
+    <g transform={`rotate(${rotate} ${cx} ${cy})`}>
+      <ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill="#5fb3a1" stroke="#2f7d6d" strokeWidth="2.2" />
+      <ellipse cx={cx} cy={cy} rx={rx - 5} ry={ry - 4.5} fill="#c9eae2" />
+      <path
+        d={`M${cx - rx * 0.48} ${cy - ry * 0.52} C ${cx - rx * 0.28} ${cy - ry * 0.05}, ${cx - rx * 0.02} ${cy - ry * 0.02}, ${cx + rx * 0.14} ${cy - ry * 0.3}`}
+        stroke="#2f7d6d" strokeWidth="2.8" fill="none" strokeLinecap="round"
+      />
+      <path
+        d={`M${cx + rx * 0.48} ${cy + ry * 0.52} C ${cx + rx * 0.28} ${cy + ry * 0.05}, ${cx + rx * 0.02} ${cy + ry * 0.02}, ${cx - rx * 0.14} ${cy + ry * 0.3}`}
+        stroke="#2f7d6d" strokeWidth="2.8" fill="none" strokeLinecap="round"
+      />
+      <path
+        d={`M${cx - rx * 0.62} ${cy + ry * 0.3} q ${rx * 0.3} ${-ry * 0.34}, ${rx * 0.62} ${-ry * 0.1}`}
+        stroke="#2f7d6d" strokeWidth="2.4" fill="none" strokeLinecap="round" opacity="0.85"
+      />
+    </g>
+  );
+}
+
+function MitochondrionSvg({ active }: { active: number | null; open?: boolean }) {
+  // 参考教科书剖面：立体豆荚外形 + 切口露出基质，嵴为上下交错、较宽的指状折叠
+  const cristae = [
+    // 上方垂下的三个指状嵴
+    'M 196 116 C 200 148, 190 172, 202 196',
+    'M 262 106 C 262 134, 250 156, 262 180',
+    'M 318 128 C 312 152, 322 170, 314 192',
+    // 下方升起的三个指状嵴（与上方交错）
+    'M 182 262 C 186 234, 176 214, 188 192',
+    'M 258 276 C 258 250, 246 232, 258 210',
+    'M 330 258 C 324 236, 334 220, 326 200',
+    // 右侧切口边缘的短嵴
+    'M 374 216 C 360 208, 362 190, 372 180',
+  ];
+  const atpParticles: [number, number, number][] = [
+    // [x, y, 朝向]：分布在内膜内缘与嵴表面
+    [226, 112, -90], [296, 108, -90], [148, 162, 180], [130, 216, 180],
+    [224, 270, 90], [292, 276, 90], [384, 168, 0], [384, 212, 0],
+  ];
+  const porins: [number, number][] = [
+    [404, 120], [416, 142], [422, 168], [424, 196], [418, 226], [404, 252],
+    [386, 272], [128, 128], [112, 156], [104, 190], [110, 224], [124, 252],
+  ];
+  const ribosomes: [number, number][] = [
+    [296, 142], [342, 176], [346, 208], [300, 236], [226, 250], [168, 216],
+    [156, 172], [212, 236], [232, 132], [172, 132],
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <defs>
+        <linearGradient id="mito-body-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#7ccabb" />
+          <stop offset="100%" stopColor="#3f9484" />
+        </linearGradient>
+        <radialGradient id="mito-matrix-grad" cx="0.42" cy="0.4" r="0.75">
+          <stop offset="0%" stopColor="#dff4ee" />
+          <stop offset="100%" stopColor="#b9e2d7" />
+        </radialGradient>
+      </defs>
+
+      {/* 外膜：立体豆荚外形 */}
+      <g style={dim(active, 0)}>
+        <path
+          d="M 96 190 C 96 116, 168 76, 262 76 C 358 76, 428 118, 428 190 C 428 262, 356 304, 260 304 C 166 304, 96 262, 96 190 Z"
+          fill="url(#mito-body-grad)"
+          stroke="#2f7d6d"
+          strokeWidth="2.5"
+        />
+        {/* 顶部高光增强立体感 */}
+        <path d="M 150 106 C 200 84, 300 82, 352 98" stroke="#a8ded2" strokeWidth="7" fill="none" strokeLinecap="round" opacity="0.55" />
+        {/* 孔蛋白（外膜小点） */}
+        {porins.map(([x, y]) => (
+          <circle key={`${x}-${y}`} cx={x} cy={y} r="2" fill="#1f5a4e" opacity="0.5" />
+        ))}
+      </g>
+
+      {/* 基质（切口内部） */}
+      <g style={dim(active, 4)}>
+        <path
+          d="M 122 190 C 122 134, 180 102, 258 102 C 332 102, 390 136, 390 190 C 390 244, 330 278, 256 278 C 180 278, 122 246, 122 190 Z"
+          fill="url(#mito-matrix-grad)"
+        />
+      </g>
+
+      {/* 内膜：切口边缘的黄绿色亮线 */}
+      <g style={dim(active, 1)}>
+        <path
+          d="M 122 190 C 122 134, 180 102, 258 102 C 332 102, 390 136, 390 190 C 390 244, 330 278, 256 278 C 180 278, 122 246, 122 190 Z"
+          fill="none"
+          stroke="#b5d334"
+          strokeWidth="4.5"
+        />
+      </g>
+
+      {/* 膜间隙：内外膜之间的浅色窄环（用细描边示意） */}
+      <g style={dim(active, 3)}>
+        <path
+          d="M 108 190 C 108 110, 172 66, 262 66 C 366 66, 438 112, 438 190 C 438 268, 362 314, 258 314 C 168 314, 108 268, 108 190 Z"
+          fill="none"
+          stroke="#e8f5f0"
+          strokeWidth="10"
+          opacity="0.35"
+        />
+      </g>
+
+      {/* 嵴：内膜向基质折入的管状波浪 */}
+      <g style={dim(active, 2)}>
+        {cristae.map((d, index) => (
+          <g key={index}>
+            <path d={d} stroke="#2f7d6d" strokeWidth="16" fill="none" strokeLinecap="round" />
+            <path d={d} stroke="#5aab97" strokeWidth="8" fill="none" strokeLinecap="round" />
+            <path d={d} stroke="#8fd0bf" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.8" />
+          </g>
+        ))}
+        <line x1="392" y1="92" x2="304" y2="172" stroke="#2f7d6d" strokeWidth="1.4" />
+        <text x="512" y="88" textAnchor="end" fontSize="10.5" fill="#2f7d6d" fontWeight="700">嵴 = 内膜折叠</text>
+        <text x="512" y="102" textAnchor="end" fontSize="9" fill="#3f9484">管状折叠深入基质，多附呼吸酶</text>
+      </g>
+
+      {/* 基质内容物 */}
+      <g style={dim(active, 5)}>
+        {/* 环状 DNA */}
+        <circle cx="350" cy="128" r="9" fill="none" stroke="#e6913c" strokeWidth="2.6" />
+        <circle cx="166" cy="244" r="7" fill="none" stroke="#e6913c" strokeWidth="2.4" />
+        {/* 基质颗粒 */}
+        {[[338, 160], [348, 224], [186, 152]].map(([x, y]) => (
+          <circle key={`${x}-${y}`} cx={x} cy={y} r="4" fill="#e6913c" />
+        ))}
+      </g>
+      {/* 核糖体（小黑点） */}
+      <g style={dim(active, 6)}>
+        {ribosomes.map(([x, y]) => (
+          <circle key={`${x}-${y}`} cx={x} cy={y} r="1.9" fill="#1f5a4e" />
+        ))}
+      </g>
+
+      {/* ATP 合成酶：内膜/嵴表面的带柄颗粒 */}
+      <g style={dim(active, 7)}>
+        {atpParticles.map(([x, y, dir], index) => {
+          const rad = (dir * Math.PI) / 180;
+          const stem = 6;
+          return (
+            <g key={index}>
+              <line x1={x} y1={y} x2={x + Math.cos(rad) * stem} y2={y + Math.sin(rad) * stem} stroke="#e6913c" strokeWidth="2" />
+              <circle cx={x + Math.cos(rad) * stem} cy={y + Math.sin(rad) * stem} r="2.6" fill="#e6913c" />
+            </g>
+          );
+        })}
+      </g>
+
+      <Badge n={1} x={262} y={52} />
+      <Badge n={2} x={150} y={112} />
+      <Badge n={3} x={300} y={166} />
+      <Badge n={4} x={356} y={88} />
+      <Badge n={5} x={338} y={196} />
+      <Badge n={6} x={376} y={120} />
+      <Badge n={7} x={218} y={256} />
+      <Badge n={8} x={238} y={296} />
+      <text x="512" y="368" textAnchor="end" fontSize="9.5" fill="#799398">线粒体立体剖面模式图（有氧呼吸主要场所）</text>
+    </svg>
+  );
+}
+
+/* ================= 大肠杆菌 ================= */
+
+function EColiSvg({ active }: { active: number | null; open?: boolean }) {
+  const pili: { x1: number; y1: number; x2: number; y2: number }[] = [];
+  for (let i = 0; i < 7; i += 1) {
+    const t = Math.PI * (0.32 + (i / 6) * 0.36);
+    const x = 268 + 152 * Math.cos(t + Math.PI);
+    const y = 190 - 74 * Math.sin(t);
+    pili.push({ x1: x, y1: y, x2: x - 4, y2: y - 18 });
+  }
+  for (let i = 0; i < 7; i += 1) {
+    const t = Math.PI * (0.32 + (i / 6) * 0.36);
+    const x = 268 + 152 * Math.cos(t);
+    const y = 190 + 74 * Math.sin(t) - 6;
+    pili.push({ x1: x, y1: y, x2: x + 4, y2: y + 18 });
+  }
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 荚膜 */}
+      <g style={dim(active, 2)}>
+        <rect x="128" y="106" width="284" height="164" rx="82" fill="none" stroke="#9db8bd" strokeWidth="2.5" strokeDasharray="7 5" />
+      </g>
+      {/* 细胞壁 */}
+      <g style={dim(active, 3)}>
+        <rect x="138" y="116" width="264" height="144" rx="72" fill="#f2f6ee" stroke="#6b8f5e" strokeWidth="4" />
+      </g>
+      {/* 细胞膜 */}
+      <g style={dim(active, 4)}>
+        <rect x="146" y="124" width="248" height="128" rx="64" fill="none" stroke="#4a7a6a" strokeWidth="2.5" />
+      </g>
+
+      {/* 拟核 */}
+      <g style={dim(active, 5)}>
+        <path d="M228 170 C 252 148, 292 152, 296 178 C 300 200, 262 198, 268 216 C 274 232, 316 226, 312 202 C 309 186, 330 188, 328 172 C 326 156, 296 160, 290 168" stroke="#8a5a8f" strokeWidth="2.6" fill="none" />
+        <text x="272" y="252" textAnchor="middle" fontSize="10" fill="#7a5a92" fontWeight="600">拟核（DNA 集中区域，无核膜）</text>
+      </g>
+
+      {/* 质粒 */}
+      <g style={dim(active, 6)}>
+        <circle cx="196" cy="210" r="9" fill="none" stroke="#e6913c" strokeWidth="2.5" />
+        <circle cx="336" cy="152" r="7" fill="none" stroke="#e6913c" strokeWidth="2.5" />
+        <text x="196" y="236" textAnchor="middle" fontSize="9.5" fill="#b06a17" fontWeight="600">质粒</text>
+      </g>
+
+      {/* 核糖体 */}
+      <g style={dim(active, 7)}>
+        {[[180, 150], [214, 172], [248, 140], [310, 136], [352, 178], [322, 214], [232, 232], [362, 224], [200, 190]].map(([x, y]) => (
+          <circle key={`${x}-${y}`} cx={x} cy={y} r="2.8" fill="#4b6c73" />
+        ))}
+        <text x="408" y="230" fontSize="9.5" fill="#4b6c73" fontWeight="600">核糖体</text>
+      </g>
+
+      {/* 菌毛 */}
+      <g style={dim(active, 1)}>
+        {pili.map((p, index) => (
+          <line key={index} x1={p.x1} y1={p.y1} x2={p.x2} y2={p.y2} stroke="#799398" strokeWidth="2" strokeLinecap="round" />
+        ))}
+        <text x="82" y="128" fontSize="10" fill="#59767c" fontWeight="600">菌毛（短而多）</text>
+      </g>
+
+      {/* 鞭毛 */}
+      <g style={dim(active, 0)}>
+        <path
+          d="M400 168 q 26 -18 52 0 q 26 18 52 0 q 12 -8 16 -6"
+          stroke="#4b6c73" strokeWidth="2.6" fill="none" strokeLinecap="round"
+          className="bio-flagella" style={{ transformOrigin: '400px 168px' }}
+        />
+        <path
+          d="M400 208 q 26 18 52 0 q 26 -18 52 0 q 12 8 16 6"
+          stroke="#4b6c73" strokeWidth="2.6" fill="none" strokeLinecap="round"
+          className="bio-flagella" style={{ transformOrigin: '400px 208px', animationDelay: '0.4s' }}
+        />
+        <path
+          d="M136 196 q -22 14 -46 0 q -22 -14 -46 0"
+          stroke="#4b6c73" strokeWidth="2.6" fill="none" strokeLinecap="round"
+          className="bio-flagella" style={{ transformOrigin: '136px 196px', animationDelay: '0.8s' }}
+        />
+        <text x="428" y="140" fontSize="10" fill="#366169" fontWeight="600">鞭毛（长而少）</text>
+      </g>
+
+      <Badge n={1} x={472} y={160} />
+      <Badge n={2} x={88} y={100} />
+      <Badge n={3} x={270} y={98} />
+      <Badge n={4} x={270} y={126} />
+      <Badge n={5} x={270} y={290} />
+      <Badge n={6} x={272} y={172} />
+      <Badge n={7} x={196} y={190} />
+      <Badge n={8} x={336} y={132} />
+      <text x="500" y="364" textAnchor="end" fontSize="9.5" fill="#799398">大肠杆菌（原核细胞）结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 草履虫 ================= */
+
+function ParameciumSvg({ active }: { active: number | null; open?: boolean }) {
+  const cilia = Array.from({ length: 44 }, (_, i) => {
+    const t = (i / 44) * Math.PI * 2;
+    const cosT = Math.cos(t);
+    const sinT = Math.sin(t);
+    const x = 260 + 194 * cosT;
+    const y = 195 + 116 * sinT;
+    const len = Math.hypot(116 * cosT, 194 * sinT) || 1;
+    const nx = (116 * cosT) / len;
+    const ny = (194 * sinT) / len;
+    return { x1: x, y1: y, x2: x + nx * 15, y2: y + ny * 15, key: i };
+  });
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 表膜 + 纤毛 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="260" cy="195" rx="194" ry="116" fill="#eef2f8" stroke="#5b7f9e" strokeWidth="3.5" />
+      </g>
+      <g style={dim(active, 0)} className="bio-cilia">
+        {cilia.map((c) => (
+          <line key={c.key} x1={c.x1} y1={c.y1} x2={c.x2} y2={c.y2} stroke="#5b7f9e" strokeWidth="2" strokeLinecap="round" />
+        ))}
+      </g>
+
+      {/* 口沟 + 胞口 */}
+      <g style={dim(active, 2)}>
+        <path d="M446 128 C 396 136, 344 160, 302 190 L 306 214 C 350 186, 402 172, 448 172 Z" fill="#d7e3ef" stroke="#5b7f9e" strokeWidth="2" />
+        <text x="392" y="136" fontSize="10.5" fill="#366169" fontWeight="600">口沟</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <ellipse cx="306" cy="202" rx="7" ry="10" fill="#5b7f9e" transform="rotate(-24 306 202)" />
+        <text x="290" y="232" fontSize="9.5" fill="#366169" fontWeight="600">胞口</text>
+      </g>
+
+      {/* 食物泡 */}
+      <g style={dim(active, 4)}>
+        {[
+          { x: 240, y: 244, r: 14 },
+          { x: 198, y: 262, r: 11 },
+          { x: 282, y: 268, r: 12 },
+        ].map((v, index) => (
+          <g key={index}>
+            <circle cx={v.x} cy={v.y} r={v.r} fill="#f0d9a8" stroke="#b06a17" strokeWidth="2" />
+            <circle cx={v.x - v.r / 3} cy={v.y + 2} r="2.4" fill="#8a671b" />
+          </g>
+        ))}
+        <text x="240" y="298" textAnchor="middle" fontSize="10" fill="#8a671b" fontWeight="600">食物泡（随细胞质流动消化）</text>
+      </g>
+
+      {/* 伸缩泡 ×2 */}
+      <g style={dim(active, 5)}>
+        {[
+          { x: 148, y: 138, r: 16 },
+          { x: 372, y: 272, r: 14 },
+        ].map((v, index) => (
+          <g key={index}>
+            <circle cx={v.x} cy={v.y} r={v.r} fill="#dcebf7" stroke="#7fa9bb" strokeWidth="2.5" />
+            {[0, 60, 120, 180, 240, 300].map((deg) => {
+              const rad = (deg * Math.PI) / 180;
+              return (
+                <line
+                  key={deg}
+                  x1={v.x + Math.cos(rad) * v.r}
+                  y1={v.y + Math.sin(rad) * v.r}
+                  x2={v.x + Math.cos(rad) * (v.r + 13)}
+                  y2={v.y + Math.sin(rad) * (v.r + 13)}
+                  stroke="#7fa9bb"
+                  strokeWidth="2"
+                />
+              );
+            })}
+          </g>
+        ))}
+        <text x="148" y="104" textAnchor="middle" fontSize="10" fill="#4b7a91" fontWeight="600">伸缩泡 + 收集管</text>
+      </g>
+
+      {/* 大核 / 小核 */}
+      <g style={dim(active, 6)}>
+        <ellipse cx="312" cy="196" rx="36" ry="20" fill="#a97fb5" stroke="#7a5a92" strokeWidth="2" transform="rotate(-18 312 196)" />
+        <text x="312" y="200" textAnchor="middle" fontSize="9.5" fill="#ffffff" fontWeight="600">大核</text>
+      </g>
+      <g style={dim(active, 7)}>
+        <circle cx="258" cy="176" r="8" fill="#7a5a92" />
+        <text x="258" y="160" textAnchor="middle" fontSize="9.5" fill="#7a5a92" fontWeight="600">小核</text>
+      </g>
+
+      {/* 胞肛 */}
+      <g style={dim(active, 8)}>
+        <path d="M84 232 q 10 8 22 8" stroke="#5b7f9e" strokeWidth="3" fill="none" strokeLinecap="round" />
+        <text x="82" y="262" textAnchor="middle" fontSize="9.5" fill="#366169" fontWeight="600">胞肛</text>
+      </g>
+
+      <Badge n={1} x={260} y={66} />
+      <Badge n={2} x={378} y={88} />
+      <Badge n={3} x={430} y={118} />
+      <Badge n={4} x={306} y={172} />
+      <Badge n={5} x={240} y={228} />
+      <Badge n={6} x={148} y={164} />
+      <Badge n={7} x={352} y={186} />
+      <Badge n={8} x={258} y={200} />
+      <Badge n={9} x={92} y={224} />
+      <text x="500" y="364" textAnchor="end" fontSize="9.5" fill="#799398">草履虫（单细胞原生动物）结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 保卫细胞与气孔 ================= */
+
+function GuardCellSvg({ active, open = true }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <defs>
+        <clipPath id="guard-body">
+          <ellipse cx="260" cy="190" rx="196" ry="128" />
+        </clipPath>
+      </defs>
+
+      {/* 表皮细胞（左右两块） */}
+      <g style={dim(active, 4)}>
+        <g clipPath="url(#guard-body)">
+          <rect x="24" y="52" width="150" height="276" fill="#f0f4ec" stroke="#9db8bd" strokeWidth="2" />
+          <rect x="346" y="52" width="150" height="276" fill="#f0f4ec" stroke="#9db8bd" strokeWidth="2" />
+          <line x1="24" y1="190" x2="174" y2="190" stroke="#b8cbc9" strokeWidth="1.6" />
+          <line x1="346" y1="190" x2="496" y2="190" stroke="#b8cbc9" strokeWidth="1.6" />
+        </g>
+        <ellipse cx="260" cy="190" rx="196" ry="128" fill="none" stroke="#b8cbc9" strokeWidth="2" strokeDasharray="6 5" />
+        <text x="82" y="330" fontSize="10" fill="#59767c" fontWeight="600">表皮细胞（无叶绿体）</text>
+      </g>
+
+      {/* 张开状态 */}
+      <g style={{ ...dim(active, 0), opacity: dim(active, 0).opacity * (open ? 1 : 0), transition: 'opacity 0.7s ease' }}>
+        <path d="M250 84 Q 172 94 164 190 Q 172 286 250 296 Q 227 244 226 190 Q 227 136 250 84 Z" fill="#8fbf6f" stroke="#3f7f4f" strokeWidth="3" />
+        <path d="M270 84 Q 348 94 356 190 Q 348 286 270 296 Q 293 244 294 190 Q 293 136 270 84 Z" fill="#8fbf6f" stroke="#3f7f4f" strokeWidth="3" />
+      </g>
+      {/* 闭合状态 */}
+      <g style={{ ...dim(active, 0), opacity: dim(active, 0).opacity * (open ? 0 : 1), transition: 'opacity 0.7s ease' }}>
+        <path d="M248 84 Q 174 94 166 190 Q 174 286 248 296 Q 242 244 241 190 Q 242 136 248 84 Z" fill="#7ba75e" stroke="#3f7f4f" strokeWidth="3" />
+        <path d="M272 84 Q 346 94 354 190 Q 346 286 272 296 Q 278 244 279 190 Q 278 136 272 84 Z" fill="#7ba75e" stroke="#3f7f4f" strokeWidth="3" />
+      </g>
+
+      {/* 内壁增厚（气孔内侧，两种状态共用位置近似） */}
+      <g style={dim(active, 2)}>
+        <path d="M247 106 C 236 136, 232 164, 232 190 C 232 216, 236 244, 247 274" stroke="#2f6b42" strokeWidth="7" fill="none" strokeLinecap="round" />
+        <path d="M273 106 C 284 136, 288 164, 288 190 C 288 216, 284 244, 273 274" stroke="#2f6b42" strokeWidth="7" fill="none" strokeLinecap="round" />
+        <text x="190" y="140" textAnchor="end" fontSize="9.5" fill="#2f6b42" fontWeight="600">内壁增厚</text>
+      </g>
+
+      {/* 叶绿体 + 细胞核 */}
+      <g style={dim(active, 3)}>
+        {[[206, 128], [196, 190], [206, 252], [314, 128], [324, 190], [314, 252]].map(([x, y], index) => (
+          <ellipse key={index} cx={x} cy={y} rx="10" ry="6" fill="#4c8f5f" stroke="#2f6b42" strokeWidth="1.6" />
+        ))}
+      </g>
+      <g style={dim(active, 0)}>
+        <circle cx="222" cy="190" r="11" fill="#e9def3" stroke="#8a5a8f" strokeWidth="2" />
+        <circle cx="298" cy="190" r="11" fill="#e9def3" stroke="#8a5a8f" strokeWidth="2" />
+      </g>
+
+      {/* 气孔开口 */}
+      <g style={dim(active, 1)}>
+        {open ? (
+          <>
+            <ellipse cx="260" cy="190" rx="11" ry="76" fill="#fbfcf8" stroke="#3f7f4f" strokeWidth="1.5" />
+            <text x="260" y="330" textAnchor="middle" fontSize="11" fill="#0a626a" fontWeight="700">气孔张开（开口大）</text>
+          </>
+        ) : (
+          <text x="260" y="330" textAnchor="middle" fontSize="11" fill="#8a671b" fontWeight="700">气孔闭合（缝隙几乎消失）</text>
+        )}
+      </g>
+
+      {/* 水分进出箭头 */}
+      <g style={dim(active, 0)}>
+        {open ? (
+          <g className="bio-fade">
+            <path d="M152 158 L 186 176 M186 176 L 174 176 M186 176 L 180 165" stroke="#4b7a91" strokeWidth="2.6" fill="none" />
+            <path d="M152 222 L 186 204 M186 204 L 174 204 M186 204 L 180 215" stroke="#4b7a91" strokeWidth="2.6" fill="none" />
+            <text x="118" y="196" textAnchor="middle" fontSize="10" fill="#4b7a91" fontWeight="600">吸水</text>
+          </g>
+        ) : (
+          <g className="bio-fade">
+            <path d="M186 176 L 152 158 M152 158 L 164 158 M152 158 L 158 169" stroke="#b0483a" strokeWidth="2.6" fill="none" />
+            <path d="M186 204 L 152 222 M152 222 L 164 222 M152 222 L 158 211" stroke="#b0483a" strokeWidth="2.6" fill="none" />
+            <text x="118" y="196" textAnchor="middle" fontSize="10" fill="#b0483a" fontWeight="600">失水</text>
+          </g>
+        )}
+      </g>
+
+      <Badge n={1} x={196} y={70} />
+      <Badge n={2} x={260} y={104} />
+      <Badge n={3} x={164} y={102} />
+      <Badge n={4} x={196} y={222} />
+      <Badge n={5} x={72} y={296} />
+      <text x="500" y="364" textAnchor="end" fontSize="9.5" fill="#799398">气孔器俯视模式图（一对保卫细胞）</text>
+    </svg>
+  );
+}
+
+/* ================= 数据汇总 ================= */
+
+export const SPECIMENS: Specimen[] = [
+  {
+    id: 'animal',
+    name: '动物细胞',
+    kicker: '真核细胞 · 亚显微结构模式图',
+    intro: '无细胞壁、无叶绿体、无大液泡；有中心体（低等植物也有）。点击右侧结构名或图中编号，查看每种结构的功能。',
+    parts: [
+      { name: '细胞膜', desc: '细胞的边界，磷脂双分子层构成（流动镶嵌模型），控制物质进出；在光学显微镜下几乎不可见。' },
+      { name: '细胞质', desc: '细胞膜以内、细胞核以外的胶状基质，是新陈代谢的主要场所，各种细胞器悬浮其中。' },
+      { name: '细胞核', desc: '遗传信息库与代谢控制中心：核膜（双层，有核孔）、染色质（DNA+蛋白质）、核仁（与 rRNA 合成有关）。' },
+      { name: '线粒体', desc: '双层膜，内膜向内折叠形成嵴；有氧呼吸的主要场所（第二、三阶段），细胞的"动力车间"。' },
+      { name: '核糖体', desc: '无膜结构，"生产蛋白质的机器"；游离在细胞质或附着在内质网上。' },
+      { name: '内质网', desc: '单层膜连接成的网状结构，增大膜面积；与蛋白质合成加工、脂质合成有关（附着核糖体的为粗面内质网）。' },
+      { name: '高尔基体', desc: '单层膜囊堆；对蛋白质进行加工、分类、包装与发送（植物细胞中与细胞壁形成有关）。' },
+      { name: '中心体', desc: '无膜结构，由两个互相垂直的中心粒组成；与动物细胞（及低等植物细胞）的有丝分裂有关。' },
+      { name: '溶酶体', desc: '单层膜的"消化车间"，内含水解酶，分解衰老细胞器和吞入的病原体。' },
+    ],
+    Svg: AnimalCellSvg,
+    StageWebGL: AnimalCellWebGLModel,
+  },
+  {
+    id: 'plant',
+    name: '植物细胞',
+    kicker: '真核细胞 · 亚显微结构模式图',
+    intro: '与动物细胞的核心区别：有细胞壁、叶绿体和大液泡，无中心体（高等植物）。',
+    parts: [
+      { name: '细胞壁', desc: '全透性，主要成分是纤维素和果胶；支持和保护细胞。' },
+      { name: '细胞膜', desc: '紧贴细胞壁内侧，选择透过性膜——质壁分离实验中它与液泡膜之间充满外界溶液。' },
+      { name: '细胞质', desc: '细胞器悬浮的基质；成熟植物细胞的细胞质呈一薄层，被大液泡挤向边缘。' },
+      { name: '细胞核', desc: '遗传信息库；观察质壁分离时常选洋葱鳞片叶外表皮——液泡呈紫色便于观察，而细胞核位置靠近细胞壁。' },
+      { name: '叶绿体', desc: '双层膜的"养料制造车间"和能量转换站：类囊体（基粒）上进行光反应，基质中进行暗反应。' },
+      { name: '大液泡', desc: '单层液泡膜包被，内含细胞液；与质壁分离和复原直接相关——成熟植物细胞是渗透系统的关键。' },
+      { name: '线粒体', desc: '有氧呼吸主要场所；植物细胞同样需要线粒体供能（叶绿体≠能量供应的全部）。' },
+    ],
+    Svg: PlantCellSvg,
+    StageWebGL: PlantCellWebGLModel,
+  },
+  {
+    id: 'chloroplast',
+    name: '叶绿体',
+    kicker: '细胞器 · 立体剖面模式图',
+    intro: '光合作用的场所，双层膜结构；切窗内一摞摞的基粒——光反应在类囊体膜上，暗反应在基质中。也可切换「实景 3D」自由旋转缩放。',
+    parts: [
+      { name: '外膜', desc: '双层膜的外层，平滑、通透性较高；"叶绿体是双层膜细胞器"考点中的第一层。' },
+      { name: '内膜', desc: '包裹基质的选择性透性膜，控制物质进出叶绿体。' },
+      { name: '基质', desc: '暗反应（CO₂ 的固定与 C₃ 的还原）进行的场所，含有与光合作用有关的酶，还有少量 DNA、核糖体和淀粉粒。' },
+      { name: '基粒（类囊体堆叠）', desc: '一个个类囊体（囊状结构）像硬币一样垛叠成基粒；光反应就在类囊体薄膜上进行——色素和光反应酶分布于此。' },
+      { name: '基质类囊体', desc: '连接各个基粒的类囊体薄膜，把所有基粒连成统一的膜系统，扩大受光面积。' },
+      { name: '叶绿体 DNA 与核糖体', desc: '半自主细胞器：含少量 DNA 和核糖体，能合成部分自身蛋白质（线粒体同理）。' },
+    ],
+    Svg: ChloroplastSvg,
+    Stage3d: Chloroplast3d,
+    StageWebGL: ChloroplastWebGLModel,
+  },
+  {
+    id: 'mitochondrion',
+    name: '线粒体',
+    kicker: '细胞器 · 立体剖面模式图',
+    intro: '有氧呼吸的主要场所（第二、三阶段），双层膜；切口处可以看到嵴、基质与膜间隙的层次关系。也可切换「实景 3D」自由旋转缩放。',
+    parts: [
+      { name: '外膜', desc: '平滑的双层膜外层，表面有孔蛋白（porins），通透性较高；与内膜共同构成"双层膜细胞器"。' },
+      { name: '内膜', desc: '向内腔折叠形成嵴；通透性低，有氧呼吸第三阶段的呼吸链与 ATP 合成酶都分布在这层膜上。' },
+      { name: '嵴', desc: '内膜向基质折叠形成的管状结构，扩大了内膜面积，为呼吸酶提供大量附着位点——结构与功能相适应的典型例证。' },
+      { name: '膜间隙', desc: '内外膜之间的窄腔；有氧呼吸中 H⁺ 在此积累形成浓度梯度，驱动 ATP 合成酶工作。' },
+      { name: '基质', desc: '有氧呼吸第二阶段（丙酮酸和水彻底分解）的场所；含有与呼吸作用有关的酶、基质颗粒、环状 DNA 和核糖体。' },
+      { name: '环状 DNA', desc: '线粒体自身的遗传物质（类似细菌的环状 DNA）；这是"线粒体起源于内共生"的证据之一。' },
+      { name: '核糖体', desc: '分布在基质中的小颗粒，可合成部分线粒体自身的蛋白质——半自主细胞器的体现。' },
+      { name: 'ATP 合成酶', desc: '内膜和嵴表面的带柄颗粒状突起，利用膜间隙与基质之间的 H⁺ 浓度梯度合成 ATP。' },
+    ],
+    Svg: MitochondrionSvg,
+    Stage3d: Mitochondrion3d,
+    StageWebGL: MitochondrionWebGLModel,
+  },
+  {
+    id: 'ecoli',
+    name: '大肠杆菌',
+    kicker: '原核细胞 · 结构模式图',
+    intro: '原核生物的代表：没有以核膜为界限的细胞核，只有拟核；细胞器只有核糖体一种。',
+    parts: [
+      { name: '鞭毛', desc: '长而少的蛋白质丝状结构，像螺旋桨一样摆动，是细菌的运动器官（不是所有菌都有）。' },
+      { name: '菌毛', desc: '短而多的毛发状结构，帮助菌体附着；注意与鞭毛区分（长短与数量）。' },
+      { name: '荚膜', desc: '部分菌株在细胞壁外分泌的黏液层，有保护作用（厚荚膜的菌落表面光滑湿润）。' },
+      { name: '细胞壁', desc: '主要成分是肽聚糖（与植物细胞壁的纤维素、果胶不同）——支持保护；青霉素通过干扰肽聚糖合成抑菌。' },
+      { name: '细胞膜', desc: '与真核细胞膜类似的磷脂双分子层；原核细胞产能有关的酶也分布在细胞膜上。' },
+      { name: '拟核', desc: '大型环状 DNA 集中的区域，没有核膜包被、没有核仁——这是原核细胞与真核细胞最根本的区别。' },
+      { name: '质粒', desc: '拟核之外的小型环状 DNA，能自主复制；基因工程中常用的载体（抗药性基因常位于其上）。' },
+      { name: '核糖体', desc: '原核细胞唯一的细胞器，合成蛋白质——"原核细胞只有核糖体一种细胞器"是高频考点。' },
+    ],
+    Svg: EColiSvg,
+    StageWebGL: EColiWebGLModel,
+  },
+  {
+    id: 'paramecium',
+    name: '草履虫',
+    kicker: '单细胞原生动物 · 结构模式图',
+    intro: '像倒转的草鞋底一样而得名；一个细胞就能完成运动、摄食、消化、排泄和生殖等全部生命活动。',
+    parts: [
+      { name: '纤毛', desc: '表膜上密布的短毛，像船桨一样协调摆动使虫体旋转前进——草履虫的运动结构。' },
+      { name: '表膜', desc: '相当于细胞膜，完成气体交换（溶解氧透入、CO₂ 排出）。' },
+      { name: '口沟', desc: '体侧内陷的沟槽，纤毛摆动把食物（细菌等）吹入口沟，"口沟一侧"是草履虫外形的最明显特征。' },
+      { name: '胞口', desc: '口沟末端的开口，食物由此进入体内形成食物泡。' },
+      { name: '食物泡', desc: '包裹食物的小泡，随细胞质环流流动，与溶酶体结合逐步消化，残渣由胞肛排出。' },
+      { name: '伸缩泡 + 收集管', desc: '前后各一个，收集多余水分和无机盐并排出体外——维持渗透压（淡水生物必备）。' },
+      { name: '大核', desc: '营养代谢的主导核（多倍性）；草履虫核有大小两型，分工明确。' },
+      { name: '小核', desc: '与生殖有关；接合生殖时小核进行减数分裂交换遗传物质。' },
+      { name: '胞肛', desc: '不能消化的残渣由此排出体外的固定开口（位于体后一侧）。' },
+    ],
+    Svg: ParameciumSvg,
+    StageWebGL: ParameciumWebGLModel,
+  },
+  {
+    id: 'stoma',
+    name: '保卫细胞与气孔',
+    kicker: '植物表皮 · 气孔器结构',
+    intro: '一对肾形的保卫细胞围成气孔。保卫细胞吸水→气孔张开，失水→气孔闭合；点下方按钮看开闭过程。',
+    parts: [
+      { name: '保卫细胞', desc: '一对半月形（肾形）细胞，含叶绿体（与周围表皮细胞最大的区别）；是唯一能感知并响应光照、CO₂ 浓度而运动的表皮细胞。' },
+      { name: '气孔', desc: '两个保卫细胞之间的孔隙，是植物蒸腾失水的"门户"，也是气体交换（CO₂ 进、O₂ 出）的"窗口"。' },
+      { name: '内壁增厚', desc: '保卫细胞靠近气孔一侧的壁明显增厚（外壁薄）——吸水膨胀时薄的外壁向外弯曲，把内壁拉开，气孔张开。结构与功能相适应。' },
+      { name: '叶绿体', desc: '保卫细胞含叶绿体可进行光合作用，光照下光合消耗 CO₂ → 细胞内浓度升高 → 吸水 → 气孔张开（白天开、夜晚合）。' },
+      { name: '表皮细胞', desc: '围绕保卫细胞的普通表皮细胞，形状规则、不含叶绿体，起保护作用。' },
+    ],
+    Svg: GuardCellSvg,
+    StageWebGL: StomaWebGLModel,
+  },
+];
