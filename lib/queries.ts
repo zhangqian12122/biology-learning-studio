@@ -80,7 +80,7 @@ function rowToQuestion(row: QuestionRow): Question | null {
   };
 }
 
-/** 学生端题库：数据库不可用或没有可用题时回退内置 15 题，页面永不空白。 */
+/** 学生端题库：数据库不可用或没有可用题时回退内置题库，页面永不空白。 */
 export async function listActiveQuestions(): Promise<QuestionBank> {
   try {
     const db = await getReadyDatabase();
