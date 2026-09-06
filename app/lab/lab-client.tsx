@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {
   Activity,
   ArrowRight,
+  Baby,
   Bird,
   Bubbles,
   Dices,
@@ -12,6 +13,7 @@ import {
   Drumstick,
   Droplet,
   Droplets,
+  Fish,
   Flame,
   Flower2,
   FlaskConical,
@@ -36,6 +38,7 @@ import {
   TestTubes,
   TrendingUp,
   TestTube2,
+  Users,
   Waves,
   X,
   Zap,
@@ -85,6 +88,10 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   thyroidAxis: Activity,
   markRecapture: Target,
   succession: Sprout,
+  dnaReplication: Dna,
+  geneticPedigree: Users,
+  ecosystemJar: Fish,
+  embryoTransfer: Baby,
 };
 
 /** 实验组件按需加载：目录页只载入目录本身，点开实验才拉取对应代码块。 */
@@ -129,6 +136,10 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   thyroidAxis: () => import('@/components/lab/thyroid-axis-lab').then(({ ThyroidAxisLab }) => ({ default: ThyroidAxisLab })),
   markRecapture: () => import('@/components/lab/mark-recapture-lab').then(({ MarkRecaptureLab }) => ({ default: MarkRecaptureLab })),
   succession: () => import('@/components/lab/succession-lab').then(({ SuccessionLab }) => ({ default: SuccessionLab })),
+  dnaReplication: () => import('@/components/lab/dna-replication-lab').then(({ DnaReplicationLab }) => ({ default: DnaReplicationLab })),
+  geneticPedigree: () => import('@/components/lab/pedigree-lab').then(({ GeneticPedigreeLab }) => ({ default: GeneticPedigreeLab })),
+  ecosystemJar: () => import('@/components/lab/ecosystem-jar-lab').then(({ EcosystemJarLab }) => ({ default: EcosystemJarLab })),
+  embryoTransfer: () => import('@/components/lab/embryo-transfer-lab').then(({ EmbryoTransferLab }) => ({ default: EmbryoTransferLab })),
 };
 
 const EXPERIMENT_COMPONENTS = Object.fromEntries(

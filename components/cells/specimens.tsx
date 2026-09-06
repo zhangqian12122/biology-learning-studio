@@ -3256,6 +3256,206 @@ function NervePotentialSvg({ active }: { active: number | null; open?: boolean }
   );
 }
 
+/* ================= 生物膜系统 ================= */
+
+function BiofilmSystemSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 细胞核 */}
+      <g style={dim(active, 0)}>
+        <circle cx="96" cy="150" r="56" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3.5" />
+        <text x="96" y="155" textAnchor="middle" fontSize="13" fill="#ffffff" fontWeight="700">细胞核</text>
+        <text x="30" y="240" fontSize="13" fill="#6a4a9a" fontWeight="600">核膜（外层）延伸出内质网</text>
+      </g>
+      {/* 内质网 */}
+      <g style={dim(active, 1)}>
+        <path d="M148 130 Q 210 108 268 128 Q 320 146 366 128 M 152 170 Q 214 156 270 174 Q 322 190 372 172" fill="none" stroke="#8fb8d4" strokeWidth="11" strokeLinecap="round" />
+        <text x="262" y="98" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">内质网膜（直接与核膜相连）</text>
+      </g>
+      {/* 囊泡 1 */}
+      <g style={dim(active, 2)}>
+        <circle cx="356" cy="222" r="15" fill="#a8d0e8" stroke="#4d7ea8" strokeWidth="2.5" />
+        <path d="M372 182 Q 378 200 368 212" fill="none" stroke="#4d7ea8" strokeWidth="2.5" strokeDasharray="4 3" markerEnd="url(#bf-arrow)" />
+        <text x="394" y="212" fontSize="12.5" fill="#2c6e94" fontWeight="600">囊泡转运</text>
+      </g>
+      {/* 高尔基体 */}
+      <g style={dim(active, 2)}>
+        {[236, 254, 272].map((y, i) => (
+          <path key={i} d={`M220 ${y} Q 252 ${y - 12} 284 ${y} Q 252 ${y + 8} 220 ${y} Z`} fill="#f0c98a" stroke="#b58a3a" strokeWidth="2.5" transform="translate(120 20)" />
+        ))}
+        <text x="372" y="290" fontSize="13.5" fill="#8a671b" fontWeight="700">高尔基体膜（中转站）</text>
+      </g>
+      {/* 囊泡 2 + 细胞膜 */}
+      <g style={dim(active, 3)}>
+        <circle cx="452" cy="308" r="13" fill="#a8d0e8" stroke="#4d7ea8" strokeWidth="2.5" />
+        <path d="M300 210 Q 250 250 180 268 Q 120 286 62 274" fill="none" stroke="#3d7e9e" strokeWidth="6" strokeLinecap="round" />
+        <path d="M452 292 Q 428 276 408 270" fill="none" stroke="#4d7ea8" strokeWidth="2.5" strokeDasharray="4 3" markerEnd="url(#bf-arrow)" />
+        <text x="66" y="300" fontSize="13.5" fill="#1e4a68" fontWeight="700">细胞膜（胞吐出口）</text>
+      </g>
+      {/* 线粒体供能 */}
+      <g style={dim(active, 4)}>
+        <ellipse cx="110" cy="300" rx="34" ry="18" fill="#f0a06a" stroke="#c2703d" strokeWidth="2.5" transform="rotate(-18 110 300)" />
+        <text x="150" y="336" fontSize="12.5" fill="#c2703d" fontWeight="600">线粒体供能（囊泡运输需要 ATP）</text>
+      </g>
+      <text x="16" y="42" fontSize="13.5" fill="#2c6e94" fontWeight="700">生物膜系统 = 核膜 + 细胞器膜 + 细胞膜：结构上相连通，功能上分工协作</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">生物膜系统联系模式图</text>
+      <defs>
+        <marker id="bf-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#4d7ea8" />
+        </marker>
+      </defs>
+    </svg>
+  );
+}
+
+/* ================= 细胞分化与全能性 ================= */
+
+function CellDifferentiationSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 受精卵 */}
+      <g style={dim(active, 0)}>
+        <circle cx="80" cy="150" r="42" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="3.5" />
+        <circle cx="80" cy="150" r="10" fill="#7a4a8a" />
+        <text x="80" y="216" textAnchor="middle" fontSize="13.5" fill="#6a4a9a" fontWeight="700">受精卵</text>
+        <text x="80" y="234" textAnchor="middle" fontSize="12" fill="#8a6a94">全套基因（2n）</text>
+      </g>
+      {/* 分裂箭头 */}
+      <g style={dim(active, 1)}>
+        <line x1="128" y1="150" x2="182" y2="150" stroke="#5a5a62" strokeWidth="3.5" markerEnd="url(#df-arrow)" />
+        <text x="155" y="136" textAnchor="middle" fontSize="12.5" fill="#59767c">细胞分裂</text>
+        <circle cx="212" cy="150" r="30" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="3" />
+        <circle cx="212" cy="150" r="7" fill="#7a4a8a" />
+      </g>
+      {/* 分化箭头 */}
+      <g style={dim(active, 2)}>
+        <path d="M240 128 Q 280 96 320 92" fill="none" stroke="#5a5a62" strokeWidth="3" markerEnd="url(#df-arrow)" />
+        <path d="M246 150 L 312 150" fill="none" stroke="#5a5a62" strokeWidth="3" markerEnd="url(#df-arrow)" />
+        <path d="M240 172 Q 280 204 320 210" fill="none" stroke="#5a5a62" strokeWidth="3" markerEnd="url(#df-arrow)" />
+        <text x="296" y="122" textAnchor="middle" fontSize="12.5" fill="#59767c" fontWeight="600">细胞分化</text>
+      </g>
+      {/* 三种细胞 */}
+      <g style={dim(active, 3)}>
+        <circle cx="372" cy="92" r="26" fill="#cfe4f0" stroke="#3d6a94" strokeWidth="2.5" />
+        <text x="372" y="97" textAnchor="middle" fontSize="11.5" fill="#1e4a68" fontWeight="700">神经</text>
+        <text x="430" y="76" fontSize="12" fill="#2c6e94" fontWeight="600">神经细胞</text>
+        <ellipse cx="372" cy="152" rx="30" ry="18" fill="#f0b0a8" stroke="#b0483a" strokeWidth="2.5" />
+        <text x="372" y="157" textAnchor="middle" fontSize="11.5" fill="#7a2622" fontWeight="700">肌</text>
+        <text x="430" y="150" fontSize="12" fill="#b0483a" fontWeight="600">肌肉细胞</text>
+        <circle cx="372" cy="214" r="14" fill="#e8c94a" stroke="#b5953a" strokeWidth="2.5" />
+        <text x="430" y="212" fontSize="12" fill="#8a671b" fontWeight="600">红细胞（无核）</text>
+      </g>
+      {/* 关键结论 */}
+      <g style={dim(active, 2)}>
+        <rect x="26" y="258" width="330" height="88" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="42" y="282" fontSize="13.5" fill="#173b42" fontWeight="700">分化的本质：基因的选择性表达</text>
+        <text x="42" y="304" fontSize="12.5" fill="#46666d">三种细胞的遗传物质完全相同，只是"开的基因"不同；</text>
+        <text x="42" y="324" fontSize="12.5" fill="#46666d">分化一般不可逆——但遗传物质没变（区别于癌变）。</text>
+      </g>
+      {/* 全能性 */}
+      <g style={dim(active, 4)}>
+        <rect x="366" y="258" width="140" height="88" rx="10" fill="#e7f3e2" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="380" y="282" fontSize="13" fill="#2f7a4d" fontWeight="700">植物细胞全能性</text>
+        <text x="380" y="302" fontSize="12" fill="#4a8a4a">离体细胞 → 组培</text>
+        <text x="380" y="320" fontSize="12" fill="#4a8a4a">→ 完整植株</text>
+      </g>
+      <defs>
+        <marker id="df-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="508" y="46" textAnchor="end" fontSize="12.5" fill="#799398">细胞分化与全能性模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 年龄组成 ================= */
+
+function AgeStructureSvg({ active }: { active: number | null; open?: boolean }) {
+  const pyramids = [
+    { name: '增长型', cx: 100, trend: '种群密度将增大', color: '#2f7a4d', widths: [26, 44, 62], arrow: '↗' },
+    { name: '稳定型', cx: 260, trend: '种群密度保持稳定', color: '#8a671b', widths: [42, 42, 42], arrow: '→' },
+    { name: '衰退型', cx: 420, trend: '种群密度将减小', color: '#b0483a', widths: [58, 40, 24], arrow: '↘' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {pyramids.map((p, idx) => (
+        <g key={p.name} style={dim(active, idx)}>
+          {[0, 1, 2].map((row) => (
+            <rect key={row} x={p.cx - p.widths[row] / 2} y={128 + row * 38} width={p.widths[row]} height="30" rx="5" fill={p.color} opacity={1 - row * 0.22} stroke="#5a5a62" strokeWidth="1.8" />
+          ))}
+          <text x={p.cx} y="112" textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">{p.name} {p.arrow}</text>
+          <text x={p.cx} y="250" textAnchor="middle" fontSize="12.5" fill="#4b6c73">{p.trend}</text>
+          <text x={p.cx} y="270" textAnchor="middle" fontSize="12" fill="#799398">幼年：成年：老年</text>
+        </g>
+      ))}
+      {/* 图例 */}
+      <g style={dim(active, 1)}>
+        {[[70, 320], [230, 320], [390, 320]].map(([x, y], i) => (
+          <g key={i}>
+            <rect x={x - 8} y={y - 12} width="16" height="14" fill="#2f7a4d" opacity={1 - i * 0.22} />
+            <text x={x + 14} y={y} fontSize="12" fill="#4b6c73">{['幼年个体', '成年个体', '老年个体'][i]}</text>
+          </g>
+        ))}
+      </g>
+      <text x="16" y="66" fontSize="13.5" fill="#2c6e94" fontWeight="700">年龄组成预测种群密度的变化趋势（增长 / 稳定 / 衰退）</text>
+      <text x="16" y="356" fontSize="12.5" fill="#59767c" fontWeight="600">注意：年龄组成是"预测"，直接决定种群密度的出生率、死亡率、迁入率、迁出率</text>
+    </svg>
+  );
+}
+
+/* ================= 群落空间结构 ================= */
+
+function CommunityStructureSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 垂直结构 */}
+      <g style={dim(active, 0)}>
+        <text x="130" y="50" textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">垂直结构（分层）</text>
+        <rect x="40" y="256" width="220" height="40" fill="#c9b08a" />
+        {/* 乔木 */}
+        <rect x="118" y="150" width="10" height="106" fill="#8a6a48" />
+        <circle cx="123" cy="128" r="34" fill="#4a8a3a" stroke="#356a2a" strokeWidth="2.5" />
+        <text x="168" y="120" fontSize="12.5" fill="#2f5a1e" fontWeight="600">乔木层</text>
+        <circle cx="70" cy="216" r="17" fill="#6aaa55" stroke="#3f7f3a" strokeWidth="2" />
+        <text x="168" y="196" fontSize="12.5" fill="#3f7f3a" fontWeight="600">灌木层</text>
+        {[74, 100, 130, 160, 190, 220].map((x, i) => (
+          <g key={i} stroke="#4a8a3a" strokeWidth="2.5" strokeLinecap="round">
+            <line x1={x} y1={256} x2={x - 5} y2={240} />
+            <line x1={x} y1={256} x2={x} y2={234} />
+            <line x1={x} y1={256} x2={x + 5} y2={240} />
+          </g>
+        ))}
+        <text x="196" y="242" fontSize="12.5" fill="#4a8a3a" fontWeight="600">草本层</text>
+        <text x="60" y="288" fontSize="12" fill="#5a4a30" fontWeight="600">根系层（土壤）</text>
+        <text x="168" y="146" fontSize="12" fill="#5a8a94">鸟</text>
+        <text x="40" y="196" fontSize="12" fill="#5a8a94">兽</text>
+      </g>
+      <line x1="280" y1="60" x2="280" y2="290" stroke="#dceaea" strokeWidth="2" strokeDasharray="6 5" />
+      {/* 水平结构 */}
+      <g style={dim(active, 1)}>
+        <text x="400" y="50" textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">水平结构（镶嵌）</text>
+        <path d="M300 260 Q 340 220 380 250 Q 424 282 474 254 L 480 292 L 300 292 Z" fill="#c9b08a" />
+        {[[318, 246], [336, 236], [352, 244]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="8" fill="#6aa86a" />
+        ))}
+        {[[392, 258], [412, 246], [430, 256], [446, 246]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="7" fill="#8fbf6f" />
+        ))}
+        <circle cx="462" cy="240" r="9" fill="#4c8f5f" />
+        <text x="400" y="110" textAnchor="middle" fontSize="12.5" fill="#59767c">地形起伏 · 光照湿度不均</text>
+        <text x="400" y="130" textAnchor="middle" fontSize="12.5" fill="#59767c">→ 生物呈斑块状镶嵌分布</text>
+        <text x="400" y="156" textAnchor="middle" fontSize="12.5" fill="#4b6c73">同一地段：疏密不同</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <text x="16" y="322" fontSize="13.5" fill="#2c6e94" fontWeight="700">垂直分层显著提高群落利用阳光等资源的能力</text>
+        <text x="16" y="344" fontSize="12.5" fill="#59767c">动物的分层取决于植物（食物和栖息空间）——"住什么层，看吃什么"</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">群落的空间结构模式图</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 /** 偏"实验操作/过程"的标本：不在图鉴页显示，改为在互动实验页作为相关图解出现。 */
@@ -4033,5 +4233,59 @@ export const SPECIMENS: Specimen[] = [
       { name: '传导特点', desc: '离体神经纤维上双向传导；在反射弧中（有突触）只能单向传递——两个场景分开记。' },
     ],
     Svg: NervePotentialSvg,
+  },
+  {
+    id: 'biofilmSystem',
+    name: '生物膜系统',
+    kicker: '专有名词 · 膜的联系网络',
+    intro: '核膜、细胞器膜、细胞膜在结构上直接或经囊泡相连，功能上分工协作——分泌蛋白的"生产流水线"就是它的代表作。',
+    parts: [
+      { name: '组成', desc: '核膜、内质网、高尔基体、溶酶体等细胞器膜和细胞膜——它们共同构成细胞的膜系统。' },
+      { name: '结构联系', desc: '内质网膜内连核膜外膜；各膜之间靠囊泡"转运膜成分"——出芽、融合，膜可以互相转化。' },
+      { name: '功能协作', desc: '分泌蛋白的合成运输流水线：核糖体（合成）→ 内质网（初加工）→ 高尔基体（再加工）→ 细胞膜（胞吐）。' },
+      { name: '意义', desc: '扩大膜面积提供酶附着位点；把细胞分隔成小区室，让各种化学反应互不干扰、高效有序。' },
+      { name: '考点点睛', desc: '生物膜系统不包含"半透膜"等抽象概念，也不含线粒体内膜以外"细胞内的所有膜"之外的膜——组成范围要背准。' },
+    ],
+    Svg: BiofilmSystemSvg,
+  },
+  {
+    id: 'cellDifferentiation',
+    name: '细胞分化与全能性',
+    kicker: '专有名词 · 细胞命运概念图',
+    intro: '受精卵分裂产生的细胞，基因相同却"开的开关"不同——这就是分化；而植物细胞离体培养能长成完整个体，证明全能性。',
+    parts: [
+      { name: '细胞分化', desc: '个体发育中，后代细胞在形态、结构和生理功能上发生稳定性差异的过程，贯穿一生。' },
+      { name: '本质：基因选择性表达', desc: '分化细胞的遗传物质完全相同（都来自同一个受精卵），只是表达的基因不同——"总谱一样，演奏的乐章不同"。' },
+      { name: '全能性', desc: '已分化的细胞仍具有发育成完整个体的潜能；植物细胞全能性容易表达（组培），动物体细胞的核也有全能性（核移植）。' },
+      { name: '与细胞分裂的区别', desc: '分裂增加数目、分化增加"种类"；癌变是"失控增殖"，与分化方向相反。' },
+    ],
+    Svg: CellDifferentiationSvg,
+  },
+  {
+    id: 'ageStructure',
+    name: '年龄组成',
+    kicker: '专有名词 · 种群特征图解',
+    intro: '种群中各年龄期个体的比例叫年龄组成：增长型幼年多、衰退型老年多——它"预测"种群密度的变化趋势。',
+    parts: [
+      { name: '增长型', desc: '幼年个体多、老年个体少 → 出生率 > 死亡率 → 种群密度将增大（"金字塔"形）。' },
+      { name: '稳定型', desc: '各年龄期比例适中 → 密度保持相对稳定（"钟形"）。' },
+      { name: '衰退型', desc: '幼年个体少、老年个体多 → 密度将减小（"倒金字塔"）。' },
+      { name: '易错提醒', desc: '年龄组成只能"预测"趋势；直接决定种群密度的是出生率、死亡率、迁入率和迁出率——预测 ≠ 决定。' },
+      { name: '性别比例', desc: '通过影响出生率间接影响密度（如用性引诱剂诱杀雄虫防治害虫）——四对关系常混考。' },
+    ],
+    Svg: AgeStructureSvg,
+  },
+  {
+    id: 'communityStructure',
+    name: '群落空间结构',
+    kicker: '专有名词 · 群落结构图解',
+    intro: '垂直分层让森林"住满上下楼"，水平镶嵌让生物"各占一块地"——空间结构提高群落对环境资源的利用能力。',
+    parts: [
+      { name: '垂直结构', desc: '分层现象：乔木层→灌木层→草本层→根系层；显著提高群落利用阳光等环境资源的能力。' },
+      { name: '动物的分层', desc: '植物为动物提供食物和栖息空间——植物的垂直分层决定动物的分层（鸟类分林冠/中层/地面三层）。' },
+      { name: '水平结构', desc: '地形起伏、光照湿度不均 → 生物呈镶嵌分布，同一地段疏密有别（不是均匀分布）。' },
+      { name: '应用', desc: '间种套种利用垂直结构增产；湖养鱼分层捕捞（上层鲢鳙、下层草青）——生产实践直接用。' },
+    ],
+    Svg: CommunityStructureSvg,
   },
 ];

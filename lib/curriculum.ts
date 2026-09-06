@@ -594,7 +594,11 @@ export type ExperimentId =
   | 'reflexArc'
   | 'thyroidAxis'
   | 'markRecapture'
-  | 'succession';
+  | 'succession'
+  | 'dnaReplication'
+  | 'geneticPedigree'
+  | 'ecosystemJar'
+  | 'embryoTransfer';
 
 export const experimentMeta: Record<
   ExperimentId,
@@ -886,6 +890,34 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '种群特征与群落结构',
   },
+  dnaReplication: {
+    title: 'DNA 半保留复制实验',
+    kicker: '必修 2 · 遗传与进化',
+    description: '15N 标记转入轻培养基逐代离心：两种假说谁在第 1 代出局？',
+    relatedBook: 'genetics',
+    relatedModule: 'DNA 的复制、转录与翻译',
+  },
+  geneticPedigree: {
+    title: '遗传系谱分析',
+    kicker: '必修 2 · 遗传与进化',
+    description: '三份家系图两步定式：先判显隐性，再判常染色体还是伴 X。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+  },
+  ecosystemJar: {
+    title: '设计制作生态缸',
+    kicker: '选择性必修 2 · 生物与环境',
+    description: '自己搭配组分封缸观察 30 天：缺一环，生态系统能撑几天？',
+    relatedBook: 'ecology',
+    relatedModule: '生态保护与人与自然',
+  },
+  embryoTransfer: {
+    title: '体外受精与胚胎移植',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '五步流程排序 + 移植时机判断，走通试管生命的第一程。',
+    relatedBook: 'technology',
+    relatedModule: '细胞工程与组织培养',
+  },
 };
 
 /** 实验目录分类：按教材实验主题归组，方便在 /lab 快速筛选 */
@@ -913,7 +945,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'dogma', 'selection', 'geneEngine'],
+    ids: ['traitSeparation', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'selection', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -923,12 +955,12 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecosystemJar'],
   },
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'embryoTransfer'],
   },
 ];
 
@@ -953,7 +985,9 @@ export const experimentOrder: ExperimentId[] = [
   'lowTempPolyploid',
   'meiosisSlide',
   'genetics',
+  'geneticPedigree',
   'dogma',
+  'dnaReplication',
   'selection',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
@@ -970,6 +1004,7 @@ export const experimentOrder: ExperimentId[] = [
   'succession',
   'energy',
   'population',
+  'ecosystemJar',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',
   'dnaExtract',
@@ -978,4 +1013,5 @@ export const experimentOrder: ExperimentId[] = [
   'pickleFerment',
   'tissueCulture',
   'pcr',
+  'embryoTransfer',
 ];
