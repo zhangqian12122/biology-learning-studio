@@ -598,7 +598,11 @@ export type ExperimentId =
   | 'dnaReplication'
   | 'geneticPedigree'
   | 'ecosystemJar'
-  | 'embryoTransfer';
+  | 'embryoTransfer'
+  | 'phageExperiment'
+  | 'breedingDesigner'
+  | 'millerUrey'
+  | 'sirModel';
 
 export const experimentMeta: Record<
   ExperimentId,
@@ -608,6 +612,8 @@ export const experimentMeta: Record<
     description: string;
     relatedBook: BookId;
     relatedModule: string;
+    /** 课外拓展实验（教材之外的延伸），页面上会打上"课外拓展"标记 */
+    extension?: boolean;
   }
 > = {
   microscope: {
@@ -918,6 +924,36 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '细胞工程与组织培养',
   },
+  phageExperiment: {
+    title: '噬菌体侵染细菌实验',
+    kicker: '必修 2 · 遗传与进化',
+    description: '35S 与 32P 双组标记：放射性出现在哪，遗传物质就是谁。',
+    relatedBook: 'genetics',
+    relatedModule: 'DNA 的复制、转录与翻译',
+  },
+  breedingDesigner: {
+    title: '育种方案设计',
+    kicker: '必修 2 · 遗传与进化',
+    description: '五种育种路线任选：比流程、比年限、比能否定向。',
+    relatedBook: 'genetics',
+    relatedModule: '变异、育种与生物进化',
+  },
+  millerUrey: {
+    title: '米勒-尤里实验',
+    kicker: '生命起源 · 科学史',
+    description: '模拟原始地球闪电放电，看无机小分子如何变成氨基酸。',
+    relatedBook: 'molecules',
+    relatedModule: '细胞结构与物质运输',
+    extension: true,
+  },
+  sirModel: {
+    title: '传染病传播模拟',
+    kicker: '免疫应用 · SIR 模型',
+    description: 'S-I-R 三条曲线：戴口罩、隔离、疫苗如何压平感染峰值？',
+    relatedBook: 'regulation',
+    relatedModule: '免疫调节与健康',
+    extension: true,
+  },
 };
 
 /** 实验目录分类：按教材实验主题归组，方便在 /lab 快速筛选 */
@@ -945,12 +981,12 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'selection', 'geneEngine'],
+    ids: ['traitSeparation', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'selection', 'geneEngine'],
   },
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis'],
+    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'sirModel'],
   },
   {
     name: '生态',
@@ -960,7 +996,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'embryoTransfer'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'embryoTransfer', 'millerUrey'],
   },
 ];
 
@@ -988,6 +1024,8 @@ export const experimentOrder: ExperimentId[] = [
   'geneticPedigree',
   'dogma',
   'dnaReplication',
+  'phageExperiment',
+  'breedingDesigner',
   'selection',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
@@ -996,6 +1034,7 @@ export const experimentOrder: ExperimentId[] = [
   'impulse',
   'reflexArc',
   'thyroidAxis',
+  'sirModel',
   // 选择性必修 2 · 生物与环境
   'quadratMethod',
   'markRecapture',
@@ -1014,4 +1053,6 @@ export const experimentOrder: ExperimentId[] = [
   'tissueCulture',
   'pcr',
   'embryoTransfer',
+  // 课外拓展
+  'millerUrey',
 ];

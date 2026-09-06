@@ -92,6 +92,10 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   geneticPedigree: Users,
   ecosystemJar: Fish,
   embryoTransfer: Baby,
+  phageExperiment: Network,
+  breedingDesigner: Scissors,
+  millerUrey: FlaskConical,
+  sirModel: Activity,
 };
 
 /** 实验组件按需加载：目录页只载入目录本身，点开实验才拉取对应代码块。 */
@@ -140,6 +144,10 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   geneticPedigree: () => import('@/components/lab/pedigree-lab').then(({ GeneticPedigreeLab }) => ({ default: GeneticPedigreeLab })),
   ecosystemJar: () => import('@/components/lab/ecosystem-jar-lab').then(({ EcosystemJarLab }) => ({ default: EcosystemJarLab })),
   embryoTransfer: () => import('@/components/lab/embryo-transfer-lab').then(({ EmbryoTransferLab }) => ({ default: EmbryoTransferLab })),
+  phageExperiment: () => import('@/components/lab/phage-experiment-lab').then(({ PhageExperimentLab }) => ({ default: PhageExperimentLab })),
+  breedingDesigner: () => import('@/components/lab/breeding-lab').then(({ BreedingDesignerLab }) => ({ default: BreedingDesignerLab })),
+  millerUrey: () => import('@/components/lab/miller-urey-lab').then(({ MillerUreyLab }) => ({ default: MillerUreyLab })),
+  sirModel: () => import('@/components/lab/sir-model-lab').then(({ SirModelLab }) => ({ default: SirModelLab })),
 };
 
 const EXPERIMENT_COMPONENTS = Object.fromEntries(
@@ -392,7 +400,12 @@ export function LabClient() {
                 <ExperimentIcon className="size-4.5" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-xs text-[#638087]">{experiment.kicker}</p>
+                <p className="text-xs text-[#638087]">
+                  {experiment.kicker}
+                  {experiment.extension ? (
+                    <span className="ml-2 inline-flex items-center rounded-full bg-[#fdf1e3] px-2 py-0.5 text-[10px] font-bold text-[#b57c16]">课外拓展</span>
+                  ) : null}
+                </p>
                 <h2 className="mt-0.5 text-lg font-semibold text-[#173b42]">{experiment.title}</h2>
                 <p className="mt-1 text-sm text-[#59767c]">{experiment.description}</p>
               </div>

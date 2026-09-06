@@ -88,7 +88,9 @@ export function CellsClient() {
                   }`}
                 >
                   {item.name}
-                  <span className="mt-0.5 block text-[10px] font-normal opacity-70">{item.kicker.split(' · ')[0]}</span>
+                  <span className="mt-0.5 block text-[10px] font-normal opacity-70">
+                    {item.extension ? '⚡ 课外拓展' : item.kicker.split(' · ')[0]}
+                  </span>
                 </button>
               );
             })}
@@ -120,7 +122,9 @@ export function CellsClient() {
                   }`}
                 >
                   {item.name}
-                  <span className="mt-0.5 block text-[10px] font-normal opacity-70">{item.kicker.split(' · ')[0]}</span>
+                  <span className="mt-0.5 block text-[10px] font-normal opacity-70">
+                    {item.extension ? '⚡ 课外拓展' : item.kicker.split(' · ')[0]}
+                  </span>
                 </button>
               );
             })}

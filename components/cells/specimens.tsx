@@ -25,6 +25,8 @@ export type Specimen = {
   intro: string;
   parts: CellPart[];
   Svg: ComponentType<{ active: number | null; open?: boolean }>;
+  /** 课外拓展内容（教材之外的延伸），页面上会打上"课外拓展"标记 */
+  extension?: boolean;
   /** 立体剖面（SVG 伪 3D，默认展示，所有角度都清晰） */
   Stage3d?: ComponentType<{ active: number | null; open?: boolean }>;
   /** 实景 3D（three.js 渲染，可自由旋转缩放，按需加载） */
@@ -3456,6 +3458,263 @@ function CommunityStructureSvg({ active }: { active: number | null; open?: boole
   );
 }
 
+/* ================= 中心体 ================= */
+
+function CentrosomeSvg({ active }: { active: number | null; open?: boolean }) {
+  const triplet = (cx: number, cy: number) => (
+    <g>
+      {[0, 1, 2].map((i) => (
+        <circle key={i} cx={cx + i * 9} cy={cy} r="4.5" fill="none" stroke="#2c6e94" strokeWidth="2" />
+      ))}
+    </g>
+  );
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 两个相互垂直的中心粒 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="220" cy="150" rx="86" ry="34" fill="#d9e7f2" stroke="#3d6a94" strokeWidth="3" />
+        <text x="220" y="155" textAnchor="middle" fontSize="12.5" fill="#1e4a68" fontWeight="700">中心粒（横切）</text>
+        <g transform="translate(220 208)">
+          {[-45, -27, -9, 9, 27, 45].map((y, i) => (
+            <g key={i}>{triplet(-13, y)}</g>
+          ))}
+          <rect x="-20" y="-56" width="40" height="118" rx="18" fill="none" stroke="#3d6a94" strokeWidth="2.5" />
+        </g>
+        <text x="220" y="36" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">两个中心粒相互垂直（"L"形）</text>
+      </g>
+      {/* 三联微管放大 */}
+      <g style={dim(active, 1)}>
+        <g transform="translate(120 208)">
+          {[0, 1, 2].map((i) => (
+            <circle key={i} cx={i * 13} cy={0} r="6.5" fill="none" stroke="#2c6e94" strokeWidth="2.4" />
+          ))}
+        </g>
+        <text x="30" y="180" fontSize="13.5" fill="#2c6e94" fontWeight="700">9 组三联微管围成一圈</text>
+        <line x1="98" y1="192" x2="112" y2="204" stroke="#2c6e94" strokeWidth="1.4" />
+      </g>
+      {/* 功能与分布 */}
+      <g style={dim(active, 2)}>
+        <rect x="46" y="266" width="448" height="66" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="62" y="290" fontSize="13.5" fill="#173b42" fontWeight="700">分布：动物细胞和低等植物细胞有；高等植物细胞没有</text>
+        <text x="62" y="314" fontSize="12.5" fill="#46666d">功能：与细胞的有丝分裂有关——发出星射线形成纺锤体，牵引染色体移动</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="24" y="88" fontSize="12.5" fill="#59767c">无膜细胞器（与核糖体同为"无膜双兄弟"）</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">中心体结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 神经-体液-免疫调节网络 ================= */
+
+function HomeostasisNetworkSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 中央：稳态 */}
+      <g style={dim(active, 3)}>
+        <circle cx="260" cy="186" r="66" fill="#e7f3e2" stroke="#2f7a4d" strokeWidth="4" />
+        <text x="260" y="180" textAnchor="middle" fontSize="14" fill="#2f7a4d" fontWeight="700">内环境稳态</text>
+        <text x="260" y="200" textAnchor="middle" fontSize="12" fill="#4a8a4a">动态平衡（不是不变）</text>
+      </g>
+      {/* 神经调节 */}
+      <g style={dim(active, 0)}>
+        <rect x="40" y="56" width="150" height="66" rx="12" fill="#d9e7f2" stroke="#3d6a94" strokeWidth="3" />
+        <text x="115" y="82" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">神经调节</text>
+        <text x="115" y="102" textAnchor="middle" fontSize="11.5" fill="#4a7a9a">反应快 · 定位准 · 短暂</text>
+        <line x1="150" y1="126" x2="212" y2="152" stroke="#3d6a94" strokeWidth="3.5" markerEnd="url(#hn-arrow)" />
+      </g>
+      {/* 体液调节 */}
+      <g style={dim(active, 1)}>
+        <rect x="330" y="56" width="150" height="66" rx="12" fill="#f4d9b0" stroke="#b57c16" strokeWidth="3" />
+        <text x="405" y="82" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">体液调节</text>
+        <text x="405" y="102" textAnchor="middle" fontSize="11.5" fill="#a58a4a">较慢 · 广泛 · 较长</text>
+        <line x1="370" y1="126" x2="308" y2="152" stroke="#b57c16" strokeWidth="3.5" markerEnd="url(#hn-arrow)" />
+      </g>
+      {/* 免疫调节 */}
+      <g style={dim(active, 2)}>
+        <rect x="185" y="300" width="150" height="66" rx="12" fill="#f0b0a8" stroke="#b0483a" strokeWidth="3" />
+        <text x="260" y="326" textAnchor="middle" fontSize="13.5" fill="#9b3a30" fontWeight="700">免疫调节</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="11.5" fill="#b56a62">清除异物 · 防卫监控清除</text>
+        <line x1="260" y1="296" x2="260" y2="256" stroke="#b0483a" strokeWidth="3.5" markerEnd="url(#hn-arrow)" />
+      </g>
+      {/* 相互联系 */}
+      <g style={dim(active, 3)}>
+        <path d="M76 128 Q 150 300 228 318" fill="none" stroke="#8aa1a6" strokeWidth="2" strokeDasharray="6 5" />
+        <path d="M444 128 Q 370 300 292 318" fill="none" stroke="#8aa1a6" strokeWidth="2" strokeDasharray="6 5" />
+        <text x="60" y="252" fontSize="12" fill="#799398">互相协调配合</text>
+        <text x="428" y="252" fontSize="12" fill="#799398">缺一不可</text>
+      </g>
+      <text x="16" y="40" fontSize="13.5" fill="#2c6e94" fontWeight="700">目前普遍认为：神经-体液-免疫调节网络是机体维持稳态的主要调节机制</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">稳态调节网络概念图</text>
+      <defs>
+        <marker id="hn-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+    </svg>
+  );
+}
+
+/* ================= 支原体（课外拓展） ================= */
+
+function MycoplasmaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 菌体：多形性 */}
+      <g style={dim(active, 0)}>
+        <path d="M160 120 Q 200 70 262 92 Q 330 84 356 140 Q 386 196 330 232 Q 276 272 210 240 Q 148 214 160 120 Z" fill="#d9e7f2" stroke="#3d6a94" strokeWidth="4" />
+        <text x="258" y="298" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">形态多变（多形性）——因为根本没有细胞壁</text>
+      </g>
+      {/* 细胞膜（唯一边界） */}
+      <g style={dim(active, 1)}>
+        <path d="M160 120 Q 200 70 262 92" fill="none" stroke="#b0483a" strokeWidth="6" strokeLinecap="round" />
+        <line x1="90" y1="92" x2="158" y2="102" stroke="#b0483a" strokeWidth="1.4" />
+        <text x="24" y="76" fontSize="13.5" fill="#b0483a" fontWeight="700">细胞膜 = 唯一边界</text>
+        <text x="24" y="94" fontSize="12" fill="#c97a5a">没有细胞壁保护</text>
+      </g>
+      {/* 内部 */}
+      <g style={dim(active, 2)}>
+        <circle cx="266" cy="150" r="24" fill="none" stroke="#7a4a8a" strokeWidth="3" strokeDasharray="6 4" />
+        <text x="266" y="155" textAnchor="middle" fontSize="11.5" fill="#7a4a8a" fontWeight="700">拟核</text>
+        {[[206, 126], [234, 196], [306, 128], [322, 190], [282, 216]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="6" fill="#8fb8d4" stroke="#3d6a94" strokeWidth="1.8" />
+        ))}
+        <text x="388" y="150" fontSize="13" fill="#2c6e94" fontWeight="700">核糖体（唯一细胞器）</text>
+        <text x="388" y="168" fontSize="12" fill="#4a7a9a">+ 环状拟核 DNA</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="26" y="316" width="468" height="40" rx="9" fill="#fdf6e3" stroke="#e9d9a8" strokeWidth="2" />
+        <text x="42" y="342" fontSize="13.5" fill="#8a671b" fontWeight="700">青霉素对它无效——它没有细胞壁，药物失去靶点</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">支原体：目前发现的最小原核细胞（约 0.1~0.3 μm）——"最小细胞"的常客</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">支原体结构模式图（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 变形虫（课外拓展） ================= */
+
+function AmoebaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 虫体 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 130 Q 190 86 250 96 Q 300 84 330 122 Q 368 150 344 196 Q 322 244 262 236 Q 210 260 168 222 Q 128 190 150 130 Z"
+          fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="3.5" />
+        <path d="M330 128 Q 380 100 408 116" fill="none" stroke="#9a6fb5" strokeWidth="14" strokeLinecap="round" />
+        <path d="M160 218 Q 110 250 84 246" fill="none" stroke="#9a6fb5" strokeWidth="13" strokeLinecap="round" />
+        <text x="404" y="94" fontSize="13.5" fill="#6a4a9a" fontWeight="700">伪足（临时突起）</text>
+        <text x="404" y="112" fontSize="12" fill="#8a6a94">运动 + 摄食全靠它</text>
+      </g>
+      {/* 细胞核 */}
+      <g style={dim(active, 1)}>
+        <circle cx="240" cy="160" r="26" fill="#8a5a9f" />
+        <text x="240" y="165" textAnchor="middle" fontSize="11.5" fill="#ffffff" fontWeight="700">细胞核</text>
+      </g>
+      {/* 食物泡 */}
+      <g style={dim(active, 2)}>
+        <circle cx="300" cy="196" r="14" fill="#f4d9b8" stroke="#b58a3a" strokeWidth="2.5" />
+        <circle cx="300" cy="196" r="6" fill="#c9a86a" />
+        <text x="318" y="224" fontSize="12.5" fill="#8a671b" fontWeight="600">食物泡（吞噬形成）</text>
+        <text x="24" y="292" fontSize="13" fill="#46666d" fontWeight="600">吞噬 → 膜的流动性直接体现；胞内消化靠溶酶体融合</text>
+      </g>
+      {/* 核实验 */}
+      <g style={dim(active, 1)}>
+        <rect x="26" y="308" width="468" height="44" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="42" y="336" fontSize="13.5" fill="#173b42" fontWeight="700">切割实验：有核的一半存活再生，无核的死亡——核控制代谢与遗传</text>
+      </g>
+      <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">变形虫（课外拓展）：单细胞原生动物——"没有固定形状"的生存专家</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">变形虫结构模式图（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 眼虫（课外拓展） ================= */
+
+function EuglenaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 虫体 */}
+      <g style={dim(active, 0)}>
+        <path d="M170 150 Q 190 88 262 88 Q 330 92 344 150 Q 356 214 282 238 Q 208 240 178 196 Q 160 170 170 150 Z" fill="#d9e8c8" stroke="#3f7f3a" strokeWidth="3.5" />
+        <text x="120" y="290" textAnchor="middle" fontSize="13.5" fill="#2f7a4d" fontWeight="700">梭形 · 前端圆钝后端尖</text>
+      </g>
+      {/* 鞭毛 */}
+      <g style={dim(active, 1)}>
+        <path d="M172 122 Q 120 100 76 122 Q 46 138 30 130" fill="none" stroke="#3d6a94" strokeWidth="4.5" strokeLinecap="round" />
+        <text x="24" y="106" fontSize="13.5" fill="#2c6e94" fontWeight="700">鞭毛（运动）</text>
+      </g>
+      {/* 眼点 */}
+      <g style={dim(active, 2)}>
+        <circle cx="204" cy="118" r="9" fill="#b0483a" />
+        <text x="152" y="86" fontSize="13.5" fill="#b0483a" fontWeight="700">红色眼点（感光）</text>
+        <text x="152" y="66" fontSize="12" fill="#c97a5a">趋光——游向有光处</text>
+      </g>
+      {/* 叶绿体 */}
+      <g style={dim(active, 3)}>
+        {[[250, 128], [296, 150], [262, 178], [310, 196], [234, 176]].map(([x, y], i) => (
+          <ellipse key={i} cx={x} cy={y} rx="15" ry="7" fill="#4c8f5f" stroke="#2f6b42" strokeWidth="2" transform={`rotate(${i * 36} ${x} ${y})`} />
+        ))}
+        <text x="376" y="140" fontSize="13.5" fill="#2f7a4d" fontWeight="700">叶绿体（可光合自养）</text>
+        <line x1="372" y1="144" x2="330" y2="152" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 特殊性 */}
+      <g style={dim(active, 4)}>
+        <rect x="26" y="308" width="468" height="44" rx="9" fill="#e7f3e2" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="42" y="336" fontSize="13.5" fill="#2f7a4d" fontWeight="700">有光自养（叶绿体）、无光异养——动植物特征一身兼</text>
+      </g>
+      <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">眼虫（课外拓展）：原生动物界的"跨界选手"——动物会动，还带"太阳能板"</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">眼虫结构模式图（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 生物富集（课外拓展） ================= */
+
+function BioaccumulationSvg({ active }: { active: number | null; open?: boolean }) {
+  const links = [
+    { name: '水', conc: '0.00001 ppm', w: 14, color: '#9fc4d8' },
+    { name: '浮游生物', conc: '0.01 ppm', w: 44, color: '#7fb88a' },
+    { name: '小鱼', conc: '0.5 ppm', w: 96, color: '#e0b06a' },
+    { name: '大鱼', conc: '2 ppm', w: 150, color: '#e07a5a' },
+    { name: '人（顶位）', conc: '10+ ppm', w: 230, color: '#b0483a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {links.map((l, i) => (
+        <g key={l.name} style={dim(active, i === 0 ? 0 : 1)}>
+          <rect x={26} y={70 + i * 56} width={l.w} height={34} rx={6} fill={l.color} stroke="#5a5a62" strokeWidth="2" style={{ transition: 'width 0.4s ease' }} />
+          <text x={26 + l.w + 12} y={92 + i * 56} fontSize="13.5" fill="#173b42" fontWeight="700">{l.name}</text>
+          <text x={26 + l.w + 12} y={92 + i * 56 + 18} fontSize="12" fill="#59767c">汞浓度 {l.conc}</text>
+          {i < links.length - 1 ? (
+            <path d={`M${26 + l.w / 2} ${104 + i * 56} L${26 + links[i + 1].w / 2} ${126 + i * 56}`} fill="none" stroke="#8aa1a6" strokeWidth="2.5" markerEnd="url(#ba-arrow)" />
+          ) : null}
+        </g>
+      ))}
+      <g style={dim(active, 1)}>
+        <text x="300" y="80" fontSize="13.5" fill="#b0483a" fontWeight="700">每上一个营养级浓缩数倍~数十倍</text>
+        <text x="300" y="100" fontSize="12.5" fill="#59767c">重金属 / DDT 难分解、难排出</text>
+        <text x="300" y="118" fontSize="12.5" fill="#59767c">→ 沿食物链越积越多（生物富集）</text>
+        <text x="300" y="148" fontSize="13" fill="#8a671b" fontWeight="700">启示：顶级消费者的风险最大；</text>
+        <text x="300" y="166" fontSize="13" fill="#8a671b" fontWeight="700">水俣病正是汞富集的悲剧</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">能量逐级递减，有害物质却逐级递增——两条曲线方向相反</text>
+      </g>
+      <defs>
+        <marker id="ba-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">生物富集效应图解（课外拓展）</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 /** 偏"实验操作/过程"的标本：不在图鉴页显示，改为在互动实验页作为相关图解出现。 */
@@ -4287,5 +4546,89 @@ export const SPECIMENS: Specimen[] = [
       { name: '应用', desc: '间种套种利用垂直结构增产；湖养鱼分层捕捞（上层鲢鳙、下层草青）——生产实践直接用。' },
     ],
     Svg: CommunityStructureSvg,
+  },
+  {
+    id: 'centrosome',
+    name: '中心体',
+    kicker: '细胞器 · 无膜细胞器',
+    intro: '两个相互垂直的中心粒组成，9 组三联微管围成一圈——动物细胞和低等植物细胞特有，与有丝分裂纺锤体的形成有关。',
+    parts: [
+      { name: '两个中心粒', desc: '互相垂直排列成"L"形——分裂前复制一份，分别移向两极。' },
+      { name: '9 组三联微管', desc: '每个中心粒由 9 组三联微管围成圆筒——电镜下的经典图像。' },
+      { name: '无膜细胞器', desc: '没有膜包被，与核糖体一样属于"无膜"细胞器——细胞器膜性判断题常考。' },
+      { name: '分布', desc: '动物细胞和低等植物细胞有；高等植物细胞没有（靠细胞两极直接发出纺锤丝）。' },
+      { name: '功能', desc: '与有丝分裂有关：发出星射线形成纺锤体，牵引染色体平均分配到两极。' },
+    ],
+    Svg: CentrosomeSvg,
+  },
+  {
+    id: 'homeostasisNetwork',
+    name: '神经-体液-免疫调节网络',
+    kicker: '专有名词 · 稳态调节机制',
+    intro: '维持内环境稳态靠三大系统协同：神经调节快而准、体液调节慢而广、免疫调节负责清除"异己"——缺一不可。',
+    parts: [
+      { name: '神经调节', desc: '反射弧完成，反应迅速、定位准确、作用时间短——体温、血糖调节都离不开它。' },
+      { name: '体液调节', desc: '激素等化学物质经体液运输，反应较慢、作用范围广、时间长——分级调节 + 反馈调节。' },
+      { name: '免疫调节', desc: '防卫（抵御病原体）、监控（清除突变细胞）、清除（衰老损伤细胞）三大功能。' },
+      { name: '协同实例', desc: '体温调节=神经+体液；流感恢复=免疫为主+神经体液配合；三者构成统一调节网络。' },
+      { name: '结论背熟', desc: '"神经-体液-免疫调节网络是机体维持稳态的主要调节机制"——教材原话，判断题直接考。' },
+    ],
+    Svg: HomeostasisNetworkSvg,
+  },
+  {
+    id: 'mycoplasma',
+    name: '支原体',
+    kicker: '特色生物 · 课外拓展',
+    intro: '目前发现的最小原核细胞——没有细胞壁，只有细胞膜当边界；这也是"青霉素对它无效"的原因。',
+    parts: [
+      { name: '最小细胞', desc: '直径约 0.1~0.3 μm，是目前已知能独立生活的最小细胞——"最小细胞"考点常客。' },
+      { name: '没有细胞壁', desc: '唯一边界是细胞膜，形态多变（多形性）——注意与"所有原核生物都有细胞壁"的错误说法区分。' },
+      { name: '原核身份', desc: '有拟核（环状 DNA）和核糖体，没有核膜包被的细胞核——原核特征齐全。' },
+      { name: '青霉素为何无效', desc: '青霉素抑制细胞壁（肽聚糖）合成——支原体压根没有细胞壁，所以药不对症（改用大环内酯类）。' },
+    ],
+    extension: true,
+    Svg: MycoplasmaSvg,
+  },
+  {
+    id: 'amoeba',
+    name: '变形虫',
+    kicker: '特色生物 · 课外拓展',
+    intro: '单细胞原生动物，靠伪足运动和摄食——"细胞膜流动性"的活教材；切割实验还证明了细胞核的控制作用。',
+    parts: [
+      { name: '伪足', desc: '临时形成的细胞质突起，用于运动和包围食物——形状随时改变，体现细胞膜具有流动性。' },
+      { name: '食物泡', desc: '吞噬的食物被膜包裹成食物泡，与溶酶体融合后被消化——胞内消化全过程。' },
+      { name: '细胞核的控制作用', desc: '经典实验：切为两半后有核的一半能存活再生、无核的一半逐渐死亡——细胞核控制代谢与遗传。' },
+      { name: '单细胞"全能选手"', desc: '一个细胞完成运动、摄食、消化、排泄、生殖——没有细胞分化，各"部门"就是各种细胞器。' },
+    ],
+    extension: true,
+    Svg: AmoebaSvg,
+  },
+  {
+    id: 'euglena',
+    name: '眼虫',
+    kicker: '特色生物 · 课外拓展',
+    intro: '有叶绿体能光合自养、有鞭毛会游动、有红色眼点能感光——动植物特征"一身兼"的跨界原生生物。',
+    parts: [
+      { name: '叶绿体（自养）', desc: '有光时进行光合作用制造有机物——这一点像植物。' },
+      { name: '鞭毛与眼点', desc: '鞭毛摆动游泳；红色眼点感知光的方向——趋光运动，这一点像动物。' },
+      { name: '兼性营养', desc: '有光自养、无光异养（吸收有机物）——营养方式介于动物与植物之间。' },
+      { name: '分类启示', desc: '眼虫的"跨界"说明动物、植物有共同祖先——进化上"中间类型"的证据之一。' },
+    ],
+    extension: true,
+    Svg: EuglenaSvg,
+  },
+  {
+    id: 'bioaccumulation',
+    name: '生物富集',
+    kicker: '专有名词 · 课外拓展',
+    intro: '重金属和 DDT 这类难分解的有害物质，沿食物链逐级浓缩——营养级越高浓度越大，能量递减的"反向版"。',
+    parts: [
+      { name: '什么是生物富集', desc: '有害物质（汞、镉、DDT）难分解、难排出，随食物链传递时在体内越积越多。' },
+      { name: '与能量流动对比', desc: '能量沿食物链逐级递减（10%~20%），有害物浓度却逐级递增——两条"曲线"方向相反，对照记忆。' },
+      { name: '顶位风险最大', desc: '人、大型食肉鱼等顶级消费者受害最深——水俣病就是汞富集导致的公害病。' },
+      { name: '治理启示', desc: '从源头控制排放比事后治理更有效；食物链越长、富集越明显——监测顶级捕食者就是监测环境。' },
+    ],
+    extension: true,
+    Svg: BioaccumulationSvg,
   },
 ];
