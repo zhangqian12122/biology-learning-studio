@@ -236,7 +236,7 @@ export function CellsClient() {
               </h2>
               <span className="text-xs text-[#79939a]">进入后可再按细分主题筛选</span>
             </div>
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-5">
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-6">
               {ATLAS_GROUPS.map((g, i) => (
                 <button
                   key={g.name}

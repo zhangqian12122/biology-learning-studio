@@ -3756,6 +3756,325 @@ function BioaccumulationSvg({ active }: { active: number | null; open?: boolean 
   );
 }
 
+/* ================= 蚯蚓 ================= */
+
+function EarthwormSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 体节（分段弓身） */}
+      <g style={dim(active, 0)}>
+        <path d="M40 210 Q 70 156 116 190 Q 150 148 196 182 Q 230 142 274 178 Q 308 148 350 180 Q 392 158 428 192 Q 462 216 448 244 Q 420 276 380 250 Q 346 282 306 252 Q 272 282 232 254 Q 198 282 160 254 Q 122 278 92 250 Q 48 240 40 210 Z"
+          fill="#e8a8a0" stroke="#b0483a" strokeWidth="3.5" />
+        {[76, 112, 150, 188, 226, 264, 302, 340, 378, 414].map((x, i) => (
+          <path key={i} d={`M${x} ${i % 2 === 0 ? 168 : 150} Q ${x + 6} ${210} ${x} ${252 - (i % 2 === 0 ? 0 : 14)}`} fill="none" stroke="#c97062" strokeWidth="2.5" />
+        ))}
+        <text x="36" y="136" fontSize="13.5" fill="#b0483a" fontWeight="700">体节（环节动物）</text>
+        <text x="36" y="120" fontSize="12" fill="#c97062">一节一节运动自如</text>
+      </g>
+      {/* 环带 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="150" cy="196" rx="26" ry="42" fill="#f0c0b8" stroke="#b0483a" strokeWidth="3" transform="rotate(-16 150 196)" />
+        <text x="150" y="286" textAnchor="middle" fontSize="13.5" fill="#b0483a" fontWeight="700">环带（生殖带）</text>
+        <line x1="150" y1="246" x2="150" y2="272" stroke="#b0483a" strokeWidth="1.4" />
+      </g>
+      {/* 刚毛 */}
+      <g style={dim(active, 2)}>
+        {[[96, 158], [134, 152], [210, 154], [250, 152], [294, 158], [334, 156], [392, 168]].map(([x, y], i) => (
+          <g key={i} stroke="#8a4a3a" strokeWidth="2" strokeLinecap="round">
+            <line x1={x} y1={y} x2={x - 5} y2={y - 10} />
+            <line x1={x} y1={y} x2={x + 5} y2={y - 10} />
+          </g>
+        ))}
+        <text x="330" y="120" fontSize="13.5" fill="#8a4a3a" fontWeight="700">刚毛（辅助运动）</text>
+        <line x1="330" y1="126" x2="298" y2="152" stroke="#8a4a3a" strokeWidth="1.4" />
+      </g>
+      {/* 口与后端 */}
+      <g style={dim(active, 3)}>
+        <circle cx="46" cy="206" r="9" fill="#8c231f" />
+        <text x="16" y="180" fontSize="13.5" fill="#7c2622" fontWeight="700">口（前端）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 0)}>
+        <rect x="26" y="308" width="468" height="44" rx="9" fill="#f6efe6" stroke="#d9c9a8" strokeWidth="2" />
+        <text x="42" y="326" fontSize="13.5" fill="#7a5a20" fontWeight="700">没有专门的呼吸器官：靠湿润的体壁完成气体交换（所以必须生活在潮湿土壤）</text>
+        <text x="42" y="344" fontSize="12" fill="#a58a4a">达尔文：蚯蚓是地球上最有价值的动物之一——翻土、分解、改良土壤</text>
+      </g>
+      <text x="508" y="46" textAnchor="end" fontSize="12.5" fill="#799398">蚯蚓（环节动物）结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 蝗虫 ================= */
+
+function LocustSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 头部 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="120" cy="150" rx="46" ry="38" fill="#e8c9a8" stroke="#b58a5f" strokeWidth="3.5" />
+        <circle cx="96" cy="138" r="10" fill="#5a4a3a" />
+        <text x="62" y="176" fontSize="12.5" fill="#7a5a38" fontWeight="600">复眼</text>
+        <path d="M92 118 Q 60 84 34 88" fill="none" stroke="#8a6a48" strokeWidth="4" strokeLinecap="round" />
+        <text x="16" y="72" fontSize="13" fill="#7a5a38" fontWeight="600">触角（触觉嗅觉）</text>
+        <text x="70" y="212" fontSize="13" fill="#7a5a38" fontWeight="700">头部：感觉与取食</text>
+      </g>
+      {/* 胸部 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="234" cy="160" rx="70" ry="46" fill="#e0b88a" stroke="#b58a5f" strokeWidth="3.5" />
+        {/* 前翅 */}
+        <path d="M220 128 Q 340 84 470 118 Q 420 138 300 148 Z" fill="#c9a86a" stroke="#8a6a3a" strokeWidth="3" />
+        <text x="400" y="92" fontSize="13" fill="#8a6a3a" fontWeight="600">前翅（革质保护）</text>
+        {/* 后翅 */}
+        <path d="M250 168 Q 372 158 448 196 Q 380 214 264 196 Z" fill="#f0d9b8" stroke="#b58a5f" strokeWidth="2.5" opacity="0.9" />
+        <text x="418" y="232" fontSize="13" fill="#b58a5f" fontWeight="600">后翅（薄膜飞行）</text>
+        {/* 三对足 */}
+        <path d="M180 190 L 156 240 L 122 268" fill="none" stroke="#b58a5f" strokeWidth="5" strokeLinecap="round" />
+        <path d="M232 196 L 226 252 L 200 296" fill="none" stroke="#b58a5f" strokeWidth="5" strokeLinecap="round" />
+        <path d="M282 188 L 316 240 L 356 262" fill="none" stroke="#b58a5f" strokeWidth="5" strokeLinecap="round" />
+        <text x="30" y="290" fontSize="13" fill="#7a5a38" fontWeight="700">三对足（后侧跳跃足发达）</text>
+        <text x="234" y="120" textAnchor="middle" fontSize="13" fill="#7a5a38" fontWeight="700">胸部：运动中心</text>
+      </g>
+      {/* 腹部 + 气门 */}
+      <g style={dim(active, 2)}>
+        <path d="M296 168 Q 386 190 424 244 Q 438 268 414 280 Q 380 290 336 264 Q 306 244 296 168 Z" fill="#e8c9a8" stroke="#b58a5f" strokeWidth="3.5" />
+        {[[336, 232], [358, 244], [380, 254], [400, 262]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="4" fill="#7a4a2a" />
+        ))}
+        <text x="330" y="310" fontSize="13.5" fill="#7a5a38" fontWeight="700">腹部：气门（气管呼吸的门户）</text>
+      </g>
+      {/* 外骨骼 */}
+      <g style={dim(active, 0)}>
+        <text x="16" y="40" fontSize="13.5" fill="#8a5a1e" fontWeight="700">外骨骼：保护内部 + 防止水分蒸发（陆生关键）——不能随身体长大，需定期蜕皮</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="26" y="330" width="468" height="36" rx="8" fill="#fdf6e3" stroke="#d9c9a8" strokeWidth="2" />
+        <text x="42" y="354" fontSize="13" fill="#7a5a20" fontWeight="600">发育：卵 → 若虫（无翅成虫态，蜕皮 5 次）→ 成虫——不完全变态发育</text>
+      </g>
+      <text x="508" y="64" textAnchor="end" fontSize="12.5" fill="#799398">蝗虫（节肢动物）结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 鲫鱼 ================= */
+
+function FishSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 鱼体 */}
+      <g style={dim(active, 0)}>
+        <path d="M96 190 Q 160 116 260 122 Q 352 128 398 190 Q 352 252 260 258 Q 160 264 96 190 Z" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="3.5" />
+        {/* 鳞片 */}
+        {[[180, 160], [216, 152], [252, 156], [288, 162], [196, 192], [232, 188], [268, 190], [304, 192], [212, 222], [248, 220], [284, 218]].map(([x, y], i) => (
+          <path key={i} d={`M${x - 10} ${y} a 10 8 0 0 0 20 0`} fill="none" stroke="#7fa8c9" strokeWidth="1.8" />
+        ))}
+        <text x="252" y="298" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">鳞片（表面有黏液，减小阻力）</text>
+      </g>
+      {/* 鳃盖 */}
+      <g style={dim(active, 1)}>
+        <path d="M150 132 Q 176 190 150 248" fill="none" stroke="#3d6a94" strokeWidth="4" />
+        <text x="52" y="112" fontSize="13.5" fill="#1e4a68" fontWeight="700">鳃盖（内为鳃）</text>
+        <line x1="118" y1="118" x2="148" y2="140" stroke="#1e4a68" strokeWidth="1.4" />
+        <text x="40" y="252" fontSize="12.5" fill="#2c6e94" fontWeight="600">鳃丝密布毛细血管</text>
+        <text x="40" y="270" fontSize="12.5" fill="#2c6e94" fontWeight="600">水中气体交换的场所</text>
+      </g>
+      {/* 侧线 */}
+      <g style={dim(active, 2)}>
+        <path d="M168 186 Q 260 168 380 184" fill="none" stroke="#b0483a" strokeWidth="3" strokeDasharray="8 5" />
+        <text x="262" y="152" textAnchor="middle" fontSize="13" fill="#b0483a" fontWeight="700">侧线：感知水流与方位</text>
+      </g>
+      {/* 鳍 */}
+      <g style={dim(active, 3)}>
+        <path d="M232 124 L 216 84 L 268 108 Z" fill="#8fb8d4" stroke="#3d6a94" strokeWidth="2.5" />
+        <text x="238" y="76" fontSize="13" fill="#1e4a68" fontWeight="700">背鳍（平衡）</text>
+        <path d="M168 232 Q 152 262 122 270 Q 132 240 152 222 Z" fill="#8fb8d4" stroke="#3d6a94" strokeWidth="2.5" />
+        <text x="60" y="296" fontSize="13" fill="#1e4a68" fontWeight="700">胸鳍（转向）</text>
+        <path d="M320 244 Q 336 272 366 276 Q 354 248 336 234 Z" fill="#8fb8d4" stroke="#3d6a94" strokeWidth="2.5" />
+        <text x="356" y="296" fontSize="13" fill="#1e4a68" fontWeight="700">腹鳍（平衡）</text>
+        <path d="M394 190 L 470 142 L 458 190 L 470 238 Z" fill="#e0a86a" stroke="#b57c3a" strokeWidth="3" />
+        <text x="424" y="264" textAnchor="middle" fontSize="13.5" fill="#b57c3a" fontWeight="700">尾鳍（前进+方向）</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">鱼类适于水中生活的特征：鳃呼吸 · 鳍游泳 · 侧线感知 · 鳔控制沉浮</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">鲫鱼（鱼类）结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 青蛙的变态发育 ================= */
+
+function FrogMetamorphosisSvg({ active }: { active: number | null; open?: boolean }) {
+  const stages = [
+    { name: '受精卵', desc: '水中胶团' },
+    { name: '蝌蚪', desc: '鳃呼吸 · 有尾' },
+    { name: '幼蛙', desc: '长四肢 · 尾渐消' },
+    { name: '成蛙', desc: '肺+皮肤呼吸' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {stages.map((s, i) => {
+        const cx = 78 + i * 122;
+        const cy = 150;
+        return (
+          <g key={s.name} style={dim(active, i)}>
+            {i === 0 ? (
+              <>
+                <circle cx={cx} cy={cy} r="30" fill="#3d2a1a" />
+                {[[-10, -10], [8, -8], [-8, 8], [10, 8], [0, 0], [-14, 2]].map(([dx, dy], j) => (
+                  <circle key={j} cx={cx + dx} cy={cy + dy} r="5.5" fill="#3d2a1a" stroke="#6a4a2a" strokeWidth="1.5" />
+                ))}
+              </>
+            ) : null}
+            {i === 1 ? (
+              <>
+                <ellipse cx={cx} cy={cy} rx="26" ry="18" fill="#5a8a3a" stroke="#3f6a2a" strokeWidth="2.5" />
+                <path d={`M${cx + 24} ${cy} Q ${cx + 52} ${cy - 12} ${cx + 66} ${cy + 4}`} fill="none" stroke="#5a8a3a" strokeWidth="6" strokeLinecap="round" />
+                <circle cx={cx - 10} cy={cy - 6} r="3.5" fill="#0a1a0a" />
+                <circle cx={cx - 10} cy={cy + 6} r="3.5" fill="#0a1a0a" />
+              </>
+            ) : null}
+            {i === 2 ? (
+              <>
+                <ellipse cx={cx} cy={cy} rx="27" ry="19" fill="#7aa83a" stroke="#4a7a2a" strokeWidth="2.5" />
+                <path d={`M${cx + 22} ${cy + 6} Q ${cx + 44} ${cy + 14} ${cx + 54} ${cy + 22}`} fill="none" stroke="#5a8a3a" strokeWidth="4" strokeLinecap="round" />
+                {[[-12, -8], [12, -8]].map(([dx, dy], j) => (
+                  <circle key={j} cx={cx + dx} cy={cy + dy} r="4" fill="#0a1a0a" />
+                ))}
+                <path d={`M${cx - 20} ${cy - 14} L ${cx - 30} ${cy - 24} M${cx + 18} ${cy - 12} L ${cx + 26} ${cy - 22}`} stroke="#4a7a2a" strokeWidth="4" strokeLinecap="round" />
+              </>
+            ) : null}
+            {i === 3 ? (
+              <>
+                <ellipse cx={cx} cy={cy} rx="30" ry="21" fill="#7aa83a" stroke="#4a7a2a" strokeWidth="2.5" />
+                {[[-14, -9], [14, -9]].map(([dx, dy], j) => (
+                  <circle key={j} cx={cx + dx} cy={cy + dy} r="4.5" fill="#0a1a0a" />
+                ))}
+                <path d={`M${cx - 24} ${cy - 16} L ${cx - 38} ${cy - 28} M${cx + 22} ${cy - 14} L ${cx + 34} ${cy - 26}`} stroke="#4a7a2a" strokeWidth="5" strokeLinecap="round" />
+                <path d={`M${cx - 18} ${cy + 16} L ${cx - 30} ${cy + 34} M${cx + 16} ${cy + 16} L ${cx + 28} ${cy + 34}`} stroke="#4a7a2a" strokeWidth="5" strokeLinecap="round" />
+                <path d={`M${cx + 28} ${cy - 4} Q ${cx + 44} ${cy} ${cx + 36} ${cy + 8}`} fill="none" stroke="#4a7a2a" strokeWidth="2.5" />
+              </>
+            ) : null}
+            <text x={cx} y={cy + 72} textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">{s.name}</text>
+            <text x={cx} y={cy + 92} textAnchor="middle" fontSize="12" fill="#59767c">{s.desc}</text>
+            {i < 3 ? (
+              <line x1={cx + 44} y1={cy} x2={cx + 76} y2={cy} stroke="#8aa1a6" strokeWidth="3" markerEnd="url(#fm-arrow)" />
+            ) : null}
+          </g>
+        );
+      })}
+      <text x="16" y="56" fontSize="13.5" fill="#2c6e94" fontWeight="700">变态发育：幼体与成体形态差异显著</text>
+      <g style={dim(active, 3)}>
+        <rect x="26" y="288" width="468" height="60" rx="9" fill="#e7f3e2" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="42" y="312" fontSize="13.5" fill="#2f7a4d" fontWeight="700">呼吸的变化：鳃（蝌蚪）→ 肺 + 皮肤辅助（成蛙）</text>
+        <text x="42" y="334" fontSize="12" fill="#4a8a4a">生殖离不开水：体外受精、卵无壳——这是两栖类"两栖"却不完全适应陆地的关键</text>
+      </g>
+      <defs>
+        <marker id="fm-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">青蛙的变态发育模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 家鸽 ================= */
+
+function PigeonSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 鸟体 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 176 Q 170 120 240 108 Q 330 92 386 148 Q 428 190 396 232 Q 350 268 260 262 Q 176 258 150 176 Z" fill="#d9dfe8" stroke="#4a5a6a" strokeWidth="3.5" />
+        {/* 头颈 */}
+        <circle cx="356" cy="122" r="34" fill="#c9d4e2" stroke="#4a5a6a" strokeWidth="3" />
+        <path d="M386 114 L 416 122 L 386 132 Z" fill="#e8c94a" stroke="#b5953a" strokeWidth="2" />
+        <circle cx="366" cy="112" r="5" fill="#13333a" />
+        <text x="428" y="110" fontSize="13" fill="#3d5a68" fontWeight="700">喙（无齿）</text>
+      </g>
+      {/* 正羽翼 */}
+      <g style={dim(active, 1)}>
+        <path d="M258 160 Q 200 150 150 172 Q 118 190 96 216 Q 150 206 196 200 Q 240 196 270 186 Z" fill="#aab8c8" stroke="#4a5a6a" strokeWidth="2.5" />
+        {[116, 138, 160, 182, 202, 222].map((x, i) => (
+          <line key={i} x1={x} y1={216 - i * 4} x2={x + 8} y2={172 - i * 3} stroke="#4a5a6a" strokeWidth="1.6" />
+        ))}
+        <text x="60" y="248" fontSize="13.5" fill="#3d5a68" fontWeight="700">正羽翼（飞行面）</text>
+      </g>
+      {/* 气囊（双重呼吸） */}
+      <g style={dim(active, 2)}>
+        {[[206, 140, 20], [258, 216, 24], [318, 214, 18]].map(([x, y, r], i) => (
+          <circle key={i} cx={x} cy={y} r={r} fill="#e8f4fb" stroke="#3d7fa6" strokeWidth="2.5" strokeDasharray="6 4" />
+        ))}
+        <text x="186" y="184" fontSize="12.5" fill="#3d7fa6" fontWeight="700">气囊（暂存气体）</text>
+        <text x="16" y="306" fontSize="13.5" fill="#2c6e94" fontWeight="700">双重呼吸：吸气/呼气时肺内都在交换气体</text>
+        <text x="16" y="326" fontSize="12" fill="#59767c">（气囊只暂存气体，交换在肺内进行）</text>
+      </g>
+      {/* 胸肌 */}
+      <g style={dim(active, 3)}>
+        <ellipse cx="268" cy="196" rx="52" ry="34" fill="#c98a7a" stroke="#a8564a" strokeWidth="2.5" opacity="0.8" />
+        <text x="268" y="200" textAnchor="middle" fontSize="12.5" fill="#7a2622" fontWeight="700">发达胸肌</text>
+        <text x="268" y="218" textAnchor="middle" fontSize="11.5" fill="#a86a5a">附着龙骨突，牵动两翼</text>
+      </g>
+      {/* 适飞特征 */}
+      <g style={dim(active, 0)}>
+        <rect x="26" y="328" width="468" height="36" rx="8" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="42" y="352" fontSize="13" fill="#173b42" fontWeight="600">适飞特征：流线型 · 中空骨骼 · 覆羽 · 直肠短</text>
+      </g>
+      <text x="508" y="46" textAnchor="end" fontSize="12.5" fill="#799398">家鸽（鸟类）结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 苔藓与蕨类 ================= */
+
+function MossFernSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <line x1="272" y1="56" x2="272" y2="300" stroke="#dceaea" strokeWidth="2" strokeDasharray="6 5" />
+      {/* 苔藓（左） */}
+      <g style={dim(active, 0)}>
+        <rect x="30" y="272" width="200" height="30" fill="#8a7a58" />
+        {[76, 126, 176].map((x, i) => (
+          <g key={i}>
+            <line x1={x} y1="272" x2={x} y2="206" stroke="#5a8a3a" strokeWidth="4" strokeLinecap="round" />
+            <path d={`M${x - 10} 210 Q ${x} 196 ${x + 10} 210 Q ${x} 220 ${x - 10} 210 Z`} fill="#7aa83a" stroke="#4a7a2a" strokeWidth="2" />
+            <ellipse cx={x} cy="192" rx="11" ry="16" fill="#b58a3a" stroke="#8a671b" strokeWidth="2" />
+          </g>
+        ))}
+        <text x="130" y="176" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">孢蒴（孢子繁殖）</text>
+        <text x="130" y="88" textAnchor="middle" fontSize="14" fill="#173b42" fontWeight="700">苔藓</text>
+        <text x="44" y="322" fontSize="12.5" fill="#59767c" fontWeight="600">假根（固着，不吸水）· 有茎叶无输导组织</text>
+        <text x="44" y="342" fontSize="12.5" fill="#59767c" fontWeight="600">叶只有一层细胞 → 监测空气污染的指示植物</text>
+      </g>
+      {/* 蕨类（右） */}
+      <g style={dim(active, 1)}>
+        <rect x="302" y="268" width="190" height="34" fill="#8a7a58" />
+        <path d="M397 268 L 397 120" stroke="#6a4a2a" strokeWidth="6" strokeLinecap="round" />
+        {[[360, 148], [368, 186], [376, 224], [352, 128], [380, 128]].map(([x, y], i) => (
+          <path key={i} d={`M${x} ${y} q 18 -10 36 2 q -18 10 -36 -2 Z`} fill="#5a9a4a" stroke="#3f7f3a" strokeWidth="2" transform={`rotate(${i % 2 === 0 ? -16 : 16} ${x} ${y})`} />
+        ))}
+        {[[368, 156], [376, 194]].map(([x, y], i) => (
+          <g key={i}>
+            {[0, 1, 2, 3].map((j) => (
+              <circle key={j} cx={x + 22 + (j % 2) * 12} cy={y + j * 7} r="3.5" fill="#8a4a2a" />
+            ))}
+          </g>
+        ))}
+        <text x="397" y="96" textAnchor="middle" fontSize="14" fill="#173b42" fontWeight="700">蕨类</text>
+        <text x="306" y="322" fontSize="12.5" fill="#59767c" fontWeight="600">真根 · 输导组织 · 叶背孢子囊群</text>
+        <text x="306" y="342" fontSize="12.5" fill="#59767c" fontWeight="600">古代蕨类埋入地下 → 今天的煤</text>
+      </g>
+      {/* 共同点 */}
+      <g style={dim(active, 0)}>
+        <rect x="26" y="46" width="468" height="40" rx="8" fill="#e7f3e2" stroke="#3f7f3a" strokeWidth="2" />
+        <text x="42" y="72" fontSize="13.5" fill="#2f7a4d" fontWeight="700">共同点：用孢子繁殖（不结种子），受精过程离不开水 → 只能生活在阴湿环境</text>
+      </g>
+      <text x="130" y="56" textAnchor="middle" fontSize="0" fill="none">.</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">苔藓与蕨类（孢子植物）对比模式图</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 /** 偏"实验操作/过程"的标本：不在图鉴页显示，改为在互动实验页作为相关图解出现。 */
@@ -3778,8 +4097,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'carbonCycle', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation'] },
 ];
 
@@ -3802,6 +4122,12 @@ export const ATLAS_GROUPS: { name: string; icon: string; desc: string; categorie
     icon: '🦠',
     desc: '细菌、真菌、原生生物与病毒',
     categories: ['微生物', '病毒'],
+  },
+  {
+    name: '动物世界',
+    icon: '🐾',
+    desc: '环节、节肢、鱼类、两栖与鸟类',
+    categories: ['动物世界'],
   },
   {
     name: '人体与调节',
@@ -4719,5 +5045,89 @@ export const SPECIMENS: Specimen[] = [
     ],
     extension: true,
     Svg: BioaccumulationSvg,
+  },
+  {
+    id: 'earthworm',
+    name: '蚯蚓',
+    kicker: '动物世界 · 环节动物',
+    intro: '一节一节的"土壤工程师"：靠体节和刚毛运动，没有专门的呼吸器官，全靠湿润体壁交换气体。',
+    parts: [
+      { name: '体节', desc: '身体由许多相似体节构成——环节动物的核心特征，配合肌肉收缩蠕动前进。' },
+      { name: '环带（生殖带）', desc: '靠近前端的粗大环状结构，与生殖有关——据此可分辨蚯蚓的前后端。' },
+      { name: '刚毛', desc: '每节体壁上的小硬毛，钉住土壤辅助运动（与肌肉配合一收一放）。' },
+      { name: '湿润体壁呼吸', desc: '没有专门的呼吸器官：氧气溶解在体壁黏液中渗入毛细血管——所以雨后常见蚯蚓钻出地面（水中缺氧）。' },
+      { name: '分解者角色', desc: '取食落叶等腐殖质，排出的粪便改良土壤——达尔文称其为"最有价值的动物"。' },
+    ],
+    Svg: EarthwormSvg,
+  },
+  {
+    id: 'locust',
+    name: '蝗虫',
+    kicker: '动物世界 · 节肢动物',
+    intro: '头胸腹三部分的经典节肢动物：外骨骼防蒸发、气管通过气门呼吸、后足发达善跳跃——不完全变态发育。',
+    parts: [
+      { name: '外骨骼', desc: '坚硬"盔甲"：保护内部器官、防止体内水分蒸发（陆生动物的关鍵适应）；不能随身体长大，需定期蜕皮。' },
+      { name: '头胸腹分部', desc: '头部感觉与取食（触角、复眼、口器）；胸部是运动中心（三对足两对翅）；腹部集中内脏。' },
+      { name: '气门与气管', desc: '胸部和腹部两侧的气门是气体进出门户，气体沿气管直接送到组织细胞——蝗虫的呼吸系统不经过血液。' },
+      { name: '三对足两对翅', desc: '后足腿节粗大善于跳跃；前翅革质保护、后翅膜质飞行。' },
+      { name: '不完全变态', desc: '卵 → 若虫（形态像成虫但无翅、生殖器官未成熟）→ 成虫；与家蚕的完全变态（多蛹期）对比是高频题。' },
+    ],
+    Svg: LocustSvg,
+  },
+  {
+    id: 'fish',
+    name: '鲫鱼',
+    kicker: '动物世界 · 鱼类',
+    intro: '水中生活的代表：鳃呼吸、鳍游泳、侧线感知水流——一整套与水环境相适应的结构。',
+    parts: [
+      { name: '鳃（呼吸）', desc: '鳃丝密布毛细血管；水从口入、经鳃流出，气体交换后氧气进入血液。观察鱼"吞水吐水"就是在呼吸。' },
+      { name: '鳍（运动）', desc: '尾鳍提供前进动力并控制方向；背鳍、胸鳍、腹鳍维持平衡——"鳍是鱼的运动器官"。' },
+      { name: '侧线', desc: '身体两侧的点状线，能感知水流方向和速度——鱼群转向不碰撞的秘密。' },
+      { name: '鳞片与黏液', desc: '保护身体并减小游泳阻力。' },
+      { name: '鳔', desc: '调节身体密度，控制上浮下潜（不一定每个考点都讲，但常与"沉浮"一起出现）。' },
+    ],
+    Svg: FishSvg,
+  },
+  {
+    id: 'frogMetamorphosis',
+    name: '青蛙的变态发育',
+    kicker: '动物世界 · 两栖动物',
+    intro: '水中受精、水中生活起步：蝌蚪用鳃呼吸、成蛙用肺加皮肤呼吸——幼体与成体差别巨大的变态发育。',
+    parts: [
+      { name: '受精卵', desc: '春夏在水中抱对，体外受精；卵外有胶质膜保护。' },
+      { name: '蝌蚪', desc: '像小鱼：用鳃呼吸、靠尾游泳——此时完全水生。' },
+      { name: '幼蛙（变态中）', desc: '先长后肢再长前肢，尾逐渐被吸收，肺开始发育。' },
+      { name: '成蛙', desc: '主要用肺呼吸，皮肤裸露湿润可辅助呼吸；可以水陆两栖生活。' },
+      { name: '生殖离不开水', desc: '卵无壳、体外受精、幼体必须在水中发育——两栖类分布受限制的根本原因（考点）。' },
+    ],
+    Svg: FrogMetamorphosisSvg,
+  },
+  {
+    id: 'pigeon',
+    name: '家鸽',
+    kicker: '动物世界 · 鸟类',
+    intro: '全身都是"飞行装备"：流线型体形、中空骨骼、发达胸肌牵动两翼，气囊辅助肺完成独特的双重呼吸。',
+    parts: [
+      { name: '流线型体形与覆羽', desc: '体表被覆羽毛，身体呈流线型，减小飞行阻力。' },
+      { name: '发达的胸肌', desc: '附着在龙骨突上，收缩有力地牵动两翼扇动——飞行的主要动力来源。' },
+      { name: '气囊与双重呼吸', desc: '气囊与肺相通：每呼吸一次，空气两次经过肺、两次气体交换——满足飞行时的巨大耗氧（气囊本身不进行气体交换）。' },
+      { name: '中空骨骼', desc: '长骨中空、内充空气——减轻体重；直肠很短，粪便随时排出，不存储加重负担。' },
+      { name: '体温恒定', desc: '良好的产热散热结构使体温恒定——增强对环境的适应能力（变温动物 vs 恒温动物对比）。' },
+    ],
+    Svg: PigeonSvg,
+  },
+  {
+    id: 'mossFern',
+    name: '苔藓与蕨类',
+    kicker: '植物与繁殖 · 孢子植物对比',
+    intro: '都不结种子、用孢子繁殖：苔藓矮小有假根，蕨类有真根和输导组织——受精都离不开水，只能住在阴湿处。',
+    parts: [
+      { name: '苔藓：假根', desc: '只起固着作用、不能吸水——吸水主要靠叶。' },
+      { name: '苔藓：叶只一层细胞', desc: '对二氧化硫等污染气体非常敏感，是监测空气污染程度的指示植物。' },
+      { name: '蕨类：真根与输导组织', desc: '有真正的根、茎、叶，体内有输导组织，植株明显高大（如肾蕨、满江红）。' },
+      { name: '孢子繁殖', desc: '苔藓的孢蒴、蕨类叶背的孢子囊群——都不产生种子（与种子植物的根本区别）。' },
+      { name: '煤的来历', desc: '古代蕨类植物被埋藏地下，经漫长年代变成煤——"蕨类与煤"是常考背景。' },
+    ],
+    Svg: MossFernSvg,
   },
 ];
