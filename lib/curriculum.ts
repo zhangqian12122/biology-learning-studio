@@ -606,7 +606,8 @@ export type ExperimentId =
   | 'choiceMedia'
   | 'chromosomeVariation'
   | 'geneFrequency'
-  | 'mulberryFishPond';
+  | 'mulberryFishPond'
+  | 'experimentDesigner';
 
 export const experimentMeta: Record<
   ExperimentId,
@@ -986,10 +987,22 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态保护与人与自然',
   },
+  experimentDesigner: {
+    title: '对照实验设计器',
+    kicker: '必修 1 · 分子与细胞',
+    description: '三组经典场景：自己找出自变量、因变量与对照组。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+  },
 };
 
 /** 实验目录分类：按教材实验主题归组，方便在 /lab 快速筛选 */
 export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: ExperimentId[] }[] = [
+  {
+    name: '实验方法',
+    icon: '📐',
+    ids: ['experimentDesigner'],
+  },
   {
     name: '显微观察类',
     icon: '🔬',
@@ -1035,6 +1048,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
 export const experimentOrder: ExperimentId[] = [
   // 必修 1 · 分子与细胞（按课本章节先后排序）
   'microscope',
+  'experimentDesigner',
   'tissueDetection',
   'cellMembranePrep',
   'chloroplastStreaming',

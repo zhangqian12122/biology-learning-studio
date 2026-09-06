@@ -29,6 +29,7 @@ import {
   Palette,
   RefreshCw,
   Recycle,
+  ClipboardCheck,
   Repeat,
   Ruler,
   Scissors,
@@ -101,6 +102,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   chromosomeVariation: Layers,
   geneFrequency: LineChart,
   mulberryFishPond: Recycle,
+  experimentDesigner: ClipboardCheck,
 };
 
 /** 实验组件按需加载：目录页只载入目录本身，点开实验才拉取对应代码块。 */
@@ -157,6 +159,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   chromosomeVariation: () => import('@/components/lab/chromosome-variation-lab').then(({ ChromosomeVariationLab }) => ({ default: ChromosomeVariationLab })),
   geneFrequency: () => import('@/components/lab/gene-frequency-lab').then(({ GeneFrequencyLab }) => ({ default: GeneFrequencyLab })),
   mulberryFishPond: () => import('@/components/lab/mulberry-fish-pond-lab').then(({ MulberryFishPondLab }) => ({ default: MulberryFishPondLab })),
+  experimentDesigner: () => import('@/components/lab/experiment-designer-lab').then(({ ExperimentDesignerLab }) => ({ default: ExperimentDesignerLab })),
 };
 
 const EXPERIMENT_COMPONENTS = Object.fromEntries(
