@@ -3783,6 +3783,40 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'carbonCycle', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation'] },
 ];
 
+/** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
+export const ATLAS_GROUPS: { name: string; icon: string; desc: string; categories: string[] }[] = [
+  {
+    name: '细胞结构与代谢',
+    icon: '🧫',
+    desc: '细胞、膜、细胞器与酶的运作',
+    categories: ['细胞与膜', '细胞器', '代谢与酶', '细胞命运'],
+  },
+  {
+    name: '遗传与分子',
+    icon: '🧬',
+    desc: 'DNA、RNA、染色体与中心法则',
+    categories: ['分子与遗传'],
+  },
+  {
+    name: '微生物与病毒',
+    icon: '🦠',
+    desc: '细菌、真菌、原生生物与病毒',
+    categories: ['微生物', '病毒'],
+  },
+  {
+    name: '人体与调节',
+    icon: '🩺',
+    desc: '神经、免疫与内环境稳态',
+    categories: ['人体与调节'],
+  },
+  {
+    name: '植物与生态',
+    icon: '🌿',
+    desc: '植物繁殖、群落与生态系统',
+    categories: ['植物与繁殖', '生态'],
+  },
+];
+
 export const SPECIMENS: Specimen[] = [
   {
     id: 'neuron',
