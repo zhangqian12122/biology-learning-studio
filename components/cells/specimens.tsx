@@ -1292,6 +1292,139 @@ function SecretoryProteinSvg({ active }: { active: number | null; open?: boolean
   );
 }
 
+/* ================= 哺乳动物红细胞 ================= */
+
+function RedBloodCellSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 细胞膜（唯一的膜结构） */}
+      <g style={dim(active, 0)}>
+        <circle cx="190" cy="178" r="112" fill="#d4544a" stroke="#a83832" strokeWidth="4" />
+        <circle cx="190" cy="178" r="112" fill="none" stroke="#f0908a" strokeWidth="6" opacity="0.55" />
+      </g>
+      {/* 双凹圆盘：中央凹陷区 + 右侧纵切示意 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="190" cy="178" rx="66" ry="56" fill="#e88a80" opacity="0.9" />
+        <ellipse cx="176" cy="164" rx="26" ry="18" fill="#f2aca4" opacity="0.85" />
+        <path d="M330 244 Q 344 168 330 112 Q 322 82 352 76 Q 396 66 424 84 Q 402 92 398 120 Q 394 168 404 224 Q 410 252 384 258 Q 350 264 330 244 Z"
+          fill="#e88a80" stroke="#a83832" strokeWidth="3.5" />
+        <text x="368" y="176" textAnchor="middle" fontSize="9" fill="#7c2622" fontWeight="700">纵切：双凹</text>
+        <text x="368" y="190" textAnchor="middle" fontSize="8.5" fill="#a83832">中央薄 · 边缘厚</text>
+      </g>
+      {/* 无细胞核（虚线空位 + 斜杠） */}
+      <g style={dim(active, 2)}>
+        <circle cx="190" cy="178" r="26" fill="none" stroke="#7c2622" strokeWidth="3" strokeDasharray="6 5" />
+        <line x1="173" y1="195" x2="207" y2="161" stroke="#7c2622" strokeWidth="4" strokeLinecap="round" />
+        <text x="190" y="230" textAnchor="middle" fontSize="10" fill="#7c2622" fontWeight="700">无细胞核</text>
+      </g>
+      {/* 血红蛋白（内部小颗粒） */}
+      <g style={dim(active, 3)}>
+        {[[126, 122], [152, 106], [232, 112], [258, 140], [110, 196], [128, 236], [246, 226], [262, 196], [172, 262], [216, 258]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="7" fill="#b53832" stroke="#8c231f" strokeWidth="1.6" />
+        ))}
+        <line x1="262" y1="140" x2="298" y2="112" stroke="#8c231f" strokeWidth="1.4" />
+        <text x="300" y="108" fontSize="10.5" fill="#8c231f" fontWeight="700">血红蛋白（运 O2）</text>
+        <text x="300" y="122" fontSize="9" fill="#b5564f">含铁的蛋白质</text>
+      </g>
+      {/* 标注：细胞膜 + 弹性变形 */}
+      <g style={dim(active, 0)}>
+        <line x1="86" y1="110" x2="60" y2="86" stroke="#a83832" strokeWidth="1.4" />
+        <text x="16" y="70" fontSize="10.5" fill="#a83832" fontWeight="700">细胞膜（唯一膜结构）</text>
+        <text x="16" y="84" fontSize="9" fill="#c06a62">无细胞壁、无核膜与众多细胞器膜</text>
+      </g>
+      <g style={dim(active, 4)}>
+        <text x="16" y="320" fontSize="10.5" fill="#5f7076" fontWeight="600">制备细胞膜的经典材料：吸水胀破后，离心即可得到较纯净的细胞膜</text>
+        <text x="16" y="342" fontSize="9.5" fill="#8a9a9e">直径约 7.6 μm，可变形挤过更细的毛细血管</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="9.5" fill="#799398">哺乳动物红细胞（双凹圆盘）模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 流感病毒 ================= */
+
+function FluVirusSvg({ active }: { active: number | null; open?: boolean }) {
+  const spikes: Array<[number, number, number]> = [
+    [150, 96, -42], [206, 68, -18], [266, 60, 0], [322, 80, 22], [366, 122, 48],
+    [384, 182, 90], [362, 244, 132], [318, 284, 158], [260, 298, 180], [200, 286, 205], [156, 248, 228], [136, 184, 268],
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 包膜（脂质，来自宿主细胞膜） */}
+      <g style={dim(active, 0)}>
+        <circle cx="260" cy="180" r="118" fill="#e8b06a" stroke="#b07a34" strokeWidth="4" />
+        <circle cx="260" cy="180" r="118" fill="none" stroke="#f4d09a" strokeWidth="7" opacity="0.6" />
+      </g>
+      {/* 包膜蛋白：HA（红）与 NA（蓝）交替 */}
+      <g style={dim(active, 1)}>
+        {spikes.map(([x, y, rot], i) => {
+          const isHa = i % 2 === 0;
+          if (!isHa) return null;
+          const color = '#c9503c';
+          return (
+            <g key={i} transform={`translate(${x} ${y}) rotate(${rot})`}>
+              <line x1="0" y1="0" x2="0" y2="20" stroke={color} strokeWidth="4" />
+              <ellipse cx="0" cy="-6" rx="11" ry="9" fill="#e07a5a" stroke={color} strokeWidth="2.4" />
+            </g>
+          );
+        })}
+        <line x1="382" y1="120" x2="418" y2="98" stroke="#c9503c" strokeWidth="1.4" />
+        <text x="420" y="94" fontSize="10.5" fill="#c9503c" fontWeight="700">HA 血凝素</text>
+        <text x="420" y="108" fontSize="9" fill="#d97a5a">识别宿主细胞受体</text>
+      </g>
+      <g style={dim(active, 2)}>
+        {spikes.map(([x, y, rot], i) => {
+          const isHa = i % 2 === 0;
+          if (isHa) return null;
+          const color = '#3d7fa6';
+          return (
+            <g key={i} transform={`translate(${x} ${y}) rotate(${rot})`}>
+              <line x1="0" y1="0" x2="0" y2="20" stroke={color} strokeWidth="4" />
+              <ellipse cx="0" cy="-6" rx="8" ry="11" fill="#6aa8cc" stroke={color} strokeWidth="2.4" />
+            </g>
+          );
+        })}
+        <line x1="268" y1="54" x2="300" y2="38" stroke="#3d7fa6" strokeWidth="1.4" />
+        <text x="303" y="34" fontSize="10.5" fill="#3d7fa6" fontWeight="700">NA 神经氨酸酶</text>
+        <text x="303" y="48" fontSize="9" fill="#5a98b5">帮助新病毒释放（奥司他韦靶点）</text>
+      </g>
+      {/* 衣壳蛋白层（与 RNA 同属内芯，选中 RNA 时一并高亮） */}
+      <g style={dim(active, 3)}>
+        <circle cx="260" cy="180" r="86" fill="none" stroke="#b07a34" strokeWidth="7" opacity="0.45" />
+        <circle cx="260" cy="180" r="74" fill="#f2d9b0" stroke="#b07a34" strokeWidth="3" />
+        <text x="260" y="274" textAnchor="middle" fontSize="9.5" fill="#8a5a20" fontWeight="700">衣壳蛋白（保护内部）</text>
+      </g>
+      {/* 分节段的 RNA + 聚合酶 */}
+      <g style={dim(active, 3)}>
+        {[150, 172, 194, 216].map((y, i) => (
+          <path
+            key={i}
+            d={`M212 ${y} q 12 ${i % 2 === 0 ? -9 : 9} 24 0 q 12 ${i % 2 === 0 ? 9 : -9} 24 0 q 12 ${i % 2 === 0 ? -9 : 9} 24 0`}
+            fill="none"
+            stroke="#9a6fb5"
+            strokeWidth="4.5"
+            strokeLinecap="round"
+          />
+        ))}
+        <text x="104" y="120" fontSize="10.5" fill="#7a4a9a" fontWeight="700">8 段 RNA（遗传物质）</text>
+        <line x1="118" y1="126" x2="208" y2="164" stroke="#7a4a9a" strokeWidth="1.4" />
+      </g>
+      <g style={dim(active, 4)}>
+        {[268, 296].map((x, i) => (
+          <circle key={i} cx={x} cy={214 + i * 4} r="7.5" fill="#7fb88a" stroke="#3f7f52" strokeWidth="2" />
+        ))}
+        <text x="308" y="222" fontSize="10.5" fill="#3f7f52" fontWeight="700">RNA 聚合酶</text>
+        <text x="308" y="236" fontSize="9" fill="#5a9870">复制 RNA 必需</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <text x="16" y="320" fontSize="10.5" fill="#8a5a20" fontWeight="700">RNA 分成 8 个节段 → 不同毒株混合感染时易发生基因重配 → 变异快</text>
+        <text x="16" y="342" fontSize="9.5" fill="#a87a4a">所以流感疫苗常需根据流行株年年更新</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="9.5" fill="#799398">流感病毒结构模式图</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 export const SPECIMENS: Specimen[] = [
@@ -1393,6 +1526,20 @@ export const SPECIMENS: Specimen[] = [
     Svg: HivSvg,
   },
   {
+    id: 'fluVirus',
+    name: '流感病毒',
+    kicker: '病毒 · 结构模式图',
+    intro: '流行性感冒的病原体：包膜上有 HA 和 NA 两种突起，遗传物质是分成 8 段的 RNA——分节段使它极易变异。',
+    parts: [
+      { name: '包膜（脂质）', desc: '来自宿主细胞膜的脂质层，包在病毒最外层，包裹着内部的衣壳与核酸。' },
+      { name: 'HA 血凝素', desc: '包膜上的红色突起，识别并结合宿主细胞表面的受体，决定病毒能感染哪些细胞。' },
+      { name: 'NA 神经氨酸酶', desc: '包膜上的蓝色突起，帮助新生病毒从细胞表面释放——抗流感药奥司他韦正是抑制它的活性。' },
+      { name: '8 段 RNA（遗传物质）', desc: '流感病毒的 RNA 分成 8 个节段。不同毒株混合感染同一细胞时节段可重新组合（基因重配），因此变异极快，疫苗需年年更新。' },
+      { name: 'RNA 聚合酶', desc: '宿主细胞不能复制 RNA，流感病毒必须自带聚合酶才能在细胞内复制遗传物质。' },
+    ],
+    Svg: FluVirusSvg,
+  },
+  {
     id: 'dnaHelix',
     name: 'DNA 双螺旋',
     kicker: '核酸 · 结构模式图',
@@ -1419,6 +1566,20 @@ export const SPECIMENS: Specimen[] = [
       { name: '磷脂双分子层', desc: '结构特点：流动性（磷脂与大多数蛋白质可动）；功能特点：选择透过性——结构与功能相适应。' },
     ],
     Svg: MembraneModelSvg,
+  },
+  {
+    id: 'redBloodCell',
+    name: '哺乳动物红细胞',
+    kicker: '细胞膜材料 · 结构模式图',
+    intro: '成熟哺乳动物红细胞：双凹圆盘状，没有细胞核和众多细胞器，唯一的膜就是细胞膜——制备纯净细胞膜的经典材料。',
+    parts: [
+      { name: '细胞膜（唯一膜结构）', desc: '没有细胞壁、没有核膜与众多细胞器膜的干扰，吸水胀破后离心即可得到较纯净的细胞膜——实验"体验制备细胞膜"选材的原因。' },
+      { name: '双凹圆盘形态', desc: '中央较薄、边缘较厚，像甜甜圈被压扁——增大表面积，有利于携带更多氧气、更快进行气体交换。' },
+      { name: '无细胞核', desc: '成熟过程中细胞核退化消失，为血红蛋白腾出空间；因此红细胞不能再分裂，寿命约 120 天。' },
+      { name: '血红蛋白', desc: '细胞内含量最多的蛋白质，含铁，能与氧气结合——血液呈红色、红细胞能运 O2 都靠它。注意与血浆蛋白区分：血红蛋白在细胞内，不属于内环境成分。' },
+      { name: '可变形的身材', desc: '直径约 7.6 μm，但能变形挤过直径更小的毛细血管，通过后恢复原状——细胞膜的流动性体现。' },
+    ],
+    Svg: RedBloodCellSvg,
   },
   {
     id: 'phage',
