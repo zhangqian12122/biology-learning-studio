@@ -4229,6 +4229,110 @@ function ThreeDefenseLinesSvg({ active }: { active: number | null; open?: boolea
   );
 }
 
+/* ================= 水盐平衡调节 ================= */
+
+function WaterSaltBalanceSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <text x="16" y="32" fontSize="13.5" fill="#2c6e94" fontWeight="700">水盐平衡调节（神经—体液调节的典型例子）</text>
+      <g style={dim(active, 0)}>
+        <rect x="150" y="52" width="220" height="46" rx="10" fill="#fdf6e3" stroke="#b58a3a" strokeWidth="2.5" />
+        <text x="260" y="72" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">细胞外液渗透压升高</text>
+        <text x="260" y="90" textAnchor="middle" fontSize="12" fill="#a58a4a">（吃得太咸 · 缺水 · 失水过多）</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <line x1="260" y1="98" x2="260" y2="122" stroke="#5a5a62" strokeWidth="3" markerEnd="url(#ws-arrow)" />
+        <rect x="150" y="126" width="220" height="46" rx="10" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="260" y="146" textAnchor="middle" fontSize="13.5" fill="#6a3a7a" fontWeight="700">下丘脑渗透压感受器</text>
+        <text x="260" y="164" textAnchor="middle" fontSize="12" fill="#8a6a94">（水盐平衡调节中枢）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <path d="M150 150 Q 90 150 88 178" fill="none" stroke="#3d7e9e" strokeWidth="3" markerEnd="url(#ws-arrow)" />
+        <rect x="24" y="182" width="170" height="46" rx="10" fill="#dcebea" stroke="#3d7e9e" strokeWidth="2.5" />
+        <text x="109" y="202" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">大脑皮层 → 产生渴觉</text>
+        <text x="109" y="220" textAnchor="middle" fontSize="12" fill="#4a7a9a">主动饮水（补水）</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <path d="M370 150 Q 430 150 432 178" fill="none" stroke="#7a4a8a" strokeWidth="3" markerEnd="url(#ws-arrow)" />
+        <rect x="330" y="182" width="170" height="46" rx="10" fill="#f0e3f7" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="415" y="202" textAnchor="middle" fontSize="13.5" fill="#6a3a7a" fontWeight="700">垂体释放抗利尿激素</text>
+        <text x="415" y="220" textAnchor="middle" fontSize="12" fill="#8a6a94">（ADH ↑）</text>
+        <line x1="415" y1="228" x2="415" y2="252" stroke="#7a4a8a" strokeWidth="3" markerEnd="url(#ws-arrow)" />
+        <rect x="330" y="256" width="170" height="46" rx="10" fill="#dcebea" stroke="#3d7e9e" strokeWidth="2.5" />
+        <text x="415" y="276" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">肾小管、集合管</text>
+        <text x="415" y="294" textAnchor="middle" fontSize="12" fill="#4a7a9a">重吸收水分 ↑ → 尿量减少</text>
+      </g>
+      <g style={dim(active, 4)}>
+        <rect x="24" y="252" width="264" height="66" rx="10" fill="#e7f3e2" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="40" y="276" fontSize="13.5" fill="#2f7a4d" fontWeight="700">结果：细胞外液渗透压下降</text>
+        <text x="40" y="298" fontSize="12" fill="#4a8a4a">饮水 + 重吸收双管齐下，恢复水平衡</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">水盐平衡调节流程图</text>
+      <defs>
+        <marker id="ws-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+    </svg>
+  );
+}
+
+/* ================= 病毒/原核/真核对比 ================= */
+
+function CellTypeCompareSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <text x="16" y="32" fontSize="13.5" fill="#2c6e94" fontWeight="700">病毒 / 原核细胞 / 真核细胞：三列对比（判断题高频）</text>
+      <g style={dim(active, 0)}>
+        <rect x="22" y="52" width="152" height="230" rx="10" fill="#fdf0ee" stroke="#b0483a" strokeWidth="2.5" />
+        <text x="98" y="78" textAnchor="middle" fontSize="14" fill="#9b3a30" fontWeight="700">病毒</text>
+        <circle cx="98" cy="140" r="30" fill="#e8b8b0" stroke="#8c231f" strokeWidth="2.5" />
+        {[0, 1, 2, 3, 4, 5].map((j) => {
+          const ang = (j * 60 * Math.PI) / 180;
+          return (
+            <g key={j}>
+              <line x1={98 + Math.cos(ang) * 30} y1={140 + Math.sin(ang) * 30} x2={98 + Math.cos(ang) * 44} y2={140 + Math.sin(ang) * 44} stroke="#8c231f" strokeWidth="3" strokeLinecap="round" />
+              <circle cx={98 + Math.cos(ang) * 48} cy={140 + Math.sin(ang) * 48} r="4" fill="#c9503c" />
+            </g>
+          );
+        })}
+        <text x="98" y="200" textAnchor="middle" fontSize="12.5" fill="#7a2622" fontWeight="600">无细胞结构</text>
+        <text x="98" y="220" textAnchor="middle" fontSize="12" fill="#a05a4a">核酸 + 蛋白质构成</text>
+        <text x="98" y="240" textAnchor="middle" fontSize="12" fill="#a05a4a">必须寄生在活细胞中</text>
+        <text x="98" y="264" textAnchor="middle" fontSize="12" fill="#b0483a" fontWeight="600">≠ 原核生物！</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <rect x="184" y="52" width="152" height="230" rx="10" fill="#eef7ee" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="260" y="78" textAnchor="middle" fontSize="14" fill="#2f7a4d" fontWeight="700">原核细胞</text>
+        <rect x="216" y="100" width="88" height="42" rx="21" fill="#b8d4b0" stroke="#3f7f3a" strokeWidth="2.5" />
+        <circle cx="252" cy="121" r="12" fill="none" stroke="#2f5a2f" strokeWidth="2" strokeDasharray="4 3" />
+        <circle cx="278" cy="130" r="4" fill="#2f5a2f" />
+        <text x="260" y="172" textAnchor="middle" fontSize="12.5" fill="#2f5a2f" fontWeight="600">拟核（无核膜）</text>
+        <text x="260" y="206" textAnchor="middle" fontSize="12" fill="#3a6a3a">只有核糖体一种细胞器</text>
+        <text x="260" y="228" textAnchor="middle" fontSize="12" fill="#3a6a3a">有细胞壁（支原体例外）</text>
+        <text x="260" y="252" textAnchor="middle" fontSize="12" fill="#2f7a4d" fontWeight="600">代表：细菌、蓝细菌</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="346" y="52" width="152" height="230" rx="10" fill="#eaf1f9" stroke="#3d6a94" strokeWidth="2.5" />
+        <text x="422" y="78" textAnchor="middle" fontSize="14" fill="#1e4a68" fontWeight="700">真核细胞</text>
+        <circle cx="422" cy="146" r="42" fill="#d9e7f2" stroke="#3d6a94" strokeWidth="2.5" />
+        <circle cx="410" cy="136" r="13" fill="#7a9ac0" stroke="#2c5a80" strokeWidth="2" />
+        <circle cx="434" cy="158" r="6" fill="#6aa86a" />
+        <ellipse cx="406" cy="164" rx="8" ry="5" fill="#e8a86a" />
+        <text x="422" y="206" textAnchor="middle" fontSize="12.5" fill="#1e4a68" fontWeight="600">有核膜包被的细胞核</text>
+        <text x="422" y="228" textAnchor="middle" fontSize="12" fill="#3a6a8a">多种细胞器（线粒体等）</text>
+        <text x="422" y="252" textAnchor="middle" fontSize="12" fill="#1e4a68" fontWeight="600">代表：动物、植物、真菌</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="22" y="298" width="476" height="52" rx="9" fill="#fdf6e3" stroke="#d9c9a8" strokeWidth="2" />
+        <text x="38" y="320" fontSize="13" fill="#7a5a20" fontWeight="700">判断口诀：有无"以核膜为界限的细胞核"区分原核与真核</text>
+        <text x="38" y="342" fontSize="12" fill="#a58a4a">共同点：都有细胞膜和核糖体（病毒除外，它连细胞都不是）</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">病毒 / 原核细胞 / 真核细胞对比模式图</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 /** 偏"实验操作/过程"的标本：不在图鉴页显示，改为在互动实验页作为相关图解出现。 */
@@ -4249,10 +4353,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'centralDogma', 'divisionCurve'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'photosynthesisProcess', 'enzymeModel', 'secretoryProtein'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'waterSaltBalance'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'carbonCycle', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation'] },
 ];
@@ -5227,6 +5331,34 @@ export const SPECIMENS: Specimen[] = [
       { name: '易错提醒', desc: '吞噬细胞既参与第二道防线（直接吞噬），也在第三道防线中摄取、处理、呈递抗原——"一员多岗"。' },
     ],
     Svg: ThreeDefenseLinesSvg,
+  },
+  {
+    id: 'waterSaltBalance',
+    name: '水盐平衡调节',
+    kicker: '专有名词 · 体液调节流程',
+    intro: '吃咸了或缺水时，下丘脑—垂体—肾小管联动保水：抗利尿激素让尿量减少，渴觉让你主动喝水。',
+    parts: [
+      { name: '细胞外液渗透压升高', desc: '触发信号：吃得太咸、出汗失水等使细胞外液变"浓"——渗透压感受器正好能感知它。' },
+      { name: '下丘脑（感受器 + 中枢）', desc: '水盐平衡的调节中枢：既能感受渗透压变化，又能合成抗利尿激素（由垂体释放）。' },
+      { name: '抗利尿激素（ADH）', desc: '促进肾小管和集合管对水分的重吸收——尿量减少，把水"留住"。' },
+      { name: '大脑皮层产生渴觉', desc: '下丘脑把信号传到大脑皮层产生渴觉，驱动主动饮水——调节中枢在下丘脑，渴觉在皮层。' },
+      { name: '结果：水平衡恢复', desc: '饮水补水 + 尿量减少双管齐下，渗透压回落——负反馈维持稳态的体现。' },
+    ],
+    Svg: WaterSaltBalanceSvg,
+  },
+  {
+    id: 'cellTypeCompare',
+    name: '病毒/原核/真核对比',
+    kicker: '专有名词 · 三列对比总表',
+    intro: '一张图分清三大类：病毒没有细胞结构，原核细胞没有核膜，真核细胞有以核膜为界限的细胞核。',
+    parts: [
+      { name: '病毒（无细胞结构）', desc: '只由核酸（DNA 或 RNA）和蛋白质构成，必须寄生在活细胞中——它不是原核生物！' },
+      { name: '原核细胞', desc: '无以核膜为界限的细胞核（只有拟核），只有核糖体一种细胞器，多数有细胞壁（支原体例外）。' },
+      { name: '真核细胞', desc: '有核膜包被的细胞核和多种细胞器——动物、植物、真菌都属于真核生物。' },
+      { name: '共同点', desc: '原核与真核都有细胞膜、核糖体和 DNA；病毒也有蛋白质和核酸——但"有无细胞结构"是根本区别。' },
+      { name: '高频判断', desc: '蓝细菌（原核、有叶绿素但无叶绿体）、支原体（无细胞壁的原核）、病毒（不属于原核）。' },
+    ],
+    Svg: CellTypeCompareSvg,
   },
   {
     id: 'earthworm',
