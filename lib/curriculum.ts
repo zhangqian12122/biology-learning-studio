@@ -607,7 +607,8 @@ export type ExperimentId =
   | 'chromosomeVariation'
   | 'geneFrequency'
   | 'mulberryFishPond'
-  | 'experimentDesigner';
+  | 'experimentDesigner'
+  | 'dilutionPlating';
 
 export const experimentMeta: Record<
   ExperimentId,
@@ -994,6 +995,13 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
   },
+  dilutionPlating: {
+    title: '稀释涂布平板法计数',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '梯度稀释 → 涂布培养 → 按 30~300 规则挑选平板计数。',
+    relatedBook: 'technology',
+    relatedModule: '发酵工程与过程控制',
+  },
 };
 
 /** 实验目录分类：按教材实验主题归组，方便在 /lab 快速筛选 */
@@ -1041,7 +1049,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'embryoTransfer', 'choiceMedia', 'millerUrey'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'embryoTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey'],
   },
 ];
 
@@ -1049,6 +1057,7 @@ export const experimentOrder: ExperimentId[] = [
   // 必修 1 · 分子与细胞（按课本章节先后排序）
   'microscope',
   'experimentDesigner',
+  'dilutionPlating',
   'tissueDetection',
   'cellMembranePrep',
   'chloroplastStreaming',
