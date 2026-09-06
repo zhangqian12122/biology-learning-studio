@@ -1626,7 +1626,7 @@ function SynapseSvg({ active }: { active: number | null; open?: boolean }) {
       </g>
       {/* 递质释放 + 突触间隙 */}
       <g style={dim(active, 2)}>
-        {[[248, 178], [268, 202], [244, 226], [268, 248]].map(([x, y], i) => (
+        {[[242, 196], [266, 212], [240, 228], [264, 240]].map(([x, y], i) => (
           <circle key={i} cx={x} cy={y} r="5.5" fill="#5a9a4a" />
         ))}
         <line x1="112" y1="252" x2="392" y2="252" stroke="#8aa1a6" strokeWidth="2" strokeDasharray="9 7" />
@@ -1635,7 +1635,8 @@ function SynapseSvg({ active }: { active: number | null; open?: boolean }) {
       {/* 突触前膜 / 后膜 */}
       <g style={dim(active, 3)}>
         <path d="M158 158 Q 216 176 274 158" fill="none" stroke="#b0483a" strokeWidth="5" strokeLinecap="round" />
-        <text x="86" y="166" fontSize="13" fill="#b0483a" fontWeight="700">突触前膜</text>
+        <text x="318" y="142" fontSize="13" fill="#b0483a" fontWeight="700">突触前膜</text>
+        <line x1="314" y1="146" x2="274" y2="158" stroke="#b0483a" strokeWidth="1.4" />
       </g>
       <g style={dim(active, 4)}>
         <path d="M130 300 Q 260 282 400 300" fill="none" stroke="#2c6e94" strokeWidth="5" strokeLinecap="round" />
@@ -2332,50 +2333,52 @@ function AerobicRespirationSvg({ active }: { active: number | null; open?: boole
 function FlowerStructureSvg({ active }: { active: number | null; open?: boolean }) {
   return (
     <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <text x="24" y="34" fontSize="13.5" fill="#2c6e94" fontWeight="700">完全花结构：雄蕊与雌蕊是繁殖的核心——"去雄"杂交就是摘除花药</text>
       {/* 花柄与花托 */}
       <g style={dim(active, 5)}>
-        <line x1="260" y1="356" x2="260" y2="256" stroke="#4a8a3a" strokeWidth="8" strokeLinecap="round" />
-        <ellipse cx="260" cy="252" rx="34" ry="12" fill="#6aa86a" stroke="#3f7f3a" strokeWidth="2.5" />
-        <text x="330" y="330" fontSize="12.5" fill="#3f7f3a" fontWeight="600">花柄与花托</text>
-        <line x1="326" y1="326" x2="272" y2="298" stroke="#3f7f3a" strokeWidth="1.4" />
+        <line x1="260" y1="368" x2="260" y2="262" stroke="#4a8a3a" strokeWidth="10" strokeLinecap="round" />
+        <ellipse cx="260" cy="258" rx="40" ry="14" fill="#6aa86a" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="26" y="356" fontSize="13.5" fill="#3f7f3a" fontWeight="700">花柄与花托</text>
+        <line x1="112" y1="352" x2="252" y2="340" stroke="#3f7f3a" strokeWidth="1.4" />
       </g>
       {/* 花萼 + 花瓣 */}
       <g style={dim(active, 4)}>
-        <path d="M216 240 Q 190 222 200 196 Q 226 204 234 228 Z" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" />
-        <path d="M304 240 Q 330 222 320 196 Q 294 204 286 228 Z" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" />
-        <path d="M240 224 Q 190 210 172 168 Q 216 160 246 194 Z" fill="#f2b8c8" stroke="#c9708a" strokeWidth="3" />
-        <path d="M280 224 Q 330 210 348 168 Q 304 160 274 194 Z" fill="#f2b8c8" stroke="#c9708a" strokeWidth="3" />
-        <text x="150" y="118" fontSize="12.5" fill="#c9708a" fontWeight="600">花瓣（引诱昆虫）</text>
-        <line x1="176" y1="122" x2="196" y2="162" stroke="#c9708a" strokeWidth="1.4" />
-        <text x="348" y="238" fontSize="12.5" fill="#3f7f3a" fontWeight="600">花萼（保护）</text>
+        <path d="M208 252 Q 178 240 186 214 Q 216 222 224 246 Z" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" />
+        <path d="M312 252 Q 342 240 334 214 Q 304 222 296 246 Z" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" />
+        <path d="M218 232 Q 140 214 118 158 Q 178 148 226 190 Z" fill="#f2b8c8" stroke="#c9708a" strokeWidth="3" />
+        <path d="M302 232 Q 380 214 402 158 Q 342 148 294 190 Z" fill="#f2b8c8" stroke="#c9708a" strokeWidth="3" />
+        <text x="30" y="104" fontSize="13.5" fill="#c9708a" fontWeight="700">花瓣（引诱昆虫）</text>
+        <line x1="128" y1="110" x2="160" y2="168" stroke="#c9708a" strokeWidth="1.4" />
+        <text x="26" y="296" fontSize="13.5" fill="#3f7f3a" fontWeight="700">花萼（保护）</text>
+        <line x1="118" y1="292" x2="198" y2="244" stroke="#3f7f3a" strokeWidth="1.4" />
       </g>
       {/* 雄蕊 */}
       <g style={dim(active, 0)}>
-        <path d="M244 232 Q 210 214 196 186" fill="none" stroke="#e0b020" strokeWidth="3.5" />
-        <path d="M276 232 Q 310 214 324 186" fill="none" stroke="#e0b020" strokeWidth="3.5" />
-        <ellipse cx="192" cy="178" rx="14" ry="9" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.5" transform="rotate(-24 192 178)" />
-        <ellipse cx="328" cy="178" rx="14" ry="9" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.5" transform="rotate(24 328 178)" />
-        <text x="108" y="168" fontSize="13.5" fill="#a58a20" fontWeight="700">花药（产生花粉）</text>
-        <line x1="150" y1="172" x2="180" y2="178" stroke="#a58a20" strokeWidth="1.4" />
+        <path d="M238 236 Q 190 214 158 158" fill="none" stroke="#e0b020" strokeWidth="4" />
+        <path d="M282 236 Q 330 214 362 158" fill="none" stroke="#e0b020" strokeWidth="4" />
+        <ellipse cx="152" cy="150" rx="18" ry="12" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.5" transform="rotate(-28 152 150)" />
+        <ellipse cx="368" cy="150" rx="18" ry="12" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.5" transform="rotate(28 368 150)" />
+        <text x="24" y="124" fontSize="14" fill="#a58a20" fontWeight="700">花药（产生花粉）</text>
+        <line x1="112" y1="128" x2="140" y2="142" stroke="#a58a20" strokeWidth="1.4" />
       </g>
       {/* 雌蕊 */}
       <g style={dim(active, 1)}>
-        <ellipse cx="260" cy="172" rx="20" ry="11" fill="#e8d4f2" stroke="#7a4a8a" strokeWidth="3" />
-        <line x1="260" y1="182" x2="260" y2="228" stroke="#7a4a8a" strokeWidth="5" />
-        <ellipse cx="260" cy="256" rx="30" ry="22" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3" />
-        <circle cx="252" cy="258" r="6" fill="#7a4a8a" />
-        <circle cx="268" cy="260" r="6" fill="#7a4a8a" />
-        <text x="70" y="192" fontSize="13.5" fill="#6a4a9a" fontWeight="700">柱头（承接花粉）</text>
-        <line x1="146" y1="188" x2="240" y2="174" stroke="#7a4a8a" strokeWidth="1.4" />
-        <text x="70" y="212" fontSize="13.5" fill="#6a4a9a" fontWeight="700">花柱</text>
-        <text x="70" y="264" fontSize="13.5" fill="#6a4a9a" fontWeight="700">子房（内有胚珠）</text>
-        <line x1="146" y1="260" x2="230" y2="258" stroke="#7a4a8a" strokeWidth="1.4" />
+        <ellipse cx="260" cy="186" rx="26" ry="14" fill="#e8d4f2" stroke="#7a4a8a" strokeWidth="3" />
+        <line x1="260" y1="200" x2="260" y2="270" stroke="#7a4a8a" strokeWidth="6" />
+        <ellipse cx="260" cy="300" rx="46" ry="32" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3" />
+        <circle cx="246" cy="302" r="7" fill="#7a4a8a" />
+        <circle cx="274" cy="306" r="7" fill="#7a4a8a" />
+        <text x="508" y="142" textAnchor="end" fontSize="14" fill="#6a4a9a" fontWeight="700">柱头（承接花粉）</text>
+        <line x1="400" y1="146" x2="284" y2="180" stroke="#7a4a8a" strokeWidth="1.4" />
+        <text x="30" y="252" fontSize="14" fill="#6a4a9a" fontWeight="700">花柱</text>
+        <line x1="70" y1="248" x2="252" y2="238" stroke="#7a4a8a" strokeWidth="1.4" />
+        <text x="490" y="296" textAnchor="end" fontSize="14" fill="#6a4a9a" fontWeight="700">子房（内有胚珠）</text>
+        <line x1="392" y1="296" x2="308" y2="300" stroke="#7a4a8a" strokeWidth="1.4" />
       </g>
       <g style={dim(active, 2)}>
-        <text x="380" y="276" fontSize="13.5" fill="#8a5a94" fontWeight="700">胚珠（含卵细胞）</text>
-        <line x1="376" y1="272" x2="276" y2="262" stroke="#8a5a94" strokeWidth="1.4" />
+        <text x="490" y="330" textAnchor="end" fontSize="14" fill="#8a5a94" fontWeight="700">胚珠（含卵细胞）</text>
+        <line x1="392" y1="326" x2="282" y2="306" stroke="#8a5a94" strokeWidth="1.4" />
       </g>
-      <text x="16" y="42" fontSize="13.5" fill="#2c6e94" fontWeight="700">完全花结构：雄蕊与雌蕊是繁殖的核心——"去雄"杂交就是摘除花药</text>
       <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">花的结构模式图</text>
     </svg>
   );
@@ -2388,47 +2391,57 @@ function CornReproductionSvg({ active }: { active: number | null; open?: boolean
     <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
       {/* 茎秆 */}
       <g style={dim(active, 0)}>
-        <line x1="150" y1="356" x2="150" y2="86" stroke="#5f9a4a" strokeWidth="12" strokeLinecap="round" />
-        <path d="M150 240 Q 108 220 92 182" fill="none" stroke="#5f9a4a" strokeWidth="7" strokeLinecap="round" />
-        <path d="M150 176 Q 196 156 214 118" fill="none" stroke="#5f9a4a" strokeWidth="7" strokeLinecap="round" />
+        <line x1="140" y1="368" x2="140" y2="58" stroke="#5f9a4a" strokeWidth="14" strokeLinecap="round" />
+        <path d="M140 310 Q 52 282 30 196" fill="none" stroke="#5f9a4a" strokeWidth="9" strokeLinecap="round" />
+        <path d="M140 252 Q 236 226 262 140" fill="none" stroke="#5f9a4a" strokeWidth="9" strokeLinecap="round" />
+        <path d="M140 180 Q 70 158 56 106" fill="none" stroke="#5f9a4a" strokeWidth="9" strokeLinecap="round" />
       </g>
-      {/* 雄花序 */}
+      {/* 顶端雄花序 */}
       <g style={dim(active, 1)}>
-        <path d="M150 86 Q 118 66 96 44 M 150 86 Q 150 52 150 34 M 150 86 Q 182 66 204 44" fill="none" stroke="#c9a86a" strokeWidth="5" strokeLinecap="round" />
-        {[[96, 44], [150, 34], [204, 44], [124, 62], [176, 62]].map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="7" fill="#f4d06a" stroke="#b5953a" strokeWidth="2" />
+        <path d="M140 58 Q 104 40 78 22 M 140 58 Q 140 36 140 16 M 140 58 Q 176 40 202 22 M 140 58 Q 112 30 92 44 M 140 58 Q 168 30 188 44"
+          fill="none" stroke="#c9a86a" strokeWidth="6" strokeLinecap="round" />
+        {[[78, 22], [140, 16], [202, 22], [92, 44], [188, 44], [118, 34], [162, 34]].map(([x, y], i) => (
+          <g key={i}>
+            <circle cx={x} cy={y} r="9" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.2" />
+            <line x1={x - 5} y1={y + 5} x2={x + 5} y2={y - 5} stroke="#b5953a" strokeWidth="1.6" />
+          </g>
         ))}
         <text x="20" y="76" fontSize="13.5" fill="#a58a20" fontWeight="700">顶端雄花序</text>
-        <text x="20" y="94" fontSize="12" fill="#b5953a">花粉多而轻（风媒）</text>
+        <text x="20" y="94" fontSize="12.5" fill="#b5953a">花粉多而轻（风媒）</text>
       </g>
       {/* 风与花粉 */}
       <g style={dim(active, 2)}>
-        <path d="M36 132 q 18 -8 36 0 q 18 8 36 0" fill="none" stroke="#8aa1a6" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M46 156 q 18 -8 36 0" fill="none" stroke="#8aa1a6" strokeWidth="2.5" strokeLinecap="round" />
-        {[[214, 130], [248, 148], [282, 164], [316, 178]].map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="4" fill="#f4d06a" stroke="#b5953a" strokeWidth="1.5" />
+        <path d="M28 130 q 20 -9 40 0 q 20 9 40 0" fill="none" stroke="#8aa1a6" strokeWidth="3" strokeLinecap="round" />
+        <path d="M38 156 q 20 -9 40 0" fill="none" stroke="#8aa1a6" strokeWidth="3" strokeLinecap="round" />
+        <path d="M204 52 Q 300 78 372 148" fill="none" stroke="#e0b020" strokeWidth="2.5" strokeDasharray="7 6" />
+        {[[246, 62], [292, 84], [334, 112], [362, 138]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="5" fill="#f4d06a" stroke="#b5953a" strokeWidth="1.6" />
         ))}
-        <text x="322" y="128" fontSize="13.5" fill="#a58a20" fontWeight="700">风传花粉 → 落到花柱上</text>
+        <text x="330" y="72" fontSize="13.5" fill="#a58a20" fontWeight="700">风传花粉 → 落到花柱上</text>
       </g>
-      {/* 雌花序（果穗 + 玉米须） */}
+      {/* 叶腋雌花序（果穗 + 玉米须） */}
       <g style={dim(active, 3)}>
-        <ellipse cx="238" cy="234" rx="40" ry="58" fill="#d9e8b8" stroke="#7a9a3a" strokeWidth="3.5" />
-        <path d="M206 200 Q 238 186 270 200 L 262 282 Q 238 292 214 282 Z" fill="#c9e09a" stroke="#7a9a3a" strokeWidth="2.5" />
-        <path d="M262 176 Q 300 160 330 176 M 268 190 Q 312 182 344 200 M 272 204 Q 320 204 352 222" fill="none" stroke="#e0c98a" strokeWidth="3" strokeLinecap="round" />
-        <text x="150" y="330" textAnchor="middle" fontSize="13.5" fill="#7a9a3a" fontWeight="700">叶腋雌花序（果穗）</text>
-        <text x="330" y="242" fontSize="13.5" fill="#c9a86a" fontWeight="700">玉米须 = 花柱</text>
-        <text x="330" y="260" fontSize="12" fill="#a58a4a">一根须对应一粒籽</text>
+        <ellipse cx="268" cy="256" rx="52" ry="82" fill="#d9e8b8" stroke="#7a9a3a" strokeWidth="4" />
+        <path d="M226 206 Q 268 188 310 206 L 300 316 Q 268 330 236 316 Z" fill="#c9e09a" stroke="#7a9a3a" strokeWidth="2.5" />
+        {[0, 1, 2, 3].map((i) => (
+          <line key={i} x1={268} y1={216 + i * 26} x2={268} y2={238 + i * 26} stroke="#a8c07a" strokeWidth="2" />
+        ))}
+        <path d="M300 190 Q 344 158 386 176 M 306 206 Q 356 186 396 210 M 310 222 Q 366 214 402 240" fill="none" stroke="#e0c98a" strokeWidth="3.5" strokeLinecap="round" />
+        <text x="170" y="352" fontSize="13.5" fill="#7a9a3a" fontWeight="700">叶腋雌花序（果穗）</text>
+        <text x="392" y="182" fontSize="13.5" fill="#c9a86a" fontWeight="700">玉米须 = 花柱</text>
+        <text x="392" y="200" fontSize="12.5" fill="#a58a4a">一根须对应一粒籽</text>
       </g>
       {/* 受精小图 */}
       <g style={dim(active, 4)}>
-        <rect x="356" y="288" width="148" height="72" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
-        <ellipse cx="398" cy="324" rx="17" ry="24" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2.5" />
-        <circle cx="398" cy="330" r="6" fill="#7a4a8a" />
-        <path d="M412 306 Q 420 296 430 296" fill="none" stroke="#7a4a8a" strokeWidth="2.5" />
-        <text x="428" y="318" fontSize="12.5" fill="#6a4a9a" fontWeight="600">花粉管进入</text>
-        <text x="428" y="336" fontSize="12.5" fill="#6a4a9a" fontWeight="600">胚珠完成受精</text>
+        <rect x="360" y="264" width="150" height="76" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <ellipse cx="398" cy="302" rx="18" ry="26" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <circle cx="398" cy="308" r="7" fill="#7a4a8a" />
+        <path d="M414 282 Q 424 270 436 270" fill="none" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="428" y="298" fontSize="12.5" fill="#6a4a9a" fontWeight="600">花粉管进入</text>
+        <text x="428" y="316" fontSize="12.5" fill="#6a4a9a" fontWeight="600">胚珠完成受精</text>
       </g>
-      <text x="16" y="42" fontSize="13.5" fill="#2c6e94" fontWeight="700">玉米：单性花、雌雄同株——顶端开花撒粉，叶腋结穗生须，受精后籽粒是果实</text>
+      <text x="244" y="30" fontSize="13.5" fill="#2c6e94" fontWeight="700">玉米：单性花、雌雄同株</text>
+      <text x="244" y="50" fontSize="13.5" fill="#2c6e94" fontWeight="700">顶端撒粉 → 风媒 → 叶腋结穗</text>
       <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">玉米的繁殖（风媒传粉）模式图</text>
     </svg>
   );
@@ -2439,50 +2452,50 @@ function CornReproductionSvg({ active }: { active: number | null; open?: boolean
 function FruitAndSeedSvg({ active }: { active: number | null; open?: boolean }) {
   return (
     <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
-      {/* 玉米籽粒纵切 */}
+      <text x="24" y="40" fontSize="13.5" fill="#2c6e94" fontWeight="700">受精完成后：子房→果实、胚珠→种子——花的结构决定果实的来历</text>
+      {/* 玉米籽粒纵切（右侧主体） */}
       <g style={dim(active, 0)}>
-        <ellipse cx="240" cy="196" rx="118" ry="136" fill="#f4d9a0" stroke="#b5903a" strokeWidth="4" />
-        <text x="240" y="344" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">玉米籽粒（果实）纵切</text>
+        <ellipse cx="350" cy="190" rx="105" ry="125" fill="#f4d9a0" stroke="#b5903a" strokeWidth="4" />
       </g>
       <g style={dim(active, 1)}>
-        <ellipse cx="240" cy="196" rx="100" ry="118" fill="#f0c96a" stroke="#d9a83a" strokeWidth="2.5" />
-        <text x="240" y="120" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">胚乳（储存营养）</text>
+        <ellipse cx="350" cy="190" rx="88" ry="106" fill="#f0c96a" stroke="#d9a83a" strokeWidth="2.5" />
+        <text x="350" y="120" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">胚乳（储存营养）</text>
       </g>
       {/* 胚 */}
       <g style={dim(active, 2)}>
-        <path d="M286 226 Q 316 216 322 190 Q 326 216 306 236 Q 292 242 286 226 Z" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" />
-        <ellipse cx="292" cy="252" rx="10" ry="14" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="2.5" transform="rotate(-18 292 252)" />
-        <path d="M280 266 Q 268 280 258 292" fill="none" stroke="#8a6a48" strokeWidth="4" strokeLinecap="round" />
-        <text x="352" y="196" fontSize="13" fill="#2f7a4d" fontWeight="700">胚：胚芽+胚轴</text>
-        <text x="352" y="214" fontSize="13" fill="#2f7a4d" fontWeight="700">+胚根+子叶（1 片）</text>
-        <line x1="348" y1="200" x2="322" y2="206" stroke="#2f7a4d" strokeWidth="1.4" />
+        <path d="M378 240 Q 404 228 410 204 Q 420 234 398 252 Z" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" />
+        <ellipse cx="390" cy="264" rx="11" ry="15" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="2.5" transform="rotate(-16 390 264)" />
+        <path d="M378 278 Q 364 294 352 304" fill="none" stroke="#8a6a48" strokeWidth="4" strokeLinecap="round" />
+        <text x="490" y="244" textAnchor="end" fontSize="13" fill="#2f7a4d" fontWeight="700">胚：胚芽+胚轴</text>
+        <text x="490" y="262" textAnchor="end" fontSize="13" fill="#2f7a4d" fontWeight="700">+胚根+子叶（1 片）</text>
+        <line x1="414" y1="248" x2="444" y2="246" stroke="#2f7a4d" strokeWidth="1.4" />
       </g>
-      {/* 对应关系箭头 */}
+      {/* 对应关系（左侧标签 + 短箭头） */}
       <g style={dim(active, 3)}>
-        <text x="34" y="96" fontSize="13.5" fill="#b0483a" fontWeight="700">子房壁 → 果皮</text>
-        <text x="34" y="140" fontSize="13.5" fill="#b0483a" fontWeight="700">珠被 → 种皮</text>
-        <text x="34" y="188" fontSize="13.5" fill="#7a4a8a" fontWeight="700">受精卵 → 胚（2n）</text>
-        <text x="34" y="236" fontSize="13.5" fill="#8a671b" fontWeight="700">受精极核 → 胚乳（3n）</text>
-        <line x1="118" y1="90" x2="142" y2="96" stroke="#b0483a" strokeWidth="2" markerEnd="url(#fs-arrow)" />
-        <line x1="108" y1="134" x2="142" y2="126" stroke="#b0483a" strokeWidth="2" markerEnd="url(#fs-arrow)" />
-        <line x1="132" y1="182" x2="280" y2="222" stroke="#7a4a8a" strokeWidth="2" markerEnd="url(#fs-arrow)" />
-        <line x1="150" y1="230" x2="180" y2="212" stroke="#8a671b" strokeWidth="2" markerEnd="url(#fs-arrow)" />
-        <text x="20" y="278" fontSize="12.5" fill="#59767c">玉米外层是果皮与种皮愈合——</text>
-        <text x="20" y="296" fontSize="12.5" fill="#59767c">所以一粒玉米其实是果实</text>
+        <text x="24" y="108" fontSize="13.5" fill="#b0483a" fontWeight="700">子房壁 → 果皮</text>
+        <line x1="132" y1="104" x2="262" y2="114" stroke="#b0483a" strokeWidth="2.2" markerEnd="url(#fs-arrow)" />
+        <text x="24" y="146" fontSize="13.5" fill="#b0483a" fontWeight="700">珠被 → 种皮</text>
+        <line x1="124" y1="142" x2="256" y2="150" stroke="#b0483a" strokeWidth="2.2" markerEnd="url(#fs-arrow)" />
+        <text x="24" y="184" fontSize="13.5" fill="#7a4a8a" fontWeight="700">受精极核 → 胚乳（3n）</text>
+        <line x1="196" y1="180" x2="296" y2="142" stroke="#7a4a8a" strokeWidth="2.2" markerEnd="url(#fs-arrow)" />
+        <text x="24" y="222" fontSize="13.5" fill="#7a4a8a" fontWeight="700">受精卵 → 胚（2n）</text>
+        <path d="M164 218 Q 250 316 366 254" fill="none" stroke="#7a4a8a" strokeWidth="2.2" markerEnd="url(#fs-arrow)" />
       </g>
       {/* 菜豆对比 */}
       <g style={dim(active, 4)}>
-        <rect x="386" y="252" width="122" height="96" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
-        <ellipse cx="428" cy="292" rx="16" ry="24" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" transform="rotate(-16 428 292)" />
-        <ellipse cx="462" cy="292" rx="16" ry="24" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" transform="rotate(16 462 292)" />
-        <text x="447" y="336" textAnchor="middle" fontSize="12.5" fill="#3f7f3a" fontWeight="600">菜豆：双子叶无胚乳</text>
+        <rect x="24" y="262" width="190" height="76" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <ellipse cx="78" cy="298" rx="20" ry="27" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" transform="rotate(-16 78 298)" />
+        <ellipse cx="122" cy="298" rx="20" ry="27" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" transform="rotate(16 122 298)" />
+        <text x="119" y="332" textAnchor="middle" fontSize="12.5" fill="#3f7f3a" fontWeight="600">菜豆：双子叶无胚乳</text>
       </g>
+      {/* 底部说明 */}
+      <text x="350" y="334" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">玉米籽粒（果实）纵切</text>
+      <text x="350" y="354" textAnchor="middle" fontSize="12" fill="#a58a4a">玉米外层是果皮与种皮愈合——一粒玉米其实是果实</text>
       <defs>
         <marker id="fs-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
           <path d="M0 0 L9 4.5 L0 9 Z" fill="#8a671b" />
         </marker>
       </defs>
-      <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">受精完成后：子房→果实、胚珠→种子——花的结构决定果实的来历</text>
       <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">果实与种子的形成（以玉米为例）模式图</text>
     </svg>
   );
@@ -2701,49 +2714,48 @@ function LactobacillusSvg({ active }: { active: number | null; open?: boolean })
 function TmvSvg({ active }: { active: number | null; open?: boolean }) {
   return (
     <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
-      {/* 棒状病毒主体 */}
+      <text x="16" y="38" fontSize="13.5" fill="#2c6e94" fontWeight="700">烟草花叶病毒（TMV）：棒状 RNA 病毒——与 T2 噬菌体（DNA 型）成对记</text>
+      {/* 棒状病毒主体（水平） */}
       <g style={dim(active, 0)}>
-        <g transform="rotate(-18 210 150)">
-          <rect x="120" y="128" width="190" height="46" rx="23" fill="#f2c98a" stroke="#b57c16" strokeWidth="3.5" />
-          {[140, 164, 188, 212, 236, 260, 284].map((x, i) => (
-            <g key={i}>
-              <ellipse cx={x} cy={136 + (i % 2) * 4} rx="10" ry="6.5" fill="#e8b05a" stroke="#a56a1a" strokeWidth="1.6" />
-              <ellipse cx={x + 12} cy={166 - (i % 2) * 4} rx="10" ry="6.5" fill="#e8b05a" stroke="#a56a1a" strokeWidth="1.6" />
-            </g>
-          ))}
-          <path d="M136 151 q 22 -8 44 0 q 22 8 44 0 q 22 -8 44 0 q 22 8 40 0" fill="none" stroke="#c9503c" strokeWidth="3" strokeLinecap="round" />
-        </g>
-        <text x="96" y="94" fontSize="13.5" fill="#a56a1a" fontWeight="700">螺旋排列的衣壳蛋白</text>
-        <text x="96" y="112" fontSize="12" fill="#b58a3a">包裹中央的单链 RNA</text>
+        <rect x="60" y="112" width="360" height="72" rx="36" fill="#f2c98a" stroke="#b57c16" strokeWidth="4" />
+        {[96, 128, 160, 192, 224, 256, 288, 320, 352, 384].map((x, i) => (
+          <g key={i}>
+            <ellipse cx={x} cy={134} rx="11" ry="7" fill="#e8b05a" stroke="#a56a1a" strokeWidth="1.8" transform={`rotate(${i % 2 === 0 ? -14 : 14} ${x} 134)`} />
+            <ellipse cx={x + 13} cy={162} rx="11" ry="7" fill="#e8b05a" stroke="#a56a1a" strokeWidth="1.8" transform={`rotate(${i % 2 === 0 ? 14 : -14} ${x + 13} 162)`} />
+          </g>
+        ))}
+        <path d="M84 148 Q 130 158 176 148 Q 222 138 268 148 Q 314 158 360 148 Q 390 142 416 150" fill="none" stroke="#c9503c" strokeWidth="4" strokeLinecap="round" />
+        <text x="66" y="86" fontSize="13.5" fill="#a56a1a" fontWeight="700">螺旋排列的衣壳蛋白（蛋白质）</text>
+        <line x1="120" y1="92" x2="140" y2="116" stroke="#a56a1a" strokeWidth="1.4" />
       </g>
       <g style={dim(active, 1)}>
-        <text x="330" y="66" fontSize="13.5" fill="#c9503c" fontWeight="700">棒状 · 感染烟草等植物</text>
-        <text x="330" y="84" fontSize="12" fill="#d97a5a">叶面出现花叶斑驳</text>
-        <line x1="326" y1="70" x2="290" y2="98" stroke="#c9503c" strokeWidth="1.4" />
+        <text x="446" y="94" textAnchor="end" fontSize="13.5" fill="#c9503c" fontWeight="700">中央的单链 RNA</text>
+        <text x="446" y="110" textAnchor="end" fontSize="12" fill="#c9503c" fontWeight="600">（遗传物质）</text>
+        <line x1="414" y1="102" x2="352" y2="146" stroke="#c9503c" strokeWidth="1.4" />
+        <text x="66" y="216" fontSize="13" fill="#8a671b" fontWeight="600">感染烟草、番茄等植物 → 叶面出现花叶斑驳</text>
       </g>
       {/* 重建实验 */}
       <g style={dim(active, 2)}>
-        <rect x="26" y="216" width="468" height="118" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
-        <text x="42" y="242" fontSize="13.5" fill="#2c6e94" fontWeight="700">重建实验（证明 RNA 是遗传物质）：</text>
-        <rect x="42" y="254" width="120" height="42" rx="9" fill="#f2c98a" stroke="#b57c16" strokeWidth="2" />
-        <text x="102" y="272" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="600">TMV 的蛋白质</text>
-        <text x="102" y="288" textAnchor="middle" fontSize="11.5" fill="#a58a4a">（不含 RNA）</text>
-        <text x="180" y="280" fontSize="16" fill="#59767c" fontWeight="700">+</text>
-        <rect x="198" y="254" width="120" height="42" rx="9" fill="#e8b8b0" stroke="#b0483a" strokeWidth="2" />
-        <text x="258" y="272" textAnchor="middle" fontSize="12" fill="#9b3a30" fontWeight="600">HRV 的 RNA</text>
-        <text x="258" y="288" textAnchor="middle" fontSize="11.5" fill="#c06a62">（另一种病毒）</text>
-        <line x1="322" y1="275" x2="352" y2="275" stroke="#5a5a62" strokeWidth="3" markerEnd="url(#tmv-arrow)" />
-        <rect x="356" y="254" width="120" height="42" rx="9" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="2" />
-        <text x="416" y="272" textAnchor="middle" fontSize="12" fill="#6a4a9a" fontWeight="600">杂合病毒 → 侵染</text>
-        <text x="416" y="288" textAnchor="middle" fontSize="11.5" fill="#8a5a94">后代与 HRV 相同！</text>
-        <text x="42" y="322" fontSize="12.5" fill="#46666d">重组病毒的性状由 RNA 决定、不由蛋白质决定 → RNA 才是这种病毒的遗传物质</text>
+        <rect x="26" y="240" width="468" height="112" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="42" y="264" fontSize="13.5" fill="#2c6e94" fontWeight="700">重建实验（证明 RNA 是遗传物质）：</text>
+        <rect x="42" y="274" width="120" height="42" rx="9" fill="#f2c98a" stroke="#b57c16" strokeWidth="2" />
+        <text x="102" y="292" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="600">TMV 的蛋白质</text>
+        <text x="102" y="308" textAnchor="middle" fontSize="11.5" fill="#a58a4a">（不含 RNA）</text>
+        <text x="180" y="300" fontSize="16" fill="#59767c" fontWeight="700">+</text>
+        <rect x="198" y="274" width="120" height="42" rx="9" fill="#e8b8b0" stroke="#b0483a" strokeWidth="2" />
+        <text x="258" y="292" textAnchor="middle" fontSize="12" fill="#9b3a30" fontWeight="600">HRV 的 RNA</text>
+        <text x="258" y="308" textAnchor="middle" fontSize="11.5" fill="#c06a62">（另一种病毒）</text>
+        <line x1="322" y1="295" x2="352" y2="295" stroke="#5a5a62" strokeWidth="3" markerEnd="url(#tmv-arrow)" />
+        <rect x="356" y="274" width="120" height="42" rx="9" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="2" />
+        <text x="416" y="292" textAnchor="middle" fontSize="12" fill="#6a4a9a" fontWeight="600">杂合病毒 → 侵染</text>
+        <text x="416" y="308" textAnchor="middle" fontSize="11.5" fill="#8a5a94">后代与 HRV 相同！</text>
+        <text x="42" y="340" fontSize="12.5" fill="#46666d">重组病毒的性状由 RNA 决定、不由蛋白质决定 → RNA 才是这种病毒的遗传物质</text>
       </g>
       <defs>
         <marker id="tmv-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
           <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
         </marker>
       </defs>
-      <text x="16" y="42" fontSize="13.5" fill="#2c6e94" fontWeight="700">烟草花叶病毒（TMV）：棒状 RNA 病毒——与 T2 噬菌体（DNA 型）成对记</text>
       <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">烟草花叶病毒与重建实验模式图</text>
     </svg>
   );
@@ -2897,58 +2909,66 @@ function NucleusSvg({ active }: { active: number | null; open?: boolean }) {
 function PhotosynthesisProcessSvg({ active }: { active: number | null; open?: boolean }) {
   return (
     <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
-      {/* 叶绿体轮廓 */}
-      <g style={dim(active, 0)}>
-        <ellipse cx="260" cy="196" rx="246" ry="152" fill="#e7f3e2" stroke="#3f7f3a" strokeWidth="3.5" />
-        <text x="34" y="70" fontSize="13.5" fill="#2f7a4d" fontWeight="700">叶绿体（类囊体薄膜 + 基质）</text>
-      </g>
-      {/* 类囊体 + 光反应 */}
-      <g style={dim(active, 1)}>
-        {[104, 122, 140].map((y, i) => (
-          <ellipse key={i} cx="140" cy={y} rx="58" ry="11" fill="#6aa86a" stroke="#2f7a4d" strokeWidth="2.5" />
-        ))}
-        <text x="140" y="86" textAnchor="middle" fontSize="13.5" fill="#1e5a2e" fontWeight="700">类囊体（基粒）</text>
-        <text x="140" y="172" textAnchor="middle" fontSize="13.5" fill="#1e5a2e" fontWeight="700">光反应</text>
-        <text x="30" y="200" fontSize="12.5" fill="#2f7a4d">水的光解：H₂O → O₂ + H⁺</text>
-        <text x="30" y="222" fontSize="12.5" fill="#2f7a4d">ADP + Pi → ATP</text>
-        <text x="30" y="244" fontSize="12.5" fill="#2f7a4d">NADP⁺ → NADPH（[H]）</text>
-      </g>
+      <text x="24" y="34" fontSize="14" fill="#2f7a4d" fontWeight="700">光合作用全过程（叶绿体）</text>
       {/* O2 释放 */}
       <g style={dim(active, 1)}>
-        <path d="M140 60 L140 30" stroke="#3d7e9e" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
-        <text x="150" y="38" fontSize="13" fill="#2c6e94" fontWeight="700">O₂ 释放</text>
+        <line x1="122" y1="90" x2="122" y2="58" stroke="#3d7e9e" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
+        <text x="134" y="66" fontSize="13" fill="#2c6e94" fontWeight="700">O₂ 释放</text>
       </g>
-      {/* 暗反应 */}
+      {/* 光反应区 */}
+      <g style={dim(active, 1)}>
+        <rect x="24" y="92" width="196" height="196" rx="12" fill="#dcefe6" stroke="#3f7f3a" strokeWidth="2.5" strokeDasharray="8 5" />
+        <text x="122" y="118" textAnchor="middle" fontSize="13.5" fill="#1e5a2e" fontWeight="700">光反应（类囊体薄膜）</text>
+        {[132, 148, 164].map((y, i) => (
+          <ellipse key={i} cx="76" cy={y} rx="34" ry="8" fill="#6aa86a" stroke="#2f7a4d" strokeWidth="2" />
+        ))}
+        <text x="124" y="152" fontSize="12" fill="#2f7a4d" fontWeight="600">基粒</text>
+        <text x="40" y="198" fontSize="12.5" fill="#2f7a4d">水的光解：</text>
+        <text x="40" y="218" fontSize="12.5" fill="#2f7a4d">H₂O → O₂ + H⁺</text>
+        <text x="40" y="242" fontSize="12.5" fill="#2f7a4d">ADP + Pi → ATP</text>
+        <text x="40" y="266" fontSize="12.5" fill="#2f7a4d">NADP⁺ → NADPH（[H]）</text>
+      </g>
+      {/* 暗反应区 */}
       <g style={dim(active, 2)}>
-        <ellipse cx="382" cy="212" rx="96" ry="86" fill="#f4f8fb" stroke="#3d7e9e" strokeWidth="2.5" strokeDasharray="8 5" />
-        <text x="382" y="158" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">暗反应（基质）</text>
-        <text x="382" y="184" textAnchor="middle" fontSize="12.5" fill="#2c6e94">CO₂ 固定：CO₂ + C₅ → 2C₃</text>
-        <text x="382" y="208" textAnchor="middle" fontSize="12.5" fill="#2c6e94">C₃ 还原 → 糖类（有机物）</text>
-        <text x="382" y="232" textAnchor="middle" fontSize="12.5" fill="#4b6c73">（消耗 ATP 和 [H]）</text>
+        <rect x="304" y="92" width="192" height="196" rx="12" fill="#e8f1f8" stroke="#3d7e9e" strokeWidth="2.5" strokeDasharray="8 5" />
+        <text x="400" y="118" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">暗反应（叶绿体基质）</text>
+        <text x="320" y="152" fontSize="12.5" fill="#2c6e94">CO₂ 固定：</text>
+        <text x="320" y="172" fontSize="12.5" fill="#2c6e94">CO₂ + C₅ → 2C₃</text>
+        <text x="320" y="200" fontSize="12.5" fill="#2c6e94">C₃ 还原：</text>
+        <text x="320" y="220" fontSize="12.5" fill="#2c6e94">2C₃ → 糖类 + C₅</text>
+        <text x="320" y="248" fontSize="12" fill="#4b6c73">（消耗 ATP 和 [H]）</text>
+        <text x="320" y="272" fontSize="12" fill="#4b6c73">C₃ 循环再生，源源不断</text>
       </g>
-      {/* CO2 进入 */}
-      <g style={dim(active, 2)}>
-        <path d="M470 320 Q 486 280 452 248" fill="none" stroke="#7a7a82" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
-        <text x="446" y="336" fontSize="13" fill="#5a5a62" fontWeight="700">CO₂ 进入</text>
-      </g>
-      {/* 联系箭头 */}
+      {/* 中间物质交换 */}
       <g style={dim(active, 3)}>
-        <path d="M196 210 Q 240 226 276 222" fill="none" stroke="#c98a1d" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
-        <text x="236" y="248" textAnchor="middle" fontSize="12.5" fill="#c98a1d" fontWeight="700">ATP、[H]</text>
-        <path d="M282 246 Q 240 262 200 244" fill="none" stroke="#8a671b" strokeWidth="3" strokeDasharray="6 4" markerEnd="url(#ps-arrow)" />
-        <text x="240" y="284" textAnchor="middle" fontSize="12" fill="#8a671b">ADP、Pi、NADP⁺ 返回</text>
+        <line x1="224" y1="150" x2="300" y2="150" stroke="#c98a1d" strokeWidth="4" markerEnd="url(#ps-arrow)" />
+        <text x="262" y="136" textAnchor="middle" fontSize="12.5" fill="#c98a1d" fontWeight="700">ATP</text>
+        <text x="262" y="174" textAnchor="middle" fontSize="12.5" fill="#c98a1d" fontWeight="700">[H]</text>
+        <line x1="300" y1="226" x2="224" y2="226" stroke="#8a671b" strokeWidth="3.5" strokeDasharray="7 5" markerEnd="url(#ps-arrow)" />
+        <text x="262" y="214" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="700">ADP、Pi</text>
+        <text x="262" y="250" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="700">NADP⁺</text>
       </g>
-      {/* 有机物输出 */}
+      {/* CO2 进入 / 有机物输出 */}
       <g style={dim(active, 2)}>
-        <path d="M366 236 Q 330 300 268 330" fill="none" stroke="#3f7f3a" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
-        <text x="252" y="346" fontSize="13" fill="#2f7a4d" fontWeight="700">有机物（糖类）输出</text>
+        <path d="M478 322 Q 502 310 510 294" fill="none" stroke="#7a7a82" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
+        <text x="356" y="330" fontSize="13" fill="#5a5a62" fontWeight="700">CO₂ 从气孔进入 ↗</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <path d="M300 268 Q 250 296 196 310" fill="none" stroke="#3f7f3a" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
+        <text x="44" y="318" fontSize="13" fill="#2f7a4d" fontWeight="700">有机物（糖类）输出</text>
+      </g>
+      {/* 总反应式 */}
+      <g style={dim(active, 4)}>
+        <rect x="24" y="326" width="472" height="36" rx="9" fill="#ffffff" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="260" y="350" textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">
+          总反应式：CO₂ + H₂O →（CH₂O）+ O₂（条件：光能、叶绿体）
+        </text>
       </g>
       <defs>
         <marker id="ps-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
           <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
         </marker>
       </defs>
-      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">光合作用全过程图解</text>
     </svg>
   );
 }
