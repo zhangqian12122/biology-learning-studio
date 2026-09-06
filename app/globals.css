@@ -107,3 +107,86 @@ textarea {
   background: #bce2de;
   color: #13333a;
 }
+
+/* ===== 新粗野主义工具类：白底 + 粗边框 + 灰色硬投影（积木块风格） ===== */
+/* 基础块：白底 2px 深边框 + 右下灰色硬投影 */
+.nb-card {
+  background: #ffffff;
+  border: 2px solid #13333a;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 #c6d4d4;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+/* 交互块：hover 抬起 + 投影加深 */
+.nb-lift {
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.nb-lift:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #b8c9c9;
+}
+.nb-lift:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #b8c9c9;
+}
+/* 选中块：青色边框 + 青色硬投影 */
+.nb-active {
+  border-color: #0e6f75;
+  box-shadow: 5px 5px 0 #9fd4cd;
+}
+.nb-active:hover {
+  box-shadow: 7px 7px 0 #8cc9c0;
+}
+/* 小胶囊按钮：粗边 + 小硬投影 */
+.nb-pill {
+  background: #ffffff;
+  border: 2px solid #13333a;
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 #c6d4d4;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.nb-pill:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #b8c9c9;
+}
+.nb-pill:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #b8c9c9;
+}
+.nb-pill-active {
+  background: #0e6f75;
+  border-color: #13333a;
+  color: #ffffff;
+  box-shadow: 3px 3px 0 #13333a;
+}
+/* Hero 大块：米白底粗边 + 大硬投影 */
+.nb-hero {
+  background: #ffffff;
+  border: 3px solid #13333a;
+  border-radius: 12px;
+  box-shadow: 8px 8px 0 #c6d4d4;
+}
+/* 大磁贴：白底粗边大硬投影，hover 抬起加深 */
+.nb-tile {
+  background: #ffffff;
+  border: 2px solid #13333a;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0 #c6d4d4;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+.nb-tile:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 #a9bebe;
+}
+.nb-tile:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 #a9bebe;
+}
+/* 深色强调块（用于标题条/按钮） */
+.nb-dark {
+  background: #13333a;
+  color: #ffffff;
+  border: 2px solid #13333a;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #9fd4cd;
+}

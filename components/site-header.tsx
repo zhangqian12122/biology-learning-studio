@@ -24,20 +24,20 @@ export function SiteHeader({
   bankFallback?: boolean;
 }) {
   return (
-    <header className="border-b border-[#d5e4e5] bg-[#f9fcfc]">
-      <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40 border-b-2 border-[#13333a] bg-[#f9fcfc] shadow-[0_3px_0_rgba(198,212,212,0.9)]">
+      <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-lg bg-[#0e6f75] text-white shadow-sm">
+          <div className="flex size-10 items-center justify-center rounded-lg border-2 border-[#13333a] bg-[#0e6f75] text-white shadow-[3px_3px_0_#13333a]">
             <Microscope className="size-5" aria-hidden="true" />
           </div>
           <div>
-            <p className="text-base font-semibold leading-none">福建高中生物学习站</p>
+            <p className="text-base font-bold leading-none text-[#13333a]">福建高中生物学习站</p>
             <p className="mt-1 text-xs text-[#56737a]">人教版新课标 · 师生共享题库</p>
           </div>
         </Link>
 
         <nav
-          className="order-3 flex w-full items-center gap-1 overflow-x-auto border-t border-[#e0eaea] pt-3 text-sm sm:order-none sm:w-auto sm:border-0 sm:pt-0"
+          className="order-3 flex w-full items-center gap-1.5 overflow-x-auto border-t-2 border-dashed border-[#d5e4e5] pt-3 text-sm sm:order-none sm:w-auto sm:border-0 sm:pt-0"
           aria-label="主导航"
         >
           {navItems.map((item) => (
@@ -46,10 +46,8 @@ export function SiteHeader({
               href={item.href}
               aria-current={active === item.key ? 'page' : undefined}
               className={
-                'h-10 shrink-0 rounded-md px-3 text-sm font-medium leading-10 transition-colors ' +
-                (active === item.key
-                  ? 'bg-[#e7f2f1] text-[#155f68]'
-                  : 'text-[#59767c] hover:bg-[#edf5f5] hover:text-[#1e4f57]')
+                'nb-pill h-10 shrink-0 px-3 text-sm font-semibold leading-8 ' +
+                (active === item.key ? 'nb-pill-active' : 'text-[#59767c]')
               }
             >
               {item.label}
@@ -58,9 +56,7 @@ export function SiteHeader({
         </nav>
 
         <div className="flex items-center gap-2 text-xs text-[#55737a] sm:text-sm">
-          <span className="hidden rounded-full bg-[#e7f2f1] px-3 py-1.5 sm:inline-flex">
-            共享题库 {questions.length} 题
-          </span>
+          <span className="nb-pill hidden px-3 py-1.5 font-semibold sm:inline-flex">共享题库 {questions.length} 题</span>
           <LocalProgressBadge questions={questions} />
         </div>
       </div>

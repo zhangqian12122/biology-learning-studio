@@ -314,7 +314,7 @@ export function LabClient() {
 
       <div className="space-y-5">
         {/* 实验目录：按主题分类 */}
-        <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-4 shadow-[0_12px_30px_rgba(18,65,72,0.06)] sm:p-5">
+        <section className="nb-card p-4 sm:p-5">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
             <h2 className="text-sm font-semibold text-[#173b42]">📋 实验目录（按主题分类 · 共 {experimentOrder.length} 个）</h2>
             {categoryFilter && !searchLower ? (
@@ -397,7 +397,7 @@ export function LabClient() {
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] shadow-[0_12px_30px_rgba(18,65,72,0.06)]">
+        <section className="nb-card overflow-hidden">
           <div className="flex flex-wrap items-start justify-between gap-4 border-b border-[#dceaea] px-4 py-4 sm:px-5">
             <div className="flex items-start gap-3">
               <div className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-md bg-[#dff1ef] text-[#0d6c72]">
@@ -490,7 +490,7 @@ export function LabClient() {
         </section>
 
         <div className="grid gap-5 xl:grid-cols-[1.25fr_0.75fr]">
-          <section className="rounded-lg border border-[#d1e1e1] bg-[#f9fcfc] p-4 sm:p-5">
+          <section className="nb-card p-4 sm:p-5">
             <div className="flex items-center gap-2">
               <Lightbulb className="size-4 text-[#b57c16]" aria-hidden="true" />
               <h2 className="text-sm font-semibold">实验设计清单</h2>
@@ -511,7 +511,7 @@ export function LabClient() {
             </ol>
           </section>
 
-          <section className="rounded-lg border border-[#d1e1e1] bg-[#f9fcfc] p-4 sm:p-5">
+          <section className="nb-card p-4 sm:p-5">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold tracking-[0.08em] text-[#67858b]">下一步</p>

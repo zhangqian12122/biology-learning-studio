@@ -112,7 +112,7 @@ export function HomeClient({
 
   return (
     <>
-      <aside className="order-2 self-start rounded-lg border border-[#d5e4e5] bg-[#f9fcfc] p-3 lg:order-1 lg:sticky lg:top-5">
+      <aside className="nb-card order-2 self-start p-3 lg:order-1 lg:sticky lg:top-5">
         <div className="px-2 pb-3">
           <p className="text-[11px] font-semibold tracking-[0.08em] text-[#66858b]">教材地图</p>
           <p className="mt-1 text-xs leading-5 text-[#6b888e]">
@@ -181,7 +181,7 @@ export function HomeClient({
         </div>
 
         <div className="space-y-5">
-          <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-4 shadow-[0_12px_30px_rgba(18,65,72,0.06)] sm:p-5">
+          <section className="nb-card p-4 sm:p-5">
             <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.95fr)] lg:items-end">
               <div>
                 <p className="text-base font-medium text-[#295c64]">
@@ -231,7 +231,7 @@ export function HomeClient({
                       key={book.id}
                       href={practiceHref(book.id)}
                       onClick={() => setSelectedBook(book.id)}
-                      className="group flex min-h-[230px] flex-col rounded-lg border border-[#d0dfdf] bg-[#f9fcfc] p-4 text-left shadow-sm transition-[border-color,transform,box-shadow] hover:-translate-y-0.5 hover:border-[#97cbc6] hover:shadow-[0_10px_22px_rgba(18,65,72,0.10)] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#b8dfda]"
+                      className="nb-lift group flex min-h-[230px] flex-col border-2 border-[#13333a] bg-white p-4 text-left [border-radius:10px] hover:shadow-[9px_9px_0_#a9bebe]"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <span
@@ -271,7 +271,7 @@ export function HomeClient({
           </section>
 
           <div className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
-            <section className="rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-4 sm:p-5">
+            <section className="nb-card p-4 sm:p-5">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
                   <p className="text-xs font-semibold tracking-[0.08em] text-[#67858b]">
@@ -369,7 +369,7 @@ export function HomeClient({
                   </div>
             </section>
 
-            <section className="rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-4 sm:p-5">
+            <section className="nb-card p-4 sm:p-5">
               <div className="flex items-center gap-2">
                 <BrainCircuit className="size-4 text-[#0d7479]" aria-hidden="true" />
                 <h2 className="text-sm font-semibold">学习记录</h2>
