@@ -4075,6 +4075,160 @@ function MossFernSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 分裂数目变化曲线 ================= */
+
+function DivisionCurveSvg({ active }: { active: number | null; open?: boolean }) {
+  // 有丝分裂面板：间期 前 中 后 末（5 槽）
+  const mX = [46, 91, 136, 181, 226];
+  const stageM = ['间期', '前期', '中期', '后期', '末期'];
+  // 减数分裂面板：间期 减Ⅰ前 减Ⅰ后 减Ⅱ 末期
+  const rX = [296, 341, 386, 431, 476];
+  const stageR = ['间期', '减Ⅰ前', '减Ⅰ后', '减Ⅱ', '末期'];
+  const y2 = 150; // 2C/2N
+  const y4 = 110; // 4C/4N
+  const y1 = 192; // C/N（减半）
+  const dnaColor = '#b0483a';
+  const chrColor = '#3d6a94';
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 图例 */}
+      <g style={dim(active, 0)}>
+        <line x1="60" y1="34" x2="88" y2="34" stroke={dnaColor} strokeWidth="3.5" />
+        <text x="94" y="38" fontSize="13" fill={dnaColor} fontWeight="700">DNA 含量</text>
+        <line x1="220" y1="34" x2="248" y2="34" stroke={chrColor} strokeWidth="3.5" />
+        <text x="254" y="38" fontSize="13" fill={chrColor} fontWeight="700">染色体数目</text>
+      </g>
+      {/* 有丝分裂面板 */}
+      <g style={dim(active, 1)}>
+        <text x="130" y="70" textAnchor="middle" fontSize="14" fill="#173b42" fontWeight="700">有丝分裂</text>
+        <line x1="24" y1={y2} x2="250" y2={y2} stroke="#d5e4e5" strokeWidth="1.5" strokeDasharray="5 4" />
+        <line x1="24" y1={y4} x2="250" y2={y4} stroke="#d5e4e5" strokeWidth="1.5" strokeDasharray="5 4" />
+        <text x="18" y={y2 + 4} textAnchor="end" fontSize="12" fill="#799398">2C·2N</text>
+        <text x="18" y={y4 + 4} textAnchor="end" fontSize="12" fill="#799398">4C·4N</text>
+        {/* DNA：间期复制加倍，末期减半 */}
+        <polyline
+          points={`24,${y2} 60,${y2} 78,${y4} 136,${y4} 200,${y4} 226,${y2} 250,${y2}`}
+          fill="none" stroke={dnaColor} strokeWidth="3.5" strokeLinejoin="round"
+        />
+        {/* 染色体：后期着丝粒分裂短暂加倍 */}
+        <polyline
+          points={`24,${y2} 181,${y2} 203,${y4} 226,${y2} 250,${y2}`}
+          fill="none" stroke={chrColor} strokeWidth="3.5" strokeLinejoin="round" strokeDasharray="8 4"
+        />
+        {mX.map((x, i) => (
+          <text key={i} x={x} y={y2 + 66} textAnchor="middle" fontSize="12.5" fill="#4b6c73" fontWeight="600">{stageM[i]}</text>
+        ))}
+        <text x="136" y={y4 - 8} textAnchor="middle" fontSize="12" fill="#b0483a" fontWeight="600">间期复制 ×2</text>
+        <text x="204" y={y4 - 8} textAnchor="middle" fontSize="12" fill="#3d6a94" fontWeight="600">后期 ×2</text>
+      </g>
+      {/* 减数分裂面板 */}
+      <g style={dim(active, 2)}>
+        <text x="386" y="70" textAnchor="middle" fontSize="14" fill="#173b42" fontWeight="700">减数分裂</text>
+        <line x1="274" y1={y2} x2="500" y2={y2} stroke="#d5e4e5" strokeWidth="1.5" strokeDasharray="5 4" />
+        <line x1="274" y1={y4} x2="500" y2={y4} stroke="#d5e4e5" strokeWidth="1.5" strokeDasharray="5 4" />
+        <line x1="274" y1={y1} x2="500" y2={y1} stroke="#d5e4e5" strokeWidth="1.5" strokeDasharray="5 4" />
+        <text x="268" y={y2 + 4} textAnchor="end" fontSize="12" fill="#799398">2C·2N</text>
+        <text x="268" y={y4 + 4} textAnchor="end" fontSize="12" fill="#799398">4C·4N</text>
+        <text x="268" y={y1 + 4} textAnchor="end" fontSize="12" fill="#799398">C·N</text>
+        {/* DNA：间期复制，减Ⅰ末减半，减Ⅱ末再减半 */}
+        <polyline
+          points={`274,${y2} 310,${y2} 328,${y4} 386,${y4} 416,${y2} 452,${y2} 470,${y1} 500,${y1}`}
+          fill="none" stroke={dnaColor} strokeWidth="3.5" strokeLinejoin="round"
+        />
+        {/* 染色体：减Ⅰ末减半；减Ⅱ后期短暂加倍（略）后仍为 N */}
+        <polyline
+          points={`274,${y2} 341,${y2} 376,${y2} 408,${y1} 500,${y1}`}
+          fill="none" stroke={chrColor} strokeWidth="3.5" strokeLinejoin="round" strokeDasharray="8 4"
+        />
+        {rX.map((x, i) => (
+          <text key={i} x={x} y={y2 + 66} textAnchor="middle" fontSize="12" fill="#4b6c73" fontWeight="600">{stageR[i]}</text>
+        ))}
+        <text x="356" y={y4 - 8} textAnchor="middle" fontSize="12" fill="#b0483a" fontWeight="600">间期复制 ×2</text>
+        <text x="404" y={y2 - 8} textAnchor="middle" fontSize="12" fill="#3d6a94" fontWeight="600">减Ⅰ末减半</text>
+        <text x="468" y={y1 - 8} textAnchor="middle" fontSize="12" fill="#3d6a94" fontWeight="600">再减半</text>
+      </g>
+      {/* 对比结论 */}
+      <g style={dim(active, 1)}>
+        <text x="16" y="292" fontSize="13.5" fill="#173b42" fontWeight="700">有丝分裂：DNA 复制 1 次、细胞分裂 1 次 → 子细胞染色体数目不变</text>
+        <text x="16" y="314" fontSize="13.5" fill="#173b42" fontWeight="700">减数分裂：DNA 复制 1 次、细胞连续分裂 2 次 → 子细胞染色体数目减半</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="16" y="342" fontSize="12.5" fill="#59767c" fontWeight="600">着丝粒分裂时染色体数目短暂加倍：有丝分裂后期、减Ⅱ后期——两条曲线的"凸起"处</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">有丝分裂与减数分裂中 DNA、染色体数目变化曲线</text>
+    </svg>
+  );
+}
+
+/* ================= 人体三道防线 ================= */
+
+function ThreeDefenseLinesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <text x="16" y="32" fontSize="13.5" fill="#2c6e94" fontWeight="700">三道防线：前两道非特异（生来就有），第三道特异（后天获得）</text>
+      {/* 病原体（左列） */}
+      <g style={dim(active, 0)}>
+        {[104, 194, 284].map((y, i) => (
+          <g key={i} transform={`translate(52 ${y})`}>
+            <ellipse rx="24" ry="14" fill="#a8c98a" stroke="#5f7a3a" strokeWidth="2.5" />
+            {[0, 1, 2].map((j) => (
+              <line key={j} x1="20" y1={-7 + j * 7} x2="34" y2={-9 + j * 8} stroke="#5f7a3a" strokeWidth="2.5" strokeLinecap="round" />
+            ))}
+          </g>
+        ))}
+        <text x="52" y="52" textAnchor="middle" fontSize="13" fill="#5f7a3a" fontWeight="700">病原体</text>
+        <text x="52" y="68" textAnchor="middle" fontSize="12" fill="#799398">入侵 ↓</text>
+      </g>
+      {/* 第一行：第一道防线 */}
+      <g style={dim(active, 1)}>
+        <rect x="112" y="68" width="394" height="72" fill="#fdf6e3" stroke="#13333a" strokeWidth="2.5" />
+        <rect x="112" y="68" width="16" height="72" fill="#f0c98a" stroke="#b58a3a" strokeWidth="2.5" />
+        <text x="148" y="100" fontSize="13.5" fill="#8a671b" fontWeight="700">第一道防线：皮肤和黏膜</text>
+        <text x="148" y="124" fontSize="12.5" fill="#a58a4a">阻挡病原体 · 分泌物杀菌 · 纤毛清扫异物</text>
+        <rect x="428" y="80" width="70" height="24" rx="12" fill="#e7f2f1" stroke="#0e6f75" strokeWidth="2" />
+        <text x="463" y="97" textAnchor="middle" fontSize="11.5" fill="#0a626a" fontWeight="700">非特异</text>
+      </g>
+      {/* 第二行：第二道防线 */}
+      <g style={dim(active, 2)}>
+        <rect x="112" y="150" width="394" height="72" fill="#f0faf9" stroke="#13333a" strokeWidth="2.5" />
+        <rect x="112" y="150" width="16" height="72" fill="#dcebea" stroke="#4b8a7a" strokeWidth="2.5" />
+        <circle cx="158" cy="186" r="20" fill="#d4e8d4" stroke="#4a8a3a" strokeWidth="2.5" />
+        <circle cx="152" cy="182" r="5" fill="#4a8a3a" />
+        <circle cx="164" cy="190" r="4" fill="#4a8a3a" />
+        <text x="196" y="176" fontSize="13.5" fill="#2f7a4d" fontWeight="700">第二道防线：杀菌物质和吞噬细胞</text>
+        <text x="196" y="200" fontSize="12.5" fill="#5a8a7a">溶菌酶溶解细菌 · 吞噬细胞吞噬消化病原体</text>
+        <rect x="428" y="162" width="70" height="24" rx="12" fill="#e7f2f1" stroke="#0e6f75" strokeWidth="2" />
+        <text x="463" y="179" textAnchor="middle" fontSize="11.5" fill="#0a626a" fontWeight="700">非特异</text>
+      </g>
+      {/* 第三行：第三道防线 */}
+      <g style={dim(active, 3)}>
+        <rect x="112" y="232" width="394" height="72" fill="#f3eef9" stroke="#13333a" strokeWidth="2.5" />
+        <rect x="112" y="232" width="16" height="72" fill="#e8d4f2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <circle cx="158" cy="268" r="18" fill="#e8d4f2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="158" y="273" textAnchor="middle" fontSize="12" fill="#6a3a7a" fontWeight="700">T</text>
+        <circle cx="210" cy="268" r="18" fill="#d4e2f2" stroke="#3d6a94" strokeWidth="2.5" />
+        <text x="210" y="273" textAnchor="middle" fontSize="12" fill="#1e4a68" fontWeight="700">B</text>
+        {[258, 284].map((x, i) => (
+          <g key={i} transform={`translate(${x} ${272})`}>
+            <line x1="-7" y1="0" x2="7" y2="0" stroke="#0e6f75" strokeWidth="3.5" strokeLinecap="round" />
+            <line x1="0" y1="0" x2="0" y2="12" stroke="#0e6f75" strokeWidth="3.5" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="306" y="254" fontSize="13.5" fill="#6a3a7a" fontWeight="700">第三道防线</text>
+        <text x="306" y="278" fontSize="12.5" fill="#8a6a94">免疫器官和免疫细胞（T、B、抗体）</text>
+        <rect x="428" y="244" width="70" height="24" rx="12" fill="#e8d4f2" stroke="#7a4a8a" strokeWidth="2" />
+        <text x="463" y="261" textAnchor="middle" fontSize="11.5" fill="#6a3a7a" fontWeight="700">特异</text>
+      </g>
+      {/* 底部结论 */}
+      <g style={dim(active, 4)}>
+        <rect x="16" y="318" width="490" height="36" rx="8" fill="#fdf6e3" stroke="#d9c9a8" strokeWidth="2" />
+        <text x="32" y="342" fontSize="13" fill="#8a671b" fontWeight="600">易错：吞噬细胞"一员多岗"——既在第二道防线直接吞噬，也在第三道防线呈递抗原</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">人体三道防线层级模式图</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 /** 偏"实验操作/过程"的标本：不在图鉴页显示，改为在互动实验页作为相关图解出现。 */
@@ -4092,13 +4246,13 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
 export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] = [
   { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
   { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome'] },
-  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'centralDogma'] },
+  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'centralDogma', 'divisionCurve'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'photosynthesisProcess', 'enzymeModel', 'secretoryProtein'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'carbonCycle', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation'] },
 ];
@@ -5045,6 +5199,34 @@ export const SPECIMENS: Specimen[] = [
     ],
     extension: true,
     Svg: BioaccumulationSvg,
+  },
+  {
+    id: 'divisionCurve',
+    name: '数目变化曲线',
+    kicker: '专有名词 · 分裂过程曲线',
+    intro: '有丝分裂与减数分裂中 DNA 和染色体数目的变化：看懂两条曲线，分裂过程的数量问题就全通了。',
+    parts: [
+      { name: '有丝分裂（DNA）', desc: '间期复制后 DNA 由 2C 加倍到 4C，一直保持到末期细胞一分为二才减回 2C。' },
+      { name: '有丝分裂（染色体）', desc: '染色体数在间期不变（复制的是染色单体），只在后期着丝粒分裂时短暂加倍，末期恢复。' },
+      { name: '减数分裂（DNA）', desc: '间期复制到 4C 后，减Ⅰ末减半为 2C，减Ⅱ末再减半为 C——两次分裂、一次复制。' },
+      { name: '减数分裂（染色体）', desc: '减Ⅰ末同源染色体分离使数目减半为 N；减Ⅱ后期着丝粒分裂短暂加倍后仍为 N。' },
+      { name: '读图口诀', desc: 'DNA 斜坡=复制；染色体直角凸起=着丝粒分裂；曲线下降=细胞一分为二。' },
+    ],
+    Svg: DivisionCurveSvg,
+  },
+  {
+    id: 'threeDefenseLines',
+    name: '人体三道防线',
+    kicker: '专有名词 · 免疫调节层级',
+    intro: '皮肤黏膜挡在门口，吞噬细胞四处巡逻，免疫细胞精准狙击——三道防线共同构成人体的防御体系。',
+    parts: [
+      { name: '第一道防线：皮肤和黏膜', desc: '机械阻挡病原体入侵，分泌物有杀菌作用，纤毛能清扫异物——出生就有。' },
+      { name: '第二道防线：杀菌物质和吞噬细胞', desc: '体液中的溶菌酶溶解细菌，吞噬细胞吞掉并消化病原体——同样生来就有。' },
+      { name: '非特异性免疫', desc: '第一、二道防线的共同点：对多种病原体都有防御作用，没有针对性。' },
+      { name: '第三道防线：免疫器官和免疫细胞', desc: '借助 T、B 淋巴细胞和抗体，只针对特定病原体起作用——特异性免疫（后天获得）。' },
+      { name: '易错提醒', desc: '吞噬细胞既参与第二道防线（直接吞噬），也在第三道防线中摄取、处理、呈递抗原——"一员多岗"。' },
+    ],
+    Svg: ThreeDefenseLinesSvg,
   },
   {
     id: 'earthworm',
