@@ -27,5 +27,13 @@ export default defineConfig({
   build: {
     outDir: path.resolve(root, 'dist-ghpages'),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          // three.js 只被懒加载的 WebGL 模型引用，独立成块避免进入首屏
+          if (id.includes('node_modules/three')) return 'three';
+        },
+      },
+    },
   },
 });

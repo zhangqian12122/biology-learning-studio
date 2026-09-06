@@ -1,15 +1,26 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { CellsClient } from '@/components/cells/cells-client';
 import { HomeClient } from '@/components/home-client';
 import { SiteHeader, type HeaderNavKey } from '@/components/site-header';
-import { LabClient } from '@/app/lab/lab-client';
-import { PracticeClient } from '@/app/practice/practice-client';
 import { builtinQuestions, type BookId } from '@/lib/curriculum';
 import '@/app/globals.css';
+
+// 非首页内容按需加载：首屏（首页）不拖实验、图鉴与题库的代码块。
+const CellsClient = lazy(() => import('@/components/cells/cells-client').then((m) => ({ default: m.CellsClient })));
+const LabClient = lazy(() => import('@/app/lab/lab-client').then((m) => ({ default: m.LabClient })));
+const PracticeClient = lazy(() => import('@/app/practice/practice-client').then((m) => ({ default: m.PracticeClient })));
+
+function PageFallback() {
+  return (
+    <div className="flex min-h-56 items-center justify-center gap-2 rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] text-sm text-[#59767c]">
+      <span className="inline-block size-2 animate-pulse rounded-full bg-[#82c6c0]" aria-hidden="true" />
+      内容加载中…
+    </div>
+  );
+}
 
 type Tab = 'home' | 'cells' | 'lab' | 'practice';
 
@@ -87,10 +98,15 @@ function StaticApp() {
         <div className="mb-4 rounded-md border border-[#f0e3c0] bg-[#fdf6e3] px-4 py-2 text-xs leading-5 text-[#80621c]">
           静态演示版：细胞图鉴 3D 模型、互动实验与内置题库完整可用；进度保存在当前浏览器中，教师中心共享题库仅在完整部署版提供。
         </div>
-        {tab === 'home' ? <HomeClient questions={builtinQuestions} stats={stats} /> : null}
-        {tab === 'cells' ? <CellsClient /> : null}
-        {tab === 'lab' ? <LabClient /> : null}
-        {tab === 'practice' ? <PracticeClient questions={builtinQuestions} globalStats={{}} /> : null}
+        {tab === 'home' ? (
+          <HomeClient questions={builtinQuestions} stats={stats} />
+        ) : (
+          <Suspense fallback={<PageFallback />}>
+            {tab === 'cells' ? <CellsClient /> : null}
+            {tab === 'lab' ? <LabClient /> : null}
+            {tab === 'practice' ? <PracticeClient questions={builtinQuestions} globalStats={{}} /> : null}
+          </Suspense>
+        )}
         <p className="mt-6 text-center text-[11px] text-[#9ab0b5]">
           福建高中生物学习站 · 静态演示版 · 源码：
           <a

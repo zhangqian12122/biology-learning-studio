@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type ComponentType } from 'react';
+import { lazy, Suspense, useState, type ComponentType, type LazyExoticComponent } from 'react';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -40,42 +40,6 @@ import {
 } from 'lucide-react';
 
 import { EXPERIMENT_CATEGORIES, experimentMeta, experimentOrder, textbooks, type ExperimentId } from '@/lib/curriculum';
-import { EnzymeLab } from '@/components/lab/enzyme-lab';
-import { PhotosynthesisLab } from '@/components/lab/photosynthesis-lab';
-import { PlasmolysisLab } from '@/components/lab/plasmolysis-lab';
-import { GeneticsLab } from '@/components/lab/genetics-lab';
-import { CentralDogmaLab } from '@/components/lab/central-dogma-lab';
-import { NaturalSelectionLab } from '@/components/lab/natural-selection-lab';
-import { NerveImpulseLab } from '@/components/lab/nerve-impulse-lab';
-import { EnergyFlowLab } from '@/components/lab/energy-flow-lab';
-import { PopulationGrowthLab } from '@/components/lab/population-growth-lab';
-import { PcrLab } from '@/components/lab/pcr-lab';
-import { MicroscopeLab } from '@/components/lab/microscope-lab';
-import { TissueDetectionLab } from '@/components/lab/tissue-detection-lab';
-import { CatalaseLab } from '@/components/lab/catalase-lab';
-import { PigmentLab } from '@/components/lab/pigment-lab';
-import { GeneEngineLab } from '@/components/lab/gene-engineering-lab';
-import { DnaExtractLab } from '@/components/lab/dna-extraction-lab';
-import { CellMembranePrepLab } from '@/components/lab/cell-membrane-prep-lab';
-import { ChloroplastStreamingLab } from '@/components/lab/chloroplast-streaming-lab';
-import { DnaRnaDistributionLab } from '@/components/lab/dna-rna-distribution-lab';
-import { CellSizeTransportLab } from '@/components/lab/cell-size-transport-lab';
-import { AmylaseSpecificityLab } from '@/components/lab/amylase-specificity-lab';
-import { YeastRespirationLab } from '@/components/lab/yeast-respiration-lab';
-import { MitosisObservationLab } from '@/components/lab/mitosis-observation-lab';
-import { TraitSeparationLab } from '@/components/lab/trait-separation-lab';
-import { QuadratMethodLab } from '@/components/lab/quadrat-method-lab';
-import { UrineGlucoseTestLab } from '@/components/lab/urine-glucose-lab';
-import { PlateStreakLab } from '@/components/lab/plate-streak-lab';
-import { WineVinegarLab } from '@/components/lab/wine-vinegar-lab';
-import { TissueCultureLab } from '@/components/lab/tissue-culture-lab';
-import { AuxinCuttingLab } from '@/components/lab/auxin-cutting-lab';
-import { YeastPopulationLab } from '@/components/lab/yeast-population-lab';
-import { LowTempPolyploidLab } from '@/components/lab/low-temp-polyploid-lab';
-import { MeiosisSlideLab } from '@/components/lab/meiosis-slide-lab';
-import { BloodSugarRegulationLab } from '@/components/lab/blood-sugar-regulation-lab';
-import { SoilFaunaSurveyLab } from '@/components/lab/soil-fauna-lab';
-import { PickleFermentLab } from '@/components/lab/pickle-lab';
 
 const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string }>> = {
   microscope: Microscope,
@@ -116,44 +80,63 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   pcr: Repeat,
 };
 
-const EXPERIMENT_COMPONENTS: Record<ExperimentId, ComponentType> = {
-  microscope: MicroscopeLab,
-  tissueDetection: TissueDetectionLab,
-  cellMembranePrep: CellMembranePrepLab,
-  chloroplastStreaming: ChloroplastStreamingLab,
-  dnaRnaDistribution: DnaRnaDistributionLab,
-  cellSizeTransport: CellSizeTransportLab,
-  enzyme: EnzymeLab,
-  catalase: CatalaseLab,
-  amylaseSpecificity: AmylaseSpecificityLab,
-  yeastRespiration: YeastRespirationLab,
-  photosynthesis: PhotosynthesisLab,
-  pigment: PigmentLab,
-  mitosisObservation: MitosisObservationLab,
-  traitSeparation: TraitSeparationLab,
-  quadratMethod: QuadratMethodLab,
-  urineGlucoseTest: UrineGlucoseTestLab,
-  plateStreak: PlateStreakLab,
-  wineVinegar: WineVinegarLab,
-  tissueCulture: TissueCultureLab,
-  auxinCutting: AuxinCuttingLab,
-  yeastPopulation: YeastPopulationLab,
-  lowTempPolyploid: LowTempPolyploidLab,
-  meiosisSlide: MeiosisSlideLab,
-  bloodSugarRegulation: BloodSugarRegulationLab,
-  soilFaunaSurvey: SoilFaunaSurveyLab,
-  pickleFerment: PickleFermentLab,
-  plasmolysis: PlasmolysisLab,
-  genetics: GeneticsLab,
-  dogma: CentralDogmaLab,
-  selection: NaturalSelectionLab,
-  impulse: NerveImpulseLab,
-  energy: EnergyFlowLab,
-  population: PopulationGrowthLab,
-  geneEngine: GeneEngineLab,
-  dnaExtract: DnaExtractLab,
-  pcr: PcrLab,
+/** 实验组件按需加载：目录页只载入目录本身，点开实验才拉取对应代码块。 */
+const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: ComponentType }>> = {
+  microscope: () => import('@/components/lab/microscope-lab').then(({ MicroscopeLab }) => ({ default: MicroscopeLab })),
+  tissueDetection: () => import('@/components/lab/tissue-detection-lab').then(({ TissueDetectionLab }) => ({ default: TissueDetectionLab })),
+  cellMembranePrep: () => import('@/components/lab/cell-membrane-prep-lab').then(({ CellMembranePrepLab }) => ({ default: CellMembranePrepLab })),
+  chloroplastStreaming: () => import('@/components/lab/chloroplast-streaming-lab').then(({ ChloroplastStreamingLab }) => ({ default: ChloroplastStreamingLab })),
+  dnaRnaDistribution: () => import('@/components/lab/dna-rna-distribution-lab').then(({ DnaRnaDistributionLab }) => ({ default: DnaRnaDistributionLab })),
+  cellSizeTransport: () => import('@/components/lab/cell-size-transport-lab').then(({ CellSizeTransportLab }) => ({ default: CellSizeTransportLab })),
+  enzyme: () => import('@/components/lab/enzyme-lab').then(({ EnzymeLab }) => ({ default: EnzymeLab })),
+  catalase: () => import('@/components/lab/catalase-lab').then(({ CatalaseLab }) => ({ default: CatalaseLab })),
+  amylaseSpecificity: () => import('@/components/lab/amylase-specificity-lab').then(({ AmylaseSpecificityLab }) => ({ default: AmylaseSpecificityLab })),
+  yeastRespiration: () => import('@/components/lab/yeast-respiration-lab').then(({ YeastRespirationLab }) => ({ default: YeastRespirationLab })),
+  photosynthesis: () => import('@/components/lab/photosynthesis-lab').then(({ PhotosynthesisLab }) => ({ default: PhotosynthesisLab })),
+  pigment: () => import('@/components/lab/pigment-lab').then(({ PigmentLab }) => ({ default: PigmentLab })),
+  mitosisObservation: () => import('@/components/lab/mitosis-observation-lab').then(({ MitosisObservationLab }) => ({ default: MitosisObservationLab })),
+  traitSeparation: () => import('@/components/lab/trait-separation-lab').then(({ TraitSeparationLab }) => ({ default: TraitSeparationLab })),
+  quadratMethod: () => import('@/components/lab/quadrat-method-lab').then(({ QuadratMethodLab }) => ({ default: QuadratMethodLab })),
+  urineGlucoseTest: () => import('@/components/lab/urine-glucose-lab').then(({ UrineGlucoseTestLab }) => ({ default: UrineGlucoseTestLab })),
+  plateStreak: () => import('@/components/lab/plate-streak-lab').then(({ PlateStreakLab }) => ({ default: PlateStreakLab })),
+  wineVinegar: () => import('@/components/lab/wine-vinegar-lab').then(({ WineVinegarLab }) => ({ default: WineVinegarLab })),
+  tissueCulture: () => import('@/components/lab/tissue-culture-lab').then(({ TissueCultureLab }) => ({ default: TissueCultureLab })),
+  auxinCutting: () => import('@/components/lab/auxin-cutting-lab').then(({ AuxinCuttingLab }) => ({ default: AuxinCuttingLab })),
+  yeastPopulation: () => import('@/components/lab/yeast-population-lab').then(({ YeastPopulationLab }) => ({ default: YeastPopulationLab })),
+  lowTempPolyploid: () => import('@/components/lab/low-temp-polyploid-lab').then(({ LowTempPolyploidLab }) => ({ default: LowTempPolyploidLab })),
+  meiosisSlide: () => import('@/components/lab/meiosis-slide-lab').then(({ MeiosisSlideLab }) => ({ default: MeiosisSlideLab })),
+  bloodSugarRegulation: () => import('@/components/lab/blood-sugar-regulation-lab').then(({ BloodSugarRegulationLab }) => ({ default: BloodSugarRegulationLab })),
+  soilFaunaSurvey: () => import('@/components/lab/soil-fauna-lab').then(({ SoilFaunaSurveyLab }) => ({ default: SoilFaunaSurveyLab })),
+  pickleFerment: () => import('@/components/lab/pickle-lab').then(({ PickleFermentLab }) => ({ default: PickleFermentLab })),
+  plasmolysis: () => import('@/components/lab/plasmolysis-lab').then(({ PlasmolysisLab }) => ({ default: PlasmolysisLab })),
+  genetics: () => import('@/components/lab/genetics-lab').then(({ GeneticsLab }) => ({ default: GeneticsLab })),
+  dogma: () => import('@/components/lab/central-dogma-lab').then(({ CentralDogmaLab }) => ({ default: CentralDogmaLab })),
+  selection: () => import('@/components/lab/natural-selection-lab').then(({ NaturalSelectionLab }) => ({ default: NaturalSelectionLab })),
+  impulse: () => import('@/components/lab/nerve-impulse-lab').then(({ NerveImpulseLab }) => ({ default: NerveImpulseLab })),
+  energy: () => import('@/components/lab/energy-flow-lab').then(({ EnergyFlowLab }) => ({ default: EnergyFlowLab })),
+  population: () => import('@/components/lab/population-growth-lab').then(({ PopulationGrowthLab }) => ({ default: PopulationGrowthLab })),
+  geneEngine: () => import('@/components/lab/gene-engineering-lab').then(({ GeneEngineLab }) => ({ default: GeneEngineLab })),
+  dnaExtract: () => import('@/components/lab/dna-extraction-lab').then(({ DnaExtractLab }) => ({ default: DnaExtractLab })),
+  pcr: () => import('@/components/lab/pcr-lab').then(({ PcrLab }) => ({ default: PcrLab })),
 };
+
+const EXPERIMENT_COMPONENTS = Object.fromEntries(
+  (Object.keys(EXPERIMENT_LOADERS) as ExperimentId[]).map((id) => [id, lazy(EXPERIMENT_LOADERS[id])]),
+) as Record<ExperimentId, LazyExoticComponent<ComponentType>>;
+
+/** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
+function preloadExperiment(id: ExperimentId) {
+  void EXPERIMENT_LOADERS[id]();
+}
+
+function LabChunkFallback() {
+  return (
+    <div className="flex min-h-48 items-center justify-center gap-2 text-sm text-[#59767c]">
+      <span className="inline-block size-2 animate-pulse rounded-full bg-[#82c6c0]" aria-hidden="true" />
+      实验加载中…
+    </div>
+  );
+}
 
 const LAB_KEYFRAMES = `
 @keyframes bio-substrate-fly {
@@ -318,6 +301,7 @@ export function LabClient() {
                           setActiveExperiment(id);
                           setCategoryFilter(cat.name);
                         }}
+                        onMouseEnter={() => preloadExperiment(id)}
                         className={`text-[11px] underline-offset-2 transition-colors ${
                           id === activeExperiment
                             ? 'font-semibold text-[#0a626a] underline'
@@ -372,6 +356,7 @@ export function LabClient() {
                         key={id}
                         type="button"
                         onClick={() => setActiveExperiment(id)}
+                        onMouseEnter={() => preloadExperiment(id)}
                         aria-pressed={active}
                         className={cnChip(active)}
                       >
@@ -390,7 +375,9 @@ export function LabClient() {
           </div>
 
           <div className="p-4 sm:p-5">
-            <ActiveExperiment key={`${activeExperiment}-${resetCount}`} />
+            <Suspense fallback={<LabChunkFallback />}>
+              <ActiveExperiment key={`${activeExperiment}-${resetCount}`} />
+            </Suspense>
           </div>
         </section>
 
