@@ -41,7 +41,7 @@ function Badge({ n, x, y }: { n: number; x: number; y: number }) {
   return (
     <g style={{ pointerEvents: 'none' }}>
       <circle cx={x} cy={y} r="9.5" fill="#0e6f75" stroke="#ffffff" strokeWidth="2" />
-      <text x={x} y={y + 3.5} textAnchor="middle" fontSize="10.5" fill="#ffffff" fontWeight="700">
+      <text x={x} y={y + 3.5} textAnchor="middle" fontSize="13.5" fill="#ffffff" fontWeight="700">
         {n}
       </text>
     </g>
@@ -63,7 +63,7 @@ function AnimalCellSvg({ active }: { active: number | null; open?: boolean }) {
         <ellipse cx="260" cy="195" rx="216" ry="162" fill="#f4f8ef" stroke="#4a7a6a" strokeWidth="3.5" />
       </g>
       <g style={dim(active, 1)}>
-        <text x="112" y="332" fontSize="11" fill="#6d8a70" fontWeight="600">细胞质（胶状基质）</text>
+        <text x="112" y="332" fontSize="13.5" fill="#6d8a70" fontWeight="600">细胞质（胶状基质）</text>
       </g>
 
       {/* 细胞核 */}
@@ -73,7 +73,7 @@ function AnimalCellSvg({ active }: { active: number | null; open?: boolean }) {
         <path d="M150 178 q 15 -12 30 0 q 15 12 30 0" stroke="#a97fb5" strokeWidth="2.5" fill="none" />
         <path d="M155 192 q 14 -10 28 0 q 14 10 28 0" stroke="#a97fb5" strokeWidth="2.5" fill="none" />
         <path d="M170 120 q 12 -9 24 0" stroke="#a97fb5" strokeWidth="2" fill="none" />
-        <text x="185" y="225" textAnchor="middle" fontSize="10.5" fill="#7a5a92" fontWeight="600">细胞核</text>
+        <text x="185" y="225" textAnchor="middle" fontSize="13.5" fill="#7a5a92" fontWeight="600">细胞核</text>
       </g>
 
       {/* 线粒体 ×2（立体剖面迷你版） */}
@@ -90,7 +90,7 @@ function AnimalCellSvg({ active }: { active: number | null; open?: boolean }) {
         {[[292, 150], [308, 168], [288, 174], [318, 226], [302, 214]].map(([x, y]) => (
           <circle key={`${x}-${y}`} cx={x} cy={y} r="3" fill="#4a7a6a" />
         ))}
-        <text x="322" y="206" fontSize="10" fill="#4b7a91" fontWeight="600">内质网</text>
+        <text x="322" y="206" fontSize="13" fill="#4b7a91" fontWeight="600">内质网</text>
       </g>
 
       {/* 核糖体 */}
@@ -107,14 +107,14 @@ function AnimalCellSvg({ active }: { active: number | null; open?: boolean }) {
         <path d="M368 264 Q 402 255 428 271" stroke="#b06a17" strokeWidth="3" fill="none" />
         <circle cx="366" cy="278" r="4" fill="none" stroke="#b06a17" strokeWidth="2" />
         <circle cx="436" cy="248" r="4" fill="none" stroke="#b06a17" strokeWidth="2" />
-        <text x="398" y="290" textAnchor="middle" fontSize="10" fill="#8a5a1b" fontWeight="600">高尔基体</text>
+        <text x="398" y="290" textAnchor="middle" fontSize="13" fill="#8a5a1b" fontWeight="600">高尔基体</text>
       </g>
 
       {/* 中心体 */}
       <g style={dim(active, 7)}>
         <rect x="288" y="296" width="16" height="6" rx="2" fill="none" stroke="#4b6c73" strokeWidth="2" />
         <rect x="293" y="291" width="6" height="16" rx="2" fill="none" stroke="#4b6c73" strokeWidth="2" />
-        <text x="296" y="326" textAnchor="middle" fontSize="10" fill="#4b6c73" fontWeight="600">中心体</text>
+        <text x="296" y="326" textAnchor="middle" fontSize="13" fill="#4b6c73" fontWeight="600">中心体</text>
       </g>
 
       {/* 溶酶体 */}
@@ -123,7 +123,7 @@ function AnimalCellSvg({ active }: { active: number | null; open?: boolean }) {
         <circle cx="431" cy="144" r="2.4" fill="#b0483a" />
         <circle cx="440" cy="152" r="2.4" fill="#b0483a" />
         <circle cx="434" cy="155" r="2.4" fill="#b0483a" />
-        <text x="436" y="180" textAnchor="middle" fontSize="10" fill="#b0483a" fontWeight="600">溶酶体</text>
+        <text x="436" y="180" textAnchor="middle" fontSize="13" fill="#b0483a" fontWeight="600">溶酶体</text>
       </g>
 
       <Badge n={1} x={52} y={196} />
@@ -153,14 +153,14 @@ function PlantCellSvg({ active }: { active: number | null; open?: boolean }) {
         <rect x="58" y="56" width="404" height="268" rx="16" fill="none" stroke="#4a7a6a" strokeWidth="2.5" />
       </g>
       <g style={dim(active, 2)}>
-        <text x="92" y="308" fontSize="11" fill="#6d8a70" fontWeight="600">细胞质</text>
+        <text x="92" y="308" fontSize="13.5" fill="#6d8a70" fontWeight="600">细胞质</text>
       </g>
 
       {/* 大液泡 */}
       <g style={dim(active, 5)}>
         <path d="M240 92 C 320 84, 420 120, 432 190 C 442 252, 386 300, 306 300 C 250 300, 226 262, 232 210 C 236 160, 210 100, 240 92 Z" fill="#dcebf7" stroke="#7fa9bb" strokeWidth="3" />
         <text x="330" y="205" textAnchor="middle" fontSize="12" fill="#4b7a91" fontWeight="600">大液泡</text>
-        <text x="330" y="222" textAnchor="middle" fontSize="9.5" fill="#7fa9bb">细胞液（含糖类、无机盐、色素等）</text>
+        <text x="330" y="222" textAnchor="middle" fontSize="12.5" fill="#7fa9bb">细胞液（含糖类、无机盐、色素等）</text>
       </g>
 
       {/* 细胞核 */}
@@ -168,7 +168,7 @@ function PlantCellSvg({ active }: { active: number | null; open?: boolean }) {
         <circle cx="152" cy="212" r="46" fill="#e9def3" stroke="#8a5a8f" strokeWidth="3" />
         <circle cx="152" cy="204" r="12" fill="#8a5a8f" />
         <path d="M126 230 q 12 -9 24 0 q 12 9 24 0" stroke="#a97fb5" strokeWidth="2.2" fill="none" />
-        <text x="152" y="274" textAnchor="middle" fontSize="10.5" fill="#7a5a92" fontWeight="600">细胞核</text>
+        <text x="152" y="274" textAnchor="middle" fontSize="13.5" fill="#7a5a92" fontWeight="600">细胞核</text>
       </g>
 
       {/* 叶绿体 ×3 */}
@@ -185,7 +185,7 @@ function PlantCellSvg({ active }: { active: number | null; open?: boolean }) {
             ))}
           </g>
         ))}
-        <text x="185" y="66" fontSize="10.5" fill="#2f6b42" fontWeight="600">叶绿体（含基粒）</text>
+        <text x="185" y="66" fontSize="13.5" fill="#2f6b42" fontWeight="600">叶绿体（含基粒）</text>
       </g>
 
       {/* 线粒体（立体剖面迷你版） */}
@@ -200,7 +200,7 @@ function PlantCellSvg({ active }: { active: number | null; open?: boolean }) {
       <Badge n={5} x={330} y={168} />
       <Badge n={6} x={240} y={332} />
       <Badge n={7} x={80} y={266} />
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">植物细胞模式图（平面）</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">植物细胞模式图（平面）</text>
     </svg>
   );
 }
@@ -224,7 +224,7 @@ function ChloroplastSvg({ active }: { active: number | null; open?: boolean }) {
         <ellipse cx="260" cy="190" rx="192" ry="112" fill="#dff0d2" stroke="#5f9e57" strokeWidth="2.5" />
       </g>
       <g style={dim(active, 2)}>
-        <text x="260" y="308" textAnchor="middle" fontSize="10.5" fill="#3f7f4f" fontWeight="600">基质（暗反应场所）</text>
+        <text x="260" y="308" textAnchor="middle" fontSize="13.5" fill="#3f7f4f" fontWeight="600">基质（暗反应场所）</text>
       </g>
 
       {/* 基质类囊体（连丝） */}
@@ -243,14 +243,14 @@ function ChloroplastSvg({ active }: { active: number | null; open?: boolean }) {
             ))}
           </g>
         ))}
-        <text x="352" y="178" textAnchor="middle" fontSize="10.5" fill="#2f6b42" fontWeight="600">基粒（类囊体堆叠）</text>
-        <text x="352" y="192" textAnchor="middle" fontSize="9" fill="#3f7f4f">光反应在类囊体薄膜上进行</text>
+        <text x="352" y="178" textAnchor="middle" fontSize="13.5" fill="#2f6b42" fontWeight="600">基粒（类囊体堆叠）</text>
+        <text x="352" y="192" textAnchor="middle" fontSize="12.5" fill="#3f7f4f">光反应在类囊体薄膜上进行</text>
       </g>
 
       {/* DNA 与核糖体 */}
       <g style={dim(active, 5)}>
         <circle cx="262" cy="188" r="13" fill="none" stroke="#8a5a8f" strokeWidth="2.5" strokeDasharray="5 3" />
-        <text x="262" y="192" textAnchor="middle" fontSize="8" fill="#8a5a8f">DNA</text>
+        <text x="262" y="192" textAnchor="middle" fontSize="12" fill="#8a5a8f">DNA</text>
         {[[246, 214], [282, 214], [262, 232], [238, 176], [288, 172]].map(([x, y]) => (
           <circle key={`${x}-${y}`} cx={x} cy={y} r="2.6" fill="#4b6c73" />
         ))}
@@ -262,7 +262,7 @@ function ChloroplastSvg({ active }: { active: number | null; open?: boolean }) {
       <Badge n={4} x={168} y={94} />
       <Badge n={5} x={240} y={104} />
       <Badge n={6} x={292} y={192} />
-      <text x="500" y="364" textAnchor="end" fontSize="9.5" fill="#799398">叶绿体剖面模式图</text>
+      <text x="500" y="364" textAnchor="end" fontSize="12.5" fill="#799398">叶绿体剖面模式图</text>
     </svg>
   );
 }
@@ -386,8 +386,8 @@ function MitochondrionSvg({ active }: { active: number | null; open?: boolean })
           </g>
         ))}
         <line x1="392" y1="92" x2="304" y2="172" stroke="#2f7d6d" strokeWidth="1.4" />
-        <text x="512" y="88" textAnchor="end" fontSize="10.5" fill="#2f7d6d" fontWeight="700">嵴 = 内膜折叠</text>
-        <text x="512" y="102" textAnchor="end" fontSize="9" fill="#3f9484">管状折叠深入基质，多附呼吸酶</text>
+        <text x="512" y="88" textAnchor="end" fontSize="13.5" fill="#2f7d6d" fontWeight="700">嵴 = 内膜折叠</text>
+        <text x="512" y="102" textAnchor="end" fontSize="12.5" fill="#3f9484">管状折叠深入基质，多附呼吸酶</text>
       </g>
 
       {/* 基质内容物 */}
@@ -429,7 +429,7 @@ function MitochondrionSvg({ active }: { active: number | null; open?: boolean })
       <Badge n={6} x={376} y={120} />
       <Badge n={7} x={218} y={256} />
       <Badge n={8} x={238} y={296} />
-      <text x="512" y="368" textAnchor="end" fontSize="9.5" fill="#799398">线粒体立体剖面模式图（有氧呼吸主要场所）</text>
+      <text x="512" y="368" textAnchor="end" fontSize="12.5" fill="#799398">线粒体立体剖面模式图（有氧呼吸主要场所）</text>
     </svg>
   );
 }
@@ -468,14 +468,14 @@ function EColiSvg({ active }: { active: number | null; open?: boolean }) {
       {/* 拟核 */}
       <g style={dim(active, 5)}>
         <path d="M228 170 C 252 148, 292 152, 296 178 C 300 200, 262 198, 268 216 C 274 232, 316 226, 312 202 C 309 186, 330 188, 328 172 C 326 156, 296 160, 290 168" stroke="#8a5a8f" strokeWidth="2.6" fill="none" />
-        <text x="272" y="252" textAnchor="middle" fontSize="10" fill="#7a5a92" fontWeight="600">拟核（DNA 集中区域，无核膜）</text>
+        <text x="272" y="252" textAnchor="middle" fontSize="13" fill="#7a5a92" fontWeight="600">拟核（DNA 集中区域，无核膜）</text>
       </g>
 
       {/* 质粒 */}
       <g style={dim(active, 6)}>
         <circle cx="196" cy="210" r="9" fill="none" stroke="#e6913c" strokeWidth="2.5" />
         <circle cx="336" cy="152" r="7" fill="none" stroke="#e6913c" strokeWidth="2.5" />
-        <text x="196" y="236" textAnchor="middle" fontSize="9.5" fill="#b06a17" fontWeight="600">质粒</text>
+        <text x="196" y="236" textAnchor="middle" fontSize="12.5" fill="#b06a17" fontWeight="600">质粒</text>
       </g>
 
       {/* 核糖体 */}
@@ -483,7 +483,7 @@ function EColiSvg({ active }: { active: number | null; open?: boolean }) {
         {[[180, 150], [214, 172], [248, 140], [310, 136], [352, 178], [322, 214], [232, 232], [362, 224], [200, 190]].map(([x, y]) => (
           <circle key={`${x}-${y}`} cx={x} cy={y} r="2.8" fill="#4b6c73" />
         ))}
-        <text x="408" y="230" fontSize="9.5" fill="#4b6c73" fontWeight="600">核糖体</text>
+        <text x="408" y="230" fontSize="12.5" fill="#4b6c73" fontWeight="600">核糖体</text>
       </g>
 
       {/* 菌毛 */}
@@ -491,7 +491,7 @@ function EColiSvg({ active }: { active: number | null; open?: boolean }) {
         {pili.map((p, index) => (
           <line key={index} x1={p.x1} y1={p.y1} x2={p.x2} y2={p.y2} stroke="#799398" strokeWidth="2" strokeLinecap="round" />
         ))}
-        <text x="82" y="128" fontSize="10" fill="#59767c" fontWeight="600">菌毛（短而多）</text>
+        <text x="82" y="128" fontSize="13" fill="#59767c" fontWeight="600">菌毛（短而多）</text>
       </g>
 
       {/* 鞭毛 */}
@@ -511,7 +511,7 @@ function EColiSvg({ active }: { active: number | null; open?: boolean }) {
           stroke="#4b6c73" strokeWidth="2.6" fill="none" strokeLinecap="round"
           className="bio-flagella" style={{ transformOrigin: '136px 196px', animationDelay: '0.8s' }}
         />
-        <text x="428" y="140" fontSize="10" fill="#366169" fontWeight="600">鞭毛（长而少）</text>
+        <text x="428" y="140" fontSize="13" fill="#366169" fontWeight="600">鞭毛（长而少）</text>
       </g>
 
       <Badge n={1} x={472} y={160} />
@@ -522,7 +522,7 @@ function EColiSvg({ active }: { active: number | null; open?: boolean }) {
       <Badge n={6} x={272} y={172} />
       <Badge n={7} x={196} y={190} />
       <Badge n={8} x={336} y={132} />
-      <text x="500" y="364" textAnchor="end" fontSize="9.5" fill="#799398">大肠杆菌（原核细胞）结构模式图</text>
+      <text x="500" y="364" textAnchor="end" fontSize="12.5" fill="#799398">大肠杆菌（原核细胞）结构模式图</text>
     </svg>
   );
 }
@@ -556,11 +556,11 @@ function ParameciumSvg({ active }: { active: number | null; open?: boolean }) {
       {/* 口沟 + 胞口 */}
       <g style={dim(active, 2)}>
         <path d="M446 128 C 396 136, 344 160, 302 190 L 306 214 C 350 186, 402 172, 448 172 Z" fill="#d7e3ef" stroke="#5b7f9e" strokeWidth="2" />
-        <text x="392" y="136" fontSize="10.5" fill="#366169" fontWeight="600">口沟</text>
+        <text x="392" y="136" fontSize="13.5" fill="#366169" fontWeight="600">口沟</text>
       </g>
       <g style={dim(active, 3)}>
         <ellipse cx="306" cy="202" rx="7" ry="10" fill="#5b7f9e" transform="rotate(-24 306 202)" />
-        <text x="290" y="232" fontSize="9.5" fill="#366169" fontWeight="600">胞口</text>
+        <text x="290" y="232" fontSize="12.5" fill="#366169" fontWeight="600">胞口</text>
       </g>
 
       {/* 食物泡 */}
@@ -575,7 +575,7 @@ function ParameciumSvg({ active }: { active: number | null; open?: boolean }) {
             <circle cx={v.x - v.r / 3} cy={v.y + 2} r="2.4" fill="#8a671b" />
           </g>
         ))}
-        <text x="240" y="298" textAnchor="middle" fontSize="10" fill="#8a671b" fontWeight="600">食物泡（随细胞质流动消化）</text>
+        <text x="240" y="298" textAnchor="middle" fontSize="13" fill="#8a671b" fontWeight="600">食物泡（随细胞质流动消化）</text>
       </g>
 
       {/* 伸缩泡 ×2 */}
@@ -602,23 +602,23 @@ function ParameciumSvg({ active }: { active: number | null; open?: boolean }) {
             })}
           </g>
         ))}
-        <text x="148" y="104" textAnchor="middle" fontSize="10" fill="#4b7a91" fontWeight="600">伸缩泡 + 收集管</text>
+        <text x="148" y="104" textAnchor="middle" fontSize="13" fill="#4b7a91" fontWeight="600">伸缩泡 + 收集管</text>
       </g>
 
       {/* 大核 / 小核 */}
       <g style={dim(active, 6)}>
         <ellipse cx="312" cy="196" rx="36" ry="20" fill="#a97fb5" stroke="#7a5a92" strokeWidth="2" transform="rotate(-18 312 196)" />
-        <text x="312" y="200" textAnchor="middle" fontSize="9.5" fill="#ffffff" fontWeight="600">大核</text>
+        <text x="312" y="200" textAnchor="middle" fontSize="12.5" fill="#ffffff" fontWeight="600">大核</text>
       </g>
       <g style={dim(active, 7)}>
         <circle cx="258" cy="176" r="8" fill="#7a5a92" />
-        <text x="258" y="160" textAnchor="middle" fontSize="9.5" fill="#7a5a92" fontWeight="600">小核</text>
+        <text x="258" y="160" textAnchor="middle" fontSize="12.5" fill="#7a5a92" fontWeight="600">小核</text>
       </g>
 
       {/* 胞肛 */}
       <g style={dim(active, 8)}>
         <path d="M84 232 q 10 8 22 8" stroke="#5b7f9e" strokeWidth="3" fill="none" strokeLinecap="round" />
-        <text x="82" y="262" textAnchor="middle" fontSize="9.5" fill="#366169" fontWeight="600">胞肛</text>
+        <text x="82" y="262" textAnchor="middle" fontSize="12.5" fill="#366169" fontWeight="600">胞肛</text>
       </g>
 
       <Badge n={1} x={260} y={66} />
@@ -630,7 +630,7 @@ function ParameciumSvg({ active }: { active: number | null; open?: boolean }) {
       <Badge n={7} x={352} y={186} />
       <Badge n={8} x={258} y={200} />
       <Badge n={9} x={92} y={224} />
-      <text x="500" y="364" textAnchor="end" fontSize="9.5" fill="#799398">草履虫（单细胞原生动物）结构模式图</text>
+      <text x="500" y="364" textAnchor="end" fontSize="12.5" fill="#799398">草履虫（单细胞原生动物）结构模式图</text>
     </svg>
   );
 }
@@ -655,7 +655,7 @@ function GuardCellSvg({ active, open = true }: { active: number | null; open?: b
           <line x1="346" y1="190" x2="496" y2="190" stroke="#b8cbc9" strokeWidth="1.6" />
         </g>
         <ellipse cx="260" cy="190" rx="196" ry="128" fill="none" stroke="#b8cbc9" strokeWidth="2" strokeDasharray="6 5" />
-        <text x="82" y="330" fontSize="10" fill="#59767c" fontWeight="600">表皮细胞（无叶绿体）</text>
+        <text x="30" y="330" fontSize="13" fill="#59767c" fontWeight="600">表皮细胞（无叶绿体）</text>
       </g>
 
       {/* 张开状态 */}
@@ -673,7 +673,7 @@ function GuardCellSvg({ active, open = true }: { active: number | null; open?: b
       <g style={dim(active, 2)}>
         <path d="M247 106 C 236 136, 232 164, 232 190 C 232 216, 236 244, 247 274" stroke="#2f6b42" strokeWidth="7" fill="none" strokeLinecap="round" />
         <path d="M273 106 C 284 136, 288 164, 288 190 C 288 216, 284 244, 273 274" stroke="#2f6b42" strokeWidth="7" fill="none" strokeLinecap="round" />
-        <text x="190" y="140" textAnchor="end" fontSize="9.5" fill="#2f6b42" fontWeight="600">内壁增厚</text>
+        <text x="190" y="140" textAnchor="end" fontSize="12.5" fill="#2f6b42" fontWeight="600">内壁增厚</text>
       </g>
 
       {/* 叶绿体 + 细胞核 */}
@@ -692,10 +692,10 @@ function GuardCellSvg({ active, open = true }: { active: number | null; open?: b
         {open ? (
           <>
             <ellipse cx="260" cy="190" rx="11" ry="76" fill="#fbfcf8" stroke="#3f7f4f" strokeWidth="1.5" />
-            <text x="260" y="330" textAnchor="middle" fontSize="11" fill="#0a626a" fontWeight="700">气孔张开（开口大）</text>
+            <text x="260" y="330" textAnchor="middle" fontSize="13.5" fill="#0a626a" fontWeight="700">气孔张开（开口大）</text>
           </>
         ) : (
-          <text x="260" y="330" textAnchor="middle" fontSize="11" fill="#8a671b" fontWeight="700">气孔闭合（缝隙几乎消失）</text>
+          <text x="260" y="330" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">气孔闭合（缝隙几乎消失）</text>
         )}
       </g>
 
@@ -705,13 +705,13 @@ function GuardCellSvg({ active, open = true }: { active: number | null; open?: b
           <g className="bio-fade">
             <path d="M152 158 L 186 176 M186 176 L 174 176 M186 176 L 180 165" stroke="#4b7a91" strokeWidth="2.6" fill="none" />
             <path d="M152 222 L 186 204 M186 204 L 174 204 M186 204 L 180 215" stroke="#4b7a91" strokeWidth="2.6" fill="none" />
-            <text x="118" y="196" textAnchor="middle" fontSize="10" fill="#4b7a91" fontWeight="600">吸水</text>
+            <text x="118" y="196" textAnchor="middle" fontSize="13" fill="#4b7a91" fontWeight="600">吸水</text>
           </g>
         ) : (
           <g className="bio-fade">
             <path d="M186 176 L 152 158 M152 158 L 164 158 M152 158 L 158 169" stroke="#b0483a" strokeWidth="2.6" fill="none" />
             <path d="M186 204 L 152 222 M152 222 L 164 222 M152 222 L 158 211" stroke="#b0483a" strokeWidth="2.6" fill="none" />
-            <text x="118" y="196" textAnchor="middle" fontSize="10" fill="#b0483a" fontWeight="600">失水</text>
+            <text x="118" y="196" textAnchor="middle" fontSize="13" fill="#b0483a" fontWeight="600">失水</text>
           </g>
         )}
       </g>
@@ -721,7 +721,7 @@ function GuardCellSvg({ active, open = true }: { active: number | null; open?: b
       <Badge n={3} x={164} y={102} />
       <Badge n={4} x={196} y={222} />
       <Badge n={5} x={72} y={296} />
-      <text x="500" y="364" textAnchor="end" fontSize="9.5" fill="#799398">气孔器俯视模式图（一对保卫细胞）</text>
+      <text x="500" y="364" textAnchor="end" fontSize="12.5" fill="#799398">气孔器俯视模式图（一对保卫细胞）</text>
     </svg>
   );
 }
@@ -784,21 +784,21 @@ function DnaHelixSvg({ active }: { active: number | null; open?: boolean }) {
       {/* 碱基对标签 */}
       <g style={dim(active, 2)}>
         <line x1="392" y1="96" x2="330" y2="140" stroke="#7a8ab8" strokeWidth="1.4" />
-        <text x="398" y="92" fontSize="10.5" fill="#5a6ab8" fontWeight="700">碱基对</text>
-        <text x="398" y="106" fontSize="9" fill="#7a8ab8">A—T · G—C 配对</text>
+        <text x="398" y="92" fontSize="13.5" fill="#5a6ab8" fontWeight="700">碱基对</text>
+        <text x="398" y="106" fontSize="12.5" fill="#7a8ab8">A—T · G—C 配对</text>
       </g>
       <g style={dim(active, 4)}>
         <line x1="128" y1="96" x2="70" y2="120" stroke="#3f8fb8" strokeWidth="1.4" />
-        <text x="12" y="112" fontSize="10" fill="#2c6e94" fontWeight="700">脱氧核糖</text>
-        <text x="12" y="126" fontSize="10" fill="#2c6e94" fontWeight="700">-磷酸骨架</text>
+        <text x="12" y="112" fontSize="13" fill="#2c6e94" fontWeight="700">脱氧核糖</text>
+        <text x="12" y="126" fontSize="13" fill="#2c6e94" fontWeight="700">-磷酸骨架</text>
       </g>
       <g style={dim(active, 1)}>
         <line x1="392" y1="230" x2="316" y2="240" stroke="#d8a04a" strokeWidth="1.4" />
-        <text x="398" y="226" fontSize="10" fill="#b57f2e" fontWeight="700">另一条骨架</text>
-        <text x="398" y="240" fontSize="9" fill="#c9a05a">两条链反向平行</text>
+        <text x="398" y="226" fontSize="13" fill="#b57f2e" fontWeight="700">另一条骨架</text>
+        <text x="398" y="240" fontSize="12.5" fill="#c9a05a">两条链反向平行</text>
       </g>
 
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">DNA 双螺旋结构模式图（沃森与克里克，1953）</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">DNA 双螺旋结构模式图（沃森与克里克，1953）</text>
     </svg>
   );
 }
@@ -852,28 +852,28 @@ function MembraneModelSvg({ active }: { active: number | null; open?: boolean })
         <line x1="442" y1="70" x2="458" y2="52" stroke="#6aa86a" strokeWidth="3.5" />
         <circle cx="426" cy="48" r="6" fill="#8fc98f" />
         <circle cx="460" cy="48" r="6" fill="#8fc98f" />
-        <text x="442" y="32" textAnchor="middle" fontSize="10" fill="#3f7a5e" fontWeight="700">糖链（糖被）</text>
+        <text x="442" y="32" textAnchor="middle" fontSize="13" fill="#3f7a5e" fontWeight="700">糖链（糖被）</text>
       </g>
 
       {/* 胆固醇（黄色小分子） */}
       <g style={dim(active, 3)}>
         <rect x="180" y="150" width="14" height="60" rx="6" fill="#e8c94a" stroke="#b5a038" strokeWidth="1.6" />
-        <text x="187" y="290" textAnchor="middle" fontSize="9.5" fill="#8a7a20">胆固醇</text>
+        <text x="187" y="290" textAnchor="middle" fontSize="12.5" fill="#8a7a20">胆固醇</text>
       </g>
 
       {/* 标签 */}
       <g style={dim(active, 0)}>
         <line x1="120" y1="166" x2="70" y2="196" stroke="#5aa8c9" strokeWidth="1.4" />
-        <text x="14" y="192" fontSize="10.5" fill="#2c6e94" fontWeight="700">磷脂分子</text>
-        <text x="14" y="206" fontSize="9" fill="#5a88a8">圆头=亲水 · 两条尾=疏水</text>
+        <text x="14" y="192" fontSize="13.5" fill="#2c6e94" fontWeight="700">磷脂分子</text>
+        <text x="14" y="212" fontSize="12.5" fill="#5a88a8">圆头=亲水 · 两条尾=疏水</text>
       </g>
       <g style={dim(active, 1)}>
         <line x1="265" y1="100" x2="300" y2="60" stroke="#c9749e" strokeWidth="1.4" />
-        <text x="306" y="56" fontSize="10.5" fill="#9a4a74" fontWeight="700">蛋白质</text>
-        <text x="306" y="70" fontSize="9" fill="#b56a94">镶嵌 / 贯穿 / 糖蛋白</text>
+        <text x="306" y="56" fontSize="13.5" fill="#9a4a74" fontWeight="700">蛋白质</text>
+        <text x="306" y="78" fontSize="12.5" fill="#b56a94">镶嵌 / 贯穿 / 糖蛋白</text>
       </g>
-      <text x="14" y="330" fontSize="10.5" fill="#3d7e9e" fontWeight="700">磷脂双分子层 = 膜的基本支架</text>
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">细胞膜流动镶嵌模型（Singer & Nicolson, 1972）</text>
+      <text x="14" y="330" fontSize="13.5" fill="#3d7e9e" fontWeight="700">磷脂双分子层 = 膜的基本支架</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">细胞膜流动镶嵌模型（Singer & Nicolson, 1972）</text>
     </svg>
   );
 }
@@ -889,21 +889,21 @@ function PhageSvg({ active }: { active: number | null; open?: boolean }) {
       {/* 大肠杆菌（宿主，下方半透杆状） */}
       <g style={dim(active, 4)}>
         <rect x="120" y="268" width="290" height="76" rx="38" fill="#dcefe0" stroke="#6aa86a" strokeWidth="3" opacity="0.9" />
-        <text x="265" y="314" textAnchor="middle" fontSize="10.5" fill="#3f7f52" fontWeight="600">大肠杆菌（宿主细胞）</text>
+        <text x="265" y="314" textAnchor="middle" fontSize="13.5" fill="#3f7f52" fontWeight="600">大肠杆菌（宿主细胞）</text>
       </g>
 
       {/* 内部 DNA（头部内螺旋线） */}
       <g style={dim(active, 3)}>
         <path d="M226 92 q 17 -12 34 0 q 17 12 34 0 q -17 14 -34 4 q -17 -10 -34 -4" fill="none" stroke="#ff9f43" strokeWidth="4" strokeLinecap="round" />
         <path d="M232 112 q 14 10 28 2 q 14 -8 28 0" fill="none" stroke="#ff9f43" strokeWidth="4" strokeLinecap="round" />
-        <text x="352" y="86" fontSize="10" fill="#c97020" fontWeight="600">DNA</text>
+        <text x="352" y="86" fontSize="13" fill="#c97020" fontWeight="600">DNA</text>
         <line x1="348" y1="90" x2="312" y2="102" stroke="#c97020" strokeWidth="1.3" />
       </g>
 
       {/* 头部（蛋白质外壳） */}
       <g style={dim(active, 0)}>
         <ellipse cx={HEAD_CX} cy={HEAD_CY} rx="62" ry="48" fill="#8fb8d4" stroke="#3d7e9e" strokeWidth="3.5" />
-        <text x={HEAD_CX} y={HEAD_CY + 4} textAnchor="middle" fontSize="10" fill="#1e4a68" fontWeight="700">蛋白质外壳</text>
+        <text x={HEAD_CX} y={HEAD_CY + 4} textAnchor="middle" fontSize="13" fill="#1e4a68" fontWeight="700">蛋白质外壳</text>
       </g>
 
       {/* 尾鞘（收缩）+ 尾轴 */}
@@ -911,7 +911,7 @@ function PhageSvg({ active }: { active: number | null; open?: boolean }) {
         <rect x={HEAD_CX - 16} y={HEAD_CY + 48} width="32" height="66" rx="6" fill="#6a9ec4" stroke="#3d7e9e" strokeWidth="2.5" />
         <line x1={HEAD_CX - 8} y1={HEAD_CY + 52} x2={HEAD_CX - 8} y2={HEAD_CY + 112} stroke="#2c5a7e" strokeWidth="1.8" />
         <line x1={HEAD_CX + 8} y1={HEAD_CY + 52} x2={HEAD_CX + 8} y2={HEAD_CY + 112} stroke="#2c5a7e" strokeWidth="1.8" />
-        <text x="352" y="176" fontSize="10" fill="#2c6e94" fontWeight="700">尾鞘</text>
+        <text x="352" y="176" fontSize="13" fill="#2c6e94" fontWeight="700">尾鞘</text>
         <line x1="348" y1="172" x2="290" y2="164" stroke="#2c6e94" strokeWidth="1.3" />
       </g>
 
@@ -921,16 +921,16 @@ function PhageSvg({ active }: { active: number | null; open?: boolean }) {
         {[-34, -17, 0, 17, 34].map((dx, i) => (
           <line key={i} x1={HEAD_CX + dx} y1={HEAD_CY + 128} x2={HEAD_CX + dx * 1.35} y2={272} stroke="#5a7a9e" strokeWidth="2.4" strokeLinecap="round" />
         ))}
-        <text x="356" y="248" fontSize="10" fill="#3d6a8e" fontWeight="700">尾丝（吸附宿主）</text>
+        <text x="356" y="248" fontSize="13" fill="#3d6a8e" fontWeight="700">尾丝（吸附宿主）</text>
         <line x1="352" y1="252" x2="310" y2="262" stroke="#3d6a8e" strokeWidth="1.3" />
       </g>
 
       {/* 侵染注解 */}
-      <text x="14" y="40" fontSize="11" fill="#3d6a8e" fontWeight="700">T2 噬菌体侵染大肠杆菌：</text>
-      <text x="14" y="58" fontSize="9.5" fill="#5a7a8e">吸附 → 注入 DNA → 合成 → 装配 → 释放</text>
-      <text x="14" y="76" fontSize="9.5" fill="#8a9aa8">蛋白质留在外面，DNA 进入细菌——证明 DNA 是遗传物质</text>
+      <text x="14" y="40" fontSize="13.5" fill="#3d6a8e" fontWeight="700">T2 噬菌体侵染大肠杆菌：</text>
+      <text x="14" y="58" fontSize="12.5" fill="#5a7a8e">吸附 → 注入 DNA → 合成 → 装配 → 释放</text>
+      <text x="14" y="76" fontSize="12.5" fill="#8a9aa8">蛋白质留在外面，DNA 进入细菌——证明 DNA 是遗传物质</text>
 
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">T2 噬菌体结构模式图（细菌病毒）</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">T2 噬菌体结构模式图（细菌病毒）</text>
     </svg>
   );
 }
@@ -984,22 +984,22 @@ function RnaStrandSvg({ active }: { active: number | null; open?: boolean }) {
       {/* 标注 */}
       <g style={dim(active, 2)}>
         <line x1="98" y1="46" x2="70" y2="66" stroke="#b5903a" strokeWidth="1.4" />
-        <text x="14" y="60" fontSize="10.5" fill="#a5781e" fontWeight="700">磷酸基团</text>
+        <text x="14" y="60" fontSize="13.5" fill="#a5781e" fontWeight="700">磷酸基团</text>
       </g>
       <g style={dim(active, 3)}>
         <line x1="220" y1="108" x2="176" y2="72" stroke="#4d7ea8" strokeWidth="1.4" />
-        <text x="120" y="56" fontSize="10.5" fill="#2c6e94" fontWeight="700">核糖（五碳糖）</text>
+        <text x="120" y="56" fontSize="13.5" fill="#2c6e94" fontWeight="700">核糖（五碳糖）</text>
       </g>
       <g style={dim(active, 4)}>
         <line x1="392" y1="176" x2="392" y2="196" stroke="#c96a6a" strokeWidth="1.4" />
-        <text x="398" y="206" fontSize="10.5" fill="#c05a5a" fontWeight="700">碱基（A U G C）</text>
-        <text x="398" y="220" fontSize="9" fill="#d08a8a">注意：RNA 没有 T，用 U（尿嘧啶）</text>
+        <text x="398" y="206" fontSize="13.5" fill="#c05a5a" fontWeight="700">碱基（A U G C）</text>
+        <text x="398" y="220" fontSize="12.5" fill="#d08a8a">注意：RNA 没有 T，用 U（尿嘧啶）</text>
       </g>
       <g style={dim(active, 4)}>
-        <text x="14" y="330" fontSize="10.5" fill="#a04a6a" fontWeight="700">RNA = 单链 · 核糖 · 碱基 A U G C</text>
-        <text x="14" y="346" fontSize="9.5" fill="#b57a8a">对比 DNA：双链 · 脱氧核糖 · 碱基 A T G C</text>
+        <text x="14" y="330" fontSize="13.5" fill="#a04a6a" fontWeight="700">RNA = 单链 · 核糖 · 碱基 A U G C</text>
+        <text x="14" y="346" fontSize="12.5" fill="#b57a8a">对比 DNA：双链 · 脱氧核糖 · 碱基 A T G C</text>
       </g>
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">RNA 单链结构模式图</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">RNA 单链结构模式图</text>
     </svg>
   );
 }
@@ -1013,12 +1013,12 @@ function AtpSvg({ active }: { active: number | null; open?: boolean }) {
       <g style={dim(active, 0)}>
         <polygon points="80,160 106,144 132,160 132,190 106,206 80,190" fill="#c9a8e2" stroke="#8a5a9f" strokeWidth="2.5" />
         <polygon points="132,150 162,138 178,164 162,192 132,190" fill="#b48ad0" stroke="#8a5a9f" strokeWidth="2.5" />
-        <text x="122" y="180" textAnchor="middle" fontSize="11" fill="#5a2a72" fontWeight="700">腺嘌呤</text>
+        <text x="122" y="180" textAnchor="middle" fontSize="13.5" fill="#5a2a72" fontWeight="700">腺嘌呤</text>
       </g>
       {/* 核糖（五边形） */}
       <g style={dim(active, 1)}>
         <polygon points="178,226 200,208 226,220 226,248 200,260 178,248" fill="#8fb8d4" stroke="#4d7ea8" strokeWidth="2.5" />
-        <text x="201" y="240" textAnchor="middle" fontSize="10" fill="#1e4a68" fontWeight="700">核糖</text>
+        <text x="201" y="240" textAnchor="middle" fontSize="13" fill="#1e4a68" fontWeight="700">核糖</text>
       </g>
       {/* 三个磷酸基团（P 圆）+ 高能键波浪 */}
       <g style={dim(active, 2)}>
@@ -1041,15 +1041,15 @@ function AtpSvg({ active }: { active: number | null; open?: boolean }) {
             </g>
           );
         })}
-        <text x="354" y="206" textAnchor="middle" fontSize="10" fill="#c05a20" fontWeight="700">高能磷酸键 ～</text>
+        <text x="354" y="206" textAnchor="middle" fontSize="13" fill="#c05a20" fontWeight="700">高能磷酸键 ～</text>
       </g>
       {/* 标注 */}
       <g style={dim(active, 0)}>
-        <text x="122" y="236" textAnchor="middle" fontSize="10.5" fill="#5a2a72" fontWeight="700">腺苷 = 腺嘌呤 + 核糖</text>
+        <text x="122" y="236" textAnchor="middle" fontSize="13.5" fill="#5a2a72" fontWeight="700">腺苷 = 腺嘌呤 + 核糖</text>
       </g>
       <g style={dim(active, 2)}>
         <line x1="392" y1="262" x2="392" y2="292" stroke="#e07840" strokeWidth="1.5" />
-        <text x="392" y="308" textAnchor="middle" fontSize="10.5" fill="#c05a20" fontWeight="700">
+        <text x="392" y="308" textAnchor="middle" fontSize="13.5" fill="#c05a20" fontWeight="700">
           远离 A 的高能磷酸键很容易断裂与重建
         </text>
       </g>
@@ -1060,7 +1060,7 @@ function AtpSvg({ active }: { active: number | null; open?: boolean }) {
           A — P ～ P ～ P
         </text>
       </g>
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">ATP 结构模式图（细胞的能量货币）</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">ATP 结构模式图（细胞的能量货币）</text>
     </svg>
   );
 }
@@ -1091,34 +1091,34 @@ function HivSvg({ active }: { active: number | null; open?: boolean }) {
             </g>
           );
         })}
-        <text x="404" y="66" fontSize="10" fill="#8a4a4a" fontWeight="700">包膜糖蛋白</text>
+        <text x="404" y="66" fontSize="13" fill="#8a4a4a" fontWeight="700">包膜糖蛋白</text>
         <line x1="400" y1="70" x2="318" y2="88" stroke="#8a4a4a" strokeWidth="1.3" />
       </g>
       {/* 衣壳（内层锥形/截圆） */}
       <g style={dim(active, 2)}>
         <path d="M196 130 L324 130 L296 236 L224 236 Z" fill="#8fb8d4" stroke="#3d6a94" strokeWidth="3" opacity="0.95" />
-        <text x="260" y="188" textAnchor="middle" fontSize="10" fill="#1e4a68" fontWeight="700">衣壳（蛋白质）</text>
+        <text x="260" y="188" textAnchor="middle" fontSize="13" fill="#1e4a68" fontWeight="700">衣壳（蛋白质）</text>
       </g>
       {/* 两条 RNA + 逆转录酶 */}
       <g style={dim(active, 3)}>
         <path d="M238 160 q 11 -10 22 0 q 11 10 22 0" fill="none" stroke="#ff9f43" strokeWidth="4" strokeLinecap="round" />
         <path d="M238 174 q 11 10 22 0 q 11 -10 22 0" fill="none" stroke="#ff9f43" strokeWidth="4" strokeLinecap="round" />
         <circle cx="282" cy="212" r="9" fill="#7fb88a" stroke="#3f7f52" strokeWidth="2" />
-        <text x="282" y="216" textAnchor="middle" fontSize="8" fill="#1e4a2e" fontWeight="700">RT</text>
+        <text x="282" y="216" textAnchor="middle" fontSize="12" fill="#1e4a2e" fontWeight="700">RT</text>
       </g>
       {/* 标注 */}
       <g style={dim(active, 0)}>
         <line x1="386" y1="160" x2="420" y2="150" stroke="#9a5a5a" strokeWidth="1.4" />
-        <text x="424" y="146" fontSize="10.5" fill="#8a4a4a" fontWeight="700">包膜（脂质）</text>
-        <text x="424" y="160" fontSize="9" fill="#a86a6a">来自宿主细胞膜</text>
+        <text x="424" y="146" fontSize="13.5" fill="#8a4a4a" fontWeight="700">包膜（脂质）</text>
+        <text x="424" y="160" fontSize="12.5" fill="#a86a6a">来自宿主细胞膜</text>
       </g>
       <g style={dim(active, 3)}>
         <line x1="262" y1="168" x2="128" y2="140" stroke="#e07840" strokeWidth="1.4" />
-        <text x="16" y="132" fontSize="10.5" fill="#c97020" fontWeight="700">两条 RNA（遗传物质）</text>
-        <text x="16" y="146" fontSize="9.5" fill="#d08a4a">+ 逆转录酶（RNA → DNA）</text>
+        <text x="16" y="132" fontSize="13.5" fill="#c97020" fontWeight="700">两条 RNA（遗传物质）</text>
+        <text x="16" y="146" fontSize="12.5" fill="#d08a4a">+ 逆转录酶（RNA → DNA）</text>
       </g>
-      <text x="14" y="342" fontSize="10.5" fill="#8a4a4a" fontWeight="700">HIV 侵染 T 细胞：逆转录 → 整合 → 破坏免疫系统（艾滋病）</text>
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">HIV 病毒结构模式图</text>
+      <text x="14" y="342" fontSize="13.5" fill="#8a4a4a" fontWeight="700">HIV 侵染 T 细胞：逆转录 → 整合 → 破坏免疫系统（艾滋病）</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">HIV 病毒结构模式图</text>
     </svg>
   );
 }
@@ -1132,29 +1132,29 @@ function NeuronSvg({ active }: { active: number | null; open?: boolean }) {
         <path d="M150 170 Q 96 150 62 128 M 62 128 Q 44 118 30 118" fill="none" stroke="#9a6fb5" strokeWidth="6" strokeLinecap="round" />
         <path d="M150 190 Q 92 190 58 196 M 58 196 Q 42 198 28 208" fill="none" stroke="#9a6fb5" strokeWidth="6" strokeLinecap="round" />
         <path d="M158 210 Q 108 236 84 268" fill="none" stroke="#9a6fb5" strokeWidth="6" strokeLinecap="round" />
-        <text x="24" y="100" fontSize="10.5" fill="#7a4a8a" fontWeight="700">树突（接收信息）</text>
+        <text x="24" y="100" fontSize="13.5" fill="#7a4a8a" fontWeight="700">树突（接收信息）</text>
       </g>
       <g style={dim(active, 1)}>
         <circle cx="205" cy="190" r="52" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3" />
         <circle cx="205" cy="190" r="17" fill="#8a5a9f" />
-        <text x="205" y="260" textAnchor="middle" fontSize="10.5" fill="#7a4a8a" fontWeight="700">细胞体（含细胞核）</text>
+        <text x="205" y="260" textAnchor="middle" fontSize="13.5" fill="#7a4a8a" fontWeight="700">细胞体（含细胞核）</text>
       </g>
       <g style={dim(active, 2)}>
         <path d="M257 190 Q 320 190 380 186" fill="none" stroke="#9a6fb5" strokeWidth="7" strokeLinecap="round" />
         {[288, 326, 362].map((x, i) => (
           <ellipse key={i} cx={x} cy={188} rx="20" ry="13" fill="#e8c94a" stroke="#b5953a" strokeWidth="2" />
         ))}
-        <text x="300" y="156" fontSize="10.5" fill="#8a7a20" fontWeight="700">轴突 + 髓鞘</text>
+        <text x="300" y="156" fontSize="13.5" fill="#8a7a20" fontWeight="700">轴突 + 髓鞘</text>
       </g>
       <g style={dim(active, 3)}>
         <path d="M380 186 Q 430 180 452 168 M 452 168 Q 470 160 486 162" fill="none" stroke="#9a6fb5" strokeWidth="6" strokeLinecap="round" />
         <path d="M380 188 Q 436 200 484 206" fill="none" stroke="#9a6fb5" strokeWidth="6" strokeLinecap="round" />
         <circle cx="490" cy="162" r="7" fill="#7a4a8a" />
         <circle cx="490" cy="208" r="7" fill="#7a4a8a" />
-        <text x="420" y="240" fontSize="10.5" fill="#7a4a8a" fontWeight="700">神经末梢（传出信息）</text>
+        <text x="370" y="246" fontSize="13.5" fill="#7a4a8a" fontWeight="700">神经末梢（传出信息）</text>
       </g>
-      <text x="30" y="330" fontSize="11" fill="#5f7076" fontWeight="600">神经冲动传导方向：树突 → 细胞体 → 轴突 → 神经末梢</text>
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">神经元（神经细胞）结构模式图</text>
+      <text x="30" y="330" fontSize="13.5" fill="#5f7076" fontWeight="600">神经冲动传导方向：树突 → 细胞体 → 轴突 → 神经末梢</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">神经元（神经细胞）结构模式图</text>
     </svg>
   );
 }
@@ -1167,12 +1167,12 @@ function CyanobacteriaSvg({ active }: { active: number | null; open?: boolean })
       <g style={dim(active, 0)}>
         <ellipse cx="260" cy="180" rx="160" ry="118" fill="#bfe0c9" stroke="#4d8a5e" strokeWidth="4" />
         <ellipse cx="260" cy="180" rx="150" ry="108" fill="none" stroke="#3f7f52" strokeWidth="2" />
-        <text x="260" y="34" textAnchor="middle" fontSize="10.5" fill="#2f6b42" fontWeight="700">细胞壁（肽聚糖）+ 细胞膜</text>
+        <text x="260" y="34" textAnchor="middle" fontSize="13.5" fill="#2f6b42" fontWeight="700">细胞壁（肽聚糖）+ 细胞膜</text>
         <line x1="260" y1="40" x2="260" y2="62" stroke="#2f6b42" strokeWidth="1.3" />
       </g>
       <g style={dim(active, 5)}>
         <path d="M208 170 C 236 146, 288 152, 292 184 C 296 208, 252 206, 258 228 C 264 246, 308 240, 304 214" fill="none" stroke="#8a5a9f" strokeWidth="4" strokeLinecap="round" />
-        <text x="260" y="282" textAnchor="middle" fontSize="10.5" fill="#7a5a92" fontWeight="700">拟核（DNA，无核膜包被）</text>
+        <text x="260" y="282" textAnchor="middle" fontSize="13.5" fill="#7a5a92" fontWeight="700">拟核（DNA，无核膜包被）</text>
       </g>
       <g style={dim(active, 2)}>
         {[0, 1, 2, 3].map((i) => (
@@ -1181,20 +1181,20 @@ function CyanobacteriaSvg({ active }: { active: number | null; open?: boolean })
             <rect x={310 - (i % 2) * 14} y={142 + i * 14} width={100 - i * 6} height="9" rx="4.5" fill="#3d9468" opacity="0.85" />
           </g>
         ))}
-        <text x="396" y="96" fontSize="10" fill="#2f7a52" fontWeight="700">光合膜片层</text>
-        <text x="396" y="110" fontSize="9" fill="#3f8a5a">含叶绿素和藻蓝素</text>
+        <text x="396" y="96" fontSize="13" fill="#2f7a52" fontWeight="700">光合膜片层</text>
+        <text x="396" y="118" fontSize="12.5" fill="#3f8a5a">含叶绿素和藻蓝素</text>
         <line x1="392" y1="100" x2="330" y2="150" stroke="#3d9468" strokeWidth="1.3" />
       </g>
       <g style={dim(active, 6)}>
         {[[176, 120], [212, 130], [348, 216], [168, 228], [330, 200], [218, 174]].map(([x, y], i) => (
           <circle key={i} cx={x} cy={y} r="3.6" fill="#1e5a3c" />
         ))}
-        <text x="430" y="292" fontSize="10" fill="#1e5a3c" fontWeight="600">核糖体</text>
+        <text x="430" y="292" fontSize="13" fill="#1e5a3c" fontWeight="600">核糖体</text>
         <line x1="426" y1="288" x2="360" y2="238" stroke="#1e5a3c" strokeWidth="1.2" />
       </g>
-      <text x="14" y="330" fontSize="10.5" fill="#2f6b42" fontWeight="700">蓝细菌 = 原核生物，但含叶绿素和藻蓝素，能进行光合作用</text>
-      <text x="14" y="348" fontSize="9.5" fill="#5f8a5e">没有叶绿体——光合结构是光合膜片层（区别于真核细胞）</text>
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">蓝细菌（原核细胞）结构模式图</text>
+      <text x="14" y="330" fontSize="13.5" fill="#2f6b42" fontWeight="700">蓝细菌 = 原核生物，但含叶绿素和藻蓝素，能进行光合作用</text>
+      <text x="14" y="348" fontSize="12.5" fill="#5f8a5e">没有叶绿体——光合结构是光合膜片层（区别于真核细胞）</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">蓝细菌（原核细胞）结构模式图</text>
     </svg>
   );
 }
@@ -1209,32 +1209,32 @@ function YeastCellSvg({ active }: { active: number | null; open?: boolean }) {
       </g>
       <g style={dim(active, 2)}>
         <circle cx="230" cy="170" r="26" fill="#b48ad0" stroke="#7a4a8a" strokeWidth="2.5" />
-        <text x="230" y="175" textAnchor="middle" fontSize="9" fill="#ffffff" fontWeight="700">细胞核</text>
+        <text x="230" y="175" textAnchor="middle" fontSize="12.5" fill="#ffffff" fontWeight="700">细胞核</text>
       </g>
       <g style={dim(active, 1)}>
         <ellipse cx="278" cy="212" rx="34" ry="24" fill="#f4ecd8" stroke="#c9a86a" strokeWidth="2" />
-        <text x="278" y="216" textAnchor="middle" fontSize="8.5" fill="#8a7a4a">液泡</text>
+        <text x="278" y="216" textAnchor="middle" fontSize="12" fill="#8a7a4a">液泡</text>
       </g>
       <g style={dim(active, 3)}>
         <ellipse cx="342" cy="108" rx="34" ry="28" fill="#e8d9a8" stroke="#b5903a" strokeWidth="2.5" />
-        <text x="342" y="112" textAnchor="middle" fontSize="8.5" fill="#8a671b">芽体</text>
+        <text x="342" y="112" textAnchor="middle" fontSize="12" fill="#8a671b">芽体</text>
       </g>
       <g style={dim(active, 0)}>
         <line x1="360" y1="76" x2="404" y2="52" stroke="#b5903a" strokeWidth="1.4" />
-        <text x="408" y="48" fontSize="10.5" fill="#8a671b" fontWeight="700">细胞壁</text>
-        <text x="408" y="62" fontSize="9" fill="#a58a4a">（真菌：几丁质）</text>
+        <text x="408" y="48" fontSize="13.5" fill="#8a671b" fontWeight="700">细胞壁</text>
+        <text x="408" y="70" fontSize="12.5" fill="#a58a4a">（真菌：几丁质）</text>
       </g>
       <g style={dim(active, 1)}>
         <line x1="130" y1="264" x2="92" y2="286" stroke="#c9a86a" strokeWidth="1.4" />
-        <text x="24" y="298" fontSize="10.5" fill="#8a671b" fontWeight="700">出芽生殖</text>
-        <text x="24" y="312" fontSize="9" fill="#a58a4a">芽体脱落后成为新个体</text>
+        <text x="24" y="298" fontSize="13.5" fill="#8a671b" fontWeight="700">出芽生殖</text>
+        <text x="24" y="320" fontSize="12.5" fill="#a58a4a">芽体脱落后成为新个体</text>
       </g>
       <g style={dim(active, 2)}>
-        <text x="80" y="120" fontSize="10" fill="#8a5a9f" fontWeight="600">真核细胞：有细胞核和众多细胞器</text>
+        <text x="80" y="120" fontSize="13" fill="#8a5a9f" fontWeight="600">真核细胞：有细胞核和众多细胞器</text>
       </g>
-      <text x="14" y="344" fontSize="10.5" fill="#8a671b" fontWeight="700">酵母菌：真核真菌 · 兼性厌氧 · 异养</text>
-      <text x="14" y="360" fontSize="9.5" fill="#a58a4a">果酒发酵的菌种；无氧产酒精，有氧大量繁殖</text>
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">酵母菌结构模式图</text>
+      <text x="14" y="344" fontSize="13.5" fill="#8a671b" fontWeight="700">酵母菌：真核真菌 · 兼性厌氧 · 异养</text>
+      <text x="14" y="360" fontSize="12.5" fill="#a58a4a">果酒发酵的菌种；无氧产酒精，有氧大量繁殖</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">酵母菌结构模式图</text>
     </svg>
   );
 }
@@ -1246,21 +1246,21 @@ function SecretoryProteinSvg({ active }: { active: number | null; open?: boolean
     <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
       <g style={dim(active, 4)}>
         <path d="M60 40 Q 40 190 60 340" fill="none" stroke="#3d7e9e" strokeWidth="4" />
-        <text x="40" y="30" fontSize="10" fill="#2c6e94" fontWeight="700">细胞膜</text>
+        <text x="44" y="110" fontSize="13" fill="#2c6e94" fontWeight="700">细胞膜</text>
       </g>
       <g style={dim(active, 5)}>
         <circle cx="130" cy="200" r="42" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3" />
-        <text x="130" y="204" textAnchor="middle" fontSize="9.5" fill="#ffffff" fontWeight="700">细胞核</text>
+        <text x="130" y="204" textAnchor="middle" fontSize="12.5" fill="#ffffff" fontWeight="700">细胞核</text>
       </g>
       <g style={dim(active, 0)}>
         {[[186, 120], [204, 140], [222, 160], [240, 180]].map(([x, y], i) => (
           <circle key={i} cx={x} cy={y} r="5.5" fill="#1e5a8e" />
         ))}
-        <text x="186" y="96" fontSize="10" fill="#1e5a8e" fontWeight="700">核糖体（合成肽链）</text>
+        <text x="186" y="96" fontSize="13" fill="#1e5a8e" fontWeight="700">核糖体（合成肽链）</text>
       </g>
       <g style={dim(active, 0)}>
         <path d="M196 130 C 240 140, 262 156, 268 178" fill="none" stroke="#7fb8d4" strokeWidth="12" strokeLinecap="round" />
-        <text x="238" y="126" fontSize="10" fill="#2c6e94" fontWeight="700">内质网（初步加工）</text>
+        <text x="238" y="126" fontSize="13" fill="#2c6e94" fontWeight="700">内质网（初步加工）</text>
       </g>
       <g style={dim(active, 0)}>
         <circle cx="296" cy="170" r="12" fill="#a8d0e8" stroke="#4d7ea8" strokeWidth="2" />
@@ -1270,24 +1270,24 @@ function SecretoryProteinSvg({ active }: { active: number | null; open?: boolean
         {[0, 1, 2, 3].map((i) => (
           <path key={i} d={`M318 ${196 + i * 14} q 34 -14 68 0`} fill="none" stroke="#e0b06a" strokeWidth="7" strokeLinecap="round" />
         ))}
-        <text x="352" y="266" textAnchor="middle" fontSize="10" fill="#8a671b" fontWeight="700">高尔基体（再加工包装）</text>
+        <text x="352" y="266" textAnchor="middle" fontSize="13" fill="#8a671b" fontWeight="700">高尔基体（再加工包装）</text>
       </g>
       <g style={dim(active, 1)}>
         <circle cx="404" cy="256" r="11" fill="#a8d0e8" stroke="#4d7ea8" strokeWidth="2" />
         <path d="M416 262 Q 436 282 452 296" fill="none" stroke="#4d7ea8" strokeWidth="2" strokeDasharray="3 2" />
         <circle cx="458" cy="300" r="10" fill="#a8d0e8" stroke="#4d7ea8" strokeWidth="2" />
-        <text x="452" y="322" textAnchor="middle" fontSize="9" fill="#2c6e94">胞吐分泌</text>
+        <text x="452" y="322" textAnchor="middle" fontSize="12.5" fill="#2c6e94">胞吐分泌</text>
       </g>
       <g style={dim(active, 5)}>
         <g transform="rotate(-24 150 296)">
           <ellipse cx="150" cy="296" rx="34" ry="18" fill="#f0a06a" stroke="#c2703d" strokeWidth="2.5" />
           <path d="M128 296 q 8 -9 16 0 q 8 9 16 0" fill="none" stroke="#c2703d" strokeWidth="2" />
         </g>
-        <text x="150" y="336" textAnchor="middle" fontSize="9.5" fill="#c2703d" fontWeight="600">线粒体（供能）</text>
+        <text x="150" y="336" textAnchor="middle" fontSize="12.5" fill="#c2703d" fontWeight="600">线粒体（供能）</text>
       </g>
-      <text x="14" y="34" fontSize="11" fill="#2c6e94" fontWeight="700">分泌蛋白的合成与运输路径：</text>
-      <text x="14" y="52" fontSize="10" fill="#4b6c73">核糖体（合成）→ 内质网（加工）→ 囊泡 → 高尔基体（再加工）→ 囊泡 → 细胞膜（胞吐）</text>
-      <text x="500" y="368" textAnchor="end" fontSize="9.5" fill="#799398">分泌蛋白合成运输模式图（如胰岛素、消化酶）</text>
+      <text x="14" y="34" fontSize="13.5" fill="#2c6e94" fontWeight="700">分泌蛋白的合成与运输路径：</text>
+      <text x="14" y="52" fontSize="13" fill="#4b6c73">核糖体（合成）→ 内质网加工 → 高尔基体包装 → 细胞膜胞吐</text>
+      <text x="500" y="368" textAnchor="end" fontSize="12.5" fill="#799398">分泌蛋白合成运输模式图（如胰岛素、消化酶）</text>
     </svg>
   );
 }
@@ -1308,14 +1308,14 @@ function RedBloodCellSvg({ active }: { active: number | null; open?: boolean }) 
         <ellipse cx="176" cy="164" rx="26" ry="18" fill="#f2aca4" opacity="0.85" />
         <path d="M330 244 Q 344 168 330 112 Q 322 82 352 76 Q 396 66 424 84 Q 402 92 398 120 Q 394 168 404 224 Q 410 252 384 258 Q 350 264 330 244 Z"
           fill="#e88a80" stroke="#a83832" strokeWidth="3.5" />
-        <text x="368" y="176" textAnchor="middle" fontSize="9" fill="#7c2622" fontWeight="700">纵切：双凹</text>
-        <text x="368" y="190" textAnchor="middle" fontSize="8.5" fill="#a83832">中央薄 · 边缘厚</text>
+        <text x="368" y="176" textAnchor="middle" fontSize="12.5" fill="#7c2622" fontWeight="700">纵切：双凹</text>
+        <text x="368" y="190" textAnchor="middle" fontSize="12" fill="#a83832">中央薄 · 边缘厚</text>
       </g>
       {/* 无细胞核（虚线空位 + 斜杠） */}
       <g style={dim(active, 2)}>
         <circle cx="190" cy="178" r="26" fill="none" stroke="#7c2622" strokeWidth="3" strokeDasharray="6 5" />
         <line x1="173" y1="195" x2="207" y2="161" stroke="#7c2622" strokeWidth="4" strokeLinecap="round" />
-        <text x="190" y="230" textAnchor="middle" fontSize="10" fill="#7c2622" fontWeight="700">无细胞核</text>
+        <text x="190" y="230" textAnchor="middle" fontSize="13" fill="#7c2622" fontWeight="700">无细胞核</text>
       </g>
       {/* 血红蛋白（内部小颗粒） */}
       <g style={dim(active, 3)}>
@@ -1323,20 +1323,20 @@ function RedBloodCellSvg({ active }: { active: number | null; open?: boolean }) 
           <circle key={i} cx={x} cy={y} r="7" fill="#b53832" stroke="#8c231f" strokeWidth="1.6" />
         ))}
         <line x1="262" y1="140" x2="298" y2="112" stroke="#8c231f" strokeWidth="1.4" />
-        <text x="300" y="108" fontSize="10.5" fill="#8c231f" fontWeight="700">血红蛋白（运 O2）</text>
-        <text x="300" y="122" fontSize="9" fill="#b5564f">含铁的蛋白质</text>
+        <text x="300" y="108" fontSize="13.5" fill="#8c231f" fontWeight="700">血红蛋白（运 O2）</text>
+        <text x="300" y="130" fontSize="12.5" fill="#b5564f">含铁的蛋白质</text>
       </g>
       {/* 标注：细胞膜 + 弹性变形 */}
       <g style={dim(active, 0)}>
         <line x1="86" y1="110" x2="60" y2="86" stroke="#a83832" strokeWidth="1.4" />
-        <text x="16" y="70" fontSize="10.5" fill="#a83832" fontWeight="700">细胞膜（唯一膜结构）</text>
-        <text x="16" y="84" fontSize="9" fill="#c06a62">无细胞壁、无核膜与众多细胞器膜</text>
+        <text x="16" y="70" fontSize="13.5" fill="#a83832" fontWeight="700">细胞膜（唯一膜结构）</text>
+        <text x="16" y="92" fontSize="12.5" fill="#c06a62">无细胞壁、无核膜与众多细胞器膜</text>
       </g>
       <g style={dim(active, 4)}>
-        <text x="16" y="320" fontSize="10.5" fill="#5f7076" fontWeight="600">制备细胞膜的经典材料：吸水胀破后，离心即可得到较纯净的细胞膜</text>
-        <text x="16" y="342" fontSize="9.5" fill="#8a9a9e">直径约 7.6 μm，可变形挤过更细的毛细血管</text>
+        <text x="16" y="320" fontSize="13.5" fill="#5f7076" fontWeight="600">制备细胞膜的经典材料：吸水胀破后，离心即可得到较纯净的细胞膜</text>
+        <text x="16" y="342" fontSize="12.5" fill="#8a9a9e">直径约 7.6 μm，可变形挤过更细的毛细血管</text>
       </g>
-      <text x="508" y="368" textAnchor="end" fontSize="9.5" fill="#799398">哺乳动物红细胞（双凹圆盘）模式图</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">哺乳动物红细胞（双凹圆盘）模式图</text>
     </svg>
   );
 }
@@ -1369,8 +1369,8 @@ function FluVirusSvg({ active }: { active: number | null; open?: boolean }) {
           );
         })}
         <line x1="382" y1="120" x2="418" y2="98" stroke="#c9503c" strokeWidth="1.4" />
-        <text x="420" y="94" fontSize="10.5" fill="#c9503c" fontWeight="700">HA 血凝素</text>
-        <text x="420" y="108" fontSize="9" fill="#d97a5a">识别宿主细胞受体</text>
+        <text x="420" y="94" fontSize="13.5" fill="#c9503c" fontWeight="700">HA 血凝素</text>
+        <text x="420" y="116" fontSize="12.5" fill="#d97a5a">识别宿主细胞受体</text>
       </g>
       <g style={dim(active, 2)}>
         {spikes.map(([x, y, rot], i) => {
@@ -1385,14 +1385,14 @@ function FluVirusSvg({ active }: { active: number | null; open?: boolean }) {
           );
         })}
         <line x1="268" y1="54" x2="300" y2="38" stroke="#3d7fa6" strokeWidth="1.4" />
-        <text x="303" y="34" fontSize="10.5" fill="#3d7fa6" fontWeight="700">NA 神经氨酸酶</text>
-        <text x="303" y="48" fontSize="9" fill="#5a98b5">帮助新病毒释放（奥司他韦靶点）</text>
+        <text x="303" y="34" fontSize="13.5" fill="#3d7fa6" fontWeight="700">NA 神经氨酸酶</text>
+        <text x="303" y="56" fontSize="12.5" fill="#5a98b5">帮助新病毒释放（奥司他韦靶点）</text>
       </g>
       {/* 衣壳蛋白层（与 RNA 同属内芯，选中 RNA 时一并高亮） */}
       <g style={dim(active, 3)}>
         <circle cx="260" cy="180" r="86" fill="none" stroke="#b07a34" strokeWidth="7" opacity="0.45" />
         <circle cx="260" cy="180" r="74" fill="#f2d9b0" stroke="#b07a34" strokeWidth="3" />
-        <text x="260" y="274" textAnchor="middle" fontSize="9.5" fill="#8a5a20" fontWeight="700">衣壳蛋白（保护内部）</text>
+        <text x="260" y="274" textAnchor="middle" fontSize="12.5" fill="#8a5a20" fontWeight="700">衣壳蛋白（保护内部）</text>
       </g>
       {/* 分节段的 RNA + 聚合酶 */}
       <g style={dim(active, 3)}>
@@ -1406,21 +1406,21 @@ function FluVirusSvg({ active }: { active: number | null; open?: boolean }) {
             strokeLinecap="round"
           />
         ))}
-        <text x="104" y="120" fontSize="10.5" fill="#7a4a9a" fontWeight="700">8 段 RNA（遗传物质）</text>
+        <text x="104" y="120" fontSize="13.5" fill="#7a4a9a" fontWeight="700">8 段 RNA（遗传物质）</text>
         <line x1="118" y1="126" x2="208" y2="164" stroke="#7a4a9a" strokeWidth="1.4" />
       </g>
       <g style={dim(active, 4)}>
         {[268, 296].map((x, i) => (
           <circle key={i} cx={x} cy={214 + i * 4} r="7.5" fill="#7fb88a" stroke="#3f7f52" strokeWidth="2" />
         ))}
-        <text x="308" y="222" fontSize="10.5" fill="#3f7f52" fontWeight="700">RNA 聚合酶</text>
-        <text x="308" y="236" fontSize="9" fill="#5a9870">复制 RNA 必需</text>
+        <text x="308" y="222" fontSize="13.5" fill="#3f7f52" fontWeight="700">RNA 聚合酶</text>
+        <text x="308" y="244" fontSize="12.5" fill="#5a9870">复制 RNA 必需</text>
       </g>
       <g style={dim(active, 3)}>
-        <text x="16" y="320" fontSize="10.5" fill="#8a5a20" fontWeight="700">RNA 分成 8 个节段 → 不同毒株混合感染时易发生基因重配 → 变异快</text>
-        <text x="16" y="342" fontSize="9.5" fill="#a87a4a">所以流感疫苗常需根据流行株年年更新</text>
+        <text x="16" y="320" fontSize="13.5" fill="#8a5a20" fontWeight="700">RNA 分成 8 个节段 → 不同毒株混合感染时易发生基因重配 → 变异快</text>
+        <text x="16" y="342" fontSize="12.5" fill="#a87a4a">所以流感疫苗常需根据流行株年年更新</text>
       </g>
-      <text x="508" y="368" textAnchor="end" fontSize="9.5" fill="#799398">流感病毒结构模式图</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">流感病毒结构模式图</text>
     </svg>
   );
 }

@@ -29,6 +29,7 @@ import {
   Repeat,
   Ruler,
   Scissors,
+  Search,
   Sprout,
   Target,
   UtensilsCrossed,
@@ -36,6 +37,7 @@ import {
   TrendingUp,
   TestTube2,
   Waves,
+  X,
   Zap,
   Wine,
 } from 'lucide-react';
@@ -244,15 +246,24 @@ export function LabClient() {
   const [activeExperiment, setActiveExperiment] = useState<ExperimentId>('enzyme');
   const [resetCount, setResetCount] = useState(0);
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
+  const [search, setSearch] = useState('');
 
   const experiment = experimentMeta[activeExperiment];
   const ExperimentIcon = EXPERIMENT_ICONS[activeExperiment];
   const ActiveExperiment = EXPERIMENT_COMPONENTS[activeExperiment];
 
-  const visibleIds =
-    categoryFilter != null
+  const searchLower = search.trim().toLowerCase();
+  // 搜索时在全目录中匹配（忽略分类筛选），否则按分类显示
+  const visibleIds = (searchLower
+    ? experimentOrder
+    : categoryFilter != null
       ? (EXPERIMENT_CATEGORIES.find((c) => c.name === categoryFilter)?.ids ?? experimentOrder)
-      : experimentOrder;
+      : experimentOrder
+  ).filter((id) => {
+    if (!searchLower) return true;
+    const meta = experimentMeta[id];
+    return `${meta.title} ${meta.description} ${meta.kicker}`.toLowerCase().includes(searchLower);
+  });
 
   return (
     <div>
@@ -268,13 +279,34 @@ export function LabClient() {
         <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-4 shadow-[0_12px_30px_rgba(18,65,72,0.06)] sm:p-5">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
             <h2 className="text-sm font-semibold text-[#173b42]">📋 实验目录（按主题分类 · 共 {experimentOrder.length} 个）</h2>
-            {categoryFilter ? (
+            {categoryFilter && !searchLower ? (
               <button
                 type="button"
                 onClick={() => setCategoryFilter(null)}
                 className="rounded-full bg-[#eef7f6] px-3 py-1 text-xs font-medium text-[#4b6c73] transition-colors hover:bg-[#e2f1ef]"
               >
                 显示全部
+              </button>
+            ) : null}
+          </div>
+          <div className="relative mb-3">
+            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[#79939a]" aria-hidden="true" />
+            <input
+              type="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="搜索实验名称或关键词（如“光合”“种群”）…"
+              aria-label="搜索实验"
+              className="min-h-10 w-full rounded-md border border-[#d9e7e7] bg-white pl-9 pr-10 text-sm text-[#173b42] transition-colors placeholder:text-[#9ab0b5] focus:border-[#82c6c0] focus:outline-none"
+            />
+            {search ? (
+              <button
+                type="button"
+                onClick={() => setSearch('')}
+                aria-label="清除搜索"
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-[#79939a] transition-colors hover:bg-[#eef7f7]"
+              >
+                <X className="size-4" aria-hidden="true" />
               </button>
             ) : null}
           </div>
@@ -351,10 +383,19 @@ export function LabClient() {
 
           <div className="border-b border-[#dceaea] px-4 py-4 sm:px-5">
             <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-[#67858b]">
-              选择实验（{categoryFilter ? `分类：${categoryFilter} · ${visibleIds.length} 个` : `覆盖五册教材 · ${experimentOrder.length} 个`}）
+              选择实验（{searchLower
+                ? `搜索“${search.trim()}” · ${visibleIds.length} 个`
+                : categoryFilter
+                  ? `分类：${categoryFilter} · ${visibleIds.length} 个`
+                  : `覆盖五册教材 · ${experimentOrder.length} 个`}）
             </p>
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-              {textbooks.map((book) =>
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {visibleIds.length === 0 ? (
+              <p className="col-span-full rounded-md border border-dashed border-[#c9dedd] bg-white px-4 py-6 text-center text-sm text-[#59767c]">
+                没有匹配「{search.trim()}」的实验——换个关键词试试（如“酶”“遗传”“血糖”）。
+              </p>
+            ) : null}
+            {textbooks.map((book) =>
                 visibleIds
                   .filter((id) => experimentMeta[id].relatedBook === book.id)
                   .map((id) => {
