@@ -4333,6 +4333,139 @@ function CellTypeCompareSvg({ active }: { active: number | null; open?: boolean 
   );
 }
 
+/* ================= 根瘤菌共生固氮 ================= */
+
+function RhizobiumSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <text x="16" y="32" fontSize="13.5" fill="#2c6e94" fontWeight="700">根瘤菌与豆科植物共生固氮（互利共生的经典例子）</text>
+      {/* 豆科植物 */}
+      <g style={dim(active, 0)}>
+        <line x1="150" y1="212" x2="150" y2="96" stroke="#4a8a3a" strokeWidth="9" strokeLinecap="round" />
+        {[96, 132, 168].map((y, i) => (
+          <ellipse key={i} cx={150 + (i % 2 === 0 ? 26 : -26)} cy={y} rx="26" ry="13" fill="#6aa86a" stroke="#3f7f3a" strokeWidth="2.5" transform={`rotate(${i % 2 === 0 ? -18 : 18} ${150 + (i % 2 === 0 ? 26 : -26)} ${y})`} />
+        ))}
+        <text x="206" y="92" fontSize="13.5" fill="#2f7a4d" fontWeight="700">豆科植物（提供有机物）</text>
+        {/* 根系 */}
+        <path d="M150 212 Q 110 244 74 262 M 150 212 Q 150 252 142 286 M 150 212 Q 196 248 226 268" fill="none" stroke="#b5956a" strokeWidth="4.5" strokeLinecap="round" />
+      </g>
+      {/* 根瘤 */}
+      <g style={dim(active, 1)}>
+        {[74, 142, 226].map((x, i) => (
+          <circle key={i} cx={x} cy={x === 74 ? 218 : x === 142 ? 226 : 204} r="17" fill="#e8a8a0" stroke="#b0483a" strokeWidth="3" />
+        ))}
+        <text x="52" y="306" fontSize="13.5" fill="#b0483a" fontWeight="700">根瘤（根瘤菌与根共生的"小房子"）</text>
+      </g>
+      {/* 根瘤特写：杆状菌 */}
+      <g style={dim(active, 2)}>
+        <circle cx="386" cy="200" r="76" fill="#fbeaea" stroke="#b0483a" strokeWidth="3" strokeDasharray="8 5" />
+        {[[352, 168], [398, 158], [424, 190], [356, 216], [402, 232], [380, 196]].map(([x, y], i) => (
+          <g key={i} transform={`rotate(${i * 30} ${x} ${y})`}>
+            <rect x={x - 13} y={y - 6} width="26" height="12" rx="6" fill="#f4d06a" stroke="#a56a1a" strokeWidth="2" />
+            <circle cx={x - 13} cy={y} r="2.5" fill="#a56a1a" />
+          </g>
+        ))}
+        <text x="386" y="126" textAnchor="middle" fontSize="13.5" fill="#8a4a3a" fontWeight="700">根瘤特写</text>
+        <text x="386" y="300" textAnchor="middle" fontSize="12.5" fill="#a56a1a" fontWeight="600">杆状根瘤菌（原核 · 异养）</text>
+      </g>
+      {/* 固氮流程 */}
+      <g style={dim(active, 3)}>
+        <rect x="28" y="52" width="196" height="46" rx="10" fill="#eef7ee" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="126" y="72" textAnchor="middle" fontSize="13.5" fill="#2f7a4d" fontWeight="700">空气中 N₂（不能直接利用）</text>
+        <path d="M126 98 Q 126 118 118 132" fill="none" stroke="#3f7f3a" strokeWidth="3" markerEnd="url(#rb-arrow)" />
+        <text x="140" y="118" fontSize="12.5" fill="#2f7a4d" fontWeight="600">根瘤菌固氮 → NH₃</text>
+      </g>
+      {/* 对比框 */}
+      <g style={dim(active, 4)}>
+        <rect x="26" y="322" width="468" height="44" rx="9" fill="#fdf6e3" stroke="#d9c9a8" strokeWidth="2" />
+        <text x="42" y="340" fontSize="12.5" fill="#7a5a20" fontWeight="700">对比：根瘤菌（共生固氮）≠ 硝化细菌（化能合成自养）≠ 圆褐固氮菌（自生）</text>
+        <text x="42" y="358" fontSize="12" fill="#a58a4a">植物给菌提供有机物，菌给植物提供氮素——互利共生，双方受益</text>
+      </g>
+      <defs>
+        <marker id="rb-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#3f7f3a" />
+        </marker>
+      </defs>
+    </svg>
+  );
+}
+
+/* ================= 细胞周期扇形图 ================= */
+
+function CellCyclePieSvg({ active }: { active: number | null; open?: boolean }) {
+  const cx = 170;
+  const cy = 196;
+  const r = 108;
+  // 扇区：G1 100° / S 150° / G2 70° / 分裂期 40°，自正上方顺时针
+  const segs = [
+    { name: 'G₁', desc: '合成前期', a0: -90, a1: 10, color: '#8fb8d4' },
+    { name: 'S 期', desc: 'DNA 复制', a0: 10, a1: 160, color: '#6aa86a' },
+    { name: 'G₂', desc: '合成后期', a0: 160, a1: 230, color: '#e8c94a' },
+    { name: 'M 分裂期', desc: '前中后末', a0: 230, a1: 270, color: '#e89090' },
+  ];
+  const pt = (a: number) => [cx + r * Math.cos((a * Math.PI) / 180), cy + r * Math.sin((a * Math.PI) / 180)];
+  const labels = [
+    { text: '分裂间期（约 90%~95%）', color: '#2f7a4d' },
+    { text: '分裂期（约 5%~10%）', color: '#b0483a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <text x="16" y="32" fontSize="13.5" fill="#2c6e94" fontWeight="700">细胞周期扇形图（连续分裂的细胞：一次分裂完成 → 下一次分裂完成）</text>
+      {segs.map((s, i) => {
+        const [x0, y0] = pt(s.a0);
+        const [x1, y1] = pt(s.a1);
+        const large = s.a1 - s.a0 > 180 ? 1 : 0;
+        return (
+          <path
+            key={s.name}
+            d={`M${cx} ${cy} L${x0.toFixed(1)} ${y0.toFixed(1)} A${r} ${r} 0 ${large} 1 ${x1.toFixed(1)} ${y1.toFixed(1)} Z`}
+            fill={s.color}
+            stroke="#13333a"
+            strokeWidth="2"
+            style={dim(active, i)}
+          />
+        );
+      })}
+      {/* 各扇区标注 */}
+      <g style={dim(active, 0)}>
+        <text x="238" y="120" fontSize="13" fill="#1e4a68" fontWeight="700">G₁</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <text x="196" y="276" fontSize="13" fill="#2f5a2f" fontWeight="700">S 期（DNA 复制）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="66" y="130" fontSize="13" fill="#8a671b" fontWeight="700">G₂</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <text x="52" y="112" fontSize="12.5" fill="#b0483a" fontWeight="700">分裂期</text>
+      </g>
+      {/* 右侧说明 */}
+      <g style={dim(active, 1)}>
+        <rect x="330" y="82" width="176" height="150" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="346" y="108" fontSize="13" fill="#173b42" fontWeight="700">分裂间期（为分裂准备）</text>
+        <text x="346" y="132" fontSize="12" fill="#46666d">G₁：合成蛋白质</text>
+        <text x="346" y="154" fontSize="12" fill="#46666d">S：DNA 复制（2C→4C）</text>
+        <text x="346" y="176" fontSize="12" fill="#46666d">G₂：再合成蛋白质</text>
+        <text x="346" y="206" fontSize="12" fill="#799398">间期约占细胞周期的</text>
+        <text x="346" y="224" fontSize="13" fill="#b0483a" fontWeight="700">90%~95%！</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="330" y="244" width="176" height="56" rx="10" fill="#fdf0ee" stroke="#e0a3a3" strokeWidth="2" />
+        <text x="346" y="268" fontSize="13" fill="#9b3a30" fontWeight="700">分裂期（M 期）</text>
+        <text x="346" y="290" fontSize="12" fill="#a86a5a">前 → 中 → 后 → 末</text>
+      </g>
+      {/* 底部要点 */}
+      <g style={dim(active, 4)}>
+        <rect x="26" y="318" width="468" height="44" rx="9" fill="#fdf6e3" stroke="#d9c9a8" strokeWidth="2" />
+        <text x="42" y="336" fontSize="12.5" fill="#7a5a20" fontWeight="700">易错：只有"连续分裂"的细胞才有细胞周期；高度分化的细胞（如神经细胞）没有</text>
+        <text x="42" y="354" fontSize="12" fill="#a58a4a">观察有丝分裂应选分生区细胞——大多数细胞处于间期</text>
+      </g>
+      <text x="508" y="46" textAnchor="end" fontSize="12.5" fill="#799398">细胞周期扇形图</text>
+    </svg>
+  );
+}
+
+/* ================= 数据汇总 ================= */
 /* ================= 数据汇总 ================= */
 
 /** 偏"实验操作/过程"的标本：不在图鉴页显示，改为在互动实验页作为相关图解出现。 */
@@ -4350,10 +4483,10 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
 export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] = [
   { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
   { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome'] },
-  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'centralDogma', 'divisionCurve'] },
+  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'centralDogma', 'divisionCurve', 'cellCyclePie'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'photosynthesisProcess', 'enzymeModel', 'secretoryProtein'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'waterSaltBalance'] },
@@ -5359,6 +5492,34 @@ export const SPECIMENS: Specimen[] = [
       { name: '高频判断', desc: '蓝细菌（原核、有叶绿素但无叶绿体）、支原体（无细胞壁的原核）、病毒（不属于原核）。' },
     ],
     Svg: CellTypeCompareSvg,
+  },
+  {
+    id: 'rhizobium',
+    name: '根瘤菌共生固氮',
+    kicker: '特色生物 · 互利共生',
+    intro: '住在豆科植物根瘤里的"固氮工厂"：把空气中的氮气变成植物能用的氨，换得植物的有机物——互利共生的经典例子。',
+    parts: [
+      { name: '根瘤（共生结构）', desc: '根瘤菌侵入豆科植物根部后，刺激根细胞分裂形成的"小房子"——菌住在里面固氮。' },
+      { name: '根瘤菌', desc: '杆状原核生物——它能固氮靠的是固氮酶，这是植物自己做不到的。' },
+      { name: '共生固氮', desc: '把空气中的 N₂ 还原为 NH₃ 供植物合成氨基酸；植物则提供有机物和缺氧环境（固氮酶怕氧）。' },
+      { name: '互利共生', desc: '双方受益、彼此依赖、分开都活不好——与"寄生"（只一方受益）对比记忆。' },
+      { name: '对比记忆', desc: '根瘤菌（共生固氮·异养）≠ 硝化细菌（化能合成·自养）≠ 圆褐固氮菌（自生固氮）；种豆肥田。' },
+    ],
+    Svg: RhizobiumSvg,
+  },
+  {
+    id: 'cellCyclePie',
+    name: '细胞周期扇形图',
+    kicker: '专有名词 · 细胞分裂过程',
+    intro: '连续分裂细胞的"时间表"：分裂间期占 90%~95%（DNA 复制在这里），分裂期只占一小角。',
+    parts: [
+      { name: '细胞周期', desc: '连续分裂的细胞，从一次分裂完成时开始，到下一次分裂完成时为止——前提是"连续分裂"。' },
+      { name: '分裂间期（G1·S·G2）', desc: '约占 90%~95%：G1 合成蛋白质，S 期进行 DNA 复制（2C→4C），G2 再合成蛋白质。' },
+      { name: 'S 期最关键', desc: 'DNA 复制就发生在 S 期——诱变剂杀癌细胞常选在它"复制 DNA"的时候下手。' },
+      { name: '分裂期（M 期）', desc: '前→中→后→末，仅占 5%~10%，但遗传物质平均分配就在这几步完成。' },
+      { name: '适用范围', desc: '只有连续分裂的细胞才有细胞周期；高度分化的细胞（神经细胞等）没有细胞周期。' },
+    ],
+    Svg: CellCyclePieSvg,
   },
   {
     id: 'earthworm',
