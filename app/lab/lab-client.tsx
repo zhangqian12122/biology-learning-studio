@@ -135,6 +135,19 @@ const EXPERIMENT_COMPONENTS = Object.fromEntries(
   (Object.keys(EXPERIMENT_LOADERS) as ExperimentId[]).map((id) => [id, lazy(EXPERIMENT_LOADERS[id])]),
 ) as Record<ExperimentId, LazyExoticComponent<ComponentType>>;
 
+/** 实验相关的图解（标本卡）：操作过程类图解从图鉴移到对应实验下方展示。 */
+const SpecimenCard = lazy(() =>
+  import('@/components/cells/specimen-card').then((m) => ({ default: m.SpecimenCard })),
+);
+
+const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
+  mitosisObservation: ['mitosisStages'],
+  meiosisSlide: ['meiosisStages', 'fertilization'],
+  traitSeparation: ['artificialPollination'],
+  genetics: ['artificialPollination'],
+  yeastRespiration: ['aerobicRespiration'],
+};
+
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
 function preloadExperiment(id: ExperimentId) {
   void EXPERIMENT_LOADERS[id]();
@@ -428,6 +441,21 @@ export function LabClient() {
             <Suspense fallback={<LabChunkFallback />}>
               <ActiveExperiment key={`${activeExperiment}-${resetCount}`} />
             </Suspense>
+            {(EXPERIMENT_DIAGRAMS[activeExperiment] ?? []).length > 0 ? (
+              <section className="mt-5">
+                <div className="mb-2 flex items-center gap-2">
+                  <Lightbulb className="size-4 text-[#b57c16]" aria-hidden="true" />
+                  <h3 className="text-sm font-semibold text-[#173b42]">相关图解（点结构名高亮图中位置）</h3>
+                </div>
+                <div className="grid gap-3 xl:grid-cols-2">
+                  {(EXPERIMENT_DIAGRAMS[activeExperiment] ?? []).map((specimenId) => (
+                    <Suspense key={specimenId} fallback={<LabChunkFallback />}>
+                      <SpecimenCard id={specimenId} />
+                    </Suspense>
+                  ))}
+                </div>
+              </section>
+            ) : null}
           </div>
         </section>
 

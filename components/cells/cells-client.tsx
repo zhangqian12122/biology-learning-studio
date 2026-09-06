@@ -2,7 +2,10 @@
 
 import { useState } from 'react';
 
-import { SPECIMENS } from '@/components/cells/specimens';
+import { LAB_ONLY_SPECIMEN_IDS, SPECIMENS } from '@/components/cells/specimens';
+
+/** 图鉴只保留"结构/模式图"类标本；实验操作类图解移到互动实验页展示。 */
+const ATLAS_SPECIMENS = SPECIMENS.filter((item) => !LAB_ONLY_SPECIMEN_IDS.includes(item.id));
 
 const CELL_KEYFRAMES = `
 @keyframes bio-cilia-sway { 0%, 100% { transform: skewX(0deg); } 50% { transform: skewX(2.5deg); } }
@@ -15,12 +18,12 @@ const CELL_KEYFRAMES = `
 `;
 
 export function CellsClient() {
-  const [specimenId, setSpecimenId] = useState(SPECIMENS[0].id);
+  const [specimenId, setSpecimenId] = useState(ATLAS_SPECIMENS[0].id);
   const [activePart, setActivePart] = useState<number | null>(null);
   const [stomaOpen, setStomaOpen] = useState(true);
   const [useWebGL, setUseWebGL] = useState(false);
 
-  const specimen = SPECIMENS.find((item) => item.id === specimenId) ?? SPECIMENS[0];
+  const specimen = ATLAS_SPECIMENS.find((item) => item.id === specimenId) ?? ATLAS_SPECIMENS[0];
   const SpecimenSvg = specimen.Svg;
   const isStoma = specimen.id === 'stoma';
   const selectedPart = activePart == null ? null : specimen.parts[activePart];
@@ -44,7 +47,7 @@ export function CellsClient() {
         {/* 标本选择 */}
         <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-3 shadow-[0_12px_30px_rgba(18,65,72,0.06)]">
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-7">
-            {SPECIMENS.map((item) => {
+            {ATLAS_SPECIMENS.map((item) => {
               const current = item.id === specimenId;
               return (
                 <button

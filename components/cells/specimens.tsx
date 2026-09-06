@@ -2550,6 +2550,15 @@ function ArtificialPollinationSvg({ active }: { active: number | null; open?: bo
 
 /* ================= 数据汇总 ================= */
 
+/** 偏"实验操作/过程"的标本：不在图鉴页显示，改为在互动实验页作为相关图解出现。 */
+export const LAB_ONLY_SPECIMEN_IDS: string[] = [
+  'mitosisStages',
+  'meiosisStages',
+  'fertilization',
+  'artificialPollination',
+  'aerobicRespiration',
+];
+
 export const SPECIMENS: Specimen[] = [
   {
     id: 'neuron',
