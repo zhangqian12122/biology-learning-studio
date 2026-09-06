@@ -1473,33 +1473,38 @@ function GolgiSvg({ active }: { active: number | null; open?: boolean }) {
 function EndoplasmicReticulumSvg({ active }: { active: number | null; open?: boolean }) {
   return (
     <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
-      {/* 细胞核与核膜（内质网内连核膜） */}
+      {/* 细胞核（核膜外层延伸出内质网） */}
       <g style={dim(active, 2)}>
-        <circle cx="112" cy="180" r="64" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3.5" />
-        <circle cx="112" cy="180" r="8" fill="#7a4a8a" />
-        <text x="112" y="266" textAnchor="middle" fontSize="13.5" fill="#7a4a8a" fontWeight="700">细胞核（核膜与内质网相连）</text>
+        <circle cx="96" cy="188" r="58" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3.5" />
+        <circle cx="96" cy="188" r="45" fill="none" stroke="#9a6fa8" strokeWidth="2" opacity="0.7" />
+        <text x="96" y="194" textAnchor="middle" fontSize="13" fill="#ffffff" fontWeight="700">细胞核</text>
+        <text x="30" y="96" fontSize="12.5" fill="#6a4a9a" fontWeight="600">核膜外层</text>
+        <text x="30" y="112" fontSize="12.5" fill="#6a4a9a" fontWeight="600">直接延伸 ↘</text>
       </g>
-      {/* 网状管道（主体） */}
+      {/* 网状管道：主干 + 分支连通 */}
       <g style={dim(active, 0)}>
-        <path d="M172 132 Q 236 92 306 116 Q 372 138 430 112 M 176 180 Q 250 160 320 184 Q 390 206 452 178 M 170 232 Q 244 246 318 224 Q 386 206 444 236"
-          fill="none" stroke="#8fb8d4" strokeWidth="13" strokeLinecap="round" />
-        <text x="312" y="70" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">膜连接成的网状管道（单层膜）</text>
+        <path d="M148 150 C 204 126, 248 146, 294 126 C 338 108, 382 122, 418 108" fill="none" stroke="#8fb8d4" strokeWidth="12" strokeLinecap="round" />
+        <path d="M150 190 C 216 178, 260 198, 318 182 C 364 170, 398 186, 430 172" fill="none" stroke="#8fb8d4" strokeWidth="12" strokeLinecap="round" />
+        <path d="M154 230 C 208 250, 264 238, 316 250 C 358 260, 394 248, 422 258" fill="none" stroke="#8fb8d4" strokeWidth="12" strokeLinecap="round" />
+        <path d="M198 134 C 206 156, 200 172, 206 190" fill="none" stroke="#8fb8d4" strokeWidth="9" strokeLinecap="round" />
+        <path d="M292 130 C 298 152, 294 166, 302 186" fill="none" stroke="#8fb8d4" strokeWidth="9" strokeLinecap="round" />
+        <path d="M302 186 C 308 208, 302 228, 310 246" fill="none" stroke="#8fb8d4" strokeWidth="9" strokeLinecap="round" />
+        <text x="286" y="64" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">分支连通的网状管道（单层膜）</text>
       </g>
-      {/* 粗面内质网：附着核糖体 */}
+      {/* 粗面：附着核糖体颗粒 */}
       <g style={dim(active, 1)}>
-        {[[246, 148], [286, 140], [326, 158], [366, 170], [406, 150]].map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="6.5" fill="#1e5a8e" />
+        {[[198, 132], [234, 142], [272, 138], [310, 124], [348, 112], [214, 176], [254, 184], [294, 180], [336, 174], [374, 172]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="6" fill="#1e5a8e" stroke="#0f3a5e" strokeWidth="1.4" />
         ))}
-        <text x="350" y="222" fontSize="13" fill="#1e5a8e" fontWeight="700">粗面内质网（附着核糖体）</text>
-        <text x="350" y="240" fontSize="12" fill="#4a7a9a">合成、加工分泌蛋白</text>
+        <text x="318" y="316" textAnchor="middle" fontSize="13.5" fill="#1e5a8e" fontWeight="700">粗面内质网：附着核糖体</text>
+        <text x="318" y="334" textAnchor="middle" fontSize="12" fill="#4a7a9a">合成、加工分泌蛋白</text>
+        <line x1="322" y1="300" x2="296" y2="190" stroke="#1e5a8e" strokeWidth="1.4" opacity="0.55" />
       </g>
-      {/* 滑面内质网 */}
+      {/* 滑面 */}
       <g style={dim(active, 3)}>
-        <path d="M200 300 Q 246 272 292 300 Q 338 328 384 300" fill="none" stroke="#a8c8a8" strokeWidth="12" strokeLinecap="round" />
-        <text x="292" y="342" textAnchor="middle" fontSize="13" fill="#4a7a5a" fontWeight="700">滑面内质网：合成脂质（如性激素）</text>
-      </g>
-      <g style={dim(active, 0)}>
-        <text x="16" y="52" fontSize="13.5" fill="#2c6e94" fontWeight="700">内连核膜、外连细胞膜——物质运输的"内通道"</text>
+        <text x="106" y="316" textAnchor="middle" fontSize="13.5" fill="#3f7f3a" fontWeight="700">滑面内质网</text>
+        <text x="106" y="334" textAnchor="middle" fontSize="12" fill="#4a8a4a">合成脂质（如性激素）</text>
+        <line x1="122" y1="300" x2="148" y2="242" stroke="#3f7f3a" strokeWidth="1.4" opacity="0.55" />
       </g>
       <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">内质网结构模式图</text>
     </svg>
@@ -3461,45 +3466,61 @@ function CommunityStructureSvg({ active }: { active: number | null; open?: boole
 /* ================= 中心体 ================= */
 
 function CentrosomeSvg({ active }: { active: number | null; open?: boolean }) {
-  const triplet = (cx: number, cy: number) => (
+  // 横切：9 组三联微管围成一圈（每组 3 个小圆）
+  const crossSection = (cx: number, cy: number, r: number) => (
     <g>
-      {[0, 1, 2].map((i) => (
-        <circle key={i} cx={cx + i * 9} cy={cy} r="4.5" fill="none" stroke="#2c6e94" strokeWidth="2" />
-      ))}
+      {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => {
+        const angle = (i * 40 * Math.PI) / 180;
+        const px = cx + Math.cos(angle) * r;
+        const py = cy + Math.sin(angle) * r;
+        const tx = -Math.sin(angle);
+        const ty = Math.cos(angle);
+        return (
+          <g key={i}>
+            {[0, 1, 2].map((j) => (
+              <circle key={j} cx={px + tx * (j - 1) * 7} cy={py + ty * (j - 1) * 7} r="4" fill="#eef7f6" stroke="#2c6e94" strokeWidth="2" />
+            ))}
+          </g>
+        );
+      })}
     </g>
   );
   return (
     <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
-      {/* 两个相互垂直的中心粒 */}
       <g style={dim(active, 0)}>
-        <ellipse cx="220" cy="150" rx="86" ry="34" fill="#d9e7f2" stroke="#3d6a94" strokeWidth="3" />
-        <text x="220" y="155" textAnchor="middle" fontSize="12.5" fill="#1e4a68" fontWeight="700">中心粒（横切）</text>
-        <g transform="translate(220 208)">
-          {[-45, -27, -9, 9, 27, 45].map((y, i) => (
-            <g key={i}>{triplet(-13, y)}</g>
-          ))}
-          <rect x="-20" y="-56" width="40" height="118" rx="18" fill="none" stroke="#3d6a94" strokeWidth="2.5" />
-        </g>
-        <text x="220" y="36" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">两个中心粒相互垂直（"L"形）</text>
+        <text x="24" y="88" fontSize="12.5" fill="#59767c">无膜细胞器（与核糖体同为"无膜兄弟"）</text>
       </g>
-      {/* 三联微管放大 */}
+      {/* 纵切：微管束平行排列 */}
+      <g style={dim(active, 0)}>
+        <rect x="46" y="128" width="184" height="76" rx="18" fill="#d9e7f2" stroke="#3d6a94" strokeWidth="3" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => {
+          const x = 68 + i * 18;
+          return (
+            <g key={i}>
+              <line x1={x - 4} y1="140" x2={x - 4} y2="192" stroke="#3d6a94" strokeWidth="2.2" />
+              <line x1={x} y1="138" x2={x} y2="194" stroke="#3d6a94" strokeWidth="2.2" />
+              <line x1={x + 4} y1="140" x2={x + 4} y2="192" stroke="#3d6a94" strokeWidth="2.2" />
+            </g>
+          );
+        })}
+        <text x="138" y="232" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">中心粒（纵切：微管束）</text>
+      </g>
+      {/* 相互垂直 */}
+      <g style={dim(active, 0)}>
+        <line x1="238" y1="166" x2="298" y2="166" stroke="#8aa1a6" strokeWidth="2.5" strokeDasharray="6 4" />
+        <text x="268" y="150" textAnchor="middle" fontSize="12.5" fill="#59767c" fontWeight="600">相互垂直 ↀ</text>
+      </g>
+      {/* 横切：9 组三联微管 */}
       <g style={dim(active, 1)}>
-        <g transform="translate(120 208)">
-          {[0, 1, 2].map((i) => (
-            <circle key={i} cx={i * 13} cy={0} r="6.5" fill="none" stroke="#2c6e94" strokeWidth="2.4" />
-          ))}
-        </g>
-        <text x="30" y="180" fontSize="13.5" fill="#2c6e94" fontWeight="700">9 组三联微管围成一圈</text>
-        <line x1="98" y1="192" x2="112" y2="204" stroke="#2c6e94" strokeWidth="1.4" />
+        <circle cx="384" cy="164" r="70" fill="#f7fbfc" stroke="#3d6a94" strokeWidth="3" />
+        {crossSection(384, 164, 46)}
+        <text x="384" y="262" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">中心粒（横切：9 组三联微管）</text>
       </g>
-      {/* 功能与分布 */}
+      {/* 分布与功能 */}
       <g style={dim(active, 2)}>
-        <rect x="46" y="266" width="448" height="66" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
-        <text x="62" y="290" fontSize="13.5" fill="#173b42" fontWeight="700">分布：动物细胞和低等植物细胞有；高等植物细胞没有</text>
-        <text x="62" y="314" fontSize="12.5" fill="#46666d">功能：与细胞的有丝分裂有关——发出星射线形成纺锤体，牵引染色体移动</text>
-      </g>
-      <g style={dim(active, 2)}>
-        <text x="24" y="88" fontSize="12.5" fill="#59767c">无膜细胞器（与核糖体同为"无膜双兄弟"）</text>
+        <rect x="46" y="286" width="448" height="62" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="62" y="310" fontSize="13.5" fill="#173b42" fontWeight="700">分布：动物细胞和低等植物细胞有；高等植物细胞没有</text>
+        <text x="62" y="332" fontSize="12.5" fill="#46666d">功能：与有丝分裂有关——发出星射线形成纺锤体，牵引染色体移动</text>
       </g>
       <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">中心体结构模式图</text>
     </svg>
@@ -3726,6 +3747,20 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
   'aerobicRespiration',
   'osmosisSetup',
   'nervePotential',
+];
+
+/** 图鉴目录：按主题分类，供图鉴页筛选导航（56 个标本全覆盖） */
+export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] = [
+  { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
+  { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome'] },
+  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'centralDogma'] },
+  { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'photosynthesisProcess', 'enzymeModel', 'secretoryProtein'] },
+  { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena'] },
+  { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'carbonCycle', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation'] },
 ];
 
 export const SPECIMENS: Specimen[] = [

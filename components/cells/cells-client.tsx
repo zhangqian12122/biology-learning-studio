@@ -1,29 +1,21 @@
 'use client';
 
 import { useState } from 'react';
+import { Search, X } from 'lucide-react';
 
-import { LAB_ONLY_SPECIMEN_IDS, SPECIMENS } from '@/components/cells/specimens';
+import { ATLAS_CATEGORIES, LAB_ONLY_SPECIMEN_IDS, SPECIMENS } from '@/components/cells/specimens';
 
 /** 图鉴只保留"结构/模式图"类标本；实验操作类图解移到互动实验页展示。 */
 const ATLAS_SPECIMENS = SPECIMENS.filter((item) => !LAB_ONLY_SPECIMEN_IDS.includes(item.id));
-
-/** 收录原则：有特殊性的生物（含病毒）归"特色生物"，其余概念/结构归"专有名词与结构"。 */
-const ORGANISM_IDS = new Set([
-  'cyanobacteria',
-  'yeast',
-  'ecoli',
-  'paramecium',
-  'redBloodCell',
-  'hiv',
-  'fluVirus',
-  'phage',
-  'nitrobacteria',
-  'spirogyra',
-  'lactobacillus',
-  'tmv',
-]);
-const ORGANISM_SPECIMENS = ATLAS_SPECIMENS.filter((item) => ORGANISM_IDS.has(item.id));
-const CONCEPT_SPECIMENS = ATLAS_SPECIMENS.filter((item) => !ORGANISM_IDS.has(item.id));
+const CATEGORY_NAME_BY_ID = new Map<string, string>(
+  ATLAS_CATEGORIES.flatMap((cat) => cat.ids.map((id) => [id, cat.name] as const)),
+);
+/** 未归入任何分类的标本兜底归入"其他" */
+const UNCATEGORIZED = ATLAS_SPECIMENS.filter((item) => !CATEGORY_NAME_BY_ID.has(item.id));
+const ALL_CATEGORIES = [
+  ...ATLAS_CATEGORIES,
+  ...(UNCATEGORIZED.length > 0 ? [{ name: '其他', icon: '📦', ids: UNCATEGORIZED.map((item) => item.id) }] : []),
+];
 
 const CELL_KEYFRAMES = `
 @keyframes bio-cilia-sway { 0%, 100% { transform: skewX(0deg); } 50% { transform: skewX(2.5deg); } }
@@ -40,11 +32,20 @@ export function CellsClient() {
   const [activePart, setActivePart] = useState<number | null>(null);
   const [stomaOpen, setStomaOpen] = useState(true);
   const [useWebGL, setUseWebGL] = useState(false);
+  const [category, setCategory] = useState<string | null>(null);
+  const [search, setSearch] = useState('');
 
   const specimen = ATLAS_SPECIMENS.find((item) => item.id === specimenId) ?? ATLAS_SPECIMENS[0];
   const SpecimenSvg = specimen.Svg;
   const isStoma = specimen.id === 'stoma';
   const selectedPart = activePart == null ? null : specimen.parts[activePart];
+
+  const searchLower = search.trim().toLowerCase();
+  const visibleSpecimens = ATLAS_SPECIMENS.filter((item) => {
+    const inCategory = category == null || (ALL_CATEGORIES.find((c) => c.name === category)?.ids ?? []).includes(item.id);
+    const inSearch = !searchLower || `${item.name} ${item.kicker} ${item.intro}`.toLowerCase().includes(searchLower);
+    return inCategory && inSearch;
+  });
 
   return (
     <div>
@@ -56,54 +57,85 @@ export function CellsClient() {
           图鉴：把结构看清楚
         </h1>
         <p className="mt-2 max-w-3xl text-sm leading-6 text-[#59767c]">
-          图鉴收录两类内容：<span className="font-semibold text-[#0a626a]">特色生物</span>（蓝细菌、玉米、烟草花叶病毒这类"有故事"的生物与病毒）
+          图鉴收录 <span className="font-semibold text-[#0a626a]">{ATLAS_SPECIMENS.length} 个</span>教学模式图：
+          <span className="font-semibold text-[#0a626a]">特色生物</span>（玉米、烟草花叶病毒这类"有故事"的生物与病毒）
           和<span className="font-semibold text-[#0a626a]">专有名词与结构</span>（DNA、染色体、抗体、细胞器……）。
           点图中的编号或右侧的结构名，对应结构会高亮并显示功能说明；实验操作类图解已移到互动实验页。
         </p>
       </div>
 
       <div className="space-y-5">
-        {/* 标本选择：特色生物 */}
+        {/* 目录：分类筛选 + 搜索 */}
         <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-3 shadow-[0_12px_30px_rgba(18,65,72,0.06)]">
-          <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-[#67858b]">
-            🦠 特色生物与病毒（{ORGANISM_SPECIMENS.length} 个）
-          </p>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-7">
-            {ORGANISM_SPECIMENS.map((item) => {
-              const current = item.id === specimenId;
+          <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-[#67858b]">📖 图鉴目录（按主题分类，点击筛选）</p>
+          <div className="mb-3 flex flex-wrap gap-1.5">
+            <button
+              type="button"
+              onClick={() => setCategory(null)}
+              aria-pressed={category == null}
+              className={`inline-flex min-h-9 items-center gap-1 rounded-full border px-3 text-xs font-semibold transition-colors ${
+                category == null
+                  ? 'border-[#82c6c0] bg-[#e9f7f5] text-[#0a626a]'
+                  : 'border-[#d9e7e7] bg-white text-[#537078] hover:border-[#b6d9d6]'
+              }`}
+            >
+              全部（{ATLAS_SPECIMENS.length}）
+            </button>
+            {ALL_CATEGORIES.map((cat) => {
+              const active = category === cat.name;
               return (
                 <button
-                  key={item.id}
+                  key={cat.name}
                   type="button"
-                  onClick={() => {
-                    setSpecimenId(item.id);
-                    setActivePart(null);
-                    setUseWebGL(false);
-                  }}
-                  aria-pressed={current}
-                  className={`flex min-h-11 flex-col items-center justify-center rounded-md border px-2 py-1.5 text-xs font-semibold transition-colors ${
-                    current
+                  onClick={() => setCategory(active ? null : cat.name)}
+                  aria-pressed={active}
+                  className={`inline-flex min-h-9 items-center gap-1 rounded-full border px-3 text-xs font-semibold transition-colors ${
+                    active
                       ? 'border-[#82c6c0] bg-[#e9f7f5] text-[#0a626a]'
                       : 'border-[#d9e7e7] bg-white text-[#537078] hover:border-[#b6d9d6]'
                   }`}
                 >
-                  {item.name}
-                  <span className="mt-0.5 block text-[10px] font-normal opacity-70">
-                    {item.extension ? '⚡ 课外拓展' : item.kicker.split(' · ')[0]}
-                  </span>
+                  <span aria-hidden="true">{cat.icon}</span>
+                  {cat.name}（{cat.ids.length}）
                 </button>
               );
             })}
           </div>
+          <div className="relative">
+            <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[#79939a]" aria-hidden="true" />
+            <input
+              type="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="搜索标本或关键词（如“线粒体”“病毒”“染色体”）…"
+              aria-label="搜索图鉴标本"
+              className="min-h-10 w-full rounded-md border border-[#d9e7e7] bg-white pl-9 pr-10 text-sm text-[#173b42] transition-colors placeholder:text-[#9ab0b5] focus:border-[#82c6c0] focus:outline-none"
+            />
+            {search ? (
+              <button
+                type="button"
+                onClick={() => setSearch('')}
+                aria-label="清除搜索"
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-[#79939a] transition-colors hover:bg-[#eef7f7]"
+              >
+                <X className="size-4" aria-hidden="true" />
+              </button>
+            ) : null}
+          </div>
         </section>
 
-        {/* 标本选择：专有名词与结构 */}
+        {/* 标本选择（按目录筛选） */}
         <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-3 shadow-[0_12px_30px_rgba(18,65,72,0.06)]">
           <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-[#67858b]">
-            🧬 专有名词与结构（{CONCEPT_SPECIMENS.length} 个）
+            标本（{category ? `分类：${category} · ${visibleSpecimens.length} 个` : `全部 · ${visibleSpecimens.length} 个`}{searchLower ? ` · 搜索“${search.trim()}”` : ''}）
           </p>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-7">
-            {CONCEPT_SPECIMENS.map((item) => {
+            {visibleSpecimens.length === 0 ? (
+              <p className="col-span-full rounded-md border border-dashed border-[#c9dedd] bg-white px-4 py-6 text-center text-sm text-[#59767c]">
+                没有匹配的标本——换个关键词或分类试试。
+              </p>
+            ) : null}
+            {visibleSpecimens.map((item) => {
               const current = item.id === specimenId;
               return (
                 <button
