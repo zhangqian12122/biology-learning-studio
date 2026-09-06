@@ -2020,6 +2020,306 @@ function MeiosisStagesSvg({ active }: { active: number | null; open?: boolean })
   );
 }
 
+/* ================= 食物网 ================= */
+
+function FoodWebSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 生产者：草 */}
+      <g style={dim(active, 0)}>
+        {[[80, 268], [100, 268], [120, 268]].map(([x, y], i) => (
+          <g key={i} stroke="#3f7f3a" strokeWidth="3.5" strokeLinecap="round">
+            <line x1={x} y1={y} x2={x - 8} y2={y - 34} />
+            <line x1={x} y1={y} x2={x} y2={y - 42} />
+            <line x1={x} y1={y} x2={x + 8} y2={y - 34} />
+          </g>
+        ))}
+        <text x="100" y="292" textAnchor="middle" fontSize="13.5" fill="#2f7a4d" fontWeight="700">草（生产者）</text>
+      </g>
+      {/* 初级消费者 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="252" cy="94" rx="30" ry="19" fill="#e8c9a8" stroke="#b58a5f" strokeWidth="3" />
+        <circle cx="278" cy="84" r="10" fill="#e8c9a8" stroke="#b58a5f" strokeWidth="2.5" />
+        <path d="M240 110 L240 118 M266 110 L266 118" stroke="#b58a5f" strokeWidth="3.5" />
+        <text x="252" y="138" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">兔（初级）</text>
+        <ellipse cx="252" cy="222" rx="26" ry="16" fill="#c9c9c9" stroke="#8a8a8a" strokeWidth="3" />
+        <circle cx="274" cy="214" r="9" fill="#c9c9c9" stroke="#8a8a8a" strokeWidth="2.5" />
+        <text x="252" y="262" textAnchor="middle" fontSize="13.5" fill="#5f7076" fontWeight="700">鼠（初级）</text>
+      </g>
+      {/* 次级消费者 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="392" cy="80" rx="34" ry="18" fill="#e8a878" stroke="#c2703d" strokeWidth="3" />
+        <path d="M424 76 Q 436 70 440 60" fill="none" stroke="#c2703d" strokeWidth="3" strokeLinecap="round" />
+        <text x="392" y="122" textAnchor="middle" fontSize="13.5" fill="#b0483a" fontWeight="700">狐（次级）</text>
+        <ellipse cx="392" cy="228" rx="32" ry="14" fill="#8fbf6f" stroke="#3f7f4f" strokeWidth="3" transform="rotate(-12 392 228)" />
+        <circle cx="366" cy="216" r="8" fill="#8fbf6f" stroke="#3f7f4f" strokeWidth="2.5" />
+        <text x="392" y="270" textAnchor="middle" fontSize="13.5" fill="#3f7f4f" fontWeight="700">蛇（次级）</text>
+      </g>
+      {/* 三级消费者 */}
+      <g style={dim(active, 3)}>
+        <ellipse cx="466" cy="164" rx="26" ry="16" fill="#8a7a5a" stroke="#5f4f2a" strokeWidth="3" />
+        <circle cx="484" cy="152" r="9" fill="#8a7a5a" stroke="#5f4f2a" strokeWidth="2.5" />
+        <path d="M478 144 L482 138 M488 144 L484 138" stroke="#5f4f2a" strokeWidth="2.5" strokeLinecap="round" />
+        <text x="466" y="206" textAnchor="middle" fontSize="13.5" fill="#5f4f2a" fontWeight="700">鹰（三级）</text>
+      </g>
+      {/* 捕食箭头 */}
+      <g style={dim(active, 0)}>
+        <path d="M124 236 Q 176 160 224 104" fill="none" stroke="#5f8a54" strokeWidth="3" markerEnd="url(#fw-arrow)" />
+        <path d="M130 254 Q 180 254 226 234" fill="none" stroke="#5f8a54" strokeWidth="3" markerEnd="url(#fw-arrow)" />
+        <path d="M284 88 Q 320 76 356 78" fill="none" stroke="#8a671b" strokeWidth="3" markerEnd="url(#fw-arrow)" />
+        <path d="M280 106 Q 360 140 442 158" fill="none" stroke="#8a671b" strokeWidth="3" markerEnd="url(#fw-arrow)" />
+        <path d="M280 224 Q 320 226 358 228" fill="none" stroke="#5f7076" strokeWidth="3" markerEnd="url(#fw-arrow)" />
+        <path d="M280 210 Q 360 180 444 166" fill="none" stroke="#5f7076" strokeWidth="3" markerEnd="url(#fw-arrow)" />
+        <path d="M412 216 Q 440 196 456 184" fill="none" stroke="#3f7f4f" strokeWidth="3" markerEnd="url(#fw-arrow)" />
+      </g>
+      <defs>
+        <marker id="fw-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">多条食物链交错成网——网越复杂，生态系统的自我调节能力越强</text>
+      <text x="16" y="330" fontSize="13.5" fill="#59767c" fontWeight="600">分解者不进入食物链；箭头代表能量与含碳有机物的流动方向</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">食物网（营养结构）模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 体温调节 ================= */
+
+function ThermoregulationSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 左：寒冷环境 */}
+      <g style={dim(active, 0)}>
+        <rect x="16" y="56" width="236" height="40" rx="9" fill="#dfe9f2" stroke="#4d7ea8" strokeWidth="2.5" />
+        <text x="134" y="81" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">❄ 寒冷环境（产热↑ 散热↓）</text>
+        <rect x="58" y="118" width="152" height="36" rx="9" fill="#eef7f6" stroke="#7fa8c9" strokeWidth="2.5" />
+        <text x="134" y="141" textAnchor="middle" fontSize="13" fill="#2c6e94" fontWeight="600">冷觉感受器 → 传入神经</text>
+        <line x1="134" y1="96" x2="134" y2="114" stroke="#4d7ea8" strokeWidth="3" markerEnd="url(#tr-arrow)" />
+        <rect x="52" y="176" width="164" height="36" rx="9" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="134" y="199" textAnchor="middle" fontSize="13.5" fill="#6a4a9a" fontWeight="700">下丘脑体温调节中枢</text>
+        <line x1="134" y1="154" x2="134" y2="172" stroke="#4d7ea8" strokeWidth="3" markerEnd="url(#tr-arrow)" />
+      </g>
+      <g style={dim(active, 1)}>
+        <rect x="24" y="234" width="104" height="56" rx="9" fill="#fdf1e3" stroke="#c98a1d" strokeWidth="2.5" />
+        <text x="76" y="254" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">骨骼肌战栗</text>
+        <text x="76" y="272" textAnchor="middle" fontSize="12" fill="#a58a4a">甲状腺激素↑</text>
+        <line x1="92" y1="212" x2="76" y2="230" stroke="#7a4a8a" strokeWidth="2.5" markerEnd="url(#tr-arrow)" />
+        <rect x="140" y="234" width="104" height="56" rx="9" fill="#fdf1e3" stroke="#c98a1d" strokeWidth="2.5" />
+        <text x="192" y="254" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">皮肤血管收缩</text>
+        <text x="192" y="272" textAnchor="middle" fontSize="12" fill="#a58a4a">汗腺分泌减少</text>
+        <line x1="176" y1="212" x2="192" y2="230" stroke="#7a4a8a" strokeWidth="2.5" markerEnd="url(#tr-arrow)" />
+        <text x="76" y="312" textAnchor="middle" fontSize="12.5" fill="#c98a1d" fontWeight="600">产热 ↑</text>
+        <text x="192" y="312" textAnchor="middle" fontSize="12.5" fill="#4d7ea8" fontWeight="600">散热 ↓</text>
+      </g>
+      {/* 右：炎热环境 */}
+      <g style={dim(active, 2)}>
+        <rect x="268" y="56" width="236" height="40" rx="9" fill="#f9e2e0" stroke="#b0483a" strokeWidth="2.5" />
+        <text x="386" y="81" textAnchor="middle" fontSize="13.5" fill="#9b3a30" fontWeight="700">☀ 炎热环境（散热↑）</text>
+        <rect x="310" y="118" width="152" height="36" rx="9" fill="#eef7f6" stroke="#7fa8c9" strokeWidth="2.5" />
+        <text x="386" y="141" textAnchor="middle" fontSize="13" fill="#2c6e94" fontWeight="600">温觉感受器 → 传入神经</text>
+        <line x1="386" y1="96" x2="386" y2="114" stroke="#b0483a" strokeWidth="3" markerEnd="url(#tr-arrow)" />
+        <rect x="304" y="176" width="164" height="36" rx="9" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="386" y="199" textAnchor="middle" fontSize="13.5" fill="#6a4a9a" fontWeight="700">下丘脑体温调节中枢</text>
+        <line x1="386" y1="154" x2="386" y2="172" stroke="#b0483a" strokeWidth="3" markerEnd="url(#tr-arrow)" />
+        <rect x="276" y="234" width="104" height="56" rx="9" fill="#fdf1e3" stroke="#c98a1d" strokeWidth="2.5" />
+        <text x="328" y="254" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">汗腺分泌 ↑</text>
+        <text x="328" y="272" textAnchor="middle" fontSize="12" fill="#a58a4a">蒸发散热</text>
+        <rect x="392" y="234" width="104" height="56" rx="9" fill="#fdf1e3" stroke="#c98a1d" strokeWidth="2.5" />
+        <text x="444" y="254" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">皮肤血管舒张</text>
+        <text x="444" y="272" textAnchor="middle" fontSize="12" fill="#a58a4a">血流量 ↑</text>
+        <line x1="344" y1="212" x2="328" y2="230" stroke="#7a4a8a" strokeWidth="2.5" markerEnd="url(#tr-arrow)" />
+        <line x1="428" y1="212" x2="444" y2="230" stroke="#7a4a8a" strokeWidth="2.5" markerEnd="url(#tr-arrow)" />
+        <text x="386" y="312" textAnchor="middle" fontSize="12.5" fill="#b0483a" fontWeight="600">散热 ↑（体温几乎不降低）</text>
+      </g>
+      <defs>
+        <marker id="tr-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#7a8a8f" />
+        </marker>
+      </defs>
+      <text x="16" y="38" fontSize="13.5" fill="#2c6e94" fontWeight="700">体温调节 = 神经调节（下丘脑中枢）+ 体液调节（激素）的动态平衡</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">体温调节流程模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 物质跨膜运输 ================= */
+
+function MembraneTransportSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 磷脂双分子层横带 */}
+      <g style={dim(active, 0)}>
+        <rect x="16" y="164" width="488" height="52" fill="#f2e3c8" />
+        {[40, 80, 120, 160, 200, 240, 280, 320, 360, 400, 440, 480].map((x, i) => (
+          <g key={i}>
+            <circle cx={x} cy={170} r="6" fill="#e8b06a" stroke="#b58a3a" strokeWidth="1.5" />
+            <circle cx={x} cy={210} r="6" fill="#e8b06a" stroke="#b58a3a" strokeWidth="1.5" />
+            <line x1={x} y1={176} x2={x} y2={204} stroke="#b58a3a" strokeWidth="2.5" />
+          </g>
+        ))}
+        <text x="260" y="238" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="600">磷脂双分子层（基本支架）</text>
+      </g>
+      {/* 自由扩散 */}
+      <g style={dim(active, 1)}>
+        {[68, 88].map((x, i) => (
+          <g key={i}>
+            <circle cx={x} cy={110 - i * 14} r="7" fill="#7fb8d4" stroke="#3d6a94" strokeWidth="2" />
+            <circle cx={x + 6} cy={252 + i * 12} r="7" fill="#7fb8d4" stroke="#3d6a94" strokeWidth="2" opacity="0.65" />
+          </g>
+        ))}
+        <line x1="80" y1="70" x2="80" y2="300" stroke="#3d6a94" strokeWidth="2" strokeDasharray="6 4" markerEnd="url(#mt-arrow)" />
+        <text x="80" y="52" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">自由扩散</text>
+        <text x="80" y="330" textAnchor="middle" fontSize="12.5" fill="#4b6c73">高→低 · 不需载体 · 不耗能</text>
+        <text x="80" y="348" textAnchor="middle" fontSize="12" fill="#799398">O₂、CO₂、甘油、乙醇</text>
+      </g>
+      {/* 协助扩散 */}
+      <g style={dim(active, 2)}>
+        <path d="M226 208 Q 240 158 254 208 Q 268 258 282 208 Q 262 176 240 176 Q 224 186 226 208 Z" fill="#a8c8a8" stroke="#4a7a5a" strokeWidth="3" />
+        <path d="M242 216 Q 254 196 266 216" fill="none" stroke="#4a7a5a" strokeWidth="2.5" />
+        {[252, 256].map((x, i) => (
+          <g key={i}>
+            <circle cx={x} cy={116 - i * 12} r="7" fill="#8fbf8a" stroke="#3f7f4f" strokeWidth="2" />
+            <circle cx={x} cy={254 + i * 10} r="7" fill="#8fbf8a" stroke="#3f7f4f" strokeWidth="2" opacity="0.65" />
+          </g>
+        ))}
+        <line x1="254" y1="70" x2="254" y2="300" stroke="#3f7f4f" strokeWidth="2" strokeDasharray="6 4" markerEnd="url(#mt-arrow)" />
+        <text x="254" y="52" textAnchor="middle" fontSize="13.5" fill="#2f7a4d" fontWeight="700">协助扩散</text>
+        <text x="254" y="330" textAnchor="middle" fontSize="12.5" fill="#4b6c73">高→低 · 需通道/载体 · 不耗能</text>
+        <text x="254" y="348" textAnchor="middle" fontSize="12" fill="#799398">红细胞吸收葡萄糖</text>
+      </g>
+      {/* 主动运输 */}
+      <g style={dim(active, 3)}>
+        <ellipse cx="428" cy="190" rx="26" ry="34" fill="#e8a8a0" stroke="#b0483a" strokeWidth="3" />
+        <path d="M420 224 Q 428 238 436 224" fill="none" stroke="#b0483a" strokeWidth="2.5" />
+        {[430, 426].map((x, i) => (
+          <g key={i}>
+            <circle cx={x} cy={252 + i * 12} r="7" fill="#e07a5a" stroke="#b0483a" strokeWidth="2" />
+            <circle cx={x + 4} cy={116 - i * 12} r="7" fill="#e07a5a" stroke="#b0483a" strokeWidth="2" opacity="0.65" />
+          </g>
+        ))}
+        <line x1="428" y1="300" x2="428" y2="70" stroke="#b0483a" strokeWidth="2.5" strokeDasharray="6 4" markerEnd="url(#mt-arrow)" />
+        <path d="M462 236 l 12 -20 h -8 l 12 -20" fill="none" stroke="#e0b020" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+        <text x="428" y="52" textAnchor="middle" fontSize="13.5" fill="#b0483a" fontWeight="700">主动运输</text>
+        <text x="428" y="330" textAnchor="middle" fontSize="12.5" fill="#4b6c73">低→高 · 需载体 · 耗能（ATP）</text>
+        <text x="428" y="348" textAnchor="middle" fontSize="12" fill="#799398">离子、葡萄糖进入小肠上皮</text>
+      </g>
+      <defs>
+        <marker id="mt-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="16" y="30" fontSize="13.5" fill="#2c6e94" fontWeight="700">三种跨膜运输方式对比（结构决定功能：载体蛋白种类与数量决定特异性）</text>
+      <text x="508" y="378" textAnchor="end" fontSize="12.5" fill="#799398">物质跨膜运输方式模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 细胞的衰老、凋亡与癌变 ================= */
+
+function CellFatesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 衰老 */}
+      <g style={dim(active, 0)}>
+        <path d="M60 84 Q 40 84 42 116 Q 44 150 66 148 Q 88 150 90 116 Q 92 86 60 84 Z" fill="#e3d9c8" stroke="#8a7a5a" strokeWidth="3" />
+        {[56, 64, 72].map((x, i) => (
+          <circle key={i} cx={x} cy={132 - i * 10} r="3.5" fill="#7a6a4a" />
+        ))}
+        <circle cx="66" cy="106" r="7" fill="#8a7a5a" opacity="0.7" />
+        <text x="66" y="184" textAnchor="middle" fontSize="13.5" fill="#5f4f2a" fontWeight="700">细胞衰老</text>
+        <text x="66" y="204" textAnchor="middle" fontSize="12" fill="#7a6a4a">水分↓ 酶活性↓ 色素积累</text>
+        <text x="66" y="222" textAnchor="middle" fontSize="12" fill="#7a6a4a">核增大 · 膜通透性改变</text>
+      </g>
+      {/* 凋亡 */}
+      <g style={dim(active, 1)}>
+        <path d="M230 76 Q 202 74 198 104 Q 196 128 216 140 Q 230 154 250 140 Q 272 130 266 104 Q 262 78 230 76 Z" fill="#f4d9c4" stroke="#c2703d" strokeWidth="3" />
+        <circle cx="212" cy="96" r="10" fill="#f6d7c4" stroke="#c2703d" strokeWidth="2.5" />
+        <circle cx="252" cy="120" r="9" fill="#f6d7c4" stroke="#c2703d" strokeWidth="2.5" />
+        <circle cx="230" cy="142" r="8" fill="#f6d7c4" stroke="#c2703d" strokeWidth="2.5" />
+        <text x="230" y="184" textAnchor="middle" fontSize="13.5" fill="#b0483a" fontWeight="700">细胞凋亡</text>
+        <text x="230" y="204" textAnchor="middle" fontSize="12" fill="#c97a5a">基因决定的"程序性死亡"</text>
+        <text x="230" y="222" textAnchor="middle" fontSize="12" fill="#c97a5a">形成凋亡小泡 · 对机体有利</text>
+      </g>
+      {/* 癌变 */}
+      <g style={dim(active, 2)}>
+        <path d="M408 92 L436 78 L458 96 L482 90 L486 118 L472 140 L486 160 L458 166 L436 182 L416 164 L396 170 L398 142 L382 122 L402 108 Z" fill="#e8a8a0" stroke="#b0483a" strokeWidth="3" />
+        <circle cx="436" cy="126" r="11" fill="#b0483a" opacity="0.75" />
+        <circle cx="456" cy="142" r="8" fill="#b0483a" opacity="0.55" />
+        <text x="436" y="214" textAnchor="middle" fontSize="13.5" fill="#9b3a30" fontWeight="700">细胞癌变</text>
+        <text x="436" y="234" textAnchor="middle" fontSize="12" fill="#b0483a">原癌/抑癌基因突变</text>
+        <text x="436" y="252" textAnchor="middle" fontSize="12" fill="#b0483a">无限增殖 · 糖蛋白↓ 易扩散</text>
+      </g>
+      {/* 分隔与说明 */}
+      <line x1="150" y1="80" x2="150" y2="250" stroke="#dceaea" strokeWidth="2" strokeDasharray="6 5" />
+      <line x1="320" y1="80" x2="320" y2="250" stroke="#dceaea" strokeWidth="2" strokeDasharray="6 5" />
+      <g style={dim(active, 1)}>
+        <text x="16" y="288" fontSize="13.5" fill="#2c6e94" fontWeight="700">衰老和凋亡是正常的生命历程、对机体有利；癌变才是"失控"</text>
+        <text x="16" y="308" fontSize="12.5" fill="#59767c">致癌因子：物理（紫外线）、化学（黄曲霉素）、病毒——健康生活方式是最好的预防</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">细胞的衰老、凋亡与癌变对比模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 有氧呼吸三阶段 ================= */
+
+function AerobicRespirationSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 细胞轮廓 + 线粒体 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="260" cy="196" rx="240" ry="152" fill="#eef7f6" stroke="#8fb8d4" strokeWidth="3" />
+        <text x="44" y="66" fontSize="13" fill="#2c6e94" fontWeight="700">细胞质基质</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <ellipse cx="286" cy="196" rx="150" ry="112" fill="#f6d7c4" stroke="#c2703d" strokeWidth="3.5" />
+        {[96, 130, 164, 198, 232, 266].map((x, i) => (
+          <path key={i} d={`M${214 + i * 2} 196 q ${34} ${i % 2 === 0 ? -30 : 30} ${68 - i * 4} ${i % 2 === 0 ? -22 : 22}`} fill="none" stroke="#d08a5a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="286" y="326" textAnchor="middle" fontSize="13" fill="#b0483a" fontWeight="700">线粒体（第二、三阶段的场所）</text>
+      </g>
+      {/* 第一阶段 */}
+      <g style={dim(active, 2)}>
+        <text x="96" y="118" fontSize="13.5" fill="#1e4a68" fontWeight="700">① 细胞质基质</text>
+        <text x="96" y="138" fontSize="12.5" fill="#2c6e94">葡萄糖 → 2 丙酮酸 + [H]</text>
+        <text x="96" y="156" fontSize="12.5" fill="#4b6c73">释放少量能量</text>
+        <path d="M84 176 Q 120 190 150 202" fill="none" stroke="#3d6a94" strokeWidth="3.5" markerEnd="url(#ar-arrow)" />
+      </g>
+      {/* 第二阶段 */}
+      <g style={dim(active, 3)}>
+        <text x="226" y="152" fontSize="13.5" fill="#8a3a20" fontWeight="700">② 线粒体基质</text>
+        <text x="226" y="172" fontSize="12.5" fill="#b0483a">丙酮酸 + 水 → CO₂</text>
+        <text x="226" y="190" fontSize="12.5" fill="#4b6c73">+ 少量 [H]，释放少量能量</text>
+        <circle cx="404" cy="98" r="9" fill="#b0b0b8" stroke="#7a7a82" strokeWidth="2" />
+        <text x="404" y="102" textAnchor="middle" fontSize="12" fill="#4a4a52" fontWeight="700">C</text>
+        <path d="M398 108 Q 396 86 402 104" fill="none" stroke="#7a7a82" strokeWidth="2" />
+        <text x="428" y="96" fontSize="12.5" fill="#7a7a82" fontWeight="600">CO₂ 扩散出去</text>
+      </g>
+      {/* 第三阶段 */}
+      <g style={dim(active, 4)}>
+        <text x="150" y="252" fontSize="13.5" fill="#9b3a30" fontWeight="700">③ 线粒体内膜</text>
+        <text x="150" y="272" fontSize="12.5" fill="#b0483a">[H] + O₂ → 水</text>
+        <text x="150" y="290" fontSize="12.5" fill="#4b6c73">释放大量能量，生成大量 ATP</text>
+        <circle cx="352" cy="268" r="10" fill="#7fb8d4" stroke="#3d6a94" strokeWidth="2" />
+        <text x="352" y="272" textAnchor="middle" fontSize="12" fill="#1e4a68" fontWeight="700">O₂</text>
+        <path d="M366 268 Q 384 258 398 244" fill="none" stroke="#3d6a94" strokeWidth="3" markerEnd="url(#ar-arrow)" />
+      </g>
+      {/* 总反应式 */}
+      <g style={dim(active, 2)}>
+        <rect x="26" y="336" width="470" height="30" rx="8" fill="#ffffff" opacity="0.92" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="261" y="356" textAnchor="middle" fontSize="13" fill="#173b42" fontWeight="600">C₆H₁₂O₆ + 6O₂ + 6H₂O → 6CO₂ + 12H₂O + 能量（大量 ATP）</text>
+      </g>
+      <defs>
+        <marker id="ar-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#3d6a94" />
+        </marker>
+      </defs>
+      <text x="508" y="46" textAnchor="end" fontSize="12.5" fill="#799398">有氧呼吸三阶段模式图</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 export const SPECIMENS: Specimen[] = [
@@ -2064,6 +2364,20 @@ export const SPECIMENS: Specimen[] = [
       { name: '内环境的角色', desc: '细胞通过内环境与外界进行物质交换——内环境是细胞与外界环境之间的媒介。' },
     ],
     Svg: InternalEnvironmentSvg,
+  },
+  {
+    id: 'thermoregulation',
+    name: '体温调节流程',
+    kicker: '稳态与调节 · 流程模式图',
+    intro: '寒冷时产热增加、散热减少；炎热时散热增加——下丘脑是体温调节中枢，整个过程是神经调节与体液调节的协同。',
+    parts: [
+      { name: '温度感受器', desc: '分布在皮肤、黏膜和内脏，分为冷觉与温觉感受器——把温度变化经传入神经传向下丘脑。' },
+      { name: '下丘脑（体温调节中枢）', desc: '整合温度信息并发出指令；注意：体温感觉在大脑皮层形成——"调节在中枢、感觉在皮层"。' },
+      { name: '寒冷：产热↑', desc: '骨骼肌战栗、甲状腺激素与肾上腺素分泌增加提高代谢——产热增加。' },
+      { name: '寒冷：散热↓ / 炎热：散热↑', desc: '寒冷时皮肤血管收缩、汗腺分泌减少；炎热时血管舒张、汗液蒸发散热增加。' },
+      { name: '结果', desc: '体温维持相对恒定（约 37℃）——是"动态平衡"而不是绝对不变。' },
+    ],
+    Svg: ThermoregulationSvg,
   },
   {
     id: 'cyanobacteria',
@@ -2205,6 +2519,20 @@ export const SPECIMENS: Specimen[] = [
     Svg: RedBloodCellSvg,
   },
   {
+    id: 'membraneTransport',
+    name: '物质跨膜运输三方式',
+    kicker: '细胞膜 · 功能模式图',
+    intro: '自由扩散、协助扩散（合称被动运输）与主动运输：方向、是否需要载体蛋白、是否消耗能量——三个维度区分。',
+    parts: [
+      { name: '磷脂双分子层', desc: '物质进出细胞的屏障：脂溶性小分子容易穿过，离子和大分子不能自由通过——所以需要蛋白协助。' },
+      { name: '自由扩散', desc: '顺浓度梯度（高→低）直接穿膜，不需载体、不耗能：O₂、CO₂、水、甘油、乙醇、苯等。' },
+      { name: '协助扩散', desc: '顺浓度梯度，借助通道蛋白或载体蛋白，不耗能：红细胞吸收葡萄糖、水通道蛋白运输水。' },
+      { name: '主动运输', desc: '逆浓度梯度（低→高），需要载体蛋白并消耗 ATP：离子、葡萄糖进入小肠上皮细胞——保证细胞按需选择性吸收。' },
+      { name: '对比记忆', desc: '看两样：方向（顺/逆浓度）+ 条件（载体？能量？）——主动运输两个都要，两个被动运输都不耗能。' },
+    ],
+    Svg: MembraneTransportSvg,
+  },
+  {
     id: 'phage',
     name: 'T2 噬菌体',
     kicker: '病毒 · 结构模式图',
@@ -2294,6 +2622,20 @@ export const SPECIMENS: Specimen[] = [
       { name: '恒定与多样', desc: '减数分裂 + 受精维持前后代染色体数目恒定；配子的多样性与随机结合让后代呈现多样性。' },
     ],
     Svg: FertilizationSvg,
+  },
+  {
+    id: 'cellFates',
+    name: '细胞的衰老、凋亡与癌变',
+    kicker: '细胞生命历程 · 对比模式图',
+    intro: '衰老和凋亡是正常生命历程、对机体有利；癌变才是失控——三者的成因与特征对比是必修 1 的高频考点。',
+    parts: [
+      { name: '细胞衰老', desc: '水分减少、酶活性降低、色素积累、呼吸减慢、核增大、膜通透性改变——细胞生理功能衰退。' },
+      { name: '细胞凋亡', desc: '由基因决定的细胞自动结束生命的过程（编程性死亡），如蝌蚪尾巴消失、人胚胎手指成形——对机体有利。' },
+      { name: '细胞坏死', desc: '与凋亡不同：在不利因素下被动损伤死亡，会引起炎症反应（对比考点）。' },
+      { name: '细胞癌变', desc: '原癌基因与抑癌基因发生突变：能无限增殖、形态结构改变、表面糖蛋白减少而易转移扩散。' },
+      { name: '致癌因子', desc: '物理（紫外线、X 射线）、化学（黄曲霉素、亚硝酸盐）、病毒致癌因子——健康生活方式是最好的预防。' },
+    ],
+    Svg: CellFatesSvg,
   },
   {
     id: 'chloroplast',
@@ -2464,5 +2806,33 @@ export const SPECIMENS: Specimen[] = [
       { name: '化石燃料燃烧', desc: '把远古封存的碳短时间内大量释放——是碳循环加快、温室效应加剧的主因。' },
     ],
     Svg: CarbonCycleSvg,
+  },
+  {
+    id: 'foodWeb',
+    name: '食物网',
+    kicker: '生物与环境 · 营养结构模式图',
+    intro: '多条食物链交错成食物网：一种生物可以被多种生物捕食，也可能捕食多种生物——结构越复杂，自我调节能力越强。',
+    parts: [
+      { name: '生产者（第一营养级）', desc: '食物链的起点，固定太阳能；图中"草"被兔和鼠同时取食。' },
+      { name: '初级消费者', desc: '直接以生产者为食（兔、鼠）；同一生物在不同食物链中可能处于不同营养级。' },
+      { name: '次级/三级消费者', desc: '狐、蛇是次级消费者，鹰同时占有第三、第四营养级——营养级不是"物种属性"。' },
+      { name: '食物链规则', desc: '箭头指向捕食者（能量流动方向）；分解者不进入食物链；起点必须是生产者。' },
+      { name: '复杂度与稳定性', desc: '食物网越复杂，自我调节能力越强，抵抗力稳定性越高（"复杂的网"比"单条的链"更抗干扰）。' },
+    ],
+    Svg: FoodWebSvg,
+  },
+  {
+    id: 'aerobicRespiration',
+    name: '有氧呼吸三阶段',
+    kicker: '细胞代谢 · 过程模式图',
+    intro: '葡萄糖被彻底氧化分解释放大量能量：第一阶段在细胞质基质，第二、三阶段在线粒体——场所和产物是高频考点。',
+    parts: [
+      { name: '第一阶段（细胞质基质）', desc: '1 分子葡萄糖分解为 2 分子丙酮酸和少量 [H]，释放少量能量——不需要氧气。' },
+      { name: '第二阶段（线粒体基质）', desc: '丙酮酸和水彻底分解成 CO₂ 和少量 [H]，释放少量能量——此阶段仍不需要氧气。' },
+      { name: '第三阶段（线粒体内膜）', desc: '前两阶段的 [H] 与 O₂ 结合生成水，释放大量能量、合成大量 ATP——氧气只在这里被消耗。' },
+      { name: '总反应式', desc: 'C₆H₁₂O₆ + 6O₂ + 6H₂O → 6CO₂ + 12H₂O + 能量；反应式左右不能抵消（水既是反应物又是产物）。' },
+      { name: '与光合对比', desc: '光合作用把 CO₂ 和 H₂O 合成有机物储能，呼吸作用正相反——两大代谢的场所、条件、产物常对照出题。' },
+    ],
+    Svg: AerobicRespirationSvg,
   },
 ];
