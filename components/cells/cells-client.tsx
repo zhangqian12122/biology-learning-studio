@@ -88,25 +88,42 @@ export function CellsClient() {
     <div>
       <style>{CELL_KEYFRAMES}</style>
 
-      {/* Hero 头图 */}
-      <div className="relative mb-6 overflow-hidden rounded-2xl bg-gradient-to-br from-[#0c5f64] via-[#128087] to-[#2f9e8f] px-6 py-7 text-white shadow-[0_18px_40px_rgba(12,95,100,0.25)] sm:px-8 sm:py-9">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-10 -top-16 size-56 rounded-full bg-white/10" />
-        <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 right-32 size-44 rounded-full bg-white/8" />
-        <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-6 size-20 rounded-full bg-white/8" />
+      {/* Hero 头图（明日方舟式深色战术风） */}
+      <div className="relative mb-6 overflow-hidden rounded-2xl border border-[#1d3a40] bg-[#0b1e22] px-6 py-8 text-white shadow-[0_18px_40px_rgba(5,25,29,0.5)] sm:px-9 sm:py-10">
+        {/* 网格纹理 */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.13]"
+          style={{ backgroundImage: 'linear-gradient(#2f9e8f 1px, transparent 1px), linear-gradient(90deg, #2f9e8f 1px, transparent 1px)', backgroundSize: '34px 34px' }}
+        />
+        {/* 斜切亮面 */}
+        <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rotate-45 bg-gradient-to-br from-[#2f9e8f]/25 to-transparent" />
+        <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 left-1/3 h-40 w-40 rotate-12 bg-[#0e6f75]/40" />
+        {/* 底部扫描线 */}
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-[#2f9e8f] via-[#0e6f75] to-transparent" />
         <div className="relative">
-          <p className="text-[11px] font-bold tracking-[0.28em] text-white/70">CELL ATLAS · 生物图鉴</p>
-          <h1 className="mt-1.5 text-2xl font-bold tracking-normal sm:text-3xl">图鉴：把结构看清楚</h1>
-          <p className="mt-2.5 max-w-3xl text-sm leading-6 text-white/85">
-            {ATLAS_SPECIMENS.length} 张课本级教学模式图：选一个分类进入寻找，点图中的编号或右侧结构名即可高亮并显示考点说明。
-            ⚡ 标记为课外拓展内容；实验操作类图解已移到互动实验页。
+          <div className="flex items-center gap-2">
+            <span aria-hidden="true" className="inline-block h-3.5 w-1.5 bg-[#4fe3c1]" />
+            <p className="text-[11px] font-bold tracking-[0.32em] text-[#7fd8c8]">CELL ATLAS · 生物图鉴 // ARCHIVE</p>
+          </div>
+          <h1 className="mt-2 text-2xl font-black tracking-wide sm:text-4xl">
+            图鉴<span className="mx-2 text-[#4fe3c1]">/</span>把结构看清楚
+          </h1>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-white/75">
+            {ATLAS_SPECIMENS.length} 张课本级教学模式图归档入库：选一个分类进入检索，点图中的编号或右侧结构名即可高亮并显示考点说明。
+            <span className="ml-1 text-[#f4c76a]">⚡ 标记为课外拓展档案</span>；实验操作类图解已移至互动实验页。
           </p>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-5 flex flex-wrap items-center gap-2.5">
             {[
-              `🖼 ${ATLAS_SPECIMENS.length} 张模式图`,
-              `🗂 ${ATLAS_GROUPS.length} 大分类`,
-              `📚 覆盖五册教材`,
-            ].map((chip) => (
-              <span key={chip} className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
+              `已归档 ${ATLAS_SPECIMENS.length}`,
+              `分类 ${ATLAS_GROUPS.length}`,
+              `覆盖五册教材`,
+            ].map((chip, i) => (
+              <span
+                key={chip}
+                className="inline-flex items-center gap-1.5 border border-[#2a4a50] bg-[#0f2a2f]/80 px-3 py-1 text-xs font-semibold text-[#a8e6dc] [clip-path:polygon(6px_0,100%_0,100%_calc(100%-6px),calc(100%-6px)_100%,0_100%,0_6px)]"
+              >
+                <span aria-hidden="true" className="text-[#4fe3c1]">{String(i + 1).padStart(2, '0')}</span>
                 {chip}
               </span>
             ))}
@@ -224,32 +241,43 @@ export function CellsClient() {
             </div>
           </section>
         ) : (
-          /* ===== 一级：大分类入口（明日方舟式磁贴） ===== */
+          /* ===== 一级：大分类入口（明日方舟式深色磁贴） ===== */
           <section>
             <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-              <h2 className="text-sm font-semibold text-[#173b42]">📂 选择分类进入寻找</h2>
+              <h2 className="flex items-center gap-2 text-sm font-bold tracking-wider text-[#13333a]">
+                <span aria-hidden="true" className="inline-block h-3.5 w-1.5 bg-[#0e6f75]" />
+                选择分类 // 进入检索
+              </h2>
               <span className="text-xs text-[#79939a]">进入后可再按细分主题筛选</span>
             </div>
-            <div className="grid grid-cols-2 gap-3 lg:grid-cols-5">
+            <div className="grid grid-cols-2 gap-3.5 lg:grid-cols-5">
               {ATLAS_GROUPS.map((g, i) => (
                 <button
                   key={g.name}
                   type="button"
                   onClick={() => openGroup(g.name)}
-                  className={`group relative min-h-32 overflow-hidden rounded-2xl border-2 border-[#e2eeec] bg-white p-4 text-left shadow-[0_8px_22px_rgba(18,65,72,0.08)] transition-all hover:-translate-y-1 hover:border-[#0e6f75] hover:shadow-[0_14px_30px_rgba(14,111,117,0.22)] ${
-                    i === 0 ? 'max-lg:col-span-2' : ''
-                  }`}
+                  className="group relative min-h-40 overflow-hidden border-2 border-[#25454c] bg-[#0e262b] p-4 text-left text-white transition-all duration-200 hover:-translate-y-1 hover:border-[#4fe3c1] hover:shadow-[0_16px_34px_rgba(5,25,29,0.45)] [clip-path:polygon(0_0,calc(100%-18px)_0,100%_18px,100%_100%,18px_100%,0_calc(100%-18px))] max-lg:first:col-span-2"
                 >
-                  {/* 左上角斜切装饰条（明日方舟式利落边角） */}
-                  <span aria-hidden="true" className="absolute left-0 top-0 h-1.5 w-14 bg-gradient-to-r from-[#0e6f75] to-[#2f9e8f]" />
-                  <span aria-hidden="true" className="absolute bottom-3 right-3 text-3xl opacity-25 transition-transform group-hover:scale-110">
+                  {/* 网格纹理 */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 opacity-[0.12]"
+                    style={{ backgroundImage: 'linear-gradient(#2f9e8f 1px, transparent 1px), linear-gradient(90deg, #2f9e8f 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+                  />
+                  {/* 序号 + 状态条 */}
+                  <span aria-hidden="true" className="absolute right-3 top-2 font-mono text-[11px] font-bold tracking-widest text-[#4fe3c1]/70">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span aria-hidden="true" className="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-[#4fe3c1] to-transparent transition-all duration-300 group-hover:w-full" />
+                  <span aria-hidden="true" className="absolute bottom-4 right-4 text-4xl opacity-20 transition-all duration-300 group-hover:scale-125 group-hover:opacity-40">
                     {g.icon}
                   </span>
-                  <p className="text-2xl" aria-hidden="true">{g.icon}</p>
-                  <p className="mt-2 text-base font-bold leading-6 text-[#13333a]">{g.name}</p>
-                  <p className="mt-1 text-xs leading-5 text-[#79939a]">{g.desc}</p>
-                  <span className="mt-2.5 inline-flex items-center rounded-full bg-[#e8f4f3] px-2.5 py-0.5 text-[11px] font-bold text-[#0c696f]">
-                    {groupCount(g)} 个标本 →
+                  <span aria-hidden="true" className="mb-2 inline-block h-0.5 w-8 bg-[#4fe3c1]" />
+                  <p className="relative text-lg font-black leading-6 tracking-wide">{g.name}</p>
+                  <p className="relative mt-1.5 text-xs leading-5 text-white/60">{g.desc}</p>
+                  <span className="relative mt-3 inline-flex items-center gap-1.5 border border-[#3a6a64] bg-[#0a2226]/90 px-2.5 py-1 text-[11px] font-bold text-[#7fd8c8] [clip-path:polygon(5px_0,100%_0,100%_calc(100%-5px),calc(100%-5px)_100%,0_100%,0_5px)]">
+                    {groupCount(g)}标本
+                    <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
                   </span>
                 </button>
               ))}
