@@ -590,7 +590,11 @@ export type ExperimentId =
   | 'bloodSugarRegulation'
   | 'soilFaunaSurvey'
   | 'pickleFerment'
-  | 'pcr';
+  | 'pcr'
+  | 'reflexArc'
+  | 'thyroidAxis'
+  | 'markRecapture'
+  | 'succession';
 
 export const experimentMeta: Record<
   ExperimentId,
@@ -854,6 +858,34 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '基因工程与 PCR 技术',
   },
+  reflexArc: {
+    title: '反射弧与膝跳反射',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '自己选叩击位置做膝跳反射，按顺序点亮反射弧五环节。',
+    relatedBook: 'regulation',
+    relatedModule: '神经和体液调节',
+  },
+  thyroidAxis: {
+    title: '甲状腺激素的分级调节',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '搭建下丘脑—垂体—甲状腺轴，注入外源激素或切除腺体看负反馈。',
+    relatedBook: 'regulation',
+    relatedModule: '神经和体液调节',
+  },
+  markRecapture: {
+    title: '标志重捕法估算种群数量',
+    kicker: '选择性必修 2 · 生物与环境',
+    description: '自己决定标记数与重捕量，多次取样看估算如何逼近真值。',
+    relatedBook: 'ecology',
+    relatedModule: '种群特征与群落结构',
+  },
+  succession: {
+    title: '群落演替：裸岩与弃耕农田',
+    kicker: '选择性必修 2 · 生物与环境',
+    description: '推时间看优势种替换与土壤加厚，加入放牧干扰让演替停滞。',
+    relatedBook: 'ecology',
+    relatedModule: '种群特征与群落结构',
+  },
 };
 
 /** 实验目录分类：按教材实验主题归组，方便在 /lab 快速筛选 */
@@ -886,12 +918,12 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse'],
+    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis'],
   },
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'yeastPopulation', 'soilFaunaSurvey', 'energy', 'population'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population'],
   },
   {
     name: '生物技术',
@@ -928,10 +960,14 @@ export const experimentOrder: ExperimentId[] = [
   'auxinCutting',
   'bloodSugarRegulation',
   'impulse',
+  'reflexArc',
+  'thyroidAxis',
   // 选择性必修 2 · 生物与环境
   'quadratMethod',
+  'markRecapture',
   'yeastPopulation',
   'soilFaunaSurvey',
+  'succession',
   'energy',
   'population',
   // 选择性必修 3 · 生物技术与工程

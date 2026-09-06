@@ -3,6 +3,7 @@
 import { lazy, Suspense, useState, type ComponentType, type LazyExoticComponent } from 'react';
 import Link from 'next/link';
 import {
+  Activity,
   ArrowRight,
   Bird,
   Bubbles,
@@ -78,6 +79,10 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   geneEngine: Scissors,
   dnaExtract: FlaskRound,
   pcr: Repeat,
+  reflexArc: Zap,
+  thyroidAxis: Activity,
+  markRecapture: Target,
+  succession: Sprout,
 };
 
 /** 实验组件按需加载：目录页只载入目录本身，点开实验才拉取对应代码块。 */
@@ -118,6 +123,10 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   geneEngine: () => import('@/components/lab/gene-engineering-lab').then(({ GeneEngineLab }) => ({ default: GeneEngineLab })),
   dnaExtract: () => import('@/components/lab/dna-extraction-lab').then(({ DnaExtractLab }) => ({ default: DnaExtractLab })),
   pcr: () => import('@/components/lab/pcr-lab').then(({ PcrLab }) => ({ default: PcrLab })),
+  reflexArc: () => import('@/components/lab/reflex-arc-lab').then(({ ReflexArcLab }) => ({ default: ReflexArcLab })),
+  thyroidAxis: () => import('@/components/lab/thyroid-axis-lab').then(({ ThyroidAxisLab }) => ({ default: ThyroidAxisLab })),
+  markRecapture: () => import('@/components/lab/mark-recapture-lab').then(({ MarkRecaptureLab }) => ({ default: MarkRecaptureLab })),
+  succession: () => import('@/components/lab/succession-lab').then(({ SuccessionLab }) => ({ default: SuccessionLab })),
 };
 
 const EXPERIMENT_COMPONENTS = Object.fromEntries(
