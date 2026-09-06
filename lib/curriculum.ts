@@ -603,7 +603,8 @@ export type ExperimentId =
   | 'breedingDesigner'
   | 'millerUrey'
   | 'sirModel'
-  | 'choiceMedia';
+  | 'choiceMedia'
+  | 'chromosomeVariation';
 
 export const experimentMeta: Record<
   ExperimentId,
@@ -962,6 +963,13 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '发酵工程与过程控制',
   },
+  chromosomeVariation: {
+    title: '染色体结构变异四类型',
+    kicker: '必修 2 · 遗传与进化',
+    description: '缺失、重复、倒位、易位逐个对照观察，再完成识别挑战。',
+    relatedBook: 'genetics',
+    relatedModule: '变异、育种与生物进化',
+  },
 };
 
 /** 实验目录分类：按教材实验主题归组，方便在 /lab 快速筛选 */
@@ -989,7 +997,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'selection', 'geneEngine'],
+    ids: ['traitSeparation', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'selection', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1034,6 +1042,7 @@ export const experimentOrder: ExperimentId[] = [
   'dnaReplication',
   'phageExperiment',
   'breedingDesigner',
+  'chromosomeVariation',
   'selection',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',

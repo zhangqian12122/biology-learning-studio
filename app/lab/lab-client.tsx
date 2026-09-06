@@ -97,6 +97,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   millerUrey: FlaskConical,
   sirModel: Activity,
   choiceMedia: TestTube2,
+  chromosomeVariation: Layers,
 };
 
 /** 实验组件按需加载：目录页只载入目录本身，点开实验才拉取对应代码块。 */
@@ -150,6 +151,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   millerUrey: () => import('@/components/lab/miller-urey-lab').then(({ MillerUreyLab }) => ({ default: MillerUreyLab })),
   sirModel: () => import('@/components/lab/sir-model-lab').then(({ SirModelLab }) => ({ default: SirModelLab })),
   choiceMedia: () => import('@/components/lab/choice-media-lab').then(({ ChoiceMediaLab }) => ({ default: ChoiceMediaLab })),
+  chromosomeVariation: () => import('@/components/lab/chromosome-variation-lab').then(({ ChromosomeVariationLab }) => ({ default: ChromosomeVariationLab })),
 };
 
 const EXPERIMENT_COMPONENTS = Object.fromEntries(
