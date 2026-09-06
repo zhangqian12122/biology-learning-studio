@@ -1721,6 +1721,305 @@ function MitosisStagesSvg({ active }: { active: number | null; open?: boolean })
   );
 }
 
+/* ================= 内环境三者关系 ================= */
+
+function InternalEnvironmentSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 血浆（血管内） */}
+      <g style={dim(active, 0)}>
+        <rect x="26" y="58" width="468" height="66" rx="30" fill="#f6cfc6" stroke="#b0483a" strokeWidth="3.5" />
+        {[[86, 91], [136, 91], [186, 91], [236, 91], [286, 91], [336, 91], [386, 91], [436, 91]].map(([x, y], i) => (
+          <ellipse key={i} cx={x} cy={y} rx="13" ry="9" fill="#d4544a" stroke="#a83832" strokeWidth="1.8" />
+        ))}
+        <text x="40" y="146" fontSize="13.5" fill="#b0483a" fontWeight="700">血浆（血管内）</text>
+      </g>
+      {/* 组织液 + 组织细胞 */}
+      <g style={dim(active, 1)}>
+        <rect x="26" y="158" width="468" height="102" rx="16" fill="#e7f2f8" stroke="#7fa8c9" strokeWidth="2.5" strokeDasharray="8 5" />
+        {[[130, 210], [330, 210]].map(([x, y], i) => (
+          <g key={i}>
+            <circle cx={x} cy={y} r="32" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2.6" />
+            <circle cx={x} cy={y} r="9" fill="#7a4a8a" />
+          </g>
+        ))}
+        <text x="40" y="280" fontSize="13.5" fill="#2c6e94" fontWeight="700">组织液（组织细胞间隙的液体）</text>
+      </g>
+      {/* 毛细淋巴管盲端 */}
+      <g style={dim(active, 2)}>
+        <path d="M60 316 Q 96 300 150 318 Q 210 338 260 320 L 460 320" fill="none" stroke="#b5c26a" strokeWidth="14" strokeLinecap="round" />
+        <circle cx="64" cy="314" r="4" fill="#8a9a4a" />
+        <text x="76" y="352" fontSize="13.5" fill="#7a8a2a" fontWeight="700">淋巴（毛细淋巴管盲端起始）</text>
+      </g>
+      {/* 物质交换箭头 */}
+      <g style={dim(active, 3)}>
+        <path d="M470 130 Q 490 172 470 216" fill="none" stroke="#4b6c73" strokeWidth="3.5" markerEnd="url(#env-arrow)" />
+        <path d="M486 216 Q 505 172 486 130" fill="none" stroke="#4b6c73" strokeWidth="3.5" markerEnd="url(#env-arrow)" />
+        <text x="494" y="176" fontSize="12.5" fill="#4b6c73" fontWeight="700">⇄</text>
+        <path d="M60 158 Q 74 226 66 302" fill="none" stroke="#7a8a2a" strokeWidth="3.5" markerEnd="url(#env-arrow)" />
+        <text x="24" y="238" fontSize="12.5" fill="#7a8a2a" fontWeight="700">单向</text>
+        <text x="330" y="306" fontSize="12.5" fill="#4b6c73">淋巴经淋巴循环最终回流入血浆</text>
+      </g>
+      <defs>
+        <marker id="env-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#4b6c73" />
+        </marker>
+      </defs>
+      <text x="16" y="38" fontSize="13.5" fill="#2c6e94" fontWeight="700">细胞外液 = 血浆 + 组织液 + 淋巴——细胞通过内环境与外界交换物质</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">内环境三者关系模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 能量金字塔 ================= */
+
+function EnergyPyramidSvg({ active }: { active: number | null; open?: boolean }) {
+  const layers = [
+    { label: '三级消费者', sub: '第四营养级', w: 96, y: 84, fill: '#e8a8a0', pct: '约 0.5%' },
+    { label: '次级消费者', sub: '第三营养级', w: 176, y: 138, fill: '#f0c98a', pct: '约 3%' },
+    { label: '初级消费者', sub: '第二营养级', w: 260, y: 192, fill: '#b8d4a8', pct: '约 15%' },
+    { label: '生产者', sub: '第一营养级', w: 344, y: 246, fill: '#8fbf8a', pct: '100%（基准）' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {layers.map((l, i) => (
+        <g key={l.label} style={dim(active, i)}>
+          <path d={`M${260 - l.w / 2} ${l.y + 48} L${260 - l.w / 2 + 20} ${l.y} L${260 + l.w / 2 - 20} ${l.y} L${260 + l.w / 2} ${l.y + 48} Z`}
+            fill={l.fill} stroke="#5f7076" strokeWidth="2.5" />
+          <text x="260" y={l.y + 22} textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">{l.label}（{l.sub}）</text>
+          <text x="260" y={l.y + 40} textAnchor="middle" fontSize="12.5" fill="#4b6c73">相对能量 {l.pct}</text>
+          {i < layers.length - 1 ? (
+            <text x="428" y={l.y + 46} fontSize="12" fill="#8a671b">传递 10%~20%</text>
+          ) : null}
+        </g>
+      ))}
+      {/* 呼吸散失箭头 */}
+      <g style={dim(active, 1)}>
+        <path d="M76 220 Q 54 170 70 116" fill="none" stroke="#b0483a" strokeWidth="3" strokeDasharray="6 4" markerEnd="url(#pyr-arrow)" />
+        <text x="16" y="100" fontSize="12.5" fill="#b0483a" fontWeight="700">呼吸</text>
+        <text x="16" y="116" fontSize="12.5" fill="#b0483a" fontWeight="700">散失</text>
+      </g>
+      <defs>
+        <marker id="pyr-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#b0483a" />
+        </marker>
+      </defs>
+      <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">营养级越高、能量越少——所以金字塔一般不超过 4~5 个营养级</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">生态系统能量金字塔模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 碳循环 ================= */
+
+function CarbonCycleSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 大气 CO2 库 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="260" cy="64" rx="104" ry="36" fill="#dfe9f2" stroke="#4d7ea8" strokeWidth="3" />
+        <text x="260" y="60" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">大气 CO₂ 库</text>
+        <text x="260" y="78" textAnchor="middle" fontSize="12" fill="#4a7a9a">（无机环境）</text>
+      </g>
+      {/* 生产者 */}
+      <g style={dim(active, 1)}>
+        <rect x="98" y="216" width="12" height="52" fill="#8a6a48" />
+        <circle cx="104" cy="196" r="34" fill="#6aa86a" stroke="#3f7f3a" strokeWidth="3" />
+        <text x="104" y="292" textAnchor="middle" fontSize="13.5" fill="#3f7f3a" fontWeight="700">生产者</text>
+      </g>
+      {/* 消费者 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="408" cy="228" rx="40" ry="26" fill="#e8c9a8" stroke="#b58a5f" strokeWidth="3" />
+        <circle cx="444" cy="212" r="13" fill="#e8c9a8" stroke="#b58a5f" strokeWidth="3" />
+        <path d="M394 252 L394 262 M422 252 L422 262" stroke="#b58a5f" strokeWidth="4" />
+        <text x="408" y="292" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">消费者</text>
+      </g>
+      {/* 分解者 */}
+      <g style={dim(active, 3)}>
+        <rect x="238" y="238" width="8" height="16" fill="#c9a86a" />
+        <path d="M218 240 Q 242 212 266 240 Z" fill="#d98a5a" stroke="#b05a2a" strokeWidth="2.5" />
+        <path d="M300 244 q 10 -6 20 0 q 10 6 20 0" fill="none" stroke="#8a671b" strokeWidth="3" strokeLinecap="round" />
+        <text x="262" y="292" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">分解者</text>
+      </g>
+      {/* 化石燃料带 */}
+      <g style={dim(active, 4)}>
+        <rect x="26" y="318" width="468" height="42" rx="8" fill="#4a3a30" />
+        <text x="60" y="344" fontSize="13" fill="#e8ddd0" fontWeight="600">煤、石油、天然气（化石燃料）</text>
+        <rect x="398" y="292" width="52" height="28" fill="#8a8a92" stroke="#5a5a62" strokeWidth="2" />
+        <rect x="408" y="278" width="10" height="14" fill="#8a8a92" />
+        <circle cx="413" cy="272" r="7" fill="#b0b0b8" opacity="0.75" />
+        <text x="452" y="336" fontSize="12.5" fill="#e8c94a" fontWeight="600">燃烧 ↑</text>
+      </g>
+      {/* 循环箭头 */}
+      <g style={dim(active, 1)}>
+        <path d="M196 78 Q 130 96 116 158" fill="none" stroke="#3f7f3a" strokeWidth="3.5" markerEnd="url(#cc-arrow)" />
+        <text x="92" y="112" fontSize="12.5" fill="#3f7f3a" fontWeight="700">光合作用</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <path d="M76 170 Q 96 100 152 74" fill="none" stroke="#b0483a" strokeWidth="3" strokeDasharray="6 4" markerEnd="url(#cc-arrow)" />
+        <text x="24" y="146" fontSize="12.5" fill="#b0483a" fontWeight="700">呼吸作用</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <line x1="148" y1="212" x2="360" y2="216" stroke="#8a671b" strokeWidth="3.5" markerEnd="url(#cc-arrow)" />
+        <text x="254" y="204" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">捕食（含碳有机物传递）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <path d="M432 198 Q 470 130 356 76" fill="none" stroke="#b0483a" strokeWidth="3" strokeDasharray="6 4" markerEnd="url(#cc-arrow)" />
+        <text x="452" y="140" fontSize="12.5" fill="#b0483a" fontWeight="700">呼吸作用</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <path d="M186 244 Q 214 250 228 252" fill="none" stroke="#8a671b" strokeWidth="3" strokeDasharray="6 4" markerEnd="url(#cc-arrow)" />
+        <path d="M420 254 Q 340 282 292 262" fill="none" stroke="#8a671b" strokeWidth="3" strokeDasharray="6 4" markerEnd="url(#cc-arrow)" />
+        <text x="152" y="266" fontSize="12" fill="#8a671b">遗体残骸</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <path d="M262 234 Q 262 140 262 104" fill="none" stroke="#7a8a2a" strokeWidth="3.5" markerEnd="url(#cc-arrow)" />
+        <text x="270" y="168" fontSize="12.5" fill="#7a8a2a" fontWeight="700">分解者的分解（呼吸）</text>
+      </g>
+      <defs>
+        <marker id="cc-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="16" y="30" fontSize="13.5" fill="#2c6e94" fontWeight="700">碳以 CO₂ 形式在无机环境与生物群落之间循环（全球性）</text>
+      <text x="508" y="378" textAnchor="end" fontSize="12.5" fill="#799398">碳循环模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 受精作用 ================= */
+
+function FertilizationSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 精子 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="86" cy="160" rx="26" ry="18" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="3" />
+        <circle cx="80" cy="160" r="7" fill="#3d6a94" />
+        <path d="M112 160 Q 150 150 186 158 Q 220 166 252 152" fill="none" stroke="#4d7ea8" strokeWidth="3.5" strokeLinecap="round" />
+        <text x="86" y="204" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">精子（n）</text>
+        <text x="86" y="222" textAnchor="middle" fontSize="12" fill="#5a88a8">头部几乎只有细胞核</text>
+      </g>
+      {/* 卵细胞 */}
+      <g style={dim(active, 1)}>
+        <circle cx="330" cy="150" r="58" fill="#f6d7c4" stroke="#c2703d" strokeWidth="3.5" />
+        <circle cx="330" cy="150" r="17" fill="#7a4a8a" />
+        <text x="330" y="230" textAnchor="middle" fontSize="13.5" fill="#b0483a" fontWeight="700">卵细胞（n）</text>
+        <text x="330" y="248" textAnchor="middle" fontSize="12" fill="#c97a5a">体积大、储营养</text>
+      </g>
+      {/* 受精卵 */}
+      <g style={dim(active, 2)}>
+        <circle cx="418" cy="150" r="50" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="3.5" />
+        {[[400, 138], [436, 138], [408, 162], [428, 162]].map(([x, y], i) => (
+          <g key={i} transform={`translate(${x} ${y}) rotate(${i % 2 === 0 ? -18 : 18})`}>
+            <path d="M0 -8 C 4 -4, 4 4, 0 8 C -4 4, -4 -4, 0 -8 M0 -8 C -4 -4, -4 4, 0 8" fill="none" stroke={i % 2 === 0 ? '#3d6a94' : '#b0483a'} strokeWidth="3" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="418" y="216" textAnchor="middle" fontSize="13.5" fill="#7a4a8a" fontWeight="700">受精卵（2n）</text>
+        <text x="418" y="234" textAnchor="middle" fontSize="12" fill="#9a6fa8">染色体数目恢复</text>
+      </g>
+      {/* 汇合箭头 */}
+      <g style={dim(active, 2)}>
+        <path d="M120 122 Q 168 96 214 118" fill="none" stroke="#5f7076" strokeWidth="3" markerEnd="url(#fer-arrow)" />
+        <path d="M264 122 Q 300 100 356 114" fill="none" stroke="#5f7076" strokeWidth="3" markerEnd="url(#fer-arrow)" />
+        <text x="196" y="88" textAnchor="middle" fontSize="13" fill="#4b6c73" fontWeight="700">受精作用</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="272" width="448" height="66" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="52" y="296" fontSize="13.5" fill="#173b42" fontWeight="700">减数分裂（2n → n）+ 受精（n → 2n）：维持前后代染色体数目恒定</text>
+        <text x="52" y="322" fontSize="12.5" fill="#59767c">精子卵细胞中染色体的随机组合 → 后代具有多样性（有性生殖的优势）</text>
+      </g>
+      <defs>
+        <marker id="fer-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5f7076" />
+        </marker>
+      </defs>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">受精作用示意图</text>
+    </svg>
+  );
+}
+
+/* ================= 减数分裂各期 ================= */
+
+function MeiosisStagesSvg({ active }: { active: number | null; open?: boolean }) {
+  const phases = ['减Ⅰ前期', '减Ⅰ中期', '减Ⅰ后期', '减Ⅱ后期', '子细胞（n）'];
+  const panel = (i: number) => ({ cx: 62 + i * 100, cy: 136, r: 40 });
+  const xShape = (cx: number, cy: number, color: string) => (
+    <path d={`M${cx} ${cy - 8} C ${cx + 4} ${cy - 4}, ${cx + 4} ${cy + 4}, ${cx} ${cy + 8} C ${cx - 4} ${cy + 4}, ${cx - 4} ${cy - 4}, ${cx} ${cy - 8} M${cx} ${cy - 8} C ${cx - 4} ${cy - 4}, ${cx - 4} ${cy + 4}, ${cx} ${cy + 8}`} fill="none" stroke={color} strokeWidth="3" strokeLinecap="round" />
+  );
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {phases.map((name, i) => {
+        const { cx, cy, r } = panel(i);
+        return (
+          <g key={name} style={dim(active, i)}>
+            <circle cx={cx} cy={cy} r={r} fill="#eaf5f7" stroke="#5f8a94" strokeWidth="3" />
+            {i === 0 ? (
+              <>
+                {xShape(cx - 14, cy - 4, '#b0483a')}
+                {xShape(cx - 6, cy + 2, '#3d6a94')}
+                {xShape(cx + 16, cy - 2, '#b0483a')}
+                {xShape(cx + 24, cy + 4, '#3d6a94')}
+                <text x={cx} y={cy + 34} textAnchor="middle" fontSize="12" fill="#5f8a94">同源染色体联会</text>
+              </>
+            ) : null}
+            {i === 1 ? (
+              <>
+                {xShape(cx - 18, cy, '#b0483a')}
+                {xShape(cx - 10, cy, '#3d6a94')}
+                {xShape(cx + 12, cy, '#b0483a')}
+                {xShape(cx + 20, cy, '#3d6a94')}
+                <line x1={cx - 30} y1={cy} x2={cx + 30} y2={cy} stroke="#c98a1d" strokeWidth="1.8" strokeDasharray="4 3" opacity="0.7" />
+                <text x={cx} y={cy + 34} textAnchor="middle" fontSize="12" fill="#5f8a94">成对排在赤道板</text>
+              </>
+            ) : null}
+            {i === 2 ? (
+              <>
+                {[[-18, -14], [8, -16]].map(([dx, dy], j) => (
+                  <g key={j}>{xShape(cx + dx, cy + dy, '#b0483a')}</g>
+                ))}
+                {[[-16, 14], [10, 16]].map(([dx, dy], j) => (
+                  <g key={j}>{xShape(cx + dx, cy + dy, '#3d6a94')}</g>
+                ))}
+                <text x={cx} y={cy + 36} textAnchor="middle" fontSize="12" fill="#5f8a94">同源染色体分离</text>
+              </>
+            ) : null}
+            {i === 3 ? (
+              <>
+                {[[-16, -14], [10, -16]].map(([dx, dy], j) => (
+                  <g key={j}>{xShape(cx + dx, cy + dy, '#b0483a')}</g>
+                ))}
+                {[[-16, 14], [10, 16]].map(([dx, dy], j) => (
+                  <g key={j}>{xShape(cx + dx, cy + dy, '#3d6a94')}</g>
+                ))}
+                <text x={cx} y={cy + 36} textAnchor="middle" fontSize="12" fill="#5f8a94">着丝粒分裂（减Ⅱ）</text>
+              </>
+            ) : null}
+            {i === 4 ? (
+              <>
+                {[[cx - 18, cy - 14], [cx + 12, cy - 16], [cx - 18, cy + 14], [cx + 12, cy + 16]].map(([x, y], j) => (
+                  <g key={j}>
+                    <circle cx={x} cy={y} r="10" fill="#f2d9e8" stroke="#8a5a8f" strokeWidth="2" />
+                    <path d={`M${x - 4} ${y - 5} q 4 -3 8 0 q 3 3 4 5`} fill="none" stroke="#8a5a8f" strokeWidth="1.8" strokeLinecap="round" />
+                  </g>
+                ))}
+                <text x={cx} y={cy + 38} textAnchor="middle" fontSize="12" fill="#5f8a94">染色体数目减半</text>
+              </>
+            ) : null}
+            <text x={cx} y={cy + r + 24} textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">{name}</text>
+          </g>
+        );
+      })}
+      <text x="16" y="56" fontSize="13.5" fill="#2c6e94" fontWeight="700">1 个亲代细胞（2n）→ 4 个子细胞（n）：染色体数目减半</text>
+      <g style={dim(active, 2)}>
+        <text x="16" y="330" fontSize="13.5" fill="#8a671b" fontWeight="700">减Ⅰ后期同源染色体分离 = 基因分离定律的细胞学基础（高频考点）</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">减数分裂各期染色体行为模式图</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 export const SPECIMENS: Specimen[] = [
@@ -1751,6 +2050,20 @@ export const SPECIMENS: Specimen[] = [
       { name: '突触后膜（受体）', desc: '下一个神经元的胞体膜或树突膜，上有特异性受体：递质结合后引起下一个细胞兴奋或抑制。' },
     ],
     Svg: SynapseSvg,
+  },
+  {
+    id: 'internalEnvironment',
+    name: '内环境三者关系',
+    kicker: '稳态与调节 · 关系模式图',
+    intro: '细胞外液 = 血浆 + 组织液 + 淋巴：三者之间的物质交换有方向，组织液单向进入淋巴，淋巴最终回流血浆。',
+    parts: [
+      { name: '血浆', desc: '血管内的液体部分，运载血细胞、营养物质与代谢废物——是体内细胞与外界交换的"运输干线"。' },
+      { name: '组织液', desc: '组织细胞间隙的液体，是体内绝大多数细胞直接生活的环境；血浆透过毛细血管壁渗出形成。' },
+      { name: '淋巴（液）', desc: '进入毛细淋巴管盲端的液体，沿淋巴管流动，最终经淋巴循环回流进血浆——单向流动。' },
+      { name: '交换方向', desc: '血浆 ⇄ 组织液双向渗透；组织液 → 淋巴 → 血浆单向回流（图中箭头方向是高频考点）。' },
+      { name: '内环境的角色', desc: '细胞通过内环境与外界进行物质交换——内环境是细胞与外界环境之间的媒介。' },
+    ],
+    Svg: InternalEnvironmentSvg,
   },
   {
     id: 'cyanobacteria',
@@ -1956,6 +2269,33 @@ export const SPECIMENS: Specimen[] = [
     Svg: MitosisStagesSvg,
   },
   {
+    id: 'meiosisStages',
+    name: '减数分裂各期',
+    kicker: '细胞分裂 · 过程模式图',
+    intro: '染色体复制一次、细胞连续分裂两次：同源染色体先配对再分离，最终 1 个亲代细胞产生 4 个染色体减半的子细胞。',
+    parts: [
+      { name: '减Ⅰ前期（联会）', desc: '同源染色体两两配对（联会），形成四分体——此期可发生交叉互换，是基因重组的来源之一。' },
+      { name: '减Ⅰ中期', desc: '同源染色体成对排列在赤道板两侧（注意：有丝分裂中期是每条染色体单独排在赤道板上）。' },
+      { name: '减Ⅰ后期', desc: '同源染色体分离、非同源染色体自由组合——基因分离定律与自由组合定律的细胞学基础。' },
+      { name: '减Ⅱ后期', desc: '着丝粒分裂，姐妹染色单体分开——与有丝分裂后期相似，但细胞内已没有同源染色体。' },
+      { name: '子细胞（n）', desc: '1 个亲代细胞 → 4 个子细胞（精细胞），染色体数目减半；卵细胞形成时只得到 1 个大细胞。' },
+    ],
+    Svg: MeiosisStagesSvg,
+  },
+  {
+    id: 'fertilization',
+    name: '受精作用',
+    kicker: '遗传与进化 · 过程模式图',
+    intro: '精子与卵细胞结合形成受精卵：减数分裂把染色体减半（2n→n），受精让数目恢复（n→2n）——前后代染色体恒定的关键。',
+    parts: [
+      { name: '精子（n）', desc: '变形后头部几乎只含细胞核，便于"送货上门"；含本物种一半数目的染色体。' },
+      { name: '卵细胞（n）', desc: '体积大、富含营养物质，为早期发育储能；一个卵细胞一般只与一个精子结合。' },
+      { name: '受精卵（2n）', desc: '精核与卵核融合，染色体恢复到本物种数目——一半来自父方、一半来自母方。' },
+      { name: '恒定与多样', desc: '减数分裂 + 受精维持前后代染色体数目恒定；配子的多样性与随机结合让后代呈现多样性。' },
+    ],
+    Svg: FertilizationSvg,
+  },
+  {
     id: 'chloroplast',
     name: '叶绿体',
     kicker: '细胞器 · 立体剖面模式图',
@@ -2096,5 +2436,33 @@ export const SPECIMENS: Specimen[] = [
     ],
     Svg: GuardCellSvg,
     StageWebGL: StomaWebGLModel,
+  },
+  {
+    id: 'energyPyramid',
+    name: '能量金字塔',
+    kicker: '生物与环境 · 模式图',
+    intro: '能量沿食物链逐级递减（传递效率 10%~20%），营养级越高得到的能量越少——所以塔尖通常只有 4~5 层。',
+    parts: [
+      { name: '生产者（第一营养级）', desc: '固定的太阳能是流经整个生态系统的总能量，位于塔基、能量最多。' },
+      { name: '初级消费者 → 三级消费者', desc: '每往上一层，能量都因呼吸散失、流向分解者和未被利用而大幅减少。' },
+      { name: '传递效率 10%~20%', desc: '相邻两个营养级之间的能量传递比例——据此可估算塔尖捕食者最多能养多少。' },
+      { name: '呼吸散失', desc: '每个营养级都有大量能量以热能形式散失（图中红色虚线箭头）——热能不能被重新利用，能量流动单向不循环。' },
+      { name: '为什么塔要"矮"', desc: '能量逐级锐减，营养级太多顶层得不到足够食物——所以食物链一般不超过 4~5 个营养级。' },
+    ],
+    Svg: EnergyPyramidSvg,
+  },
+  {
+    id: 'carbonCycle',
+    name: '碳循环',
+    kicker: '生物与环境 · 循环模式图',
+    intro: '碳以 CO₂ 形式在无机环境与生物群落之间循环：光合作用进、呼吸作用出——物质可以被反复利用（全球性循环）。',
+    parts: [
+      { name: '大气 CO₂ 库', desc: '无机环境中的碳主要以此形式存在；是生物群落与无机环境之间交换碳的"中转站"。' },
+      { name: '光合作用（进入群落）', desc: '绿色植物把 CO₂ 和水合成有机物——碳进入生物群落的主要途径（还有化能合成作用）。' },
+      { name: '呼吸作用（返回无机环境）', desc: '生产者、消费者、分解者的呼吸作用都把有机物分解为 CO₂ 释放回大气。' },
+      { name: '捕食传递', desc: '碳在生物群落内部沿食物链以含碳有机物的形式从生产者流向消费者。' },
+      { name: '化石燃料燃烧', desc: '把远古封存的碳短时间内大量释放——是碳循环加快、温室效应加剧的主因。' },
+    ],
+    Svg: CarbonCycleSvg,
   },
 ];
