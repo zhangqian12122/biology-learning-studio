@@ -2320,6 +2320,234 @@ function AerobicRespirationSvg({ active }: { active: number | null; open?: boole
   );
 }
 
+/* ================= 花的结构 ================= */
+
+function FlowerStructureSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 花柄与花托 */}
+      <g style={dim(active, 5)}>
+        <line x1="260" y1="356" x2="260" y2="256" stroke="#4a8a3a" strokeWidth="8" strokeLinecap="round" />
+        <ellipse cx="260" cy="252" rx="34" ry="12" fill="#6aa86a" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="330" y="330" fontSize="12.5" fill="#3f7f3a" fontWeight="600">花柄与花托</text>
+        <line x1="326" y1="326" x2="272" y2="298" stroke="#3f7f3a" strokeWidth="1.4" />
+      </g>
+      {/* 花萼 + 花瓣 */}
+      <g style={dim(active, 4)}>
+        <path d="M216 240 Q 190 222 200 196 Q 226 204 234 228 Z" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" />
+        <path d="M304 240 Q 330 222 320 196 Q 294 204 286 228 Z" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" />
+        <path d="M240 224 Q 190 210 172 168 Q 216 160 246 194 Z" fill="#f2b8c8" stroke="#c9708a" strokeWidth="3" />
+        <path d="M280 224 Q 330 210 348 168 Q 304 160 274 194 Z" fill="#f2b8c8" stroke="#c9708a" strokeWidth="3" />
+        <text x="150" y="118" fontSize="12.5" fill="#c9708a" fontWeight="600">花瓣（引诱昆虫）</text>
+        <line x1="176" y1="122" x2="196" y2="162" stroke="#c9708a" strokeWidth="1.4" />
+        <text x="348" y="238" fontSize="12.5" fill="#3f7f3a" fontWeight="600">花萼（保护）</text>
+      </g>
+      {/* 雄蕊 */}
+      <g style={dim(active, 0)}>
+        <path d="M244 232 Q 210 214 196 186" fill="none" stroke="#e0b020" strokeWidth="3.5" />
+        <path d="M276 232 Q 310 214 324 186" fill="none" stroke="#e0b020" strokeWidth="3.5" />
+        <ellipse cx="192" cy="178" rx="14" ry="9" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.5" transform="rotate(-24 192 178)" />
+        <ellipse cx="328" cy="178" rx="14" ry="9" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.5" transform="rotate(24 328 178)" />
+        <text x="108" y="168" fontSize="13.5" fill="#a58a20" fontWeight="700">花药（产生花粉）</text>
+        <line x1="150" y1="172" x2="180" y2="178" stroke="#a58a20" strokeWidth="1.4" />
+      </g>
+      {/* 雌蕊 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="260" cy="172" rx="20" ry="11" fill="#e8d4f2" stroke="#7a4a8a" strokeWidth="3" />
+        <line x1="260" y1="182" x2="260" y2="228" stroke="#7a4a8a" strokeWidth="5" />
+        <ellipse cx="260" cy="256" rx="30" ry="22" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3" />
+        <circle cx="252" cy="258" r="6" fill="#7a4a8a" />
+        <circle cx="268" cy="260" r="6" fill="#7a4a8a" />
+        <text x="70" y="192" fontSize="13.5" fill="#6a4a9a" fontWeight="700">柱头（承接花粉）</text>
+        <line x1="146" y1="188" x2="240" y2="174" stroke="#7a4a8a" strokeWidth="1.4" />
+        <text x="70" y="212" fontSize="13.5" fill="#6a4a9a" fontWeight="700">花柱</text>
+        <text x="70" y="264" fontSize="13.5" fill="#6a4a9a" fontWeight="700">子房（内有胚珠）</text>
+        <line x1="146" y1="260" x2="230" y2="258" stroke="#7a4a8a" strokeWidth="1.4" />
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="380" y="276" fontSize="13.5" fill="#8a5a94" fontWeight="700">胚珠（含卵细胞）</text>
+        <line x1="376" y1="272" x2="276" y2="262" stroke="#8a5a94" strokeWidth="1.4" />
+      </g>
+      <text x="16" y="42" fontSize="13.5" fill="#2c6e94" fontWeight="700">完全花结构：雄蕊与雌蕊是繁殖的核心——"去雄"杂交就是摘除花药</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">花的结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 玉米的繁殖 ================= */
+
+function CornReproductionSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 茎秆 */}
+      <g style={dim(active, 0)}>
+        <line x1="150" y1="356" x2="150" y2="86" stroke="#5f9a4a" strokeWidth="12" strokeLinecap="round" />
+        <path d="M150 240 Q 108 220 92 182" fill="none" stroke="#5f9a4a" strokeWidth="7" strokeLinecap="round" />
+        <path d="M150 176 Q 196 156 214 118" fill="none" stroke="#5f9a4a" strokeWidth="7" strokeLinecap="round" />
+      </g>
+      {/* 雄花序 */}
+      <g style={dim(active, 1)}>
+        <path d="M150 86 Q 118 66 96 44 M 150 86 Q 150 52 150 34 M 150 86 Q 182 66 204 44" fill="none" stroke="#c9a86a" strokeWidth="5" strokeLinecap="round" />
+        {[[96, 44], [150, 34], [204, 44], [124, 62], [176, 62]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="7" fill="#f4d06a" stroke="#b5953a" strokeWidth="2" />
+        ))}
+        <text x="20" y="76" fontSize="13.5" fill="#a58a20" fontWeight="700">顶端雄花序</text>
+        <text x="20" y="94" fontSize="12" fill="#b5953a">花粉多而轻（风媒）</text>
+      </g>
+      {/* 风与花粉 */}
+      <g style={dim(active, 2)}>
+        <path d="M36 132 q 18 -8 36 0 q 18 8 36 0" fill="none" stroke="#8aa1a6" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M46 156 q 18 -8 36 0" fill="none" stroke="#8aa1a6" strokeWidth="2.5" strokeLinecap="round" />
+        {[[214, 130], [248, 148], [282, 164], [316, 178]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="4" fill="#f4d06a" stroke="#b5953a" strokeWidth="1.5" />
+        ))}
+        <text x="322" y="128" fontSize="13.5" fill="#a58a20" fontWeight="700">风传花粉 → 落到花柱上</text>
+      </g>
+      {/* 雌花序（果穗 + 玉米须） */}
+      <g style={dim(active, 3)}>
+        <ellipse cx="238" cy="234" rx="40" ry="58" fill="#d9e8b8" stroke="#7a9a3a" strokeWidth="3.5" />
+        <path d="M206 200 Q 238 186 270 200 L 262 282 Q 238 292 214 282 Z" fill="#c9e09a" stroke="#7a9a3a" strokeWidth="2.5" />
+        <path d="M262 176 Q 300 160 330 176 M 268 190 Q 312 182 344 200 M 272 204 Q 320 204 352 222" fill="none" stroke="#e0c98a" strokeWidth="3" strokeLinecap="round" />
+        <text x="150" y="330" textAnchor="middle" fontSize="13.5" fill="#7a9a3a" fontWeight="700">叶腋雌花序（果穗）</text>
+        <text x="330" y="242" fontSize="13.5" fill="#c9a86a" fontWeight="700">玉米须 = 花柱</text>
+        <text x="330" y="260" fontSize="12" fill="#a58a4a">一根须对应一粒籽</text>
+      </g>
+      {/* 受精小图 */}
+      <g style={dim(active, 4)}>
+        <rect x="356" y="288" width="148" height="72" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <ellipse cx="398" cy="324" rx="17" ry="24" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <circle cx="398" cy="330" r="6" fill="#7a4a8a" />
+        <path d="M412 306 Q 420 296 430 296" fill="none" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="428" y="318" fontSize="12.5" fill="#6a4a9a" fontWeight="600">花粉管进入</text>
+        <text x="428" y="336" fontSize="12.5" fill="#6a4a9a" fontWeight="600">胚珠完成受精</text>
+      </g>
+      <text x="16" y="42" fontSize="13.5" fill="#2c6e94" fontWeight="700">玉米：单性花、雌雄同株——顶端开花撒粉，叶腋结穗生须，受精后籽粒是果实</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">玉米的繁殖（风媒传粉）模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 果实与种子的形成 ================= */
+
+function FruitAndSeedSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 玉米籽粒纵切 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="240" cy="196" rx="118" ry="136" fill="#f4d9a0" stroke="#b5903a" strokeWidth="4" />
+        <text x="240" y="344" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">玉米籽粒（果实）纵切</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <ellipse cx="240" cy="196" rx="100" ry="118" fill="#f0c96a" stroke="#d9a83a" strokeWidth="2.5" />
+        <text x="240" y="120" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">胚乳（储存营养）</text>
+      </g>
+      {/* 胚 */}
+      <g style={dim(active, 2)}>
+        <path d="M286 226 Q 316 216 322 190 Q 326 216 306 236 Q 292 242 286 226 Z" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" />
+        <ellipse cx="292" cy="252" rx="10" ry="14" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="2.5" transform="rotate(-18 292 252)" />
+        <path d="M280 266 Q 268 280 258 292" fill="none" stroke="#8a6a48" strokeWidth="4" strokeLinecap="round" />
+        <text x="352" y="196" fontSize="13" fill="#2f7a4d" fontWeight="700">胚：胚芽+胚轴</text>
+        <text x="352" y="214" fontSize="13" fill="#2f7a4d" fontWeight="700">+胚根+子叶（1 片）</text>
+        <line x1="348" y1="200" x2="322" y2="206" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 对应关系箭头 */}
+      <g style={dim(active, 3)}>
+        <text x="34" y="96" fontSize="13.5" fill="#b0483a" fontWeight="700">子房壁 → 果皮</text>
+        <text x="34" y="140" fontSize="13.5" fill="#b0483a" fontWeight="700">珠被 → 种皮</text>
+        <text x="34" y="188" fontSize="13.5" fill="#7a4a8a" fontWeight="700">受精卵 → 胚（2n）</text>
+        <text x="34" y="236" fontSize="13.5" fill="#8a671b" fontWeight="700">受精极核 → 胚乳（3n）</text>
+        <line x1="118" y1="90" x2="142" y2="96" stroke="#b0483a" strokeWidth="2" markerEnd="url(#fs-arrow)" />
+        <line x1="108" y1="134" x2="142" y2="126" stroke="#b0483a" strokeWidth="2" markerEnd="url(#fs-arrow)" />
+        <line x1="132" y1="182" x2="280" y2="222" stroke="#7a4a8a" strokeWidth="2" markerEnd="url(#fs-arrow)" />
+        <line x1="150" y1="230" x2="180" y2="212" stroke="#8a671b" strokeWidth="2" markerEnd="url(#fs-arrow)" />
+        <text x="20" y="278" fontSize="12.5" fill="#59767c">玉米外层是果皮与种皮愈合——</text>
+        <text x="20" y="296" fontSize="12.5" fill="#59767c">所以一粒玉米其实是果实</text>
+      </g>
+      {/* 菜豆对比 */}
+      <g style={dim(active, 4)}>
+        <rect x="386" y="252" width="122" height="96" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <ellipse cx="428" cy="292" rx="16" ry="24" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" transform="rotate(-16 428 292)" />
+        <ellipse cx="462" cy="292" rx="16" ry="24" fill="#8fbf6f" stroke="#3f7f3a" strokeWidth="2.5" transform="rotate(16 462 292)" />
+        <text x="447" y="336" textAnchor="middle" fontSize="12.5" fill="#3f7f3a" fontWeight="600">菜豆：双子叶无胚乳</text>
+      </g>
+      <defs>
+        <marker id="fs-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#8a671b" />
+        </marker>
+      </defs>
+      <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">受精完成后：子房→果实、胚珠→种子——花的结构决定果实的来历</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">果实与种子的形成（以玉米为例）模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 人工异花传粉 ================= */
+
+function ArtificialPollinationSvg({ active }: { active: number | null; open?: boolean }) {
+  const step = (i: number) => ({ cx: 74 + i * 124, cy: 150 });
+  const titles = ['① 去雄', '② 套袋', '③ 人工授粉', '④ 再套袋+标记'];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {titles.map((t, i) => {
+        const { cx, cy } = step(i);
+        return (
+          <g key={t} style={dim(active, i)}>
+            {/* 通用小花 */}
+            <line x1={cx} y1={cy + 52} x2={cx} y2={cy + 22} stroke="#4a8a3a" strokeWidth="6" strokeLinecap="round" />
+            <path d={`M${cx - 18} ${cy + 18} Q ${cx - 34} ${cy} ${cx - 24} ${cy - 18} Q ${cx - 8} ${cy - 8} ${cx} ${cy + 4} Z`} fill="#f2b8c8" stroke="#c9708a" strokeWidth="2.5" />
+            <path d={`M${cx + 18} ${cy + 18} Q ${cx + 34} ${cy} ${cx + 24} ${cy - 18} Q ${cx + 8} ${cy - 8} ${cx} ${cy + 4} Z`} fill="#f2b8c8" stroke="#c9708a" strokeWidth="2.5" />
+            <ellipse cx={cx} cy={cy - 12} rx="12" ry="7" fill="#e8d4f2" stroke="#7a4a8a" strokeWidth="2.5" />
+            <text x={cx} y={cy + 82} textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">{t}</text>
+          </g>
+        );
+      })}
+      {/* ① 剪刀去雄 */}
+      <g style={dim(active, 0)}>
+        <path d="M56 108 L74 130 L92 108 M74 130 L74 142" fill="none" stroke="#5a5a62" strokeWidth="3.5" strokeLinecap="round" />
+        <circle cx="52" cy="104" r="7" fill="none" stroke="#5a5a62" strokeWidth="3" />
+        <circle cx="96" cy="104" r="7" fill="none" stroke="#5a5a62" strokeWidth="3" />
+        <text x="74" y="52" textAnchor="middle" fontSize="12.5" fill="#59767c">花未成熟时摘尽雄蕊</text>
+      </g>
+      {/* ② 纸袋 */}
+      <g style={dim(active, 1)}>
+        <path d="M50 100 Q 74 84 98 100 L 94 150 Q 74 158 54 150 Z" fill="#fdf6e3" stroke="#c9a86a" strokeWidth="2.5" />
+        <text x="198" y="52" textAnchor="middle" fontSize="12.5" fill="#59767c">防外来花粉串粉</text>
+      </g>
+      {/* ③ 毛笔授粉 */}
+      <g style={dim(active, 2)}>
+        <line x1="296" y1="96" x2="326" y2="128" stroke="#b58a5f" strokeWidth="4" strokeLinecap="round" />
+        <path d="M322 130 q 10 8 6 18 q -12 2 -14 -10 Z" fill="#f4d06a" stroke="#b5953a" strokeWidth="2" />
+        <circle cx="334" cy="152" r="3" fill="#f4d06a" />
+        <text x="322" y="52" textAnchor="middle" fontSize="12.5" fill="#59767c">蘸取父本花粉涂柱头</text>
+      </g>
+      {/* ④ 袋+标签 */}
+      <g style={dim(active, 3)}>
+        <path d="M446 100 Q 470 84 494 100 L 490 150 Q 470 158 450 150 Z" fill="#fdf6e3" stroke="#c9a86a" strokeWidth="2.5" />
+        <line x1="494" y1="112" x2="512" y2="118" stroke="#5a5a62" strokeWidth="2" />
+        <rect x="498" y="118" width="14" height="20" fill="#eef7f6" stroke="#5f8a94" strokeWidth="2" />
+        <text x="444" y="52" textAnchor="middle" fontSize="12.5" fill="#59767c">记录母本×父本</text>
+      </g>
+      {/* 步骤间的箭头 */}
+      {[136, 260, 384].map((x, i) => (
+        <line key={i} x1={x} y1="150" x2={x + 24} y2="150" stroke="#8aa1a6" strokeWidth="3" markerEnd="url(#ap-arrow)" />
+      ))}
+      <defs>
+        <marker id="ap-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#8aa1a6" />
+        </marker>
+      </defs>
+      <g style={dim(active, 0)}>
+        <text x="16" y="248" fontSize="13.5" fill="#2c6e94" fontWeight="700">豌豆：自花传粉、闭花受精 → 天然纯种（杂交必须人工去雄）；</text>
+        <text x="16" y="270" fontSize="13.5" fill="#2c6e94" fontWeight="700">玉米：单性花、雌雄同株 → 天然异花传粉，遗传研究常"套袋控粉"防串粉</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <text x="16" y="312" fontSize="12.5" fill="#59767c">F₁ 互相授粉得 F₂——孟德尔正是用这套流程发现分离定律与自由组合定律</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">人工异花传粉四步法模式图（遗传杂交实验基础）</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 export const SPECIMENS: Specimen[] = [
@@ -2834,5 +3062,62 @@ export const SPECIMENS: Specimen[] = [
       { name: '与光合对比', desc: '光合作用把 CO₂ 和 H₂O 合成有机物储能，呼吸作用正相反——两大代谢的场所、条件、产物常对照出题。' },
     ],
     Svg: AerobicRespirationSvg,
+  },
+  {
+    id: 'flowerStructure',
+    name: '花的结构',
+    kicker: '植物繁殖 · 完全花模式图',
+    intro: '一朵完全花的结构：雄蕊与雌蕊是繁殖的核心——花药里产生花粉，子房的胚珠里有卵细胞，其余部分负责保护与"招蜂引蝶"。',
+    parts: [
+      { name: '花药', desc: '雄蕊顶端产生花粉（内含精子）的部分——"去雄"杂交操作摘除的就是它。' },
+      { name: '花丝', desc: '支撑花药的细柄，把花药举到容易传粉的位置。' },
+      { name: '柱头', desc: '雌蕊顶端承接花粉的部位，常分泌黏液——玉米的"须"就是伸到外面的花柱和柱头。' },
+      { name: '花柱', desc: '连接柱头与子房的通道；花粉落上去后萌发花粉管，把精子送进胚珠。' },
+      { name: '子房与胚珠', desc: '子房内含胚珠，胚珠里有卵细胞（极核）；受精后子房发育成果实、胚珠发育成种子。' },
+      { name: '花萼与花瓣', desc: '花萼在开花前保护花蕾；花瓣颜色鲜艳以引诱昆虫传粉（虫媒花），风媒花则小而不鲜艳。' },
+    ],
+    Svg: FlowerStructureSvg,
+  },
+  {
+    id: 'cornReproduction',
+    name: '玉米的繁殖',
+    kicker: '植物繁殖 · 单性花雌雄同株',
+    intro: '玉米是单性花、雌雄同株：顶端雄花序撒出多而轻的花粉靠风传播，落到叶腋雌花序伸出的"玉米须"（花柱）上，花粉管进入胚珠完成受精。',
+    parts: [
+      { name: '顶端雄花序', desc: '圆锥花序大量产生花粉——玉米的花没有鲜艳花瓣和花蜜，是典型的风媒花。' },
+      { name: '风媒传粉', desc: '花粉多而轻、易被风吹散；雌蕊柱头（花柱）长而分叉、有黏液——增大承接花粉的概率。' },
+      { name: '叶腋雌花序（果穗）', desc: '被苞叶包裹的雌穗，每个"玉米须"是一条花柱——一根须对应将来的一粒籽。' },
+      { name: '受精', desc: '花粉在花柱上萌发出花粉管，把精子送入胚珠完成受精——须没接到花粉的那一行就"缺粒"。' },
+      { name: '单性花与遗传实验', desc: '雌雄同株单性花、天然异花传粉——研究玉米遗传时必须套袋控制授粉，防止"串粉"。' },
+    ],
+    Svg: CornReproductionSvg,
+  },
+  {
+    id: 'fruitAndSeed',
+    name: '果实与种子的形成',
+    kicker: '植物繁殖 · 发育对应模式图',
+    intro: '受精完成后花瓣凋落：子房壁→果皮、珠被→种皮、受精卵→胚、受精极核→胚乳——玉米籽粒外层果皮种皮愈合，所以一粒玉米其实是果实。',
+    parts: [
+      { name: '子房壁 → 果皮', desc: '子房壁发育成果皮；玉米的果皮与种皮紧贴愈合，剥不分开。' },
+      { name: '胚珠 → 种子', desc: '珠被发育成种皮，保护内部结构。' },
+      { name: '受精卵 → 胚', desc: '受精卵（2n）发育成胚——胚芽、胚轴、胚根、子叶，是新植株的"雏形"，遗传物质一半来自父方。' },
+      { name: '受精极核 → 胚乳', desc: '受精极核（3n）发育成胚乳储存营养——玉米是单子叶植物，营养主要在胚乳里。' },
+      { name: '单子叶 vs 双子叶', desc: '玉米：1 片子叶、有胚乳；菜豆：2 片子叶、营养在子叶中无胚乳——考题常拿两粒种子对比。' },
+    ],
+    Svg: FruitAndSeedSvg,
+  },
+  {
+    id: 'artificialPollination',
+    name: '人工异花传粉四步法',
+    kicker: '必修 2 遗传实验 · 操作模式图',
+    intro: '孟德尔杂交实验的基本功：去雄 → 套袋 → 人工授粉 → 再套袋标记——控制"谁和谁杂交"，才能得到可分析的子代。',
+    parts: [
+      { name: '去雄', desc: '在花未成熟（花粉未散出）时摘尽母本的全部雄蕊——豌豆闭花受精，去雄必须在开花前完成。' },
+      { name: '套袋', desc: '去雄后立即套上纸袋，防止外来花粉混入——保证"父本"唯一。' },
+      { name: '人工授粉', desc: '雌蕊成熟时，蘸取父本花粉涂抹到柱头上——实现指定"母本 × 父本"的杂交组合。' },
+      { name: '再套袋与标记', desc: '授粉后再套袋直到结实，并挂标签记录母本×父本——F₁ 自交得 F₂，孟德尔由此发现 3:1 与 9:3:3:1。' },
+      { name: '为什么选豌豆', desc: '自花传粉闭花受精 → 天然纯种；花大易操作、有多对易区分的相对性状——实验材料的选择本身就是考点。' },
+    ],
+    Svg: ArtificialPollinationSvg,
   },
 ];
