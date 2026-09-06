@@ -604,7 +604,8 @@ export type ExperimentId =
   | 'millerUrey'
   | 'sirModel'
   | 'choiceMedia'
-  | 'chromosomeVariation';
+  | 'chromosomeVariation'
+  | 'geneFrequency';
 
 export const experimentMeta: Record<
   ExperimentId,
@@ -970,6 +971,13 @@ export const experimentMeta: Record<
     relatedBook: 'genetics',
     relatedModule: '变异、育种与生物进化',
   },
+  geneFrequency: {
+    title: '基因频率计算与自然选择',
+    kicker: '必修 2 · 遗传与进化',
+    description: '调初始频率与选择系数：亲代基因频率 → 子代基因型 → 逐代进化曲线。',
+    relatedBook: 'genetics',
+    relatedModule: '变异、育种与生物进化',
+  },
 };
 
 /** 实验目录分类：按教材实验主题归组，方便在 /lab 快速筛选 */
@@ -997,7 +1005,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'selection', 'geneEngine'],
+    ids: ['traitSeparation', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1043,6 +1051,7 @@ export const experimentOrder: ExperimentId[] = [
   'phageExperiment',
   'breedingDesigner',
   'chromosomeVariation',
+  'geneFrequency',
   'selection',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
