@@ -146,6 +146,8 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   traitSeparation: ['artificialPollination'],
   genetics: ['artificialPollination'],
   yeastRespiration: ['aerobicRespiration'],
+  plasmolysis: ['osmosisSetup'],
+  impulse: ['nervePotential'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */

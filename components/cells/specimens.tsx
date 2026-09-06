@@ -2838,6 +2838,424 @@ function AntibodySvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 细胞核 ================= */
+
+function NucleusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 核膜（双层） */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="172" rx="150" ry="116" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="4" />
+        <ellipse cx="250" cy="172" rx="136" ry="102" fill="none" stroke="#9a6fa8" strokeWidth="2.5" />
+        <text x="30" y="258" fontSize="13.5" fill="#6a4a9a" fontWeight="700">核膜（双层膜）</text>
+        <text x="30" y="276" fontSize="12" fill="#8a6a94">外膜常连内质网</text>
+        <line x1="176" y1="250" x2="126" y2="234" stroke="#7a4a8a" strokeWidth="1.4" />
+      </g>
+      {/* 核孔 */}
+      <g style={dim(active, 1)}>
+        {[[352, 118], [392, 200], [340, 258], [250, 296], [158, 252], [110, 186], [150, 112]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="7" fill="#f2fafa" stroke="#5f4f6a" strokeWidth="2.5" />
+        ))}
+        <text x="392" y="130" fontSize="13.5" fill="#5f4f6a" fontWeight="700">核孔</text>
+        <text x="392" y="148" fontSize="12" fill="#7a6a8a">mRNA、蛋白质通道</text>
+        <line x1="416" y1="122" x2="362" y2="116" stroke="#5f4f6a" strokeWidth="1.4" />
+      </g>
+      {/* 核仁 */}
+      <g style={dim(active, 2)}>
+        <circle cx="200" cy="150" r="30" fill="#7a4a8a" />
+        <text x="200" y="155" textAnchor="middle" fontSize="12.5" fill="#ffffff" fontWeight="700">核仁</text>
+        <text x="96" y="118" fontSize="12.5" fill="#6a4a9a" fontWeight="600">与某种 RNA（rRNA）</text>
+        <text x="96" y="136" fontSize="12.5" fill="#6a4a9a" fontWeight="600">的合成有关</text>
+      </g>
+      {/* 染色质 */}
+      <g style={dim(active, 3)}>
+        <path d="M240 120 q 20 -14 40 0 q 20 14 40 0 q 20 -14 40 0 M226 170 q 22 16 44 0 q 22 -16 44 0 q 22 16 44 0 M250 220 q 20 14 40 0 q 20 -14 40 0"
+          fill="none" stroke="#b48ad0" strokeWidth="5" strokeLinecap="round" />
+        <text x="28" y="96" fontSize="13.5" fill="#6a4a9a" fontWeight="700">染色质（DNA 的载体）</text>
+        <line x1="140" y1="102" x2="238" y2="118" stroke="#7a4a8a" strokeWidth="1.4" />
+      </g>
+      {/* 功能定位 */}
+      <g style={dim(active, 4)}>
+        <rect x="46" y="296" width="448" height="52" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="62" y="318" fontSize="13.5" fill="#173b42" fontWeight="700">细胞核 = 遗传信息库，是细胞代谢和遗传的控制中心</text>
+        <text x="62" y="338" fontSize="12" fill="#59767c">核孔有选择性：mRNA、蛋白质可过，DNA 不能出去</text>
+      </g>
+      <text x="508" y="46" textAnchor="end" fontSize="12.5" fill="#799398">细胞核结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 光合作用过程 ================= */
+
+function PhotosynthesisProcessSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 叶绿体轮廓 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="260" cy="196" rx="246" ry="152" fill="#e7f3e2" stroke="#3f7f3a" strokeWidth="3.5" />
+        <text x="34" y="70" fontSize="13.5" fill="#2f7a4d" fontWeight="700">叶绿体（类囊体薄膜 + 基质）</text>
+      </g>
+      {/* 类囊体 + 光反应 */}
+      <g style={dim(active, 1)}>
+        {[104, 122, 140].map((y, i) => (
+          <ellipse key={i} cx="140" cy={y} rx="58" ry="11" fill="#6aa86a" stroke="#2f7a4d" strokeWidth="2.5" />
+        ))}
+        <text x="140" y="86" textAnchor="middle" fontSize="13.5" fill="#1e5a2e" fontWeight="700">类囊体（基粒）</text>
+        <text x="140" y="172" textAnchor="middle" fontSize="13.5" fill="#1e5a2e" fontWeight="700">光反应</text>
+        <text x="30" y="200" fontSize="12.5" fill="#2f7a4d">水的光解：H₂O → O₂ + H⁺</text>
+        <text x="30" y="222" fontSize="12.5" fill="#2f7a4d">ADP + Pi → ATP</text>
+        <text x="30" y="244" fontSize="12.5" fill="#2f7a4d">NADP⁺ → NADPH（[H]）</text>
+      </g>
+      {/* O2 释放 */}
+      <g style={dim(active, 1)}>
+        <path d="M140 60 L140 30" stroke="#3d7e9e" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
+        <text x="150" y="38" fontSize="13" fill="#2c6e94" fontWeight="700">O₂ 释放</text>
+      </g>
+      {/* 暗反应 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="382" cy="212" rx="96" ry="86" fill="#f4f8fb" stroke="#3d7e9e" strokeWidth="2.5" strokeDasharray="8 5" />
+        <text x="382" y="158" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">暗反应（基质）</text>
+        <text x="382" y="184" textAnchor="middle" fontSize="12.5" fill="#2c6e94">CO₂ 固定：CO₂ + C₅ → 2C₃</text>
+        <text x="382" y="208" textAnchor="middle" fontSize="12.5" fill="#2c6e94">C₃ 还原 → 糖类（有机物）</text>
+        <text x="382" y="232" textAnchor="middle" fontSize="12.5" fill="#4b6c73">（消耗 ATP 和 [H]）</text>
+      </g>
+      {/* CO2 进入 */}
+      <g style={dim(active, 2)}>
+        <path d="M470 320 Q 486 280 452 248" fill="none" stroke="#7a7a82" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
+        <text x="446" y="336" fontSize="13" fill="#5a5a62" fontWeight="700">CO₂ 进入</text>
+      </g>
+      {/* 联系箭头 */}
+      <g style={dim(active, 3)}>
+        <path d="M196 210 Q 240 226 276 222" fill="none" stroke="#c98a1d" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
+        <text x="236" y="248" textAnchor="middle" fontSize="12.5" fill="#c98a1d" fontWeight="700">ATP、[H]</text>
+        <path d="M282 246 Q 240 262 200 244" fill="none" stroke="#8a671b" strokeWidth="3" strokeDasharray="6 4" markerEnd="url(#ps-arrow)" />
+        <text x="240" y="284" textAnchor="middle" fontSize="12" fill="#8a671b">ADP、Pi、NADP⁺ 返回</text>
+      </g>
+      {/* 有机物输出 */}
+      <g style={dim(active, 2)}>
+        <path d="M366 236 Q 330 300 268 330" fill="none" stroke="#3f7f3a" strokeWidth="3.5" markerEnd="url(#ps-arrow)" />
+        <text x="252" y="346" fontSize="13" fill="#2f7a4d" fontWeight="700">有机物（糖类）输出</text>
+      </g>
+      <defs>
+        <marker id="ps-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">光合作用全过程图解</text>
+    </svg>
+  );
+}
+
+/* ================= 中心法则 ================= */
+
+function CentralDogmaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* DNA */}
+      <g style={dim(active, 0)}>
+        <rect x="60" y="70" width="140" height="60" rx="10" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="3" />
+        <text x="130" y="96" textAnchor="middle" fontSize="14" fill="#1e4a68" fontWeight="700">DNA</text>
+        <text x="130" y="116" textAnchor="middle" fontSize="12" fill="#2c6e94">（遗传信息储藏库）</text>
+      </g>
+      {/* RNA */}
+      <g style={dim(active, 1)}>
+        <rect x="320" y="70" width="140" height="60" rx="10" fill="#f4d06a" stroke="#b5953a" strokeWidth="3" />
+        <text x="390" y="96" textAnchor="middle" fontSize="14" fill="#7a5a10" fontWeight="700">RNA</text>
+        <text x="390" y="116" textAnchor="middle" fontSize="12" fill="#a58a20">（信使/转运/核糖体）</text>
+      </g>
+      {/* 蛋白质 */}
+      <g style={dim(active, 2)}>
+        <rect x="320" y="230" width="140" height="60" rx="10" fill="#b8d4a8" stroke="#3f7f3a" strokeWidth="3" />
+        <text x="390" y="256" textAnchor="middle" fontSize="14" fill="#2f5a1e" fontWeight="700">蛋白质</text>
+        <text x="390" y="276" textAnchor="middle" fontSize="12" fill="#4a7a3a">（性状的直接体现者）</text>
+      </g>
+      {/* 转录 */}
+      <g style={dim(active, 3)}>
+        <line x1="204" y1="100" x2="314" y2="100" stroke="#3d6a94" strokeWidth="4" markerEnd="url(#cd-arrow)" />
+        <text x="259" y="88" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">转录（细胞核）</text>
+      </g>
+      {/* 翻译 */}
+      <g style={dim(active, 4)}>
+        <line x1="390" y1="134" x2="390" y2="224" stroke="#b5953a" strokeWidth="4" markerEnd="url(#cd-arrow)" />
+        <text x="412" y="184" fontSize="13.5" fill="#8a671b" fontWeight="700">翻译（核糖体）</text>
+      </g>
+      {/* 复制 */}
+      <g style={dim(active, 0)}>
+        <path d="M92 64 Q 130 34 168 64" fill="none" stroke="#3d6a94" strokeWidth="4" markerEnd="url(#cd-arrow)" />
+        <text x="130" y="28" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">DNA 复制</text>
+      </g>
+      {/* 逆转录（补充） */}
+      <g style={dim(active, 5)}>
+        <path d="M330 134 Q 240 190 140 136" fill="none" stroke="#b0483a" strokeWidth="3.5" strokeDasharray="8 6" markerEnd="url(#cd-arrow)" />
+        <text x="196" y="188" fontSize="13" fill="#b0483a" fontWeight="700">逆转录（病毒）</text>
+      </g>
+      {/* RNA 复制（补充） */}
+      <g style={dim(active, 5)}>
+        <path d="M352 62 Q 390 32 428 62" fill="none" stroke="#b0483a" strokeWidth="3.5" strokeDasharray="8 6" markerEnd="url(#cd-arrow)" />
+        <text x="390" y="24" textAnchor="middle" fontSize="13" fill="#b0483a" fontWeight="700">RNA 复制（病毒）</text>
+      </g>
+      <g style={dim(active, 5)}>
+        <text x="24" y="336" fontSize="13.5" fill="#2c6e94" fontWeight="700">实线：细胞生物共有（克里克提出）；虚线：部分病毒特有的补充路径（后来发现）</text>
+      </g>
+      <defs>
+        <marker id="cd-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">中心法则图解</text>
+    </svg>
+  );
+}
+
+/* ================= 核苷酸 ================= */
+
+function NucleotideSvg({ active }: { active: number | null; open?: boolean }) {
+  const unit = (cx: number, sugar: string, base: string, color: string, stroke: string) => (
+    <g>
+      <circle cx={cx} cy="84" r="24" fill="#d9e7f2" stroke="#3d6a94" strokeWidth="2.5" />
+      <text x={cx} y="89" textAnchor="middle" fontSize="12.5" fill="#1e4a68" fontWeight="700">磷酸</text>
+      <line x1={cx} y1="108" x2={cx} y2="132" stroke="#5a5a62" strokeWidth="3" />
+      <path d={`M${cx} ${130} L${cx + 34} ${152} L${cx + 21} ${192} L${cx - 21} ${192} L${cx - 34} ${152} Z`} fill={color} stroke={stroke} strokeWidth="2.5" />
+      <text x={cx} y={166} textAnchor="middle" fontSize="12.5" fill={stroke} fontWeight="700">{sugar}</text>
+      <line x1={cx + 26} y1={156} x2={cx + 62} y2={156} stroke="#5a5a62" strokeWidth="3" />
+      <rect x={cx + 64} y={132} width="96" height="48" rx="8" fill="#fdf1e3" stroke="#c98a1d" strokeWidth="2.5" />
+      <text x={cx + 112} y={152} textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">含氮碱基</text>
+      <text x={cx + 112} y={170} textAnchor="middle" fontSize="13" fill="#a58a20" fontWeight="700">{base}</text>
+    </g>
+  );
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        {unit(120, '脱氧核糖', 'A T C G', '#b8d4ea', '#3d6a94')}
+        <text x="120" y="252" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">脱氧核糖核苷酸</text>
+        <text x="120" y="272" textAnchor="middle" fontSize="12.5" fill="#2c6e94">构成 DNA（4 种）</text>
+      </g>
+      <g style={dim(active, 1)}>
+        {unit(360, '核糖', 'A U C G', '#f4d06a', '#b58a3a')}
+        <text x="360" y="252" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">核糖核苷酸</text>
+        <text x="360" y="272" textAnchor="middle" fontSize="12.5" fill="#a58a20">构成 RNA（4 种）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="286" y="120" fontSize="16" fill="#59767c" fontWeight="700">对比</text>
+        <text x="24" y="316" fontSize="13.5" fill="#173b42" fontWeight="700">区分关键：五碳糖（脱氧核糖/核糖）+ 特有碱基（DNA 含 T，RNA 含 U）</text>
+        <text x="24" y="338" fontSize="12" fill="#799398">每个核苷酸 = 1 磷酸 + 1 五碳糖 + 1 碱基，靠"磷酸-五碳糖"骨架连成长链</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">核苷酸（核酸基本单位）结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 酶-底物锁钥模型 ================= */
+
+function EnzymeModelSvg({ active }: { active: number | null; open?: boolean }) {
+  const step = (i: number) => ({ cx: 92 + i * 168, cy: 150 });
+  const enzyme = (cx: number, cy: number, filled: boolean) => (
+    <path
+      d={`M${cx - 52} ${cy} a 52 52 0 0 1 104 0 l -22 0 l -14 22 l -14 -22 Z ${filled ? '' : 'M'}`}
+      fill={filled ? '#f2c98a' : '#f2c98a'}
+      stroke="#b57c16"
+      strokeWidth="3.5"
+      fillRule="evenodd"
+    />
+  );
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 第一步：识别结合 */}
+      <g style={dim(active, 0)}>
+        {enzyme(92, 150, false)}
+        <path d="M92 116 L84 96 L100 96 Z" fill="#7fb8d4" stroke="#3d6a94" strokeWidth="2.5" />
+        <path d="M60 54 Q 92 38 124 54" fill="none" stroke="#3d6a94" strokeWidth="3" strokeDasharray="6 4" markerEnd="url(#ez-arrow)" />
+        <text x="92" y="236" textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">① 底物靠近</text>
+        <text x="92" y="256" textAnchor="middle" fontSize="12" fill="#59767c">活性中心形状互补</text>
+      </g>
+      {/* 第二步：复合物 */}
+      <g style={dim(active, 1)}>
+        {enzyme(260, 150, false)}
+        <path d="M260 118 L252 98 L268 98 Z" fill="#c9503c" stroke="#8c231f" strokeWidth="2.5" />
+        <text x="260" y="76" textAnchor="middle" fontSize="12.5" fill="#8c231f" fontWeight="600">酶-底物复合物</text>
+        <text x="260" y="236" textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">② 结合、催化</text>
+        <text x="260" y="256" textAnchor="middle" fontSize="12" fill="#59767c">降低活化能</text>
+      </g>
+      {/* 第三步：产物释放 */}
+      <g style={dim(active, 2)}>
+        {enzyme(428, 150, false)}
+        <path d="M398 88 L412 68 L424 84 Z" fill="#7fb8d4" stroke="#3d6a94" strokeWidth="2.5" />
+        <path d="M436 84 L448 68 L462 90 Z" fill="#7fb8d4" stroke="#3d6a94" strokeWidth="2.5" />
+        <path d="M404 92 Q 396 104 402 112" fill="none" stroke="#3d6a94" strokeWidth="2.5" strokeDasharray="5 4" markerEnd="url(#ez-arrow)" />
+        <text x="428" y="236" textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">③ 产物释放</text>
+        <text x="428" y="256" textAnchor="middle" fontSize="12" fill="#59767c">酶恢复原状可重复用</text>
+      </g>
+      {/* 要点 */}
+      <g style={dim(active, 1)}>
+        <rect x="26" y="286" width="468" height="60" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="42" y="310" fontSize="13.5" fill="#173b42" fontWeight="700">专一性：一把钥匙开一把锁（活性中心与底物互补）；高效性：显著降低活化能</text>
+        <text x="42" y="332" fontSize="12" fill="#59767c">条件温和（适宜温度、pH）——过酸、过碱、高温使酶变性失活（空间结构被破坏）</text>
+      </g>
+      <defs>
+        <marker id="ez-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#3d6a94" />
+        </marker>
+      </defs>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">酶-底物结合锁钥模型图解</text>
+    </svg>
+  );
+}
+
+/* ================= 单克隆抗体制备 ================= */
+
+function MonoclonalAntibodySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 两种亲本细胞 */}
+      <g style={dim(active, 0)}>
+        <circle cx="92" cy="104" r="36" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3" />
+        <circle cx="92" cy="104" r="8" fill="#7a4a8a" />
+        <text x="92" y="162" textAnchor="middle" fontSize="12.5" fill="#6a4a9a" fontWeight="600">B 淋巴细胞</text>
+        <text x="92" y="180" textAnchor="middle" fontSize="11.5" fill="#8a6a94">产特异抗体 · 不能增殖</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <circle cx="92" cy="256" r="36" fill="#f0b0a8" stroke="#b0483a" strokeWidth="3" />
+        <circle cx="92" cy="256" r="8" fill="#b0483a" />
+        <text x="92" y="314" textAnchor="middle" fontSize="12.5" fill="#9b3a30" fontWeight="600">骨髓瘤细胞</text>
+        <text x="92" y="332" textAnchor="middle" fontSize="11.5" fill="#b56a62">能无限增殖 · 不产抗体</text>
+      </g>
+      {/* 融合 */}
+      <g style={dim(active, 2)}>
+        <path d="M138 130 Q 180 148 216 166" fill="none" stroke="#5a5a62" strokeWidth="3.5" markerEnd="url(#ma-arrow)" />
+        <path d="M138 240 Q 180 224 216 204" fill="none" stroke="#5a5a62" strokeWidth="3.5" markerEnd="url(#ma-arrow)" />
+        <text x="176" y="186" textAnchor="middle" fontSize="12.5" fill="#59767c" fontWeight="600">细胞融合</text>
+        <text x="176" y="204" textAnchor="middle" fontSize="11.5" fill="#799398">（PEG / 灭活病毒）</text>
+        <circle cx="290" cy="186" r="42" fill="#d9c8ec" stroke="#7a4a8a" strokeWidth="3.5" />
+        <circle cx="276" cy="176" r="8" fill="#7a4a8a" />
+        <circle cx="304" cy="196" r="8" fill="#b0483a" />
+        <text x="290" y="248" textAnchor="middle" fontSize="13" fill="#6a4a9a" fontWeight="700">杂交瘤细胞</text>
+        <text x="290" y="266" textAnchor="middle" fontSize="11.5" fill="#8a6a94">兼具两亲本优点</text>
+      </g>
+      {/* 筛选与生产 */}
+      <g style={dim(active, 3)}>
+        <line x1="336" y1="186" x2="372" y2="186" stroke="#5a5a62" strokeWidth="3.5" markerEnd="url(#ma-arrow)" />
+        <text x="354" y="170" textAnchor="middle" fontSize="12" fill="#59767c">筛选</text>
+        <rect x="378" y="150" width="58" height="72" rx="10" fill="#eef7f6" stroke="#0e6f75" strokeWidth="3" />
+        <path d="M390 200 Q 407 186 424 200" fill="none" stroke="#0e6f75" strokeWidth="3" />
+        <text x="407" y="248" textAnchor="middle" fontSize="12" fill="#0a626a" fontWeight="600">体外培养</text>
+        <line x1="440" y1="186" x2="464" y2="186" stroke="#5a5a62" strokeWidth="3.5" markerEnd="url(#ma-arrow)" />
+        <path d="M470 172 L494 172 L494 214 Q 482 226 470 214 Z" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.5" />
+        <text x="482" y="248" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="600">抗体</text>
+      </g>
+      {/* 优点 */}
+      <g style={dim(active, 3)}>
+        <rect x="200" y="290" width="300" height="58" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="216" y="314" fontSize="13" fill="#173b42" fontWeight="700">单克隆抗体优点：特异性强、灵敏度高</text>
+        <text x="216" y="334" fontSize="12" fill="#59767c">并可大量制备——用于诊断（试纸）与靶向治疗</text>
+      </g>
+      <defs>
+        <marker id="ma-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">单克隆抗体制备流程（动物细胞融合技术）——"两亲本优点的合体"</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">单克隆抗体制备流程图</text>
+    </svg>
+  );
+}
+
+/* ================= 渗透作用装置 ================= */
+
+function OsmosisSetupSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 烧杯 */}
+      <g style={dim(active, 0)}>
+        <path d="M46 160 L 60 330 L 268 330 L 282 160" fill="none" stroke="#5a7a8a" strokeWidth="4" strokeLinecap="round" />
+        <rect x="58" y="230" width="216" height="96" fill="#cfe4f0" opacity="0.85" />
+        <text x="168" y="318" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">烧杯：清水（低浓度）</text>
+      </g>
+      {/* 漏斗 */}
+      <g style={dim(active, 1)}>
+        <path d="M130 150 L 168 96 L 206 150 Z" fill="#fdf1e3" stroke="#c98a1d" strokeWidth="3" />
+        <rect x="152" y="36" width="32" height="64" fill="#f6d7c4" stroke="#c98a1d" strokeWidth="2.5" />
+        <line x1="126" y1="152" x2="210" y2="152" stroke="#b0483a" strokeWidth="5" />
+        <text x="238" y="146" fontSize="13" fill="#b0483a" fontWeight="700">半透膜</text>
+        <text x="238" y="164" fontSize="12" fill="#c97a5a">（只允许水分子过）</text>
+        <text x="238" y="86" fontSize="13.5" fill="#8a671b" fontWeight="700">蔗糖溶液（高浓度）</text>
+        <text x="238" y="60" fontSize="13" fill="#b0483a" fontWeight="700">液面持续上升 ↑</text>
+      </g>
+      {/* 水分子移动 */}
+      <g style={dim(active, 2)}>
+        <path d="M100 292 Q 130 260 158 210 Q 166 192 166 172" fill="none" stroke="#3d7e9e" strokeWidth="4" markerEnd="url(#os-arrow)" />
+        <text x="60" y="252" fontSize="12.5" fill="#1e4a68" fontWeight="700">水分子净移动</text>
+        <text x="52" y="130" fontSize="12" fill="#59767c">水：低浓度 → 高浓度</text>
+      </g>
+      {/* 原理对应 */}
+      <g style={dim(active, 3)}>
+        <rect x="300" y="176" width="204" height="154" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="316" y="202" fontSize="13.5" fill="#173b42" fontWeight="700">对应到细胞：</text>
+        <text x="316" y="226" fontSize="12.5" fill="#46666d">半透膜 ↔ 原生质层</text>
+        <text x="316" y="246" fontSize="12" fill="#799398">（细胞膜+液泡膜+其间细胞质）</text>
+        <text x="316" y="270" fontSize="12.5" fill="#46666d">浓度差 ↔ 细胞液 vs 外界液</text>
+        <text x="316" y="294" fontSize="12.5" fill="#2c6e94" fontWeight="600">外液＞细胞液 → 质壁分离</text>
+        <text x="316" y="316" fontSize="12.5" fill="#2f7a4d" fontWeight="600">外液＜细胞液 → 复原</text>
+      </g>
+      <defs>
+        <marker id="os-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#3d7e9e" />
+        </marker>
+      </defs>
+      <text x="16" y="46" fontSize="13.5" fill="#2c6e94" fontWeight="700">渗透作用两个条件：半透膜 + 膜两侧浓度差</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">渗透作用装置图（质壁分离实验原理）</text>
+    </svg>
+  );
+}
+
+/* ================= 神经纤维电位 ================= */
+
+function NervePotentialSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 静息区 */}
+      <g style={dim(active, 0)}>
+        <rect x="40" y="140" width="240" height="70" rx="33" fill="#f6d7c4" stroke="#b58a5f" strokeWidth="3.5" />
+        {[[70, 126], [110, 126], [150, 126], [190, 126], [230, 126]].map(([x, y], i) => (
+          <text key={i} x={x} y={y + 5} textAnchor="middle" fontSize="13.5" fill="#3d7e9e" fontWeight="700">+</text>
+        ))}
+        {[[70, 228], [110, 228], [150, 228], [190, 228], [230, 228]].map(([x, y], i) => (
+          <text key={i} x={x} y={y} textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">−</text>
+        ))}
+        <text x="140" y="100" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">静息电位：外正内负</text>
+        <text x="76" y="196" fontSize="12.5" fill="#1e4a68" fontWeight="600">K⁺ 外流 →</text>
+      </g>
+      {/* 兴奋区 */}
+      <g style={dim(active, 1)}>
+        <rect x="280" y="140" width="200" height="70" rx="33" fill="#f0b896" stroke="#b0483a" strokeWidth="3.5" />
+        {[[306, 126], [346, 126], [386, 126], [426, 126]].map(([x, y], i) => (
+          <text key={i} x={x} y={y + 5} textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">−</text>
+        ))}
+        {[[306, 228], [346, 228], [386, 228], [426, 228]].map(([x, y], i) => (
+          <text key={i} x={x} y={y} textAnchor="middle" fontSize="13.5" fill="#9b3a30" fontWeight="700">+</text>
+        ))}
+        <text x="380" y="100" textAnchor="middle" fontSize="13.5" fill="#b0483a" fontWeight="700">动作电位：外负内正</text>
+        <text x="368" y="196" fontSize="12.5" fill="#9b3a30" fontWeight="600">← Na⁺ 内流</text>
+      </g>
+      {/* 局部电流 */}
+      <g style={dim(active, 2)}>
+        <path d="M212 112 Q 258 78 306 110" fill="none" stroke="#5a5a62" strokeWidth="3.5" markerEnd="url(#np-arrow)" />
+        <path d="M306 240 Q 258 272 212 244" fill="none" stroke="#5a5a62" strokeWidth="3.5" markerEnd="url(#np-arrow)" />
+        <text x="258" y="66" textAnchor="middle" fontSize="13" fill="#4b6c73" fontWeight="700">局部电流</text>
+        <text x="258" y="292" textAnchor="middle" fontSize="12" fill="#4b6c73">未兴奋部位 → 兴奋部位（膜内方向 = 传导方向）</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <text x="16" y="330" fontSize="13.5" fill="#173b42" fontWeight="700">刺激 → 膜电位翻转 → 与邻近部位形成电位差 → 局部电流依次传导（双向、不衰减）</text>
+      </g>
+      <defs>
+        <marker id="np-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">神经纤维电位变化与局部电流图解</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 /** 偏"实验操作/过程"的标本：不在图鉴页显示，改为在互动实验页作为相关图解出现。 */
@@ -2847,6 +3265,8 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
   'fertilization',
   'artificialPollination',
   'aerobicRespiration',
+  'osmosisSetup',
+  'nervePotential',
 ];
 
 export const SPECIMENS: Specimen[] = [
@@ -3501,5 +3921,117 @@ export const SPECIMENS: Specimen[] = [
       { name: '二次免疫', desc: '初次免疫留下记忆细胞；再次遇到同一抗原时，记忆细胞迅速增殖分化，抗体更快更多——疫苗的原理。' },
     ],
     Svg: AntibodySvg,
+  },
+  {
+    id: 'nucleus',
+    name: '细胞核',
+    kicker: '专有名词 · 细胞结构',
+    intro: '细胞核是遗传信息库，是细胞代谢和遗传的控制中心——双层核膜、核孔、核仁与染色质各司其职。',
+    parts: [
+      { name: '核膜（双层膜）', desc: '把核内物质与细胞质分开；外膜常与内质网相连——生物膜系统的一员。' },
+      { name: '核孔', desc: '实现核质之间频繁的物质交换和信息交流：mRNA 出核、蛋白质入核都走这里（DNA 不出去）。' },
+      { name: '核仁', desc: '与某种 RNA（rRNA）的合成以及核糖体的形成有关——代谢旺盛的细胞核仁明显更大。' },
+      { name: '染色质', desc: 'DNA 的主要载体——遗传信息就储存在染色质的 DNA 上（见"染色体与染色质"条目）。' },
+      { name: '功能定位', desc: '细胞核是遗传信息库，是细胞代谢和遗传的控制中心——与"细胞核移植"实验证据配套记忆。' },
+    ],
+    Svg: NucleusSvg,
+  },
+  {
+    id: 'photosynthesisProcess',
+    name: '光合作用过程',
+    kicker: '专有名词 · 全过程图解',
+    intro: '光反应在类囊体薄膜上（水的光解、合成 ATP），暗反应在叶绿体基质中（CO₂ 固定、C₃ 还原）——两阶段靠 ATP 和 [H] 衔接。',
+    parts: [
+      { name: '光反应（类囊体薄膜）', desc: '必须光：水光解释放 O₂、生成 H⁺，同时把光能转化为 ATP 和 NADPH（[H]）中的活跃化学能。' },
+      { name: '暗反应（叶绿体基质）', desc: '有光无光都能进行（短时间）：CO₂ 与 C₅ 结合固定成 2 个 C₃，C₃ 再被还原成糖类。' },
+      { name: '物质联系', desc: '光反应为暗反应提供 ATP 和 [H]；暗反应为光反应提供 ADP、Pi 和 NADP⁺——相互依存。' },
+      { name: '元素去痕', desc: 'O₂ 全部来自水的光解；CO₂ 中的 C 进入有机物；H 从水经 [H] 进入有机物——同位素标记题常考。' },
+      { name: '总反应式', desc: 'CO₂ + H₂O →（CH₂O）+ O₂（条件：光能、叶绿体）——能量变化：光能 → 有机物中稳定的化学能。' },
+    ],
+    Svg: PhotosynthesisProcessSvg,
+  },
+  {
+    id: 'centralDogma',
+    name: '中心法则',
+    kicker: '专有名词 · 遗传信息传递',
+    intro: '遗传信息从 DNA 传给 RNA、再传给蛋白质；后来补充了 RNA 自我复制与逆转录——实线是细胞生物共有，虚线只在部分病毒。',
+    parts: [
+      { name: 'DNA 复制', desc: '细胞分裂前的信息传递：亲代 DNA → 两个子代 DNA（半保留复制）。' },
+      { name: '转录', desc: '主要在细胞核：以 DNA 一条链为模板合成 mRNA——把遗传信息"抄写"出去。' },
+      { name: '翻译', desc: '在核糖体：以 mRNA 为模板、tRNA 搬运氨基酸，合成有一定氨基酸序列的蛋白质。' },
+      { name: 'RNA 复制与逆转录', desc: '某些病毒（如烟草花叶病毒、HIV）才有：RNA 复制 RNA；逆转录以 RNA 合成 DNA——中心法则的补充。' },
+      { name: '意义', desc: '解释了遗传信息如何决定性状：基因控制蛋白质的合成（直接控制）或控制酶的合成控制代谢（间接控制）。' },
+    ],
+    Svg: CentralDogmaSvg,
+  },
+  {
+    id: 'nucleotide',
+    name: '核苷酸',
+    kicker: '专有名词 · 核酸的基本单位',
+    intro: '核酸的基本单位：一分子磷酸 + 一分子五碳糖 + 一分子含氮碱基——五碳糖和特有碱基区分了 DNA 与 RNA 的单体。',
+    parts: [
+      { name: '磷酸', desc: '连接在五碳糖上，是核酸长链"骨架"的一部分。' },
+      { name: '五碳糖', desc: '区分两种核酸的关键之一：DNA 用脱氧核糖，RNA 用核糖——名字里的差别就在这里。' },
+      { name: '含氮碱基', desc: 'DNA 有 A、T、C、G 四种；RNA 有 A、U、C、G——特有碱基 T/U 是常考判断点。' },
+      { name: '聚合成长链', desc: '4 种脱氧核苷酸聚合成 DNA，4 种核糖核苷酸聚合成 RNA；磷酸-五碳糖交替连接为骨架。' },
+      { name: '多样性', desc: '核苷酸数目成千上万、排列顺序千变万化——构成 DNA 分子的多样性，是生物多样性的根源。' },
+    ],
+    Svg: NucleotideSvg,
+  },
+  {
+    id: 'enzymeModel',
+    name: '酶-底物锁钥模型',
+    kicker: '专有名词 · 酶的作用原理',
+    intro: '酶的活性中心与底物形状互补，像钥匙配锁——结合后降低化学反应的活化能，反应完成后酶恢复原状、可以重复使用。',
+    parts: [
+      { name: '活性中心', desc: '酶表面与底物互补结合的部位——形状不匹配就结合不上，这是专一性的结构基础。' },
+      { name: '降低活化能', desc: '酶把普通分子变成容易反应的"过渡状态"，显著降低反应门槛——所以反应高效。' },
+      { name: '酶本身不变', desc: '反应前后酶的结构和数量不变，可以反复使用——少量酶就能催化大量底物。' },
+      { name: '条件温和', desc: '适宜温度和 pH 下活性最高；高温、过酸、过碱破坏空间结构 → 活性永久丧失（低温只是抑制）。' },
+      { name: '对比无机催化剂', desc: '高效性（降低活化能更显著）、专一性（一种酶催化一种或一类反应）——对照实验题的高频结论。' },
+    ],
+    Svg: EnzymeModelSvg,
+  },
+  {
+    id: 'monoclonalAntibody',
+    name: '单克隆抗体制备',
+    kicker: '专有名词 · 选必 3 流程图',
+    intro: '让 B 淋巴细胞与骨髓瘤细胞融合成杂交瘤细胞：既会"产专一抗体"又能"无限增殖"——体外培养或小鼠腹水中提取单克隆抗体。',
+    parts: [
+      { name: '免疫的 B 淋巴细胞', desc: '能产生特异性抗体，但在体外不能无限增殖——"会干活、不长寿"。' },
+      { name: '骨髓瘤细胞', desc: '能无限增殖，但不产生抗体——"长寿、不干活"。' },
+      { name: '细胞融合与筛选', desc: '用 PEG 或灭活病毒诱导融合，再筛选出同时具备两亲本优点的杂交瘤细胞。' },
+      { name: '体内/体外生产', desc: '杂交瘤细胞可体外培养或注射到小鼠腹腔，从培养液/腹水中提取大量单克隆抗体。' },
+      { name: '优点与应用', desc: '特异性强、灵敏度高、可大量制备——早早孕试纸、抗原检测、靶向药物都靠它。' },
+    ],
+    Svg: MonoclonalAntibodySvg,
+  },
+  {
+    id: 'osmosisSetup',
+    name: '渗透作用装置',
+    kicker: '实验原理 · 经典装置图',
+    intro: '半透膜两侧溶液存在浓度差时，水分子向高浓度一侧净移动——漏斗内液面上升，这就是质壁分离实验的原理。',
+    parts: [
+      { name: '半透膜', desc: '只允许水分子等小分子通过、蔗糖分子不能通过——多孔性膜的孔径决定"谁能过"。' },
+      { name: '浓度差', desc: '渗透作用发生的两个条件之一：膜两侧必须有浓度差，水才发生净移动。' },
+      { name: '液面上升', desc: '水净进入漏斗使内液面高于外液面；上升的压力与渗透压差平衡后停止——不是无限上升。' },
+      { name: '对应到细胞', desc: '半透膜 ↔ 原生质层（细胞膜+液泡膜+其间细胞质）；浓度差 ↔ 外界溶液与细胞液的浓度差。' },
+      { name: '方向判断', desc: '外界溶液＞细胞液 → 质壁分离；＜ → 复原；＝ → 动态平衡——判断题的核心口诀。' },
+    ],
+    Svg: OsmosisSetupSvg,
+  },
+  {
+    id: 'nervePotential',
+    name: '神经纤维上的电位',
+    kicker: '实验原理 · 电位变化图解',
+    intro: '静息时外正内负（K⁺ 外流）；受刺激处 Na⁺ 内流变成外负内正（动作电位）——电位差形成局部电流，兴奋传向未兴奋部位。',
+    parts: [
+      { name: '静息电位', desc: '外正内负：静息时细胞膜主要对 K⁺ 有通透性，K⁺ 外流形成"内负外正"。' },
+      { name: '动作电位', desc: '受刺激后膜对 Na⁺ 通透性增加，Na⁺ 内流 → 膜电位倒转成"外负内正"。' },
+      { name: '局部电流', desc: '兴奋部位与未兴奋部位之间存在电位差 → 电荷移动形成局部电流，刺激相邻部位同样翻转。' },
+      { name: '膜内外方向', desc: '膜内：电流方向 = 兴奋传导方向；膜外：相反——电流计偏转题的核心结论。' },
+      { name: '传导特点', desc: '离体神经纤维上双向传导；在反射弧中（有突触）只能单向传递——两个场景分开记。' },
+    ],
+    Svg: NervePotentialSvg,
   },
 ];
