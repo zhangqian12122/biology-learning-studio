@@ -1425,6 +1425,302 @@ function FluVirusSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 高尔基体 ================= */
+
+function GolgiSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 内质网（来源侧） */}
+      <g style={dim(active, 0)}>
+        <path d="M20 120 Q 60 100 96 128 M 24 168 Q 62 150 100 172 M 20 214 Q 64 198 102 218" fill="none" stroke="#7fb8d4" strokeWidth="10" strokeLinecap="round" />
+        <text x="22" y="96" fontSize="13" fill="#2c6e94" fontWeight="600">来自内质网的囊泡</text>
+      </g>
+      {/* 扁平囊堆（主体） */}
+      <g style={dim(active, 1)}>
+        {[132, 162, 192, 222, 252].map((y, i) => (
+          <path key={i} d={`M110 ${y} Q 200 ${y - 26} 290 ${y} Q 200 ${y + 16} 110 ${y} Z`} fill="#f0c98a" stroke="#b58a3a" strokeWidth="3" />
+        ))}
+        <text x="200" y="290" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">扁平囊（单层膜）堆叠成"发送站"</text>
+      </g>
+      {/* 形成面 / 成熟面 */}
+      <g style={dim(active, 2)}>
+        <text x="92" y="126" textAnchor="end" fontSize="13" fill="#3d7e9e" fontWeight="700">形成面（cis）</text>
+        <text x="92" y="144" textAnchor="end" fontSize="12" fill="#5a94ae">朝向内质网</text>
+        <text x="316" y="214" fontSize="13" fill="#c2703d" fontWeight="700">成熟面（trans）</text>
+        <text x="316" y="232" fontSize="12" fill="#d08a5a">出芽生成囊泡</text>
+      </g>
+      {/* 囊泡输出 */}
+      <g style={dim(active, 3)}>
+        <circle cx="352" cy="150" r="14" fill="#f4d9b8" stroke="#c2703d" strokeWidth="2.5" />
+        <circle cx="380" cy="120" r="10" fill="#f4d9b8" stroke="#c2703d" strokeWidth="2.5" />
+        <path d="M308 158 Q 334 156 348 150" fill="none" stroke="#c2703d" strokeWidth="2.5" strokeDasharray="5 4" />
+        <text x="390" y="182" textAnchor="middle" fontSize="13.5" fill="#c2703d" fontWeight="700">囊泡 → 细胞膜/溶酶体</text>
+      </g>
+      {/* 功能说明 */}
+      <g style={dim(active, 1)}>
+        <text x="16" y="330" fontSize="13.5" fill="#8a671b" fontWeight="700">对蛋白质做加工、分类、包装（分泌物的一站中转）</text>
+        <text x="16" y="350" fontSize="12" fill="#a58a4a">植物细胞分裂时还参与细胞壁的形成</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">高尔基体结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 内质网 ================= */
+
+function EndoplasmicReticulumSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 细胞核与核膜（内质网内连核膜） */}
+      <g style={dim(active, 2)}>
+        <circle cx="112" cy="180" r="64" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3.5" />
+        <circle cx="112" cy="180" r="8" fill="#7a4a8a" />
+        <text x="112" y="266" textAnchor="middle" fontSize="13.5" fill="#7a4a8a" fontWeight="700">细胞核（核膜与内质网相连）</text>
+      </g>
+      {/* 网状管道（主体） */}
+      <g style={dim(active, 0)}>
+        <path d="M172 132 Q 236 92 306 116 Q 372 138 430 112 M 176 180 Q 250 160 320 184 Q 390 206 452 178 M 170 232 Q 244 246 318 224 Q 386 206 444 236"
+          fill="none" stroke="#8fb8d4" strokeWidth="13" strokeLinecap="round" />
+        <text x="312" y="70" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">膜连接成的网状管道（单层膜）</text>
+      </g>
+      {/* 粗面内质网：附着核糖体 */}
+      <g style={dim(active, 1)}>
+        {[[246, 148], [286, 140], [326, 158], [366, 170], [406, 150]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="6.5" fill="#1e5a8e" />
+        ))}
+        <text x="350" y="222" fontSize="13" fill="#1e5a8e" fontWeight="700">粗面内质网（附着核糖体）</text>
+        <text x="350" y="240" fontSize="12" fill="#4a7a9a">合成、加工分泌蛋白</text>
+      </g>
+      {/* 滑面内质网 */}
+      <g style={dim(active, 3)}>
+        <path d="M200 300 Q 246 272 292 300 Q 338 328 384 300" fill="none" stroke="#a8c8a8" strokeWidth="12" strokeLinecap="round" />
+        <text x="292" y="342" textAnchor="middle" fontSize="13" fill="#4a7a5a" fontWeight="700">滑面内质网：合成脂质（如性激素）</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <text x="16" y="52" fontSize="13.5" fill="#2c6e94" fontWeight="700">内连核膜、外连细胞膜——物质运输的"内通道"</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">内质网结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 核糖体 ================= */
+
+function RibosomeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 大亚基 + 小亚基 + mRNA */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="240" cy="128" rx="74" ry="40" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="3.5" />
+        <text x="240" y="124" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">大亚基</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <path d="M182 158 Q 240 176 298 158 L 298 182 Q 240 198 182 182 Z" fill="#8fb8d4" stroke="#3d6a94" strokeWidth="3" />
+        <text x="240" y="226" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">小亚基（mRNA 从中间穿过）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <path d="M96 176 Q 168 168 240 176 Q 312 184 384 174" fill="none" stroke="#ff9f43" strokeWidth="4.5" strokeLinecap="round" />
+        {[132, 172, 212, 252, 292, 332].map((x, i) => (
+          <g key={i}>
+            <circle cx={x} cy={176} r="7" fill="#e08030" />
+            <text x={x} y={180} textAnchor="middle" fontSize="12" fill="#7a3a10" fontWeight="700">{['A', 'U', 'G', 'C', 'U', 'A'][i]}</text>
+          </g>
+        ))}
+        <text x="96" y="152" fontSize="13" fill="#c97020" fontWeight="700">mRNA（翻译的模板）</text>
+      </g>
+      {/* 肽链延伸 */}
+      <g style={dim(active, 3)}>
+        <path d="M286 158 Q 300 130 320 132 Q 340 134 348 112" fill="none" stroke="#4c8f5f" strokeWidth="5" strokeLinecap="round" />
+        {[[298, 134], [314, 128], [332, 122], [348, 110]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="5" fill="#4c8f5f" />
+        ))}
+        <text x="330" y="92" fontSize="13.5" fill="#2f7a4d" fontWeight="700">多肽链（氨基酸逐个加上）</text>
+      </g>
+      {/* 两种存在形式对比 */}
+      <g style={dim(active, 4)}>
+        <rect x="36" y="264" width="204" height="78" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <circle cx="76" cy="296" r="8" fill="#1e5a8e" />
+        <circle cx="98" cy="296" r="8" fill="#1e5a8e" />
+        <line x1="56" y1="314" x2="150" y2="314" stroke="#7fb8d4" strokeWidth="8" strokeLinecap="round" />
+        <text x="58" y="332" fontSize="12.5" fill="#2c6e94">附着核糖体 → 分泌蛋白</text>
+        <rect x="280" y="264" width="204" height="78" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <circle cx="326" cy="296" r="8" fill="#1e5a8e" />
+        <circle cx="348" cy="296" r="8" fill="#1e5a8e" />
+        <circle cx="370" cy="296" r="8" fill="#1e5a8e" />
+        <text x="294" y="332" fontSize="12.5" fill="#2c6e94">游离核糖体 → 细胞自身蛋白</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">核糖体结构模式图（无膜细胞器）</text>
+    </svg>
+  );
+}
+
+/* ================= 溶酶体 ================= */
+
+function LysosomeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 溶酶体主体 */}
+      <g style={dim(active, 0)}>
+        <circle cx="200" cy="170" r="92" fill="#f6d7c4" stroke="#c2703d" strokeWidth="4" />
+        <circle cx="200" cy="170" r="92" fill="none" stroke="#f0b896" strokeWidth="9" opacity="0.6" />
+        <text x="200" y="292" textAnchor="middle" fontSize="13.5" fill="#b0483a" fontWeight="700">单层膜包裹的"消化车间"</text>
+      </g>
+      {/* 内部水解酶 */}
+      <g style={dim(active, 1)}>
+        {[[152, 128], [208, 112], [252, 150], [162, 196], [224, 190], [258, 216], [184, 236], [236, 246]].map(([x, y], i) => (
+          <path key={i} d={`M${x - 9} ${y} L${x + 9} ${y} M${x} ${y - 9} L${x} ${y + 9} M${x - 6} ${y - 6} L${x + 6} ${y + 6} M${x - 6} ${y + 6} L${x + 6} ${y - 6}`} stroke="#c05a3a" strokeWidth="2.6" strokeLinecap="round" />
+        ))}
+        <text x="42" y="76" fontSize="13.5" fill="#b0483a" fontWeight="700">多种水解酶（60 余种）</text>
+        <text x="42" y="94" fontSize="12" fill="#c97a5a">酸性环境 · 能分解各类生物大分子</text>
+      </g>
+      {/* 吞噬病菌 */}
+      <g style={dim(active, 2)}>
+        <circle cx="384" cy="92" r="34" fill="#f4d9b8" stroke="#c2703d" strokeWidth="2.5" strokeDasharray="7 5" />
+        <ellipse cx="384" cy="92" rx="16" ry="9" fill="#5f8a54" stroke="#4a6f42" strokeWidth="2" />
+        <line x1="370" y1="92" x2="398" y2="92" stroke="#3d5f38" strokeWidth="1.6" />
+        <text x="384" y="146" textAnchor="middle" fontSize="13" fill="#b0483a" fontWeight="700">吞噬病毒、病菌并消化</text>
+      </g>
+      {/* 自噬衰老细胞器 */}
+      <g style={dim(active, 3)}>
+        <circle cx="392" cy="236" r="34" fill="#f4d9b8" stroke="#c2703d" strokeWidth="2.5" strokeDasharray="7 5" />
+        <ellipse cx="392" cy="236" rx="17" ry="10" fill="#f0a06a" stroke="#c2703d" strokeWidth="2" />
+        <path d="M378 236 q 7 -7 14 0 q 7 7 14 0" fill="none" stroke="#c2703d" strokeWidth="1.8" />
+        <text x="392" y="290" textAnchor="middle" fontSize="13" fill="#b0483a" fontWeight="700">分解衰老的细胞器（自噬）</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <text x="16" y="330" fontSize="13.5" fill="#b0483a" fontWeight="700">营养不足时溶酶体可分解自身物质应急供能（维持细胞正常功能）</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">溶酶体结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 突触 ================= */
+
+function SynapseSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 轴突 + 突触小体 */}
+      <g style={dim(active, 0)}>
+        <path d="M14 96 Q 90 84 150 108" fill="none" stroke="#9a6fb5" strokeWidth="14" strokeLinecap="round" />
+        <ellipse cx="216" cy="112" rx="74" ry="52" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="3.5" />
+        <text x="216" y="186" textAnchor="middle" fontSize="13.5" fill="#7a4a8a" fontWeight="700">突触小体（轴突末梢膨大）</text>
+      </g>
+      {/* 突触小泡 */}
+      <g style={dim(active, 1)}>
+        {[[184, 96], [222, 84], [254, 104], [200, 128], [244, 128]].map(([x, y], i) => (
+          <g key={i}>
+            <circle cx={x} cy={y} r="12" fill="#e8d4f2" stroke="#7a4a8a" strokeWidth="2.2" />
+            <circle cx={x} cy={y} r="4" fill="#5a9a4a" />
+          </g>
+        ))}
+        <text x="330" y="52" fontSize="13.5" fill="#7a4a8a" fontWeight="700">突触小泡（含神经递质）</text>
+        <line x1="326" y1="56" x2="270" y2="86" stroke="#7a4a8a" strokeWidth="1.4" />
+      </g>
+      {/* 递质释放 + 突触间隙 */}
+      <g style={dim(active, 2)}>
+        {[[248, 178], [268, 202], [244, 226], [268, 248]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="5.5" fill="#5a9a4a" />
+        ))}
+        <line x1="112" y1="252" x2="392" y2="252" stroke="#8aa1a6" strokeWidth="2" strokeDasharray="9 7" />
+        <text x="126" y="276" fontSize="13.5" fill="#4b6c73" fontWeight="700">突触间隙（约 20 nm，充盈组织液）</text>
+      </g>
+      {/* 突触前膜 / 后膜 */}
+      <g style={dim(active, 3)}>
+        <path d="M158 158 Q 216 176 274 158" fill="none" stroke="#b0483a" strokeWidth="5" strokeLinecap="round" />
+        <text x="86" y="166" fontSize="13" fill="#b0483a" fontWeight="700">突触前膜</text>
+      </g>
+      <g style={dim(active, 4)}>
+        <path d="M130 300 Q 260 282 400 300" fill="none" stroke="#2c6e94" strokeWidth="5" strokeLinecap="round" />
+        {[182, 244, 306].map((x, i) => (
+          <path key={i} d={`M${x} 296 q 8 -14 16 0`} fill="none" stroke="#2c6e94" strokeWidth="3.5" strokeLinecap="round" />
+        ))}
+        <text x="404" y="306" fontSize="13" fill="#2c6e94" fontWeight="700">突触后膜（有受体）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="16" y="330" fontSize="13.5" fill="#5a8a3a" fontWeight="700">信号：电 → 化学（递质）→ 电；递质只能由前膜释放作用于后膜——单向传递</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">突触结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 有丝分裂各期 ================= */
+
+function MitosisStagesSvg({ active }: { active: number | null; open?: boolean }) {
+  const phases = ['间期', '前期', '中期', '后期', '末期'];
+  const panel = (i: number) => ({ cx: 62 + i * 100, cy: 140, r: 40 });
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {phases.map((name, i) => {
+        const { cx, cy, r } = panel(i);
+        return (
+          <g key={name} style={dim(active, i)}>
+            <circle cx={cx} cy={cy} r={r} fill="#eaf5f7" stroke="#5f8a94" strokeWidth="3" />
+            {name === '间期' ? (
+              <>
+                <circle cx={cx} cy={cy} r="24" fill="none" stroke="#8a5a8f" strokeWidth="2" strokeDasharray="5 4" />
+                {[[-10, -6], [4, 2], [-4, 10], [10, 10], [8, -10]].map(([dx, dy], j) => (
+                  <path key={j} d={`M${cx + dx} ${cy + dy} q 5 -4 10 0 q 5 4 10 0`} fill="none" stroke="#7a4a8a" strokeWidth="2.4" strokeLinecap="round" />
+                ))}
+              </>
+            ) : null}
+            {name === '前期' ? (
+              <>
+                {[-18, 2, 14].map((dx, j) => (
+                  <g key={j} transform={`translate(${cx + dx} ${cy + (j - 1) * 14})`}>
+                    <path d="M0 -9 C 5 -5, 5 5, 0 9 C -5 5, -5 -5, 0 -9 M0 -9 C -5 -5, -5 5, 0 9" fill="none" stroke="#7a4a8a" strokeWidth="3" strokeLinecap="round" />
+                  </g>
+                ))}
+                <text x={cx} y={cy + 30} textAnchor="middle" fontSize="12" fill="#5f8a94">核膜消失</text>
+              </>
+            ) : null}
+            {name === '中期' ? (
+              <>
+                <line x1={cx - 30} y1={cy} x2={cx + 30} y2={cy} stroke="#c98a1d" strokeWidth="2" strokeDasharray="4 3" />
+                {[-20, 0, 20].map((dx, j) => (
+                  <g key={j} transform={`translate(${cx + dx} ${cy})`}>
+                    <path d="M0 -8 C 4 -4, 4 4, 0 8 C -4 4, -4 -4, 0 -8 M0 -8 C -4 -4, -4 4, 0 8" fill="none" stroke="#7a4a8a" strokeWidth="3" strokeLinecap="round" />
+                  </g>
+                ))}
+                <circle cx={cx - 34} cy={cy - 18} r="4" fill="#c98a1d" />
+                <circle cx={cx + 34} cy={cy - 18} r="4" fill="#c98a1d" />
+              </>
+            ) : null}
+            {name === '后期' ? (
+              <>
+                {[-20, 0, 20].map((dx, j) => (
+                  <g key={j}>
+                    <path d={`M${cx + dx} ${cy - 26} C ${cx + dx + 4} ${cy - 18}, ${cx + dx + 4} ${cy - 12}, ${cx + dx} ${cy - 8} M${cx + dx} ${cy - 26} C ${cx + dx - 4} ${cy - 18}, ${cx + dx - 4} ${cy - 12}, ${cx + dx} ${cy - 8}`} fill="none" stroke="#7a4a8a" strokeWidth="2.6" strokeLinecap="round" />
+                    <path d={`M${cx + dx} ${cy + 8} C ${cx + dx + 4} ${cy + 14}, ${cx + dx + 4} ${cy + 20}, ${cx + dx} ${cy + 26} M${cx + dx} ${cy + 8} C ${cx + dx - 4} ${cy + 14}, ${cx + dx - 4} ${cy + 20}, ${cx + dx} ${cy + 26}`} fill="none" stroke="#7a4a8a" strokeWidth="2.6" strokeLinecap="round" />
+                  </g>
+                ))}
+                <text x={cx} y={cy + 40} textAnchor="middle" fontSize="12" fill="#5f8a94">分向两极</text>
+              </>
+            ) : null}
+            {name === '末期' ? (
+              <>
+                <circle cx={cx - 16} cy={cy} r="16" fill="none" stroke="#8a5a8f" strokeWidth="2" />
+                <circle cx={cx + 16} cy={cy} r="16" fill="none" stroke="#8a5a8f" strokeWidth="2" />
+                {[[-18, -4], [14, 6], [-12, 8], [18, -6]].map(([dx, dy], j) => (
+                  <path key={j} d={`M${cx + dx} ${cy + dy} q 4 -3 8 0 q 4 3 8 0`} fill="none" stroke="#7a4a8a" strokeWidth="2.2" strokeLinecap="round" />
+                ))}
+                <path d={`M${cx} ${cy - 40} Q ${cx - 6} ${cy} ${cx} ${cy + 40}`} fill="none" stroke="#5f8a94" strokeWidth="2" strokeDasharray="4 3" />
+              </>
+            ) : null}
+            <text x={cx} y={cy + r + 24} textAnchor="middle" fontSize="13.5" fill="#173b42" fontWeight="700">{name}</text>
+          </g>
+        );
+      })}
+      <text x="16" y="58" fontSize="13.5" fill="#2c6e94" fontWeight="700">染色体行为是划分分裂期的依据：复制 → 凝缩 → 排队 → 分开 → 成两核</text>
+      <g style={dim(active, 2)}>
+        <text x="16" y="330" fontSize="13.5" fill="#8a671b" fontWeight="700">中期：着丝粒排在赤道板上，染色体形态数目最清晰（观察计数最佳时期）</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">有丝分裂各期染色体行为模式图（动物细胞）</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 export const SPECIMENS: Specimen[] = [
@@ -1441,6 +1737,20 @@ export const SPECIMENS: Specimen[] = [
       { name: '神经末梢', desc: '轴突末端的细小分支，把兴奋传递给下一个神经元或效应器（支配的肌肉、腺体）。' },
     ],
     Svg: NeuronSvg,
+  },
+  {
+    id: 'synapse',
+    name: '突触',
+    kicker: '神经调节 · 结构模式图',
+    intro: '神经元之间传递信息的"接头"：电信号传到末梢，换成化学信号（神经递质）跨过间隙，再变回电信号。',
+    parts: [
+      { name: '突触小体', desc: '轴突末梢膨大的部分，内含大量突触小泡和线粒体——是"发货仓库"。' },
+      { name: '突触小泡', desc: '储存神经递质；兴奋传来时与突触前膜融合，把递质释放到间隙。' },
+      { name: '突触前膜', desc: '突触小体的膜。递质只能由前膜释放——这是兴奋在突触间单向传递的原因。' },
+      { name: '突触间隙', desc: '约 20 nm，充满组织液；递质经扩散穿过间隙，耗时约 0.5 ms（突触延搁）。' },
+      { name: '突触后膜（受体）', desc: '下一个神经元的胞体膜或树突膜，上有特异性受体：递质结合后引起下一个细胞兴奋或抑制。' },
+    ],
+    Svg: SynapseSvg,
   },
   {
     id: 'cyanobacteria',
@@ -1632,6 +1942,20 @@ export const SPECIMENS: Specimen[] = [
     StageWebGL: PlantCellWebGLModel,
   },
   {
+    id: 'mitosisStages',
+    name: '有丝分裂各期',
+    kicker: '细胞增殖 · 过程模式图',
+    intro: '五个时期的染色体行为一览：间期复制、前期凝缩、中期排队、后期分开、末期成两核——染色体形态是划分时期的依据。',
+    parts: [
+      { name: '间期', desc: '核膜核仁完整，染色体呈染色质丝状；完成 DNA 复制和有关蛋白质合成（"看不见染色体"的时期）。' },
+      { name: '前期', desc: '染色质螺旋缠绕变粗变短成为染色体，核膜核仁消失，纺锤体形成，染色体散乱分布。' },
+      { name: '中期', desc: '着丝粒（点）整齐排列在赤道板上，染色体形态稳定、数目清晰——观察和计数的最佳时期。' },
+      { name: '后期', desc: '着丝粒分裂，姐妹染色单体分开成为两条子染色体，被纺锤丝拉向细胞两极。' },
+      { name: '末期', desc: '染色体变成染色质，核膜核仁重现；动物细胞从中部缢裂成两个子细胞。' },
+    ],
+    Svg: MitosisStagesSvg,
+  },
+  {
     id: 'chloroplast',
     name: '叶绿体',
     kicker: '细胞器 · 立体剖面模式图',
@@ -1666,6 +1990,60 @@ export const SPECIMENS: Specimen[] = [
     Svg: MitochondrionSvg,
     Stage3d: Mitochondrion3d,
     StageWebGL: MitochondrionWebGLModel,
+  },
+  {
+    id: 'endoplasmicReticulum',
+    name: '内质网',
+    kicker: '细胞器 · 结构模式图',
+    intro: '膜连接成的网状管道：粗面内质网附着核糖体加工分泌蛋白，滑面内质网合成脂质——内连核膜、外连细胞膜。',
+    parts: [
+      { name: '网状管道（单层膜）', desc: '由膜折叠连接成的网状结构，增大细胞内膜面积，是物质运输的"内通道"。' },
+      { name: '粗面内质网', desc: '表面附着核糖体，对核糖体合成的肽链进行折叠、加工（如加糖基），再以囊泡运往高尔基体。' },
+      { name: '滑面内质网', desc: '表面光滑无核糖体，与脂质、固醇类（如性激素）的合成以及解毒有关。' },
+      { name: '与核膜相连', desc: '内质网内与核膜外层相连、外与细胞膜相连——"内通外达"的结构是物质运输的结构基础。' },
+    ],
+    Svg: EndoplasmicReticulumSvg,
+  },
+  {
+    id: 'golgi',
+    name: '高尔基体',
+    kicker: '细胞器 · 结构模式图',
+    intro: '一摞扁平囊组成的"发送站"：接收内质网来的囊泡，对蛋白质再加工、分类、包装，发往细胞各处。',
+    parts: [
+      { name: '扁平囊堆（单层膜）', desc: '多个弯曲的扁平囊叠成主体，蛋白质在这里完成最后的修饰和分拣。' },
+      { name: '形成面（cis）', desc: '朝向内质网的一面，接收来自内质网的运输囊泡。' },
+      { name: '成熟面（trans）', desc: '出芽生成囊泡的一面——把"货物"包装好发往细胞膜（胞吐）或溶酶体。' },
+      { name: '囊泡', desc: '往返于内质网、高尔基体、细胞膜之间的运输小泡（膜的流动性体现）。' },
+      { name: '植物细胞中的特能', desc: '植物细胞分裂末期，高尔基体参与细胞壁（纤维素）的形成——动植物功能差异考点。' },
+    ],
+    Svg: GolgiSvg,
+  },
+  {
+    id: 'ribosome',
+    name: '核糖体',
+    kicker: '无膜细胞器 · 结构模式图',
+    intro: '由大小两个亚基组成、没有膜的"蛋白质合成机器"：mRNA 穿过中间缝隙，氨基酸被逐个连成多肽链。',
+    parts: [
+      { name: '大亚基', desc: '较大的半球形部分，是肽键形成（氨基酸连接）的催化中心。' },
+      { name: '小亚基', desc: '与 mRNA 结合的部分，保证翻译从正确的位置开始。' },
+      { name: 'mRNA 穿行通道', desc: 'mRNA 从大小亚基之间穿过，三个碱基一组（密码子）被读取——翻译的模板。' },
+      { name: '合成产物：多肽链', desc: 'tRNA 搬运氨基酸逐个加上去，多肽链从核糖体伸出，折叠成蛋白质。' },
+      { name: '附着型与游离型', desc: '附着在内质网上合成分泌蛋白（如胰岛素）；游离在基质中合成细胞自身蛋白——分工不同。' },
+    ],
+    Svg: RibosomeSvg,
+  },
+  {
+    id: 'lysosome',
+    name: '溶酶体',
+    kicker: '单层膜细胞器 · 结构模式图',
+    intro: '细胞内的"消化车间"：单层膜包裹 60 多种水解酶，能吞掉病毒病菌，也能分解衰老的细胞器。',
+    parts: [
+      { name: '单层膜', desc: '把水解酶与细胞其他部分隔开——膜一旦破裂，酶释放会消化细胞自身。' },
+      { name: '内部水解酶', desc: '60 余种酸性水解酶，能分解蛋白质、核酸、多糖、脂质等几乎所有生物大分子。' },
+      { name: '吞噬消化（防御）', desc: '与吞噬了病菌的囊泡融合，把病原体消化分解——白细胞吞噬病菌离不开它。' },
+      { name: '自噬（回收）', desc: '包裹并分解衰老、损伤的细胞器，产物可被细胞重新利用；营养不足时分解自身物质应急供能。' },
+    ],
+    Svg: LysosomeSvg,
   },
   {
     id: 'ecoli',
