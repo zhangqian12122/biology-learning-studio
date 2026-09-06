@@ -605,7 +605,8 @@ export type ExperimentId =
   | 'sirModel'
   | 'choiceMedia'
   | 'chromosomeVariation'
-  | 'geneFrequency';
+  | 'geneFrequency'
+  | 'mulberryFishPond';
 
 export const experimentMeta: Record<
   ExperimentId,
@@ -978,6 +979,13 @@ export const experimentMeta: Record<
     relatedBook: 'genetics',
     relatedModule: '变异、育种与生物进化',
   },
+  mulberryFishPond: {
+    title: '桑基鱼塘生态农业',
+    kicker: '选择性必修 2 · 生物与环境',
+    description: '点亮桑—蚕—鱼—塘泥的物质循环环，再移除分解者看循环中断。',
+    relatedBook: 'ecology',
+    relatedModule: '生态保护与人与自然',
+  },
 };
 
 /** 实验目录分类：按教材实验主题归组，方便在 /lab 快速筛选 */
@@ -1015,7 +1023,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecosystemJar'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecosystemJar', 'mulberryFishPond'],
   },
   {
     name: '生物技术',
@@ -1070,6 +1078,7 @@ export const experimentOrder: ExperimentId[] = [
   'energy',
   'population',
   'ecosystemJar',
+  'mulberryFishPond',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',
   'dnaExtract',
