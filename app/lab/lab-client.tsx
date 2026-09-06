@@ -96,6 +96,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   breedingDesigner: Scissors,
   millerUrey: FlaskConical,
   sirModel: Activity,
+  choiceMedia: TestTube2,
 };
 
 /** 实验组件按需加载：目录页只载入目录本身，点开实验才拉取对应代码块。 */
@@ -148,6 +149,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   breedingDesigner: () => import('@/components/lab/breeding-lab').then(({ BreedingDesignerLab }) => ({ default: BreedingDesignerLab })),
   millerUrey: () => import('@/components/lab/miller-urey-lab').then(({ MillerUreyLab }) => ({ default: MillerUreyLab })),
   sirModel: () => import('@/components/lab/sir-model-lab').then(({ SirModelLab }) => ({ default: SirModelLab })),
+  choiceMedia: () => import('@/components/lab/choice-media-lab').then(({ ChoiceMediaLab }) => ({ default: ChoiceMediaLab })),
 };
 
 const EXPERIMENT_COMPONENTS = Object.fromEntries(

@@ -602,7 +602,8 @@ export type ExperimentId =
   | 'phageExperiment'
   | 'breedingDesigner'
   | 'millerUrey'
-  | 'sirModel';
+  | 'sirModel'
+  | 'choiceMedia';
 
 export const experimentMeta: Record<
   ExperimentId,
@@ -954,6 +955,13 @@ export const experimentMeta: Record<
     relatedModule: '免疫调节与健康',
     extension: true,
   },
+  choiceMedia: {
+    title: '选择培养基分离尿素分解菌',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '自己配培养基：尿素为唯一氮源 + 酚红，看选择压如何"专挑"目标菌。',
+    relatedBook: 'technology',
+    relatedModule: '发酵工程与过程控制',
+  },
 };
 
 /** 实验目录分类：按教材实验主题归组，方便在 /lab 快速筛选 */
@@ -996,7 +1004,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'embryoTransfer', 'millerUrey'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'embryoTransfer', 'choiceMedia', 'millerUrey'],
   },
 ];
 
@@ -1053,6 +1061,7 @@ export const experimentOrder: ExperimentId[] = [
   'tissueCulture',
   'pcr',
   'embryoTransfer',
+  'choiceMedia',
   // 课外拓展
   'millerUrey',
 ];
