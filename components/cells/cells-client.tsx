@@ -7,6 +7,24 @@ import { LAB_ONLY_SPECIMEN_IDS, SPECIMENS } from '@/components/cells/specimens';
 /** 图鉴只保留"结构/模式图"类标本；实验操作类图解移到互动实验页展示。 */
 const ATLAS_SPECIMENS = SPECIMENS.filter((item) => !LAB_ONLY_SPECIMEN_IDS.includes(item.id));
 
+/** 收录原则：有特殊性的生物（含病毒）归"特色生物"，其余概念/结构归"专有名词与结构"。 */
+const ORGANISM_IDS = new Set([
+  'cyanobacteria',
+  'yeast',
+  'ecoli',
+  'paramecium',
+  'redBloodCell',
+  'hiv',
+  'fluVirus',
+  'phage',
+  'nitrobacteria',
+  'spirogyra',
+  'lactobacillus',
+  'tmv',
+]);
+const ORGANISM_SPECIMENS = ATLAS_SPECIMENS.filter((item) => ORGANISM_IDS.has(item.id));
+const CONCEPT_SPECIMENS = ATLAS_SPECIMENS.filter((item) => !ORGANISM_IDS.has(item.id));
+
 const CELL_KEYFRAMES = `
 @keyframes bio-cilia-sway { 0%, 100% { transform: skewX(0deg); } 50% { transform: skewX(2.5deg); } }
 .bio-cilia { animation: bio-cilia-sway 1.8s ease-in-out infinite; transform-origin: 260px 195px; }
@@ -38,16 +56,52 @@ export function CellsClient() {
           图鉴：把结构看清楚
         </h1>
         <p className="mt-2 max-w-3xl text-sm leading-6 text-[#59767c]">
-          教学模式图对照课本绘制：点图中的编号或右侧的结构名，对应结构会在图中高亮并显示功能说明。
-          线粒体、叶绿体为剖面图，看清嵴与基粒；大肠杆菌、草履虫、保卫细胞均为典型考点形态。
+          图鉴收录两类内容：<span className="font-semibold text-[#0a626a]">特色生物</span>（蓝细菌、玉米、烟草花叶病毒这类"有故事"的生物与病毒）
+          和<span className="font-semibold text-[#0a626a]">专有名词与结构</span>（DNA、染色体、抗体、细胞器……）。
+          点图中的编号或右侧的结构名，对应结构会高亮并显示功能说明；实验操作类图解已移到互动实验页。
         </p>
       </div>
 
       <div className="space-y-5">
-        {/* 标本选择 */}
+        {/* 标本选择：特色生物 */}
         <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-3 shadow-[0_12px_30px_rgba(18,65,72,0.06)]">
+          <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-[#67858b]">
+            🦠 特色生物与病毒（{ORGANISM_SPECIMENS.length} 个）
+          </p>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-7">
-            {ATLAS_SPECIMENS.map((item) => {
+            {ORGANISM_SPECIMENS.map((item) => {
+              const current = item.id === specimenId;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => {
+                    setSpecimenId(item.id);
+                    setActivePart(null);
+                    setUseWebGL(false);
+                  }}
+                  aria-pressed={current}
+                  className={`flex min-h-11 flex-col items-center justify-center rounded-md border px-2 py-1.5 text-xs font-semibold transition-colors ${
+                    current
+                      ? 'border-[#82c6c0] bg-[#e9f7f5] text-[#0a626a]'
+                      : 'border-[#d9e7e7] bg-white text-[#537078] hover:border-[#b6d9d6]'
+                  }`}
+                >
+                  {item.name}
+                  <span className="mt-0.5 block text-[10px] font-normal opacity-70">{item.kicker.split(' · ')[0]}</span>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* 标本选择：专有名词与结构 */}
+        <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-3 shadow-[0_12px_30px_rgba(18,65,72,0.06)]">
+          <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-[#67858b]">
+            🧬 专有名词与结构（{CONCEPT_SPECIMENS.length} 个）
+          </p>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-7">
+            {CONCEPT_SPECIMENS.map((item) => {
               const current = item.id === specimenId;
               return (
                 <button

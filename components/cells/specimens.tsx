@@ -2548,6 +2548,296 @@ function ArtificialPollinationSvg({ active }: { active: number | null; open?: bo
   );
 }
 
+/* ================= 硝化细菌 ================= */
+
+function NitrobacteriaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 菌体 */}
+      <g style={dim(active, 0)}>
+        <rect x="150" y="66" width="216" height="74" rx="37" fill="#bfe0d4" stroke="#3f7f6a" strokeWidth="3.5" />
+        <circle cx="196" cy="103" r="9" fill="#3f7f6a" />
+        <circle cx="228" cy="103" r="9" fill="#3f7f6a" />
+        <text x="258" y="109" fontSize="13.5" fill="#2a5a4a" fontWeight="700">棒状菌体（原核）</text>
+      </g>
+      {/* 化能合成链 */}
+      <g style={dim(active, 1)}>
+        <rect x="24" y="168" width="112" height="44" rx="9" fill="#fdf1e3" stroke="#c98a1d" strokeWidth="2.5" />
+        <text x="80" y="188" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">氨（NH₃）</text>
+        <text x="80" y="206" textAnchor="middle" fontSize="12" fill="#a58a4a">土壤中来源</text>
+        <line x1="140" y1="190" x2="168" y2="190" stroke="#8aa1a6" strokeWidth="3" markerEnd="url(#nb-arrow)" />
+        <rect x="172" y="168" width="112" height="44" rx="9" fill="#fdf1e3" stroke="#c98a1d" strokeWidth="2.5" />
+        <text x="228" y="188" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">亚硝酸（HNO₂）</text>
+        <text x="228" y="206" textAnchor="middle" fontSize="12" fill="#a58a4a">氧化释能 ①</text>
+        <line x1="288" y1="190" x2="316" y2="190" stroke="#8aa1a6" strokeWidth="3" markerEnd="url(#nb-arrow)" />
+        <rect x="320" y="168" width="112" height="44" rx="9" fill="#fdf1e3" stroke="#c98a1d" strokeWidth="2.5" />
+        <text x="376" y="188" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">硝酸（HNO₃）</text>
+        <text x="376" y="206" textAnchor="middle" fontSize="12" fill="#a58a4a">氧化释能 ②</text>
+      </g>
+      {/* 能量去路 */}
+      <g style={dim(active, 2)}>
+        <path d="M436 196 Q 470 226 452 258" fill="none" stroke="#3f7f6a" strokeWidth="3.5" markerEnd="url(#nb-arrow)" />
+        <rect x="330" y="262" width="130" height="46" rx="9" fill="#e7f3e2" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="395" y="282" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="700">化学能 → 合成有机物</text>
+        <text x="395" y="300" textAnchor="middle" fontSize="12" fill="#4a8a4a">CO₂ + H₂O →（C₆H₁₂O₆）</text>
+        <text x="24" y="256" fontSize="13.5" fill="#2f7a4d" fontWeight="700">不放氧、不需要光——</text>
+        <text x="24" y="276" fontSize="13.5" fill="#2f7a4d" fontWeight="700">却和绿色植物一样是自养生物</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <text x="24" y="322" fontSize="12.5" fill="#59767c">硝化细菌把氨氧化成硝酸盐，既养活自己，也提高土壤肥力（氮循环的重要一环）</text>
+      </g>
+      <defs>
+        <marker id="nb-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">硝化细菌与化能合成作用模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 水绵 ================= */
+
+function SpirogyraSvg({ active }: { active: number | null; open?: boolean }) {
+  const cellX = [26, 152, 278];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 丝状体：三节细胞 */}
+      {cellX.map((x, i) => (
+        <g key={i} style={dim(active, i === 1 ? 0 : 3)}>
+          <rect x={x} y="76" width="124" height="120" rx="24" fill="#eef7e8" stroke="#3f7f3a" strokeWidth="3.5" />
+          <rect x={x + 5} y="81" width="114" height="110" rx="20" fill="none" stroke="#7fa86a" strokeWidth="1.6" opacity="0.6" />
+          {/* 带状螺旋叶绿体 */}
+          <path d={`M${x + 14} ${178} C ${x + 44} ${140}, ${x + 4} ${112}, ${x + 34} ${88} C ${x + 64} ${128}, ${x + 24} ${156}, ${x + 54} ${186} C ${x + 74} ${166}, ${x + 84} ${140}, ${x + 70} ${116}`}
+            fill="none" stroke="#4c8f5f" strokeWidth="9" strokeLinecap="round" />
+        </g>
+      ))}
+      {/* 细胞核（中间细胞） */}
+      <g style={dim(active, 1)}>
+        <circle cx="214" cy="130" r="11" fill="#b48ad0" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="214" y="222" textAnchor="middle" fontSize="13" fill="#7a4a8a" fontWeight="700">细胞核</text>
+        <line x1="214" y1="144" x2="214" y2="208" stroke="#7a4a8a" strokeWidth="1.4" />
+      </g>
+      {/* 带状叶绿体标注 */}
+      <g style={dim(active, 0)}>
+        <text x="418" y="96" fontSize="13.5" fill="#2f7a4d" fontWeight="700">带状叶绿体</text>
+        <text x="418" y="114" fontSize="12" fill="#4a8a4a">螺旋盘绕在细胞内</text>
+        <line x1="414" y1="100" x2="356" y2="120" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 恩格尔曼实验 */}
+      <g style={dim(active, 2)}>
+        <rect x="26" y="232" width="468" height="94" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="42" y="258" fontSize="13.5" fill="#2c6e94" fontWeight="700">恩格尔曼实验（经典）：用极细光束照射水绵</text>
+        <rect x="42" y="270" width="150" height="40" rx="8" fill="#eef7e8" stroke="#3f7f3a" strokeWidth="2" />
+        <path d="M56 302 C 76 278, 60 282, 78 278 C 98 276, 86 300, 104 296 C 122 292, 112 278, 130 278" fill="none" stroke="#4c8f5f" strokeWidth="5" strokeLinecap="round" />
+        <rect x="80" y="266" width="14" height="5" fill="#c98a1d" />
+        {[[150, 286], [156, 296], [148, 300], [160, 282], [154, 306]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="3" fill="#3d6a94" />
+        ))}
+        <text x="206" y="286" fontSize="12.5" fill="#46666d">好氧细菌只聚集在被光照射的叶绿体部位</text>
+        <text x="206" y="306" fontSize="12.5" fill="#46666d">→ 证明氧气由叶绿体释放（光合作用的场所）</text>
+      </g>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">水绵（丝状绿藻）结构模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 乳酸菌 ================= */
+
+function LactobacillusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 菌链 */}
+      <g style={dim(active, 0)}>
+        {[130, 220, 310].map((x, i) => (
+          <g key={i} transform={`rotate(${i % 2 === 0 ? -8 : 8} ${x + 36} 130)`}>
+            <rect x={x} y="106" width="76" height="48" rx="24" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="3" />
+            <circle cx={x + 22} cy="130" r="4" fill="#7a4a8a" opacity="0.6" />
+            <circle cx={x + 44} cy="126" r="4" fill="#7a4a8a" opacity="0.6" />
+          </g>
+        ))}
+        <text x="260" y="188" textAnchor="middle" fontSize="13.5" fill="#6a4a9a" fontWeight="700">乳酸杆菌（杆状、常成链）</text>
+      </g>
+      {/* 代谢箭头 */}
+      <g style={dim(active, 1)}>
+        <rect x="56" y="222" width="150" height="46" rx="9" fill="#eef7f6" stroke="#3d7e9e" strokeWidth="2.5" />
+        <text x="131" y="242" textAnchor="middle" fontSize="13.5" fill="#1e4a68" fontWeight="700">葡萄糖</text>
+        <text x="131" y="260" textAnchor="middle" fontSize="12" fill="#4a7a9a">（牛奶 / 菜里的糖）</text>
+        <path d="M212 245 Q 244 226 276 245" fill="none" stroke="#7a4a8a" strokeWidth="3.5" markerEnd="url(#lb-arrow)" />
+        <text x="244" y="216" textAnchor="middle" fontSize="12.5" fill="#7a4a8a" fontWeight="700">无氧发酵</text>
+        <rect x="282" y="222" width="150" height="46" rx="9" fill="#fdf1e3" stroke="#c98a1d" strokeWidth="2.5" />
+        <text x="357" y="242" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">乳酸</text>
+        <text x="357" y="260" textAnchor="middle" fontSize="12" fill="#a58a4a">不产生酒精和 CO₂</text>
+      </g>
+      {/* 应用 */}
+      <g style={dim(active, 2)}>
+        <rect x="56" y="292" width="150" height="52" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="131" y="314" textAnchor="middle" fontSize="12.5" fill="#2c6e94" fontWeight="600">酸奶、泡菜、青贮饲料</text>
+        <text x="131" y="332" textAnchor="middle" fontSize="12" fill="#59767c">产酸 → pH 下降抑杂菌</text>
+        <rect x="282" y="292" width="150" height="52" rx="9" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="357" y="314" textAnchor="middle" fontSize="12.5" fill="#2c6e94" fontWeight="600">异养厌氧型</text>
+        <text x="357" y="332" textAnchor="middle" fontSize="12" fill="#59767c">原核生物 · 无核膜包被的核</text>
+      </g>
+      <defs>
+        <marker id="lb-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="16" y="42" fontSize="13.5" fill="#2c6e94" fontWeight="700">泡菜"酸而不腐"的秘密：乳酸菌大量产酸，杂菌受不了酸性环境</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">乳酸菌与乳酸发酵模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 烟草花叶病毒 ================= */
+
+function TmvSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 棒状病毒主体 */}
+      <g style={dim(active, 0)}>
+        <g transform="rotate(-18 210 150)">
+          <rect x="120" y="128" width="190" height="46" rx="23" fill="#f2c98a" stroke="#b57c16" strokeWidth="3.5" />
+          {[140, 164, 188, 212, 236, 260, 284].map((x, i) => (
+            <g key={i}>
+              <ellipse cx={x} cy={136 + (i % 2) * 4} rx="10" ry="6.5" fill="#e8b05a" stroke="#a56a1a" strokeWidth="1.6" />
+              <ellipse cx={x + 12} cy={166 - (i % 2) * 4} rx="10" ry="6.5" fill="#e8b05a" stroke="#a56a1a" strokeWidth="1.6" />
+            </g>
+          ))}
+          <path d="M136 151 q 22 -8 44 0 q 22 8 44 0 q 22 -8 44 0 q 22 8 40 0" fill="none" stroke="#c9503c" strokeWidth="3" strokeLinecap="round" />
+        </g>
+        <text x="96" y="94" fontSize="13.5" fill="#a56a1a" fontWeight="700">螺旋排列的衣壳蛋白</text>
+        <text x="96" y="112" fontSize="12" fill="#b58a3a">包裹中央的单链 RNA</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <text x="330" y="66" fontSize="13.5" fill="#c9503c" fontWeight="700">棒状 · 感染烟草等植物</text>
+        <text x="330" y="84" fontSize="12" fill="#d97a5a">叶面出现花叶斑驳</text>
+        <line x1="326" y1="70" x2="290" y2="98" stroke="#c9503c" strokeWidth="1.4" />
+      </g>
+      {/* 重建实验 */}
+      <g style={dim(active, 2)}>
+        <rect x="26" y="216" width="468" height="118" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="42" y="242" fontSize="13.5" fill="#2c6e94" fontWeight="700">重建实验（证明 RNA 是遗传物质）：</text>
+        <rect x="42" y="254" width="120" height="42" rx="9" fill="#f2c98a" stroke="#b57c16" strokeWidth="2" />
+        <text x="102" y="272" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="600">TMV 的蛋白质</text>
+        <text x="102" y="288" textAnchor="middle" fontSize="11.5" fill="#a58a4a">（不含 RNA）</text>
+        <text x="180" y="280" fontSize="16" fill="#59767c" fontWeight="700">+</text>
+        <rect x="198" y="254" width="120" height="42" rx="9" fill="#e8b8b0" stroke="#b0483a" strokeWidth="2" />
+        <text x="258" y="272" textAnchor="middle" fontSize="12" fill="#9b3a30" fontWeight="600">HRV 的 RNA</text>
+        <text x="258" y="288" textAnchor="middle" fontSize="11.5" fill="#c06a62">（另一种病毒）</text>
+        <line x1="322" y1="275" x2="352" y2="275" stroke="#5a5a62" strokeWidth="3" markerEnd="url(#tmv-arrow)" />
+        <rect x="356" y="254" width="120" height="42" rx="9" fill="#e2d4f2" stroke="#7a4a8a" strokeWidth="2" />
+        <text x="416" y="272" textAnchor="middle" fontSize="12" fill="#6a4a9a" fontWeight="600">杂合病毒 → 侵染</text>
+        <text x="416" y="288" textAnchor="middle" fontSize="11.5" fill="#8a5a94">后代与 HRV 相同！</text>
+        <text x="42" y="322" fontSize="12.5" fill="#46666d">重组病毒的性状由 RNA 决定、不由蛋白质决定 → RNA 才是这种病毒的遗传物质</text>
+      </g>
+      <defs>
+        <marker id="tmv-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#5a5a62" />
+        </marker>
+      </defs>
+      <text x="16" y="42" fontSize="13.5" fill="#2c6e94" fontWeight="700">烟草花叶病毒（TMV）：棒状 RNA 病毒——与 T2 噬菌体（DNA 型）成对记</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">烟草花叶病毒与重建实验模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 染色体与染色质 ================= */
+
+function ChromosomeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 染色质（间期） */}
+      <g style={dim(active, 0)}>
+        <rect x="24" y="92" width="200" height="150" rx="12" fill="#f4f8fb" stroke="#8fb8d4" strokeWidth="2.5" />
+        <path d="M46 130 q 16 -14 32 0 q 16 14 32 0 q 16 -14 32 0 q 16 14 32 0 M52 168 q 18 14 36 0 q 18 -14 36 0 q 18 14 36 0 M70 200 q 18 12 36 0 q 18 -12 36 0"
+          fill="none" stroke="#b8d4ea" strokeWidth="5" strokeLinecap="round" />
+        {[[78, 130], [142, 130], [110, 168], [88, 200], [152, 200]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="7" fill="#8a7a9a" stroke="#5f4f6a" strokeWidth="1.6" />
+        ))}
+        <text x="124" y="80" textAnchor="middle" fontSize="13.5" fill="#2c6e94" fontWeight="700">染色质（间期，细丝状）</text>
+      </g>
+      {/* 螺旋化箭头 */}
+      <g style={dim(active, 2)}>
+        <line x1="232" y1="168" x2="284" y2="168" stroke="#7a4a8a" strokeWidth="4" markerEnd="url(#ch-arrow)" />
+        <text x="258" y="152" textAnchor="middle" fontSize="12.5" fill="#7a4a8a" fontWeight="700">螺旋化</text>
+        <text x="258" y="190" textAnchor="middle" fontSize="12" fill="#8a5a94">缩短变粗</text>
+      </g>
+      {/* 染色体（分裂期） */}
+      <g style={dim(active, 1)}>
+        <rect x="296" y="92" width="200" height="150" rx="12" fill="#f4f8fb" stroke="#b48ad0" strokeWidth="2.5" />
+        <g transform="translate(396 164)">
+          <path d="M-8 -56 C 14 -44, 14 44, -8 56 L -14 52 C 6 40, 6 -44, -14 -56 Z" fill="#b48ad0" stroke="#7a4a8a" strokeWidth="2.5" />
+          <path d="M8 -56 C -14 -44, -14 44, 8 56 L 14 52 C -6 40, -6 -44, 14 -56 Z" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2.5" />
+          <ellipse cx="0" cy="-6" rx="9" ry="7" fill="#5f4f6a" />
+        </g>
+        <text x="396" y="126" textAnchor="middle" fontSize="13.5" fill="#6a4a9a" fontWeight="700">染色体（分裂期）</text>
+        <text x="330" y="228" fontSize="12.5" fill="#7a4a8a" fontWeight="600">着丝粒</text>
+        <line x1="356" y1="224" x2="388" y2="166" stroke="#7a4a8a" strokeWidth="1.4" />
+      </g>
+      {/* 组成与单体 */}
+      <g style={dim(active, 3)}>
+        <text x="24" y="286" fontSize="13.5" fill="#2c6e94" fontWeight="700">组成：DNA + 蛋白质；染色体复制后含两条姐妹染色单体，共用一个着丝粒</text>
+        <text x="24" y="310" fontSize="12.5" fill="#59767c">着丝粒分裂后，姐妹染色单体分开成为两条子染色体——数目变化的时机是常考点</text>
+      </g>
+      <defs>
+        <marker id="ch-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+          <path d="M0 0 L10 5 L0 10 Z" fill="#7a4a8a" />
+        </marker>
+      </defs>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">染色质与染色体（同一物质两种形态）模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 抗体 ================= */
+
+function AntibodySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* Y 形抗体 */}
+      <g style={dim(active, 0)}>
+        <path d="M232 320 L 240 200 Q 240 176 222 158 L 196 128" fill="none" stroke="#c98a1d" strokeWidth="16" strokeLinecap="round" />
+        <path d="M288 320 L 280 200 Q 280 176 298 158 L 324 128" fill="none" stroke="#c98a1d" strokeWidth="16" strokeLinecap="round" />
+        <path d="M196 128 L 232 178 M 324 128 L 288 178" fill="none" stroke="#e8b05a" strokeWidth="9" strokeLinecap="round" />
+        <text x="260" y="352" textAnchor="middle" fontSize="13.5" fill="#8a671b" fontWeight="700">Y 形：两条重链 + 两条轻链</text>
+      </g>
+      {/* 抗原结合 */}
+      <g style={dim(active, 1)}>
+        {[[196, 116], [324, 116]].map(([x, y], i) => (
+          <g key={i}>
+            <circle cx={x} cy={y - 12} r="15" fill="#d97a5a" stroke="#b0483a" strokeWidth="2.5" strokeDasharray="5 4" />
+            <text x={x} y={y - 7} textAnchor="middle" fontSize="11.5" fill="#7a2622" fontWeight="700">抗原</text>
+          </g>
+        ))}
+        <text x="72" y="72" fontSize="13.5" fill="#b0483a" fontWeight="700">抗原结合部位（可变）</text>
+        <text x="72" y="90" fontSize="12" fill="#c97a5a">像钥匙配锁——特异性</text>
+        <line x1="178" y1="76" x2="188" y2="92" stroke="#b0483a" strokeWidth="1.4" />
+      </g>
+      {/* 效应说明 */}
+      <g style={dim(active, 2)}>
+        <rect x="330" y="196" width="176" height="118" rx="10" fill="#f2fafa" stroke="#cfe0e0" strokeWidth="2" />
+        <text x="346" y="222" fontSize="13" fill="#2c6e94" fontWeight="700">结合后会发生什么？</text>
+        <text x="346" y="246" fontSize="12.5" fill="#46666d">· 形成沉淀或细胞集团</text>
+        <text x="346" y="266" fontSize="12.5" fill="#46666d">· 被吞噬细胞消化清除</text>
+        <text x="346" y="286" fontSize="12.5" fill="#46666d">· 抗体本身不"杀灭"抗原</text>
+        <text x="346" y="306" fontSize="12" fill="#799398">由浆细胞（效应 B 细胞）分泌</text>
+      </g>
+      {/* 记忆细胞 */}
+      <g style={dim(active, 3)}>
+        <rect x="24" y="196" width="176" height="118" rx="10" fill="#eef7f6" stroke="#9fcab2" strokeWidth="2" />
+        <text x="40" y="222" fontSize="13" fill="#2f7a4d" fontWeight="700">二次免疫为什么更快？</text>
+        <text x="40" y="246" fontSize="12.5" fill="#46666d">初次免疫产生记忆细胞；</text>
+        <text x="40" y="266" fontSize="12.5" fill="#46666d">再次遇到同一抗原时</text>
+        <text x="40" y="286" fontSize="12.5" fill="#46666d">更快、更多地产出抗体。</text>
+        <text x="40" y="306" fontSize="12" fill="#799398">疫苗的原理正是如此</text>
+      </g>
+      <text x="16" y="52" fontSize="13.5" fill="#2c6e94" fontWeight="700">抗体 = 浆细胞分泌的免疫球蛋白（蛋白质）——专有名词条目，配免疫调节复习</text>
+      <text x="508" y="368" textAnchor="end" fontSize="12.5" fill="#799398">抗体结构示意图</text>
+    </svg>
+  );
+}
+
 /* ================= 数据汇总 ================= */
 
 /** 偏"实验操作/过程"的标本：不在图鉴页显示，改为在互动实验页作为相关图解出现。 */
@@ -3128,5 +3418,88 @@ export const SPECIMENS: Specimen[] = [
       { name: '为什么选豌豆', desc: '自花传粉闭花受精 → 天然纯种；花大易操作、有多对易区分的相对性状——实验材料的选择本身就是考点。' },
     ],
     Svg: ArtificialPollinationSvg,
+  },
+  {
+    id: 'nitrobacteria',
+    name: '硝化细菌',
+    kicker: '特色生物 · 化能合成自养',
+    intro: '不用光也能"自给自足"：把氨氧化成硝酸，用释放的化学能把 CO₂ 和水合成有机物——化能合成作用的代表生物。',
+    parts: [
+      { name: '化能合成作用', desc: '利用体外环境中的无机物氧化释放的化学能，把 CO₂ 和 H₂O 合成有机物——与光合作用同为自养，但不依赖光。' },
+      { name: '氨 → 亚硝酸 → 硝酸', desc: '两步氧化各释放化学能；硝化细菌从中"赚取"能量维持生命。' },
+      { name: '氮循环角色', desc: '把氨转化为植物可利用的硝酸盐，提高土壤肥力——种豆养田、施肥翻土都与此相关。' },
+      { name: '原核身份', desc: '没有核膜包被的细胞核、只有核糖体一种细胞器——与蓝细菌、乳酸菌同为原核常客。' },
+      { name: '易混辨析', desc: '硝化细菌（自养、化能合成）≠ 乳酸菌（异养、发酵）≠ 根瘤菌（异养、共生固氮）——三类细菌代谢类型对比是高频题。' },
+    ],
+    Svg: NitrobacteriaSvg,
+  },
+  {
+    id: 'spirogyra',
+    name: '水绵',
+    kicker: '特色生物 · 经典实验材料',
+    intro: '丝状绿藻，叶绿体是一条螺旋盘绕的"绿带子"——恩格尔曼用极细光束照射水绵、借好氧细菌的分布，证明了氧气由叶绿体释放。',
+    parts: [
+      { name: '带状叶绿体', desc: '一条到多条螺旋盘绕的带状叶绿体——水绵最大的辨识特征，也是实验选它的原因（受光面积大）。' },
+      { name: '丝状体结构', desc: '一列长筒形细胞连成不分枝的丝状体，每节细胞都有壁、膜、液泡、细胞核和叶绿体——典型真核绿藻。' },
+      { name: '恩格尔曼实验', desc: '极细光束照水绵，好氧细菌只聚集在被光照射的叶绿体部位 → 证明氧气由叶绿体释放、叶绿体是光合作用场所。' },
+      { name: '实验巧思', desc: '没有空气的黑暗环境排干扰、好氧细菌当"氧气探测器"、极细光束当"探针"——实验设计的严谨性是考点。' },
+    ],
+    Svg: SpirogyraSvg,
+  },
+  {
+    id: 'lactobacillus',
+    name: '乳酸菌',
+    kicker: '特色生物 · 发酵菌种',
+    intro: '泡菜坛和酸奶里的主角：无氧条件下把葡萄糖分解成乳酸——酸味来自它，"酸而不腐"也是它。',
+    parts: [
+      { name: '无氧发酵产乳酸', desc: '葡萄糖 → 乳酸，不产生酒精和 CO₂（与酵母菌酒精发酵对比记忆）。' },
+      { name: '异养厌氧型', desc: '利用现成有机物、氧气会抑制其发酵——泡菜坛要"水封"创造无氧环境。' },
+      { name: '原核生物', desc: '杆菌形态、无核膜包被的细胞核，只有核糖体一种细胞器。' },
+      { name: '产酸抑菌', desc: '大量产酸使 pH 下降，抑制杂菌生长——泡菜、酸奶能久存的原理。' },
+      { name: '应用', desc: '酸奶、泡菜、青贮饲料；制作过程防止杂菌污染是关键（对应"泡菜的制作"实验）。' },
+    ],
+    Svg: LactobacillusSvg,
+  },
+  {
+    id: 'tmv',
+    name: '烟草花叶病毒',
+    kicker: '特色生物 · RNA 病毒',
+    intro: '棒状的植物 RNA 病毒，感染烟草出现花叶斑驳；"重建实验"用它证明：重组病毒的性状由 RNA 决定——RNA 是遗传物质。',
+    parts: [
+      { name: '棒状形态', desc: '约 300 nm 的直杆：螺旋排列的衣壳蛋白包裹着中央的单链 RNA——结构对称而简单。' },
+      { name: '衣壳蛋白与 RNA', desc: '蛋白质是"外壳"，RNA 是"核心"；两者不是"半保留"关系，重建实验能分开组装。' },
+      { name: '重建实验', desc: 'TMV 的蛋白质 + HRV 的 RNA 重组 → 杂合病毒侵染后，后代与 HRV 完全相同——RNA 是遗传物质、蛋白质不是。' },
+      { name: '对照记忆', desc: 'T2 噬菌体证明 DNA 是遗传物质（侵染细菌）；TMV 证明 RNA 也可以是遗传物质（侵染植物）——两实验互补成对。' },
+      { name: '病毒共性', desc: '没有细胞结构，必须寄生在活细胞中；核酸 + 蛋白质构成（有的还有包膜）。' },
+    ],
+    Svg: TmvSvg,
+  },
+  {
+    id: 'chromosome',
+    name: '染色体与染色质',
+    kicker: '专有名词 · 同一物质两种形态',
+    intro: '染色质和染色体是同一物质（DNA + 蛋白质）在细胞不同时期的两种形态——间期是细丝"染色质"，分裂期螺旋浓缩成"染色体"。',
+    parts: [
+      { name: '组成', desc: '主要成分是 DNA 和蛋白质；DNA 是遗传信息的载体——细胞中"遗传物质在哪里"的答案就在这里。' },
+      { name: '染色质（间期）', desc: '细丝状、交织成网，像"散开的毛线"——此时便于 DNA 复制和转录（"串珠链"上的珠子是组蛋白）。' },
+      { name: '染色体（分裂期）', desc: '高度螺旋化、缩短变粗，像"盘好的毛线团"——便于分裂时平均分配遗传物质。' },
+      { name: '着丝粒与姐妹染色单体', desc: '复制后的染色体含两条姐妹染色单体，共用一个着丝粒；着丝粒分裂后单体成为两条子染色体。' },
+      { name: '数目变化口诀', desc: '染色体数目在着丝粒分裂时（后期）加倍；DNA 含量在间期复制后加倍——两条曲线对比是高频考题。' },
+    ],
+    Svg: ChromosomeSvg,
+  },
+  {
+    id: 'antibody',
+    name: '抗体',
+    kicker: '专有名词 · 免疫球蛋白',
+    intro: '浆细胞分泌的 Y 形蛋白质，能与抗原特异性结合——"一把钥匙开一把锁"，是体液免疫的核心武器。',
+    parts: [
+      { name: 'Y 形结构', desc: '两条重链 + 两条轻链借二硫键连接；本质是蛋白质（免疫球蛋白），由核糖体合成、经内质网和高尔基体分泌。' },
+      { name: '抗原结合部位', desc: 'Y 臂末端的可变区千变万化——一种抗体只能结合一种抗原，这就是特异性。' },
+      { name: '结合后的效应', desc: '抗体与抗原结合形成沉淀或细胞集团，最终被吞噬细胞消化清除——抗体只"抓"不"杀"。' },
+      { name: '谁分泌的', desc: '浆细胞（效应 B 细胞）——它不能再识别抗原，是专门"生产抗体"的工厂。' },
+      { name: '二次免疫', desc: '初次免疫留下记忆细胞；再次遇到同一抗原时，记忆细胞迅速增殖分化，抗体更快更多——疫苗的原理。' },
+    ],
+    Svg: AntibodySvg,
   },
 ];
