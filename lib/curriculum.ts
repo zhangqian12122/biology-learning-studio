@@ -605,6 +605,7 @@ export type ExperimentId =
   | 'vaccineResponse'
   | 'phototropism'
   | 'antibioticResistance'
+  | 'ecologicalNiche'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -989,6 +990,14 @@ export const experimentMeta: Record<
     relatedModule: '变异、育种与生物进化',
     extension: true,
   },
+  ecologicalNiche: {
+    title: '生态位与种间竞争',
+    kicker: '选择性必修 2 · 生物与环境',
+    description: '拖动食物丰富度看两种鸟的生态位重叠率与"竞争排除"何时发生。',
+    relatedBook: 'ecology',
+    relatedModule: '种群特征与群落结构',
+    extension: true,
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1145,7 +1154,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecologicalNiche', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose'],
   },
   {
     name: '生物技术',
@@ -1210,6 +1219,7 @@ export const experimentOrder: ExperimentId[] = [
   'ecosystemJar',
   'mulberryFishPond',
   'leafDecompose',
+  'ecologicalNiche',
   'bloodType',
   'vaccineResponse',
   'urineFormation',

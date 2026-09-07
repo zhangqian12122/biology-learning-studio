@@ -8,33 +8,29 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：抗生素耐药性进化 ----------
-await page.goto(`${BASE}/lab?exp=antibioticResistance`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：向光性与生长素 ----------
+await page.goto(`${BASE}/lab?exp=ecologicalNiche`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('抗生素耐药性');
-  // 互动：规范剂量推进 6 代 → 耐药比例大幅上升
-  for (let i = 0; i < 6; i++) {
-    await page.getByRole('button', { name: /推进一代/ }).click({ force: true });
-    await page.waitForTimeout(300);
-  }
-  const after = await page.locator('main').innerText();
-  const ratio = parseInt((after.match(/耐药菌比例：(\d+)/) ?? [])[1] ?? '0');
-  results.experiment.resistanceRises = ratio > 60;
-  // 切"不用药"清空后：耐药比例保持低位
-  await page.getByRole('button', { name: '不用药' }).click({ force: true });
-  await page.waitForTimeout(400);
-  await page.getByRole('button', { name: /推进一代/ }).click({ force: true });
-  await page.waitForTimeout(400);
-  const none = await page.locator('main').innerText();
-  const noneRatio = parseInt((none.match(/耐药菌比例：(\d+)/) ?? [])[1] ?? '0');
-  results.experiment.noDrugFlat = noneRatio < 5;
+  results.experiment.open = text.includes('生态位与种间竞争');
+  // 互动：丰富度 10 → 共存；拉到 2 → 竞争排除警告
+  const rich = await page.locator('main').innerText();
+  results.experiment.richCoexist = rich.includes('两种鸟可以共存');
+  await page.locator('input[type="range"]').evaluate((el) => {
+    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+    setter.call(el, '2');
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+    el.dispatchEvent(new Event('change', { bubbles: true }));
+  });
+  await page.waitForTimeout(500);
+  const poor = await page.locator('main').innerText();
+  results.experiment.exclusionWarn = poor.includes('竞争排除');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['ecosystemTypes', 'immuneOrgans', 'endocrineGlands'];
+const SPECIMENS = ['verticalLayers', 'cytoskeleton', 'muscleTissues'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

@@ -5043,14 +5043,14 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
   { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome'] },
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype'] },
-  { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments'] },
+  { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'verticalLayers'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -7009,9 +7009,187 @@ function EndocrineGlandsSvg({ active }: { active: number | null; open?: boolean 
 }
 
 
+/* ================= 森林的垂直结构（分层现象） ================= */
+
+function VerticalLayersSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 乔木层 */}
+      <g style={dim(active, 0)}>
+        <rect x="30" y="30" width="460" height="76" fill="#3f7f3a" opacity="0.18" />
+        <path d="M70 106 L70 60 M130 104 L130 52 M390 108 L390 58 M440 104 L440 66" stroke="#5a3a1a" strokeWidth="8" strokeLinecap="round" />
+        {[62, 122, 382, 432].map((x, i) => (
+          <circle key={i} cx={x} cy={48} r={i % 2 === 0 ? 30 : 26} fill="#4a8a3a" stroke="#2f7a4d" strokeWidth="2.5" />
+        ))}
+        <text x="250" y="52" textAnchor="middle" fontSize="13" fill="#1e5a2e" fontWeight="800">乔木层（树冠吸收最强阳光）</text>
+      </g>
+      {/* 灌木层 */}
+      <g style={dim(active, 1)}>
+        <rect x="30" y="106" width="460" height="58" fill="#7ab86a" opacity="0.2" />
+        {[80, 150, 250, 330, 420].map((x, i) => (
+          <g key={i}>
+            <path d={`M${x} 160 L${x} 128`} stroke="#4a7a3a" strokeWidth="5" strokeLinecap="round" />
+            <circle cx={x} cy={122} r="15" fill="#6aa85a" stroke="#3f7f3a" strokeWidth="2.2" />
+          </g>
+        ))}
+        <text x="250" y="150" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="800">灌木层（耐半荫的灌木）</text>
+      </g>
+      {/* 草本层 */}
+      <g style={dim(active, 2)}>
+        <rect x="30" y="164" width="460" height="52" fill="#a8cf98" opacity="0.28" />
+        {[60, 110, 170, 230, 290, 350, 410, 460].map((x, i) => (
+          <path key={i} d={`M${x} 212 q 4 -26 ${i % 2 === 0 ? -10 : 10} -34`} fill="none" stroke="#4a8a3a" strokeWidth="3" strokeLinecap="round" />
+        ))}
+        <text x="250" y="204" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="800">草本层（需光较少的草本植物）</text>
+      </g>
+      {/* 地被层 */}
+      <g style={dim(active, 3)}>
+        <rect x="30" y="216" width="460" height="50" fill="#8a7a4a" opacity="0.22" />
+        {[70, 140, 210, 280, 350, 430].map((x, i) => (
+          <ellipse key={i} cx={x} cy={248} rx="16" ry="7" fill="#8a9a2a" stroke="#5a6a1d" strokeWidth="1.8" />
+        ))}
+        <text x="250" y="240" textAnchor="middle" fontSize="13" fill="#5a6a1d" fontWeight="800">地被层（苔藓·地衣·真菌）</text>
+      </g>
+      {/* 土壤与动物分层提示 */}
+      <g style={dim(active, 4)}>
+        <path d="M30 266 L490 266 L490 380 L30 380 Z" fill="#c9b88a" stroke="#a5885f" strokeWidth="2.5" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <ellipse key={i} cx={90 + i * 74} cy={300 + (i % 2) * 26} rx="15" ry="8" fill="#a5885f" stroke="#7a5a3a" strokeWidth="1.8" />
+        ))}
+        <text x="36" y="348" fontSize="12.5" fill="#6a5a2a" fontWeight="600">动物的分层：树冠层鸟类·灌木层昆虫·地下蚯蚓线虫</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">群落的垂直结构（分层现象）· 提高对阳光等资源的利用</text>
+    </svg>
+  );
+}
+
+/* ================= 细胞骨架（课外拓展） ================= */
+
+function CytoskeletonSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 细胞轮廓 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="190" rx="190" ry="140" fill="#f4faf6" stroke="#3f7f3a" strokeWidth="3.5" />
+        <text x="392" y="66" fontSize="13" fill="#3f7f3a" fontWeight="700">细胞膜</text>
+        <line x1="388" y1="70" x2="360" y2="92" stroke="#3f7f3a" strokeWidth="1.4" />
+      </g>
+      {/* 微管（粗直管道） */}
+      <g style={dim(active, 1)}>
+        <path d="M120 120 L 380 260 M150 270 L 360 110 M110 210 L 390 180" fill="none" stroke="#4d7ea8" strokeWidth="6" strokeLinecap="round" opacity="0.85" />
+        <text x="60" y="76" fontSize="13" fill="#3d6a94" fontWeight="700">微管（粗·"高速公路"）</text>
+        <text x="60" y="94" fontSize="12" fill="#3d6a94">引导细胞器与囊泡运输</text>
+      </g>
+      {/* 微丝（细密网） */}
+      <g style={dim(active, 2)}>
+        <path d="M160 240 q 20 -14 40 0 q 20 14 40 0 q 20 -14 40 0 M140 160 q 18 -12 36 0 q 18 12 36 0 q 18 -12 36 0 M240 210 q 16 -10 32 2" fill="none" stroke="#c9708a" strokeWidth="3" strokeLinecap="round" />
+        <text x="58" y="286" fontSize="13" fill="#a54868" fontWeight="700">微丝（细·"肌肉"）</text>
+        <text x="58" y="304" fontSize="12" fill="#a54868">维持形状·细胞变形移动</text>
+      </g>
+      {/* 核与中心体 */}
+      <g style={dim(active, 3)}>
+        <circle cx="250" cy="190" r="36" fill="#e0c8ee" stroke="#7a4a8a" strokeWidth="2.8" />
+        <text x="250" y="196" textAnchor="middle" fontSize="12" fill="#6a4a9a" fontWeight="700">细胞核</text>
+        <text x="392" y="150" fontSize="12.5" fill="#6a4a9a" fontWeight="600">中心体附近发出微管</text>
+      </g>
+      {/* 功能说明 */}
+      <g style={dim(active, 4)}>
+        <rect x="60" y="316" width="380" height="42" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="250" y="334" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="700">细胞骨架 = 蛋白质纤维网络：支撑形态 · 运输 · 分裂 · 运动</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">细胞骨架模式图 · 微管与微丝（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 肌肉组织三种类型 ================= */
+
+function MuscleTissuesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 骨骼肌（左） */}
+      <g style={dim(active, 0)}>
+        <rect x="20" y="70" width="150" height="190" rx="12" fill="#f6e2d2" stroke="#b5603a" strokeWidth="2.5" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M34 ${100 + i * 30} L156 ${100 + i * 30}`} stroke="#c9708a" strokeWidth="5" strokeLinecap="round" />
+        ))}
+        <text x="95" y="52" textAnchor="middle" fontSize="13.5" fill="#a53a2c" fontWeight="800">骨骼肌</text>
+        <text x="95" y="284" textAnchor="middle" fontSize="12" fill="#7a4a42">长圆柱状·多核·有明显横纹</text>
+        <text x="95" y="304" textAnchor="middle" fontSize="12" fill="#7a4a42">受意识支配（随意肌）</text>
+      </g>
+      {/* 心肌（中） */}
+      <g style={dim(active, 1)}>
+        <rect x="185" y="70" width="150" height="190" rx="12" fill="#fbe9e2" stroke="#c9538a" strokeWidth="2.5" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M198 ${96 + i * 34} q 30 -16 62 0 q 14 8 24 -6`} fill="none" stroke="#c9708a" strokeWidth="5" strokeLinecap="round" />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <rect key={i} x={232 + (i % 2) * 22} y={128 + Math.floor(i / 1) * 44} width="12" height="5" fill="#7a4a8a" />
+        ))}
+        <text x="260" y="52" textAnchor="middle" fontSize="13.5" fill="#a54868" fontWeight="800">心肌</text>
+        <text x="260" y="284" textAnchor="middle" fontSize="12" fill="#7a4a42">分支相连·有闰盘·横纹不明显</text>
+        <text x="260" y="304" textAnchor="middle" fontSize="12" fill="#7a4a42">不受意识支配（不随意）</text>
+      </g>
+      {/* 平滑肌（右） */}
+      <g style={dim(active, 2)}>
+        <rect x="350" y="70" width="150" height="190" rx="12" fill="#eef4ea" stroke="#4a9a5a" strokeWidth="2.5" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M366 ${104 + i * 26} q 34 ${i % 2 === 0 ? 18 : -14} 62 0 q 16 10 30 -4`} fill="none" stroke="#4a9a5a" strokeWidth="5.5" strokeLinecap="round" />
+        ))}
+        <text x="425" y="52" textAnchor="middle" fontSize="13.5" fill="#2f7a4d" fontWeight="800">平滑肌</text>
+        <text x="425" y="284" textAnchor="middle" fontSize="12" fill="#2f5a3a">梭形·无横纹·单核</text>
+        <text x="425" y="304" textAnchor="middle" fontSize="12" fill="#2f5a3a">不随意（胃肠·血管壁）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">三种肌肉组织对比 · 结构与功能相适应</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'ecosystemTypes',
+    id: 'verticalLayers',
+    name: '森林的垂直结构',
+    kicker: '群落生态 · 分层现象图',
+    intro: '森林群落自上而下分乔木、灌木、草本、地被四层：分层提高了群落利用阳光等环境资源的能力，动物的分层也随之而来。',
+    parts: [
+      { name: '乔木层', desc: '最高的林冠层：吸收阳光最强的"顶层公寓"，栖scope树栖鸟类与松鼠。' },
+      { name: '灌木层', desc: '较矮的木本植物，耐半荫，为鸟类与小型哺乳动物提供巢域。' },
+      { name: '草本层', desc: '需光较少的草本植物，分布昆虫、两栖类等小型动物。' },
+      { name: '地被层', desc: '苔藓、地衣与真菌：分解落叶残体，与土壤微生物共同完成物质循环。' },
+      { name: '动物的分层', desc: '动物也随植物分层：树冠层鸟类、灌木层昆虫、土壤中蚯蚓与线虫。' },
+    ],
+    Svg: VerticalLayersSvg,
+  },
+  {
+    id: 'cytoskeleton',
+    name: '细胞骨架',
+    kicker: '细胞结构 · 模式图（课外拓展）',
+    intro: '细胞质中不是"空"的：微管与微丝等蛋白质纤维交织成骨架——支撑细胞形态、牵引染色体分离、充当细胞器运输的"高速公路"。',
+    extension: true,
+    parts: [
+      { name: '微管', desc: '较粗的中空蛋白管：构成"运输轨道"，马达蛋白沿它搬运囊泡与细胞器。' },
+      { name: '微丝', desc: '较细的实心蛋白丝（肌动蛋白）：维持细胞形状，参与变形运动与细胞分裂缢缩。' },
+      { name: '中心体', desc: '动物细胞中微管的组织中心：分裂时发出纺锤丝牵引染色体。' },
+      { name: '功能', desc: '支撑形态、细胞运动、胞内运输与细胞分裂——细胞骨架是"命脉网络"。' },
+    ],
+    Svg: CytoskeletonSvg,
+  },
+  {
+    id: 'muscleTissues',
+    name: '肌肉组织三种类型',
+    kicker: '人体组织 · 对比模式图',
+    intro: '骨骼肌、心肌、平滑肌：结构与功能相适应——骨骼肌随意控制躯体运动，心肌自动节律性收缩，平滑肌负责胃肠蠕动与血管舒缩。',
+    parts: [
+      { name: '骨骼肌', desc: '长圆柱状、多核、有明显横纹：附着在骨上，受意识支配快速有力地收缩。' },
+      { name: '心肌', desc: '分支状细胞经闰盘相连成网：自动有节律地收缩，终身不停——构成心脏壁。' },
+      { name: '平滑肌', desc: '梭形、无横纹、单核：收缩缓慢持久，分布在胃肠、血管等内脏器官壁。' },
+      { name: '随意与不随意', desc: '骨骼肌受意识支配；心肌和平滑肌由自主神经调节，无法"命令"它们停下。' },
+    ],
+    Svg: MuscleTissuesSvg,
+  },
+  {
+    id: 'neuron',
     name: '生态系统的类型',
     kicker: '生态系统 · 类型总览图',
     intro: '森林、草原、海洋、湿地、农田、城市——不同环境孕育不同的生态系统：自然类型的调节能力强，人工类型则高度依赖人类维护。',
