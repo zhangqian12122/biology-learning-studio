@@ -174,8 +174,8 @@ const SpecimenCard = lazy(() =>
 );
 
 const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
-  mitosisObservation: ['mitosisStages'],
-  meiosisSlide: ['meiosisStages', 'fertilization'],
+  mitosisObservation: ['mitosisStages', 'divisionCurve', 'cellCyclePie'],
+  meiosisSlide: ['meiosisStages', 'divisionCurve'],
   traitSeparation: ['artificialPollination'],
   genetics: ['artificialPollination'],
   yeastRespiration: ['aerobicRespiration'],
