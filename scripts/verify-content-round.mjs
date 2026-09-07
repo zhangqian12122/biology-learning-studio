@@ -8,38 +8,32 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：体温调节模拟 ----------
-await page.goto(`${BASE}/lab?exp=thermoRegulation`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：自由组合定律模拟 ----------
+await page.goto(`${BASE}/lab?exp=dihybridSim`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('体温调节模拟');
-  results.experiment.envButtons = ['严寒 -12°C', '寒冷 4°C', '舒适 24°C', '炎热 36°C'].every((t) => text.includes(t));
-  // 互动路径：选寒冷 → 推进 3 步 → 断言体温/观察文字变化
-  const before = await page.locator('main').innerText();
-  await page.getByRole('button', { name: '寒冷 4°C' }).click({ force: true });
-  await page.waitForTimeout(300);
-  for (let i = 0; i < 3; i++) {
-    const btn = page.getByRole('button', { name: /推进 30 min/ });
-    await btn.waitFor({ state: 'visible' });
-    await btn.click({ force: true });
-    await page.waitForTimeout(700);
-  }
-  const after = await page.locator('main').innerText();
-  results.experiment.tempChanged = after.includes('36.7') || after.includes('36.8') || after.includes('36.6');
-  results.experiment.responsesShown = after.includes('骨骼肌：战栗') || after.includes('皮肤血管：收缩');
-  results.experiment.observationUpdated = after.includes('当前环境');
-  // 再切炎热验证响应切换
-  await page.getByRole('button', { name: '炎热 36°C' }).click({ force: true });
-  await page.getByRole('button', { name: /推进 30 min/ }).click({ force: true });
-  await page.waitForTimeout(500);
-  const hot = await page.locator('main').innerText();
-  results.experiment.hotSwitch = hot.includes('汗腺：大量分泌汗液');
+  results.experiment.open = text.includes('自由组合定律');
+  results.experiment.gametesShown = ['YR', 'Yr', 'yR', 'yr'].every((t) => text.includes(t));
+  // 互动路径：模拟 1 次 → 出现受精结果；快速 100 次 → 比例接近 9:3:3:1
+  await page.getByRole('button', { name: /模拟 1 次/ }).click({ force: true });
+  await page.waitForTimeout(600);
+  const once = await page.locator('main').innerText();
+  results.experiment.singleWorks = once.includes('雌配子') && once.includes('基因型');
+  await page.getByRole('button', { name: /快速模拟 100 次/ }).click({ force: true });
+  await page.getByRole('button', { name: /快速模拟 100 次/ }).click({ force: true });
+  await page.waitForTimeout(700);
+  const many = await page.locator('main').innerText();
+  results.experiment.batchWorks = many.includes('已获') && many.includes('粒');
+  results.experiment.ratioNote = many.includes('9 : 3 : 3 : 1') || many.includes('理论值');
+  const ratios = [...many.matchAll(/（([\d.]+)%）/g)].map((m) => parseFloat(m[1]));
+  results.experiment.closeToTheory =
+    ratios.length === 4 && ratios.every((r) => Math.abs(r - [56.25, 18.75, 18.75, 6.25][ratios.indexOf(r)]) < 8);
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['mussel', 'mushroom', 'rootTip'];
+const SPECIMENS = ['vessels', 'leafCrossSection', 'hydra'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -101,8 +95,7 @@ for (const id of SPECIMENS) {
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
-const allOk =
-  results.experiment.open && results.experiment.envButtons && results.experiment.responsesShown &&
-  results.experiment.observationUpdated && results.experiment.hotSwitch &&
-  SPECIMENS.every((id) => results.specimens[id]?.ok);
+const exp = results.experiment;
+const expOk = Object.values(exp).every(Boolean);
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok);
 console.log('ALL_OK=' + allOk);

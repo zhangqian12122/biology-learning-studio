@@ -5047,9 +5047,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation'] },
 ];
 
@@ -5278,9 +5278,226 @@ function RootTipSvg({ active }: { active: number | null; open?: boolean }) {
 }
 
 
+/* ================= 血管三种类型对比 ================= */
+
+function VesselsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 动脉（左列） */}
+      <g style={dim(active, 0)}>
+        <path d="M60 92 Q 118 76 176 92 L176 132 Q 118 116 60 132 Z" fill="#d86452" stroke="#a53a2c" strokeWidth="2.5" />
+        <path d="M60 132 Q 118 116 176 132 L176 158 Q 118 144 60 158 Z" fill="#e88a78" stroke="#a53a2c" strokeWidth="2.5" />
+        <path d="M76 112 Q 118 98 160 112" fill="none" stroke="#f2b0a0" strokeWidth="4" strokeLinecap="round" />
+        <text x="118" y="76" textAnchor="middle" fontSize="13.5" fill="#a53a2c" fontWeight="700">动脉</text>
+        <text x="118" y="186" textAnchor="middle" fontSize="12.5" fill="#7a4a42">管壁厚、弹性大</text>
+        <text x="118" y="206" textAnchor="middle" fontSize="12.5" fill="#7a4a42">血流速度快</text>
+        <text x="118" y="226" textAnchor="middle" fontSize="12.5" fill="#7a4a42">把血送离心脏</text>
+      </g>
+      {/* 静脉（中列） */}
+      <g style={dim(active, 1)}>
+        <path d="M232 92 Q 290 78 348 92 L348 128 Q 290 114 232 128 Z" fill="#7a8ac9" stroke="#4a5a94" strokeWidth="2.5" />
+        <path d="M232 128 Q 290 114 348 128 L348 154 Q 290 140 232 154 Z" fill="#9aa8d8" stroke="#4a5a94" strokeWidth="2.5" />
+        {/* 瓣膜 */}
+        <path d="M276 128 Q 286 142 296 130 M288 130 Q 298 144 308 132" fill="none" stroke="#4a5a94" strokeWidth="2.4" />
+        <text x="290" y="76" textAnchor="middle" fontSize="13.5" fill="#4a5a94" fontWeight="700">静脉</text>
+        <text x="290" y="186" textAnchor="middle" fontSize="12.5" fill="#4a5a6e">管壁薄、弹性小</text>
+        <text x="290" y="206" textAnchor="middle" fontSize="12.5" fill="#4a5a6e">有瓣膜防血液倒流</text>
+        <text x="290" y="226" textAnchor="middle" fontSize="12.5" fill="#4a5a6e">把血送回心脏</text>
+      </g>
+      {/* 毛细血管（右列） */}
+      <g style={dim(active, 2)}>
+        <path d="M404 96 Q 452 88 496 96" fill="none" stroke="#c94a5a" strokeWidth="7" strokeLinecap="round" />
+        {/* 单行红细胞 */}
+        {[0, 1, 2].map((i) => (
+          <ellipse key={i} cx={424 + i * 26} cy={96 - i * 1.5} rx="5.5" ry="3" fill="#e86a5a" stroke="#a53a2c" strokeWidth="1.2" transform={`rotate(${-8 + i * 6} ${424 + i * 26} ${96 - i * 1.5})`} />
+        ))}
+        {/* 管壁单层细胞示意 */}
+        <path d="M404 92 Q 452 84 496 92" fill="none" stroke="#7a9aa8" strokeWidth="2.2" />
+        <text x="450" y="72" textAnchor="middle" fontSize="13.5" fill="#8a4a56" fontWeight="700">毛细血管</text>
+        <text x="450" y="132" textAnchor="middle" fontSize="12.5" fill="#6a5a62">管壁仅一层上皮细胞</text>
+        <text x="450" y="152" textAnchor="middle" fontSize="12.5" fill="#6a5a62">红细胞单行通过</text>
+        <text x="450" y="172" textAnchor="middle" fontSize="12.5" fill="#6a5a62">便于物质交换</text>
+        <text x="450" y="192" textAnchor="middle" fontSize="12.5" fill="#6a5a62">血流速度最慢</text>
+      </g>
+      {/* 连通示意 */}
+      <g style={dim(active, 2)}>
+        <path d="M186 122 Q 208 132 226 122" fill="none" stroke="#9ab0b5" strokeWidth="2" strokeDasharray="5 4" />
+        <path d="M356 120 Q 378 132 398 112" fill="none" stroke="#9ab0b5" strokeWidth="2" strokeDasharray="5 4" />
+        <text x="260" y="300" textAnchor="middle" fontSize="13" fill="#49676d" fontWeight="600">血流方向：动脉 → 毛细血管 → 静脉（经心脏循环）</text>
+        <path d="M150 322 L370 322" stroke="#9ab0b5" strokeWidth="0" />
+      </g>
+      {/* 心脏提示 */}
+      <g style={dim(active, 0)}>
+        <path d="M40 300 Q 24 284 36 268 Q 48 256 58 268 Q 68 256 80 268 Q 92 284 76 300 Q 58 316 40 300 Z" fill="#d86452" stroke="#a53a2c" strokeWidth="2.5" />
+        <text x="58" y="338" textAnchor="middle" fontSize="12.5" fill="#a53a2c" fontWeight="600">心脏</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">三种血管结构模式图 · 结构与功能相适应</text>
+    </svg>
+  );
+}
+
+/* ================= 叶的横切结构 ================= */
+
+function LeafCrossSectionSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 上表皮 */}
+      <g style={dim(active, 0)}>
+        <path d="M60 130 Q 250 106 460 130 L460 148 Q 250 126 60 148 Z" fill="#e8e2c8" stroke="#8a7a4a" strokeWidth="2.5" />
+        <text x="96" y="102" fontSize="13" fill="#7a6a3a" fontWeight="700">上表皮（角质层防失水）</text>
+        <line x1="140" y1="108" x2="160" y2="128" stroke="#7a6a3a" strokeWidth="1.4" />
+      </g>
+      {/* 栅栏组织 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <rect key={i} x={80 + i * 64} y={150} width="34" height="66" rx="10" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="2" />
+        ))}
+        <text x="88" y="238" fontSize="13" fill="#2f7a4d" fontWeight="700">栅栏组织（圆柱形细胞、含叶绿体多）</text>
+      </g>
+      {/* 海绵组织 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2].map((i) => (
+          <ellipse key={`a${i}`} cx={112 + i * 66} cy={272} rx="30" ry="20" fill="#a8cf98" stroke="#3f7f3a" strokeWidth="2" />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <ellipse key={`b${i}`} cx={145 + i * 66} cy={282} rx="26" ry="17" fill="#b8d8a8" stroke="#3f7f3a" strokeWidth="2" />
+        ))}
+        <text x="330" y="290" fontSize="13" fill="#2f7a4d" fontWeight="700">海绵组织（排列疏松、</text>
+        <text x="330" y="310" fontSize="13" fill="#2f7a4d">细胞间隙利于气体流通）</text>
+        <line x1="326" y1="292" x2="272" y2="282" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 叶脉 */}
+      <g style={dim(active, 3)}>
+        <circle cx="256" cy="230" r="34" fill="#e8c9a8" stroke="#b58a5f" strokeWidth="3" />
+        <path d="M256 202 L256 258 M234 216 L278 244 M234 244 L278 216" stroke="#b58a5f" strokeWidth="3.5" strokeLinecap="round" />
+        <text x="256" y="176" textAnchor="middle" fontSize="13" fill="#8a5a2a" fontWeight="700">叶脉（导管输水、筛管输有机物）</text>
+        <line x1="256" y1="182" x2="256" y2="196" stroke="#8a5a2a" strokeWidth="1.4" />
+      </g>
+      {/* 下表皮与气孔 */}
+      <g style={dim(active, 4)}>
+        <path d="M60 316 Q 250 340 460 316 L460 334 Q 250 358 60 334 Z" fill="#e8e2c8" stroke="#8a7a4a" strokeWidth="2.5" />
+        <path d="M312 334 Q 318 350 328 350 Q 338 350 344 334" fill="none" stroke="#8a7a4a" strokeWidth="3" />
+        <ellipse cx="320" cy="356" rx="7" ry="4" fill="#c8d8e8" stroke="#8a7a4a" strokeWidth="1.6" />
+        <text x="368" y="362" fontSize="13" fill="#7a6a3a" fontWeight="700">气孔（气体进出窗口）</text>
+        <text x="66" y="362" fontSize="13" fill="#7a6a3a" fontWeight="700">下表皮（气孔主要分布）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">叶横切结构图 · 光合作用的主要场所</text>
+    </svg>
+  );
+}
+
+/* ================= 水螅（刺胞动物·课外拓展） ================= */
+
+function HydraSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 基盘 */}
+      <g style={dim(active, 4)}>
+        <path d="M204 318 Q 250 302 296 318 Q 250 332 204 318 Z" fill="#c9a882" stroke="#8a7a58" strokeWidth="2.5" />
+        <text x="352" y="330" fontSize="13" fill="#8a6242" fontWeight="700">基盘（附着在水草上）</text>
+        <line x1="348" y1="326" x2="298" y2="320" stroke="#8a6242" strokeWidth="1.4" />
+      </g>
+      {/* 身体（圆柱） */}
+      <g style={dim(active, 1)}>
+        <path d="M226 96 Q 210 200 228 316 L272 316 Q 290 200 274 96 Q 250 84 226 96 Z" fill="#c8e2d8" stroke="#4a9a8a" strokeWidth="3" />
+        {/* 消化腔 */}
+        <path d="M244 116 Q 236 200 246 300 L256 300 Q 264 200 256 116 Q 250 112 244 116 Z" fill="#a8cfbe" stroke="#4a9a8a" strokeWidth="1.6" />
+        <text x="368" y="212" fontSize="13" fill="#2f7a6a" fontWeight="700">消化循环腔</text>
+        <text x="368" y="230" fontSize="12.5" fill="#2f7a6a">消化后的养分扩散全身</text>
+        <line x1="364" y1="218" x2="258" y2="210" stroke="#2f7a6a" strokeWidth="1.4" />
+      </g>
+      {/* 触手 */}
+      <g style={dim(active, 0)}>
+        <path d="M244 100 Q 180 60 128 52" fill="none" stroke="#4a9a8a" strokeWidth="6" strokeLinecap="round" />
+        <path d="M250 94 Q 214 40 176 26" fill="none" stroke="#4a9a8a" strokeWidth="6" strokeLinecap="round" />
+        <path d="M256 92 Q 256 34 246 16" fill="none" stroke="#4a9a8a" strokeWidth="6" strokeLinecap="round" />
+        <path d="M262 94 Q 298 42 330 28" fill="none" stroke="#4a9a8a" strokeWidth="6" strokeLinecap="round" />
+        <path d="M258 100 Q 326 62 384 56" fill="none" stroke="#4a9a8a" strokeWidth="6" strokeLinecap="round" />
+        <text x="30" y="42" fontSize="13" fill="#2f7a6a" fontWeight="700">触手（5~12 条）</text>
+        <text x="30" y="60" fontSize="12.5" fill="#2f7a6a">捕捉小型水生动物</text>
+      </g>
+      {/* 刺细胞 */}
+      <g style={dim(active, 2)}>
+        <circle cx="176" cy="40" r="7" fill="#f4d06a" stroke="#b5953a" strokeWidth="2" />
+        <path d="M176 33 L172 18 M180 34 L186 20" stroke="#b5953a" strokeWidth="2" />
+        <circle cx="330" cy="38" r="7" fill="#f4d06a" stroke="#b5953a" strokeWidth="2" />
+        <path d="M334 32 L340 20 M330 31 L328 16" stroke="#b5953a" strokeWidth="2" />
+        <text x="368" y="58" fontSize="13" fill="#8a671b" fontWeight="700">刺细胞（外胚层）</text>
+        <text x="368" y="76" fontSize="12.5" fill="#8a671b">射出刺丝麻醉猎物</text>
+        <line x1="364" y1="60" x2="340" y2="46" stroke="#8a671b" strokeWidth="1.4" />
+      </g>
+      {/* 口 */}
+      <g style={dim(active, 3)}>
+        <ellipse cx="250" cy="92" rx="16" ry="7" fill="#8a5a5a" stroke="#5a3a3a" strokeWidth="2" />
+        <text x="150" y="94" fontSize="13" fill="#5a3a3a" fontWeight="700">口（捕食与排渣共用）</text>
+        <line x1="212" y1="92" x2="232" y2="92" stroke="#5a3a3a" strokeWidth="1.4" />
+      </g>
+      {/* 芽体（出芽生殖） */}
+      <g style={dim(active, 5)}>
+        <path d="M272 214 Q 306 202 316 224 Q 322 244 296 252 Q 274 246 272 224 Z" fill="#a8cfbe" stroke="#4a9a8a" strokeWidth="2.5" />
+        <path d="M312 216 Q 328 202 340 200" fill="none" stroke="#4a9a8a" strokeWidth="3.5" strokeLinecap="round" />
+        <text x="330" y="272" fontSize="13" fill="#2f7a6a" fontWeight="700">芽体（出芽生殖）</text>
+        <text x="330" y="290" fontSize="12.5" fill="#2f7a6a">脱落后长成新个体</text>
+        <line x1="326" y1="262" x2="306" y2="248" stroke="#2f7a6a" strokeWidth="1.4" />
+      </g>
+      {/* 外胚层/内胚层提示 */}
+      <g style={dim(active, 2)}>
+        <text x="60" y="168" fontSize="12.5" fill="#49676d" fontWeight="600">体壁 = 外胚层 +</text>
+        <text x="60" y="186" fontSize="12.5" fill="#49676d">内胚层（两胚层动物）</text>
+        <line x1="170" y1="176" x2="228" y2="182" stroke="#49676d" strokeWidth="1.4" />
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">水螅结构模式图 · 淡水刺胞动物（课外拓展）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'mussel',
+    id: 'vessels',
+    name: '血管三种类型',
+    kicker: '循环系统 · 对比模式图',
+    intro: '动脉、静脉、毛细血管的结构与功能相适应：管壁厚薄、弹性、血流速度各不同，毛细血管的一层细胞壁正是物质交换的"窗口"。',
+    parts: [
+      { name: '动脉', desc: '把血液从心脏输送到身体各部分：管壁厚、弹性大，血流速度最快。' },
+      { name: '静脉', desc: '把血液从身体各部分送回心脏：管壁较薄、弹性小、管腔大，内有瓣膜防止血液倒流。' },
+      { name: '毛细血管', desc: '连通于最小的动脉与静脉之间：管壁仅由一层上皮细胞构成，红细胞单行通过，血流速度最慢。' },
+      { name: '物质交换', desc: '毛细血管的结构特点使血液与组织细胞充分进行物质交换——结构与功能相适应的典型例子。' },
+    ],
+    Svg: VesselsSvg,
+  },
+  {
+    id: 'leafCrossSection',
+    name: '叶的横切结构',
+    kicker: '叶 · 横切结构图',
+    intro: '叶片是光合作用的主要器官：栅栏组织与海绵组织的叶肉细胞里含大量叶绿体，气孔是气体进出与水分散失的"门户"，叶脉负责运输。',
+    parts: [
+      { name: '上表皮', desc: '细胞排列紧密、外壁有角质层，透光防水，保护叶肉组织。' },
+      { name: '栅栏组织', desc: '靠近上表皮的圆柱形细胞，排列整齐紧密，含叶绿体较多——光合作用最旺盛的部位。' },
+      { name: '海绵组织', desc: '靠近下表皮、形状不规则排列疏松，细胞间隙大，利于气体流通；也含叶绿体。' },
+      { name: '叶脉', desc: '含导管与筛管：导管把水运来供光合作用，筛管把制造的有机物运走，还起支撑作用。' },
+      { name: '下表皮与气孔', desc: '下表皮气孔较多：气孔由一对保卫细胞围成，是气体交换和水分蒸腾的门户。' },
+    ],
+    Svg: LeafCrossSectionSvg,
+  },
+  {
+    id: 'hydra',
+    name: '水螅',
+    kicker: '刺胞动物 · 结构模式图',
+    intro: '生活在淡水中的两胚层动物（课外拓展）：身体呈辐射对称，触手上的刺细胞能麻醉猎物，食物在消化循环腔内消化，还能靠出芽生殖繁殖。',
+    extension: true,
+    parts: [
+      { name: '触手', desc: '口周围辐射排列的细长突起，用来捕捉小型水生动物并送入口中。' },
+      { name: '刺细胞', desc: '外胚层特有的攻击细胞：受刺激时射出刺丝注入毒素，麻醉猎物——刺胞动物因此得名。' },
+      { name: '口与消化循环腔', desc: '口是食物入口也是残渣出口；消化循环腔内的细胞消化食物，养分扩散到全身。' },
+      { name: '体壁（两胚层）', desc: '由外胚层和内胚层两层细胞构成，中间夹着胶状中胶层——比海绵进化、比三胚层动物原始。' },
+      { name: '芽体（出芽生殖）', desc: '体壁向外突起长成芽体，脱落后发育为新个体；环境恶劣时也能有性生殖。' },
+      { name: '基盘', desc: '身体基部的附着结构，分泌黏液把水螅固定在水草或石块上。' },
+    ],
+    Svg: HydraSvg,
+  },
+  {
+    id: 'neuron',
     name: '河蚌',
     kicker: '软体动物 · 结构模式图',
     intro: '水生软体动物的代表：身体柔软，有外套膜与两片贝壳，水从入水孔进入、经鳃呼吸后由出水孔排出，靠斧足掘泥沙运动。',
