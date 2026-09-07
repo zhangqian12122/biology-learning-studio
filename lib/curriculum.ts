@@ -596,6 +596,7 @@ export type ExperimentId =
   | 'thermoRegulation'
   | 'dihybridSim'
   | 'sexLinkedCross'
+  | 'leafDecompose'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -912,6 +913,13 @@ export const experimentMeta: Record<
     relatedBook: 'genetics',
     relatedModule: '遗传规律与配子分析',
   },
+  leafDecompose: {
+    title: '探究土壤微生物的分解作用',
+    kicker: '选择性必修 2 · 生物与环境',
+    description: '灭菌土与自然土各埋等量落叶，逐周观察分解者把有机物还归土壤。',
+    relatedBook: 'ecology',
+    relatedModule: '生态系统能量与物质循环',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1068,7 +1076,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecosystemJar', 'mulberryFishPond'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose'],
   },
   {
     name: '生物技术',
@@ -1129,6 +1137,7 @@ export const experimentOrder: ExperimentId[] = [
   'population',
   'ecosystemJar',
   'mulberryFishPond',
+  'leafDecompose',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',
   'dnaExtract',

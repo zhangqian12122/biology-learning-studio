@@ -5047,9 +5047,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation'] },
 ];
 
@@ -5611,9 +5611,217 @@ function ChlamydomonasSvg({ active }: { active: number | null; open?: boolean })
 }
 
 
+/* ================= 芽的结构（叶芽纵切） ================= */
+
+function LeafBudSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 枝条 */}
+      <g style={dim(active, 3)}>
+        <path d="M40 320 Q 150 308 250 312 L 250 286 L 430 296 L 430 326 Q 300 314 250 316 Q 150 322 40 346 Z" fill="#a8824a" stroke="#7a5a2a" strokeWidth="3" />
+        <text x="470" y="322" textAnchor="end" fontSize="12.5" fill="#7a5a2a" fontWeight="600">枝条（芽着生处）</text>
+      </g>
+      {/* 芽轴 */}
+      <g style={dim(active, 2)}>
+        <path d="M238 290 L242 120 Q 250 104 258 120 L262 290 Z" fill="#d8c9a0" stroke="#8a7a4a" strokeWidth="2.5" />
+        <text x="336" y="252" fontSize="13" fill="#8a6a2a" fontWeight="700">芽轴（将来发育成茎）</text>
+        <line x1="332" y1="258" x2="262" y2="252" stroke="#8a6a2a" strokeWidth="1.4" />
+      </g>
+      {/* 生长点 */}
+      <g style={dim(active, 0)}>
+        <path d="M234 122 Q 250 88 266 122 Q 250 134 234 122 Z" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="80" y="84" fontSize="13" fill="#6a4a9a" fontWeight="700">生长点（顶芽分生组织）</text>
+        <text x="80" y="102" fontSize="12.5" fill="#6a4a9a">细胞分裂使芽不断长大</text>
+        <line x1="206" y1="96" x2="240" y2="112" stroke="#6a4a9a" strokeWidth="1.4" />
+      </g>
+      {/* 叶原基 */}
+      <g style={dim(active, 1)}>
+        <path d="M240 128 Q 214 122 204 138 Q 220 148 242 140 Z" fill="#a8cf98" stroke="#3f7f3a" strokeWidth="2.2" />
+        <path d="M260 128 Q 286 122 296 138 Q 280 148 258 140 Z" fill="#a8cf98" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="330" y="122" fontSize="13" fill="#2f7a4d" fontWeight="700">叶原基（发育成幼叶）</text>
+        <line x1="326" y1="128" x2="298" y2="134" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 幼叶 */}
+      <g style={dim(active, 1)}>
+        <path d="M238 152 Q 172 148 142 196 Q 190 224 234 196 Z" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2.5" />
+        <path d="M262 152 Q 328 148 358 196 Q 310 224 266 196 Z" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="42" y="150" fontSize="13" fill="#2f7a4d" fontWeight="700">幼叶（叶原基</text>
+        <text x="42" y="168" fontSize="13" fill="#2f7a4d" fontWeight="700">长大 → 发育成叶）</text>
+        <line x1="128" y1="158" x2="168" y2="178" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 芽原基（侧芽） */}
+      <g style={dim(active, 4)}>
+        <ellipse cx="212" cy="272" rx="16" ry="24" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="56" y="292" fontSize="13" fill="#6a4a9a" fontWeight="700">芽原基（发育成侧芽 → 侧枝）</text>
+        <line x1="216" y1="290" x2="196" y2="282" stroke="#6a4a9a" strokeWidth="1.4" />
+      </g>
+      {/* 芽鳞片 */}
+      <g style={dim(active, 5)}>
+        <path d="M186 236 Q 150 176 238 108 L250 84 Q 220 120 208 170 Q 200 210 206 258 Z" fill="#c9b88a" stroke="#8a7a4a" strokeWidth="2.5" opacity="0.85" />
+        <path d="M314 236 Q 350 176 262 108 L250 84 Q 280 120 292 170 Q 300 210 294 258 Z" fill="#c9b88a" stroke="#8a7a4a" strokeWidth="2.5" opacity="0.85" />
+        <text x="380" y="72" fontSize="13" fill="#8a7a4a" fontWeight="700">芽鳞片（外层保护）</text>
+        <line x1="376" y1="78" x2="298" y2="150" stroke="#8a7a4a" strokeWidth="1.4" />
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">叶芽纵切结构图 · 芽是未发育的枝条</text>
+    </svg>
+  );
+}
+
+/* ================= 血细胞三种类型 ================= */
+
+function BloodCellsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 血浆背景 */}
+      <g style={dim(active, 3)}>
+        <rect x="20" y="60" width="480" height="280" rx="16" fill="#fbe9c8" stroke="#d8b878" strokeWidth="2.5" />
+        <text x="36" y="330" fontSize="12.5" fill="#a58a4a" fontWeight="600">血浆（运载血细胞·运输养料废物）</text>
+      </g>
+      {/* 红细胞（左列） */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2, 3].map((i) => (
+          <ellipse key={i} cx={86 + (i % 2) * 62} cy={112 + Math.floor(i / 2) * 64} rx="30" ry="22" fill="#d85a4a" stroke="#a53a2c" strokeWidth="2.2" />
+        ))}
+        <ellipse cx="86" cy="112" rx="14" ry="8" fill="#e87a6a" opacity="0.8" />
+        <text x="118" y="72" textAnchor="middle" fontSize="13.5" fill="#a53a2c" fontWeight="700">红细胞</text>
+        <text x="118" y="258" textAnchor="middle" fontSize="12.5" fill="#7a4a42">数量最多（男 5.0×10¹²/L 左右）</text>
+        <text x="118" y="278" textAnchor="middle" fontSize="12.5" fill="#7a4a42">两面凹的圆饼状、无细胞核</text>
+        <text x="118" y="298" textAnchor="middle" fontSize="12.5" fill="#7a4a42">含血红蛋白 → 运输氧气</text>
+      </g>
+      {/* 白细胞（中列） */}
+      <g style={dim(active, 1)}>
+        <circle cx="266" cy="130" r="40" fill="#f4f0e2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <path d="M250 112 Q 266 96 284 110 Q 296 126 282 142 Q 264 152 250 140 Q 240 124 250 112 Z" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2" />
+        <circle cx="316" cy="212" r="34" fill="#f4f0e2" stroke="#7a4a8a" strokeWidth="2.5" />
+        <path d="M304 198 Q 318 188 330 202 Q 338 214 326 226 Q 310 232 302 220 Q 296 208 304 198 Z" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2" />
+        <text x="290" y="72" textAnchor="middle" fontSize="13.5" fill="#6a4a9a" fontWeight="700">白细胞</text>
+        <text x="290" y="258" textAnchor="middle" fontSize="12.5" fill="#5a4a6e">最大、有细胞核、数量最少</text>
+        <text x="290" y="278" textAnchor="middle" fontSize="12.5" fill="#5a4a6e">能变形穿出血管</text>
+        <text x="290" y="298" textAnchor="middle" fontSize="12.5" fill="#5a4a6e">吞噬病菌 → 防御保护</text>
+      </g>
+      {/* 血小板（右列） */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path
+            key={i}
+            d={`M${418 + (i % 2) * 44} ${96 + Math.floor(i / 2) * 58} l10 -4 l8 6 l-2 10 l-12 3 l-8 -7 Z`}
+            fill="#e8b878"
+            stroke="#a5761d"
+            strokeWidth="1.8"
+          />
+        ))}
+        <text x="450" y="72" textAnchor="middle" fontSize="13.5" fill="#a5761d" fontWeight="700">血小板</text>
+        <text x="450" y="258" textAnchor="middle" fontSize="12.5" fill="#8a6a2a">最小、形状不规则、无核</text>
+        <text x="450" y="278" textAnchor="middle" fontSize="12.5" fill="#8a6a2a">破损血管处聚集</text>
+        <text x="450" y="298" textAnchor="middle" fontSize="12.5" fill="#8a6a2a">释放物质 → 止血凝血</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">三种血细胞对比 · 都由骨髓中的造血干细胞产生</text>
+    </svg>
+  );
+}
+
+/* ================= 沼虾（甲壳纲） ================= */
+
+function ShrimpSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 腹部（分节）+ 尾扇 */}
+      <g style={dim(active, 1)}>
+        <path d="M330 168 Q 380 158 424 172 Q 452 184 444 210 Q 430 244 384 250 Q 350 254 330 240 Z" fill="#e88a6a" stroke="#a5533c" strokeWidth="3" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${352 + i * 26} 164 Q ${358 + i * 26} 208 ${346 + i * 26} 246`} fill="none" stroke="#a5533c" strokeWidth="2.2" />
+        ))}
+        <path d="M444 196 L492 172 L486 200 L496 214 L480 226 L488 244 L440 234 Z" fill="#e8705a" stroke="#a5533c" strokeWidth="2.5" />
+        <text x="360" y="304" fontSize="13" fill="#a5533c" fontWeight="700">分节腹部 + 尾扇</text>
+        <text x="360" y="322" fontSize="12.5" fill="#a5533c">拨水后退逃生</text>
+      </g>
+      {/* 游泳足 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${344 + i * 26} 248 Q ${340 + i * 26} 268 ${322 + i * 26} 274`} fill="none" stroke="#a5533c" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="244" y="292" fontSize="12.5" fill="#a5533c" fontWeight="600">游泳足 5 对（辅助游泳）</text>
+      </g>
+      {/* 头胸部 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 130 Q 220 96 330 152 Q 340 188 330 240 Q 240 268 148 236 Q 108 200 120 130 Z" fill="#f09a78" stroke="#a5533c" strokeWidth="3" />
+        {/* 额剑 */}
+        <path d="M126 138 L48 116 L124 156 Z" fill="#e88a6a" stroke="#a5533c" strokeWidth="2.5" />
+        <text x="30" y="100" fontSize="12.5" fill="#a5533c" fontWeight="700">额剑（防御）</text>
+        {/* 复眼 */}
+        <circle cx="146" cy="146" r="10" fill="#3a3a3a" stroke="#13333a" strokeWidth="2" />
+        <circle cx="143" cy="143" r="3" fill="#c8d8e8" />
+        <text x="60" y="176" fontSize="13" fill="#4a5a6a" fontWeight="700">复眼（有柄）</text>
+        <line x1="112" y1="172" x2="138" y2="156" stroke="#4a5a6a" strokeWidth="1.4" />
+        <text x="196" y="120" fontSize="13.5" fill="#a5533c" fontWeight="700">头胸部（外骨骼·头胸甲）</text>
+      </g>
+      {/* 触须 */}
+      <g style={dim(active, 4)}>
+        <path d="M118 128 Q 70 88 24 78" fill="none" stroke="#a5533c" strokeWidth="3.5" strokeLinecap="round" />
+        <path d="M118 148 Q 60 148 18 128" fill="none" stroke="#c97a5a" strokeWidth="3" strokeLinecap="round" />
+        <text x="20" y="60" fontSize="13" fill="#a5533c" fontWeight="700">触须 2 对（触觉嗅觉）</text>
+        <line x1="66" y1="66" x2="96" y2="92" stroke="#a5533c" strokeWidth="1.4" />
+      </g>
+      {/* 步足 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M${150 + i * 26} 236 Q ${144 + i * 26} 274 ${120 + i * 26} 292`} fill="none" stroke="#a5533c" strokeWidth="4.5" strokeLinecap="round" />
+        ))}
+        <text x="60" y="322" fontSize="13" fill="#a5533c" fontWeight="700">步足 5 对（爬行·前 2 对螯状捕食）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">沼虾结构模式图 · 节肢动物门甲壳纲（课外拓展）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'birdEgg',
+    id: 'leafBud',
+    name: '芽的结构',
+    kicker: '叶芽 · 纵切结构图',
+    intro: '芽是未发育的枝条：生长点的细胞不断分裂，叶原基发育成幼叶，芽轴发育成茎，芽原基发育成侧芽——春天展叶就是它苏醒的样子。',
+    parts: [
+      { name: '生长点', desc: '芽顶端的分生组织：细胞小、核大、分裂旺盛，使芽轴不断伸长。' },
+      { name: '叶原基', desc: '生长点周围的突起，将来发育成幼叶。' },
+      { name: '幼叶', desc: '叶原基发育而来，层层叠叠包在芽内，展叶后成为真正的叶。' },
+      { name: '芽轴', desc: '芽的中轴，将来发育成茎（输送水分养料并支撑枝叶）。' },
+      { name: '芽原基', desc: '芽轴侧面的突起，将来发育成侧芽，侧芽再长成侧枝。' },
+      { name: '芽鳞片', desc: '芽外层的变态叶，质地坚硬，保护柔软的内部结构越冬。' },
+    ],
+    Svg: LeafBudSvg,
+  },
+  {
+    id: 'bloodCells',
+    name: '血细胞三种类型',
+    kicker: '血液 · 对比模式图',
+    intro: '血液 = 血浆 + 血细胞：红细胞运氧、白细胞防御、血小板止血——三种细胞形态、数量、功能各不相同，都源自骨髓的造血干细胞。',
+    parts: [
+      { name: '红细胞', desc: '数量最多（约 5×10¹²/L）：两面凹的圆饼状、成熟后无细胞核，含血红蛋白运输氧气。' },
+      { name: '白细胞', desc: '体积最大、有细胞核、数量最少：能变形穿过毛细血管壁，吞噬病菌——对人体起防御保护作用。' },
+      { name: '血小板', desc: '最小的无核细胞碎片：在破损血管处聚集黏附，释放凝血物质止血。' },
+      { name: '血浆', desc: '淡黄色的液体成分，运载血细胞，运输养料和代谢废物。' },
+    ],
+    Svg: BloodCellsSvg,
+  },
+  {
+    id: 'shrimp',
+    name: '沼虾',
+    kicker: '甲壳纲 · 结构模式图',
+    intro: '节肢动物门甲壳纲的代表（课外拓展）：头胸部愈合覆盖头胸甲，身体分节、足也分对——步足爬行、游泳足拨水，适应水底爬行与避敌。',
+    extension: true,
+    parts: [
+      { name: '头胸部', desc: '头部与胸部愈合，外覆坚韧的头胸甲（外骨骼），内含主要内脏。' },
+      { name: '额剑与复眼', desc: '额剑是头胸甲前伸出的锯齿状突起，用于防御攻击；有柄的复眼视野开阔。' },
+      { name: '分节的腹部与尾扇', desc: '腹部肌肉发达、分节明显，遇敌时急剧弯折、尾扇拨水使身体快速后退。' },
+      { name: '步足 5 对', desc: '位于头胸部腹面，用于水底爬行；前两对螯状，可捕食御敌。' },
+      { name: '游泳足 5 对', desc: '腹部的腹肢，短小似桨，辅助缓慢游动并托抱卵。' },
+      { name: '触须 2 对', desc: '头前细长的感觉器官，感知水流、触碰与化学信号。' },
+    ],
+    Svg: ShrimpSvg,
+  },
+  {
+    id: 'neuron',
     name: '鸟卵结构',
     kicker: '鸟的生殖 · 结构模式图',
     intro: '鸟卵是一个自带的"营养舱 + 保育箱"：卵壳和卵白保护供水，气室供氧，卵黄提供养料，胚盘里的细胞核是胚胎发育的起点。',
