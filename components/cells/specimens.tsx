@@ -5047,10 +5047,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -5775,9 +5775,221 @@ function ShrimpSvg({ active }: { active: number | null; open?: boolean }) {
 }
 
 
+/* ================= 蜥蜴（爬行动物） ================= */
+
+function LizardSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 岩石背景 */}
+      <g style={dim(active, 4)}>
+        <path d="M20 330 L180 296 L340 322 L500 300 L500 380 L20 380 Z" fill="#d8ccb8" stroke="#a5987a" strokeWidth="2.5" />
+        <text x="486" y="368" textAnchor="end" fontSize="12.5" fill="#8a7a58">岩石（变温动物需晒太阳取暖）</text>
+      </g>
+      {/* 蜥蜴身体 */}
+      <g style={dim(active, 0)}>
+        {/* 头 */}
+        <path d="M64 214 L124 196 Q 140 202 138 216 L 126 238 Q 96 240 66 230 Q 58 222 64 214 Z" fill="#8aa85a" stroke="#4a7a3a" strokeWidth="3" />
+        <circle cx="88" cy="216" r="5" fill="#13333a" />
+        <text x="30" y="186" fontSize="13" fill="#3f6a2f" fontWeight="700">头部（口内方齿）</text>
+        <line x1="86" y1="192" x2="90" y2="206" stroke="#3f6a2f" strokeWidth="1.4" />
+        {/* 颈与躯干 */}
+        <path d="M126 238 Q 170 260 232 254 Q 296 248 330 226 L 348 258 Q 300 292 226 292 Q 156 292 118 254 Q 112 244 126 238 Z" fill="#9ab86a" stroke="#4a7a3a" strokeWidth="3" />
+        {/* 鳞片 */}
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${168 + i * 28} 254 q 8 10 18 2`} fill="none" stroke="#4a7a3a" strokeWidth="1.8" />
+        ))}
+        <text x="188" y="318" textAnchor="middle" fontSize="13" fill="#3f6a2f" fontWeight="700">躯干覆角质鳞片（防水分散失）</text>
+      </g>
+      {/* 四肢与爪 */}
+      <g style={dim(active, 1)}>
+        <path d="M150 262 Q 136 296 110 314 L 96 310" fill="none" stroke="#6a8a4a" strokeWidth="9" strokeLinecap="round" />
+        <path d="M96 310 l-10 6 M96 310 l-2 12 M96 310 l8 8" stroke="#4a7a3a" strokeWidth="3" strokeLinecap="round" />
+        <path d="M300 282 Q 316 310 342 322" fill="none" stroke="#6a8a4a" strokeWidth="9" strokeLinecap="round" />
+        <path d="M342 322 l12 -2 M342 322 l4 10 M342 322 l-4 10" stroke="#4a7a3a" strokeWidth="3" strokeLinecap="round" />
+        <path d="M310 236 Q 336 218 366 220" fill="none" stroke="#6a8a4a" strokeWidth="8" strokeLinecap="round" />
+        <path d="M366 220 l10 -8 M366 220 l12 0 M366 220 l8 10" stroke="#4a7a3a" strokeWidth="2.6" strokeLinecap="round" />
+        <text x="356" y="196" fontSize="12.5" fill="#3f6a2f" fontWeight="600">四肢带爪（贴地爬行）</text>
+        <line x1="380" y1="202" x2="368" y2="216" stroke="#3f6a2f" strokeWidth="1.4" />
+      </g>
+      {/* 断尾再生提示 */}
+      <g style={dim(active, 3)}>
+        <path d="M344 244 Q 396 252 452 238 Q 474 232 484 218" fill="none" stroke="#8aa85a" strokeWidth="14" strokeLinecap="round" />
+        <path d="M400 246 L398 268" stroke="#4a7a3a" strokeWidth="1.6" strokeDasharray="4 3" />
+        <text x="356" y="176" fontSize="13" fill="#3f6a2f" fontWeight="700">长尾（遇险可断尾再生）</text>
+        <line x1="400" y1="182" x2="404" y2="238" stroke="#3f6a2f" strokeWidth="1.4" />
+      </g>
+      {/* 肺呼吸提示 */}
+      <g style={dim(active, 2)}>
+        <text x="60" y="252" fontSize="12.5" fill="#49676d" fontWeight="600">体内容器化肺（完全陆生呼吸）</text>
+        <text x="60" y="270" fontSize="12.5" fill="#49676d" fontWeight="600">体内受精 · 产羊膜卵</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蜥蜴结构模式图 · 爬行动物真正适应陆地生活</text>
+    </svg>
+  );
+}
+
+/* ================= 肺泡与气体交换 ================= */
+
+function AlveolusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 支气管末端 */}
+      <g style={dim(active, 0)}>
+        <path d="M40 60 Q 120 74 196 96" fill="none" stroke="#7a8a9a" strokeWidth="18" strokeLinecap="round" />
+        <path d="M40 60 Q 120 74 196 96" fill="none" stroke="#c8d4dc" strokeWidth="12" strokeLinecap="round" />
+        <text x="26" y="40" fontSize="13" fill="#4a5a6a" fontWeight="700">支气管（末端连肺泡）</text>
+      </g>
+      {/* 肺泡（一串半圆囊） */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="250" cy="150" rx="70" ry="58" fill="#f2d8d4" stroke="#c97a6a" strokeWidth="3" />
+        <ellipse cx="332" cy="180" rx="62" ry="52" fill="#f2d8d4" stroke="#c97a6a" strokeWidth="3" />
+        <ellipse cx="250" cy="240" rx="72" ry="58" fill="#f2d8d4" stroke="#c97a6a" strokeWidth="3" />
+        <ellipse cx="346" cy="252" rx="58" ry="48" fill="#f2d8d4" stroke="#c97a6a" strokeWidth="3" />
+        <text x="96" y="150" fontSize="13" fill="#a5533c" fontWeight="700">肺泡（数量约 3 亿个）</text>
+        <line x1="166" y1="146" x2="186" y2="148" stroke="#a5533c" strokeWidth="1.4" />
+      </g>
+      {/* 毛细血管网包绕 */}
+      <g style={dim(active, 2)}>
+        <path d="M206 120 Q 250 84 306 116 M330 136 Q 380 150 382 196 M386 240 Q 366 292 316 288 M262 292 Q 200 288 190 240" fill="none" stroke="#c94a5a" strokeWidth="5" strokeLinecap="round" />
+        <path d="M226 104 Q 286 96 342 128 M376 174 Q 392 216 356 264 M300 296 Q 232 300 184 262" fill="none" stroke="#4d7ea8" strokeWidth="5" strokeLinecap="round" />
+        <text x="404" y="132" fontSize="12.5" fill="#a53a2c" fontWeight="700">毛细血管网</text>
+        <text x="404" y="150" fontSize="12.5" fill="#a53a2c">（包绕整个肺泡）</text>
+        <line x1="400" y1="138" x2="378" y2="150" stroke="#a53a2c" strokeWidth="1.4" />
+      </g>
+      {/* 气体交换 */}
+      <g style={dim(active, 3)}>
+        <path d="M262 176 Q 286 190 300 204" fill="none" stroke="#2f7a4d" strokeWidth="3.5" markerEnd="url(#av-o2)" />
+        <text x="196" y="186" fontSize="12.5" fill="#2f7a4d" fontWeight="700">O₂ 进入血液</text>
+        <line x1="228" y1="182" x2="256" y2="182" stroke="#2f7a4d" strokeWidth="1.4" />
+        <path d="M316 240 Q 296 232 276 222" fill="none" stroke="#b0483a" strokeWidth="3.5" markerEnd="url(#av-co2)" />
+        <text x="330" y="230" fontSize="12.5" fill="#b0483a" fontWeight="700">CO₂ 排入肺泡</text>
+      </g>
+      {/* 结构特点 */}
+      <g style={dim(active, 1)}>
+        <text x="42" y="290" fontSize="12.5" fill="#8a5a52" fontWeight="600">肺泡壁与毛细血管壁都只由</text>
+        <text x="42" y="308" fontSize="12.5" fill="#8a5a52" fontWeight="600">一层上皮细胞构成 → 利于交换</text>
+        <line x1="168" y1="292" x2="200" y2="266" stroke="#8a5a52" strokeWidth="1.4" />
+      </g>
+      <defs>
+        <marker id="av-o2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#2f7a4d" />
+        </marker>
+        <marker id="av-co2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#b0483a" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">肺泡与气体交换模式图 · 结构与功能相适应</text>
+    </svg>
+  );
+}
+
+/* ================= 生态系统组成成分 ================= */
+
+function EcosystemComponentsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 非生物的物质和能量（中央） */}
+      <g style={dim(active, 3)}>
+        <rect x="196" y="158" width="128" height="64" rx="14" fill="#fdf1cf" stroke="#b5953a" strokeWidth="3" />
+        <text x="260" y="184" textAnchor="middle" fontSize="13" fill="#8a671b" fontWeight="800">非生物的物质</text>
+        <text x="260" y="206" textAnchor="middle" fontSize="12.5" fill="#8a671b">和能量（阳光·水·空气）</text>
+      </g>
+      {/* 生产者（左上） */}
+      <g style={dim(active, 0)}>
+        <path d="M96 92 Q 88 56 108 40 Q 122 58 118 92 Q 106 102 96 92 Z" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="2.5" />
+        <path d="M118 92 Q 122 60 142 50 Q 146 76 132 94 Q 124 98 118 92 Z" fill="#a8cf98" stroke="#3f7f3a" strokeWidth="2.5" />
+        <path d="M106 96 L106 118" stroke="#4a7a3a" strokeWidth="4" />
+        <text x="52" y="46" fontSize="13" fill="#2f7a4d" fontWeight="700">生产者（绿色植物）</text>
+        <text x="52" y="64" fontSize="12.5" fill="#2f7a4d">制造有机物·能量入口</text>
+        <line x1="128" y1="70" x2="176" y2="152" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 消费者（右上） */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="404" cy="78" rx="40" ry="26" fill="#e8b890" stroke="#a5603a" strokeWidth="2.5" />
+        <circle cx="382" cy="66" r="4" fill="#13333a" />
+        <path d="M366 70 Q 344 60 336 48" fill="none" stroke="#a5603a" strokeWidth="3" strokeLinecap="round" />
+        <path d="M404 104 Q 404 124 392 136" fill="none" stroke="#a5603a" strokeWidth="6" strokeLinecap="round" />
+        <text x="374" y="42" fontSize="13" fill="#a5603a" fontWeight="700">消费者（动物）</text>
+        <line x1="386" y1="70" x2="330" y2="168" stroke="#a5603a" strokeWidth="1.4" />
+      </g>
+      {/* 分解者（左下） */}
+      <g style={dim(active, 2)}>
+        <path d="M78 272 Q 96 250 118 266 Q 138 252 152 272 Q 132 288 112 280 Q 94 290 78 272 Z" fill="#c9a882" stroke="#8a671b" strokeWidth="2.5" />
+        <path d="M96 258 L92 240 M124 256 L130 238" stroke="#8a671b" strokeWidth="2" />
+        <circle cx="130" cy="292" r="7" fill="#f4d06a" stroke="#8a671b" strokeWidth="1.8" />
+        <text x="36" y="316" fontSize="13" fill="#8a671b" fontWeight="700">分解者（细菌·真菌）</text>
+        <text x="36" y="334" fontSize="12.5" fill="#8a671b">分解有机物归无机环境</text>
+        <line x1="150" y1="306" x2="196" y2="232" stroke="#8a671b" strokeWidth="1.4" />
+      </g>
+      {/* 物质流动箭头 */}
+      <g style={dim(active, 3)}>
+        <path d="M138 116 Q 170 136 194 158" fill="none" stroke="#3f7f3a" strokeWidth="2.6" markerEnd="url(#ec-arrow)" />
+        <text x="136" y="136" fontSize="11" fill="#3f7f3a" fontWeight="600">光合</text>
+        <path d="M246 158 Q 280 132 342 104" fill="none" stroke="#8a671b" strokeWidth="2.4" strokeDasharray="6 4" markerEnd="url(#ec-arrow)" />
+        <text x="272" y="130" fontSize="11" fill="#8a671b">捕食</text>
+        <path d="M392 108 Q 330 180 266 208" fill="none" stroke="#a5603a" strokeWidth="2.2" markerEnd="url(#ec-arrow)" />
+        <path d="M196 216 Q 150 244 128 264" fill="none" stroke="#4a9a8a" strokeWidth="2.2" markerEnd="url(#ec-arrow)" />
+        <text x="128" y="236" fontSize="11" fill="#4a9a8a" fontWeight="600">遗体·排遗</text>
+        <path d="M150 280 Q 190 250 196 226" fill="none" stroke="#4a9a8a" strokeWidth="2.2" strokeDasharray="6 4" markerEnd="url(#ec-arrow)" />
+        <text x="96" y="248" fontSize="11" fill="#4a9a8a">无机物回流</text>
+        <text x="150" y="358" fontSize="12.5" fill="#49676d" fontWeight="600">四类成分缺一不可（除特殊生态系统）</text>
+      </g>
+      <defs>
+        <marker id="ec-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#5a7a6a" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">生态系统组成成分关系图 · 物质循环与能量流动的框架</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'leafBud',
+    id: 'lizard',
+    name: '蜥蜴',
+    kicker: '爬行动物 · 结构模式图',
+    intro: '真正适应陆地生活的爬行动物：角质鳞片防失水，肺呼吸，体内受精产羊膜卵——生殖发育彻底摆脱了对水的依赖。',
+    parts: [
+      { name: '角质鳞片', desc: '皮肤干燥覆有角质鳞片，既保护身体又能有效防止体内水分蒸发。' },
+      { name: '肺', desc: '肺内部有隔膜形成网状小室，气体交换面积大——完全靠肺在空气呼吸。' },
+      { name: '四肢与爪', desc: '四肢短小带爪，贴地爬行；指（趾）端有爪便于抓握岩石攀爬。' },
+      { name: '羊膜卵', desc: '壳坚韧、有羊水保护：受精在体内完成，卵产在陆地上发育，幼体不经水生阶段。' },
+      { name: '断尾', desc: '尾部遇敌可自行断落迷惑捕食者，之后能再生——是重要的防御行为。' },
+    ],
+    Svg: LizardSvg,
+  },
+  {
+    id: 'alveolus',
+    name: '肺泡',
+    kicker: '呼吸系统 · 结构模式图',
+    intro: '肺的基本功能单位：约 3 亿个肺泡外面包绕着丰富的毛细血管，两层"一层细胞"的壁让氧气与二氧化碳高效交换。',
+    parts: [
+      { name: '肺泡', desc: '支气管末端膨大形成的半球状囊泡，是肺部气体交换的主要部位。' },
+      { name: '毛细血管网', desc: '细小的血管密密包绕肺泡外壁，把全身回流的静脉血送来进行气体交换。' },
+      { name: '薄壁结构', desc: '肺泡壁与毛细血管壁都只由一层上皮细胞构成——气体扩散只需穿过两层细胞。' },
+      { name: '气体交换', desc: '氧气由肺泡扩散进入血液、二氧化碳反方向排入肺泡：依靠气体浓度差被动完成。' },
+      { name: '弹性纤维', desc: '肺泡外壁的弹性纤维使肺泡吸气时扩张、呼气时回缩，把气体"挤"出去。' },
+    ],
+    Svg: AlveolusSvg,
+  },
+  {
+    id: 'ecosystemComponents',
+    name: '生态系统的组成成分',
+    kicker: '生态系统 · 概念关系图',
+    intro: '一个完整的生态系统由四类成分构成：非生物的物质和能量、生产者、消费者、分解者——物质循环与能量流动的框架由此搭起。',
+    parts: [
+      { name: '非生物的物质和能量', desc: '阳光、水、空气、无机盐与温度等：为生物提供物质与能量的根本来源。' },
+      { name: '生产者', desc: '绿色植物等自养生物：通过光合作用把无机物合成有机物，是生态系统的能量入口。' },
+      { name: '消费者', desc: '直接或间接以植物为食的动物：加快物质循环，帮助植物传粉与传播种子。' },
+      { name: '分解者', desc: '细菌、真菌等腐生生物：把动植物遗体与排遗物分解为无机物，归还非生物环境。' },
+      { name: '物质循环', desc: '生产者合成有机物，经消费者取食传递，最终由分解者分解归还——物质在群落与无机环境间反复利用。' },
+    ],
+    Svg: EcosystemComponentsSvg,
+  },
+  {
+    id: 'neuron',
     name: '芽的结构',
     kicker: '叶芽 · 纵切结构图',
     intro: '芽是未发育的枝条：生长点的细胞不断分裂，叶原基发育成幼叶，芽轴发育成茎，芽原基发育成侧芽——春天展叶就是它苏醒的样子。',

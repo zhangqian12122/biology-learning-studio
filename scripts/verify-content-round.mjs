@@ -8,29 +8,33 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：探究土壤微生物的分解作用 ----------
-await page.goto(`${BASE}/lab?exp=leafDecompose`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：ABO 血型与安全输血 ----------
+await page.goto(`${BASE}/lab?exp=bloodType`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('土壤微生物的分解作用');
-  results.experiment.groupsShown = text.includes('灭菌土') && text.includes('自然土');
-  // 互动路径：推进到第 10 周 → B 组剩余率显著低于 A 组 → 出现对照结论
-  await page.getByRole('button', { name: /快进 3 周/ }).click({ force: true });
-  await page.waitForTimeout(400);
-  await page.getByRole('button', { name: /快进 3 周/ }).click({ force: true });
-  await page.waitForTimeout(400);
-  await page.getByRole('button', { name: /经过 1 周/ }).click({ force: true });
-  await page.waitForTimeout(700);
-  const after = await page.locator('main').innerText();
-  results.experiment.progressWorks = after.includes('第 10 周');
-  results.experiment.bLowerThanA = (after.match(/B 自然土 (\d+)%/) ?? [])[1] < (after.match(/A 灭菌土 (\d+)%/) ?? [])[1];
-  results.experiment.conclusionShown = after.includes('分解者');
+  results.experiment.open = text.includes('血型与安全输血');
+  results.experiment.typesShown = ['A 型', 'B 型', 'AB 型', 'O 型'].every((t) => text.includes(t));
+  // 互动：默认 A 型病人 × B 型供血 → 应危险凝集
+  await page.getByRole('button', { name: 'B 型', exact: true }).nth(1).click({ force: true });
+  await page.waitForTimeout(600);
+  const bad = await page.locator('main').innerText();
+  results.experiment.agglutination = bad.includes('凝集反应 · 危险');
+  // A 病人 × A 供血 → 相容
+  await page.getByRole('button', { name: 'A 型', exact: true }).nth(1).click({ force: true });
+  await page.waitForTimeout(600);
+  const good = await page.locator('main').innerText();
+  results.experiment.compatible = good.includes('无凝集 · 相容');
+  // O 型供血给 A 病人 → 应急相容
+  await page.getByRole('button', { name: 'O 型', exact: true }).nth(1).click({ force: true });
+  await page.waitForTimeout(600);
+  const oCase = await page.locator('main').innerText();
+  results.experiment.universalDonor = oCase.includes('相容');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['leafBud', 'bloodCells', 'shrimp'];
+const SPECIMENS = ['lizard', 'alveolus', 'ecosystemComponents'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

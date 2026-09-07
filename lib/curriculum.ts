@@ -597,6 +597,7 @@ export type ExperimentId =
   | 'dihybridSim'
   | 'sexLinkedCross'
   | 'leafDecompose'
+  | 'bloodType'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -920,6 +921,14 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态系统能量与物质循环',
   },
+  bloodType: {
+    title: 'ABO 血型与安全输血模拟',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '为四种血型的病人试输四种血液，观察凝集反应归纳相容表。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+    extension: true,
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1071,7 +1080,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'sirModel'],
+    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'sirModel'],
   },
   {
     name: '生态',
@@ -1138,6 +1147,7 @@ export const experimentOrder: ExperimentId[] = [
   'ecosystemJar',
   'mulberryFishPond',
   'leafDecompose',
+  'bloodType',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',
   'dnaExtract',
