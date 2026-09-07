@@ -602,6 +602,7 @@ export type ExperimentId =
   | 'nuclearTransfer'
   | 'lacOperon'
   | 'greenhouseGas'
+  | 'vaccineResponse'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -964,6 +965,13 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
   },
+  vaccineResponse: {
+    title: '疫苗与二次免疫应答模拟',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '先打疫苗再放病原体入侵，对比两次抗体高峰看记忆细胞的威力。',
+    relatedBook: 'regulation',
+    relatedModule: '免疫调节与健康',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1115,7 +1123,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'sirModel'],
+    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
   },
   {
     name: '生态',
@@ -1184,6 +1192,7 @@ export const experimentOrder: ExperimentId[] = [
   'mulberryFishPond',
   'leafDecompose',
   'bloodType',
+  'vaccineResponse',
   'urineFormation',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',

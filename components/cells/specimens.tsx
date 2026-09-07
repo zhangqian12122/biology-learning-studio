@@ -5047,10 +5047,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -6566,9 +6566,219 @@ function RootTypesSvg({ active }: { active: number | null; open?: boolean }) {
 }
 
 
+/* ================= 种间关系四类型对比 ================= */
+
+function SpeciesRelationsSvg({ active }: { active: number | null; open?: boolean }) {
+  // 四象限：竞争 / 捕食 / 寄生 / 互利共生
+  const quadrant = (x: number, y: number, title: string, titleColor: string, body: React.ReactNode) => (
+    <g>
+      <rect x={x} y={y} width="230" height="140" rx="12" fill="#ffffff" stroke="#13333a" strokeWidth="2.4" />
+      <text x={x + 115} y={y + 28} textAnchor="middle" fontSize="14" fill={titleColor} fontWeight="800">{title}</text>
+      {body}
+    </g>
+  );
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 竞争（左上） */}
+      <g style={dim(active, 0)}>
+        {quadrant(14, 20, '竞争（both harmed）', '#a5761d', (
+          <>
+            <path d="M40 88 Q 60 76 80 88 L 80 104 Q 60 114 40 104 Z" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="2" />
+            <path d="M128 88 Q 148 76 168 88 L 168 104 Q 148 114 128 104 Z" fill="#a8cf98" stroke="#3f7f3a" strokeWidth="2" />
+            <path d="M104 96 L122 96" stroke="#b0483a" strokeWidth="2.6" markerEnd="url(#sr-r)" />
+            <path d="M122 108 L104 108" stroke="#b0483a" strokeWidth="2.6" markerEnd="url(#sr-r)" />
+            <text x="129" y="140" textAnchor="middle" fontSize="12" fill="#6a5a2a">水稻与稗草争夺阳光水肥</text>
+          </>
+        ))}
+      </g>
+      {/* 捕食（右上） */}
+      <g style={dim(active, 1)}>
+        {quadrant(276, 20, '捕食（one eats）', '#b0483a', (
+          <>
+            <path d="M306 96 Q 330 84 350 98 Q 342 112 318 110 Q 304 106 306 96 Z" fill="#e8a06a" stroke="#a5533c" strokeWidth="2" />
+            <circle cx="342" cy="94" r="3" fill="#13333a" />
+            <path d="M382 96 Q 402 86 416 98 L 416 112 Q 400 118 382 112 Z" fill="#c9a882" stroke="#8a6a3a" strokeWidth="2" />
+            <path d="M354 100 L372 100" stroke="#b0483a" strokeWidth="2.6" markerEnd="url(#sr-r)" />
+            <text x="391" y="140" textAnchor="middle" fontSize="12" fill="#6a3a2a">猫捕食老鼠</text>
+          </>
+        ))}
+      </g>
+      {/* 寄生（左下） */}
+      <g style={dim(active, 2)}>
+        {quadrant(14, 178, '寄生（one harms）', '#7a4a8a', (
+          <>
+            <path d="M60 240 Q 100 224 140 240 L 140 260 Q 100 274 60 260 Z" fill="#e8c0b8" stroke="#b0483a" strokeWidth="2" />
+            <circle cx="118" cy="240" r="12" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2" />
+            <path d="M116 228 q -4 -8 4 -12" fill="none" stroke="#7a4a8a" strokeWidth="2" />
+            <text x="129" y="296" textAnchor="middle" fontSize="12" fill="#5a3a6a">蛔虫寄生在人体肠道</text>
+          </>
+        ))}
+      </g>
+      {/* 互利共生（右下） */}
+      <g style={dim(active, 3)}>
+        {quadrant(276, 178, '互利共生（both win）', '#2f7a4d', (
+          <>
+            <path d="M312 238 Q 328 224 344 240 Q 332 254 312 246 Z" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2" />
+            <path d="M338 232 q 16 -18 38 -12" fill="none" stroke="#4d7ea8" strokeWidth="3" strokeLinecap="round" />
+            <circle cx="382" cy="216" r="7" fill="#f4d06a" stroke="#b5953a" strokeWidth="1.8" />
+            <text x="391" y="296" textAnchor="middle" fontSize="12" fill="#2f6a3a">豆科植物与根瘤菌固氮</text>
+          </>
+        ))}
+      </g>
+      <defs>
+        <marker id="sr-r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#b0483a" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">种间关系四种类型 · 群落中生物的相互作用</text>
+    </svg>
+  );
+}
+
+/* ================= 鲸（哺乳动物适应水生） ================= */
+
+function WhaleSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 海水 */}
+      <g style={dim(active, 4)}>
+        <rect x="0" y="60" width="520" height="320" fill="#b8d4ea" />
+        <path d="M0 60 Q 60 52 120 60 T 240 60 T 360 60 T 480 60 T 520 60" fill="none" stroke="#8ab8d8" strokeWidth="3" />
+        <text x="490" y="86" textAnchor="end" fontSize="12.5" fill="#2c5a84" fontWeight="600">海洋（用肺呼吸·需浮出换气）</text>
+      </g>
+      {/* 鲸身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M76 190 Q 120 128 220 128 Q 330 128 386 186 Q 402 206 386 224 Q 330 276 220 272 Q 120 268 76 200 Q 70 194 76 190 Z" fill="#5a7a9a" stroke="#2c5a84" strokeWidth="3" />
+        {/* 腹部浅色 */}
+        <path d="M92 218 Q 180 262 340 240 Q 330 260 240 264 Q 150 262 92 218 Z" fill="#c8d8e8" stroke="#8aa7c9" strokeWidth="1.6" />
+        {/* 背鳍 */}
+        <path d="M232 130 L 250 96 L 272 130 Z" fill="#4a6a8a" stroke="#2c5a84" strokeWidth="2.2" />
+        {/* 尾鳍 */}
+        <path d="M386 186 Q 428 156 462 142 L 448 186 Q 462 186 478 196 Q 462 234 424 244 Q 402 240 386 224 Z" fill="#5a7a9a" stroke="#2c5a84" strokeWidth="2.5" />
+        <text x="372" y="124" fontSize="12.5" fill="#2c5a84" fontWeight="700">尾鳍（水平·上下摆动）</text>
+      </g>
+      {/* 头部细节 */}
+      <g style={dim(active, 1)}>
+        <circle cx="112" cy="168" r="6" fill="#13333a" />
+        <path d="M78 178 Q 92 172 106 178" fill="none" stroke="#2c5a84" strokeWidth="2.4" />
+        <text x="42" y="176" fontSize="12.5" fill="#1e4a68" fontWeight="700">喷气孔（浮出换气）</text>
+        <line x1="78" y1="170" x2="84" y2="176" stroke="#1e4a68" strokeWidth="1.4" />
+      </g>
+      {/* 鳍肢 */}
+      <g style={dim(active, 2)}>
+        <path d="M196 246 Q 210 284 246 292 Q 224 306 192 292 Q 176 268 196 246 Z" fill="#4a6a8a" stroke="#2c5a84" strokeWidth="2.2" />
+        <text x="176" y="322" fontSize="12.5" fill="#1e4a68" fontWeight="700">鳍肢（五指骨骼的变形·平衡转向）</text>
+      </g>
+      {/* 哺乳动物证据 */}
+      <g style={dim(active, 3)}>
+        <text x="30" y="96" fontSize="12.5" fill="#1e4a68" fontWeight="700">肺呼吸（不是鳃）</text>
+        <text x="30" y="114" fontSize="12.5" fill="#1e4a68" fontWeight="700">胎生 · 哺乳</text>
+        <text x="30" y="132" fontSize="12.5" fill="#1e4a68" fontWeight="700">恒温 → 是哺乳动物不是鱼</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">鲸结构模式图 · 适应水生的哺乳动物（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 骨的结构与造血 ================= */
+
+function BoneStructureSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 骨整体（长骨纵切） */}
+      <g style={dim(active, 0)}>
+        {/* 骨干外轮廓 */}
+        <path d="M170 40 Q 168 200 172 300 Q 174 322 190 330 L 310 330 Q 326 322 328 300 Q 332 200 330 40 Q 330 22 310 22 L 190 22 Q 170 22 170 40 Z" fill="#f6f0e2" stroke="#c9b88a" strokeWidth="3.5" />
+        {/* 骨松质（两端网状） */}
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M196 ${52 + i * 14} l18 10 l20 -12 l18 12 M198 ${74 + i * 10} l22 8 l16 -10`} fill="none" stroke="#d8c9a0" strokeWidth="2" />
+        ))}
+        {[0, 1].map((i) => (
+          <path key={`b${i}`} d={`M196 ${296 - i * 12} l18 -10 l22 10 M196 ${276 - i * 10} l20 8 l18 -8`} fill="none" stroke="#d8c9a0" strokeWidth="2" />
+        ))}
+        <text x="362" y="60" fontSize="13" fill="#8a7a4a" fontWeight="700">骨松质（两端·疏松）</text>
+        <line x1="358" y1="66" x2="328" y2="76" stroke="#8a7a4a" strokeWidth="1.4" />
+      </g>
+      {/* 骨密质 */}
+      <g style={dim(active, 1)}>
+        <rect x="178" y="96" width="20" height="200" fill="#ece4d0" stroke="#b5a582" strokeWidth="2" />
+        <rect x="322" y="96" width="20" height="200" fill="#ece4d0" stroke="#b5a582" strokeWidth="2" />
+        <text x="362" y="140" fontSize="13" fill="#8a7a4a" fontWeight="700">骨密质（骨干·坚硬）</text>
+        <line x1="358" y1="146" x2="344" y2="160" stroke="#8a7a4a" strokeWidth="1.4" />
+      </g>
+      {/* 骨髓腔与红骨髓 */}
+      <g style={dim(active, 2)}>
+        <rect x="200" y="110" width="120" height="196" fill="#f2c8c0" stroke="#c97a6a" strokeWidth="2.5" />
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={222 + i * 26} cy={150 + (i % 2) * 40} r="7" fill="#e88a7a" stroke="#b0483a" strokeWidth="1.6" />
+        ))}
+        <text x="392" y="216" fontSize="13" fill="#a53a2c" fontWeight="700">骨髓腔（红骨髓）</text>
+        <text x="392" y="234" fontSize="12.5" fill="#a53a2c">造血干细胞 → 血细胞</text>
+        <line x1="388" y1="224" x2="322" y2="216" stroke="#a53a2c" strokeWidth="1.4" />
+      </g>
+      {/* 骨膜 */}
+      <g style={dim(active, 3)}>
+        <path d="M166 60 Q 160 200 168 318" fill="none" stroke="#c9708a" strokeWidth="4" />
+        <text x="60" y="82" fontSize="13" fill="#a54868" fontWeight="700">骨膜（血管神经·成骨）</text>
+        <line x1="120" y1="88" x2="164" y2="98" stroke="#a54868" strokeWidth="1.4" />
+      </g>
+      {/* 关节面提示 */}
+      <g style={dim(active, 4)}>
+        <ellipse cx="250" cy="34" rx="46" ry="14" fill="#c8d8e8" stroke="#4d7ea8" strokeWidth="2.5" />
+        <text x="250" y="14" textAnchor="middle" fontSize="12.5" fill="#3d6a94" fontWeight="600">关节面（覆光滑软骨）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">骨结构模式图 · 红骨髓终身造血（课外拓展）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'pineCone',
+    id: 'speciesRelations',
+    name: '种间关系',
+    kicker: '群落生态 · 四类型对比图',
+    intro: '同一群落里不同物种之间的关系有四种：竞争（两败俱伤）、捕食（一吃一）、寄生（一害一利）、互利共生（双方受益）——决定群落的结构。',
+    parts: [
+      { name: '竞争', desc: '两种生物争夺同一资源（阳光、水、食物）：如水稻与稗草，通常一方或双方受抑制。' },
+      { name: '捕食', desc: '一种生物以另一种为食：如猫捕食老鼠，捕食者与猎物的数量相互制约、周期波动。' },
+      { name: '寄生', desc: '一方获利一方受害：蛔虫寄生在人体肠道夺取养分——寄生物通常不立即杀死宿主。' },
+      { name: '互利共生', desc: '双方互相依赖、彼此有利：根瘤菌固氮供给豆科植物，植物提供有机物与住所。' },
+    ],
+    Svg: SpeciesRelationsSvg,
+  },
+  {
+    id: 'whale',
+    name: '鲸',
+    kicker: '水生哺乳动物 · 结构模式图',
+    intro: '鲸长得像鱼却不是鱼（课外拓展）：用肺呼吸、胎生哺乳、恒温——流线型身体、鳍肢与水平尾鳍，是哺乳动物适应水生生活的"改造版"。',
+    extension: true,
+    parts: [
+      { name: '肺呼吸', desc: '头顶的喷气孔与肺相连：鲸必须定时浮出水面换气，这是它与鱼类的根本区别之一。' },
+      { name: '鳍肢', desc: '前肢变成鳍状，骨骼仍是"五指"结构——与陆生哺乳动物同源，用于平衡与转向。' },
+      { name: '水平尾鳍', desc: '上下摆动提供前进动力（鱼类的尾鳍是垂直左右摆动）。' },
+      { name: '胎生哺乳', desc: '幼鲸在母体内发育、出生后吃乳汁——恒温的哺乳动物。' },
+      { name: '流线型身体', desc: '减少水中阻力；厚厚的脂肪（鲸脂）保温并提供浮力。' },
+    ],
+    Svg: WhaleSvg,
+  },
+  {
+    id: 'boneStructure',
+    name: '骨的结构与造血',
+    kicker: '运动系统 · 长骨结构图',
+    intro: '骨不只是"支架"：骨膜滋养与再生骨质，骨密质坚硬抗重压，骨松质轻巧承力，骨髓腔里的红骨髓更是终身造血的"血细胞工厂"。',
+    extension: true,
+    parts: [
+      { name: '骨膜', desc: '覆盖骨表面的结缔组织膜：内含血管、神经与成骨细胞，对骨的营养、生长与再生有重要作用。' },
+      { name: '骨密质', desc: '骨干外层的致密骨组织，抗压抗扭曲，是骨的"承重墙"。' },
+      { name: '骨松质', desc: '骨两端的蜂窝状结构，排列成承受压力的拱形——轻而坚固。' },
+      { name: '骨髓', desc: '骨髓腔与骨松质间隙中的软组织：幼年全为红骨髓（造血），成年后骨干内变为黄骨髓，但骨松质内终身保留红骨髓。' },
+      { name: '关节面软骨', desc: '关节面覆盖的光滑软骨减少运动时的摩擦与震动。' },
+    ],
+    Svg: BoneStructureSvg,
+  },
+  {
+    id: 'neuron',
     name: '松果（球果）',
     kicker: '裸子植物 · 球果结构图',
     intro: '松、杉、柏是裸子植物：种子裸露在种鳞上、没有子房壁包被所以不形成果实——"松果"其实是充满种鳞的球果，不是水果。',
