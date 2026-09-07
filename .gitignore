@@ -42,3 +42,4 @@ next-env.d.ts
 *.tsbuildinfo
 /dist-ghpages/
 /test-web/
+游戏/
