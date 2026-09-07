@@ -8,29 +8,24 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：向光性与生长素 ----------
-await page.goto(`${BASE}/lab?exp=ecologicalNiche`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：CRISPR 基因剪辑 ----------
+await page.goto(`${BASE}/lab?exp=crispr`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('生态位与种间竞争');
-  // 互动：丰富度 10 → 共存；拉到 2 → 竞争排除警告
-  const rich = await page.locator('main').innerText();
-  results.experiment.richCoexist = rich.includes('两种鸟可以共存');
-  await page.locator('input[type="range"]').evaluate((el) => {
-    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-    setter.call(el, '2');
-    el.dispatchEvent(new Event('input', { bubbles: true }));
-    el.dispatchEvent(new Event('change', { bubbles: true }));
-  });
-  await page.waitForTimeout(500);
-  const poor = await page.locator('main').innerText();
-  results.experiment.exclusionWarn = poor.includes('竞争排除');
+  results.experiment.open = text.includes('CRISPR 基因剪辑');
+  // 互动：三步走完 → 剪辑完成
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole('button', { name: /设计向导 RNA|Cas9 定位并切割|提供正常模板修复/ }).click({ force: true });
+    await page.waitForTimeout(400);
+  }
+  const done = await page.locator('main').innerText();
+  results.experiment.edited = done.includes('基因编辑成功');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['verticalLayers', 'cytoskeleton', 'muscleTissues'];
+const SPECIMENS = ['silkwormLife', 'lichen', 'pcrStages'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

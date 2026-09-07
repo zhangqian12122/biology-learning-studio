@@ -606,6 +606,7 @@ export type ExperimentId =
   | 'phototropism'
   | 'antibioticResistance'
   | 'ecologicalNiche'
+  | 'crispr'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -998,6 +999,14 @@ export const experimentMeta: Record<
     relatedModule: '种群特征与群落结构',
     extension: true,
   },
+  crispr: {
+    title: 'CRISPR 基因剪辑模拟',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '设计向导 RNA 导航、Cas9 剪刀定点切割，三步纠正致病基因。',
+    relatedBook: 'technology',
+    relatedModule: '基因工程与 PCR 技术',
+    extension: true,
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1159,7 +1168,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'embryoTransfer', 'nuclearTransfer', 'lacOperon', 'choiceMedia', 'dilutionPlating', 'millerUrey'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'crispr', 'embryoTransfer', 'nuclearTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey'],
   },
 ];
 
@@ -1234,6 +1243,7 @@ export const experimentOrder: ExperimentId[] = [
   'embryoTransfer',
   'nuclearTransfer',
   'lacOperon',
+  'crispr',
   'choiceMedia',
   // 课外拓展
   'millerUrey',

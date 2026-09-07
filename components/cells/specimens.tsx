@@ -5036,6 +5036,7 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
   'photosynthesisProcess',
   'centralDogma',
   'waterSaltBalance',
+  'pcrStages',
 ];
 
 /** 图鉴目录：按主题分类，供图鉴页筛选导航（56 个标本全覆盖） */
@@ -5045,9 +5046,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'verticalLayers'] },
@@ -7146,9 +7147,203 @@ function MuscleTissuesSvg({ active }: { active: number | null; open?: boolean })
 }
 
 
+/* ================= 蚕的完全变态发育 ================= */
+
+function SilkwormLifeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 环形流程 */}
+      <g style={dim(active, 0)}>
+        {/* 卵（左上） */}
+        <rect x="40" y="60" width="120" height="86" rx="12" fill="#fdf3cf" stroke="#b5953a" strokeWidth="2.5" />
+        {[0, 1, 2].map((r) =>
+          [0, 1, 2, 3].map((c) => (
+            <circle key={`${r}-${c}`} cx={62 + c * 30} cy={84 + r * 22} r="7" fill="#c9881d" stroke="#8a671b" strokeWidth="1.6" />
+          )),
+        )}
+        <text x="100" y="52" textAnchor="middle" fontSize="13" fill="#8a671b" fontWeight="800">卵</text>
+        {/* 幼虫（右上） */}
+        <rect x="360" y="60" width="120" height="86" rx="12" fill="#eaf2ea" stroke="#4a9a5a" strokeWidth="2.5" />
+        <path d="M382 128 q 18 -36 36 -22 q 18 12 38 2" fill="none" stroke="#e8f2ea" strokeWidth="13" strokeLinecap="round" />
+        <path d="M382 128 q 18 -36 36 -22 q 18 12 38 2" fill="none" stroke="#c9d8b8" strokeWidth="5" strokeDasharray="4 5" />
+        <circle cx="454" cy="102" r="4" fill="#13333a" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${396 + i * 16} 126 l-3 10`} stroke="#4a9a5a" strokeWidth="2" />
+        ))}
+        <text x="420" y="52" textAnchor="middle" fontSize="13" fill="#2f7a3a" fontWeight="800">幼虫（取食蜕皮）</text>
+      </g>
+      {/* 蛹（右下） */}
+      <rect x="360" y="220" width="120" height="86" rx="12" fill="#f0e4d0" stroke="#b5953a" strokeWidth="2.5" />
+      <g style={dim(active, 1)}>
+        <ellipse cx="420" cy="266" rx="34" ry="20" fill="#c9a05a" stroke="#8a671b" strokeWidth="2.2" />
+        <ellipse cx="420" cy="286" rx="14" ry="8" fill="#b5953a" stroke="#8a671b" strokeWidth="1.8" />
+        <text x="420" y="250" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">蛹（不吃不动）</text>
+      </g>
+      {/* 成虫（左下） */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="220" width="120" height="86" rx="12" fill="#f4ece2" stroke="#b5953a" strokeWidth="2.5" />
+        <ellipse cx="100" cy="266" rx="26" ry="15" fill="#e8e2d2" stroke="#8a7a4a" strokeWidth="2" />
+        <circle cx="100" cy="248" r="7" fill="#d8c8a8" stroke="#8a7a4a" strokeWidth="1.8" />
+        <path d="M92 240 q -14 -16 -2 -24 M108 240 q 14 -16 2 -24" fill="none" stroke="#b5953a" strokeWidth="2.4" />
+        <path d="M80 262 q -18 4 -26 14 M120 262 q 18 4 26 14" fill="none" stroke="#c9b88a" strokeWidth="3.5" strokeLinecap="round" />
+        <text x="100" y="212" textAnchor="middle" fontSize="13" fill="#8a7a4a" fontWeight="800">成虫（蚕蛾）</text>
+      </g>
+      {/* 箭头环形 */}
+      <g style={dim(active, 3)}>
+        <path d="M164 96 L356 96" fill="none" stroke="#8a9a9f" strokeWidth="2.6" markerEnd="url(#sl-arrow)" />
+        <path d="M420 150 L420 216" fill="none" stroke="#8a9a9f" strokeWidth="2.6" markerEnd="url(#sl-arrow)" />
+        <path d="M356 262 L164 262" fill="none" stroke="#8a9a9f" strokeWidth="2.6" markerEnd="url(#sl-arrow)" />
+        <path d="M100 216 L100 150" fill="none" stroke="#8a9a9f" strokeWidth="2.6" markerEnd="url(#sl-arrow)" />
+        <text x="260" y="88" textAnchor="middle" fontSize="10.5" fill="#59767c" fontWeight="600">孵化</text>
+        <text x="444" y="188" fontSize="10.5" fill="#59767c" fontWeight="600">结茧化蛹</text>
+        <text x="260" y="254" textAnchor="middle" fontSize="10.5" fill="#59767c" fontWeight="600">破茧羽化</text>
+        <text x="124" y="188" fontSize="10.5" fill="#59767c" fontWeight="600">产卵</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">家蚕的完全变态发育 · 卵→幼虫→蛹→成虫（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 地衣（互利共生的共生体） ================= */
+
+function LichenSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 岩石 */}
+      <g style={dim(active, 3)}>
+        <path d="M20 320 Q 120 284 240 310 T 500 302 L 500 380 L 20 380 Z" fill="#d8ccb8" stroke="#a5987a" strokeWidth="2.5" />
+        <text x="486" y="368" textAnchor="end" fontSize="12.5" fill="#8a7a58">裸岩（地衣是拓荒先锋）</text>
+      </g>
+      {/* 地衣体（叶状） */}
+      <g style={dim(active, 0)}>
+        <path d="M120 300 Q 90 260 140 244 Q 130 210 190 216 Q 210 184 262 200 Q 300 182 330 216 Q 382 206 396 248 Q 430 258 408 292 Q 330 316 260 306 Q 180 316 120 300 Z" fill="#a8c98a" stroke="#5a7a3a" strokeWidth="3" />
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={168 + i * 62} cy={248 + (i % 2) * 18} r="10" fill="#8ab86a" stroke="#5a7a3a" strokeWidth="1.8" />
+        ))}
+        <text x="250" y="256" textAnchor="middle" fontSize="13" fill="#3f5a1e" fontWeight="800">叶状地衣体</text>
+      </g>
+      {/* 真菌菌丝 */}
+      <g style={dim(active, 1)}>
+        <path d="M160 288 Q 200 276 240 288 M240 288 Q 290 300 340 286" fill="none" stroke="#8a671b" strokeWidth="2.6" />
+        <path d="M180 268 q 10 12 26 8 M300 262 q 12 14 28 6" fill="none" stroke="#8a671b" strokeWidth="2" />
+        <text x="342" y="330" fontSize="13" fill="#8a671b" fontWeight="700">真菌菌丝（吸水·提供"房子"）</text>
+        <line x1="352" y1="322" x2="312" y2="292" stroke="#8a671b" strokeWidth="1.4" />
+      </g>
+      {/* 藻类细胞 */}
+      <g style={dim(active, 2)}>
+        <circle cx="180" cy="238" r="9" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="1.8" />
+        <circle cx="300" cy="228" r="9" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="1.8" />
+        <circle cx="244" cy="222" r="9" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="1.8" />
+        <text x="40" y="212" fontSize="13" fill="#2f7a4d" fontWeight="700">藻类细胞（光合供糖）</text>
+        <line x1="130" y1="218" x2="170" y2="234" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 共生说明 */}
+      <g style={dim(active, 4)}>
+        <rect x="60" y="60" width="400" height="60" rx="12" fill="#f4f8ea" stroke="#5a7a3a" strokeWidth="2.4" />
+        <text x="260" y="84" textAnchor="middle" fontSize="12.5" fill="#3f5a1e" fontWeight="800">真菌 + 藻类 = 地衣（互利共生的"复合生物"）</text>
+        <text x="260" y="106" textAnchor="middle" fontSize="12" fill="#5a7a3a">藻光合供糖 · 真菌吸水保物 · 能在裸岩极地生存</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">地衣结构模式图 · 互利共生（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= PCR 三步温度循环（流程图 → 实验侧） ================= */
+
+function PcrStagesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 温度循环轴 */}
+      <g style={dim(active, 0)}>
+        <line x1="50" y1="300" x2="490" y2="300" stroke="#8a9a9f" strokeWidth="2" />
+        <line x1="50" y1="40" x2="50" y2="300" stroke="#8a9a9f" strokeWidth="2" />
+        <text x="42" y="46" textAnchor="end" fontSize="11.5" fill="#59767c">95°C</text>
+        <text x="42" y="180" textAnchor="end" fontSize="11.5" fill="#59767c">55°C</text>
+        <text x="42" y="294" textAnchor="end" fontSize="11.5" fill="#59767c">72°C</text>
+      </g>
+      {/* 变性 */}
+      <g style={dim(active, 0)}>
+        <path d="M50 296 L120 60 L160 52" fill="none" stroke="#b0483a" strokeWidth="4" strokeLinecap="round" />
+        <rect x="120" y="40" width="130" height="44" rx="8" fill="#fff2ed" stroke="#b0483a" strokeWidth="2.2" />
+        <text x="185" y="58" textAnchor="middle" fontSize="12" fill="#b0483a" fontWeight="800">① 变性 90~95°C</text>
+        <text x="185" y="76" textAnchor="middle" fontSize="10.5" fill="#a5603a">氢键断裂 · 双链解开</text>
+        {/* 解链示意 */}
+        <path d="M150 210 l40 -14 M190 196 l40 -14" stroke="#d85a4a" strokeWidth="4" strokeLinecap="round" />
+        <text x="288" y="204" fontSize="10.5" fill="#a5603a">两条模板链分开</text>
+      </g>
+      {/* 复性 */}
+      <g style={dim(active, 1)}>
+        <path d="M160 52 L 218 172 L 258 186" fill="none" stroke="#e0a02a" strokeWidth="4" strokeLinecap="round" />
+        <rect x="252" y="170" width="130" height="44" rx="8" fill="#fdf6e3" stroke="#b5953a" strokeWidth="2.2" />
+        <text x="317" y="188" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">② 复性 55~60°C</text>
+        <text x="317" y="206" textAnchor="middle" fontSize="10.5" fill="#a5761d">引物结合到模板上</text>
+      </g>
+      {/* 延伸 */}
+      <g style={dim(active, 2)}>
+        <path d="M258 186 L 316 262 L 366 292" fill="none" stroke="#2f7a4d" strokeWidth="4" strokeLinecap="round" />
+        <rect x="352" y="282" width="136" height="44" rx="8" fill="#edf9f1" stroke="#2f7a4d" strokeWidth="2.2" />
+        <text x="420" y="300" textAnchor="middle" fontSize="12" fill="#2f7a4d" fontWeight="800">③ 延伸 72°C</text>
+        <text x="420" y="318" textAnchor="middle" fontSize="10.5" fill="#4a7a3a">Taq 酶合成新链</text>
+      </g>
+      {/* 循环提示 */}
+      <g style={dim(active, 3)}>
+        <path d="M456 282 Q 492 180 452 66" fill="none" stroke="#8a671b" strokeWidth="2.6" strokeDasharray="7 5" markerEnd="url(#pc-arrow)" />
+        <text x="392" y="128" fontSize="11.5" fill="#8a671b" fontWeight="700">循环 20~30 次，</text>
+        <text x="392" y="146" fontSize="11.5" fill="#8a671b" fontWeight="700">DNA 指数级扩增（2ⁿ）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">PCR 三步温度循环 · 体外扩增 DNA（流程图）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'verticalLayers',
+    id: 'silkwormLife',
+    name: '家蚕的发育',
+    kicker: '昆虫 · 完全变态发育图',
+    intro: '家蚕一生经历卵、幼虫、蛹、成虫四个阶段：幼虫取食蜕皮后吐丝结茧化蛹，不食不动的蛹内发生"大改造"，羽化成蚕蛾——完全变态发育。',
+    extension: true,
+    parts: [
+      { name: '卵', desc: '受精卵：胚胎发育的起点，孵化出幼虫。' },
+      { name: '幼虫', desc: '取食桑叶迅速长大，几次蜕皮后吐丝结茧——蚕丝就来自这一阶段。' },
+      { name: '蛹', desc: '不吃不动的"改造期"：体内大部分组织重构，发育出翅、足与生殖器官。' },
+      { name: '成虫', desc: '破茧羽化为蚕蛾：有翅但不善飞行，专司交配与产卵。' },
+      { name: '完全变态', desc: '幼体与成体形态差别巨大、经历蛹期的发育方式——与蝗虫的不完全变态（无蛹期）对比记忆。' },
+    ],
+    Svg: SilkwormLifeSvg,
+  },
+  {
+    id: 'lichen',
+    name: '地衣',
+    kicker: '真菌与藻类的共生体（课外拓展）',
+    intro: '地衣不是一种生物，而是真菌与藻类的"合资企业"：藻类光合供糖、真菌吸水供房——这对搭档让地衣成为能在裸岩、极地生存的"拓荒先锋"。',
+    extension: true,
+    parts: [
+      { name: '藻类细胞', desc: '散布在地衣体中的绿藻或蓝细菌：进行光合作用，为真菌提供有机养料。' },
+      { name: '真菌菌丝', desc: '包裹藻类细胞的菌丝网：吸收水分无机盐，为藻类提供庇护与矿物质。' },
+      { name: '叶状地衣体', desc: '菌藻交织形成的扁平体，紧密贴附在岩石树皮上。' },
+      { name: '拓荒先锋', desc: '分泌地衣酸腐蚀岩石形成最初的土壤——为其他植物登陆"开路"。' },
+      { name: '空气指示计', desc: '地衣对空气污染极其敏感：有地衣的地方空气通常很清新。' },
+    ],
+    Svg: LichenSvg,
+  },
+  {
+    id: 'pcrStages',
+    name: 'PCR 三步温度循环',
+    kicker: '基因工程 · 流程图（实验侧图解）',
+    intro: 'PCR 在体外模拟 DNA 复制：变性（双链解开）→复性（引物结合）→延伸（Taq 酶合成新链），循环 20~30 次就能把 DNA 指数级扩增。',
+    extension: true,
+    parts: [
+      { name: '① 变性（90~95°C）', desc: '高温打断碱基对间的氢键，双链 DNA 解开成两条单链模板。' },
+      { name: '② 复性（55~60°C）', desc: '温度降低，引物与模板链互补结合，为合成新链"定位"。' },
+      { name: '③ 延伸（72°C）', desc: '耐高温的 Taq 酶从引物出发，按碱基互补配对合成新链。' },
+      { name: '指数扩增', desc: '每循环一轮 DNA 数量翻倍：n 次循环后约为原来的 2ⁿ 倍——痕量样本也能"放大"检测。' },
+    ],
+    Svg: PcrStagesSvg,
+  },
+  {
+    id: 'neuron',
     name: '森林的垂直结构',
     kicker: '群落生态 · 分层现象图',
     intro: '森林群落自上而下分乔木、灌木、草本、地被四层：分层提高了群落利用阳光等环境资源的能力，动物的分层也随之而来。',

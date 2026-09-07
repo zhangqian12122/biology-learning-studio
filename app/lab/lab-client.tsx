@@ -76,6 +76,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   urineFormation: Droplets,
   nuclearTransfer: Baby,
   lacOperon: KeyRound,
+  crispr: Scissors,
   greenhouseGas: Lightbulb,
   vaccineResponse: Syringe,
   phototropism: Sun,
@@ -147,6 +148,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   urineFormation: () => import('@/components/lab/urine-formation-lab').then(({ UrineFormationLab }) => ({ default: UrineFormationLab })),
   nuclearTransfer: () => import('@/components/lab/nuclear-transfer-lab').then(({ NuclearTransferLab }) => ({ default: NuclearTransferLab })),
   lacOperon: () => import('@/components/lab/lac-operon-lab').then(({ LacOperonLab }) => ({ default: LacOperonLab })),
+  crispr: () => import('@/components/lab/crispr-lab').then(({ CrisprLab }) => ({ default: CrisprLab })),
   greenhouseGas: () => import('@/components/lab/greenhouse-gas-lab').then(({ GreenhouseGasLab }) => ({ default: GreenhouseGasLab })),
   vaccineResponse: () => import('@/components/lab/vaccine-response-lab').then(({ VaccineResponseLab }) => ({ default: VaccineResponseLab })),
   phototropism: () => import('@/components/lab/phototropism-lab').then(({ PhototropismLab }) => ({ default: PhototropismLab })),
@@ -217,6 +219,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   mulberryFishPond: ['sangjiPondCycle', 'carbonCycle'],
   ecosystemJar: ['carbonCycle'],
   bloodSugarRegulation: ['waterSaltBalance'],
+  pcr: ['pcrStages'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
