@@ -8,32 +8,35 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：自由组合定律模拟 ----------
-await page.goto(`${BASE}/lab?exp=dihybridSim`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：伴性遗传（红绿色盲）婚配模拟 ----------
+await page.goto(`${BASE}/lab?exp=sexLinkedCross`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('自由组合定律');
-  results.experiment.gametesShown = ['YR', 'Yr', 'yR', 'yr'].every((t) => text.includes(t));
-  // 互动路径：模拟 1 次 → 出现受精结果；快速 100 次 → 比例接近 9:3:3:1
-  await page.getByRole('button', { name: /模拟 1 次/ }).click({ force: true });
+  results.experiment.open = text.includes('伴性遗传');
+  results.experiment.crossesShown = ['女携带', '男色盲'].every((t) => text.includes(t));
+  // 互动路径：默认 c3（女携带×男正常）模拟 1 次 → 出现后代；快速 200 → 男色盲约 50%
+  await page.getByRole('button', { name: /模拟 1 个后代/ }).click({ force: true });
   await page.waitForTimeout(600);
   const once = await page.locator('main').innerText();
-  results.experiment.singleWorks = once.includes('雌配子') && once.includes('基因型');
-  await page.getByRole('button', { name: /快速模拟 100 次/ }).click({ force: true });
-  await page.getByRole('button', { name: /快速模拟 100 次/ }).click({ force: true });
+  results.experiment.singleWorks = once.includes('基因型');
+  await page.getByRole('button', { name: /快速模拟 200 个/ }).click({ force: true });
+  await page.getByRole('button', { name: /快速模拟 200 个/ }).click({ force: true });
   await page.waitForTimeout(700);
   const many = await page.locator('main').innerText();
-  results.experiment.batchWorks = many.includes('已获') && many.includes('粒');
-  results.experiment.ratioNote = many.includes('9 : 3 : 3 : 1') || many.includes('理论值');
-  const ratios = [...many.matchAll(/（([\d.]+)%）/g)].map((m) => parseFloat(m[1]));
-  results.experiment.closeToTheory =
-    ratios.length === 4 && ratios.every((r) => Math.abs(r - [56.25, 18.75, 18.75, 6.25][ratios.indexOf(r)]) < 8);
+  results.experiment.batchWorks = many.includes('已统计') && many.includes('个后代');
+  results.experiment.ratioNote = many.includes('理论');
+  // 切到 c6（女色盲×男色盲）应全色盲
+  await page.getByRole('button', { name: /女色盲\(XᵇXᵇ\) × 男色盲/ }).click({ force: true });
+  await page.getByRole('button', { name: /快速模拟 200 个/ }).click({ force: true });
+  await page.waitForTimeout(700);
+  const all = await page.locator('main').innerText();
+  results.experiment.c6AllBlind = all.includes('女儿全部色盲、儿子全部色盲');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['vessels', 'leafCrossSection', 'hydra'];
+const SPECIMENS = ['birdEgg', 'skinStructure', 'chlamydomonas'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

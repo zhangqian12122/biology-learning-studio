@@ -5045,10 +5045,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation'] },
 ];
@@ -5452,9 +5452,213 @@ function HydraSvg({ active }: { active: number | null; open?: boolean }) {
 }
 
 
+/* ================= 鸟卵结构 ================= */
+
+function BirdEggSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 卵壳（外壳轮廓） */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="200" rx="196" ry="136" fill="#f4ecda" stroke="#b5a582" strokeWidth="4" />
+        <text x="36" y="96" fontSize="13" fill="#8a7a4a" fontWeight="700">卵壳（坚硬·保护）</text>
+        <line x1="102" y1="102" x2="130" y2="118" stroke="#8a7a4a" strokeWidth="1.4" />
+        <text x="468" y="96" textAnchor="end" fontSize="13" fill="#8a7a4a" fontWeight="700">卵壳膜</text>
+        <line x1="452" y1="102" x2="420" y2="112" stroke="#8a7a4a" strokeWidth="1.4" />
+      </g>
+      {/* 气室（钝端） */}
+      <g style={dim(active, 1)}>
+        <path d="M318 92 Q 352 78 388 92 Q 380 106 352 108 Q 326 106 318 92 Z" fill="#d8e4e8" stroke="#6a8a9a" strokeWidth="2.5" />
+        <text x="402" y="130" fontSize="13" fill="#4a6a7a" fontWeight="700">气室（供胚胎呼吸）</text>
+        <line x1="398" y1="124" x2="376" y2="108" stroke="#4a6a7a" strokeWidth="1.4" />
+      </g>
+      {/* 卵白 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="250" cy="200" rx="178" ry="118" fill="#f8faf6" stroke="#c6d4c2" strokeWidth="2.5" />
+        <text x="60" y="308" fontSize="13" fill="#6a8a6a" fontWeight="700">卵白（保护·供给水分营养）</text>
+        <line x1="140" y1="296" x2="180" y2="272" stroke="#6a8a6a" strokeWidth="1.4" />
+      </g>
+      {/* 系带 */}
+      <g style={dim(active, 3)}>
+        <path d="M96 210 Q 130 196 156 212 Q 168 220 182 216" fill="none" stroke="#c9a882" strokeWidth="4" strokeLinecap="round" />
+        <path d="M404 210 Q 370 196 344 212 Q 332 220 318 216" fill="none" stroke="#c9a882" strokeWidth="4" strokeLinecap="round" />
+        <text x="42" y="176" fontSize="13" fill="#8a6242" fontWeight="700">系带（固定卵黄）</text>
+        <line x1="110" y1="184" x2="150" y2="204" stroke="#8a6242" strokeWidth="1.4" />
+      </g>
+      {/* 卵黄 + 卵黄膜 */}
+      <g style={dim(active, 4)}>
+        <circle cx="250" cy="216" r="84" fill="#f4c76a" stroke="#c9881d" strokeWidth="3" />
+        <circle cx="250" cy="216" r="70" fill="#f0b845" stroke="#c9881d" strokeWidth="1.6" strokeDasharray="5 4" />
+        <text x="250" y="330" textAnchor="middle" fontSize="13" fill="#a5761d" fontWeight="700">卵黄（主要营养来源）</text>
+        <line x1="250" y1="318" x2="250" y2="302" stroke="#a5761d" strokeWidth="1.4" />
+      </g>
+      {/* 胚盘 */}
+      <g style={dim(active, 5)}>
+        <ellipse cx="238" cy="176" rx="20" ry="13" fill="#fdf6e3" stroke="#b0483a" strokeWidth="2.5" />
+        <text x="120" y="128" fontSize="13" fill="#b0483a" fontWeight="700">胚盘（内有细胞核，</text>
+        <text x="120" y="146" fontSize="13" fill="#b0483a" fontWeight="700">胚胎发育的部位）</text>
+        <line x1="176" y1="142" x2="220" y2="168" stroke="#b0483a" strokeWidth="1.4" />
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">鸟卵结构模式图 · 卵壳气室卵白保护，卵黄供养，胚盘发育</text>
+    </svg>
+  );
+}
+
+/* ================= 皮肤结构 ================= */
+
+function SkinStructureSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 表皮 */}
+      <g style={dim(active, 0)}>
+        <path d="M30 96 Q 80 82 130 96 T 230 96 T 330 96 T 430 96 T 490 96 L490 132 Q 440 118 390 132 T 290 132 T 190 132 T 90 132 T 30 132 Z" fill="#f2d8c4" stroke="#b58a6a" strokeWidth="2.5" />
+        <text x="40" y="66" fontSize="13" fill="#a5683a" fontWeight="700">表皮（角质层保护·无血管）</text>
+        <line x1="120" y1="72" x2="130" y2="90" stroke="#a5683a" strokeWidth="1.4" />
+      </g>
+      {/* 真皮 */}
+      <g style={dim(active, 1)}>
+        <rect x="30" y="132" width="460" height="128" fill="#f6e2d2" stroke="#d8b8a0" strokeWidth="2" />
+        <text x="368" y="152" fontSize="13" fill="#a5683a" fontWeight="700">真皮（主要结构层）</text>
+      </g>
+      {/* 毛发与毛囊 */}
+      <g style={dim(active, 2)}>
+        <path d="M156 20 Q 148 60 152 104 Q 156 140 162 172" fill="none" stroke="#7a5a3a" strokeWidth="7" strokeLinecap="round" />
+        <path d="M138 216 Q 160 186 184 214 Q 162 240 138 216 Z" fill="#e8c9a8" stroke="#b58a5f" strokeWidth="2.5" />
+        <text x="34" y="248" fontSize="13" fill="#7a5a3a" fontWeight="700">毛囊与毛发</text>
+        <text x="34" y="266" fontSize="12.5" fill="#7a5a3a">立毛肌连于毛囊</text>
+        <line x1="130" y1="242" x2="150" y2="230" stroke="#7a5a3a" strokeWidth="1.4" />
+      </g>
+      {/* 汗腺 */}
+      <g style={dim(active, 3)}>
+        <path d="M382 132 L382 74" fill="none" stroke="#3d7e9e" strokeWidth="4" strokeLinecap="round" />
+        <text x="366" y="58" fontSize="12.5" fill="#2c6e94" fontWeight="700">汗孔</text>
+        <path d="M382 236 Q 350 258 382 276 Q 414 292 396 256 Q 390 244 382 236" fill="none" stroke="#3d7e9e" strokeWidth="5" strokeLinecap="round" />
+        <text x="330" y="304" fontSize="13" fill="#2c6e94" fontWeight="700">汗腺（分泌汗液散热）</text>
+        <line x1="380" y1="290" x2="384" y2="276" stroke="#2c6e94" strokeWidth="1.4" />
+      </g>
+      {/* 血管 */}
+      <g style={dim(active, 4)}>
+        <path d="M64 168 Q 150 148 240 168 T 420 168" fill="none" stroke="#c94a5a" strokeWidth="4" />
+        <path d="M64 196 Q 150 176 240 196 T 420 196" fill="none" stroke="#4d7ea8" strokeWidth="4" />
+        <text x="240" y="222" textAnchor="middle" fontSize="12.5" fill="#8a4a56" fontWeight="600">血管（动脉运热·调节血流量）</text>
+      </g>
+      {/* 神经末梢 */}
+      <g style={dim(active, 5)}>
+        <ellipse cx="300" cy="150" rx="22" ry="9" fill="#e0c8ee" stroke="#7a4a8a" strokeWidth="2.2" />
+        <path d="M292 156 Q 290 170 288 178" fill="none" stroke="#7a4a8a" strokeWidth="2" />
+        <text x="266" y="196" fontSize="12.5" fill="#6a4a9a" fontWeight="700">感觉神经末梢（冷热触压）</text>
+      </g>
+      {/* 皮下组织 */}
+      <g style={dim(active, 1)}>
+        <rect x="30" y="260" width="460" height="94" fill="#f8e2c8" stroke="#d8c0a0" strokeWidth="2" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <circle key={i} cx={62 + i * 58} cy={i % 2 === 0 ? 296 : 322} r="17" fill="#f0d4b4" stroke="#c9a882" strokeWidth="2" />
+        ))}
+        <text x="250" y="350" textAnchor="middle" fontSize="12.5" fill="#a57a4a" fontWeight="700">皮下组织（脂肪保温）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">皮肤结构模式图 · 最大的器官，体温调节的感受器与效应器</text>
+    </svg>
+  );
+}
+
+/* ================= 衣藻（单细胞绿藻） ================= */
+
+function ChlamydomonasSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 鞭毛 */}
+      <g style={dim(active, 0)}>
+        <path d="M196 128 Q 130 96 66 88" fill="none" stroke="#4a9a6a" strokeWidth="4.5" strokeLinecap="round" />
+        <path d="M204 112 Q 148 66 96 40" fill="none" stroke="#4a9a6a" strokeWidth="4.5" strokeLinecap="round" />
+        <text x="24" y="36" fontSize="13" fill="#2f7a4d" fontWeight="700">鞭毛（等长 2 条，游动）</text>
+        <line x1="92" y1="44" x2="140" y2="72" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 细胞壁与轮廓 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="250" cy="190" rx="128" ry="98" fill="#e4f2dc" stroke="#3f7f3a" strokeWidth="3.5" />
+        <text x="368" y="140" fontSize="13" fill="#3f7f3a" fontWeight="700">细胞壁（纤维素·门卫）</text>
+        <line x1="364" y1="146" x2="336" y2="160" stroke="#3f7f3a" strokeWidth="1.4" />
+      </g>
+      {/* 杯状叶绿体 */}
+      <g style={dim(active, 2)}>
+        <path d="M250 108 Q 150 116 148 200 Q 146 276 250 274 Q 354 276 352 200 Q 350 116 250 108 Z M250 150 Q 190 156 188 200 Q 186 246 250 244 Q 314 246 312 200 Q 310 156 250 150 Z" fill="#8ab86a" fillRule="evenodd" stroke="#3f7f3a" strokeWidth="2.5" />
+        <text x="24" y="216" fontSize="13" fill="#2f7a4d" fontWeight="700">杯状叶绿体</text>
+        <text x="24" y="234" fontSize="12.5" fill="#2f7a4d">（光合自养）</text>
+        <line x1="112" y1="222" x2="150" y2="214" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 蛋白核 */}
+      <g style={dim(active, 3)}>
+        <circle cx="250" cy="238" r="17" fill="#f4f0e2" stroke="#8a671b" strokeWidth="2.5" />
+        <text x="332" y="252" fontSize="13" fill="#8a671b" fontWeight="700">蛋白核（储藏淀粉）</text>
+        <line x1="328" y1="246" x2="269" y2="238" stroke="#8a671b" strokeWidth="1.4" />
+      </g>
+      {/* 细胞核 */}
+      <g style={dim(active, 4)}>
+        <circle cx="250" cy="188" r="15" fill="#e0c8ee" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="342" y="186" fontSize="13" fill="#6a4a9a" fontWeight="700">细胞核</text>
+        <line x1="338" y1="188" x2="266" y2="188" stroke="#6a4a9a" strokeWidth="1.4" />
+      </g>
+      {/* 眼点 + 伸缩泡 */}
+      <g style={dim(active, 5)}>
+        <circle cx="212" cy="128" r="7" fill="#c94a3a" stroke="#8a2a1a" strokeWidth="2" />
+        <text x="104" y="118" fontSize="13" fill="#8a2a1a" fontWeight="700">眼点（感光·趋光）</text>
+        <line x1="166" y1="122" x2="203" y2="126" stroke="#8a2a1a" strokeWidth="1.4" />
+        <circle cx="288" cy="122" r="6" fill="#cfe2ee" stroke="#3d7e9e" strokeWidth="2" />
+        <text x="318" y="106" fontSize="12.5" fill="#2c6e94" fontWeight="600">伸缩泡</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">衣藻结构模式图 · 单细胞绿藻，有叶绿体能自养</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'vessels',
+    id: 'birdEgg',
+    name: '鸟卵结构',
+    kicker: '鸟的生殖 · 结构模式图',
+    intro: '鸟卵是一个自带的"营养舱 + 保育箱"：卵壳和卵白保护供水，气室供氧，卵黄提供养料，胚盘里的细胞核是胚胎发育的起点。',
+    parts: [
+      { name: '卵壳与卵壳膜', desc: '坚硬的石灰质壳上有气孔可透气；壳膜双层包裹，防止水分蒸发和微生物侵入。' },
+      { name: '气室', desc: '钝端壳膜之间的空腔，储存空气，为临近出壳的胚胎提供氧气。' },
+      { name: '卵白', desc: '透明的胶体（蛋清），既是缓冲保护层，又为胚胎提供水分和部分营养。' },
+      { name: '卵黄', desc: '卵细胞的主要营养储备，供胚胎发育全程使用；表面覆有卵黄膜。' },
+      { name: '胚盘', desc: '卵黄表面的白色小盘，内含细胞核，是受精后胚胎发育的部位——未受精的卵色浅而小。' },
+      { name: '系带', desc: '卵黄两端的螺旋状结构，把卵黄悬浮固定在中央，防止震动破坏胚盘。' },
+    ],
+    Svg: BirdEggSvg,
+  },
+  {
+    id: 'skinStructure',
+    name: '皮肤结构',
+    kicker: '人体 · 结构模式图',
+    intro: '皮肤是人体最大的器官，也是体温调节的"前沿阵地"：冷热感受器在这里，血管舒缩、汗腺分泌、立毛肌战栗这些效应器也在这里。',
+    parts: [
+      { name: '表皮', desc: '角质化复层上皮，没有血管；角质层防止水分散失与病菌侵入，生发层细胞不断分裂补充。' },
+      { name: '真皮', desc: '致密结缔组织为主，内含血管、汗腺、毛囊和感觉神经末梢，是皮肤的"功能层"。' },
+      { name: '毛发与毛囊', desc: '毛囊连着立毛肌：寒冷刺激下立毛肌收缩，"起鸡皮疙瘩"并减少体表散热。' },
+      { name: '汗腺', desc: '盘曲的管状腺体，分泌汗液带走热量——炎热环境下蒸发散热的主要效应器。' },
+      { name: '血管', desc: '真皮中的小动脉舒张时血流量大、散热多；收缩时血流量骤减、保存热量。' },
+      { name: '感觉神经末梢', desc: '感受冷、热、触、压等刺激，把信息传入体温调节中枢（下丘脑）。' },
+    ],
+    Svg: SkinStructureSvg,
+  },
+  {
+    id: 'chlamydomonas',
+    name: '衣藻',
+    kicker: '单细胞绿藻 · 结构模式图',
+    intro: '生活在淡水中的单细胞绿藻：一个细胞就是一座"光合工厂"——杯状叶绿体自养，眼点感光游向光亮处，两条等长鞭毛划水前进。',
+    parts: [
+      { name: '细胞壁', desc: '纤维素构成的坚固外壁，维持细胞形状（多呈卵形/球形）。' },
+      { name: '鞭毛', desc: '细胞前端两条等长鞭毛，划水使细胞游动——所以衣藻能主动趋向光照。' },
+      { name: '杯状叶绿体', desc: '大型杯状、占据细胞大部分体积，是光合作用的场所，使衣藻自养。' },
+      { name: '蛋白核', desc: '叶绿体上的致密小体，与淀粉的合成与储藏有关。' },
+      { name: '眼点', desc: '橙红色的感光小点，感知光的方向与强弱，配合鞭毛实现趋光运动。' },
+      { name: '细胞核', desc: '遗传信息库，位于细胞中央偏前，由两层核膜包裹。' },
+    ],
+    Svg: ChlamydomonasSvg,
+  },
+  {
+    id: 'neuron',
     name: '血管三种类型',
     kicker: '循环系统 · 对比模式图',
     intro: '动脉、静脉、毛细血管的结构与功能相适应：管壁厚薄、弹性、血流速度各不同，毛细血管的一层细胞壁正是物质交换的"窗口"。',

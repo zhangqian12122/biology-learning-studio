@@ -595,6 +595,7 @@ export type ExperimentId =
   | 'thyroidAxis'
   | 'thermoRegulation'
   | 'dihybridSim'
+  | 'sexLinkedCross'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -904,6 +905,13 @@ export const experimentMeta: Record<
     relatedBook: 'genetics',
     relatedModule: '遗传规律与配子分析',
   },
+  sexLinkedCross: {
+    title: '伴性遗传：红绿色盲婚配模拟',
+    kicker: '必修 2 · 遗传与进化',
+    description: '六种婚配组合随机生娃，统计色盲后代看"男多女少"与交叉遗传。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1050,7 +1058,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1090,6 +1098,7 @@ export const experimentOrder: ExperimentId[] = [
   // 必修 2 · 遗传与进化
   'traitSeparation',
   'dihybridSim',
+  'sexLinkedCross',
   'lowTempPolyploid',
   'meiosisSlide',
   'genetics',
