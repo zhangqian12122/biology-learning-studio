@@ -8,34 +8,28 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：疫苗与二次免疫应答 ----------
-await page.goto(`${BASE}/lab?exp=vaccineResponse`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：向光性与生长素 ----------
+await page.goto(`${BASE}/lab?exp=phototropism`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('疫苗与二次免疫');
-  // 互动：接种疫苗 → 推进数周 → 抗体爬升；入侵 → 二次高峰 95
-  await page.getByRole('button', { name: /接种疫苗/ }).click({ force: true });
-  await page.waitForTimeout(400);
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole('button', { name: /推进 1 周/ }).click({ force: true });
-    await page.waitForTimeout(250);
-  }
-  const mid = await page.locator('main').innerText();
-  results.experiment.primaryWorks = mid.includes('记忆细胞已产生') || mid.includes('初次免疫');
-  await page.getByRole('button', { name: /病原体入侵/ }).click({ force: true });
+  results.experiment.open = text.includes('向光性与生长素');
+  // 互动：右单侧光（默认）→ 背光 72%；切顶部光 → 均匀直立；切去尖端 → 不弯曲
+  const right = await page.locator('main').innerText();
+  results.experiment.rightLight = right.includes('背光侧 72%') && right.includes('向右（光源）弯曲');
+  await page.getByRole('button', { name: /顶部光/ }).click({ force: true });
   await page.waitForTimeout(500);
-  for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /推进 1 周/ }).click({ force: true });
-    await page.waitForTimeout(250);
-  }
-  const peak = await page.locator('main').innerText();
-  results.experiment.secondaryWorks = peak.includes('二次免疫高峰约 95');
+  const top = await page.locator('main').innerText();
+  results.experiment.topUpright = top.includes('直立生长') && top.includes('背光侧 50%');
+  await page.getByRole('button', { name: '切去尖端' }).click({ force: true });
+  await page.waitForTimeout(500);
+  const cut = await page.locator('main').innerText();
+  results.experiment.cutNoBend = cut.includes('不生长、不弯曲');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['speciesRelations', 'whale', 'boneStructure'];
+const SPECIMENS = ['vertebrateClasses', 'photosyntheticPigments', 'bacteriaShapes'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

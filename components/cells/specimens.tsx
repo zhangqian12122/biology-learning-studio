@@ -5043,11 +5043,11 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
   { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome'] },
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype'] },
-  { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein'] },
+  { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations'] },
@@ -6733,9 +6733,191 @@ function BoneStructureSvg({ active }: { active: number | null; open?: boolean })
 }
 
 
+/* ================= 脊椎动物五大纲对比 ================= */
+
+function VertebrateClassesSvg({ active }: { active: number | null; open?: boolean }) {
+  const rows = [
+    { name: '鱼类', breath: '鳃', repro: '卵生（水中受精）', temp: '变温', icon: '🐟' },
+    { name: '两栖类', breath: '幼体鳃·成体肺+皮肤', repro: '卵生（水中受精）', temp: '变温', icon: '🐸' },
+    { name: '爬行类', breath: '肺', repro: '羊膜卵（陆上生殖）', temp: '变温', icon: '🦎' },
+    { name: '鸟类', breath: '肺+气囊', repro: '羊膜卵（孵卵）', temp: '恒温', icon: '🐦' },
+    { name: '哺乳类', breath: '肺', repro: '胎生·哺乳', temp: '恒温', icon: '🐕' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 表头 */}
+      <g style={dim(active, 0)}>
+        <rect x="16" y="24" width="88" height="34" fill="#13333a" rx="6" />
+        <text x="60" y="46" textAnchor="middle" fontSize="12.5" fill="#ffffff" fontWeight="800">类群</text>
+        <rect x="108" y="24" width="118" height="34" fill="#2c5a6e" rx="6" />
+        <text x="167" y="46" textAnchor="middle" fontSize="12" fill="#ffffff" fontWeight="800">呼吸</text>
+        <rect x="230" y="24" width="168" height="34" fill="#2c6e5a" rx="6" />
+        <text x="314" y="46" textAnchor="middle" fontSize="12" fill="#ffffff" fontWeight="800">生殖发育</text>
+        <rect x="402" y="24" width="102" height="34" fill="#8a5a2a" rx="6" />
+        <text x="453" y="46" textAnchor="middle" fontSize="12" fill="#ffffff" fontWeight="800">体温</text>
+      </g>
+      {/* 行 */}
+      {rows.map((r, i) => {
+        const y = 66 + i * 58;
+        const bg = i % 2 === 0 ? '#f4faf9' : '#ffffff';
+        return (
+          <g key={r.name} style={dim(active, i + 1)}>
+            <rect x="16" y={y} width="488" height="50" fill={bg} stroke="#c6d4d4" strokeWidth="1.8" />
+            <text x="34" y={y + 31} fontSize="16">{r.icon}</text>
+            <text x="66" y={y + 31} fontSize="13.5" fill="#13333a" fontWeight="800">{r.name}</text>
+            <text x="116" y={y + 31} fontSize="11.5" fill="#2c5a6e">{r.breath}</text>
+            <text x="238" y={y + 31} fontSize="11.5" fill="#2c6e5a">{r.repro}</text>
+            <text x="412" y={y + 31} fontSize="12" fill={r.temp === '恒温' ? '#b0483a' : '#59767c'} fontWeight={r.temp === '恒温' ? '800' : '400'}>
+              {r.temp}
+            </text>
+          </g>
+        );
+      })}
+      {/* 结论 */}
+      <g style={dim(active, 0)}>
+        <text x="36" y="372" fontSize="12.5" fill="#b0483a" fontWeight="700">进化趋势：水生→陆生，卵生→胎生，变温→恒温（更适应陆地）</text>
+      </g>
+    </svg>
+  );
+}
+
+/* ================= 光合色素与纸层析 ================= */
+
+function PhotosyntheticPigmentsSvg({ active }: { active: number | null; open?: boolean }) {
+  // 四条色素带（自上而下）
+  const bands = [
+    { name: '胡萝卜素', color: '#e8a04a', y: 92, note: '橙黄色 · 溶解度最高，跑最快' },
+    { name: '叶黄素', color: '#e8d04a', y: 140, note: '黄色' },
+    { name: '叶绿素 a', color: '#4a9a5a', y: 196, note: '蓝绿色 · 含量最多' },
+    { name: '叶绿素 b', color: '#3a8a6a', y: 258, note: '黄绿色 · 跑最慢' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 层析纸 */}
+      <g style={dim(active, 0)}>
+        <rect x="150" y="56" width="70" height="262" fill="#faf7ee" stroke="#b5a582" strokeWidth="2.5" />
+        <text x="185" y="48" textAnchor="middle" fontSize="12" fill="#8a7a4a" fontWeight="700">滤液细线（起点）</text>
+        <line x1="150" y1="66" x2="220" y2="66" stroke="#c9a882" strokeWidth="1.6" strokeDasharray="4 3" />
+      </g>
+      {/* 四条色素带 */}
+      {bands.map((b, i) => (
+        <g key={b.name} style={dim(active, i)}>
+          <rect x={152} y={b.y} width="66" height={i === 2 ? 20 : 13} fill={b.color} />
+          <text x="252" y={b.y + 14} fontSize="13" fill="#13333a" fontWeight="800">{b.name}</text>
+          <text x="252" y={b.y + 32} fontSize="11.5" fill="#799398">{b.note}</text>
+          <line x1={220} y1={b.y + 7} x2={248} y2={b.y + 10} stroke="#9ab0b5" strokeWidth="1.2" />
+        </g>
+      ))}
+      {/* 烧杯与层析液 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 262 L250 262 L242 342 L128 342 Z" fill="#e8f2f0" stroke="#7a9a9a" strokeWidth="2.5" opacity="0.55" />
+        <rect x="124" y="300" width="122" height="40" fill="#cfe8e2" opacity="0.6" />
+        <text x="40" y="318" fontSize="12.5" fill="#4a7a6a" fontWeight="700">层析液（不能沾到</text>
+        <text x="40" y="336" fontSize="12.5" fill="#4a7a6a" fontWeight="700">滤液细线以下！）</text>
+      </g>
+      {/* 原理说明 */}
+      <g style={dim(active, 0)}>
+        <text x="330" y="320" fontSize="12.5" fill="#49676d" fontWeight="600">色素随层析液在纸上扩散，</text>
+        <text x="330" y="338" fontSize="12.5" fill="#49676d" fontWeight="600">溶解度越高扩散越快</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">叶绿体中四种光合色素 · 纸层析分离结果</text>
+    </svg>
+  );
+}
+
+/* ================= 细菌三形态 ================= */
+
+function BacteriaShapesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 球菌（左） */}
+      <g style={dim(active, 0)}>
+        <rect x="14" y="70" width="150" height="200" rx="12" fill="#eaf2f8" stroke="#7a9ac9" strokeWidth="2.2" />
+        {[[50, 110], [86, 118], [122, 106], [58, 156], [104, 162], [128, 200], [70, 210], [100, 236]].map(([cx, cy], i) => (
+          <circle key={i} cx={cx} cy={cy} r="15" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="2" />
+        ))}
+        <text x="89" y="64" textAnchor="middle" fontSize="13.5" fill="#2c5a84" fontWeight="800">球菌（球形）</text>
+        <text x="89" y="296" textAnchor="middle" fontSize="12" fill="#2c5a84">如：金黄色葡萄球菌</text>
+      </g>
+      {/* 杆菌（中） */}
+      <g style={dim(active, 1)}>
+        <rect x="182" y="70" width="150" height="200" rx="12" fill="#e8f2ea" stroke="#4a9a5a" strokeWidth="2.2" />
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <rect x={200 + (i % 2) * 26} y={104 + i * 54} width="66" height="26" rx="13" fill="#b8e2c8" stroke="#3f7f3a" strokeWidth="2" />
+            {[0, 1, 2, 3].map((j) => (
+              <line key={j} x1={212 + (i % 2) * 26 + j * 14} y1={106 + i * 54} x2={212 + (i % 2) * 26 + j * 14} y2={128 + i * 54} stroke="#3f7f3a" strokeWidth="1.2" opacity="0.6" />
+            ))}
+          </g>
+        ))}
+        <text x="257" y="64" textAnchor="middle" fontSize="13.5" fill="#2f7a3a" fontWeight="800">杆菌（杆形）</text>
+        <text x="257" y="296" textAnchor="middle" fontSize="12" fill="#2f7a3a">如：大肠杆菌、结核杆菌</text>
+      </g>
+      {/* 螺旋菌（右） */}
+      <g style={dim(active, 2)}>
+        <rect x="350" y="70" width="150" height="200" rx="12" fill="#f4eef8" stroke="#7a4a8a" strokeWidth="2.2" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${382 + i * 70} 110 q 28 20 0 44 q -28 24 0 46 q 24 18 4 42`} fill="none" stroke="#c9a8e2" strokeWidth="12" strokeLinecap="round" />
+        ))}
+        <text x="425" y="64" textAnchor="middle" fontSize="13.5" fill="#6a3a7a" fontWeight="800">螺旋菌（螺旋形）</text>
+        <text x="425" y="296" textAnchor="middle" fontSize="12" fill="#6a3a7a">如：霍乱弧菌（弧形）</text>
+      </g>
+      {/* 共同点 */}
+      <g style={dim(active, 3)}>
+        <rect x="60" y="300" width="400" height="46" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">共同点：都是原核生物——没有以核膜为界限的细胞核，只有 DNA 集中的核区</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="11.5" fill="#8a671b">细胞壁含肽聚糖 · 二分裂增殖</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">细菌的三种基本形态（按外形分类）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'speciesRelations',
+    id: 'vertebrateClasses',
+    name: '脊椎动物五大纲',
+    kicker: '脊椎动物 · 五大纲对比表',
+    intro: '鱼类、两栖类、爬行类、鸟类、哺乳类：从水生到陆生、从卵生到胎生、从变温到恒温——呼吸、生殖与体温的对比串起脊椎动物的进化主线。',
+    parts: [
+      { name: '鱼类', desc: '鳃呼吸、水中受精产卵、变温——终生生活在水中。' },
+      { name: '两栖类', desc: '幼体用鳃、成体用肺兼皮肤呼吸，生殖离不开水——从水生到陆生的过渡类群。' },
+      { name: '爬行类', desc: '肺呼吸、产羊膜卵在陆上发育——生殖摆脱水束缚，真正登陆的类群。' },
+      { name: '鸟类', desc: '肺+气囊双重呼吸、产羊膜卵并孵卵、恒温——适应空中飞行。' },
+      { name: '哺乳类', desc: '肺呼吸、胎生哺乳、恒温——神经系统和感官最发达的脊椎动物。' },
+    ],
+    Svg: VertebrateClassesSvg,
+  },
+  {
+    id: 'photosyntheticPigments',
+    name: '光合色素',
+    kicker: '叶绿体色素 · 纸层析结果图',
+    intro: '叶绿体中的色素可用纸层析法分开成四条带：胡萝卜素、叶黄素、叶绿素 a、叶绿素 b——溶解度越高扩散越快；叶绿素 a 含量最多。',
+    parts: [
+      { name: '胡萝卜素', desc: '橙黄色：溶解度最高，层析时跑得最快，位于最上端。' },
+      { name: '叶黄素', desc: '黄色：位于第二条带，与胡萝卜素合称类胡萝卜素（吸收蓝紫光）。' },
+      { name: '叶绿素 a', desc: '蓝绿色：含量最多的色素，层析带最宽，主要吸收红光和蓝紫光。' },
+      { name: '叶绿素 b', desc: '黄绿色：溶解度最低、跑得最慢，位于最下端。' },
+      { name: '提取要点', desc: '加二氧化硅研磨、加碳酸钙保护色素、层析液不能没过滤液细线。' },
+    ],
+    Svg: PhotosyntheticPigmentsSvg,
+  },
+  {
+    id: 'bacteriaShapes',
+    name: '细菌的三种形态',
+    kicker: '细菌 · 形态分类图',
+    intro: '按外形细菌可分球菌、杆菌、螺旋菌三类：它们都是原核生物——没有以核膜为界限的细胞核，靠二分裂增殖，细胞壁含肽聚糖。',
+    parts: [
+      { name: '球菌', desc: '球形的细菌：如金黄色葡萄球菌（聚集成葡萄串状）。' },
+      { name: '杆菌', desc: '杆状或圆柱形：如大肠杆菌（肠道常见菌）、结核杆菌。' },
+      { name: '螺旋菌', desc: '弯曲呈弧形或螺旋形：如霍乱弧菌。' },
+      { name: '原核生物', desc: '三类细菌的共同点：无成形细胞核（只有 DNA 集中的核区）、细胞壁含肽聚糖、二分裂增殖。' },
+    ],
+    Svg: BacteriaShapesSvg,
+  },
+  {
+    id: 'neuron',
     name: '种间关系',
     kicker: '群落生态 · 四类型对比图',
     intro: '同一群落里不同物种之间的关系有四种：竞争（两败俱伤）、捕食（一吃一）、寄生（一害一利）、互利共生（双方受益）——决定群落的结构。',

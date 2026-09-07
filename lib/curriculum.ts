@@ -603,6 +603,7 @@ export type ExperimentId =
   | 'lacOperon'
   | 'greenhouseGas'
   | 'vaccineResponse'
+  | 'phototropism'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -972,6 +973,13 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '免疫调节与健康',
   },
+  phototropism: {
+    title: '向光性与生长素分布',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '切换单侧光方向、罩锡箔帽或切去尖端，看生长素分布如何让茎弯曲。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1123,7 +1131,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
+    ids: ['urineGlucoseTest', 'auxinCutting', 'phototropism', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
   },
   {
     name: '生态',
@@ -1174,6 +1182,7 @@ export const experimentOrder: ExperimentId[] = [
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
   'auxinCutting',
+  'phototropism',
   'bloodSugarRegulation',
   'impulse',
   'reflexArc',
