@@ -8,31 +8,32 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：克隆羊多莉（体细胞核移植） ----------
-await page.goto(`${BASE}/lab?exp=nuclearTransfer`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：乳糖操纵子 ----------
+await page.goto(`${BASE}/lab?exp=lacOperon`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('克隆羊多莉');
-  results.experiment.rolesShown = ['A 羊', 'B 羊', 'C 羊'].every((t) => text.includes(t));
-  // 互动：三步走完 → 出现多莉 → 答题选 B → 答对
-  await page.getByRole('button', { name: /取 A 羊卵母细胞去核/ }).click({ force: true });
+  results.experiment.open = text.includes('乳糖操纵子');
+  results.experiment.locked = text.includes('被封锁');
+  // 互动：加乳糖 → 推进 2 步 → 开放并产酶；耗尽乳糖 → 重新上锁
+  await page.getByRole('button', { name: /加入乳糖/ }).click({ force: true });
+  await page.getByRole('button', { name: /推进一步/ }).click({ force: true });
+  await page.waitForTimeout(400);
+  await page.getByRole('button', { name: /推进一步/ }).click({ force: true });
   await page.waitForTimeout(500);
-  await page.getByRole('button', { name: /移入 B 羊细胞核并激活/ }).click({ force: true });
-  await page.waitForTimeout(500);
-  await page.getByRole('button', { name: /胚胎移植到 C 羊/ }).click({ force: true });
-  await page.waitForTimeout(700);
-  const born = await page.locator('main').innerText();
-  results.experiment.born = born.includes('多莉最像谁') || born.includes('多莉：白脸');
-  await page.getByRole('button', { name: 'B 羊', exact: true }).click({ force: true });
-  await page.waitForTimeout(600);
-  const answered = await page.locator('main').innerText();
-  results.experiment.quizCorrect = answered.includes('答对了');
+  const working = await page.locator('main').innerText();
+  results.experiment.induced = working.includes('全速分解乳糖') || working.includes('诱导中');
+  for (let i = 0; i < 6; i++) {
+    await page.getByRole('button', { name: /推进一步/ }).click({ force: true });
+    await page.waitForTimeout(250);
+  }
+  const done = await page.locator('main').innerText();
+  results.experiment.relocked = done.includes('重新上锁') || done.includes('复位中');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['stemStructure', 'brainStructure', 'sponge'];
+const SPECIMENS = ['evolutionTree', 'taxonomyLevel', 'rumen'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

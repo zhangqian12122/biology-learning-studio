@@ -5047,10 +5047,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -6266,9 +6266,196 @@ function SpongeSvg({ active }: { active: number | null; open?: boolean }) {
 }
 
 
+/* ================= 进化树（生物进化的大致历程） ================= */
+
+function EvolutionTreeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 主干（时间轴自下而上） */}
+      <g style={dim(active, 0)}>
+        <path d="M70 330 L70 110 Q 70 70 110 66 L 180 60" fill="none" stroke="#7a5a3a" strokeWidth="7" strokeLinecap="round" />
+        <path d="M150 218 Q 200 214 246 210" fill="none" stroke="#7a5a3a" strokeWidth="6" strokeLinecap="round" />
+        <path d="M240 300 L246 210" fill="none" stroke="#7a5a3a" strokeWidth="6" strokeLinecap="round" />
+        <path d="M246 210 Q 300 200 356 196" fill="none" stroke="#7a5a3a" strokeWidth="5" strokeLinecap="round" />
+        <path d="M356 196 Q 400 192 430 170" fill="none" stroke="#7a5a3a" strokeWidth="4" strokeLinecap="round" />
+        <text x="26" y="344" fontSize="12.5" fill="#7a5a3a" fontWeight="700">共同原始祖先</text>
+        <text x="14" y="132" fontSize="12.5" fill="#7a5a3a" fontWeight="700">时间 →</text>
+        <path d="M24 122 L46 122" stroke="#7a5a3a" strokeWidth="2.4" markerEnd="url(#et-arrow)" />
+      </g>
+      {/* 分支端点生物 */}
+      <g style={dim(active, 1)}>
+        {/* 原始生命→蓝细菌等 */}
+        <circle cx="70" cy="240" r="10" fill="#8ac9a8" stroke="#3f7f5a" strokeWidth="2" />
+        <text x="36" y="266" fontSize="12.5" fill="#3f7f5a" fontWeight="600">原始生命</text>
+        <text x="196" y="330" fontSize="12.5" fill="#3f7f5a" fontWeight="600">菌类·藻类等</text>
+        {/* 植物 */}
+        <path d="M180 46 Q 202 30 226 40 Q 224 58 200 60 Q 186 58 180 46 Z" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="96" y="24" fontSize="12.5" fill="#2f7a4d" fontWeight="700">植物界（自养）</text>
+        {/* 动物线：无脊椎 → 脊椎 */}
+        <circle cx="262" cy="176" r="9" fill="#e8b890" stroke="#a5603a" strokeWidth="2" />
+        <text x="276" y="182" fontSize="12" fill="#a5603a" fontWeight="600">无脊椎动物</text>
+        <text x="262" y="144" fontSize="12.5" fill="#2c6e94" fontWeight="700">脊椎动物</text>
+        <text x="262" y="162" fontSize="12" fill="#2c6e94">鱼类→两栖→爬行→鸟·哺乳</text>
+        {/* 真菌 */}
+        <text x="360" y="222" fontSize="12.5" fill="#8a671b" fontWeight="600">真菌界</text>
+        <path d="M356 198 Q 366 210 372 218" fill="none" stroke="#7a5a3a" strokeWidth="3" />
+      </g>
+      {/* 五界/多样性提示 */}
+      <g style={dim(active, 2)}>
+        <text x="420" y="66" fontSize="13" fill="#13333a" fontWeight="700">生物多样性</text>
+        <text x="420" y="84" fontSize="12.5" fill="#49676d">是长期进化的结果</text>
+        <path d="M436 96 Q 442 110 430 122" fill="none" stroke="#49676d" strokeWidth="1.4" />
+      </g>
+      {/* 大事件标记 */}
+      <g style={dim(active, 2)}>
+        <text x="86" y="212" fontSize="12.5" fill="#49676d" fontWeight="600">约 35 亿年前：</text>
+        <text x="86" y="230" fontSize="12.5" fill="#49676d">最早的原核生物出现</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">生物进化树 · 现代生物由共同祖先进化而来</text>
+    </svg>
+  );
+}
+
+/* ================= 生物分类等级 ================= */
+
+function TaxonomyLevelSvg({ active }: { active: number | null; open?: boolean }) {
+  // 七级分类阶梯（以"虎"为例）
+  const levels = [
+    { name: '界', val: '动物界', note: '最大单位·生物种类最多' },
+    { name: '门', val: '脊索动物门', note: '' },
+    { name: '纲', val: '哺乳纲', note: '' },
+    { name: '目', val: '食肉目', note: '' },
+    { name: '科', val: '猫科', note: '' },
+    { name: '属', val: '豹属', note: '' },
+    { name: '种', val: '虎', note: '最小单位·可繁殖' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {levels.map((lv, i) => {
+        const y = 46 + i * 44;
+        const indent = i * 28;
+        return (
+          <g key={lv.name} style={dim(active, Math.min(6, Math.max(0, 6 - i)))}>
+            <rect x={40 + indent} y={y} width={200 - indent} height="34" rx={i === 0 ? 17 : 6} fill={i === 0 ? '#c8e2ba' : i === 6 ? '#f4c76a' : '#e2ecf4'} stroke="#13333a" strokeWidth="2" />
+            <text x={62 + indent} y={y + 23} fontSize="13" fill="#13333a" fontWeight="800">
+              {lv.name} · {lv.val}
+            </text>
+            {lv.note ? (
+              <text x={244 + indent} y={y + 23} fontSize="12" fill="#8a671b" fontWeight="600">
+                {lv.note}
+              </text>
+            ) : null}
+          </g>
+        );
+      })}
+      {/* 越小越亲提示 */}
+      <g style={dim(active, 0)}>
+        <path d="M32 62 L32 330" stroke="#9ab0b5" strokeWidth="0" />
+        <text x="330" y="366" fontSize="12.5" fill="#49676d" fontWeight="700">分类单位越小，亲缘关系越近</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">生物分类七等级（以虎为例）· 界门纲目科属种</text>
+    </svg>
+  );
+}
+
+/* ================= 反刍胃（牛胃·课外拓展） ================= */
+
+function RumenSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 瘤胃（最大） */}
+      <g style={dim(active, 0)}>
+        <path d="M120 120 Q 96 190 140 250 Q 190 306 268 288 Q 320 272 318 216 Q 314 152 250 122 Q 184 98 120 120 Z" fill="#d8b88a" stroke="#8a6a3a" strokeWidth="3" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${150 + i * 44} ${142 + i * 14} q 30 44 10 96`} fill="none" stroke="#a5885f" strokeWidth="2.2" />
+        ))}
+        <text x="60" y="104" fontSize="13.5" fill="#8a6a3a" fontWeight="800">瘤胃（最大的一室）</text>
+        <text x="60" y="122" fontSize="12.5" fill="#8a6a3a">微生物发酵纤维（"反刍仓库"）</text>
+      </g>
+      {/* 网胃 */}
+      <g style={dim(active, 1)}>
+        <path d="M120 122 Q 116 92 152 82 Q 190 72 212 94 Q 216 104 208 116 Q 170 100 134 118 Z" fill="#c9a882" stroke="#8a6a3a" strokeWidth="2.5" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${136 + i * 22} ${84 + i * 4} q 8 10 2 20 M${152 + i * 20} ${80 + i * 5} q 8 10 2 20`} fill="none" stroke="#8a6a3a" strokeWidth="1.6" />
+        ))}
+        <text x="120" y="58" fontSize="13" fill="#8a6a3a" fontWeight="700">网胃（蜂窝状·过滤异物）</text>
+      </g>
+      {/* 瓣胃 */}
+      <g style={dim(active, 2)}>
+        <path d="M318 216 Q 356 208 382 224 Q 396 240 384 260 Q 364 278 330 272 Q 314 264 314 244 Q 314 228 318 216 Z" fill="#e8d8b8" stroke="#8a6a3a" strokeWidth="2.5" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${328 + i * 16} ${222 + i * 6} l6 40`} stroke="#8a6a3a" strokeWidth="1.8" />
+        ))}
+        <text x="292" y="312" fontSize="13" fill="#8a6a3a" fontWeight="700">瓣胃（叶片状·吸水）</text>
+        <line x1="316" y1="304" x2="344" y2="272" stroke="#8a6a3a" strokeWidth="1.4" />
+      </g>
+      {/* 皱胃 */}
+      <g style={dim(active, 3)}>
+        <path d="M330 272 Q 316 302 340 322 Q 372 338 402 318 Q 414 300 402 286 Q 372 296 344 280 Z" fill="#f4c76a" stroke="#b5953a" strokeWidth="2.5" />
+        <text x="508" y="352" textAnchor="end" fontSize="13" fill="#a5761d" fontWeight="700">皱胃（分泌胃液·真正消化）</text>
+      </g>
+      {/* 返回口中示意 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 118 Q 160 66 210 50" fill="none" stroke="#b0483a" strokeWidth="3" strokeDasharray="7 5" markerEnd="url(#ru-arrow)" />
+        <text x="180" y="42" fontSize="12.5" fill="#b0483a" fontWeight="700">半消化的食物返回口中细嚼（反刍）</text>
+      </g>
+      <defs>
+        <marker id="ru-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#b0483a" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">牛胃（反刍胃）结构模式图 · 四室协作（课外拓展）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'stemStructure',
+    id: 'evolutionTree',
+    name: '生物进化树',
+    kicker: '生物进化 · 历程图',
+    intro: '进化树把 35 亿多年的生命历程画成一棵"树"：从共同原始祖先出发，分支越来越多、生物越来越多样——现代生物都是这条进化长河的"末梢"。',
+    parts: [
+      { name: '共同祖先', desc: '树根代表所有生物的共同原始祖先：约 35 亿年前出现的原始生命。' },
+      { name: '最早的原核生物', desc: '化石证据显示最早的原核生物（类似蓝细菌）出现在约 35 亿年前，并逐渐改变大气成分。' },
+      { name: '植物界分支', desc: '能够自养制造有机物的绿色植物分支，是生态系统中最基础的生产者。' },
+      { name: '动物界分支', desc: '从无脊椎动物到脊椎动物（鱼类→两栖→爬行→鸟类和哺乳类），结构越来越复杂。' },
+      { name: '生物多样性', desc: '进化树上每个分支的末梢都是一类现存生物——多样性是长期进化的结果。' },
+    ],
+    Svg: EvolutionTreeSvg,
+  },
+  {
+    id: 'taxonomyLevel',
+    name: '生物分类等级',
+    kicker: '分类学 · 七级单位图',
+    intro: '生物分类从大到小依次是界、门、纲、目、科、属、种：分类单位越小，包含的生物越少，但共同特征越多、亲缘关系越近。',
+    parts: [
+      { name: '界', desc: '最大的分类单位，同一界的生物共同特征最少（如动物界）。' },
+      { name: '门、纲、目、科', desc: '介于界与属之间的中间等级，逐级缩小范围、增加共同特征。' },
+      { name: '属', desc: '相近种的集合，如豹属包括虎、狮、豹等。' },
+      { name: '种', desc: '最小的分类单位也是基本单位：同种生物可以交配并繁殖出有生殖能力的后代。' },
+      { name: '双命名法', desc: '林奈创立：每个物种用"属名 + 种名"的拉丁学名表示，如虎为 Panthera tigris。' },
+    ],
+    Svg: TaxonomyLevelSvg,
+  },
+  {
+    id: 'rumen',
+    name: '反刍胃（牛胃）',
+    kicker: '哺乳动物 · 四室胃（课外拓展）',
+    intro: '牛的胃有四个室：瘤胃里的微生物先把草中的纤维发酵，半消化的食物返回口中细嚼（反刍）再依次经网胃、瓣胃到皱胃真正消化——"食草机器"的秘密。',
+    extension: true,
+    parts: [
+      { name: '瘤胃', desc: '四室中最大的一个：亿万个微生物在此发酵分解纤维素，为牛提供葡萄糖等养料。' },
+      { name: '网胃', desc: '内壁呈蜂窝状，继续过滤与研磨食物，异物（如铁钉）也容易滞留于此。' },
+      { name: '瓣胃', desc: '内有许多叶片（毛肚就是它），主要吸收水分和部分营养。' },
+      { name: '皱胃', desc: '唯一分泌胃液的"真胃"：真正进行化学性消化，相当于其他哺乳动物的胃。' },
+      { name: '反刍', desc: '休息时把瘤胃中半消化的食物返回口中细细咀嚼再咽下——让微生物更充分地分解纤维。' },
+    ],
+    Svg: RumenSvg,
+  },
+  {
+    id: 'neuron',
     name: '茎的结构',
     kicker: '茎 · 横切结构图',
     intro: '木质部的导管向上运水，韧皮部的筛管向下运有机物，中间的形成层不断分裂让茎逐年加粗——运输与支撑两不误。',
