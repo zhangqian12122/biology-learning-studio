@@ -8,33 +8,35 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：ABO 血型与安全输血 ----------
-await page.goto(`${BASE}/lab?exp=bloodType`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：尿的形成过程模拟 ----------
+await page.goto(`${BASE}/lab?exp=urineFormation`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('血型与安全输血');
-  results.experiment.typesShown = ['A 型', 'B 型', 'AB 型', 'O 型'].every((t) => text.includes(t));
-  // 互动：默认 A 型病人 × B 型供血 → 应危险凝集
-  await page.getByRole('button', { name: 'B 型', exact: true }).nth(1).click({ force: true });
-  await page.waitForTimeout(600);
-  const bad = await page.locator('main').innerText();
-  results.experiment.agglutination = bad.includes('凝集反应 · 危险');
-  // A 病人 × A 供血 → 相容
-  await page.getByRole('button', { name: 'A 型', exact: true }).nth(1).click({ force: true });
-  await page.waitForTimeout(600);
-  const good = await page.locator('main').innerText();
-  results.experiment.compatible = good.includes('无凝集 · 相容');
-  // O 型供血给 A 病人 → 应急相容
-  await page.getByRole('button', { name: 'O 型', exact: true }).nth(1).click({ force: true });
-  await page.waitForTimeout(600);
-  const oCase = await page.locator('main').innerText();
-  results.experiment.universalDonor = oCase.includes('相容');
+  results.experiment.open = text.includes('尿的形成过程');
+  results.experiment.sliderShown = text.includes('血糖浓度');
+  // 互动：三步走完 → 尿液形成；再调高血糖出现糖尿
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole('button', { name: /第[一二三]步/ }).click({ force: true });
+    await page.waitForTimeout(500);
+  }
+  const normal = await page.locator('main').innerText();
+  results.experiment.threeStages = normal.includes('尿液 1.5 L/天') && normal.includes('无葡萄糖');
+  // 调高血糖（range input）
+  await page.locator('input[type="range"]').evaluate((el) => {
+    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+    setter.call(el, '14');
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+    el.dispatchEvent(new Event('change', { bubbles: true }));
+  });
+  await page.waitForTimeout(400);
+  const high = await page.locator('main').innerText();
+  results.experiment.sugarUrine = high.includes('糖尿');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['lizard', 'alveolus', 'ecosystemComponents'];
+const SPECIMENS = ['starfish', 'karyotype', 'sieveTube'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

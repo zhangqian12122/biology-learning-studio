@@ -5042,14 +5042,14 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
 export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] = [
   { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
   { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome'] },
-  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome'] },
+  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents'] },
 ];
 
@@ -5945,9 +5945,216 @@ function EcosystemComponentsSvg({ active }: { active: number | null; open?: bool
 }
 
 
+/* ================= 海星（棘皮动物·课外拓展） ================= */
+
+function StarfishSvg({ active }: { active: number | null; open?: boolean }) {
+  // 五条腕的角度
+  const arms = [-90, -18, 54, 126, 198];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 海底 */}
+      <g style={dim(active, 4)}>
+        <path d="M20 300 Q 130 278 260 296 T 500 290 L 500 380 L 20 380 Z" fill="#d8ccb8" stroke="#a5987a" strokeWidth="2.5" />
+        <text x="486" y="368" textAnchor="end" fontSize="12.5" fill="#8a7a58">海底沙石</text>
+      </g>
+      {/* 五条腕 */}
+      <g style={dim(active, 0)}>
+        {arms.map((ang, i) => (
+          <g key={i} transform={`rotate(${ang} 260 200)`}>
+            <path d="M238 176 Q 246 96 260 56 Q 274 96 282 176 Q 260 190 238 176 Z" fill="#e8a06a" stroke="#b5603a" strokeWidth="3" />
+            {[0, 1, 2].map((j) => (
+              <path key={j} d={`M${248 - j * 3} ${130 + j * 22} L${272 + j * 3} ${130 + j * 22}`} stroke="#b5603a" strokeWidth="1.8" />
+            ))}
+          </g>
+        ))}
+      </g>
+      {/* 中央盘 */}
+      <g style={dim(active, 0)}>
+        <circle cx="260" cy="200" r="52" fill="#f0b878" stroke="#b5603a" strokeWidth="3" />
+        {[0, 1, 2, 3, 4].map((i) => {
+          const ang = (-90 + i * 72) * (Math.PI / 180);
+          return <circle key={i} cx={260 + Math.cos(ang) * 38} cy={200 + Math.sin(ang) * 38} r="5" fill="#d88a4a" stroke="#b5603a" strokeWidth="1.6" />;
+        })}
+        <text x="260" y="206" textAnchor="middle" fontSize="12" fill="#7a3a1a" fontWeight="800">中央盘</text>
+      </g>
+      {/* 口与腕上眼点 */}
+      <g style={dim(active, 3)}>
+        <circle cx="260" cy="228" r="9" fill="#8a3a2a" stroke="#5a2a1a" strokeWidth="2" />
+        <text x="120" y="238" fontSize="13" fill="#5a2a1a" fontWeight="700">口（腹面中央）</text>
+        <line x1="176" y1="234" x2="250" y2="228" stroke="#5a2a1a" strokeWidth="1.4" />
+      </g>
+      {/* 管足 */}
+      <g style={dim(active, 2)}>
+        {arms.map((ang, i) => (
+          <g key={i} transform={`rotate(${ang} 260 200)`}>
+            <path d="M250 74 L244 48 M260 72 L260 44 M270 74 L276 48" stroke="#4a9a9a" strokeWidth="3" strokeLinecap="round" />
+            <circle cx="260" cy="42" r="4" fill="#a8d8d4" stroke="#4a9a9a" strokeWidth="1.6" />
+          </g>
+        ))}
+        <text x="384" y="52" fontSize="13" fill="#2f7a6a" fontWeight="700">管足（水管系统驱动）</text>
+        <text x="396" y="70" fontSize="12.5" fill="#2f7a6a">吸盘式缓慢爬行与捕食</text>
+        <line x1="380" y1="58" x2="366" y2="66" stroke="#2f7a6a" strokeWidth="1.4" />
+      </g>
+      {/* 棘刺外骨骼 */}
+      <g style={dim(active, 1)}>
+        <circle cx="260" cy="156" r="4.5" fill="#b5603a" />
+        <circle cx="286" cy="168" r="4.5" fill="#b5603a" />
+        <circle cx="232" cy="170" r="4.5" fill="#b5603a" />
+        <circle cx="300" cy="196" r="4.5" fill="#b5603a" />
+        <circle cx="222" cy="200" r="4.5" fill="#b5603a" />
+        <text x="376" y="200" fontSize="13" fill="#8a3a2a" fontWeight="700">棘刺（内骨骼突出）</text>
+        <line x1="372" y1="204" x2="306" y2="198" stroke="#8a3a2a" strokeWidth="1.4" />
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">海星结构模式图 · 棘皮动物门（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 人体核型（23 对染色体） ================= */
+
+function KaryotypeSvg({ active }: { active: number | null; open?: boolean }) {
+  // 23 对染色体的相对长度（对 1~22 + 性染色体）
+  const lengths = [76, 66, 60, 56, 52, 50, 47, 45, 43, 41, 39, 37, 34, 32, 30, 28, 26, 24, 22, 20, 18, 16];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 常染色体 1~22 */}
+      {lengths.map((len, i) => {
+        const x = 30 + i * 21;
+        const y = 330 - len;
+        const shortArm = len * 0.38;
+        return (
+          <g key={i} style={dim(active, 0)}>
+            {/* 短臂 */}
+            <rect x={x} y={y} width="13" height={shortArm} rx="6" fill="#7a9ac9" stroke="#3d6a94" strokeWidth="1.6" />
+            {/* 长臂 */}
+            <rect x={x} y={y + shortArm + 6} width="13" height={len - shortArm - 6} rx="6" fill="#7a9ac9" stroke="#3d6a94" strokeWidth="1.6" />
+            {/* 着丝粒 */}
+            <rect x={x - 0.5} y={y + shortArm} width="14" height="6" fill="#13333a" />
+            <text x={x + 6.5} y={350} textAnchor="middle" fontSize="9" fill="#49676d">{i + 1}</text>
+          </g>
+        );
+      })}
+      {/* 性染色体 XX / XY */}
+      <g style={dim(active, 1)}>
+        <text x="30" y="36" fontSize="13" fill="#13333a" fontWeight="700">人体细胞 23 对 46 条染色体</text>
+        {/* XX（女） */}
+        <text x="428" y="366" fontSize="11.5" fill="#7a4a8a" fontWeight="800">女 XX · 男 XY</text>
+      </g>
+      <g style={dim(active, 2)}>
+        {/* 标注 */}
+        <path d="M30 240 Q 24 210 36 196" fill="none" stroke="#49676d" strokeWidth="1.4" />
+        <text x="14" y="188" fontSize="12.5" fill="#49676d" fontWeight="600">1 号最大</text>
+        <path d="M455 244 Q 470 220 466 200" fill="none" stroke="#49676d" strokeWidth="1.4" />
+        <text x="420" y="188" fontSize="12.5" fill="#49676d" fontWeight="600">22 号最小</text>
+        <text x="240" y="152" fontSize="12.5" fill="#8a671b" fontWeight="600">着丝粒（纺锤丝附着处）</text>
+        <line x1="240" y1="158" x2="252" y2="176" stroke="#8a671b" strokeWidth="1.4" />
+        <text x="60" y="252" fontSize="12.5" fill="#799398">染色体组型分析可诊断染色体异常（如 21 三体综合征）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">人类正常核型模式图 · 22 对常染色体 + 1 对性染色体</text>
+    </svg>
+  );
+}
+
+/* ================= 筛管与伴胞 ================= */
+
+function SieveTubeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 筛管主干（纵向） */}
+      <g style={dim(active, 0)}>
+        <rect x="210" y="40" width="90" height="300" fill="#f0e2c8" stroke="#b5953a" strokeWidth="3" />
+        {/* 筛板 */}
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <rect x="210" y={128 + i * 90} width="90" height="12" fill="#d8c090" stroke="#8a671b" strokeWidth="2" />
+            {[0, 1, 2, 3].map((j) => (
+              <circle key={j} cx={226 + j * 19} cy={134 + i * 90} r="2.6" fill="#8a671b" />
+            ))}
+          </g>
+        ))}
+        <text x="316" y="96" fontSize="13" fill="#8a671b" fontWeight="700">筛管细胞（活的成熟细胞，</text>
+        <text x="316" y="114" fontSize="13" fill="#8a671b" fontWeight="700">但细胞核已退化）</text>
+        <line x1="312" y1="102" x2="302" y2="96" stroke="#8a671b" strokeWidth="1.4" />
+      </g>
+      {/* 筛孔与有机物流 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M255 ${60 + i * 90} L255 ${124 + i * 90}`} stroke="#c9708a" strokeWidth="4" markerEnd="url(#st-arrow)" />
+        ))}
+        <text x="60" y="150" fontSize="13" fill="#a54868" fontWeight="700">有机物（糖类）</text>
+        <text x="60" y="168" fontSize="12.5" fill="#a54868">自上而下运输到根、果实</text>
+        <line x1="170" y1="158" x2="248" y2="140" stroke="#a54868" strokeWidth="1.4" />
+      </g>
+      {/* 筛板标注 */}
+      <g style={dim(active, 2)}>
+        <text x="330" y="222" fontSize="13" fill="#8a671b" fontWeight="700">筛板（上有筛孔）</text>
+        <text x="330" y="240" fontSize="12.5" fill="#8a671b">细胞质经孔相连互通</text>
+        <line x1="326" y1="228" x2="302" y2="230" stroke="#8a671b" strokeWidth="1.4" />
+      </g>
+      {/* 伴胞 */}
+      <g style={dim(active, 3)}>
+        <rect x="304" y="52" width="34" height="286" rx="8" fill="#e0f2f0" stroke="#3f7f7a" strokeWidth="2.5" />
+        <circle cx="321" cy="120" r="9" fill="#a8d8d4" stroke="#3f7f7a" strokeWidth="1.8" />
+        <text x="352" y="290" fontSize="13" fill="#2f7a6a" fontWeight="700">伴胞（代谢"后勤"，</text>
+        <text x="352" y="308" fontSize="13" fill="#2f7a6a" fontWeight="700">为筛管供能）</text>
+        <line x1="348" y1="296" x2="340" y2="286" stroke="#2f7a6a" strokeWidth="1.4" />
+      </g>
+      {/* 运输方向说明 */}
+      <g style={dim(active, 1)}>
+        <text x="60" y="250" fontSize="12.5" fill="#49676d" fontWeight="600">与导管相反：筛管把叶片</text>
+        <text x="60" y="268" fontSize="12.5" fill="#49676d" fontWeight="600">制造的有机物运往全身</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">筛管与伴胞模式图 · 有机物的运输通道</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'lizard',
+    id: 'starfish',
+    name: '海星',
+    kicker: '棘皮动物 · 结构模式图',
+    intro: '海里的"五角星"（课外拓展）：五辐射对称的棘皮动物，靠水管系统驱动成百上千的管足缓慢爬行，甚至能把胃翻出体外消化贝壳里的猎物。',
+    extension: true,
+    parts: [
+      { name: '五辐射对称', desc: '五条腕围绕中央盘辐射排列——幼体仍两侧对称，发育中变为辐射对称。' },
+      { name: '棘刺（内骨骼）', desc: '体表棘刺由中胚层形成的内骨骼突出而成，"棘皮动物"因此得名。' },
+      { name: '管足', desc: '腕下方成排的细小管状足，由独特的水管系统液压驱动，带吸盘可攀附贝壳。' },
+      { name: '口', desc: '位于腹面中央，捕食双壳类时能把贲门胃从口中翻出，体外消化后再收回。' },
+      { name: '再生能力', desc: '中央盘残存一条腕即可再生出完整的身体——强大的再生是它的招牌技能。' },
+    ],
+    Svg: StarfishSvg,
+  },
+  {
+    id: 'karyotype',
+    name: '人体核型',
+    kicker: '遗传 · 染色体组型图',
+    intro: '把人体细胞的 46 条染色体按大小配对排列就是核型：22 对常染色体 + 1 对性染色体（女 XX、男 XY），核型分析能发现染色体数目与结构的异常。',
+    parts: [
+      { name: '22 对常染色体', desc: '按大小从 1 号排到 22 号：1 号最大、21 号最小，每对形态大小相同（同源染色体）。' },
+      { name: '性染色体', desc: '第 23 对：女性为两条 X 染色体，男性为一条 X 和一条小得多的 Y 染色体。' },
+      { name: '着丝粒', desc: '每条染色体上凹陷的缢缩部位，纺锤丝附着处，分裂时牵拉染色体移向两极。' },
+      { name: '核型分析', desc: '诊断染色体异常的经典手段：如 21 号多出一条即"21 三体综合征（唐氏综合征）"。' },
+    ],
+    Svg: KaryotypeSvg,
+  },
+  {
+    id: 'sieveTube',
+    name: '筛管与伴胞',
+    kicker: '植物输导组织 · 结构模式图',
+    intro: '筛管把叶片制造的有机物自上而下运往全身：上下两端的筛板布满筛孔让细胞质互通，旁边的伴胞则像"后勤部队"为失去细胞核的筛管细胞提供代谢支持。',
+    parts: [
+      { name: '筛管细胞', desc: '长管状活细胞首尾相连，成熟后细胞核退化，专门执行运输功能。' },
+      { name: '筛板', desc: '筛管细胞两端的横壁，上面有许多筛孔，细胞质通过筛孔彼此连通。' },
+      { name: '有机物运输', desc: '把叶片光合产物（主要是蔗糖）运输到根、茎、果实等部位储藏或利用。' },
+      { name: '伴胞', desc: '紧贴筛管的狭长薄壁细胞，细胞核与细胞器齐全，为筛管细胞提供能量与物质。' },
+      { name: '与导管对比', desc: '导管运水向上（死细胞），筛管运有机物多向下（活细胞）——方向与生死都相反。' },
+    ],
+    Svg: SieveTubeSvg,
+  },
+  {
+    id: 'neuron',
     name: '蜥蜴',
     kicker: '爬行动物 · 结构模式图',
     intro: '真正适应陆地生活的爬行动物：角质鳞片防失水，肺呼吸，体内受精产羊膜卵——生殖发育彻底摆脱了对水的依赖。',

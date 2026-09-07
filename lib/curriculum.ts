@@ -598,6 +598,7 @@ export type ExperimentId =
   | 'sexLinkedCross'
   | 'leafDecompose'
   | 'bloodType'
+  | 'urineFormation'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -929,6 +930,14 @@ export const experimentMeta: Record<
     relatedModule: '内环境与稳态',
     extension: true,
   },
+  urineFormation: {
+    title: '尿的形成过程模拟',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '调节血糖走完过滤与重吸收两阶段，看原尿怎样浓缩成尿液与糖尿的由来。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+    extension: true,
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1080,7 +1089,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'sirModel'],
+    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'sirModel'],
   },
   {
     name: '生态',
@@ -1148,6 +1157,7 @@ export const experimentOrder: ExperimentId[] = [
   'mulberryFishPond',
   'leafDecompose',
   'bloodType',
+  'urineFormation',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',
   'dnaExtract',
