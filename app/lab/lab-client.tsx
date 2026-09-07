@@ -48,6 +48,7 @@ import {
 } from 'lucide-react';
 
 import { EXPERIMENT_CATEGORIES, experimentMeta, experimentOrder, textbooks, type ExperimentId } from '@/lib/curriculum';
+import { NbHero } from '@/components/nb-hero';
 
 const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string }>> = {
   microscope: Microscope,
@@ -325,12 +326,18 @@ export function LabClient() {
 
   return (
     <div>
-      <div className="mb-5">
-        <p className="text-xs font-semibold tracking-[0.1em] text-[#398086]">BIOLOGY LAB</p>
-        <h1 className="mt-1 text-2xl font-semibold tracking-normal text-[#13333a] sm:text-3xl">
-          从变量到结论，亲眼看过程
-        </h1>
-      </div>
+      <NbHero
+        badge="BIOLOGY LAB · 互动实验"
+        title="从变量到结论，亲眼看过程"
+        description={
+          <>
+            {experimentOrder.length} 个过程动画互动实验覆盖五册教材：调参数、看曲线、读结论；
+            悬停实验名即可预载，点开几乎零等待。
+          </>
+        }
+        stats={[`互动实验 ${experimentOrder.length} 个`, `八大主题分类`, `点图高亮考点`]}
+        icon={FlaskConical}
+      />
 
       <div className="space-y-5">
         {/* 实验目录：按主题分类 */}
@@ -341,13 +348,13 @@ export function LabClient() {
               <button
                 type="button"
                 onClick={() => setCategoryFilter(null)}
-                className="rounded-full bg-[#eef7f6] px-3 py-1 text-xs font-medium text-[#4b6c73] transition-colors hover:bg-[#e2f1ef]"
+                className="nb-pill px-3 py-1 text-xs font-semibold text-[#4b6c73]"
               >
                 显示全部
               </button>
             ) : null}
           </div>
-          <div className="relative mb-3">
+          <div className="nb-input relative mb-3 flex items-center">
             <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[#79939a]" aria-hidden="true" />
             <input
               type="search"
@@ -355,7 +362,7 @@ export function LabClient() {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="搜索实验名称或关键词（如“光合”“种群”）…"
               aria-label="搜索实验"
-              className="min-h-10 w-full rounded-md border border-[#d9e7e7] bg-white pl-9 pr-10 text-sm text-[#173b42] transition-colors placeholder:text-[#9ab0b5] focus:border-[#82c6c0] focus:outline-none"
+              className="min-h-10 w-full bg-transparent pl-9 pr-10 text-sm outline-none"
             />
             {search ? (
               <button
@@ -375,8 +382,10 @@ export function LabClient() {
               return (
                 <div
                   key={cat.name}
-                  className={`rounded-md border px-3 py-2.5 transition-colors ${
-                    active ? 'border-[#82c6c0] bg-[#e9f7f5]' : 'border-[#e2eeec] bg-white'
+                  className={`rounded-lg border-2 px-3 py-2.5 transition-all ${
+                    active
+                      ? 'border-[#0e6f75] bg-white shadow-[4px_4px_0_#9fd4cd]'
+                      : 'border-[#13333a] bg-white shadow-[3px_3px_0_#c6d4d4] hover:shadow-[4px_4px_0_#b8c9c9]'
                   } ${filtered ? 'opacity-45' : ''}`}
                 >
                   <button
@@ -387,7 +396,7 @@ export function LabClient() {
                   >
                     <span aria-hidden="true" className="text-base">{cat.icon}</span>
                     <span className="text-xs font-bold text-[#173b42]">{cat.name}</span>
-                    <span className="ml-auto rounded-full bg-[#e8f4f3] px-2 text-[10px] font-semibold text-[#0c696f]">
+                    <span className="ml-auto border-2 border-[#13333a] bg-[#fdf1cf] px-1.5 text-[10px] font-bold text-[#13333a]">
                       {cat.ids.length}
                     </span>
                   </button>
@@ -418,33 +427,33 @@ export function LabClient() {
         </section>
 
         <section className="nb-card overflow-hidden">
-          <div className="flex flex-wrap items-start justify-between gap-4 border-b border-[#dceaea] px-4 py-4 sm:px-5">
+          <div className="flex flex-wrap items-start justify-between gap-4 border-b-2 border-[#13333a] bg-[#f4faf9] px-4 py-4 sm:px-5">
             <div className="flex items-start gap-3">
-              <div className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-md bg-[#dff1ef] text-[#0d6c72]">
+              <div className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg border-2 border-[#13333a] bg-white text-[#0d6c72] shadow-[3px_3px_0_#c6d4d4]">
                 <ExperimentIcon className="size-4.5" aria-hidden="true" />
               </div>
               <div>
                 <p className="text-xs text-[#638087]">
                   {experiment.kicker}
                   {experiment.extension ? (
-                    <span className="ml-2 inline-flex items-center rounded-full bg-[#fdf1e3] px-2 py-0.5 text-[10px] font-bold text-[#b57c16]">课外拓展</span>
+                    <span className="ml-2 inline-flex items-center border-2 border-[#13333a] bg-[#f4c76a] px-2 py-0.5 text-[10px] font-bold text-[#13333a]">⚡ 课外拓展</span>
                   ) : null}
                 </p>
-                <h2 className="mt-0.5 text-lg font-semibold text-[#173b42]">{experiment.title}</h2>
+                <h2 className="mt-0.5 text-lg font-bold text-[#173b42]">{experiment.title}</h2>
                 <p className="mt-1 text-sm text-[#59767c]">{experiment.description}</p>
               </div>
             </div>
             <button
               type="button"
               onClick={() => setResetCount((count) => count + 1)}
-              className="inline-flex h-9 items-center gap-2 rounded-md border border-[#cbdede] bg-white px-3 text-xs font-medium text-[#366169] transition-colors hover:bg-[#eef7f7]"
+              className="nb-btn inline-flex h-9 items-center gap-2 px-3 text-xs"
             >
               <RefreshCw className="size-3.5" aria-hidden="true" />
               重置条件
             </button>
           </div>
 
-          <div className="border-b border-[#dceaea] px-4 py-4 sm:px-5">
+          <div className="border-b-2 border-[#13333a] px-4 py-4 sm:px-5">
             <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-[#67858b]">
               选择实验（{searchLower
                 ? `搜索“${search.trim()}” · ${visibleIds.length} 个`
@@ -516,15 +525,15 @@ export function LabClient() {
               <h2 className="text-sm font-semibold">实验设计清单</h2>
             </div>
             <ol className="mt-4 grid gap-3 text-sm text-[#46666d] sm:grid-cols-3">
-              <li className="border-l border-[#cfe1e0] pl-3">
+              <li className="border-l-2 border-[#c6d4d4] pl-3">
                 <span className="block text-xs text-[#719096]">01</span>
                 明确自变量和因变量
               </li>
-              <li className="border-l border-[#cfe1e0] pl-3">
+              <li className="border-l-2 border-[#c6d4d4] pl-3">
                 <span className="block text-xs text-[#719096]">02</span>
                 控制无关变量
               </li>
-              <li className="border-l border-[#cfe1e0] pl-3">
+              <li className="border-l-2 border-[#c6d4d4] pl-3">
                 <span className="block text-xs text-[#719096]">03</span>
                 用数据支持结论
               </li>
@@ -541,7 +550,7 @@ export function LabClient() {
                 href={`/practice?book=${experiment.relatedBook}`}
                 aria-label="前往相关题库"
                 title="前往相关题库"
-                className="flex size-9 items-center justify-center rounded-md bg-[#0e6f75] text-white transition-colors hover:bg-[#0c5f64]"
+                className="nb-btn nb-btn-primary flex size-9 items-center justify-center"
               >
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
@@ -556,9 +565,9 @@ export function LabClient() {
 }
 
 function cnChip(active: boolean) {
-  return `flex min-h-12 items-center gap-2 rounded-md border px-2.5 text-left transition-colors ${
+  return `flex min-h-12 items-center gap-2 rounded-lg border-2 px-2.5 text-left transition-all ${
     active
-      ? 'border-[#82c6c0] bg-[#e9f7f5] text-[#0a626a]'
-      : 'border-[#d9e7e7] bg-white text-[#537078] hover:border-[#b6d9d6]'
+      ? 'border-[#0e6f75] bg-white text-[#0a626a] shadow-[4px_4px_0_#9fd4cd]'
+      : 'border-[#13333a] bg-white text-[#537078] shadow-[3px_3px_0_#c6d4d4] hover:shadow-[4px_4px_0_#b8c9c9]'
   }`;
 }

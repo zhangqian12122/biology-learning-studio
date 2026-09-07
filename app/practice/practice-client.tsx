@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 
 import { recordAnswer } from '@/app/actions';
+import { NbHero } from '@/components/nb-hero';
 import {
   configureProgressQuestions,
   getClientId,
@@ -149,7 +150,7 @@ export function PracticeClient({
 
   if (!currentQuestion) {
     return (
-      <div className="rounded-lg border border-dashed border-[#c9dddd] bg-[#f9fcfc] px-4 py-10 text-center text-sm text-[#6b888d]">
+      <div className="rounded-lg border-2 border-dashed border-[#9db8bc] bg-white px-4 py-10 text-center text-sm text-[#6b888d]">
         共享题库暂无可用题目，请稍后再试或由老师在教师中心补充。
       </div>
     );
@@ -306,60 +307,67 @@ export function PracticeClient({
 
   return (
     <div>
-      <div className="mb-5">
-        <p className="text-xs font-semibold tracking-[0.1em] text-[#398086]">
-          BIOLOGY PRACTICE
-        </p>
-        <h1 className="mt-1 text-2xl font-semibold tracking-normal text-[#13333a] sm:text-3xl">
-          {screenTitle}
-        </h1>
-      </div>
+      <NbHero
+        badge="BIOLOGY PRACTICE · 题库与错题"
+        title={screenTitle}
+        description={
+          <>
+            共 {questions.length} 道原创题覆盖五册教材：作答后立即显示判题依据；
+            答错的题自动收进错题本并按错因归类，智能练习会优先推送薄弱知识点。
+          </>
+        }
+        stats={[`原创题 ${questions.length} 道`, `错题本 ${wrongCount} 道`, `三种练习模式`]}
+        icon={BrainCircuit}
+      />
 
       <div className="space-y-5">
-        <section className="rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-4 sm:p-5">
+        <section className="nb-card p-4 sm:p-5">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <p className="text-xs font-semibold tracking-[0.08em] text-[#67858b]">教材选择</p>
-              <h2 className="mt-1 text-lg font-semibold text-[#173b42]">
+              <h2 className="mt-1 text-lg font-bold text-[#173b42]">
                 {MODE_META[practiceMode].title}
               </h2>
             </div>
             <div
-              className="flex rounded-md border border-[#d9e7e7] bg-white p-0.5"
+              className="flex flex-wrap items-center gap-1.5"
               aria-label="练习模式切换"
             >
-              {(Object.keys(MODE_META) as PracticeMode[]).map((mode) => (
-                <button
-                  key={mode}
-                  type="button"
-                  onClick={() => switchPracticeMode(mode)}
-                  aria-pressed={practiceMode === mode}
-                  className={cn(
-                    'h-8 rounded-md px-3 text-xs font-semibold transition-colors',
-                    practiceMode === mode
-                      ? mode === 'review'
-                        ? 'bg-[#b4552f] text-white'
-                        : mode === 'smart'
-                          ? 'bg-[#5b64c7] text-white'
-                          : 'bg-[#0e7779] text-white'
-                      : 'text-[#59767c] hover:bg-[#edf5f5]',
-                  )}
-                >
-                  {MODE_META[mode].label}
-                  {mode === 'review' && wrongCount ? `（${wrongCount}）` : ''}
-                </button>
-              ))}
+              {(Object.keys(MODE_META) as PracticeMode[]).map((mode) => {
+                const modeActive = practiceMode === mode;
+                return (
+                  <button
+                    key={mode}
+                    type="button"
+                    onClick={() => switchPracticeMode(mode)}
+                    aria-pressed={modeActive}
+                    className={cn(
+                      'nb-pill h-8 px-3 text-xs font-semibold',
+                      modeActive
+                        ? mode === 'review'
+                          ? 'nb-pill-active !bg-[#b4552f]'
+                          : mode === 'smart'
+                            ? 'nb-pill-active !bg-[#5b64c7]'
+                            : 'nb-pill-active'
+                        : 'text-[#59767c]',
+                    )}
+                  >
+                    {MODE_META[mode].label}
+                    {mode === 'review' && wrongCount ? `（${wrongCount}）` : ''}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
           {practiceMode === 'smart' ? (
-            <p className="mt-4 rounded-md border border-[#cdd7f0] bg-[#f3f5fd] px-3 py-2.5 text-xs leading-5 text-[#4a5590]">
+            <p className="mt-4 rounded-lg border-2 border-[#13333a] bg-[#f3f5fd] px-3 py-2.5 text-xs leading-5 text-[#4a5590] shadow-[3px_3px_0_#c6d4d4]">
               <Sparkles className="mr-1 inline size-3.5" aria-hidden="true" />
               正在对全库 {smartOrder.length} 道题排序：你的错题优先，其次是全站错误率较高和未做过的题；
               答题后顺序会实时更新。
             </p>
           ) : (
-            <div className="mt-4 grid grid-cols-2 gap-2 lg:grid-cols-3 xl:grid-cols-5">
+            <div className="mt-4 grid grid-cols-2 gap-2.5 lg:grid-cols-3 xl:grid-cols-5">
               {textbooks.map((book) => {
                 const BookIcon = book.icon;
                 const active = book.id === selectedBook;
@@ -371,15 +379,15 @@ export function PracticeClient({
                     onClick={() => openBook(book.id)}
                     aria-pressed={active}
                     className={cn(
-                      'flex min-h-14 items-center gap-2 rounded-md border px-3 text-left transition-colors',
+                      'flex min-h-14 items-center gap-2 rounded-lg border-2 px-3 text-left transition-all',
                       active
-                        ? 'border-[#82c6c0] bg-[#e9f7f5] text-[#0a626a]'
-                        : 'border-[#d9e7e7] bg-white text-[#537078] hover:border-[#b6d9d6]',
+                        ? 'border-[#0e6f75] bg-white text-[#0a626a] shadow-[4px_4px_0_#9fd4cd]'
+                        : 'border-[#13333a] bg-white text-[#537078] shadow-[3px_3px_0_#c6d4d4] hover:shadow-[4px_4px_0_#b8c9c9]',
                     )}
                   >
                     <BookIcon className="size-4 shrink-0" aria-hidden="true" />
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate text-xs font-medium">{book.title}</span>
+                      <span className="block truncate text-xs font-semibold">{book.title}</span>
                       <span className="block text-[10px] opacity-75">
                         {practiceMode === 'review'
                           ? wrongCountByBook[book.id]
@@ -396,28 +404,28 @@ export function PracticeClient({
         </section>
 
         <div className="grid grid-cols-1 items-start gap-5 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-          <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] shadow-[0_12px_30px_rgba(18,65,72,0.06)]">
-            <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[#dceaea] px-4 py-4 sm:px-5">
+          <section className="nb-card overflow-hidden">
+            <div className="flex flex-wrap items-start justify-between gap-3 border-b-2 border-[#13333a] bg-[#f4faf9] px-4 py-4 sm:px-5">
               <div>
                 <p className="text-xs font-semibold tracking-[0.08em] text-[#67858b]">
                   原创题库 · {questionSource(currentQuestion.bookId)} · {currentQuestion.module}
                 </p>
-                <h2 className="mt-1 text-lg font-semibold text-[#173b42]">
+                <h2 className="mt-1 text-lg font-bold text-[#173b42]">
                   {currentQuestion.topic}
                 </h2>
               </div>
               {practiceMode === 'review' ? (
-                <span className="rounded-full bg-[#fdeee6] px-3 py-1.5 text-xs font-semibold text-[#a4533b]">
+                <span className="nb-pill px-3 py-1.5 text-xs font-bold text-[#a4533b]">
                   {activeQuestions.length
                     ? `错题 ${Math.max(0, reviewPosition) + 1} / ${activeQuestions.length}`
                     : '错题复习'}
                 </span>
               ) : practiceMode === 'smart' ? (
-                <span className="rounded-full bg-[#eceffb] px-3 py-1.5 text-xs font-semibold text-[#4a5590]">
+                <span className="nb-pill px-3 py-1.5 text-xs font-bold text-[#4a5590]">
                   智能排序 {Math.max(0, smartPosition) + 1} / {smartOrder.length}
                 </span>
               ) : (
-                <span className="rounded-full bg-[#e8f4f3] px-3 py-1.5 text-xs font-medium text-[#166c70]">
+                <span className="nb-pill px-3 py-1.5 text-xs font-semibold text-[#166c70]">
                   本册第 {currentQuestionPosition + 1} / {bookQuestions.length} 题
                 </span>
               )}
@@ -428,10 +436,10 @@ export function PracticeClient({
               activeQuestions.length === 0 &&
               !reviewClearedCurrent ? (
                 <div className="py-8 text-center">
-                  <div className="mx-auto flex size-11 items-center justify-center rounded-full bg-[#e7f2f1]">
+                  <div className="mx-auto flex size-11 items-center justify-center rounded-full border-2 border-[#13333a] bg-[#edf9f1] shadow-[3px_3px_0_#c6d4d4]">
                     <Check className="size-5 text-[#287248]" aria-hidden="true" />
                   </div>
-                  <h3 className="mt-3 text-base font-semibold text-[#1d444c]">
+                  <h3 className="mt-3 text-base font-bold text-[#1d444c]">
                     {wrongCount === 0 ? '错题本是空的' : '本册暂无错题'}
                   </h3>
                   <p className="mx-auto mt-2 max-w-sm text-sm leading-6 text-[#67848a]">
@@ -496,14 +504,14 @@ export function PracticeClient({
                             aria-label={dotLabel}
                             title={dotLabel}
                             className={cn(
-                              'flex size-9 items-center justify-center rounded-md border text-xs font-semibold transition-colors',
+                              'flex size-9 items-center justify-center rounded-lg border-2 text-xs font-bold transition-all',
                               isCurrent
-                                ? 'border-[#0e7779] bg-[#0e7779] text-white'
+                                ? 'border-[#13333a] bg-[#0e7779] text-white shadow-[3px_3px_0_#13333a]'
                                 : isWrong
-                                  ? 'border-[#e7b5a6] bg-[#fff2ed] text-[#a4533b]'
+                                  ? 'border-[#13333a] bg-[#fff2ed] text-[#a4533b] shadow-[2px_2px_0_#c6d4d4]'
                                   : isCorrect
-                                    ? 'border-[#8ecbab] bg-[#edf9f1] text-[#287248]'
-                                    : 'border-[#d6e6e6] bg-white text-[#658289] hover:border-[#a9d3cf]',
+                                    ? 'border-[#13333a] bg-[#edf9f1] text-[#287248] shadow-[2px_2px_0_#c6d4d4]'
+                                    : 'border-[#13333a] bg-white text-[#658289] shadow-[2px_2px_0_#c6d4d4] hover:shadow-[3px_3px_0_#b8c9c9]',
                             )}
                           >
                             {practiceMode === 'smart' ? index + 1 : originalIndex + 1}
@@ -532,14 +540,14 @@ export function PracticeClient({
                               : currentAnswer !== undefined
                           }
                           className={cn(
-                            'flex min-h-12 items-center gap-3 rounded-md border px-3 text-left text-sm transition-colors disabled:cursor-default',
+                            'flex min-h-12 items-center gap-3 rounded-lg border-2 px-3 text-left text-sm transition-all disabled:cursor-default',
                             correct
-                              ? 'border-[#81c5a3] bg-[#edf9f1] text-[#226341]'
+                              ? 'border-[#2c6e4c] bg-[#edf9f1] text-[#226341] shadow-[3px_3px_0_#a8d5b8]'
                               : incorrect
-                                ? 'border-[#e9b8a8] bg-[#fff2ed] text-[#9b4e39]'
+                                ? 'border-[#a4533b] bg-[#fff2ed] text-[#9b4e39] shadow-[3px_3px_0_#ecc7b8]'
                                 : !answerRevealed && chosen
-                                  ? 'border-dashed border-[#dfa678] bg-[#fff8f2] text-[#8a5a36]'
-                                  : 'border-[#d8e7e7] bg-white text-[#46666d] hover:border-[#a9d3cf] hover:bg-[#f5fbfb]',
+                                  ? 'border-dashed border-[#c07840] bg-[#fff8f2] text-[#8a5a36]'
+                                  : 'border-[#13333a] bg-white text-[#46666d] shadow-[3px_3px_0_#c6d4d4] hover:shadow-[4px_4px_0_#b8c9c9]',
                           )}
                         >
                           <span className="flex size-6 shrink-0 items-center justify-center rounded-full border border-current text-xs font-semibold">
@@ -653,7 +661,7 @@ export function PracticeClient({
           </section>
 
           <aside className="space-y-5">
-            <section className="rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-4 sm:p-5">
+            <section className="nb-card p-4 sm:p-5">
               <div className="flex items-center gap-2">
                 <BrainCircuit className="size-4 text-[#0d7479]" aria-hidden="true" />
                 <h2 className="text-sm font-semibold">
@@ -676,11 +684,11 @@ ${selectedBookCorrect} 题答对`}
                 </p>
               </div>
               <div
-                className="mt-4 h-2 overflow-hidden rounded-full bg-[#deeeee]"
+                className="nb-progress mt-4 h-3.5"
                 aria-label={practiceMode === 'smart' ? `全库完成度 ${overallProgress}%` : `本册完成度 ${selectedBookProgress}%`}
               >
                 <div
-                  className="h-full rounded-full bg-[#198487] transition-[width]"
+                  className="nb-progress-fill"
                   style={{
                     width: `${practiceMode === 'smart' ? overallProgress : selectedBookProgress}%`,
                   }}
@@ -693,7 +701,7 @@ ${selectedBookCorrect} 题答对`}
               </p>
             </section>
 
-            <section className="rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-4 sm:p-5">
+            <section className="nb-card p-4 sm:p-5">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
                   <CircleHelp className="size-4 text-[#b57c16]" aria-hidden="true" />
@@ -706,7 +714,7 @@ ${selectedBookCorrect} 题答对`}
                   {mistakeTags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-[#ecd7a7] bg-[#fff8e7] px-2.5 py-1 text-xs text-[#80621c]"
+                      className="nb-pill px-2.5 py-1 text-xs font-semibold text-[#80621c]"
                     >
                       {tag}
                     </span>
@@ -719,14 +727,14 @@ ${selectedBookCorrect} 题答对`}
               )}
             </section>
 
-            <section className="overflow-hidden rounded-lg border border-[#cfe0e0] bg-[#f9fcfc]">
+            <section className="nb-card overflow-hidden">
               <Image
                 src="/images/microscope-leaf-cells.png"
                 alt="显微镜下的绿色植物叶肉细胞"
                 width={720}
                 height={240}
                 sizes="(min-width: 1280px) 33vw, 100vw"
-                className="h-32 w-full object-cover object-center"
+                className="h-32 w-full border-b-2 border-[#13333a] object-cover object-center"
               />
               <div className="p-4">
                 <p className="text-xs font-semibold tracking-[0.08em] text-[#67858b]">

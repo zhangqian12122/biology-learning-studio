@@ -25,7 +25,7 @@ export function SiteHeader({
   bankFallback?: boolean;
 }) {
   return (
-    <header className="sticky top-0 z-40 border-b-2 border-[#13333a] bg-[#f9fcfc] shadow-[0_3px_0_rgba(198,212,212,0.9)]">
+    <header className="sticky top-0 z-40 border-b-2 border-[#13333a] bg-white shadow-[0_4px_0_#c6d4d4]">
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-lg border-2 border-[#13333a] bg-[#0e6f75] text-white shadow-[3px_3px_0_#13333a]">
@@ -38,7 +38,7 @@ export function SiteHeader({
         </Link>
 
         <nav
-          className="order-3 flex w-full items-center gap-1.5 overflow-x-auto border-t-2 border-dashed border-[#d5e4e5] pt-3 text-sm sm:order-none sm:w-auto sm:border-0 sm:pt-0"
+          className="order-3 flex w-full items-center gap-1.5 overflow-x-auto border-t-2 border-dashed border-[#c6d4d4] pt-3 text-sm sm:order-none sm:w-auto sm:border-0 sm:pt-0"
           aria-label="主导航"
         >
           {navItems.map((item) => (

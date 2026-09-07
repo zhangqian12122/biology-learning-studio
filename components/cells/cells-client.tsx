@@ -185,10 +185,8 @@ export function CellsClient() {
                   type="button"
                   onClick={() => setSubCategory(null)}
                   aria-pressed={subCategory == null}
-                  className={`inline-flex min-h-8 items-center rounded-full border px-3 text-xs font-semibold transition-colors ${
-                    subCategory == null
-                      ? 'border-[#0e6f75] bg-[#0e6f75] text-white'
-                      : 'border-[#d9e7e7] bg-white text-[#537078] hover:border-[#82c6c0]'
+                  className={`nb-pill inline-flex min-h-8 items-center px-3 text-xs font-semibold ${
+                    subCategory == null ? 'nb-pill-active' : 'text-[#537078]'
                   }`}
                 >
                   全部
@@ -211,7 +209,7 @@ export function CellsClient() {
             ) : null}
 
             {/* 搜索框（组内也可继续搜） */}
-            <div className="relative">
+            <div className="nb-input relative flex items-center">
               <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[#79939a]" aria-hidden="true" />
               <input
                 type="search"
@@ -219,7 +217,7 @@ export function CellsClient() {
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="在图鉴中搜索（如“线粒体”“病毒”“染色体”）…"
                 aria-label="搜索图鉴标本"
-                className="min-h-10 w-full rounded-xl border border-[#d9e7e7] bg-[#f9fcfc] pl-9 pr-10 text-sm text-[#173b42] transition-colors placeholder:text-[#9ab0b5] focus:border-[#82c6c0] focus:bg-white focus:outline-none"
+                className="min-h-10 w-full bg-transparent pl-9 pr-10 text-sm outline-none"
               />
               {search ? (
                 <button
@@ -305,16 +303,16 @@ export function CellsClient() {
         {browsing || specimen.id ? (
           <section className="nb-card overflow-hidden">
             {/* 工具栏 */}
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#e4efee] bg-[#f4faf9] px-4 py-3 sm:px-5">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[#13333a] bg-[#f4faf9] px-4 py-3 sm:px-5">
               <div className="flex min-w-0 items-center gap-2.5">
-                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#0e6f75] text-lg text-white shadow-sm" aria-hidden="true">
+                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg border-2 border-[#13333a] bg-[#0e6f75] text-lg text-white shadow-[3px_3px_0_#c6d4d4]" aria-hidden="true">
                   🔬
                 </span>
                 <div className="min-w-0">
                   <p className="truncate text-[11px] font-medium text-[#67858b]">
                     {CATEGORY_LABEL(specimen.id)} · {specimen.kicker}
                     {specimen.extension ? (
-                      <span className="ml-1.5 inline-flex items-center rounded-full bg-[#fdf1e3] px-1.5 py-0.5 text-[10px] font-bold text-[#b57c16]">⚡ 课外拓展</span>
+                      <span className="ml-1.5 inline-flex items-center border-2 border-[#13333a] bg-[#f4c76a] px-1.5 py-0.5 text-[10px] font-bold text-[#13333a]">⚡ 课外拓展</span>
                     ) : null}
                   </p>
                   <h2 className="truncate text-lg font-bold leading-6 text-[#13333a]">{specimen.name}结构图</h2>
@@ -327,7 +325,7 @@ export function CellsClient() {
                       type="button"
                       onClick={() => step(-1)}
                       aria-label="上一个标本"
-                      className="inline-flex size-8 items-center justify-center rounded-full border border-[#d9e7e7] bg-white text-[#537078] transition-colors hover:border-[#82c6c0] hover:text-[#0a626a]"
+                      className="nb-btn inline-flex size-8 items-center justify-center !rounded-full !shadow-[2px_2px_0_#c6d4d4] text-[#537078]"
                     >
                       <ChevronLeft className="size-4" aria-hidden="true" />
                     </button>
@@ -336,7 +334,7 @@ export function CellsClient() {
                       type="button"
                       onClick={() => step(1)}
                       aria-label="下一个标本"
-                      className="inline-flex size-8 items-center justify-center rounded-full border border-[#d9e7e7] bg-white text-[#537078] transition-colors hover:border-[#82c6c0] hover:text-[#0a626a]"
+                      className="nb-btn inline-flex size-8 items-center justify-center !rounded-full !shadow-[2px_2px_0_#c6d4d4] text-[#537078]"
                     >
                       <ChevronRight className="size-4" aria-hidden="true" />
                     </button>
@@ -348,8 +346,8 @@ export function CellsClient() {
                       type="button"
                       onClick={() => setStomaOpen(true)}
                       aria-pressed={stomaOpen}
-                      className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
-                        stomaOpen ? 'bg-[#0e6f75] text-white shadow-sm' : 'bg-[#eef7f6] text-[#4b6c73] hover:bg-[#e2f1ef]'
+                      className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
+                        stomaOpen ? 'nb-pill-active' : 'text-[#4b6c73]'
                       }`}
                     >
                       吸水 · 张开
@@ -358,8 +356,8 @@ export function CellsClient() {
                       type="button"
                       onClick={() => setStomaOpen(false)}
                       aria-pressed={!stomaOpen}
-                      className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
-                        !stomaOpen ? 'bg-[#b0483a] text-white shadow-sm' : 'bg-[#eef7f6] text-[#4b6c73] hover:bg-[#e2f1ef]'
+                      className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
+                        !stomaOpen ? 'nb-pill-active !bg-[#b0483a]' : 'text-[#4b6c73]'
                       }`}
                     >
                       失水 · 闭合
@@ -372,8 +370,8 @@ export function CellsClient() {
                       type="button"
                       onClick={() => setUseWebGL(false)}
                       aria-pressed={!useWebGL}
-                      className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
-                        !useWebGL ? 'bg-[#0e6f75] text-white shadow-sm' : 'bg-[#eef7f6] text-[#4b6c73] hover:bg-[#e2f1ef]'
+                      className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
+                        !useWebGL ? 'nb-pill-active' : 'text-[#4b6c73]'
                       }`}
                     >
                       教学剖面
@@ -382,8 +380,8 @@ export function CellsClient() {
                       type="button"
                       onClick={() => setUseWebGL(true)}
                       aria-pressed={useWebGL}
-                      className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
-                        useWebGL ? 'bg-[#0e6f75] text-white shadow-sm' : 'bg-[#eef7f6] text-[#4b6c73] hover:bg-[#e2f1ef]'
+                      className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
+                        useWebGL ? 'nb-pill-active' : 'text-[#4b6c73]'
                       }`}
                     >
                       实景 3D

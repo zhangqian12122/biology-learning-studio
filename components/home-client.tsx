@@ -8,10 +8,12 @@ import {
   BrainCircuit,
   CircleAlert,
   FlaskConical,
+  GraduationCap,
   Search,
   Target,
 } from 'lucide-react';
 
+import { NbHero } from '@/components/nb-hero';
 import {
   configureProgressQuestions,
   useLocalProgress,
@@ -119,12 +121,12 @@ export function HomeClient({
             选一本教材，从未完成的原创题开始。
           </p>
         </div>
-        <div className="border-t border-[#dce9e9] pt-3">
+        <div className="border-t-2 border-dashed border-[#c6d4d4] pt-3">
           <div className="mb-2 flex items-center justify-between px-2">
             <p className="text-[11px] font-semibold tracking-[0.08em] text-[#66858b]">五册教材</p>
             <BookOpen className="size-3.5 text-[#66858b]" aria-hidden="true" />
           </div>
-          <div className="grid gap-1">
+          <div className="grid gap-1.5">
             {textbooks.map((book) => {
               const BookIcon = book.icon;
               const active = selectedBook === book.id;
@@ -135,10 +137,10 @@ export function HomeClient({
                   href={practiceHref(book.id)}
                   onClick={() => setSelectedBook(book.id)}
                   className={cn(
-                    'flex min-h-12 items-center gap-2 rounded-md border px-2.5 text-left transition-colors',
+                    'flex min-h-12 items-center gap-2 rounded-lg border-2 px-2.5 text-left transition-all',
                     active
-                      ? 'border-[#abd9d5] bg-white shadow-sm'
-                      : 'border-transparent hover:border-[#d6e6e6] hover:bg-white/70',
+                      ? 'border-[#0e6f75] bg-white shadow-[3px_3px_0_#9fd4cd]'
+                      : 'border-transparent hover:border-[#c6d4d4] hover:bg-white hover:shadow-[2px_2px_0_#c6d4d4]',
                   )}
                 >
                   <span
@@ -171,14 +173,18 @@ export function HomeClient({
       </aside>
 
       <div className="order-1 min-w-0 lg:order-2">
-        <div className="mb-5">
-          <p className="text-xs font-semibold tracking-[0.1em] text-[#398086]">
-            BIOLOGY COURSE MAP
-          </p>
-          <h1 className="mt-1 text-2xl font-semibold tracking-normal text-[#13333a] sm:text-3xl">
-            从教材到考试，选择要学的内容。
-          </h1>
-        </div>
+        <NbHero
+          badge="BIOLOGY COURSE MAP · 教材总览"
+          title="从教材到考试，选择要学的内容。"
+          description={
+            <>
+              题库由老师与同学共同建设，五册教材均配有过程动画互动实验；
+              选一本教材开始，或直接搜索你要复习的知识点。
+            </>
+          }
+          stats={[`共享题库 ${stats.activeCount} 题`, `互动实验 ${experimentOrder.length} 个`, `五册教材全覆盖`]}
+          icon={GraduationCap}
+        />
 
         <div className="space-y-5">
           <section className="nb-card p-4 sm:p-5">
@@ -188,7 +194,7 @@ export function HomeClient({
                   按五册教材顺序进入，或直接搜索你要复习的知识点。
                 </p>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-[#66858b]">
-                  题库由老师与同学共同建设：共享题库现有 {stats.activeCount} 道原创题，老师可随时增补修订；
+                  共享题库现有 {stats.activeCount} 道原创题，老师可随时增补修订；
                   五册教材均配有过程动画互动实验，共 {experimentOrder.length} 个。
                 </p>
               </div>
@@ -196,13 +202,13 @@ export function HomeClient({
                 <span className="mb-2 block text-xs font-semibold tracking-[0.08em] text-[#66858b]">
                   搜索课堂内容
                 </span>
-                <span className="flex h-11 items-center gap-2 rounded-md border border-[#cddfdf] bg-white px-3 shadow-sm transition-shadow focus-within:ring-3 focus-within:ring-[#b8dfda]">
+                <span className="nb-input flex h-11 items-center gap-2 px-3">
                   <Search className="size-4 shrink-0 text-[#a77724]" aria-hidden="true" />
                   <input
                     value={searchQuery}
                     onChange={(event) => setSearchQuery(event.target.value)}
                     placeholder="如：细胞、遗传、生态、发酵"
-                    className="min-w-0 flex-1 bg-transparent text-sm text-[#264950] outline-none placeholder:text-[#94a9ad]"
+                    className="min-w-0 flex-1 bg-transparent text-sm outline-none"
                     type="search"
                   />
                 </span>
@@ -231,7 +237,8 @@ export function HomeClient({
                       key={book.id}
                       href={practiceHref(book.id)}
                       onClick={() => setSelectedBook(book.id)}
-                      className="nb-lift group flex min-h-[230px] flex-col border-2 border-[#13333a] bg-white p-4 text-left [border-radius:10px] hover:shadow-[9px_9px_0_#a9bebe]"
+                      style={{ '--stagger-i': index } as React.CSSProperties}
+                      className="nb-tile nb-lift nb-rise group flex min-h-[230px] flex-col p-4 text-left"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <span
@@ -264,7 +271,7 @@ export function HomeClient({
                 })}
               </div>
             ) : (
-              <div className="rounded-lg border border-dashed border-[#c9dddd] bg-[#f9fcfc] px-4 py-8 text-center text-sm text-[#6b888d]">
+              <div className="rounded-lg border-2 border-dashed border-[#9db8bc] bg-white px-4 py-8 text-center text-sm text-[#6b888d]">
                 没有匹配的教材关键词，试试“细胞”“遗传”或“生态”。
               </div>
             )}
@@ -281,16 +288,16 @@ export function HomeClient({
                     {selectedBookData.volume} · {selectedBookData.title}
                   </h2>
                 </div>
-                <span className="rounded-full bg-[#e8f4f3] px-3 py-1.5 text-xs font-medium text-[#166c70]">
+                <span className="nb-pill px-3 py-1.5 text-xs font-semibold text-[#166c70]">
                   已完成 {selectedBookCompleted}/{bookQuestions.length}
                 </span>
               </div>
               <div
-                className="mt-4 h-2 overflow-hidden rounded-full bg-[#deeeee]"
+                className="nb-progress mt-4 h-3.5"
                 aria-label={`本册完成度 ${selectedBookProgress}%`}
               >
                 <div
-                  className="h-full rounded-full bg-[#198487] transition-[width]"
+                  className="nb-progress-fill"
                   style={{ width: `${selectedBookProgress}%` }}
                 />
               </div>
@@ -314,7 +321,7 @@ export function HomeClient({
                   return (
                     <li
                       key={module}
-                      className="border-l border-[#cfe1e0] pl-3 text-sm leading-6 text-[#46666d]"
+                      className="border-l-2 border-[#c6d4d4] pl-3 text-sm leading-6 text-[#46666d]"
                     >
                       <span className="mb-1 block text-xs text-[#719096]">
                         0{index + 1} · {moduleQuestionCount} 题
@@ -328,7 +335,7 @@ export function HomeClient({
                 {selectedBookUnfinished > 0 ? (
                   <Link
                     href={practiceHref(selectedBook)}
-                    className="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-[#0e6f75] px-4 text-sm font-medium text-white transition-colors hover:bg-[#0c5f64] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#b8dfda]"
+                    className="nb-btn nb-btn-primary inline-flex h-9 items-center justify-center gap-2 px-4 text-sm"
                   >
                     继续本册练习
                     <ArrowRight className="size-3.5" aria-hidden="true" />
@@ -336,7 +343,7 @@ export function HomeClient({
                 ) : selectedBookWrong > 0 ? (
                   <Link
                     href={practiceHref(selectedBook, 'review')}
-                    className="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-[#0e6f75] px-4 text-sm font-medium text-white transition-colors hover:bg-[#0c5f64] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#b8dfda]"
+                    className="nb-btn nb-btn-primary inline-flex h-9 items-center justify-center gap-2 px-4 text-sm"
                   >
                     复习本册错题（{selectedBookWrong}）
                     <ArrowRight className="size-3.5" aria-hidden="true" />
@@ -344,7 +351,7 @@ export function HomeClient({
                 ) : (
                   <Link
                     href={practiceHref(selectedBook)}
-                    className="inline-flex h-9 items-center justify-center gap-2 rounded-md bg-[#0e6f75] px-4 text-sm font-medium text-white transition-colors hover:bg-[#0c5f64] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#b8dfda]"
+                    className="nb-btn nb-btn-primary inline-flex h-9 items-center justify-center gap-2 px-4 text-sm"
                   >
                     回顾本册题目
                     <ArrowRight className="size-3.5" aria-hidden="true" />
@@ -353,7 +360,7 @@ export function HomeClient({
                 {wrongIds.size > 0 ? (
                   <Link
                     href={practiceHref(undefined, 'review')}
-                    className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-[#e4c4a8] bg-[#fff8f2] px-4 text-sm font-medium text-[#a4533b] transition-colors hover:bg-[#fdeee6]"
+                    className="nb-btn inline-flex h-9 items-center justify-center gap-2 px-4 text-sm text-[#a4533b]"
                   >
                     <CircleAlert className="size-3.5" aria-hidden="true" />
                     全部错题复习（{wrongIds.size}）
@@ -361,7 +368,7 @@ export function HomeClient({
                 ) : null}
                     <Link
                       href="/lab"
-                      className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-[#cbdede] bg-white px-4 text-sm font-medium text-[#366169] transition-colors hover:bg-[#eef7f7]"
+                      className="nb-btn inline-flex h-9 items-center justify-center gap-2 px-4 text-sm"
                     >
                       打开互动实验
                       <FlaskConical className="size-3.5" aria-hidden="true" />
@@ -391,22 +398,22 @@ export function HomeClient({
                 </p>
               </div>
               <div
-                className="mt-4 h-2 overflow-hidden rounded-full bg-[#deeeee]"
+                className="nb-progress mt-4 h-3.5"
                 aria-label={`总完成度 ${overallProgress}%`}
               >
                 <div
-                  className="h-full rounded-full bg-[#d39a2b] transition-[width]"
-                  style={{ width: `${overallProgress}%` }}
+                  className="nb-progress-fill"
+                  style={{ width: `${overallProgress}%`, background: '#d39a2b' }}
                 />
               </div>
               <dl className="mt-4 grid grid-cols-2 gap-2 text-xs text-[#5b777d]">
-                <div className="rounded-md bg-[#eef7f6] px-3 py-2">
+                <div className="rounded-lg border-2 border-[#13333a] bg-white px-3 py-2 shadow-[3px_3px_0_#c6d4d4]">
                   <dt className="text-[#6d898f]">共享题库</dt>
                   <dd className="mt-0.5 text-sm font-semibold text-[#146e73]">
                     {stats.activeCount} 题
                   </dd>
                 </div>
-                <div className="rounded-md bg-[#eef7f6] px-3 py-2">
+                <div className="rounded-lg border-2 border-[#13333a] bg-white px-3 py-2 shadow-[3px_3px_0_#c6d4d4]">
                   <dt className="text-[#6d898f]">全站已作答</dt>
                   <dd className="mt-0.5 text-sm font-semibold text-[#146e73]">
                     {stats.totalAnswers} 次
@@ -422,7 +429,7 @@ export function HomeClient({
             </section>
           </div>
 
-          <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-4 sm:p-5">
+          <section className="nb-card p-4 sm:p-5">
             <div className="flex items-center gap-2">
               <Target className="size-4 text-[#0d7479]" aria-hidden="true" />
               <h2 className="text-sm font-semibold">本册题目分布</h2>
@@ -431,7 +438,7 @@ export function HomeClient({
               {textbooks.map((book) => {
                 const list = questionsByBook.get(book.id) ?? [];
                 return (
-                  <div key={book.id} className="rounded-md border border-[#dceaea] bg-white p-3">
+                  <div key={book.id} className="rounded-lg border-2 border-[#13333a] bg-white p-3 shadow-[3px_3px_0_#c6d4d4]">
                     <p className="text-xs font-medium text-[#34535a]">
                       {book.volume} · {book.title}
                     </p>

@@ -190,3 +190,98 @@ textarea {
   border-radius: 8px;
   box-shadow: 4px 4px 0 #9fd4cd;
 }
+/* 输入框/搜索框：白底粗边 + 聚焦抬起变青 */
+.nb-input {
+  background: #ffffff;
+  border: 2px solid #13333a;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #c6d4d4;
+  color: #13333a;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.nb-input::placeholder {
+  color: #8fa8ad;
+}
+.nb-input:focus,
+.nb-input:focus-within {
+  outline: none;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #9fd4cd;
+}
+/* 按钮：白底粗边（次）与青底白字（主） */
+.nb-btn {
+  background: #ffffff;
+  border: 2px solid #13333a;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #c6d4d4;
+  color: #13333a;
+  font-weight: 600;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.nb-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #b8c9c9;
+}
+.nb-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #b8c9c9;
+}
+.nb-btn-primary {
+  background: #0e6f75;
+  color: #ffffff;
+  box-shadow: 3px 3px 0 #13333a;
+}
+.nb-btn-primary:hover {
+  box-shadow: 4px 4px 0 #13333a;
+}
+.nb-btn-primary:active {
+  box-shadow: 1px 1px 0 #13333a;
+}
+.nb-btn:disabled {
+  opacity: 0.45;
+  transform: none;
+  box-shadow: 3px 3px 0 #c6d4d4;
+  cursor: not-allowed;
+}
+/* 进度条：粗边胶囊 + 青色填充 */
+.nb-progress {
+  background: #ffffff;
+  border: 2px solid #13333a;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.nb-progress-fill {
+  background: #0e6f75;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+/* 入场微动效：卡片淡入上浮，网格子项用 --stagger-i 依次延迟 */
+@keyframes nb-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.nb-rise {
+  animation: nb-rise-in 0.4s ease both;
+  animation-delay: calc(var(--stagger-i, 0) * 60ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nb-rise {
+    animation: none;
+  }
+  .nb-card,
+  .nb-lift,
+  .nb-pill,
+  .nb-tile,
+  .nb-input,
+  .nb-btn,
+  .nb-progress-fill {
+    transition: none;
+  }
+}

@@ -18,7 +18,7 @@ export function LocalProgressBadge({
   return (
     <span
       title="学习记录仅保存在当前浏览器"
-      className="inline-flex items-center gap-1.5 rounded-full bg-[#fff4d8] px-3 py-1.5 font-medium text-[#80621c]"
+      className="nb-pill inline-flex items-center gap-1.5 px-3 py-1.5 font-semibold text-[#80621c]"
     >
       <svg
         className="size-3.5"

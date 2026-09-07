@@ -5,6 +5,7 @@ import {
   BrainCircuit,
   Check,
   CircleAlert,
+  GraduationCap,
   ListChecks,
   LockKeyhole,
   Pencil,
@@ -28,7 +29,7 @@ import {
   questionSource,
   textbooks,
 } from '@/lib/curriculum';
-import { Button } from '@/components/ui/button';
+import { NbHero } from '@/components/nb-hero';
 import { cn } from '@/lib/utils';
 
 const SESSION_KEY = 'fujian-biology-teacher-passcode';
@@ -270,7 +271,7 @@ export function TeacherClient({
 
   if (stage !== 'dashboard') {
     return (
-      <div className="mx-auto mt-8 max-w-md rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-6 shadow-sm">
+      <div className="nb-card mx-auto mt-8 max-w-md p-6">
         <div className="flex items-center gap-2 text-[#0d7479]">
           <LockKeyhole className="size-5" aria-hidden="true" />
           <h1 className="text-lg font-semibold">
@@ -292,48 +293,51 @@ export function TeacherClient({
             }
           }}
           placeholder={stage === 'setup' ? '设置口令（至少 6 位）' : '教师口令'}
-          className="mt-4 h-11 w-full rounded-md border border-[#cddfdf] bg-white px-3 text-sm outline-none focus:ring-3 focus:ring-[#b8dfda]"
+          className="nb-input mt-4 h-11 w-full px-3 text-sm"
         />
         {authError ? (
           <p className="mt-2 text-xs font-medium text-[#ad553d]">{authError}</p>
         ) : null}
-        <Button
+        <button
+          type="button"
           onClick={() => void submitAuth(stage === 'setup' ? 'setup' : 'login')}
           disabled={busy || passcode.trim().length < 6}
-          className="mt-4 w-full"
+          className="nb-btn nb-btn-primary mt-4 h-11 w-full text-sm"
         >
           {stage === 'setup' ? '设置并进入' : '登录教师中心'}
-        </Button>
+        </button>
       </div>
     );
   }
 
   return (
     <div>
-      <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <p className="text-xs font-semibold tracking-[0.1em] text-[#398086]">
-            TEACHER STUDIO
-          </p>
-          <h1 className="mt-1 text-2xl font-semibold tracking-normal text-[#13333a] sm:text-3xl">
-            建设会自我进化的共享题库
-          </h1>
-          <p className="mt-2 text-sm text-[#59767c]">
+      <NbHero
+        badge="TEACHER STUDIO · 教师中心"
+        title="建设会自我进化的共享题库"
+        description={
+          <>
             共 {questions.length} 题（在用 {activeQuestions.length}）· 全站累计作答{' '}
             {insight.totalAttempts} 次
             {insight.correctRate != null ? ` · 整体正确率 ${insight.correctRate}%` : ''}
-          </p>
-        </div>
-        <Button variant="outline" size="sm" onClick={logout} className="border-[#cbdede] bg-white text-[#366169] hover:bg-[#eef7f7]">
-          <ShieldCheck className="size-3.5" aria-hidden="true" />
-          退出登录
-        </Button>
-      </div>
+            ；增补修订的题目学生端立即可见。
+          </>
+        }
+        stats={[`在用题 ${activeQuestions.length} 道`, `累计作答 ${insight.totalAttempts} 次`, insight.correctRate != null ? `整体正确率 ${insight.correctRate}%` : '暂无作答数据']}
+        icon={GraduationCap}
+        action={
+          <button
+            type="button"
+            onClick={logout}
+            className="nb-btn inline-flex h-9 items-center gap-2 px-3 text-xs"
+          >
+            <ShieldCheck className="size-3.5" aria-hidden="true" />
+            退出登录
+          </button>
+        }
+      />
 
-      <div
-        className="mb-5 flex flex-wrap gap-1 rounded-md border border-[#d9e7e7] bg-white p-1"
-        aria-label="教师功能切换"
-      >
+      <div className="mb-5 flex flex-wrap items-center gap-2" aria-label="教师功能切换">
         {(
           [
             { key: 'manage', label: '题库管理', icon: ListChecks },
@@ -349,10 +353,8 @@ export function TeacherClient({
               onClick={() => setTab(item.key)}
               aria-pressed={tab === item.key}
               className={cn(
-                'inline-flex h-9 items-center gap-1.5 rounded-md px-3 text-sm font-medium transition-colors',
-                tab === item.key
-                  ? 'bg-[#e7f2f1] text-[#155f68]'
-                  : 'text-[#59767c] hover:bg-[#edf5f5]',
+                'nb-pill inline-flex h-9 items-center gap-1.5 px-3 text-sm font-semibold',
+                tab === item.key ? 'nb-pill-active' : 'text-[#59767c]',
               )}
             >
               <Icon className="size-4" aria-hidden="true" />
@@ -366,19 +368,19 @@ export function TeacherClient({
       </div>
 
       {formError ? (
-        <p className="mb-4 rounded-md border border-[#e9b8a8] bg-[#fff2ed] px-3 py-2 text-xs font-medium text-[#9b4e39]">
+        <p className="mb-4 rounded-lg border-2 border-[#13333a] bg-[#fff2ed] px-3 py-2 text-xs font-semibold text-[#9b4e39] shadow-[3px_3px_0_#c6d4d4]">
           {formError}
         </p>
       ) : null}
       {formNotice ? (
-        <p className="mb-4 rounded-md border border-[#8ecbab] bg-[#edf9f1] px-3 py-2 text-xs font-medium text-[#287248]">
+        <p className="mb-4 rounded-lg border-2 border-[#13333a] bg-[#edf9f1] px-3 py-2 text-xs font-semibold text-[#287248] shadow-[3px_3px_0_#c6d4d4]">
           {formNotice}
         </p>
       ) : null}
 
       {tab === 'manage' ? (
         <div className="grid grid-cols-1 items-start gap-5 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-          <section className="rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-4 sm:p-5">
+          <section className="nb-card p-4 sm:p-5">
             <div className="flex items-center gap-2">
               {form.id ? (
                 <Pencil className="size-4 text-[#0d7479]" aria-hidden="true" />
@@ -399,7 +401,7 @@ export function TeacherClient({
                       const bookId = event.target.value;
                       updateForm({ bookId, module: getBook(bookId).modules[0] });
                     }}
-                    className="mt-1 h-10 w-full rounded-md border border-[#cddfdf] bg-white px-2 text-sm font-normal outline-none focus:ring-3 focus:ring-[#b8dfda]"
+                    className="nb-input mt-1 h-10 w-full px-2 text-sm font-normal"
                   >
                     {textbooks.map((book) => (
                       <option key={book.id} value={book.id}>
@@ -413,7 +415,7 @@ export function TeacherClient({
                   <select
                     value={form.module}
                     onChange={(event) => updateForm({ module: event.target.value })}
-                    className="mt-1 h-10 w-full rounded-md border border-[#cddfdf] bg-white px-2 text-sm font-normal outline-none focus:ring-3 focus:ring-[#b8dfda]"
+                    className="nb-input mt-1 h-10 w-full px-2 text-sm font-normal"
                   >
                     {getBook(form.bookId).modules.map((module) => (
                       <option key={module} value={module}>
@@ -449,8 +451,8 @@ export function TeacherClient({
                         className={cn(
                           'flex size-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold transition-colors',
                           form.answer === index
-                            ? 'border-[#4ca878] bg-[#edf9f1] text-[#287248]'
-                            : 'border-[#d8e7e7] bg-white text-[#658289] hover:border-[#a9d3cf]',
+                            ? 'border-[#2c6e4c] bg-[#edf9f1] text-[#287248] shadow-[2px_2px_0_#a8d5b8]'
+                            : 'border-[#13333a] bg-white text-[#658289] shadow-[2px_2px_0_#c6d4d4]',
                         )}
                       >
                         {form.answer === index ? (
@@ -467,7 +469,7 @@ export function TeacherClient({
                           updateForm({ options: next });
                         }}
                         placeholder={`选项 ${String.fromCharCode(65 + index)}`}
-                        className="h-10 min-w-0 flex-1 rounded-md border border-[#cddfdf] bg-white px-2 text-sm outline-none focus:ring-3 focus:ring-[#b8dfda]"
+                        className="nb-input h-10 min-w-0 flex-1 px-2 text-sm"
                       />
                     </div>
                   ))}
@@ -487,34 +489,39 @@ export function TeacherClient({
                 placeholder="如：配子分析、变量控制"
               />
               <div className="flex flex-wrap gap-2">
-                <Button onClick={() => void submitQuestion()} disabled={busy}>
+                <button
+                  type="button"
+                  onClick={() => void submitQuestion()}
+                  disabled={busy}
+                  className="nb-btn nb-btn-primary px-4 py-2 text-sm disabled:opacity-45"
+                >
                   {form.id ? '保存修改' : '加入共享题库'}
-                </Button>
+                </button>
                 {form.id ? (
-                  <Button
-                    variant="outline"
+                  <button
+                    type="button"
                     onClick={() => {
                       setForm(EMPTY_FORM);
                       setFormError('');
                       setFormNotice('');
                     }}
-                    className="border-[#cbdede] bg-white text-[#366169] hover:bg-[#eef7f7]"
+                    className="nb-btn px-4 py-2 text-sm"
                   >
                     取消编辑
-                  </Button>
+                  </button>
                 ) : null}
               </div>
             </div>
           </section>
 
-          <section className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd]">
-            <div className="border-b border-[#dceaea] px-4 py-4 sm:px-5">
-              <h2 className="text-sm font-semibold">题库列表（{questions.length}）</h2>
+          <section className="nb-card overflow-hidden">
+            <div className="border-b-2 border-[#13333a] bg-[#f4faf9] px-4 py-4 sm:px-5">
+              <h2 className="text-sm font-bold">题库列表（{questions.length}）</h2>
               <p className="mt-1 text-xs text-[#6d898f]">
                 高错率或长期无作答的题会标橙色提示；修订题目会提升版本号。
               </p>
             </div>
-            <ul className="divide-y divide-[#e4f0ef]">
+            <ul className="divide-y-2 divide-[#e8f0f0]">
               {questions.map((question) => {
                 const { attempts, wrongCount } = question.stat;
                 const wrongRate = attempts > 0 ? Math.round((wrongCount / attempts) * 100) : null;
@@ -544,9 +551,8 @@ export function TeacherClient({
                         </p>
                       </div>
                       <div className="flex shrink-0 gap-1.5">
-                        <Button
-                          variant="outline"
-                          size="sm"
+                        <button
+                          type="button"
                           onClick={() => {
                             setForm({
                               id: question.id,
@@ -562,13 +568,12 @@ export function TeacherClient({
                             setFormNotice('');
                             setFormError('');
                           }}
-                          className="border-[#cbdede] bg-white text-[#366169] hover:bg-[#eef7f7]"
+                          className="nb-btn px-3 py-1.5 text-xs"
                         >
                           编辑
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
+                        </button>
+                        <button
+                          type="button"
                           disabled={busy}
                           onClick={() =>
                             void toggleStatus(
@@ -576,11 +581,11 @@ export function TeacherClient({
                               question.status === 'active' ? 'retired' : 'active',
                             )
                           }
-                          className="border-[#e4c4a8] bg-[#fff8f2] text-[#a4533b] hover:bg-[#fdeee6]"
+                          className="nb-btn px-3 py-1.5 text-xs text-[#a4533b]"
                         >
                           <Power className="size-3.5" aria-hidden="true" />
                           {question.status === 'active' ? '停用' : '恢复'}
-                        </Button>
+                        </button>
                       </div>
                     </div>
                   </li>
@@ -607,7 +612,7 @@ export function TeacherClient({
               hint="作答 ≥8 次且错误率 >60%"
             />
           </div>
-          <section className="overflow-hidden rounded-lg border border-[#cfe0e0] bg-[#fbfdfd]">
+          <section className="nb-card overflow-hidden">
             <div className="border-b border-[#dceaea] px-4 py-4 sm:px-5">
               <h2 className="text-sm font-semibold">按错误率排序的题目</h2>
               <p className="mt-1 text-xs text-[#6d898f]">
@@ -618,7 +623,7 @@ export function TeacherClient({
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[560px] text-left text-sm">
                   <thead>
-                    <tr className="border-b border-[#e4f0ef] text-xs text-[#67858b]">
+                    <tr className="border-b-2 border-[#c6d4d4] text-xs font-semibold text-[#67858b]">
                       <th className="px-4 py-2.5 font-semibold sm:px-5">题目</th>
                       <th className="px-4 py-2.5 font-semibold">作答</th>
                       <th className="px-4 py-2.5 font-semibold">错误率</th>
@@ -631,7 +636,7 @@ export function TeacherClient({
                         (question.stat.wrongCount / question.stat.attempts) * 100,
                       );
                       return (
-                        <tr key={question.id} className="border-b border-[#eef6f5]">
+                        <tr key={question.id} className="border-b border-[#e2ecec]">
                           <td className="px-4 py-2.5 sm:px-5">
                             <p className="font-medium text-[#24464d]">{question.topic}</p>
                             <p className="text-xs text-[#6d898f]">
@@ -669,7 +674,7 @@ export function TeacherClient({
 
       {tab === 'advice' ? (
         <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
-          <section className="rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-4 sm:p-5">
+          <section className="nb-card p-4 sm:p-5">
             <div className="flex items-center gap-2">
               <CircleAlert className="size-4 text-[#b57c16]" aria-hidden="true" />
               <h2 className="text-sm font-semibold">高错率题目（建议复查表述或讲解）</h2>
@@ -679,7 +684,7 @@ export function TeacherClient({
                 {insight.highWrong.map((question) => (
                   <li
                     key={question.id}
-                    className="rounded-md border border-[#ecd7a7] bg-[#fff8e7] px-3 py-2 text-sm text-[#80621c]"
+                    className="rounded-lg border-2 border-[#13333a] bg-[#fff8e7] px-3 py-2 text-sm text-[#80621c] shadow-[3px_3px_0_#c6d4d4]"
                   >
                     <p className="font-medium">{question.topic}</p>
                     <p className="mt-0.5 text-xs">
@@ -696,7 +701,7 @@ export function TeacherClient({
             )}
           </section>
 
-          <section className="rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-4 sm:p-5">
+          <section className="nb-card p-4 sm:p-5">
             <div className="flex items-center gap-2">
               <PlusCircle className="size-4 text-[#b57c16]" aria-hidden="true" />
               <h2 className="text-sm font-semibold">
@@ -708,7 +713,7 @@ export function TeacherClient({
                 {insight.coverageGaps.map((gap) => (
                   <li
                     key={`${gap.bookTitle}-${gap.module}`}
-                    className="flex items-center justify-between gap-3 rounded-md border border-[#dceaea] bg-white px-3 py-2 text-sm"
+                    className="flex items-center justify-between gap-3 rounded-lg border-2 border-[#13333a] bg-white px-3 py-2 text-sm shadow-[3px_3px_0_#c6d4d4]"
                   >
                     <span className="min-w-0">
                       <span className="block truncate font-medium text-[#24464d]">
@@ -729,7 +734,7 @@ export function TeacherClient({
             )}
           </section>
 
-          <section className="rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-4 sm:p-5 xl:col-span-2">
+          <section className="nb-card p-4 sm:p-5 xl:col-span-2">
             <h2 className="text-sm font-semibold">暂无作答数据的在用题（{insight.noData.length}）</h2>
             <p className="mt-1 text-xs text-[#6d898f]">
               新题需要足够的作答样本才能进入错误率分析；可让学生优先练习这些题（智能练习会自动提高未做题权重）。
@@ -739,7 +744,7 @@ export function TeacherClient({
                 {insight.noData.map((question) => (
                   <span
                     key={question.id}
-                    className="rounded-full border border-[#dceaea] bg-white px-2.5 py-1 text-xs text-[#5b777d]"
+                    className="nb-pill px-2.5 py-1 text-xs font-semibold text-[#5b777d]"
                   >
                     {question.topic} · {questionSource(question.bookId)}
                   </span>
@@ -755,7 +760,7 @@ export function TeacherClient({
 
 function Notice({ title, body }: { title: string; body: string }) {
   return (
-    <div className="mx-auto mt-8 max-w-md rounded-lg border border-[#e4c4a8] bg-[#fff8f2] p-6 text-center">
+    <div className="nb-card mx-auto mt-8 max-w-md p-6 text-center">
       <CircleAlert className="mx-auto size-6 text-[#a4533b]" aria-hidden="true" />
       <h1 className="mt-2 text-base font-semibold text-[#173b42]">{title}</h1>
       <p className="mt-2 text-sm leading-6 text-[#67848a]">{body}</p>
@@ -765,9 +770,9 @@ function Notice({ title, body }: { title: string; body: string }) {
 
 function StatCard({ label, value, hint }: { label: string; value: string; hint: string }) {
   return (
-    <div className="rounded-lg border border-[#cfe0e0] bg-[#f9fcfc] p-4">
-      <p className="text-xs text-[#67858b]">{label}</p>
-      <p className="mt-1 text-2xl font-semibold text-[#146e73]">{value}</p>
+    <div className="nb-card p-4">
+      <p className="text-xs font-semibold text-[#67858b]">{label}</p>
+      <p className="mt-1 text-2xl font-bold text-[#146e73]">{value}</p>
       <p className="mt-1 text-xs text-[#8aa3a7]">{hint}</p>
     </div>
   );
@@ -795,7 +800,7 @@ function TextField({
           onChange={(event) => onChange(event.target.value)}
           placeholder={placeholder}
           rows={3}
-          className="mt-1 w-full resize-y rounded-md border border-[#cddfdf] bg-white px-2 py-2 text-sm font-normal outline-none focus:ring-3 focus:ring-[#b8dfda]"
+          className="nb-input mt-1 w-full resize-y px-2 py-2 text-sm font-normal"
         />
       ) : (
         <input
