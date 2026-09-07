@@ -12,6 +12,7 @@ import '@/app/globals.css';
 const CellsClient = lazy(() => import('@/components/cells/cells-client').then((m) => ({ default: m.CellsClient })));
 const LabClient = lazy(() => import('@/app/lab/lab-client').then((m) => ({ default: m.LabClient })));
 const PracticeClient = lazy(() => import('@/app/practice/practice-client').then((m) => ({ default: m.PracticeClient })));
+const GraphClient = lazy(() => import('@/components/graph/knowledge-graph').then((m) => ({ default: m.GraphClient })));
 
 function PageFallback() {
   return (
@@ -22,12 +23,13 @@ function PageFallback() {
   );
 }
 
-type Tab = 'home' | 'cells' | 'lab' | 'practice';
+type Tab = 'home' | 'cells' | 'lab' | 'graph' | 'practice';
 
 function parseHash(): Tab {
   const h = window.location.hash.replace(/^#\/?/, '');
   if (h.startsWith('cells')) return 'cells';
   if (h.startsWith('lab')) return 'lab';
+  if (h.startsWith('graph')) return 'graph';
   if (h.startsWith('practice')) return 'practice';
   return 'home';
 }
@@ -104,6 +106,7 @@ function StaticApp() {
           <Suspense fallback={<PageFallback />}>
             {tab === 'cells' ? <CellsClient /> : null}
             {tab === 'lab' ? <LabClient /> : null}
+            {tab === 'graph' ? <GraphClient useHash /> : null}
             {tab === 'practice' ? <PracticeClient questions={builtinQuestions} globalStats={{}} /> : null}
           </Suspense>
         )}

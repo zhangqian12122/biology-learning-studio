@@ -4,12 +4,13 @@ import { LocalProgressBadge } from '@/components/local-progress-badge';
 import type { Question } from '@/lib/curriculum';
 import { Microscope } from 'lucide-react';
 
-export type HeaderNavKey = 'home' | 'lab' | 'cells' | 'practice' | 'teacher';
+export type HeaderNavKey = 'home' | 'lab' | 'cells' | 'graph' | 'practice' | 'teacher';
 
 const navItems: { key: HeaderNavKey; href: string; label: string }[] = [
   { key: 'home', href: '/', label: '教材总览' },
   { key: 'lab', href: '/lab', label: '互动实验' },
   { key: 'cells', href: '/cells', label: '图鉴' },
+  { key: 'graph', href: '/graph', label: '知识图谱' },
   { key: 'practice', href: '/practice', label: '题库与错题' },
   { key: 'teacher', href: '/teacher', label: '教师中心' },
 ];

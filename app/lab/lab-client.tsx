@@ -181,6 +181,11 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   yeastRespiration: ['aerobicRespiration'],
   plasmolysis: ['osmosisSetup'],
   impulse: ['nervePotential'],
+  photosynthesis: ['photosynthesisProcess'],
+  dogma: ['centralDogma'],
+  mulberryFishPond: ['sangjiPondCycle', 'carbonCycle'],
+  ecosystemJar: ['carbonCycle'],
+  bloodSugarRegulation: ['waterSaltBalance'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
@@ -291,7 +296,12 @@ const LAB_KEYFRAMES = `
 `;
 
 export function LabClient() {
-  const [activeExperiment, setActiveExperiment] = useState<ExperimentId>('enzyme');
+  // 深链：/lab?exp=xxx 直达某个实验（知识图谱跳转用）
+  const [activeExperiment, setActiveExperiment] = useState<ExperimentId>(() => {
+    if (typeof window === 'undefined') return 'enzyme';
+    const want = new URLSearchParams(window.location.search).get('exp');
+    return want && want in experimentMeta ? (want as ExperimentId) : 'enzyme';
+  });
   const [resetCount, setResetCount] = useState(0);
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
   const [search, setSearch] = useState('');

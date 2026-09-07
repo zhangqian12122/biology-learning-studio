@@ -20,15 +20,52 @@ const CELL_KEYFRAMES = `
 
 const CIRCLED_DIGITS = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩'];
 
+/** 深链初始化：/cells?specimen=xxx 直达标本、/cells?cat=xxx 直达档案夹（知识图谱跳转用） */
+function initialFromUrl() {
+  const fallback = {
+    specimenId: ATLAS_SPECIMENS[0].id,
+    level: 'home' as 'home' | 'group',
+    activeGroup: null as string | null,
+    subCategory: null as string | null,
+  };
+  if (typeof window === 'undefined') return fallback;
+  const params = new URLSearchParams(window.location.search);
+  const catName = params.get('cat');
+  const category = catName ? ATLAS_CATEGORIES.find((c) => c.name === catName) : null;
+  const group = catName ? ATLAS_GROUPS.find((g) => g.categories.includes(catName)) ?? null : null;
+  const want = params.get('specimen');
+  const specimenOk = !!want && ATLAS_SPECIMENS.some((item) => item.id === want);
+
+  if (category && group) {
+    return {
+      specimenId: specimenOk ? want! : ATLAS_SPECIMENS[0].id,
+      level: 'group' as const,
+      activeGroup: group.name,
+      subCategory: category.name,
+    };
+  }
+  if (specimenOk) {
+    const ownCat = ATLAS_CATEGORIES.find((c) => c.ids.includes(want!));
+    const ownGroup = ownCat ? ATLAS_GROUPS.find((g) => g.categories.includes(ownCat.name)) ?? null : null;
+    return {
+      specimenId: want!,
+      level: ownGroup ? ('group' as const) : ('home' as const),
+      activeGroup: ownGroup?.name ?? null,
+      subCategory: null,
+    };
+  }
+  return fallback;
+}
+
 export function CellsClient() {
-  const [specimenId, setSpecimenId] = useState(ATLAS_SPECIMENS[0].id);
+  const [specimenId, setSpecimenId] = useState(() => initialFromUrl().specimenId);
   const [activePart, setActivePart] = useState<number | null>(null);
   const [stomaOpen, setStomaOpen] = useState(true);
   const [useWebGL, setUseWebGL] = useState(false);
   /** 两级导航：home = 大分类入口；group = 点进某个大分类浏览 */
-  const [level, setLevel] = useState<'home' | 'group'>('home');
-  const [activeGroup, setActiveGroup] = useState<string | null>(null);
-  const [subCategory, setSubCategory] = useState<string | null>(null);
+  const [level, setLevel] = useState<'home' | 'group'>(() => initialFromUrl().level);
+  const [activeGroup, setActiveGroup] = useState<string | null>(() => initialFromUrl().activeGroup);
+  const [subCategory, setSubCategory] = useState<string | null>(() => initialFromUrl().subCategory);
   const [search, setSearch] = useState('');
 
   const specimen = ATLAS_SPECIMENS.find((item) => item.id === specimenId) ?? ATLAS_SPECIMENS[0];
