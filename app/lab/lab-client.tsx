@@ -4,6 +4,7 @@ import { lazy, Suspense, useState, type ComponentType, type LazyExoticComponent 
 import Link from 'next/link';
 import {
   Activity,
+  Pill,
   Sun,
   Syringe,
   Thermometer,
@@ -78,6 +79,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   greenhouseGas: Lightbulb,
   vaccineResponse: Syringe,
   phototropism: Sun,
+  antibioticResistance: Pill,
   quadratMethod: LayoutGrid,
   urineGlucoseTest: TestTube2,
   plateStreak: FlaskConical,
@@ -147,6 +149,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   greenhouseGas: () => import('@/components/lab/greenhouse-gas-lab').then(({ GreenhouseGasLab }) => ({ default: GreenhouseGasLab })),
   vaccineResponse: () => import('@/components/lab/vaccine-response-lab').then(({ VaccineResponseLab }) => ({ default: VaccineResponseLab })),
   phototropism: () => import('@/components/lab/phototropism-lab').then(({ PhototropismLab }) => ({ default: PhototropismLab })),
+  antibioticResistance: () => import('@/components/lab/antibiotic-resistance-lab').then(({ AntibioticResistanceLab }) => ({ default: AntibioticResistanceLab })),
   quadratMethod: () => import('@/components/lab/quadrat-method-lab').then(({ QuadratMethodLab }) => ({ default: QuadratMethodLab })),
   urineGlucoseTest: () => import('@/components/lab/urine-glucose-lab').then(({ UrineGlucoseTestLab }) => ({ default: UrineGlucoseTestLab })),
   plateStreak: () => import('@/components/lab/plate-streak-lab').then(({ PlateStreakLab }) => ({ default: PlateStreakLab })),

@@ -8,28 +8,33 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：向光性与生长素 ----------
-await page.goto(`${BASE}/lab?exp=phototropism`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：抗生素耐药性进化 ----------
+await page.goto(`${BASE}/lab?exp=antibioticResistance`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('向光性与生长素');
-  // 互动：右单侧光（默认）→ 背光 72%；切顶部光 → 均匀直立；切去尖端 → 不弯曲
-  const right = await page.locator('main').innerText();
-  results.experiment.rightLight = right.includes('背光侧 72%') && right.includes('向右（光源）弯曲');
-  await page.getByRole('button', { name: /顶部光/ }).click({ force: true });
-  await page.waitForTimeout(500);
-  const top = await page.locator('main').innerText();
-  results.experiment.topUpright = top.includes('直立生长') && top.includes('背光侧 50%');
-  await page.getByRole('button', { name: '切去尖端' }).click({ force: true });
-  await page.waitForTimeout(500);
-  const cut = await page.locator('main').innerText();
-  results.experiment.cutNoBend = cut.includes('不生长、不弯曲');
+  results.experiment.open = text.includes('抗生素耐药性');
+  // 互动：规范剂量推进 6 代 → 耐药比例大幅上升
+  for (let i = 0; i < 6; i++) {
+    await page.getByRole('button', { name: /推进一代/ }).click({ force: true });
+    await page.waitForTimeout(300);
+  }
+  const after = await page.locator('main').innerText();
+  const ratio = parseInt((after.match(/耐药菌比例：(\d+)/) ?? [])[1] ?? '0');
+  results.experiment.resistanceRises = ratio > 60;
+  // 切"不用药"清空后：耐药比例保持低位
+  await page.getByRole('button', { name: '不用药' }).click({ force: true });
+  await page.waitForTimeout(400);
+  await page.getByRole('button', { name: /推进一代/ }).click({ force: true });
+  await page.waitForTimeout(400);
+  const none = await page.locator('main').innerText();
+  const noneRatio = parseInt((none.match(/耐药菌比例：(\d+)/) ?? [])[1] ?? '0');
+  results.experiment.noDrugFlat = noneRatio < 5;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['vertebrateClasses', 'photosyntheticPigments', 'bacteriaShapes'];
+const SPECIMENS = ['ecosystemTypes', 'immuneOrgans', 'endocrineGlands'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

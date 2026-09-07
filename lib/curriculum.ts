@@ -604,6 +604,7 @@ export type ExperimentId =
   | 'greenhouseGas'
   | 'vaccineResponse'
   | 'phototropism'
+  | 'antibioticResistance'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -980,6 +981,14 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '内环境与稳态',
   },
+  antibioticResistance: {
+    title: '抗生素耐药性进化模拟',
+    kicker: '必修 2 · 遗传与进化',
+    description: '切换用药方案推进治疗，看"选择压力"如何让耐药菌逐代称霸。',
+    relatedBook: 'genetics',
+    relatedModule: '变异、育种与生物进化',
+    extension: true,
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1126,7 +1135,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1179,6 +1188,7 @@ export const experimentOrder: ExperimentId[] = [
   'chromosomeVariation',
   'geneFrequency',
   'selection',
+  'antibioticResistance',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
   'auxinCutting',

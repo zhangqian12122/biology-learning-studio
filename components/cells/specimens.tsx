@@ -5048,9 +5048,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -6874,9 +6874,186 @@ function BacteriaShapesSvg({ active }: { active: number | null; open?: boolean }
 }
 
 
+/* ================= 生态系统的类型 ================= */
+
+function EcosystemTypesSvg({ active }: { active: number | null; open?: boolean }) {
+  const cards = [
+    { x: 20, y: 56, icon: '🌲', title: '森林', note: '动植物种类最多·调节能力强', color: '#3f7f3a' },
+    { x: 190, y: 56, icon: '🐂', title: '草原', note: '以草本为主·干旱半干旱区', color: '#8a9a2a' },
+    { x: 360, y: 56, icon: '🐋', title: '海洋', note: '占地球表面积 70%·水圈主体', color: '#2c6e94' },
+    { x: 20, y: 212, icon: '🪷', title: '湿地', note: '"地球之肾"·净化水质蓄洪', color: '#4a7a9a' },
+    { x: 190, y: 212, icon: '🌾', title: '农田', note: '人工建立的·抵抗力弱', color: '#a5761d' },
+    { x: 360, y: 212, icon: '🏙️', title: '城市', note: '人类主导·依赖外部输入', color: '#6a5a6a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {cards.map((c, i) => (
+        <g key={c.title} style={dim(active, i)}>
+          <rect x={c.x} y={c.y} width="140" height="128" rx="14" fill="#ffffff" stroke="#13333a" strokeWidth="2.4" />
+          <text x={c.x + 70} y={c.y + 44} textAnchor="middle" fontSize="30">{c.icon}</text>
+          <text x={c.x + 70} y={c.y + 74} textAnchor="middle" fontSize="14.5" fill={c.color} fontWeight="800">{c.title}生态系统</text>
+          <text x={c.x + 70} y={c.y + 98} textAnchor="middle" fontSize="10.5" fill="#59767c">{c.note.split('·')[0]}</text>
+          <text x={c.x + 70} y={c.y + 114} textAnchor="middle" fontSize="10.5" fill="#59767c">{c.note.split('·')[1] ?? ''}</text>
+        </g>
+      ))}
+      <g style={dim(active, 3)}>
+        <text x="260" y="366" textAnchor="middle" fontSize="12.5" fill="#49676d" fontWeight="700">生物圈是地球上最大的生态系统——它包含所有这些类型</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">生态系统的常见类型 · 每一种都是一座"生命工厂"</text>
+    </svg>
+  );
+}
+
+/* ================= 免疫器官 ================= */
+
+function ImmuneOrgansSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 人体轮廓 */}
+      <g style={dim(active, 0)}>
+        <circle cx="230" cy="52" r="26" fill="#f2d8c4" stroke="#b58a6a" strokeWidth="3" />
+        <path d="M206 84 Q 230 74 254 84 L262 176 Q 230 190 198 176 Z" fill="#f2e2d2" stroke="#b58a6a" strokeWidth="3" />
+        <path d="M206 92 L160 160 M254 92 L300 160" stroke="#b58a6a" strokeWidth="10" strokeLinecap="round" />
+        <path d="M214 178 L210 320 M246 178 L250 320" stroke="#f2e2d2" strokeWidth="14" strokeLinecap="round" />
+        <path d="M214 320 L212 336 M246 320 L248 336" stroke="#f2e2d2" strokeWidth="10" strokeLinecap="round" />
+        <text x="60" y="330" fontSize="12.5" fill="#8a7a6a" fontWeight="600">人体轮廓示意</text>
+      </g>
+      {/* 胸腺 */}
+      <g style={dim(active, 1)}>
+        <path d="M222 96 Q 230 88 238 96 Q 242 108 230 112 Q 218 108 222 96 Z" fill="#e8a0b4" stroke="#c9538a" strokeWidth="2.2" />
+        <text x="286" y="96" fontSize="13" fill="#a54868" fontWeight="700">胸腺（T 细胞成熟）</text>
+        <line x1="282" y1="102" x2="242" y2="104" stroke="#a54868" strokeWidth="1.4" />
+      </g>
+      {/* 骨髓 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="212" cy="316" rx="18" ry="12" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.2" />
+        <text x="270" y="322" fontSize="13" fill="#a5761d" fontWeight="700">骨髓（造血干细胞）</text>
+        <line x1="266" y1="318" x2="232" y2="316" stroke="#a5761d" strokeWidth="1.4" />
+      </g>
+      {/* 脾 */}
+      <g style={dim(active, 3)}>
+        <ellipse cx="266" cy="176" rx="24" ry="15" fill="#a54868" stroke="#7a2a48" strokeWidth="2.2" transform="rotate(-18 266 176)" />
+        <text x="304" y="176" fontSize="13" fill="#7a2a48" fontWeight="700">脾（过滤血液·储存淋巴细胞）</text>
+        <line x1="300" y1="180" x2="290" y2="178" stroke="#7a2a48" strokeWidth="1.4" />
+      </g>
+      {/* 淋巴结 */}
+      <g style={dim(active, 4)}>
+        <circle cx="150" cy="140" r="9" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2" />
+        <circle cx="316" cy="140" r="9" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2" />
+        <circle cx="230" cy="290" r="9" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2" />
+        <text x="318" y="250" fontSize="13" fill="#6a4a9a" fontWeight="700">淋巴结（遍布全身的"哨卡"）</text>
+        <line x1="314" y1="244" x2="240" y2="294" stroke="#6a4a9a" strokeWidth="1.4" />
+      </g>
+      {/* 扁桃体 */}
+      <g style={dim(active, 5)}>
+        <circle cx="212" cy="66" r="6" fill="#f4c76a" stroke="#b5953a" strokeWidth="1.8" />
+        <circle cx="248" cy="66" r="6" fill="#f4c76a" stroke="#b5953a" strokeWidth="1.8" />
+        <text x="60" y="60" fontSize="13" fill="#a5761d" fontWeight="700">扁桃体（消化道·呼吸道入口防线）</text>
+        <line x1="152" y1="64" x2="204" y2="66" stroke="#a5761d" strokeWidth="1.4" />
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">人体主要免疫器官 · 免疫细胞生成与驻扎的"军营"</text>
+    </svg>
+  );
+}
+
+/* ================= 内分泌腺 ================= */
+
+function EndocrineGlandsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 人体轮廓 */}
+      <g style={dim(active, 0)}>
+        <circle cx="230" cy="52" r="26" fill="#f2d8c4" stroke="#b58a6a" strokeWidth="3" />
+        <path d="M206 84 Q 230 74 254 84 L262 176 Q 230 190 198 176 Z" fill="#f2e2d2" stroke="#b58a6a" strokeWidth="3" />
+        <path d="M214 178 L210 320 M246 178 L250 320" stroke="#f2e2d2" strokeWidth="14" strokeLinecap="round" />
+        <path d="M214 320 L212 336 M246 320 L248 336" stroke="#f2e2d2" strokeWidth="10" strokeLinecap="round" />
+      </g>
+      {/* 垂体 */}
+      <g style={dim(active, 1)}>
+        <circle cx="230" cy="60" r="6" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2" />
+        <text x="272" y="58" fontSize="13" fill="#6a4a9a" fontWeight="700">垂体（"总开关"·指挥其他腺体）</text>
+        <line x1="268" y1="62" x2="238" y2="60" stroke="#6a4a9a" strokeWidth="1.4" />
+      </g>
+      {/* 甲状腺 */}
+      <g style={dim(active, 2)}>
+        <path d="M214 92 Q 204 86 196 92 Q 194 102 204 106 L 218 104 Q 226 100 224 92 Z" fill="#e8a06a" stroke="#b5603a" strokeWidth="2.2" />
+        <path d="M246 92 Q 256 86 264 92 Q 266 102 256 106 L 242 104 Q 234 100 236 92 Z" fill="#e8a06a" stroke="#b5603a" strokeWidth="2.2" />
+        <text x="284" y="106" fontSize="13" fill="#a5603a" fontWeight="700">甲状腺（甲状腺激素·促代谢发育）</text>
+        <line x1="280" y1="110" x2="262" y2="104" stroke="#a5603a" strokeWidth="1.4" />
+      </g>
+      {/* 肾上腺 */}
+      <g style={dim(active, 3)}>
+        <path d="M206 178 Q 198 168 206 162 Q 216 158 222 168 Q 218 178 206 178 Z" fill="#c9708a" stroke="#a54868" strokeWidth="2.2" />
+        <path d="M254 178 Q 262 168 254 162 Q 244 158 238 168 Q 242 178 254 178 Z" fill="#c9708a" stroke="#a54868" strokeWidth="2.2" />
+        <text x="284" y="172" fontSize="13" fill="#a54868" fontWeight="700">肾上腺（肾上腺素·应急反应）</text>
+        <line x1="280" y1="174" x2="258" y2="172" stroke="#a54868" strokeWidth="1.4" />
+      </g>
+      {/* 胰岛 */}
+      <g style={dim(active, 4)}>
+        <ellipse cx="276" cy="226" rx="20" ry="13" fill="#a8cf98" stroke="#3f7f3a" strokeWidth="2.2" />
+        <circle cx="270" cy="224" r="3.4" fill="#3f7f3a" />
+        <circle cx="280" cy="228" r="3.4" fill="#3f7f3a" />
+        <text x="310" y="230" fontSize="13" fill="#2f7a4d" fontWeight="700">胰岛（胰岛素·降血糖）</text>
+        <line x1="306" y1="228" x2="298" y2="226" stroke="#2f7a4d" strokeWidth="1.4" />
+      </g>
+      {/* 性腺 */}
+      <g style={dim(active, 5)}>
+        <ellipse cx="214" cy="300" rx="12" ry="9" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2.2" />
+        <ellipse cx="246" cy="300" rx="12" ry="9" fill="#c9a8e2" stroke="#7a4a8a" strokeWidth="2.2" />
+        <text x="60" y="304" fontSize="13" fill="#6a4a9a" fontWeight="700">性腺（性激素·促进生殖器官发育）</text>
+        <line x1="180" y1="302" x2="200" y2="300" stroke="#6a4a9a" strokeWidth="1.4" />
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">人体主要内分泌腺 · 无导管，激素直接进入血液</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'vertebrateClasses',
+    id: 'ecosystemTypes',
+    name: '生态系统的类型',
+    kicker: '生态系统 · 类型总览图',
+    intro: '森林、草原、海洋、湿地、农田、城市——不同环境孕育不同的生态系统：自然类型的调节能力强，人工类型则高度依赖人类维护。',
+    parts: [
+      { name: '森林生态系统', desc: '动植物种类最丰富，调节能力最强——"绿色水库"，涵养水源、防风固沙。' },
+      { name: '草原生态系统', desc: '以草本植物为主，分布在干旱半干旱地区，降雨量少且不稳定。' },
+      { name: '海洋生态系统', desc: '覆盖地球 70% 的表面：藻类是主要生产者，浮游生物是食物链的基础。' },
+      { name: '湿地生态系统', desc: '沼泽、红树林、湖泊等：净化水质、蓄洪防旱，被称为"地球之肾"。' },
+      { name: '农田与城市', desc: '人工建立的生态系统：生物种类少、结构简单，抵抗力稳定性弱，需人来维护。' },
+    ],
+    Svg: EcosystemTypesSvg,
+  },
+  {
+    id: 'immuneOrgans',
+    name: '免疫器官',
+    kicker: '免疫调节 · 器官位置图',
+    intro: '免疫细胞从骨髓里的造血干细胞诞生：T 细胞在胸腺成熟，B 细胞在骨髓成熟，随后驻扎在脾、淋巴结等"哨卡"待命。',
+    parts: [
+      { name: '骨髓', desc: '造血干细胞的"老家"：所有免疫细胞都由它分化产生，B 细胞在此成熟。' },
+      { name: '胸腺', desc: 'T 淋巴细胞发育成熟的场所——T 细胞（T 代表胸腺 Thymus）因此得名。' },
+      { name: '脾', desc: '最大的免疫器官：过滤血液、清除衰老红细胞，储存大量淋巴细胞。' },
+      { name: '淋巴结', desc: '遍布全身的"哨卡"：拦截病原体，是免疫细胞聚集与活化作战的据点。' },
+      { name: '扁桃体', desc: '守卫在消化道与呼吸道入口的淋巴组织，发炎肿大就是"战斗"的信号。' },
+    ],
+    Svg: ImmuneOrgansSvg,
+  },
+  {
+    id: 'endocrineGlands',
+    name: '内分泌腺',
+    kicker: '激素调节 · 腺体位置图',
+    intro: '内分泌腺没有导管，分泌的激素直接进入血液运往全身：垂体是"总开关"，甲状腺促代谢，胰岛素降血糖——量少而作用大。',
+    parts: [
+      { name: '垂体', desc: '位于大脑底部：分泌生长激素，并分泌促激素指挥甲状腺等"下属"腺体——激素调节的"总开关"。' },
+      { name: '甲状腺', desc: '位于颈部：分泌甲状腺激素，促进新陈代谢与生长发育（幼年过少会患呆小症）。' },
+      { name: '肾上腺', desc: '分泌肾上腺素：应激状态下心跳加快、血压升高——"应急响应"的激素。' },
+      { name: '胰岛', desc: '散布在胰腺中：分泌胰岛素（降低血糖）与胰高血糖素（升高血糖），拮抗维持血糖稳定。' },
+      { name: '性腺', desc: '睾丸或卵巢：分泌性激素，促进生殖器官发育与第二性征的出现。' },
+    ],
+    Svg: EndocrineGlandsSvg,
+  },
+  {
+    id: 'neuron',
     name: '脊椎动物五大纲',
     kicker: '脊椎动物 · 五大纲对比表',
     intro: '鱼类、两栖类、爬行类、鸟类、哺乳类：从水生到陆生、从卵生到胎生、从变温到恒温——呼吸、生殖与体温的对比串起脊椎动物的进化主线。',
