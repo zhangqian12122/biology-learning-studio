@@ -5047,9 +5047,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents'] },
 ];
 
@@ -6110,9 +6110,207 @@ function SieveTubeSvg({ active }: { active: number | null; open?: boolean }) {
 }
 
 
+/* ================= 茎的横切结构 ================= */
+
+function StemStructureSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 环形切面 */}
+      <g style={dim(active, 0)}>
+        {/* 表皮 */}
+        <circle cx="250" cy="196" r="150" fill="#dce8c8" stroke="#6a8a4a" strokeWidth="4" />
+        <text x="250" y="70" textAnchor="middle" fontSize="13" fill="#4a7a3a" fontWeight="700">表皮（保护）</text>
+        {/* 皮层 */}
+        <circle cx="250" cy="196" r="128" fill="#e8e2c8" stroke="#a5987a" strokeWidth="2" />
+      </g>
+      {/* 韧皮部（环带外层） */}
+      <g style={dim(active, 1)}>
+        <circle cx="250" cy="196" r="102" fill="#f0d8c0" stroke="#c9881d" strokeWidth="2.5" />
+        <text x="42" y="132" fontSize="13" fill="#a5601d" fontWeight="700">韧皮部（筛管）</text>
+        <text x="42" y="150" fontSize="12.5" fill="#a5601d">向下运输有机物</text>
+        <line x1="118" y1="146" x2="150" y2="172" stroke="#a5601d" strokeWidth="1.4" />
+      </g>
+      {/* 形成层 */}
+      <g style={dim(active, 2)}>
+        <circle cx="250" cy="196" r="86" fill="#fdf6e3" stroke="#b0483a" strokeWidth="2.5" />
+        <text x="66" y="322" fontSize="13" fill="#b0483a" fontWeight="700">形成层（细胞能分裂，</text>
+        <text x="66" y="340" fontSize="13" fill="#b0483a" fontWeight="700">使茎逐年加粗）</text>
+        <line x1="132" y1="318" x2="196" y2="272" stroke="#b0483a" strokeWidth="1.4" />
+      </g>
+      {/* 木质部 */}
+      <g style={dim(active, 3)}>
+        <circle cx="250" cy="196" r="72" fill="#d8b88a" stroke="#8a6a3a" strokeWidth="2.5" />
+        {[0, 1, 2, 3, 4, 5].map((i) => {
+          const ang = (i * 60 - 90) * (Math.PI / 180);
+          return (
+            <g key={i}>
+              <circle cx={250 + Math.cos(ang) * 46} cy={196 + Math.sin(ang) * 46} r="11" fill="#c9a878" stroke="#8a6a3a" strokeWidth="1.8" />
+              <circle cx={250 + Math.cos(ang) * 46} cy={196 + Math.sin(ang) * 46} r="4.5" fill="#8a6a3a" />
+            </g>
+          );
+        })}
+        <text x="356" y="272" fontSize="13" fill="#8a5a2a" fontWeight="700">木质部（导管运水，</text>
+        <text x="356" y="290" fontSize="13" fill="#8a5a2a" fontWeight="700">支撑茎干）</text>
+        <line x1="352" y1="268" x2="312" y2="230" stroke="#8a5a2a" strokeWidth="1.4" />
+      </g>
+      {/* 髓 */}
+      <g style={dim(active, 4)}>
+        <circle cx="250" cy="196" r="34" fill="#f4ecd8" stroke="#c9b88a" strokeWidth="2.5" />
+        <text x="250" y="202" textAnchor="middle" fontSize="12.5" fill="#8a7a4a" fontWeight="800">髓（储藏）</text>
+      </g>
+      {/* 运输方向说明 */}
+      <g style={dim(active, 1)}>
+        <text x="42" y="86" fontSize="12.5" fill="#49676d" fontWeight="600">导管向上运水·</text>
+        <text x="42" y="104" fontSize="12.5" fill="#49676d" fontWeight="600">筛管向下运有机物</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">茎横切结构图 · 木质部与韧皮部之间的形成层让茎加粗</text>
+    </svg>
+  );
+}
+
+/* ================= 人脑结构 ================= */
+
+function BrainStructureSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 大脑 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 128 Q 110 56 190 44 Q 268 30 348 46 Q 420 60 416 130 Q 412 176 360 190 Q 250 208 150 192 Q 116 180 120 128 Z" fill="#e8b8c8" stroke="#b5607a" strokeWidth="3" />
+        {/* 脑回沟 */}
+        <path d="M170 70 Q 196 84 186 108 Q 176 128 196 144 M246 52 Q 258 76 246 98 Q 236 118 254 138 M322 62 Q 336 84 322 106 Q 312 124 330 140 M368 96 Q 356 116 366 138" fill="none" stroke="#b5607a" strokeWidth="2.4" />
+        <text x="268" y="96" textAnchor="middle" fontSize="14" fill="#8a3a5a" fontWeight="800">大脑</text>
+        <text x="268" y="118" textAnchor="middle" fontSize="12" fill="#8a3a5a">调节的最高级中枢</text>
+      </g>
+      {/* 小脑 */}
+      <g style={dim(active, 1)}>
+        <path d="M356 196 Q 344 168 380 162 Q 434 154 452 186 Q 460 210 428 222 Q 384 234 356 196 Z" fill="#d8c8a8" stroke="#8a7a4a" strokeWidth="3" />
+        <path d="M368 178 Q 396 170 428 180 M364 196 Q 398 188 434 198 M370 214 Q 396 206 424 212" fill="none" stroke="#8a7a4a" strokeWidth="1.8" />
+        <text x="400" y="252" textAnchor="middle" fontSize="13" fill="#6a5a2a" fontWeight="700">小脑（协调运动·维持平衡）</text>
+      </g>
+      {/* 脑干 */}
+      <g style={dim(active, 2)}>
+        <path d="M218 196 L258 196 L262 240 Q 262 262 244 274 L228 274 Q 214 258 218 236 Z" fill="#e0c8ee" stroke="#7a4a8a" strokeWidth="3" />
+        <path d="M226 214 L254 214 M226 230 L254 230 M226 246 L252 246" stroke="#7a4a8a" strokeWidth="1.8" />
+        <text x="150" y="316" fontSize="13" fill="#6a4a9a" fontWeight="700">脑干（心跳·呼吸·血压"生命中枢"）</text>
+        <line x1="222" y1="296" x2="236" y2="276" stroke="#6a4a9a" strokeWidth="1.4" />
+      </g>
+      {/* 脊髓连接 */}
+      <g style={dim(active, 2)}>
+        <rect x="230" y="274" width="22" height="90" fill="#dce8f4" stroke="#4d7ea8" strokeWidth="2.5" />
+        <text x="266" y="342" fontSize="12.5" fill="#3d6a94" fontWeight="700">脊髓（低级中枢·上下行传导）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">脑结构模式图 · 中枢神经系统的"总指挥部"</text>
+    </svg>
+  );
+}
+
+/* ================= 海绵（多孔动物·课外拓展） ================= */
+
+function SpongeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 海底 */}
+      <g style={dim(active, 4)}>
+        <path d="M20 310 Q 140 292 260 306 T 500 302 L 500 380 L 20 380 Z" fill="#d8ccb8" stroke="#a5987a" strokeWidth="2.5" />
+        <text x="486" y="368" textAnchor="end" fontSize="12.5" fill="#8a7a58">海底岩石（海绵固着生活）</text>
+      </g>
+      {/* 海绵瓶状体 */}
+      <g style={dim(active, 0)}>
+        <path d="M170 118 Q 148 240 190 300 Q 250 322 310 300 Q 352 240 330 118 Q 250 96 170 118 Z" fill="#c8b8d8" stroke="#7a4a8a" strokeWidth="3.5" />
+        {/* 顶端出水孔 */}
+        <ellipse cx="250" cy="116" rx="34" ry="14" fill="#6a3a7a" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="330" y="88" fontSize="13" fill="#6a3a7a" fontWeight="700">出水孔（水流出口）</text>
+        <line x1="326" y1="94" x2="286" y2="112" stroke="#6a3a7a" strokeWidth="1.4" />
+      </g>
+      {/* 体壁孔道 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M${172} ${150 + i * 32} l-22 -6 M${172} ${150 + i * 32} l-24 8`} fill="none" stroke="#5a8ac9" strokeWidth="2.6" />
+        ))}
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={`r${i}`} d={`M328 ${150 + i * 32} l22 -6 M328 ${150 + i * 32} l24 8`} fill="none" stroke="#5a8ac9" strokeWidth="2.6" />
+        ))}
+        <text x="34" y="140" fontSize="13" fill="#3d6a94" fontWeight="700">入水小孔（遍布体表）</text>
+        <text x="34" y="158" fontSize="12.5" fill="#3d6a94">水携食物和氧气进入</text>
+        <line x1="130" y1="148" x2="168" y2="168" stroke="#3d6a94" strokeWidth="1.4" />
+      </g>
+      {/* 领细胞 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3].map((i) => (
+          <g key={i}>
+            <circle cx={216 + i * 24} cy={200 + (i % 2) * 40} r="8" fill="#f4d06a" stroke="#b5953a" strokeWidth="1.8" />
+            <path d={`M${216 + i * 24} ${192 + (i % 2) * 40} l0 -10`} stroke="#b5953a" strokeWidth="1.8" />
+          </g>
+        ))}
+        <text x="60" y="212" fontSize="13" fill="#8a671b" fontWeight="700">领细胞（鞭毛摆动）</text>
+        <text x="60" y="230" fontSize="12.5" fill="#8a671b">形成水流·滤取食物</text>
+        <line x1="150" y1="216" x2="210" y2="222" stroke="#8a671b" strokeWidth="1.4" />
+      </g>
+      {/* 骨针 */}
+      <g style={dim(active, 3)}>
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${200 + i * 34} ${250 + (i % 2) * 20} l16 -8 m-8 12 l12 2 m-14 -16 l-2 -12`} stroke="#e8e2d8" strokeWidth="2.4" />
+        ))}
+        <text x="340" y="240" fontSize="13" fill="#6a6a8a" fontWeight="700">骨针（钙质/硅质"骨架"）</text>
+        <line x1="336" y1="244" x2="300" y2="258" stroke="#6a6a8a" strokeWidth="1.4" />
+      </g>
+      {/* 无消化腔提示 */}
+      <g style={dim(active, 2)}>
+        <text x="180" y="168" fontSize="12.5" fill="#49676d" fontWeight="600">中央腔</text>
+        <text x="108" y="86" fontSize="12.5" fill="#49676d" fontWeight="600">没有消化腔与神经系统——</text>
+        <text x="108" y="104" fontSize="12.5" fill="#49676d" fontWeight="600">细胞内消化，是最原始的多细胞动物</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">海绵（多孔动物）结构模式图 · 固着滤食（课外拓展）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'starfish',
+    id: 'stemStructure',
+    name: '茎的结构',
+    kicker: '茎 · 横切结构图',
+    intro: '木质部的导管向上运水，韧皮部的筛管向下运有机物，中间的形成层不断分裂让茎逐年加粗——运输与支撑两不误。',
+    parts: [
+      { name: '表皮', desc: '茎最外层的保护结构，幼茎表皮细胞含叶绿体时可进行光合作用。' },
+      { name: '韧皮部', desc: '位于形成层外侧，含筛管与伴胞，把叶片制造的有机物向下运输。' },
+      { name: '形成层', desc: '木质部与韧皮部之间的分生组织：向外产生韧皮部、向内产生木质部，使茎逐年加粗。' },
+      { name: '木质部', desc: '含导管运输水分和无机盐，细胞壁厚而坚硬，是茎的"骨架"。' },
+      { name: '髓', desc: '茎中央的薄壁组织，储藏养料。' },
+    ],
+    Svg: StemStructureSvg,
+  },
+  {
+    id: 'brainStructure',
+    name: '人脑结构',
+    kicker: '中枢神经 · 结构模式图',
+    intro: '中枢神经系统的"总指挥部"：大脑是调节的最高级中枢，小脑协调运动维持平衡，脑干掌管心跳呼吸——饿坏不得的生命中枢。',
+    parts: [
+      { name: '大脑', desc: '表面是布满沟回的大脑皮层，是调节人体生理活动的最高级中枢（感觉、运动、语言等）。' },
+      { name: '小脑', desc: '使运动协调、准确，维持身体平衡——醉酒走路不稳就是小脑被酒精麻痹。' },
+      { name: '脑干', desc: '含有调节心跳、呼吸、血压等基本生命活动的中枢，被称为"生命中枢"。' },
+      { name: '脊髓', desc: '脑干向下延续：既是脑与躯干内脏间的联系通路，也是反射的低级中枢（如膝跳反射）。' },
+    ],
+    Svg: BrainStructureSvg,
+  },
+  {
+    id: 'sponge',
+    name: '海绵',
+    kicker: '多孔动物 · 结构模式图',
+    intro: '最原始的多细胞动物（课外拓展）：固着在海底滤食为生，没有消化腔与神经系统，全靠领细胞鞭毛摆动形成水流——连"再生"都只是一团细胞重新聚合。',
+    extension: true,
+    parts: [
+      { name: '入水小孔', desc: '遍布体表的小孔：水流携带着食物颗粒和氧气从这些孔进入体内。' },
+      { name: '领细胞', desc: '内壁的领鞭毛细胞：鞭毛摆动形成水流，滤取食物颗粒进行细胞内消化。' },
+      { name: '出水孔', desc: '过滤后的水从顶端的大孔集中排出——一个大海绵每天能过滤上百升水。' },
+      { name: '骨针', desc: '钙质或硅质的针状"骨架"，支撑柔软的身体，也是分类的重要依据。' },
+      { name: '原始性', desc: '没有消化腔、没有神经系统：细胞分化程度极低，分散后还能重新聚合成体。' },
+    ],
+    Svg: SpongeSvg,
+  },
+  {
+    id: 'neuron',
     name: '海星',
     kicker: '棘皮动物 · 结构模式图',
     intro: '海里的"五角星"（课外拓展）：五辐射对称的棘皮动物，靠水管系统驱动成百上千的管足缓慢爬行，甚至能把胃翻出体外消化贝壳里的猎物。',

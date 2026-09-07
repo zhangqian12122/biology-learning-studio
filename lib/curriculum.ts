@@ -599,6 +599,7 @@ export type ExperimentId =
   | 'leafDecompose'
   | 'bloodType'
   | 'urineFormation'
+  | 'nuclearTransfer'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -938,6 +939,14 @@ export const experimentMeta: Record<
     relatedModule: '内环境与稳态',
     extension: true,
   },
+  nuclearTransfer: {
+    title: '克隆羊多莉：体细胞核移植模拟',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '三只羊各司其职：去核卵母细胞、供核乳腺细胞与代孕母亲，看多莉像谁。',
+    relatedBook: 'technology',
+    relatedModule: '细胞工程与组织培养',
+    extension: true,
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1099,7 +1108,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'embryoTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'embryoTransfer', 'nuclearTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey'],
   },
 ];
 
@@ -1167,6 +1176,7 @@ export const experimentOrder: ExperimentId[] = [
   'tissueCulture',
   'pcr',
   'embryoTransfer',
+  'nuclearTransfer',
   'choiceMedia',
   // 课外拓展
   'millerUrey',
