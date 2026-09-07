@@ -601,6 +601,7 @@ export type ExperimentId =
   | 'urineFormation'
   | 'nuclearTransfer'
   | 'lacOperon'
+  | 'greenhouseGas'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -956,6 +957,13 @@ export const experimentMeta: Record<
     relatedModule: '基因工程与 PCR 技术',
     extension: true,
   },
+  greenhouseGas: {
+    title: '温室光合与呼吸的昼夜变化',
+    kicker: '必修 1 · 分子与细胞',
+    description: '开关温室的灯，追踪 CO₂ 浓度一昼夜的消长与有机物的净积累。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1092,7 +1100,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '酶与代谢',
     icon: '⚗️',
-    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'pigment'],
+    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'pigment', 'greenhouseGas'],
   },
   {
     name: '细胞与膜',
@@ -1136,6 +1144,7 @@ export const experimentOrder: ExperimentId[] = [
   'amylaseSpecificity',
   'yeastRespiration',
   'enzyme',
+  'greenhouseGas',
   'pigment',
   'photosynthesis',
   'mitosisObservation',

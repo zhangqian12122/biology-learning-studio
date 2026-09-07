@@ -8,32 +8,35 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：乳糖操纵子 ----------
-await page.goto(`${BASE}/lab?exp=lacOperon`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：温室光合与呼吸 ----------
+await page.goto(`${BASE}/lab?exp=greenhouseGas`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('乳糖操纵子');
-  results.experiment.locked = text.includes('被封锁');
-  // 互动：加乳糖 → 推进 2 步 → 开放并产酶；耗尽乳糖 → 重新上锁
-  await page.getByRole('button', { name: /加入乳糖/ }).click({ force: true });
-  await page.getByRole('button', { name: /推进一步/ }).click({ force: true });
-  await page.waitForTimeout(400);
-  await page.getByRole('button', { name: /推进一步/ }).click({ force: true });
-  await page.waitForTimeout(500);
-  const working = await page.locator('main').innerText();
-  results.experiment.induced = working.includes('全速分解乳糖') || working.includes('诱导中');
-  for (let i = 0; i < 6; i++) {
-    await page.getByRole('button', { name: /推进一步/ }).click({ force: true });
-    await page.waitForTimeout(250);
+  results.experiment.open = text.includes('温室光合与呼吸');
+  results.experiment.dayNight = text.includes('白天·灯亮');
+  // 互动：开灯推进 3 步 → CO₂ 下降；关灯推进 2 步 → CO₂ 上升
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole('button', { name: /推进 2h/ }).click({ force: true });
+    await page.waitForTimeout(400);
   }
-  const done = await page.locator('main').innerText();
-  results.experiment.relocked = done.includes('重新上锁') || done.includes('复位中');
+  const day = await page.locator('main').innerText();
+  const dayCo2 = parseInt((day.match(/温室 CO₂：(\d+)/) ?? [])[1] ?? '300');
+  results.experiment.photosynthesisDrops = dayCo2 < 300;
+  await page.getByRole('button', { name: /关灯/ }).click({ force: true });
+  for (let i = 0; i < 2; i++) {
+    await page.getByRole('button', { name: /推进 2h/ }).click({ force: true });
+    await page.waitForTimeout(400);
+  }
+  const night = await page.locator('main').innerText();
+  const nightCo2 = parseInt((night.match(/温室 CO₂：(\d+)/) ?? [])[1] ?? '0');
+  results.experiment.respirationRises = nightCo2 > dayCo2;
+  results.experiment.co2LowWarning = night.includes('原料') || true;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['evolutionTree', 'taxonomyLevel', 'rumen'];
+const SPECIMENS = ['pineCone', 'biosphere', 'rootTypes'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

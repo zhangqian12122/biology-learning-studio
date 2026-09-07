@@ -5049,8 +5049,8 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -6410,9 +6410,206 @@ function RumenSvg({ active }: { active: number | null; open?: boolean }) {
 }
 
 
+/* ================= 松果（裸子植物的球果） ================= */
+
+function PineConeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 枝条与针叶 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 70 Q 250 54 380 74" fill="none" stroke="#7a5a3a" strokeWidth="9" strokeLinecap="round" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <g key={i}>
+            <path d={`M${150 + i * 42} 62 l-16 -34 M${160 + i * 42} 62 l0 -40 M${172 + i * 42} 62 l14 -36`} fill="none" stroke="#3f7f3a" strokeWidth="2.6" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="34" y="40" fontSize="13" fill="#2f7a4d" fontWeight="700">针叶（条形叶·耐旱防冻）</text>
+      </g>
+      {/* 球果主体（螺旋种鳞） */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3].map((row) =>
+          [0, 1, 2].map((col) => {
+            const y = 128 + row * 44;
+            const x = 226 + (row % 2 === 0 ? col * 52 : col * 52 + 26);
+            if (x > 320) return null;
+            return (
+              <path
+                key={`${row}-${col}`}
+                d={`M${x - 30} ${y} Q ${x} ${y - 26} ${x + 30} ${y} Q ${x} ${y + 24} ${x - 30} ${y} Z`}
+                fill={row < 2 ? '#a5763a' : '#c9a05a'}
+                stroke="#7a5a2a"
+                strokeWidth="2.4"
+              />
+            );
+          }),
+        )}
+        <text x="356" y="150" fontSize="13" fill="#7a5a2a" fontWeight="700">球果（种鳞螺旋排列）</text>
+        <line x1="352" y1="156" x2="330" y2="172" stroke="#7a5a2a" strokeWidth="1.4" />
+      </g>
+      {/* 裸露的种子 */}
+      <g style={dim(active, 2)}>
+        {[0, 1].map((i) => (
+          <ellipse key={i} cx={272 + i * 40} cy={214} rx="9" ry="13" fill="#e8b878" stroke="#a5761d" strokeWidth="2" />
+        ))}
+        <path d="M282 226 L276 244 M310 226 L318 244" stroke="#a5761d" strokeWidth="1.6" />
+        <text x="330" y="258" fontSize="13" fill="#a5761d" fontWeight="700">种子裸露·无果皮包被</text>
+        <line x1="326" y1="250" x2="304" y2="234" stroke="#a5761d" strokeWidth="1.4" />
+      </g>
+      {/* 裸子植物特征说明 */}
+      <g style={dim(active, 3)}>
+        <text x="42" y="164" fontSize="12.5" fill="#49676d" fontWeight="600">裸子植物：种子裸露（</text>
+        <text x="42" y="182" fontSize="12.5" fill="#49676d" fontWeight="600">没有子房壁→不形成果实）</text>
+        <text x="42" y="200" fontSize="12.5" fill="#49676d" fontWeight="600">松、杉、柏、银杏、苏铁</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">松树球果与种子 · 裸子植物的生殖（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 生物圈 ================= */
+
+function BiosphereSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 大气圈 */}
+      <g style={dim(active, 0)}>
+        <path d="M20 70 Q 260 30 500 70 L500 30 Q 260 -10 20 30 Z" fill="#d8e8f4" stroke="#7a9ac9" strokeWidth="2.5" />
+        <text x="36" y="62" fontSize="13" fill="#3d6a94" fontWeight="700">大气圈（底部有飞行生物·气体与温度）</text>
+      </g>
+      {/* 水圈 */}
+      <g style={dim(active, 1)}>
+        <path d="M20 236 Q 260 214 500 236 L500 130 Q 260 108 20 130 Z" fill="#b8d4ea" stroke="#4d7ea8" strokeWidth="2.5" />
+        <path d="M60 170 Q 110 158 160 170 T 260 170 T 360 170 T 460 170" fill="none" stroke="#8ab8d8" strokeWidth="2" />
+        <ellipse cx="140" cy="196" rx="16" ry="9" fill="#5a8ac9" />
+        <path d="M136 190 Q 140 178 150 172" fill="none" stroke="#3d6a94" strokeWidth="2.4" />
+        <text x="36" y="148" fontSize="13" fill="#2c5a84" fontWeight="700">水圈（全部海洋与江河湖泊·鱼类等）</text>
+      </g>
+      {/* 岩石圈（地表） */}
+      <g style={dim(active, 2)}>
+        <path d="M20 322 Q 260 300 500 322 L500 236 Q 260 214 20 236 Z" fill="#c8e2ba" stroke="#4a8a3a" strokeWidth="2.5" />
+        <path d="M20 322 Q 260 300 500 322 L500 380 L20 380 Z" fill="#c9b88a" stroke="#8a7a4a" strokeWidth="2.5" />
+        {/* 树 */}
+        {[60, 150, 440].map((x, i) => (
+          <g key={i}>
+            <path d={`M${x} 322 L${x} 284`} stroke="#7a5a3a" strokeWidth="6" />
+            <circle cx={x} cy={272} r="24" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="2.5" />
+          </g>
+        ))}
+        <text x="36" y="266" fontSize="13" fill="#2f7a4d" fontWeight="700">岩石圈表面（土壤·绝大多数生物聚集的"办公楼"）</text>
+        <text x="230" y="366" fontSize="12.5" fill="#6a5a2a" fontWeight="600">岩石圈表层（土壤中也有微生物）</text>
+      </g>
+      {/* 范围说明 */}
+      <g style={dim(active, 3)}>
+        <path d="M470 336 Q 486 320 480 300" fill="none" stroke="#49676d" strokeWidth="1.4" />
+        <text x="36" y="86" fontSize="12.5" fill="#49676d" fontWeight="700">生物圈的范围：</text>
+        <text x="36" y="104" fontSize="12" fill="#49676d">大气圈底部+水圈全部+岩石圈表面</text>
+      </g>
+      <text x="508" y="16" textAnchor="end" fontSize="12.5" fill="#799398">生物圈结构示意图 · 地球上所有生物与其环境的总和</text>
+    </svg>
+  );
+}
+
+/* ================= 根系类型对比（直根系 vs 须根系） ================= */
+
+function RootTypesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 土壤 */}
+      <g style={dim(active, 2)}>
+        <path d="M0 110 L520 110 L520 380 L0 380 Z" fill="#d8c9a8" />
+        <path d="M0 110 L520 110" stroke="#a5885f" strokeWidth="3" />
+        <text x="506" y="132" textAnchor="end" fontSize="12.5" fill="#8a7a58">土壤</text>
+      </g>
+      {/* 直根系（左·菜豆） */}
+      <g style={dim(active, 0)}>
+        {/* 地上茎叶 */}
+        <path d="M148 110 L148 44" stroke="#4a8a3a" strokeWidth="5" />
+        {[0, 1].map((i) => (
+          <ellipse key={i} cx={148 + (i === 0 ? -26 : 26)} cy={56} rx="22" ry="12" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="2" transform={`rotate(${i === 0 ? -18 : 18} ${148 + (i === 0 ? -26 : 26)} 56)`} />
+        ))}
+        <text x="148" y="26" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="800">菜豆（双子叶）</text>
+        {/* 主根 */}
+        <path d="M148 110 Q 146 170 144 250 Q 143 296 140 340" fill="none" stroke="#c9a882" strokeWidth="8" strokeLinecap="round" />
+        {/* 侧根 */}
+        <path d="M146 160 Q 112 184 84 200 M144 210 Q 178 232 206 246 M143 262 Q 112 282 90 300 M142 304 Q 170 322 196 332" fill="none" stroke="#c9a882" strokeWidth="4.5" strokeLinecap="round" />
+        <text x="52" y="222" fontSize="13" fill="#8a6a3a" fontWeight="700">直根系</text>
+        <text x="42" y="240" fontSize="12.5" fill="#8a6a3a">主根粗长明显</text>
+        <text x="30" y="258" fontSize="12.5" fill="#8a6a3a">由胚根发育而来</text>
+      </g>
+      {/* 分隔线 */}
+      <line x1="260" y1="120" x2="260" y2="368" stroke="#a5885f" strokeWidth="1.6" strokeDasharray="7 5" />
+      {/* 须根系（右·小麦） */}
+      <g style={dim(active, 1)}>
+        <path d="M386 110 L386 48" stroke="#4a8a3a" strokeWidth="4" />
+        {[0, 1].map((i) => (
+          <ellipse key={i} cx={386 + (i === 0 ? -24 : 24)} cy={58} rx="20" ry="10" fill="#a8cf98" stroke="#3f7f3a" strokeWidth="2" transform={`rotate(${i === 0 ? -16 : 16} ${386 + (i === 0 ? -24 : 24)} 58)`} />
+        ))}
+        <text x="386" y="26" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="800">小麦（单子叶）</text>
+        {/* 不定根丛 */}
+        {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+          <path
+            key={i}
+            d={`M386 112 Q ${386 + (i - 3) * 24} 190 ${370 + (i - 3) * 30} ${330 - Math.abs(i - 3) * 22}`}
+            fill="none"
+            stroke="#c9a882"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+        ))}
+        <text x="322" y="222" fontSize="13" fill="#8a6a3a" fontWeight="700">须根系</text>
+        <text x="316" y="240" fontSize="12.5" fill="#8a6a3a">无明显主根</text>
+        <text x="308" y="258" fontSize="12.5" fill="#8a6a3a">由不定根组成（丛生）</text>
+      </g>
+      <text x="20" y="44" fontSize="12.5" fill="#799398">根系类型对比 · 双子叶直根系 / 单子叶须根系</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'evolutionTree',
+    id: 'pineCone',
+    name: '松果（球果）',
+    kicker: '裸子植物 · 球果结构图',
+    intro: '松、杉、柏是裸子植物：种子裸露在种鳞上、没有子房壁包被所以不形成果实——"松果"其实是充满种鳞的球果，不是水果。',
+    extension: true,
+    parts: [
+      { name: '针叶', desc: '条形或针状的叶，表皮角质层厚、气孔深陷，抗寒抗旱——松树四季常青的秘密。' },
+      { name: '球果（种鳞）', desc: '木质种鳞螺旋排列，每一片种鳞内侧着生裸露的种子。' },
+      { name: '裸露的种子', desc: '种子没有果皮包被（裸子植物的核心特征），靠 wing 翅或动物散播。' },
+      { name: '裸子植物家族', desc: '松、杉、柏、银杏、苏铁等：种子植物中更原始的一支，木质部只有管胞。' },
+    ],
+    Svg: PineConeSvg,
+  },
+  {
+    id: 'biosphere',
+    name: '生物圈',
+    kicker: '生态 · 结构示意图',
+    intro: '地球上所有生物与环境的总和：大气圈底部、水圈全部与岩石圈表面——厚度约 20 千米的"生命薄膜"，也是地球上最大的生态系统。',
+    parts: [
+      { name: '大气圈底部', desc: '飞翔的鸟类与昆虫、漂浮的细菌在此活动；提供氧气、二氧化碳与适宜温度。' },
+      { name: '水圈全部', desc: '从海洋表层到深海热泉都有生物：水圈是生物圈中"体积最大"的成员。' },
+      { name: '岩石圈表面', desc: '土壤表层聚集绝大多数陆生生物：是生物圈的"立足点"与营养库。' },
+      { name: '最大的生态系统', desc: '生物圈包含地球上全部生态系统，物质循环与能量流动在这里全球联通。' },
+    ],
+    Svg: BiosphereSvg,
+  },
+  {
+    id: 'rootTypes',
+    name: '根系类型对比',
+    kicker: '根 · 直根系与须根系对比图',
+    intro: '双子叶植物是直根系（胚根发育的粗壮主根 + 侧根），单子叶植物是须根系（主根早亡、由不定根组成的"胡须丛"）——一眼可辨的分类特征。',
+    parts: [
+      { name: '直根系', desc: '主根明显粗长、垂直向下，侧根逐级分支——大多数双子叶植物（菜豆、杨树）如此。' },
+      { name: '主根', desc: '由种子中的胚根直接发育而来，是直根系的"中轴"。' },
+      { name: '侧根', desc: '从主根上长出的分支，向四周扩展固定并扩大吸收面积。' },
+      { name: '须根系', desc: '主根早早停止生长，由茎基部萌发的大量不定根组成——单子叶植物（小麦、水稻、葱）的特征。' },
+      { name: '不定根', desc: '由茎或叶上长出（而非胚根），也说明植物组织具有再生的全能性。' },
+    ],
+    Svg: RootTypesSvg,
+  },
+  {
+    id: 'neuron',
     name: '生物进化树',
     kicker: '生物进化 · 历程图',
     intro: '进化树把 35 亿多年的生命历程画成一棵"树"：从共同原始祖先出发，分支越来越多、生物越来越多样——现代生物都是这条进化长河的"末梢"。',
