@@ -593,6 +593,7 @@ export type ExperimentId =
   | 'pcr'
   | 'reflexArc'
   | 'thyroidAxis'
+  | 'thermoRegulation'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -888,6 +889,13 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '神经和体液调节',
   },
+  thermoRegulation: {
+    title: '体温调节模拟',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '切换严寒到炎热五种环境，看产热散热手段切换与体温曲线回稳。',
+    relatedBook: 'regulation',
+    relatedModule: '神经和体液调节',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1039,7 +1047,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'sirModel'],
+    ids: ['urineGlucoseTest', 'auxinCutting', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'sirModel'],
   },
   {
     name: '生态',
@@ -1091,6 +1099,7 @@ export const experimentOrder: ExperimentId[] = [
   'impulse',
   'reflexArc',
   'thyroidAxis',
+  'thermoRegulation',
   'sirModel',
   // 选择性必修 2 · 生物与环境
   'quadratMethod',

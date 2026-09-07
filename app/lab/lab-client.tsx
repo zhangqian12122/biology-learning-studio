@@ -4,6 +4,7 @@ import { lazy, Suspense, useState, type ComponentType, type LazyExoticComponent 
 import Link from 'next/link';
 import {
   Activity,
+  Thermometer,
   ArrowRight,
   Baby,
   Bird,
@@ -89,6 +90,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   pcr: Repeat,
   reflexArc: Zap,
   thyroidAxis: Activity,
+  thermoRegulation: Thermometer,
   markRecapture: Target,
   succession: Sprout,
   dnaReplication: Dna,
@@ -147,6 +149,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   pcr: () => import('@/components/lab/pcr-lab').then(({ PcrLab }) => ({ default: PcrLab })),
   reflexArc: () => import('@/components/lab/reflex-arc-lab').then(({ ReflexArcLab }) => ({ default: ReflexArcLab })),
   thyroidAxis: () => import('@/components/lab/thyroid-axis-lab').then(({ ThyroidAxisLab }) => ({ default: ThyroidAxisLab })),
+  thermoRegulation: () => import('@/components/lab/thermo-regulation-lab').then(({ ThermoRegulationLab }) => ({ default: ThermoRegulationLab })),
   markRecapture: () => import('@/components/lab/mark-recapture-lab').then(({ MarkRecaptureLab }) => ({ default: MarkRecaptureLab })),
   succession: () => import('@/components/lab/succession-lab').then(({ SuccessionLab }) => ({ default: SuccessionLab })),
   dnaReplication: () => import('@/components/lab/dna-replication-lab').then(({ DnaReplicationLab }) => ({ default: DnaReplicationLab })),

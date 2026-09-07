@@ -5045,11 +5045,11 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation'] },
 ];
 
@@ -5093,7 +5093,234 @@ export const ATLAS_GROUPS: { name: string; icon: string; desc: string; categorie
   },
 ];
 
+/* ================= 河蚌（软体动物） ================= */
+
+function BivalveMusselSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 水底 */}
+      <g style={dim(active, 5)}>
+        <path d="M0 330 Q 130 310 260 326 T 520 322 L520 380 L0 380 Z" fill="#d9e8dc" />
+        <text x="468" y="368" textAnchor="end" fontSize="12.5" fill="#7a948a">水底泥沙</text>
+      </g>
+      {/* 下壳 */}
+      <g style={dim(active, 0)}>
+        <path d="M105 262 Q 250 348 395 262 Q 250 312 105 262 Z" fill="#c8b89a" stroke="#8a7a58" strokeWidth="3" />
+        <path d="M130 268 Q 250 336 372 268" fill="none" stroke="#a5967a" strokeWidth="2" strokeDasharray="7 5" />
+      </g>
+      {/* 软体部：外套膜 + 鳃 + 斧足 + 闭壳肌 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="250" cy="248" rx="138" ry="42" fill="#f0dfc8" stroke="#c9a882" strokeWidth="3" />
+      </g>
+      <g style={dim(active, 2)}>
+        <path d="M150 252 Q 250 224 350 252" fill="none" stroke="#d8a8a0" strokeWidth="9" strokeLinecap="round" />
+        <path d="M152 262 Q 250 236 348 262" fill="none" stroke="#d8a8a0" strokeWidth="9" strokeLinecap="round" />
+        <text x="300" y="182" fontSize="13" fill="#a5605a" fontWeight="700">鳃（呼吸）</text>
+        <line x1="318" y1="188" x2="308" y2="240" stroke="#a5605a" strokeWidth="1.4" />
+      </g>
+      <g style={dim(active, 3)}>
+        <path d="M238 246 Q 180 224 138 234 Q 168 258 238 262 Z" fill="#e8c9a8" stroke="#b58a5f" strokeWidth="3" />
+        <text x="28" y="192" fontSize="13.5" fill="#8a6242" fontWeight="700">斧足（掘沙运动）</text>
+        <line x1="112" y1="198" x2="160" y2="232" stroke="#8a6242" strokeWidth="1.4" />
+      </g>
+      {/* 闭壳肌与水管 */}
+      <g style={dim(active, 0)}>
+        <circle cx="352" cy="248" r="10" fill="#c9a882" stroke="#8a7a58" strokeWidth="2" />
+        <text x="398" y="282" fontSize="12.5" fill="#7a6a4a">闭壳肌</text>
+      </g>
+      <g style={dim(active, 4)}>
+        <path d="M386 232 L414 224 L414 240 Z" fill="#d8b890" stroke="#8a7a58" strokeWidth="2" />
+        <path d="M386 252 L416 258 L414 272 Z" fill="#d8b890" stroke="#8a7a58" strokeWidth="2" />
+        <text x="398" y="180" fontSize="12.5" fill="#7a6a4a" fontWeight="600">出水孔</text>
+        <text x="398" y="308" fontSize="12.5" fill="#7a6a4a" fontWeight="600">入水孔</text>
+        <line x1="408" y1="188" x2="404" y2="222" stroke="#7a6a4a" strokeWidth="1.4" />
+        <line x1="408" y1="296" x2="406" y2="272" stroke="#7a6a4a" strokeWidth="1.4" />
+        {/* 水流方向箭头 */}
+        <path d="M448 214 Q 442 232 420 246" fill="none" stroke="#3d7e9e" strokeWidth="2.5" strokeDasharray="6 4" markerEnd="url(#bm-arrow)" />
+        <path d="M420 268 Q 444 282 450 298" fill="none" stroke="#3d7e9e" strokeWidth="2.5" strokeDasharray="6 4" markerEnd="url(#bm-arrow)" />
+      </g>
+      {/* 上壳（掀开） */}
+      <g style={dim(active, 0)}>
+        <path d="M105 258 Q 250 128 395 258 Q 250 196 105 258 Z" fill="#dccdb0" stroke="#8a7a58" strokeWidth="3" />
+        <text x="30" y="352" fontSize="13" fill="#7a6a4a" fontWeight="600">贝壳（保护柔软身体）</text>
+        <line x1="150" y1="344" x2="212" y2="318" stroke="#7a6a4a" strokeWidth="1.4" />
+        <text x="360" y="346" fontSize="12.5" fill="#a5605a" fontWeight="600">外套膜（分泌珍珠质）</text>
+        <line x1="392" y1="336" x2="332" y2="284" stroke="#a5605a" strokeWidth="1.4" />
+      </g>
+      <defs>
+        <marker id="bm-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#3d7e9e" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">河蚌结构模式图（水流：入水孔 → 鳃 → 出水孔）</text>
+    </svg>
+  );
+}
+
+/* ================= 蘑菇（多细胞真菌） ================= */
+
+function MushroomSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 土壤 */}
+      <g style={dim(active, 3)}>
+        <path d="M0 318 L520 318 L520 380 L0 380 Z" fill="#d9c9a8" />
+        <text x="506" y="370" textAnchor="end" fontSize="12.5" fill="#8a7a58">土壤（枯枝落叶等有机物）</text>
+      </g>
+      {/* 菌丝体 */}
+      <g style={dim(active, 3)}>
+        <path d="M250 306 Q 190 322 118 344" fill="none" stroke="#e8dcc8" strokeWidth="3" />
+        <path d="M250 306 Q 260 330 190 356" fill="none" stroke="#e8dcc8" strokeWidth="3" />
+        <path d="M250 306 Q 316 324 396 340" fill="none" stroke="#e8dcc8" strokeWidth="3" />
+        <path d="M250 306 Q 244 336 316 356" fill="none" stroke="#e8dcc8" strokeWidth="3" />
+        <path d="M250 306 Q 282 318 350 326" fill="none" stroke="#e8dcc8" strokeWidth="2.4" />
+        <text x="26" y="342" fontSize="13" fill="#5f6a4a" fontWeight="700">营养菌丝</text>
+        <text x="26" y="360" fontSize="12.5" fill="#5f6a4a">（吸收有机养分）</text>
+        <line x1="130" y1="348" x2="160" y2="342" stroke="#5f6a4a" strokeWidth="1.4" />
+      </g>
+      {/* 菌柄 */}
+      <g style={dim(active, 2)}>
+        <path d="M232 148 Q 226 240 224 306 L276 306 Q 274 240 268 148 Z" fill="#f6efe2" stroke="#b5a582" strokeWidth="3" />
+        <text x="58" y="236" fontSize="13.5" fill="#8a7a4a" fontWeight="700">菌柄（支撑）</text>
+        <line x1="146" y1="232" x2="228" y2="228" stroke="#8a7a4a" strokeWidth="1.4" />
+      </g>
+      {/* 菌盖 */}
+      <g style={dim(active, 0)}>
+        <path d="M128 152 Q 130 62 250 58 Q 370 62 372 152 Q 250 128 128 152 Z" fill="#c98a5f" stroke="#8a5a38" strokeWidth="3" />
+        <circle cx="210" cy="96" r="9" fill="#e8b890" opacity="0.8" />
+        <circle cx="292" cy="88" r="12" fill="#e8b890" opacity="0.8" />
+        <circle cx="252" cy="112" r="7" fill="#e8b890" opacity="0.8" />
+        <text x="380" y="84" fontSize="13.5" fill="#8a5a38" fontWeight="700">菌盖（保护菌褶）</text>
+        <line x1="376" y1="90" x2="330" y2="102" stroke="#8a5a38" strokeWidth="1.4" />
+      </g>
+      {/* 菌褶（右半剖面可见放射褶片） */}
+      <g style={dim(active, 1)}>
+        <path d="M136 154 Q 250 132 364 154 L344 176 Q 250 152 156 176 Z" fill="#f0e2c8" stroke="#b5a582" strokeWidth="2.5" />
+        <path d="M188 156 L214 174 M232 150 L244 172 M276 150 L264 172 M318 156 L290 174" stroke="#c9a882" strokeWidth="2" />
+        <text x="392" y="168" fontSize="13" fill="#8a671b" fontWeight="700">菌褶（产生孢子）</text>
+        <line x1="388" y1="174" x2="332" y2="164" stroke="#8a671b" strokeWidth="1.4" />
+      </g>
+      {/* 孢子 */}
+      <g style={dim(active, 4)}>
+        <circle cx="236" cy="190" r="4" fill="#8a671b" />
+        <circle cx="256" cy="196" r="3.4" fill="#8a671b" />
+        <circle cx="272" cy="188" r="3" fill="#8a671b" />
+        <text x="296" y="212" fontSize="13" fill="#8a671b" fontWeight="700">孢子（繁殖体）</text>
+        <line x1="292" y1="208" x2="274" y2="196" stroke="#8a671b" strokeWidth="1.4" />
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蘑菇（伞菌）子实体结构图 · 异养，靠孢子繁殖</text>
+    </svg>
+  );
+}
+
+/* ================= 根尖结构 ================= */
+
+function RootTipSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 成熟区 */}
+      <g style={dim(active, 3)}>
+        <rect x="226" y="36" width="48" height="112" fill="#cfe6c2" stroke="#4a8a3a" strokeWidth="2.5" />
+        <rect x="228" y="40" width="10" height="104" fill="#b8d8a8" />
+        <rect x="282" y="40" width="10" height="104" fill="#b8d8a8" />
+        {/* 根毛 */}
+        <path d="M226 60 Q 206 56 192 62 M226 84 Q 204 84 190 92 M226 110 Q 206 112 194 120 M226 134 Q 206 138 196 146" fill="none" stroke="#4a8a3a" strokeWidth="2.4" />
+        <path d="M294 66 Q 314 62 328 68 M294 92 Q 316 92 330 100 M294 118 Q 314 120 326 128" fill="none" stroke="#4a8a3a" strokeWidth="2.4" />
+        <text x="344" y="86" fontSize="12.5" fill="#3f7f3a" fontWeight="700">成熟区（根毛区）</text>
+        <text x="358" y="104" fontSize="12.5" fill="#3f7f3a">根毛吸水主要部位</text>
+        <line x1="340" y1="94" x2="296" y2="96" stroke="#3f7f3a" strokeWidth="1.4" />
+      </g>
+      {/* 导管 */}
+      <g style={dim(active, 4)}>
+        <path d="M250 30 L250 60" stroke="#c9708a" strokeWidth="8" strokeLinecap="round" strokeDasharray="10 6" />
+        <path d="M243 148 L243 232" stroke="#c9708a" strokeWidth="5" strokeDasharray="8 5" />
+        <path d="M257 148 L257 232" stroke="#c9708a" strokeWidth="5" strokeDasharray="8 5" />
+        <text x="26" y="120" fontSize="13" fill="#8a5a94" fontWeight="700">导管（向上输水）</text>
+        <line x1="140" y1="126" x2="240" y2="122" stroke="#8a5a94" strokeWidth="1.4" />
+      </g>
+      {/* 伸长区 */}
+      <g style={dim(active, 2)}>
+        <rect x="228" y="148" width="14" height="84" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="2" />
+        <rect x="244" y="148" width="16" height="84" fill="#c4dcee" stroke="#3d6a94" strokeWidth="2" />
+        <rect x="262" y="148" width="14" height="84" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="2" />
+        <rect x="278" y="148" width="14" height="84" fill="#c4dcee" stroke="#3d6a94" strokeWidth="2" />
+        <text x="356" y="182" fontSize="12.5" fill="#2c6e94" fontWeight="700">伸长区</text>
+        <text x="356" y="200" fontSize="12.5" fill="#2c6e94">细胞伸长最快</text>
+        <line x1="352" y1="190" x2="296" y2="190" stroke="#2c6e94" strokeWidth="1.4" />
+      </g>
+      {/* 分生区 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3].map((c) =>
+          [0, 1, 2, 3, 4].map((r) => (
+            <rect key={`${c}-${r}`} x={229 + c * 15} y={232 + r * 11} width="13" height="9" fill="#e0c8ee" stroke="#7a4a8a" strokeWidth="1.6" />
+          )),
+        )}
+        <text x="356" y="256" fontSize="12.5" fill="#6a4a9a" fontWeight="700">分生区</text>
+        <text x="356" y="274" fontSize="12.5" fill="#6a4a9a">细胞分裂旺盛</text>
+        <line x1="352" y1="264" x2="294" y2="256" stroke="#6a4a9a" strokeWidth="1.4" />
+      </g>
+      {/* 根冠 */}
+      <g style={dim(active, 0)}>
+        <path d="M228 278 Q 226 306 250 316 Q 274 306 272 278 Q 250 290 228 278 Z" fill="#e8c9a8" stroke="#b58a5f" strokeWidth="2.5" />
+        <text x="356" y="308" fontSize="12.5" fill="#8a6242" fontWeight="700">根冠</text>
+        <text x="356" y="326" fontSize="12.5" fill="#8a6242">保护分裂部位</text>
+        <line x1="352" y1="314" x2="276" y2="300" stroke="#8a6242" strokeWidth="1.4" />
+      </g>
+      {/* 根毛标注（左上） */}
+      <g style={dim(active, 3)}>
+        <text x="26" y="66" fontSize="13" fill="#3f7f3a" fontWeight="700">根毛</text>
+        <text x="26" y="84" fontSize="12.5" fill="#3f7f3a">表皮细胞突起</text>
+        <line x1="108" y1="72" x2="196" y2="66" stroke="#3f7f3a" strokeWidth="1.4" />
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">根尖纵切结构图 · 生长靠分生区与伸长区，吸水靠成熟区根毛</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'mussel',
+    name: '河蚌',
+    kicker: '软体动物 · 结构模式图',
+    intro: '水生软体动物的代表：身体柔软，有外套膜与两片贝壳，水从入水孔进入、经鳃呼吸后由出水孔排出，靠斧足掘泥沙运动。',
+    parts: [
+      { name: '贝壳', desc: '两片石灰质硬壳，由闭壳肌控制开合，保护柔软的身体。' },
+      { name: '外套膜', desc: '包裹软体部分的膜状结构，分泌珍珠质形成贝壳——珍珠就是外套膜包裹异物形成的。' },
+      { name: '鳃', desc: '片状结构密布毛细血管：水流经鳃时完成气体交换，是水中呼吸的器官。' },
+      { name: '斧足', desc: '斧头状的肌肉质足，用来挖掘泥沙，使河蚌能把身体埋进水底缓慢移动。' },
+      { name: '入水孔与出水孔', desc: '水从入水孔进入外套腔（带来食物与氧气），经鳃交换后由出水孔排出。' },
+    ],
+    Svg: BivalveMusselSvg,
+  },
+  {
+    id: 'mushroom',
+    name: '蘑菇（伞菌）',
+    kicker: '多细胞真菌 · 子实体结构图',
+    intro: '蘑菇是真菌的"子实体"：地上的菌盖与菌柄负责繁殖（菌褶产生孢子），地下的菌丝体吸收有机养分——细胞内没有叶绿体，只能异养。',
+    parts: [
+      { name: '菌盖', desc: '伞状的帽部结构，保护下方的菌褶，展开后利于孢子向四周散布。' },
+      { name: '菌褶', desc: '菌盖下方放射状排列的薄片，是产生孢子的场所——一朵蘑菇可释放数十亿枚孢子。' },
+      { name: '菌柄', desc: '柱状支持结构，把菌盖举离地面，方便孢子随气流散播。' },
+      { name: '营养菌丝', desc: '深入土壤与枯枝落叶中的丝状体，分泌酶分解有机物并吸收养分（异养腐生）。' },
+      { name: '孢子', desc: '真菌的繁殖细胞，飘散到温暖潮湿的环境即可萌发成新菌丝。' },
+    ],
+    Svg: MushroomSvg,
+  },
+  {
+    id: 'rootTip',
+    name: '根尖结构',
+    kicker: '根尖 · 纵切结构图',
+    intro: '从根尖端向上依次是根冠、分生区、伸长区、成熟区：根的生长靠分生区分裂与伸长区伸长，吸收水分和无机盐则主要靠成熟区的根毛。',
+    parts: [
+      { name: '根冠', desc: '罩在分生区外面的帽状结构，细胞较大排列疏松，保护分生区在土壤中钻行不被磨损。' },
+      { name: '分生区', desc: '被根冠包围，细胞体积小、细胞核大、排列紧密，具有很强的分裂能力，不断产生新细胞。' },
+      { name: '伸长区', desc: '细胞逐渐停止分裂、迅速伸长，是根伸长最快的部位——根向土壤深处生长主要靠它。' },
+      { name: '成熟区（根毛区）', desc: '表皮细胞向外突起形成大量根毛，扩大吸收面积；内部已分化出导管，是吸收水分和无机盐的主要部位。' },
+      { name: '导管', desc: '由中空长管状死细胞连接成的输水管道，把根毛吸收的水分和无机盐向上运输到茎和叶。' },
+    ],
+    Svg: RootTipSvg,
+  },
   {
     id: 'neuron',
     name: '神经元',
