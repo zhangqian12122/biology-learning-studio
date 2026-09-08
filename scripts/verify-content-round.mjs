@@ -8,24 +8,24 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：有氧呼吸三阶段 ----------
-await page.goto(`${BASE}/lab?exp=cellRespiration`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：恩格尔曼水绵实验 ----------
+await page.goto(`${BASE}/lab?exp=engelmann`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('有氧呼吸三阶段');
-  for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /第[一二三]阶段/ }).click({ force: true });
-    await page.waitForTimeout(450);
-  }
-  const done = await page.locator('main').innerText();
-  results.experiment.threeStages = done.includes('有氧呼吸完成') && done.includes('30');
-  results.experiment.o2Shown = done.includes('O₂ 进入');
+  results.experiment.open = text.includes('恩格尔曼水绵实验');
+  // 互动：色散照射 → 推进 → 细菌聚集于红光/蓝紫光
+  await page.getByRole('button', { name: /色散光谱照射/ }).click({ force: true });
+  await page.getByRole('button', { name: /推进（细菌游向产氧区）/ }).click({ force: true });
+  await page.waitForTimeout(800);
+  const after = await page.locator('main').innerText();
+  results.experiment.aggregate = after.includes('细菌密集区') && after.includes('红光区');
+  results.experiment.conclusion = after.includes('绿光') || after.includes('蓝紫光');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['vacuole', 'homologousOrgans', 'adaptations'];
+const SPECIMENS = ['ascarid', 'giantPanda', 'tissueCultureStages'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

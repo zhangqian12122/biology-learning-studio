@@ -610,6 +610,7 @@ export type ExperimentId =
   | 'foodChain'
   | 'pasteurFlask'
   | 'cellRespiration'
+  | 'engelmann'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -1031,6 +1032,13 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
   },
+  engelmann: {
+    title: '恩格尔曼水绵实验',
+    kicker: '必修 1 · 分子与细胞',
+    description: '用好氧细菌当"氧气探测器"，看光合色素主要吸收红光与蓝紫光。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1167,7 +1175,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '酶与代谢',
     icon: '⚗️',
-    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'cellRespiration', 'pigment', 'greenhouseGas'],
+    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'cellRespiration', 'pigment', 'greenhouseGas'],
   },
   {
     name: '细胞与膜',
@@ -1215,6 +1223,7 @@ export const experimentOrder: ExperimentId[] = [
   'pigment',
   'photosynthesis',
   'cellRespiration',
+  'engelmann',
   'mitosisObservation',
   // 必修 2 · 遗传与进化
   'traitSeparation',

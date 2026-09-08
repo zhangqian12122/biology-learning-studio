@@ -5037,6 +5037,7 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
   'centralDogma',
   'waterSaltBalance',
   'pcrStages',
+  'tissueCultureStages',
 ];
 
 /** 图鉴目录：按主题分类，供图鉴页筛选导航（56 个标本全覆盖） */
@@ -5048,7 +5049,7 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'verticalLayers'] },
@@ -7815,9 +7816,199 @@ function AdaptationsSvg({ active }: { active: number | null; open?: boolean }) {
 }
 
 
+/* ================= 蛔虫（线形动物·人体寄生虫） ================= */
+
+function AscaridSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 肠道背景 */}
+      <g style={dim(active, 3)}>
+        <path d="M30 70 Q 150 40 260 70 T 490 78 L 490 330 Q 260 350 30 320 Z" fill="#f2d8c8" stroke="#c98a6a" strokeWidth="3" />
+        <text x="478" y="342" textAnchor="end" fontSize="12.5" fill="#a5603a" fontWeight="600">人体小肠（蛔虫寄生部位）</text>
+      </g>
+      {/* 蛔虫身体（长圆柱盘曲） */}
+      <g style={dim(active, 0)}>
+        <path d="M70 160 Q 180 96 290 128 Q 400 158 420 220 Q 430 268 350 286 Q 240 306 150 280 Q 62 254 70 160 Z" fill="#e8b8a0" stroke="#a5603a" strokeWidth="3.5" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${110 + i * 52} ${126 + i * 6} q 30 60 -6 148`} fill="none" stroke="#c9885f" strokeWidth="1.8" />
+        ))}
+        <path d="M74 150 Q 60 136 70 124 Q 86 114 98 126 Q 100 142 86 152 Z" fill="#d8a088" stroke="#a5603a" strokeWidth="2.4" />
+        <text x="30" y="106" fontSize="13" fill="#8a4a2a" fontWeight="800">口（围口唇瓣）</text>
+        <line x1="76" y1="112" x2="78" y2="126" stroke="#8a4a2a" strokeWidth="1.4" />
+      </g>
+      {/* 角质层 */}
+      <g style={dim(active, 1)}>
+        <path d="M78 148 Q 184 86 292 118" fill="none" stroke="#f8e0d0" strokeWidth="5" strokeLinecap="round" />
+        <text x="330" y="102" fontSize="13" fill="#a5483a" fontWeight="700">角质层（体表保护·抵抗消化液）</text>
+        <line x1="326" y1="108" x2="286" y2="120" stroke="#a5483a" strokeWidth="1.4" />
+      </g>
+      {/* 消化管简单 */}
+      <g style={dim(active, 2)}>
+        <path d="M92 148 Q 200 130 396 224" fill="none" stroke="#8a671b" strokeWidth="6" strokeLinecap="round" />
+        <text x="150" y="120" fontSize="13" fill="#8a671b" fontWeight="700">消化管简单（直管·靠吸食宿主营养）</text>
+      </g>
+      {/* 生殖力强 */}
+      <g style={dim(active, 2)}>
+        <path d="M150 276 Q 230 296 340 272" fill="none" stroke="#c9538a" strokeWidth="6" strokeLinecap="round" />
+        <text x="130" y="316" fontSize="13" fill="#a54868" fontWeight="700">生殖器官发达：每条雌虫日产卵约 20 万枚</text>
+      </g>
+      {/* 感觉器官退化 */}
+      <g style={dim(active, 4)}>
+        <text x="300" y="182" fontSize="12.5" fill="#8a5a4a" fontWeight="600">感觉器官退化（寄生生活"省掉"了）</text>
+        <line x1="296" y1="186" x2="250" y2="206" stroke="#8a5a4a" strokeWidth="1.3" />
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蛔虫结构模式图 · 线形动物门，人体寄生虫（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 大熊猫（珍稀保护动物） ================= */
+
+function GiantPandaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 竹林背景 */}
+      <g style={dim(active, 3)}>
+        <rect x="0" y="40" width="520" height="340" fill="#e4f0dc" />
+        {[40, 110, 420, 480].map((x, i) => (
+          <g key={i}>
+            <path d={`M${x} 380 L${x} 40`} stroke="#8a9a5a" strokeWidth="8" strokeLinecap="round" />
+            <path d={`M${x} 90 l-26 -20 M${x} 140 l24 -18 M${x} 200 l-22 -16`} stroke="#8a9a5a" strokeWidth="3" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="24" y="70" fontSize="12.5" fill="#5a7a3a" fontWeight="600">高山竹林（大熊猫的家园）</text>
+      </g>
+      {/* 身体（白色） */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="230" rx="120" ry="88" fill="#ffffff" stroke="#13333a" strokeWidth="4" />
+        <circle cx="140" cy="270" r="16" fill="#ffffff" stroke="#13333a" strokeWidth="3" />
+      </g>
+      {/* 黑色部件 */}
+      <g style={dim(active, 1)}>
+        <circle cx="176" cy="148" r="26" fill="#13333a" />
+        <circle cx="286" cy="144" r="26" fill="#13333a" />
+        <ellipse cx="188" cy="184" rx="24" ry="16" fill="#13333a" transform="rotate(-16 188 184)" />
+        <ellipse cx="276" cy="182" rx="24" ry="16" fill="#13333a" transform="rotate(14 276 182)" />
+        <ellipse cx="168" cy="288" rx="30" ry="38" fill="#13333a" />
+        <ellipse cx="330" cy="284" rx="30" ry="38" fill="#13333a" />
+      </g>
+      {/* 头部五官 */}
+      <g style={dim(active, 0)}>
+        <circle cx="222" cy="128" r="26" fill="#ffffff" stroke="#13333a" strokeWidth="3" />
+        <ellipse cx="212" cy="122" rx="9" ry="13" fill="#13333a" transform="rotate(-14 212 122)" />
+        <ellipse cx="232" cy="122" rx="9" ry="13" fill="#13333a" transform="rotate(14 232 122)" />
+        <circle cx="215" cy="122" r="3.2" fill="#ffffff" />
+        <circle cx="229" cy="122" r="3.2" fill="#ffffff" />
+        <ellipse cx="222" cy="142" rx="7" ry="5" fill="#13333a" />
+      </g>
+      {/* 假拇指与食竹 */}
+      <g style={dim(active, 2)}>
+        <path d="M368 246 Q 396 232 416 240" fill="none" stroke="#4a8a3a" strokeWidth="8" strokeLinecap="round" />
+        <path d="M404 258 Q 402 250 396 246" fill="none" stroke="#13333a" strokeWidth="4" strokeLinecap="round" />
+        <text x="252" y="296" fontSize="12.5" fill="#2f5a1e" fontWeight="700">"伪拇指"（腕骨特化·便于握竹）</text>
+        <line x1="384" y1="284" x2="396" y2="256" stroke="#2f5a1e" strokeWidth="1.4" />
+        <text x="96" y="336" fontSize="12.5" fill="#2f5a1e" fontWeight="700">99% 食物是竹子（肉齿退化·演化成"素食者"）</text>
+      </g>
+      {/* 保护级别 */}
+      <g style={dim(active, 4)}>
+        <rect x="310" y="40" width="180" height="44" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="400" y="58" textAnchor="middle" fontSize="11.5" fill="#8a671b" fontWeight="800">国家一级保护动物</text>
+        <text x="400" y="76" textAnchor="middle" fontSize="10.5" fill="#a5761d">IUCN：易危（VU）· 受威胁下降</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">大熊猫结构模式图 · 中国特有"活化石"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 植物组织培养流程（流程图→实验侧） ================= */
+
+function TissueCultureStagesSvg({ active }: { active: number | null; open?: boolean }) {
+  const steps = [
+    { t: '① 离体的外植体', d: '取胡萝卜韧皮部/髓部小块', y: 60, color: '#7a9ac9' },
+    { t: '② 脱分化 → 愈伤组织', d: '生长素+细胞分裂素·不定状态', y: 148, color: '#c9a05a' },
+    { t: '③ 再分化 → 根芽', d: '调整两种激素的比例', y: 236, color: '#7ab86a' },
+    { t: '④ 完整植株', d: '移栽·全能性表达的证明', y: 324, color: '#4a9a4a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 中轴流程 */}
+      <line x1="52" y1="72" x2="52" y2="330" stroke="#8a9a9f" strokeWidth="2.6" />
+      {steps.map((st, i) => (
+        <g key={st.t} style={dim(active, i)}>
+          <circle cx="52" cy={st.y + 18} r="13" fill={st.color} stroke="#13333a" strokeWidth="2" />
+          <text x="52" y={st.y + 23} textAnchor="middle" fontSize="11" fill="#ffffff" fontWeight="800">{i + 1}</text>
+          <text x="78" y={st.y + 14} fontSize="13" fill="#13333a" fontWeight="800">{st.t}</text>
+          <text x="78" y={st.y + 34} fontSize="11.5" fill="#59767c">{st.d}</text>
+        </g>
+      ))}
+      {/* 试管示意 */}
+      <g style={dim(active, 4)}>
+        <rect x="352" y="52" width="130" height="240" rx="16" fill="#e8f2f0" stroke="#4a9a8a" strokeWidth="3" />
+        <rect x="356" y="236" width="122" height="52" fill="#d8c9a0" stroke="#a5885f" strokeWidth="2" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${380 + i * 30} 232 l-12 30 l30 6 l10 -32 Z`} fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2" />
+        ))}
+        <text x="417" y="320" textAnchor="middle" fontSize="11.5" fill="#4a7a6a" fontWeight="700">无菌培养基（蔗糖+激素）</text>
+      </g>
+      {/* 无菌提醒 */}
+      <g style={dim(active, 5)}>
+        <text x="24" y="362" fontSize="12.5" fill="#a54868" fontWeight="700">全程无菌操作——杂菌污染会让培养前功尽弃</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">植物组织培养流程 · 细胞全能性的证明（流程图）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'vacuole',
+    id: 'ascarid',
+    name: '蛔虫',
+    kicker: '线形动物 · 人体寄生虫（课外拓展）',
+    intro: '寄生在人体小肠的大型线形动物：体表角质层抵抗消化液，消化管简单靠吸食宿主营养，生殖器官超发达（日产卵 20 万枚）——寄生生活的"特化配置"。',
+    extension: true,
+    parts: [
+      { name: '角质层', desc: '体表光滑的角质层：抵抗宿主消化液的侵蚀，保护虫体。' },
+      { name: '口', desc: '围口唇瓣围绕的开口：吸附在肠壁上啃食半消化的食糜。' },
+      { name: '消化管', desc: '结构简单的直管：没有专门消化腺——直接吸食宿主已消化的营养。' },
+      { name: '生殖器官发达', desc: '雌虫每日产卵约 20 万枚：虫卵随粪便排出，经污染的食物水再感染新宿主。' },
+      { name: '感觉器官退化', desc: '寄生环境稳定，感觉器官退化——与自由生活的动物形成鲜明对比。' },
+      { name: '预防', desc: '饭前便后洗手、瓜果洗净、管理好粪便——切断感染途径是最好的"疫苗"。' },
+    ],
+    Svg: AscaridSvg,
+  },
+  {
+    id: 'giantPanda',
+    name: '大熊猫',
+    kicker: '哺乳纲 · 珍稀保护动物（课外拓展）',
+    intro: '中国特有的"活化石"（课外拓展）：明明是食肉目动物却 99% 吃竹子，腕骨特化出"伪拇指"便于握竹——如今仍是易危物种，保护级别为国家一级。',
+    extension: true,
+    parts: [
+      { name: '黑白相间', desc: '黑白体色在雪地与阴影中都有隐蔽作用，眼部"黑眼圈"可减少反光干扰视觉。' },
+      { name: '伪拇指', desc: '腕部籽骨特化成的"第六指"：与对掌配合牢牢握住竹子——趋同演化的经典案例。' },
+      { name: '食竹特化', desc: '保留食肉目的消化道却以竹为食：每天进食 10~18 小时才够能量。' },
+      { name: '繁殖困难', desc: '发情期短、幼崽出生时极小（约母体 1/900）——种群自然增长缓慢。' },
+      { name: '保护措施', desc: '栖息地保护+人工繁育+野化放归：受威胁等级已从"濒危"降为"易危"。' },
+    ],
+    Svg: GiantPandaSvg,
+  },
+  {
+    id: 'tissueCultureStages',
+    name: '植物组织培养流程',
+    kicker: '细胞工程 · 流程图（实验侧图解）',
+    intro: '离体的植物组织在无菌培养基上经"脱分化→愈伤组织→再分化"重新长成完整植株——证明高度分化的植物细胞仍然具有全能性。',
+    extension: true,
+    parts: [
+      { name: '外植体', desc: '离体的植物器官、组织或细胞：是组织培养的起点。' },
+      { name: '脱分化', desc: '已分化的细胞失去特有结构，转变成无定形状态的愈伤组织。' },
+      { name: '再分化', desc: '调整生长素与细胞分裂素的比例，愈伤组织重新分化出根和芽。' },
+      { name: '完整植株', desc: '试管苗移栽后长成开花结果的植株——证明植物细胞具有全能性。' },
+      { name: '无菌条件', desc: '培养基营养丰富，杂菌繁殖更快：全程需严格灭菌与无菌操作。' },
+    ],
+    Svg: TissueCultureStagesSvg,
+  },
+  {
+    id: 'neuron',
     name: '液泡',
     kicker: '细胞器 · 结构模式图',
     intro: '成熟植物细胞的"储水罐"：中央大液泡占据细胞体积的 90%，细胞液里溶着糖、色素与代谢废物——充水膨胀让细胞挺立，失水就萎蔫。',
