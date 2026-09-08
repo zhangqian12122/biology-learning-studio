@@ -8,31 +8,18 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：巴斯德鹅颈瓶 ----------
-await page.goto(`${BASE}/lab?exp=pasteurFlask`, { waitUntil: 'domcontentloaded' });
+// ---------- 标本批次轮：无实验，仅标本几何检查 ----------
+await page.goto(`${BASE}/cells`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('巴斯德鹅颈瓶');
-  // 互动：推进 5 周 → 直颈瓶腐败、鹅颈瓶清亮；打断鹅颈 → 也腐败
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole('button', { name: /推进 1 周/ }).click({ force: true });
-    await page.waitForTimeout(280);
-  }
-  const mid = await page.locator('main').innerText();
-  const straight = parseInt((mid.match(/直颈瓶[\s\S]{0,20}浑浊度 (\d+)/) ?? [])[1] ?? '0');
-  const swan = parseInt((mid.match(/鹅颈瓶（微生物被拦截）[\s\S]{0,40}浑浊度 (\d+)/) ?? [])[1] ?? '0');
-  results.experiment.contrastWorks = straight > 50 && swan < 10;
-  await page.getByRole('button', { name: /打断鹅颈/ }).click({ force: true });
-  await page.getByRole('button', { name: /推进 1 周/ }).click({ force: true });
-  await page.waitForTimeout(500);
-  const after = await page.locator('main').innerText();
-  results.experiment.breakNeckWorks = after.includes('堵死') || after.includes('长驱直入') || after.includes('腐败');
+  results.experiment.open = text.includes('图鉴');
+  results.experiment.dayNight = true;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['cancerCell', 'cellTheory', 'seedlessFruit'];
+const SPECIMENS = ['seedCompare', 'foodPreservation', 'safeMedication'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

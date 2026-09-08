@@ -5049,8 +5049,8 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'verticalLayers'] },
 ];
 
@@ -7539,9 +7539,181 @@ function SeedlessFruitSvg({ active }: { active: number | null; open?: boolean })
 }
 
 
+/* ================= 菜豆种子与玉米种子对比 ================= */
+
+function SeedCompareSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 菜豆种子（左） */}
+      <g style={dim(active, 0)}>
+        <path d="M60 130 Q 44 210 74 268 Q 106 310 150 290 Q 186 262 176 200 Q 166 138 126 118 Q 88 106 60 130 Z" fill="#e8d8b8" stroke="#a5885f" strokeWidth="3" />
+        {/* 种皮 */}
+        <path d="M64 136 Q 50 206 78 262" fill="none" stroke="#c9a882" strokeWidth="2.4" />
+        <text x="34" y="112" fontSize="12.5" fill="#8a6a3a" fontWeight="700">种皮</text>
+        {/* 胚芽胚轴胚根 */}
+        <path d="M112 176 Q 128 172 142 180 L 142 194 Q 126 198 114 190 Z" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2" />
+        <text x="150" y="166" fontSize="12" fill="#2f7a4d" fontWeight="700">胚芽</text>
+        <line x1="146" y1="172" x2="136" y2="182" stroke="#2f7a4d" strokeWidth="1.3" />
+        <path d="M116 196 Q 112 218 118 240" fill="none" stroke="#8a671b" strokeWidth="4" />
+        <text x="56" y="250" fontSize="12" fill="#8a671b" fontWeight="700">胚根</text>
+        {/* 子叶（两片肥厚） */}
+        <path d="M84 150 Q 92 236 116 252 Q 96 262 82 244 Q 70 200 84 150 Z" fill="#f4e8c8" stroke="#c9a882" strokeWidth="2.2" />
+        <path d="M142 186 Q 138 238 116 252 Q 136 256 148 240 Q 158 210 142 186 Z" fill="#f4e8c8" stroke="#c9a882" strokeWidth="2.2" />
+        <text x="250" y="180" fontSize="12.5" fill="#8a6a2a" fontWeight="700">子叶 2 片（肥厚·储藏营养）</text>
+        <line x1="246" y1="186" x2="150" y2="200" stroke="#8a6a2a" strokeWidth="1.3" />
+        <text x="118" y="330" textAnchor="middle" fontSize="13.5" fill="#8a6a3a" fontWeight="800">菜豆种子（双子叶·无胚乳）</text>
+      </g>
+      {/* 玉米种子（右） */}
+      <g style={dim(active, 1)}>
+        <rect x="300" y="120" width="180" height="200" rx="18" fill="#f0d8a0" stroke="#b5953a" strokeWidth="3" />
+        {/* 果皮与种皮 */}
+        <rect x="300" y="120" width="180" height="26" fill="#e8c878" stroke="#b5953a" strokeWidth="2" />
+        <text x="390" y="112" textAnchor="middle" fontSize="12" fill="#8a6a2a" fontWeight="700">果皮与种皮（愈合）</text>
+        {/* 胚乳 */}
+        <rect x="308" y="150" width="164" height="120" fill="#f4e8c8" stroke="#c9a882" strokeWidth="2" />
+        <text x="390" y="216" textAnchor="middle" fontSize="12.5" fill="#8a6a2a" fontWeight="700">胚乳（储藏营养）</text>
+        {/* 胚（左下角） */}
+        <path d="M312 232 L336 232 L336 264 L312 264 Z" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2" />
+        <text x="324" y="252" textAnchor="middle" fontSize="10" fill="#2f5a1e" fontWeight="700">胚</text>
+        <text x="176" y="262" fontSize="12" fill="#2f7a4d" fontWeight="700">子叶 1 片（转运营养）</text>
+        <line x1="278" y1="256" x2="308" y2="252" stroke="#2f7a4d" strokeWidth="1.3" />
+        <text x="390" y="352" textAnchor="middle" fontSize="13.5" fill="#8a6a2a" fontWeight="800">玉米种子（单子叶·有胚乳）</text>
+      </g>
+      {/* 分隔线 */}
+      <line x1="262" y1="60" x2="262" y2="356" stroke="#a5885f" strokeWidth="1.6" strokeDasharray="7 5" />
+    </svg>
+  );
+}
+
+/* ================= 食品保存与防腐原理 ================= */
+
+function FoodPreservationSvg({ active }: { active: number | null; open?: boolean }) {
+  const methods = [
+    { icon: '🥫', title: '罐藏·高温灭菌', note: '高温杀死微生物后密封——隔绝空气与污染' },
+    { icon: '🧊', title: '冷藏·冷冻', note: '低温抑制微生物的繁殖（不能杀灭）' },
+    { icon: '🧂', title: '腌制·糖渍', note: '高盐高糖使微生物脱水（渗透失水）' },
+    { icon: '🍇', title: '晒干·脱水', note: '除去水分——微生物繁殖离不开水' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 核心原理 */}
+      <g style={dim(active, 0)}>
+        <rect x="40" y="36" width="440" height="52" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="58" textAnchor="middle" fontSize="13" fill="#8a671b" fontWeight="800">食品腐败的根源：微生物的生长繁殖</text>
+        <text x="260" y="78" textAnchor="middle" fontSize="11.5" fill="#a5761d">保存原理：杀菌（杀灭微生物）或抑菌（抑制其繁殖）</text>
+      </g>
+      {/* 四种方法 */}
+      {methods.map((m, i) => {
+        const x = 26 + (i % 2) * 244;
+        const y = 116 + Math.floor(i / 2) * 92;
+        return (
+          <g key={m.title} style={dim(active, i + 1)}>
+            <rect x={x} y={y} width="228" height="76" rx="12" fill="#ffffff" stroke="#13333a" strokeWidth="2.2" />
+            <text x={x + 18} y={y + 34} fontSize="22">{m.icon}</text>
+            <text x={x + 56} y={y + 30} fontSize="13" fill="#13333a" fontWeight="800">{m.title}</text>
+            <text x={x + 56} y={y + 54} fontSize="10.5" fill="#59767c">{m.note}</text>
+          </g>
+        );
+      })}
+      {/* 巴氏消毒提示 */}
+      <g style={dim(active, 0)}>
+        <rect x="26" y="316" width="468" height="46" rx="12" fill="#eaf4ea" stroke="#4a8a3a" strokeWidth="2.2" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12" fill="#2f7a4d" fontWeight="800">巴氏消毒法（60~70°C 加热 30 分钟）：既杀菌又保留风味——牛奶常用</text>
+        <text x="260" y="354" textAnchor="middle" fontSize="11.5" fill="#4a7a3a">发明者正是巴斯德——"微生物学之父"的日常遗产</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">食品保存原理 · 杀菌与抑菌（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 安全用药 ================= */
+
+function SafeMedicationSvg({ active }: { active: number | null; open?: boolean }) {
+  const rows = [
+    { name: '处方药（Rx）', note: '必须凭执业医师处方购买·遵医嘱使用', color: '#3d6a94' },
+    { name: '非处方药（OTC）', note: '可自行购买·按说明书使用', color: '#2f7a4d' },
+  ];
+  const rules = [
+    '看清说明书：适应症、用法用量、有效期、禁忌与不良反应',
+    '用药前明确诊断：不凭"经验"随意联合用药或加大剂量',
+    '抗生素是处方药：滥用会催生耐药菌（回顾耐药性实验）',
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 两类药 */}
+      {rows.map((r, i) => (
+        <g key={r.name} style={dim(active, i)}>
+          <rect x={26 + i * 240} y="52" width="228" height="72" rx="12" fill="#f4faf9" stroke={r.color} strokeWidth="2.4" />
+          <text x={140 + i * 240} y={82} textAnchor="middle" fontSize="13.5" fill={r.color} fontWeight="800">{r.name}</text>
+          <text x={140 + i * 240} y={108} textAnchor="middle" fontSize="11" fill="#59767c">{r.note}</text>
+        </g>
+      ))}
+      {/* 药盒示意 */}
+      <g style={dim(active, 0)}>
+        <rect x="60" y="146" width="170" height="60" rx="8" fill="#eaf2f8" stroke="#3d6a94" strokeWidth="2.2" />
+        <text x="76" y="172" fontSize="12" fill="#2c5a84" fontWeight="700">Rx</text>
+        <rect x="290" y="146" width="170" height="60" rx="8" fill="#eaf4ea" stroke="#2f7a4d" strokeWidth="2.2" />
+        <text x="306" y="172" fontSize="12" fill="#2f7a4d" fontWeight="700">OTC</text>
+        <text x="260" y="230" textAnchor="middle" fontSize="12.5" fill="#49676d" fontWeight="700">安全用药：先读说明书，再对症用药</text>
+      </g>
+      {/* 用药规则 */}
+      <g style={dim(active, 1)}>
+        <rect x="40" y="252" width="440" height="102" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="62" y="280" fontSize="12" fill="#6a4a1a" fontWeight="700">✓ {rules[0]}</text>
+        <text x="62" y="306" fontSize="12" fill="#6a4a1a" fontWeight="700">✓ {rules[1]}</text>
+        <text x="62" y="332" fontSize="12" fill="#6a4a1a" fontWeight="700">✓ {rules[2]}</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">安全用药常识 · 处方药与非处方药（课外拓展）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'cancerCell',
+    id: 'seedCompare',
+    name: '菜豆种子与玉米种子',
+    kicker: '种子 · 双子叶与单子叶对比图',
+    intro: '菜豆种子有 2 片肥厚子叶、无胚乳；玉米种子只有 1 片子叶、有胚乳——"单双"之分就藏在种子里，是双子叶与单子叶植物的名称由来。',
+    parts: [
+      { name: '种皮', desc: '保护种子内部结构；玉米的果皮与种皮紧密愈合，不易分开。' },
+      { name: '胚芽·胚轴·胚根', desc: '胚的三大部件：新植物的茎叶、连接段与根都由它们发育而来。' },
+      { name: '子叶（菜豆 2 片）', desc: '双子叶植物的营养仓库：肥厚储藏养料，萌发时拱出地面变绿。' },
+      { name: '胚乳（玉米有）', desc: '单子叶植物的营养储藏处：子叶只有 1 片，负责从胚乳转运营养给胚。' },
+      { name: '胚', desc: '种子的核心：胚芽+胚轴+胚根+子叶合称胚——它是新植物体的幼体。' },
+    ],
+    Svg: SeedCompareSvg,
+  },
+  {
+    id: 'foodPreservation',
+    name: '食品保存与防腐',
+    kicker: '微生物应用 · 原理图（课外拓展）',
+    intro: '食品腐败的根源是微生物的生长繁殖：杀菌（高温、辐照）或抑菌（低温、干燥、高盐高糖）——所有保存方法都逃不出这两条思路。',
+    extension: true,
+    parts: [
+      { name: '高温灭菌+密封', desc: '罐藏、真空包装：先杀死微生物再隔绝污染，保质期最长。' },
+      { name: '低温抑菌', desc: '冷藏冷冻不能杀死微生物，只能抑制其繁殖——解冻后要尽快食用。' },
+      { name: '脱水与腌制', desc: '晒干、糖渍、盐渍：让微生物渗透失水无法繁殖——果脯蜜饯的原理。' },
+      { name: '巴氏消毒法', desc: '60~70°C 加热 30 分钟杀灭致病菌又不破坏风味——牛奶与啤酒常用。' },
+    ],
+    Svg: FoodPreservationSvg,
+  },
+  {
+    id: 'safeMedication',
+    name: '安全用药',
+    kicker: '用药与健康 · 常识图（课外拓展）',
+    intro: '处方药（Rx）必须凭医师处方购买使用；非处方药（OTC）可自行购买——但无论哪种，先读说明书、对症用药、不滥用抗生素都是底线。',
+    extension: true,
+    parts: [
+      { name: '处方药（Rx）', desc: '必须凭执业医师处方才能购买：用药风险高，须严格遵医嘱使用。' },
+      { name: '非处方药（OTC）', desc: '经长期使用公认安全，可自行判断购买：分甲类（红标）与乙类（绿标）。' },
+      { name: '读说明书', desc: '看清适应症、用法用量、有效期与禁忌——过期药与变质药坚决不吃。' },
+      { name: '不滥用抗生素', desc: '抗生素是处方药：滥用会加速耐药菌进化（见耐药性进化实验），必须遵医嘱足量足疗程。' },
+    ],
+    Svg: SafeMedicationSvg,
+  },
+  {
+    id: 'neuron',
     name: '细胞的癌变',
     kicker: '细胞命运 · 对比模式图',
     intro: '在物理、化学或病毒致癌因子作用下，原癌基因与抑癌基因发生突变：细胞变成能无限增殖、形态畸形、易分散转移的"永生"细胞——这就是癌变。',
