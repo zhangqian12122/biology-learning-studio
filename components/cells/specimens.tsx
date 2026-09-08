@@ -8103,7 +8103,178 @@ function HumoralImmunitySvg({ active }: { active: number | null; open?: boolean 
 }
 
 
+/* ================= 果实类型（肉质果与干果） ================= */
+
+function FruitTypesSvg({ active }: { active: number | null; open?: boolean }) {
+  const fruits = [
+    { icon: '🍅', name: '浆果', note: '番茄·葡萄——果肉多汁', color: '#c9534a' },
+    { icon: '🍑', name: '核果', note: '桃·杏——内果皮成硬核', color: '#e88a5a' },
+    { icon: '🍐', name: '梨果', note: '苹果·梨——假果（花托发育）', color: '#a8c96a' },
+    { icon: '🥜', name: '荚果', note: '大豆·豌豆——成熟后沿缝裂开', color: '#8ab86a' },
+    { icon: '🌰', name: '坚果', note: '板栗·橡子——果皮坚硬', color: '#a5761d' },
+    { icon: '🌾', name: '颖果', note: '小麦·玉米——果皮种皮愈合', color: '#c9a05a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {fruits.map((f, i) => (
+        <g key={f.name} style={dim(active, i)}>
+          <rect x={20 + (i % 3) * 166} y={56 + Math.floor(i / 3) * 136} width="150" height="118" rx="14" fill="#ffffff" stroke="#13333a" strokeWidth="2.4" />
+          <text x={95 + (i % 3) * 166} y={104 + Math.floor(i / 3) * 136} textAnchor="middle" fontSize="30">{f.icon}</text>
+          <text x={95 + (i % 3) * 166} y={134 + Math.floor(i / 3) * 136} textAnchor="middle" fontSize="13.5" fill={f.color} fontWeight="800">{f.name}</text>
+          <text x={95 + (i % 3) * 166} y={156 + Math.floor(i / 3) * 136} textAnchor="middle" fontSize="10" fill="#59767c">{f.note}</text>
+        </g>
+      ))}
+      <g style={dim(active, 0)}>
+        <text x="260" y="352" textAnchor="middle" fontSize="12.5" fill="#49676d" fontWeight="700">肉质果（浆果·核果·梨果）vs 干果（荚果·坚果·颖果）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">果实的类型 · 由子房发育而来（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 干细胞（分化潜能） ================= */
+
+function StemCellsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 全能干细胞 */}
+      <g style={dim(active, 0)}>
+        <circle cx="100" cy="90" r="34" fill="#d8c8ee" stroke="#7a4a8a" strokeWidth="3" />
+        <circle cx="100" cy="90" r="16" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="1.8" />
+        <text x="100" y="142" textAnchor="middle" fontSize="12.5" fill="#6a4a9a" fontWeight="800">受精卵（全能）</text>
+        <text x="100" y="160" textAnchor="middle" fontSize="11" fill="#6a4a9a">能发育成完整个体</text>
+      </g>
+      {/* 分化箭头 */}
+      <g style={dim(active, 0)}>
+        <path d="M140 90 L 208 90" fill="none" stroke="#59767c" strokeWidth="2.6" markerEnd="url(#sc-arrow)" />
+        <text x="172" y="80" textAnchor="middle" fontSize="10.5" fill="#59767c" fontWeight="600">分裂分化</text>
+      </g>
+      {/* 多能干细胞 */}
+      <g style={dim(active, 1)}>
+        <circle cx="250" cy="90" r="28" fill="#c8e2d8" stroke="#2f7a6a" strokeWidth="3" />
+        <text x="250" y="146" textAnchor="middle" fontSize="12.5" fill="#2f7a6a" fontWeight="800">胚胎干细胞（多能）</text>
+      </g>
+      {/* 三分支 */}
+      <g style={dim(active, 2)}>
+        <path d="M262 116 Q 320 140 368 168" fill="none" stroke="#59767c" strokeWidth="2.4" markerEnd="url(#sc-arrow)" />
+        <path d="M268 100 Q 330 108 396 122" fill="none" stroke="#59767c" strokeWidth="2.4" markerEnd="url(#sc-arrow)" />
+        <path d="M262 78 Q 320 62 386 62" fill="none" stroke="#59767c" strokeWidth="2.4" markerEnd="url(#sc-arrow)" />
+        <rect x="380" y="150" width="118" height="36" rx="8" fill="#f2c8c0" stroke="#b0483a" strokeWidth="2" />
+        <text x="439" y="174" textAnchor="middle" fontSize="11.5" fill="#8a2a1a" fontWeight="700">肌肉细胞</text>
+        <rect x="396" y="98" width="102" height="36" rx="8" fill="#c8e2ba" stroke="#3f7f3a" strokeWidth="2" />
+        <text x="447" y="122" textAnchor="middle" fontSize="11.5" fill="#2f5a1e" fontWeight="700">神经细胞</text>
+        <rect x="292" y="40" width="102" height="36" rx="8" fill="#c8d8e8" stroke="#3d6a94" strokeWidth="2" />
+        <text x="343" y="64" textAnchor="middle" fontSize="11.5" fill="#1e4a68" fontWeight="700">上皮细胞</text>
+      </g>
+      {/* 说明 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="300" width="440" height="56" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">干细胞：保留分裂分化能力的"未分化细胞"——骨髓造血干细胞已用于白血病治疗</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#a5761d">分化方向：受细胞内基因表达调控 + 周围环境信号共同决定</text>
+      </g>
+      <defs>
+        <marker id="sc-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#59767c" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">干细胞与细胞分化 · 全能性逐级收窄（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 遗传密码（密码子表简化） ================= */
+
+function GeneticCodeSvg({ active }: { active: number | null; open?: boolean }) {
+  const codons = [
+    { c: 'AUG', aa: '甲硫氨酸（起始）', color: '#4a9a6a' },
+    { c: 'UUU / UUC', aa: '苯丙氨酸', color: '#c9a05a' },
+    { c: 'GAA / GAG', aa: '谷氨酸', color: '#5a8ac9' },
+    { c: 'UAA / UAG / UGA', aa: '终止密码子', color: '#b0483a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* mRNA 链示意 */}
+      <g style={dim(active, 0)}>
+        <text x="36" y="66" fontSize="13" fill="#13333a" fontWeight="800">mRNA 上的三个相邻碱基 = 1 个密码子</text>
+        {['A', 'U', 'G'].map((b, i) => (
+          <g key={i}>
+            <rect x={230 + i * 34} y={80} width="28" height="26" rx="5" fill={i === 0 ? '#7ab86a' : i === 1 ? '#cfe8e2' : '#a8cf98'} stroke="#3f7f3a" strokeWidth="1.8" />
+            <text x={244 + i * 34} y={98} textAnchor="middle" fontSize="12" fill="#2f5a1e" fontWeight="800">{b}</text>
+          </g>
+        ))}
+        <text x="352" y="98" fontSize="11.5" fill="#59767c">→ 甲硫氨酸</text>
+      </g>
+      {/* 密码子表样例 */}
+      <g style={dim(active, 1)}>
+        {codons.map((c, i) => (
+          <g key={c.c}>
+            <rect x="36" y={126 + i * 46} width="300" height="34" rx="8" fill="#f4faf9" stroke={c.color} strokeWidth="2" />
+            <text x="52" y={148 + i * 46} fontSize="12.5" fill="#13333a" fontWeight="800">{c.c}</text>
+            <text x="200" y={148 + i * 46} fontSize="12" fill="#49676d">{c.aa}</text>
+          </g>
+        ))}
+      </g>
+      {/* 要点 */}
+      <g style={dim(active, 2)}>
+        <rect x="352" y="126" width="152" height="176" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="428" y="152" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">三个要点</text>
+        <text x="366" y="178" fontSize="11" fill="#6a4a1a">① 64 个密码子（3 碱基一组）</text>
+        <text x="366" y="200" fontSize="11" fill="#6a4a1a">② 简并性：多对一</text>
+        <text x="366" y="222" fontSize="11" fill="#6a4a1a">③ 通用性：几乎所有生物共用</text>
+        <text x="366" y="244" fontSize="11" fill="#6a4a1a">④ 3 个终止密码子不编码氨基酸</text>
+        <text x="366" y="266" fontSize="11" fill="#6a4a1a">⑤ 连续阅读·一个碱基不重复</text>
+        <text x="366" y="290" fontSize="11" fill="#a54868" fontWeight="700">突变一个碱基 → 可能改变</text>
+        <text x="366" y="308" fontSize="11" fill="#a54868" fontWeight="700">一个氨基酸（错义突变）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">遗传密码 · mRNA 密码子与氨基酸的对应（课外拓展）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'fruitTypes',
+    name: '果实的类型',
+    kicker: '果实 · 分类对比图',
+    intro: '果实由子房发育而来，按成熟后果皮的性质分为肉质果与干果：浆果多汁、核果有硬核、荚果沿缝裂开、坚果坚硬——可食部分各不相同。',
+    parts: [
+      { name: '浆果', desc: '外果皮薄、中果皮果肉多汁：番茄、葡萄、柿子。' },
+      { name: '核果', desc: '内果皮木质化成硬核，核内含一枚种子：桃、杏、李、樱桃。' },
+      { name: '梨果', desc: '主要由花托发育而成的假果：苹果、梨——我们吃的"果肉"多是花托。' },
+      { name: '荚果', desc: '豆类的果实：成熟后沿背腹两缝线裂开，露出种子（大豆、豌豆）。' },
+      { name: '坚果与颖果', desc: '果皮坚硬（板栗、橡子）；禾谷类的颖果果皮种皮愈合（小麦、玉米）。' },
+    ],
+    Svg: FruitTypesSvg,
+  },
+  {
+    id: 'stemCells',
+    name: '干细胞',
+    kicker: '细胞分化 · 分化潜能图（课外拓展）',
+    intro: '干细胞是保留分裂与分化能力的"未分化细胞"：受精卵全能性最强，胚胎干细胞是多能，成体干细胞（如造血干细胞）为专能——分化潜能逐级收窄。',
+    extension: true,
+    parts: [
+      { name: '受精卵（全能性）', desc: '能发育成完整个体及胎盘等附属结构——全能性最高。' },
+      { name: '胚胎干细胞', desc: '来自早期胚胎的内细胞团：多能，可分化为体内几乎所有类型的细胞。' },
+      { name: '成体干细胞', desc: '存在于已分化组织中的专能干细胞：如骨髓造血干细胞可分化为各种血细胞。' },
+      { name: '应用前景', desc: '造血干细胞移植已用于白血病治疗；诱导多能干细胞（iPS）开辟了再生医学新途径。' },
+    ],
+    Svg: StemCellsSvg,
+  },
+  {
+    id: 'geneticCode',
+    name: '遗传密码（密码子）',
+    kicker: '基因表达 · 密码子表（课外拓展）',
+    intro: 'mRNA 上每三个相邻碱基决定一个氨基酸，称为密码子：64 个密码子中 61 个编码氨基酸、3 个是终止信号——密码子几乎对所有生物通用，这是基因工程的基石。',
+    extension: true,
+    parts: [
+      { name: '密码子', desc: 'mRNA 上决定一个氨基酸的三个相邻碱基：共 64 种组合（4³）。' },
+      { name: '起始与终止', desc: 'AUG 既编码甲硫氨酸又是起始信号；UAA、UAG、UGA 是终止密码子，不编码氨基酸。' },
+      { name: '简并性', desc: '61 个编码密码子对应 20 种氨基酸：多种密码子可编码同一种氨基酸——减少突变危害。' },
+      { name: '通用性', desc: '从细菌到人类几乎共用同一套密码子——基因在不同物种间"通用"的原因。' },
+    ],
+    Svg: GeneticCodeSvg,
+  },
   {
     id: 'embryoCompare',
     name: '胚胎发育的比较',

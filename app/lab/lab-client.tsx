@@ -4,6 +4,7 @@ import { lazy, Suspense, useState, type ComponentType, type LazyExoticComponent 
 import Link from 'next/link';
 import {
   Activity,
+  Heart,
   Pill,
   Sun,
   Syringe,
@@ -77,6 +78,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   nuclearTransfer: Baby,
   lacOperon: KeyRound,
   crispr: Scissors,
+  geneTherapy: Heart,
   greenhouseGas: Lightbulb,
   vaccineResponse: Syringe,
   phototropism: Sun,
@@ -155,6 +157,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   nuclearTransfer: () => import('@/components/lab/nuclear-transfer-lab').then(({ NuclearTransferLab }) => ({ default: NuclearTransferLab })),
   lacOperon: () => import('@/components/lab/lac-operon-lab').then(({ LacOperonLab }) => ({ default: LacOperonLab })),
   crispr: () => import('@/components/lab/crispr-lab').then(({ CrisprLab }) => ({ default: CrisprLab })),
+  geneTherapy: () => import('@/components/lab/gene-therapy-lab').then(({ GeneTherapyLab }) => ({ default: GeneTherapyLab })),
   greenhouseGas: () => import('@/components/lab/greenhouse-gas-lab').then(({ GreenhouseGasLab }) => ({ default: GreenhouseGasLab })),
   vaccineResponse: () => import('@/components/lab/vaccine-response-lab').then(({ VaccineResponseLab }) => ({ default: VaccineResponseLab })),
   phototropism: () => import('@/components/lab/phototropism-lab').then(({ PhototropismLab }) => ({ default: PhototropismLab })),

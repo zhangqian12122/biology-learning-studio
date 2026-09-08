@@ -611,6 +611,7 @@ export type ExperimentId =
   | 'pasteurFlask'
   | 'cellRespiration'
   | 'engelmann'
+  | 'geneTherapy'
   | 'crossingOver'
   | 'apicalDominance'
   | 'markRecapture'
@@ -1041,6 +1042,14 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
   },
+  geneTherapy: {
+    title: '基因治疗：ADA 缺陷症案例',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '用改造病毒把正常基因送回患者 T 细胞，重建造免疫功能。',
+    relatedBook: 'technology',
+    relatedModule: '基因工程与 PCR 技术',
+    extension: true,
+  },
   crossingOver: {
     title: '交叉互换与基因重组',
     kicker: '必修 2 · 遗传与进化',
@@ -1216,7 +1225,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'crispr', 'embryoTransfer', 'nuclearTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'crispr', 'geneTherapy', 'embryoTransfer', 'nuclearTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
   },
 ];
 
@@ -1297,6 +1306,7 @@ export const experimentOrder: ExperimentId[] = [
   'nuclearTransfer',
   'lacOperon',
   'crispr',
+  'geneTherapy',
   'choiceMedia',
   // 课外拓展
   'millerUrey',
