@@ -5049,8 +5049,8 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'verticalLayers'] },
 ];
 
@@ -7297,9 +7297,158 @@ function PcrStagesSvg({ active }: { active: number | null; open?: boolean }) {
 }
 
 
+/* ================= 植物的主要组织 ================= */
+
+function PlantTissuesSvg({ active }: { active: number | null; open?: boolean }) {
+  const cards = [
+    { x: 20, y: 56, icon: '🌱', title: '分生组织', note: '细胞小核大 · 不断分裂', color: '#7a4a8a' },
+    { x: 190, y: 56, icon: '🛡️', title: '保护组织', note: '表皮 · 减少失水防病虫', color: '#3f7f3a' },
+    { x: 360, y: 56, icon: '🍎', title: '营养组织', note: '叶肉果肉 · 储藏与光合', color: '#2f7a4d' },
+    { x: 20, y: 212, icon: '🚰', title: '输导组织', note: '导管运水 · 筛管运糖', color: '#b5603a' },
+    { x: 190, y: 212, icon: '🏋️', title: '机械组织', note: '厚壁细胞 · 支撑加固', color: '#8a671b' },
+    { x: 360, y: 212, icon: '🌿', title: '举例：叶', note: '四种组织在叶中协作', color: '#4a7a9a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {cards.map((c, i) => (
+        <g key={c.title} style={dim(active, i)}>
+          <rect x={c.x} y={c.y} width="140" height="128" rx="14" fill="#ffffff" stroke="#13333a" strokeWidth="2.4" />
+          <text x={c.x + 70} y={c.y + 44} textAnchor="middle" fontSize="28">{c.icon}</text>
+          <text x={c.x + 70} y={c.y + 74} textAnchor="middle" fontSize="14.5" fill={c.color} fontWeight="800">{c.title}</text>
+          <text x={c.x + 70} y={c.y + 98} textAnchor="middle" fontSize="10.5" fill="#59767c">{c.note.split(' · ')[0]}</text>
+          <text x={c.x + 70} y={c.y + 114} textAnchor="middle" fontSize="10.5" fill="#59767c">{c.note.split(' · ')[1] ?? ''}</text>
+        </g>
+      ))}
+      <g style={dim(active, 0)}>
+        <text x="260" y="366" textAnchor="middle" fontSize="12.5" fill="#49676d" fontWeight="700">分生组织 = 植物的"干细胞"：其余组织都由它分化而来</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">植物的主要组织 · 分工协作完成生命活动</text>
+    </svg>
+  );
+}
+
+/* ================= 维生素与缺乏症 ================= */
+
+function VitaminsSvg({ active }: { active: number | null; open?: boolean }) {
+  const rows = [
+    { name: '维生素 A', lack: '夜盲症·皮肤干燥', food: '动物肝脏 · 胡萝卜（β-胡萝卜素转化）', color: '#4a9a5a' },
+    { name: '维生素 B₁', lack: '脚气病·神经炎', food: '粗粮 · 瘦肉 · 豆类', color: '#c98a1d' },
+    { name: '维生素 C', lack: '坏血病·牙龈出血', food: '新鲜蔬菜水果（柑橘·猕猴桃）', color: '#4a9ac9' },
+    { name: '维生素 D', lack: '佝偻病·骨质疏松', food: '蛋黄 · 鱼肝油（晒太阳也能合成）', color: '#c9708a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <text x="36" y="52" fontSize="13" fill="#13333a" fontWeight="800">维生素不是能源物质，也不构成细胞——但缺乏就会生病</text>
+      </g>
+      {rows.map((r, i) => {
+        const y = 72 + i * 66;
+        return (
+          <g key={r.name} style={dim(active, i + 1)}>
+            <rect x="30" y={y} width="460" height="54" rx="10" fill="#f4faf9" stroke={r.color} strokeWidth="2.2" />
+            <text x="48" y={y + 24} fontSize="13.5" fill={r.color} fontWeight="800">{r.name}</text>
+            <text x="48" y={y + 44} fontSize="11.5" fill="#59767c">食物来源：{r.food}</text>
+            <text x="270" y={y + 24} fontSize="12" fill="#a53a2c" fontWeight="700">缺乏 → {r.lack}</text>
+          </g>
+        );
+      })}
+      <g style={dim(active, 0)}>
+        <text x="36" y="352" fontSize="12.5" fill="#49676d" fontWeight="700">均衡饮食 = 各类维生素齐全；长期偏食是缺乏症的根源</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">主要维生素与缺乏症 · 均衡营养（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 外来物种入侵 ================= */
+
+function InvasiveSpeciesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 本地生态（左） */}
+      <g style={dim(active, 0)}>
+        <rect x="20" y="60" width="220" height="150" rx="12" fill="#eaf4ea" stroke="#4a8a3a" strokeWidth="2.4" />
+        <text x="130" y="86" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="800">本地生态系统（平衡）</text>
+        <text x="130" y="116" textAnchor="middle" fontSize="13">🌾 稻田</text>
+        <text x="130" y="142" textAnchor="middle" fontSize="13">🐸 蛙 · 🐟 鱼 · 🦗 虫</text>
+        <text x="130" y="168" textAnchor="middle" fontSize="12" fill="#59767c">食物网复杂 · 稳定</text>
+      </g>
+      {/* 入侵后（右） */}
+      <g style={dim(active, 1)}>
+        <rect x="280" y="60" width="220" height="150" rx="12" fill="#f8ece2" stroke="#b5603a" strokeWidth="2.4" />
+        <text x="390" y="86" textAnchor="middle" fontSize="13" fill="#a5601d" fontWeight="800">入侵后（失衡）</text>
+        <text x="390" y="116" textAnchor="middle" fontSize="13">🌿 水葫芦疯长覆盖水面</text>
+        <text x="390" y="142" textAnchor="middle" fontSize="13">🐟 鱼 · 🐸 蛙 大量减少</text>
+        <text x="390" y="168" textAnchor="middle" fontSize="12" fill="#59767c">本地物种被排挤 · 多样性下降</text>
+      </g>
+      {/* 入侵箭头 */}
+      <g style={dim(active, 1)}>
+        <path d="M244 130 L276 130" fill="none" stroke="#b0483a" strokeWidth="4" markerEnd="url(#is-arrow)" />
+        <text x="260" y="118" textAnchor="middle" fontSize="11.5" fill="#b0483a" fontWeight="800">引入水葫芦</text>
+      </g>
+      {/* 典型入侵物种 */}
+      <g style={dim(active, 2)}>
+        <rect x="30" y="240" width="460" height="112" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="266" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">常见入侵物种：水葫芦 · 福寿螺 · 加拿大一枝黄花 · 红火蚁 · 巴西龟</text>
+        <text x="260" y="292" textAnchor="middle" fontSize="12" fill="#7a5a1d">入侵成功的原因：环境适宜 + 缺少天敌 + 繁殖力强</text>
+        <text x="260" y="322" textAnchor="middle" fontSize="12.5" fill="#a5533c" fontWeight="700">不要随意放生或弃养外来宠物、植物——防控入侵人人有责！</text>
+      </g>
+      <defs>
+        <marker id="is-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#b0483a" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">外来物种入侵 · 生态平衡的隐形杀手（课外拓展）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'silkwormLife',
+    id: 'plantTissues',
+    name: '植物的主要组织',
+    kicker: '植物体 · 五大组织对比图',
+    intro: '植物体由五大组织构成：分生组织是"干细胞"源源不断分裂，其余组织分工保护、制造养料、运输与支撑——一棵树就是一支协作团队。',
+    parts: [
+      { name: '分生组织', desc: '细胞小、壁薄、核大、分裂能力强：根尖与茎的生长点，不断产生新细胞。' },
+      { name: '保护组织', desc: '根、茎、叶表面的表皮：细胞排列紧密，减少水分散失、抵御病虫。' },
+      { name: '营养组织', desc: '叶肉、果肉等：细胞壁薄、液泡大，储藏养料；含叶绿体的还能光合。' },
+      { name: '输导组织', desc: '导管运输水与无机盐，筛管运输有机物——植物体内的"管道系统"。' },
+      { name: '机械组织', desc: '细胞壁增厚的厚壁细胞：支撑加固，让茎叶挺立伸展。' },
+    ],
+    Svg: PlantTissuesSvg,
+  },
+  {
+    id: 'vitamins',
+    name: '维生素与缺乏症',
+    kicker: '营养与健康 · 对照表（课外拓展）',
+    intro: '维生素既不供能也不构成细胞，却是新陈代谢不可缺少的"小助手"：缺 A 夜盲、缺 B₁ 脚气、缺 C 坏血、缺 D 佝偻——均衡饮食就是最好的"药"。',
+    extension: true,
+    parts: [
+      { name: '维生素 A', desc: '缺乏引起夜盲症（暗处看不清）与皮肤干燥；肝脏与胡萝卜是良好来源。' },
+      { name: '维生素 B₁', desc: '缺乏引起脚气病与神经炎；粗粮、瘦肉、豆类含量丰富——主食别太精。' },
+      { name: '维生素 C', desc: '缺乏引起坏血病（牙龈出血）：新鲜蔬果富含；久煮易破坏，宜生吃或快炒。' },
+      { name: '维生素 D', desc: '促进钙吸收，缺乏引起儿童佝偻病与成人骨质疏松；晒太阳皮肤也能合成。' },
+    ],
+    Svg: VitaminsSvg,
+  },
+  {
+    id: 'invasiveSpecies',
+    name: '外来物种入侵',
+    kicker: '生态平衡 · 案例图（课外拓展）',
+    intro: '水葫芦、福寿螺、加拿大一枝黄花……外来物种在新环境里缺少天敌、繁殖力强，会挤占本地物种的生存空间——保护生态平衡从不随意放生开始。',
+    extension: true,
+    parts: [
+      { name: '什么是入侵', desc: '外来物种被人为引入新环境后疯狂繁殖，排挤本地物种、破坏生态平衡。' },
+      { name: '入侵成功原因', desc: '新环境气候适宜 + 缺少天敌制约 + 繁殖力极强——三者缺一不可。' },
+      { name: '典型代表', desc: '水葫芦堵塞河道、福寿螺啃食水稻、红火蚁攻击人畜——每年造成巨额损失。' },
+      { name: '防控措施', desc: '不随意放生弃养、加强口岸检疫、物理清除与生物防治相结合。' },
+    ],
+    Svg: InvasiveSpeciesSvg,
+  },
+  {
+    id: 'neuron',
     name: '家蚕的发育',
     kicker: '昆虫 · 完全变态发育图',
     intro: '家蚕一生经历卵、幼虫、蛹、成虫四个阶段：幼虫取食蜕皮后吐丝结茧化蛹，不食不动的蛹内发生"大改造"，羽化成蚕蛾——完全变态发育。',

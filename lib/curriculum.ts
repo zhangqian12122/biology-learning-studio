@@ -607,6 +607,7 @@ export type ExperimentId =
   | 'antibioticResistance'
   | 'ecologicalNiche'
   | 'crispr'
+  | 'foodChain'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -1007,6 +1008,13 @@ export const experimentMeta: Record<
     relatedModule: '基因工程与 PCR 技术',
     extension: true,
   },
+  foodChain: {
+    title: '食物链与营养级搭建',
+    kicker: '选择性必修 2 · 生物与环境',
+    description: '从生产者开始按捕食关系搭起食物链，标出营养级看能量逐级递减。',
+    relatedBook: 'ecology',
+    relatedModule: '生态系统能量与物质循环',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1163,7 +1171,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecologicalNiche', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecologicalNiche', 'foodChain', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose'],
   },
   {
     name: '生物技术',
@@ -1229,6 +1237,7 @@ export const experimentOrder: ExperimentId[] = [
   'mulberryFishPond',
   'leafDecompose',
   'ecologicalNiche',
+  'foodChain',
   'bloodType',
   'vaccineResponse',
   'urineFormation',

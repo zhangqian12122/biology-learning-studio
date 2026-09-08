@@ -8,24 +8,33 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：CRISPR 基因剪辑 ----------
-await page.goto(`${BASE}/lab?exp=crispr`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：食物链与营养级搭建 ----------
+await page.goto(`${BASE}/lab?exp=foodChain`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('CRISPR 基因剪辑');
-  // 互动：三步走完 → 剪辑完成
-  for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /设计向导 RNA|Cas9 定位并切割|提供正常模板修复/ }).click({ force: true });
-    await page.waitForTimeout(400);
-  }
+  results.experiment.open = text.includes('食物链与营养级');
+  // 互动：先点蘑菇（分解者）看提示；再按 草→兔→蛇→鹰 搭建
+  await page.getByRole('button', { name: /蘑菇/ }).click({ force: true });
+  await page.waitForTimeout(400);
+  const decoy = await page.locator('main').innerText();
+  results.experiment.decoyHint = decoy.includes('分解者');
+  await page.getByRole('button', { name: /草/ }).click({ force: true });
+  await page.waitForTimeout(300);
+  await page.getByRole('button', { name: /兔/ }).click({ force: true });
+  await page.waitForTimeout(300);
+  await page.getByRole('button', { name: /蛇/ }).click({ force: true });
+  await page.waitForTimeout(300);
+  await page.getByRole('button', { name: /鹰/ }).click({ force: true });
+  await page.waitForTimeout(500);
   const done = await page.locator('main').innerText();
-  results.experiment.edited = done.includes('基因编辑成功');
+  results.experiment.chainComplete = done.includes('四个营养级搭建完成');
+  results.experiment.energyShown = done.includes('能量 ≈') && done.includes('三级消费者');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['silkwormLife', 'lichen', 'pcrStages'];
+const SPECIMENS = ['plantTissues', 'vitamins', 'invasiveSpecies'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
