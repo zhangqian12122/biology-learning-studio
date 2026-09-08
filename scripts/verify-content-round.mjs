@@ -8,18 +8,24 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 标本批次轮：无实验，仅标本几何检查 ----------
-await page.goto(`${BASE}/cells`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：有氧呼吸三阶段 ----------
+await page.goto(`${BASE}/lab?exp=cellRespiration`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('图鉴');
-  results.experiment.dayNight = true;
+  results.experiment.open = text.includes('有氧呼吸三阶段');
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole('button', { name: /第[一二三]阶段/ }).click({ force: true });
+    await page.waitForTimeout(450);
+  }
+  const done = await page.locator('main').innerText();
+  results.experiment.threeStages = done.includes('有氧呼吸完成') && done.includes('30');
+  results.experiment.o2Shown = done.includes('O₂ 进入');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['seedCompare', 'foodPreservation', 'safeMedication'];
+const SPECIMENS = ['vacuole', 'homologousOrgans', 'adaptations'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };

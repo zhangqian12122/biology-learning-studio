@@ -609,6 +609,7 @@ export type ExperimentId =
   | 'crispr'
   | 'foodChain'
   | 'pasteurFlask'
+  | 'cellRespiration'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -1023,6 +1024,13 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '发酵工程与过程控制',
   },
+  cellRespiration: {
+    title: '有氧呼吸三阶段模拟',
+    kicker: '必修 1 · 分子与细胞',
+    description: '跟随葡萄糖进入细胞质与线粒体，逐段追踪 CO₂、水和大量 ATP 的产生。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1159,7 +1167,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '酶与代谢',
     icon: '⚗️',
-    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'pigment', 'greenhouseGas'],
+    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'cellRespiration', 'pigment', 'greenhouseGas'],
   },
   {
     name: '细胞与膜',
@@ -1206,6 +1214,7 @@ export const experimentOrder: ExperimentId[] = [
   'greenhouseGas',
   'pigment',
   'photosynthesis',
+  'cellRespiration',
   'mitosisObservation',
   // 必修 2 · 遗传与进化
   'traitSeparation',

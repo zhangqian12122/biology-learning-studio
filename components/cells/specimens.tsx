@@ -5048,7 +5048,7 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'verticalLayers'] },
@@ -7669,9 +7669,195 @@ function SafeMedicationSvg({ active }: { active: number | null; open?: boolean }
 }
 
 
+/* ================= 液泡（植物细胞特有） ================= */
+
+function VacuoleSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 细胞轮廓 */}
+      <g style={dim(active, 0)}>
+        <rect x="40" y="50" width="440" height="290" rx="24" fill="#eaf4ea" stroke="#3f7f3a" strokeWidth="3.5" />
+        <text x="412" y="42" fontSize="12.5" fill="#3f7f3a" fontWeight="700">细胞壁 + 细胞膜</text>
+        {/* 细胞核 */}
+        <circle cx="96" cy="102" r="24" fill="#e0c8ee" stroke="#7a4a8a" strokeWidth="2.5" />
+        <text x="96" y="107" textAnchor="middle" fontSize="11" fill="#6a4a9a" fontWeight="700">细胞核</text>
+      </g>
+      {/* 中央大液泡 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="286" cy="196" rx="150" ry="112" fill="#d4e8f4" stroke="#4d7ea8" strokeWidth="3.5" />
+        {/* 液泡膜 */}
+        <ellipse cx="286" cy="196" rx="142" ry="104" fill="none" stroke="#7ab8d8" strokeWidth="1.8" />
+        <text x="286" y="180" textAnchor="middle" fontSize="13" fill="#2c5a84" fontWeight="800">中央大液泡</text>
+        <text x="286" y="202" textAnchor="middle" fontSize="12" fill="#2c5a84">细胞液：糖·无机盐·色素·代谢废物</text>
+      </g>
+      {/* 液泡膜标注 */}
+      <g style={dim(active, 2)}>
+        <line x1="368" y1="128" x2="376" y2="148" stroke="#7ab8d8" strokeWidth="1.6" />
+        <text x="340" y="122" fontSize="12.5" fill="#4a7a9a" fontWeight="700">液泡膜（选择透过性）</text>
+      </g>
+      {/* 细胞质 */}
+      <g style={dim(active, 3)}>
+        <path d="M70 160 Q 130 150 178 176 Q 140 200 70 190 Z" fill="#c8e2ba" stroke="#6a9a5a" strokeWidth="2" />
+        <text x="52" y="248" fontSize="12.5" fill="#4a7a3a" fontWeight="700">细胞质（液泡外·核外的" Jelly"）</text>
+      </g>
+      {/* 功能说明 */}
+      <g style={dim(active, 4)}>
+        <rect x="60" y="304" width="400" height="26" rx="8" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">充水膨胀使细胞挺立（萎蔫的"元凶"）· 调节渗透压 · 储藏与解毒</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">液泡结构模式图 · 成熟植物细胞的标志</text>
+    </svg>
+  );
+}
+
+/* ================= 同源器官（进化证据） ================= */
+
+function HomologousOrgansSvg({ active }: { active: number | null; open?: boolean }) {
+  // 四种前肢骨骼（简化：肱骨/桡尺骨/掌指骨）
+  const limb = (x: number, y: number, scale: number, rot: number, color: string) => (
+    <g transform={`translate(${x} ${y}) rotate(${rot}) scale(${scale})`}>
+      <rect x="0" y="-5" width="34" height="10" rx="5" fill={color} stroke="#13333a" strokeWidth="1.6" />
+      <rect x="32" y="-4" width="30" height="8" rx="4" fill={color} stroke="#13333a" strokeWidth="1.4" />
+      <rect x="60" y="-3" width="20" height="6" rx="3" fill={color} stroke="#13333a" strokeWidth="1.4" />
+      {[0, 1, 2, 3].map((i) => (
+        <rect key={i} x={78} y={-3 + i * 1.6} width="16" height="2.6" rx="1.3" fill={color} stroke="#13333a" strokeWidth="1" />
+      ))}
+    </g>
+  );
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        {/* 人 */}
+        {limb(50, 108, 1.1, -8, '#b8d4ea')}
+        <text x="86" y="152" fontSize="12.5" fill="#2c5a84" fontWeight="700">人的手（灵活抓握）</text>
+        {/* 鲸 */}
+        {limb(250, 96, 1.35, 10, '#7aa8c9')}
+        <text x="272" y="152" fontSize="12.5" fill="#2c5a84" fontWeight="700">鲸的鳍肢（游泳平衡）</text>
+      </g>
+      <g style={dim(active, 1)}>
+        {/* 蝙蝠 */}
+        {limb(60, 250, 1.15, -4, '#a8b8d8')}
+        <path d="M142 246 Q 162 258 176 246 M142 258 Q 162 270 176 258" fill="none" stroke="#6a5a9a" strokeWidth="1.6" />
+        <text x="80" y="296" fontSize="12.5" fill="#4a3a7a" fontWeight="700">蝙蝠的翼手（连膜飞行）</text>
+        {/* 狗 */}
+        {limb(260, 246, 0.95, 6, '#c9a882')}
+        <text x="262" y="296" fontSize="12.5" fill="#8a6a3a" fontWeight="700">狗的前肢（奔跑支撑）</text>
+      </g>
+      {/* 共同骨架提示 */}
+      <g style={dim(active, 2)}>
+        <text x="330" y="212" fontSize="12.5" fill="#49676d" fontWeight="700">骨的排列方式一致：</text>
+        <text x="330" y="230" fontSize="12.5" fill="#49676d" fontWeight="700">肱骨 → 桡尺骨 → 腕掌指骨</text>
+      </g>
+      {/* 结论 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="322" width="440" height="42" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">同源器官：外形功能各异，但内部结构相似 —— 证明它们来自共同的祖先</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">四种脊椎动物前肢骨骼对比 · 比较解剖学证据</text>
+    </svg>
+  );
+}
+
+/* ================= 保护色·拟态·警戒色 ================= */
+
+function AdaptationsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 保护色（左上）：绿色草丛中的蚱蜢 */}
+      <g style={dim(active, 0)}>
+        <rect x="14" y="20" width="238" height="150" rx="12" fill="#e4f0dc" stroke="#6a9a5a" strokeWidth="2.4" />
+        {[40, 90, 140, 190, 220].map((x, i) => (
+          <path key={i} d={`M${x} 160 q 6 -44 ${i % 2 === 0 ? -8 : 8} -60`} fill="none" stroke="#8ac98a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <path d="M120 118 q 20 -12 44 2 q -6 14 -26 12 q -16 -2 -18 -14 Z" fill="#8ac98a" stroke="#6a9a4a" strokeWidth="1.8" />
+        <path d="M132 110 l10 -8 M140 112 l12 -4" stroke="#5a8a3a" strokeWidth="1.6" strokeLinecap="round" />
+        <text x="133" y="48" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="800">保护色（体色与环境一致）</text>
+        <text x="133" y="172" textAnchor="middle" fontSize="11.5" fill="#4a8a3a">蚱蜢：草丛中不易被天敌发现</text>
+      </g>
+      {/* 拟态（右上）：枯叶蝶 */}
+      <g style={dim(active, 1)}>
+        <rect x="268" y="20" width="238" height="150" rx="12" fill="#f0e8d4" stroke="#b5a582" strokeWidth="2.4" />
+        {[60, 130, 200, 260, 330, 420].map((x, i) => (
+          <path key={i} d={`M${x} ${130 + (i % 2) * 16} l26 -10 l22 12 l-18 8 Z`} fill="#d8c9a0" stroke="#b5a582" strokeWidth="1.6" />
+        ))}
+        <path d="M300 108 q 44 -26 92 -4 q -6 26 -44 28 q -42 0 -48 -24 Z" fill="#b5905a" stroke="#8a6a3a" strokeWidth="2" />
+        <path d="M318 96 q 30 -10 58 2" fill="none" stroke="#8a6a3a" strokeWidth="1.8" />
+        <text x="387" y="48" textAnchor="middle" fontSize="13" fill="#8a6a2a" fontWeight="800">拟态（模样像别的物体）</text>
+        <text x="387" y="172" textAnchor="middle" fontSize="11.5" fill="#8a6a2a">枯叶蝶：酷似枯叶骗过天敌</text>
+      </g>
+      {/* 警戒色（左下）：黄蜂 */}
+      <g style={dim(active, 2)}>
+        <rect x="14" y="196" width="238" height="150" rx="12" fill="#fdf3cf" stroke="#c9a05a" strokeWidth="2.4" />
+        <ellipse cx="130" cy="272" rx="66" ry="26" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.5" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${104 + i * 26} 248 q 10 24 4 48`} fill="none" stroke="#13333a" strokeWidth="8" strokeLinecap="round" />
+        ))}
+        <circle cx="66" cy="262" r="14" fill="#13333a" />
+        <path d="M186 258 l22 -8 m-22 22 l24 -4" stroke="#13333a" strokeWidth="2.4" strokeLinecap="round" />
+        <text x="133" y="222" textAnchor="middle" fontSize="13" fill="#8a671b" fontWeight="800">警戒色（鲜艳+有毒刺）</text>
+        <text x="133" y="330" textAnchor="middle" fontSize="11.5" fill="#8a671b">黄蜂：事先警告天敌"别惹我"</text>
+      </g>
+      {/* 蜜蜂与黄蜂对比（右下） */}
+      <g style={dim(active, 3)}>
+        <rect x="268" y="196" width="238" height="150" rx="12" fill="#eef4ea" stroke="#4a9a5a" strokeWidth="2.4" />
+        <ellipse cx="352" cy="252" rx="46" ry="22" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.2" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${332 + i * 22} 232 q 8 20 2 40`} fill="none" stroke="#13333a" strokeWidth="7" strokeLinecap="round" />
+        ))}
+        <circle cx="308" cy="246" r="12" fill="#13333a" />
+        <text x="387" y="222" textAnchor="middle" fontSize="12.5" fill="#2f7a4d" fontWeight="800">蜜蜂：无刺毒但有"黄黑制服"</text>
+        <text x="278" y="292" fontSize="12" fill="#49676d">食蚜蝇模仿蜜蜂的"制服"</text>
+        <text x="278" y="310" fontSize="11.5" fill="#49676d">让天敌一并回避（贝茨拟态）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">生物对环境的适应：保护色 · 拟态 · 警戒色（课外拓展）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'seedCompare',
+    id: 'vacuole',
+    name: '液泡',
+    kicker: '细胞器 · 结构模式图',
+    intro: '成熟植物细胞的"储水罐"：中央大液泡占据细胞体积的 90%，细胞液里溶着糖、色素与代谢废物——充水膨胀让细胞挺立，失水就萎蔫。',
+    parts: [
+      { name: '液泡膜', desc: '包裹液泡的单层膜：具有选择透过性，控制物质进出液泡。' },
+      { name: '细胞液', desc: '液泡内的液体：溶着糖类、无机盐、色素（花青素）与代谢废物，是植物的"内环境"。' },
+      { name: '维持渗透压', desc: '液泡充水膨胀产生膨压，使细胞挺立——浇水后挺拔、缺水就萎蔫下垂。' },
+      { name: '与成熟细胞', desc: '成熟的植物细胞才有中央大液泡：分生区细胞只有分散的小液泡。' },
+    ],
+    Svg: VacuoleSvg,
+  },
+  {
+    id: 'homologousOrgans',
+    name: '同源器官',
+    kicker: '生物进化 · 比较解剖证据',
+    intro: '人的手、鲸的鳍肢、蝙蝠的翼手、狗的前肢：外形功能天差地别，内部骨骼排列却完全一致——同源器官是脊椎动物共同祖先留下的"签名"。',
+    parts: [
+      { name: '人的手', desc: '肱骨-桡尺骨-腕掌指骨的排列：灵活抓握工具与操作。' },
+      { name: '鲸的鳍肢', desc: '骨骼排列与人手一致但变得宽扁：适应水中游泳平衡。' },
+      { name: '蝙蝠的翼手', desc: '指骨极度伸长支撑皮膜：适应滑翔飞行。' },
+      { name: '同源器官', desc: '起源相同、结构与部位相似，而形态功能不同的器官——比较解剖学上最重要的进化证据。' },
+    ],
+    Svg: HomologousOrgansSvg,
+  },
+  {
+    id: 'adaptations',
+    name: '保护色·拟态·警戒色',
+    kicker: '生物适应 · 三类型对比图',
+    intro: '生物适应环境的三种"视觉策略"：保护色融入背景、拟态假扮他物、警戒色鲜艳示警——都是长期自然选择保留下来的生存智慧。',
+    extension: true,
+    parts: [
+      { name: '保护色', desc: '体色与环境背景色一致：蚱蜢、北极狐——让天敌"视而不见"。' },
+      { name: '拟态', desc: '形态或色泽模拟其他生物或物体：枯叶蝶像枯叶、食蚜蝇模仿蜜蜂。' },
+      { name: '警戒色', desc: '鲜艳夺目的体色配合毒刺、恶臭或毒性：黄蜂提前警告天敌"我有毒，别吃我"。' },
+      { name: '贝茨拟态', desc: '无毒物种模仿有毒物种的警戒色"狐假虎威"——食蚜蝇冒充蜜蜂。' },
+    ],
+    Svg: AdaptationsSvg,
+  },
+  {
+    id: 'neuron',
     name: '菜豆种子与玉米种子',
     kicker: '种子 · 双子叶与单子叶对比图',
     intro: '菜豆种子有 2 片肥厚子叶、无胚乳；玉米种子只有 1 片子叶、有胚乳——"单双"之分就藏在种子里，是双子叶与单子叶植物的名称由来。',
