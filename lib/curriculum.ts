@@ -611,6 +611,7 @@ export type ExperimentId =
   | 'pasteurFlask'
   | 'cellRespiration'
   | 'engelmann'
+  | 'crossingOver'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -1039,6 +1040,13 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
   },
+  crossingOver: {
+    title: '交叉互换与基因重组',
+    kicker: '必修 2 · 遗传与进化',
+    description: '开关四分体的交叉互换，看配子从完全连锁走向四种 1:1:1:1。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1185,7 +1193,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'crossingOver', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1224,6 +1232,7 @@ export const experimentOrder: ExperimentId[] = [
   'photosynthesis',
   'cellRespiration',
   'engelmann',
+  'crossingOver',
   'mitosisObservation',
   // 必修 2 · 遗传与进化
   'traitSeparation',

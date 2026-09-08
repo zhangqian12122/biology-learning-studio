@@ -7962,6 +7962,20 @@ function TissueCultureStagesSvg({ active }: { active: number | null; open?: bool
 
 export const SPECIMENS: Specimen[] = [
   {
+    id: 'cancerCell',
+    name: '细胞的癌变',
+    kicker: '细胞命运 · 对比模式图',
+    intro: '在物理、化学或病毒致癌因子作用下，原癌基因与抑癌基因发生突变：细胞变成能无限增殖、形态畸形、易分散转移的"永生"细胞——这就是癌变。',
+    parts: [
+      { name: '致癌因子', desc: '物理（紫外线、X 射线）、化学（黄曲霉毒素、亚硝酸盐）、病毒（如乙肝病毒）三大类。' },
+      { name: '基因突变', desc: '原癌基因过度表达、抑癌基因失活：两道"刹车"同时失灵，细胞分裂失去控制。' },
+      { name: '无限增殖', desc: '癌细胞不再受接触抑制约束，在有限营养里也能不断分裂——"永生"是它的标志。' },
+      { name: '形态结构改变', desc: '细胞由规则变畸形、核变大深染、核糖体增多——病理切片据此识别癌细胞。' },
+      { name: '易分散转移', desc: '表面糖蛋白减少、黏性下降：癌细胞彼此离散，随血液淋巴转移到全身。' },
+    ],
+    Svg: CancerCellSvg,
+  },
+  {
     id: 'ascarid',
     name: '蛔虫',
     kicker: '线形动物 · 人体寄生虫（课外拓展）',
