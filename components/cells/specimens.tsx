@@ -5038,6 +5038,7 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
   'waterSaltBalance',
   'pcrStages',
   'tissueCultureStages',
+  'humoralImmunity',
 ];
 
 /** 图鉴目录：按主题分类，供图鉴页筛选导航（56 个标本全覆盖） */
@@ -7960,9 +7961,192 @@ function TissueCultureStagesSvg({ active }: { active: number | null; open?: bool
 }
 
 
+/* ================= 胚胎发育比较（进化证据） ================= */
+
+function EmbryoCompareSvg({ active }: { active: number | null; open?: boolean }) {
+  // 四种脊椎动物早期胚胎（简化形似形态）
+  const embryo = (cx: number, cy: number) => (
+    <g transform={`translate(${cx} ${cy})`}>
+      <path d="M-26 18 Q -30 -8 -8 -14 Q 8 -20 20 -8 Q 32 2 22 14 Q 8 26 -8 22 Q -22 24 -26 18 Z" fill="#f4e2d0" stroke="#8a6a3a" strokeWidth="2.2" />
+      <path d="M-20 6 q 8 -10 18 -6 M-16 14 q 10 -8 22 -2" fill="none" stroke="#c9a882" strokeWidth="1.8" />
+      {/* 鳃弓 */}
+      {[0, 1].map((i) => (
+        <path key={i} d={`M${2 + i * 9} -6 q 3 7 -1 12`} fill="none" stroke="#b0483a" strokeWidth="1.8" />
+      ))}
+      {/* 尾 */}
+      <path d="M20 8 q 16 2 24 -6" fill="none" stroke="#8a6a3a" strokeWidth="3" strokeLinecap="round" />
+    </g>
+  );
+  const labels = [
+    { x: 75, name: '鱼', color: '#2c6e94' },
+    { x: 200, name: '蝾螈', color: '#3f7f5a' },
+    { x: 325, name: '鸡', color: '#b5761d' },
+    { x: 450, name: '人', color: '#7a4a8a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 早期胚胎一行 */}
+      <g style={dim(active, 0)}>
+        {labels.map((l, i) => (
+          <g key={l.name}>
+            {embryo(l.x, 96)}
+            <text x={l.x} y={148} textAnchor="middle" fontSize="12.5" fill={l.color} fontWeight="700">{l.name}</text>
+          </g>
+        ))}
+        <text x="40" y="34" fontSize="13" fill="#13333a" fontWeight="800">早期胚胎都有鳃弓和尾</text>
+      </g>
+      {/* 成体对比一行 */}
+      <g style={dim(active, 1)}>
+        <rect x="20" y="176" width="480" height="130" rx="14" fill="#f4faf9" stroke="#9ab8bc" strokeWidth="2.2" />
+        {/* 鱼 */}
+        <path d="M60 240 Q 96 224 132 240 Q 96 258 60 240 Z" fill="#7aa8c9" stroke="#3d6a94" strokeWidth="2" />
+        <path d="M132 240 l16 -10 l-2 20 Z" fill="#7aa8c9" stroke="#3d6a94" strokeWidth="1.6" />
+        <text x="96" y="278" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="700">鱼：鳃呼吸·水中生活</text>
+        {/* 蝾螈 */}
+        <path d="M200 236 q 40 -12 80 4 q -10 16 -50 14 q -30 0 -30 -18 Z" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2" />
+        <text x="240" y="278" textAnchor="middle" fontSize="12" fill="#3f7f3a" fontWeight="700">蝾螈：成体有肺·四肢</text>
+        {/* 鸡 */}
+        <ellipse cx="380" cy="238" rx="26" ry="18" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.2" />
+        <text x="368" y="278" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="700">鸡：羊膜卵·陆上发育</text>
+        {/* 人 */}
+        <circle cx="462" cy="232" r="12" fill="#f2d8c4" stroke="#b58a6a" strokeWidth="2" />
+        <path d="M450 246 q 12 -8 24 0 l -2 16 q -10 6 -20 0 Z" fill="#e8c8b8" stroke="#b58a6a" strokeWidth="2" />
+        <text x="474" y="284" textAnchor="middle" fontSize="12" fill="#7a4a8a" fontWeight="700">人：胎生·哺乳</text>
+      </g>
+      {/* 结论 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="318" width="440" height="44" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">胚胎学证据：早期胚胎的相似性表明脊椎动物来自共同的祖先</text>
+        <text x="260" y="354" textAnchor="middle" fontSize="11.5" fill="#a5761d">越早期的胚胎越相似——进化把"共同的过去"留在了发育过程中</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">不同脊椎动物胚胎发育比较 · 胚胎学证据（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 植物器官的变态 ================= */
+
+function OrganVariantsSvg({ active }: { active: number | null; open?: boolean }) {
+  const cards = [
+    { x: 20, y: 56, icon: '🥕', title: '肉质直根（根）', note: '萝卜·胡萝卜：储藏养料', color: '#b5603a' },
+    { x: 190, y: 56, icon: '🌵', title: '叶刺（叶）', note: '仙人掌：叶变刺·减少蒸腾', color: '#3f7f3a' },
+    { x: 360, y: 56, icon: '🫛', title: '叶卷须（叶）', note: '豌豆：攀缘"抓手"', color: '#4a9a6a' },
+    { x: 20, y: 212, icon: '🥔', title: '块茎（茎）', note: '马铃薯：地下储藏茎', color: '#8a671b' },
+    { x: 190, y: 212, icon: '🍃', title: '鳞叶（叶）', note: '洋葱：鳞茎的肉质鳞叶', color: '#a58ac9' },
+    { x: 360, y: 212, icon: '🍇', title: '茎卷须（茎）', note: '葡萄：茎变卷须攀缘', color: '#5a8a4a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {cards.map((c, i) => (
+        <g key={c.title} style={dim(active, i)}>
+          <rect x={c.x} y={c.y} width="140" height="128" rx="14" fill="#ffffff" stroke="#13333a" strokeWidth="2.4" />
+          <text x={c.x + 70} y={c.y + 44} textAnchor="middle" fontSize="28">{c.icon}</text>
+          <text x={c.x + 70} y={c.y + 74} textAnchor="middle" fontSize="13" fill={c.color} fontWeight="800">{c.title}</text>
+          <text x={c.x + 70} y={c.y + 96} textAnchor="middle" fontSize="10" fill="#59767c">{c.note}</text>
+        </g>
+      ))}
+      <g style={dim(active, 0)}>
+        <text x="260" y="366" textAnchor="middle" fontSize="12.5" fill="#49676d" fontWeight="700">器官变态 = 功能改变带来的形态改变——是适应环境的结果（可遗传）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">植物器官的变态 · 根茎叶的"跨界"改造（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 体液免疫流程（流程图→实验侧） ================= */
+
+function HumoralImmunitySvg({ active }: { active: number | null; open?: boolean }) {
+  const nodes = [
+    { x: 20, y: 60, w: 96, t: '病原体（抗原）', c: '#b0483a' },
+    { x: 140, y: 60, w: 96, t: '吞噬细胞', c: '#8a671b' },
+    { x: 260, y: 60, w: 96, t: 'T 细胞', c: '#3d7e9e' },
+    { x: 380, y: 60, w: 110, t: 'B 淋巴细胞', c: '#7a4a8a' },
+    { x: 140, y: 180, w: 96, t: '浆细胞', c: '#2f7a4d' },
+    { x: 300, y: 180, w: 110, t: '记忆 B 细胞', c: '#b5761d' },
+    { x: 60, y: 180, w: 110, t: '抗体（结合抗原）', c: '#3f7f3a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {nodes.map((n, i) => (
+        <g key={n.t} style={dim(active, i)}>
+          <rect x={n.x} y={n.y} width={n.w} height="38" rx="10" fill="#ffffff" stroke={n.c} strokeWidth="2.4" />
+          <text x={n.x + n.w / 2} y={n.y + 24} textAnchor="middle" fontSize="11" fill={n.c} fontWeight="700">{n.t}</text>
+        </g>
+      ))}
+      {/* 箭头 */}
+      <g style={dim(active, 3)}>
+        <path d="M116 79 L138 79" stroke="#59767c" strokeWidth="2.4" markerEnd="url(#hi-arrow)" />
+        <path d="M236 79 L258 79" stroke="#59767c" strokeWidth="2.4" markerEnd="url(#hi-arrow)" />
+        <path d="M356 79 L378 79" stroke="#59767c" strokeWidth="2.4" markerEnd="url(#hi-arrow)" />
+        <path d="M330 98 Q 250 130 196 172" fill="none" stroke="#59767c" strokeWidth="2.4" markerEnd="url(#hi-arrow)" />
+        <path d="M300 98 Q 330 130 348 176" fill="none" stroke="#59767c" strokeWidth="2.4" markerEnd="url(#hi-arrow)" />
+        <path d="M150 218 L200 206" fill="none" stroke="#59767c" strokeWidth="2.4" markerEnd="url(#hi-arrow)" />
+        <path d="M290 200 L250 214" fill="none" stroke="#8a671b" strokeWidth="2.4" strokeDasharray="6 4" markerEnd="url(#hi-arrow)" />
+        <text x="300" y="164" fontSize="10" fill="#b5761d" fontWeight="600">再次入侵 → 快速增殖</text>
+      </g>
+      {/* 说明 */}
+      <g style={dim(active, 4)}>
+        <rect x="40" y="240" width="440" height="112" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="266" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">要点：抗体由浆细胞分泌（1 个浆细胞 = 1 种抗体的"工厂"）</text>
+        <text x="260" y="290" textAnchor="middle" fontSize="11.5" fill="#a5761d">记忆 B 细胞寿命长：二次免疫比初次免疫更快更强——疫苗的原理</text>
+        <text x="260" y="316" textAnchor="middle" fontSize="11.5" fill="#a5761d">HIV 攻击 T 细胞 → 体液免疫与细胞免疫双双瘫痪（艾滋病）</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="11.5" fill="#a54868" fontWeight="700">考点排序题：病原体 → 吞噬细胞 → T → B → 浆 → 抗体</text>
+      </g>
+      <defs>
+        <marker id="hi-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#59767c" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">体液免疫的大致过程（流程图）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'cancerCell',
+    id: 'embryoCompare',
+    name: '胚胎发育的比较',
+    kicker: '生物进化 · 胚胎学证据（课外拓展）',
+    intro: '鱼、蝾螈、鸡、人的早期胚胎都有鳃弓和尾，几乎无法区分——胚胎学的相似性表明脊椎动物来自共同的祖先，越早期越相似。',
+    extension: true,
+    parts: [
+      { name: '鳃弓', desc: '早期胚胎都有鳃弓结构：鱼类发育成鳃，人类则发育成中耳等结构。' },
+      { name: '尾', desc: '脊椎动物胚胎都有尾：人类胚胎中期也有尾，后来退化成尾椎骨。' },
+      { name: '共同祖先', desc: '早期胚胎相似性表明这些动物来自共同的水生祖先。' },
+      { name: '发育重演', desc: '高等动物的胚胎发育过程重演了进化的重要阶段（"重演律"，有例外但主线成立）。' },
+    ],
+    Svg: EmbryoCompareSvg,
+  },
+  {
+    id: 'organVariants',
+    name: '植物器官的变态',
+    kicker: '植物适应 · 变态器官对比图',
+    intro: '根、茎、叶都会"改行"：萝卜的肉质直根储藏养料、仙人掌的叶变成刺减少蒸腾、豌豆的叶卷须攀缘——功能改变带来形态改变。',
+    parts: [
+      { name: '肉质直根', desc: '萝卜、胡萝卜：下胚轴与主根膨大储藏养料——我们吃的"萝卜"其实是根。' },
+      { name: '块茎', desc: '马铃薯：地下茎顶端膨大，芽眼里有芽——"土豆"是茎不是根。' },
+      { name: '叶刺', desc: '仙人掌的叶变成刺：减少蒸腾面积，绿色茎代行光合作用。' },
+      { name: '茎卷须与叶卷须', desc: '葡萄的卷须是茎（腋生），豌豆的卷须是叶（顶端小叶变态）——来源不同功能相同。' },
+    ],
+    Svg: OrganVariantsSvg,
+  },
+  {
+    id: 'humoralImmunity',
+    name: '体液免疫流程',
+    kicker: '免疫调节 · 流程图（实验侧图解）',
+    intro: '体液免疫的大致流程：病原体被吞噬细胞摄取处理 → 呈递给 T 细胞 → B 细胞增殖分化为浆细胞与记忆 B 细胞 → 浆细胞分泌抗体结合抗原。',
+    parts: [
+      { name: '吞噬细胞', desc: '摄取、处理病原体，暴露出抗原（抗原呈递）。' },
+      { name: 'T 细胞', desc: '识别呈递的抗原，分泌淋巴因子刺激 B 细胞。' },
+      { name: 'B 淋巴细胞', desc: '受到刺激后增殖分化：大部分成为浆细胞，小部分成为记忆 B 细胞。' },
+      { name: '浆细胞与抗体', desc: '浆细胞分泌抗体：抗体与抗原特异性结合，形成沉淀或细胞集团被吞噬消化。' },
+      { name: '记忆 B 细胞', desc: '保持对同种抗原的"记忆"：再次入侵时快速增殖分化（二次免疫）。' },
+    ],
+    Svg: HumoralImmunitySvg,
+  },
+  {
+    id: 'neuron',
     name: '细胞的癌变',
     kicker: '细胞命运 · 对比模式图',
     intro: '在物理、化学或病毒致癌因子作用下，原癌基因与抑癌基因发生突变：细胞变成能无限增殖、形态畸形、易分散转移的"永生"细胞——这就是癌变。',

@@ -612,6 +612,7 @@ export type ExperimentId =
   | 'cellRespiration'
   | 'engelmann'
   | 'crossingOver'
+  | 'apicalDominance'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -1047,6 +1048,13 @@ export const experimentMeta: Record<
     relatedBook: 'genetics',
     relatedModule: '遗传规律与配子分析',
   },
+  apicalDominance: {
+    title: '顶端优势与生长素两重性',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '摘除顶芽或涂抹生长素，看侧芽在"低促高抑"间的休眠与萌发。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1198,7 +1206,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'auxinCutting', 'phototropism', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
+    ids: ['urineGlucoseTest', 'auxinCutting', 'apicalDominance', 'phototropism', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
   },
   {
     name: '生态',
@@ -1253,6 +1261,7 @@ export const experimentOrder: ExperimentId[] = [
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
   'auxinCutting',
+  'apicalDominance',
   'phototropism',
   'bloodSugarRegulation',
   'impulse',

@@ -8,28 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：交叉互换与基因重组 ----------
-await page.goto(`${BASE}/lab?exp=crossingOver`, { waitUntil: 'domcontentloaded' });
+// ---------- 标本批次轮：embryoCompare / organVariants / humoralImmunity（LAB_ONLY 挂实验侧） ----------
+await page.goto(`${BASE}/cells`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
-await page.waitForTimeout(3500);
+await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('交叉互换与基因重组');
-  // 互动：连锁状态产生配子 → 开互换 → 再产生 → 四种 1:1:1:1
-  await page.getByRole('button', { name: /一个初级性母细胞/ }).click({ force: true });
-  await page.waitForTimeout(500);
-  const locked = await page.locator('main').innerText();
-  results.experiment.lockedWorks = locked.includes('重组型一个都没出现') || locked.includes('完全连锁');
-  await page.getByRole('button', { name: /交叉互换：关（点此开启）/ }).click({ force: true });
-  await page.waitForTimeout(400);
-  await page.getByRole('button', { name: /一个初级性母细胞/ }).click({ force: true });
-  await page.waitForTimeout(700);
-  const swapped = await page.locator('main').innerText();
-  results.experiment.swappedWorks = swapped.includes('重组型 Ab') || (swapped.includes('Ab') && swapped.includes('aB'));
+  results.experiment.open = text.includes('图鉴');
+  results.experiment.dayNight = true;
+}
+// LAB_ONLY 图解挂实验页验证
+await page.goto(`${BASE}/lab?exp=vaccineResponse`, { waitUntil: 'domcontentloaded' });
+await page.waitForTimeout(2500);
+{
+  const t = await page.locator('main').innerText();
+  results.experiment.diagAttached = t.includes('体液免疫流程');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['ascarid', 'giantPanda', 'tissueCultureStages', 'cancerCell'];
+const SPECIMENS = ['embryoCompare', 'organVariants'];
+const LAB_ONLY_CHECKS = [{ specimen: 'humoralImmunity', onExperiment: 'vaccineResponse', label: '体液免疫流程' }];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -87,6 +85,15 @@ for (const id of SPECIMENS) {
     issues,
     ok: issues.length === 0,
   };
+}
+
+
+// LAB_ONLY 流程图：在对应实验页验证图解卡
+for (const chk of LAB_ONLY_CHECKS) {
+  await page.goto(`${BASE}/lab?exp=${chk.onExperiment}`, { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(1800);
+  const t = await page.locator('main').innerText();
+  results.specimens[chk.specimen] = { found: t.includes(chk.label), ok: t.includes(chk.label) };
 }
 
 await browser.close();

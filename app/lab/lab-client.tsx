@@ -87,6 +87,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   cellRespiration: Activity,
   engelmann: Palette,
   crossingOver: Scissors,
+  apicalDominance: Sprout,
   quadratMethod: LayoutGrid,
   urineGlucoseTest: TestTube2,
   plateStreak: FlaskConical,
@@ -164,6 +165,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   cellRespiration: () => import('@/components/lab/cell-respiration-lab').then(({ CellRespirationLab }) => ({ default: CellRespirationLab })),
   engelmann: () => import('@/components/lab/engelmann-lab').then(({ EngelmannLab }) => ({ default: EngelmannLab })),
   crossingOver: () => import('@/components/lab/crossing-over-lab').then(({ CrossingOverLab }) => ({ default: CrossingOverLab })),
+  apicalDominance: () => import('@/components/lab/apical-dominance-lab').then(({ ApicalDominanceLab }) => ({ default: ApicalDominanceLab })),
   quadratMethod: () => import('@/components/lab/quadrat-method-lab').then(({ QuadratMethodLab }) => ({ default: QuadratMethodLab })),
   urineGlucoseTest: () => import('@/components/lab/urine-glucose-lab').then(({ UrineGlucoseTestLab }) => ({ default: UrineGlucoseTestLab })),
   plateStreak: () => import('@/components/lab/plate-streak-lab').then(({ PlateStreakLab }) => ({ default: PlateStreakLab })),
@@ -230,6 +232,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   ecosystemJar: ['carbonCycle'],
   bloodSugarRegulation: ['waterSaltBalance'],
   pcr: ['pcrStages'],
+  vaccineResponse: ['humoralImmunity'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
