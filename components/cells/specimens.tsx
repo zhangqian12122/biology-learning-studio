@@ -5043,14 +5043,14 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
 export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] = [
   { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
   { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome'] },
-  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype'] },
+  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
-  { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation'] },
+  { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'verticalLayers'] },
 ];
 
@@ -7404,9 +7404,184 @@ function InvasiveSpeciesSvg({ active }: { active: number | null; open?: boolean 
 }
 
 
+/* ================= 细胞的癌变 ================= */
+
+function CancerCellSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 正常细胞（左） */}
+      <g style={dim(active, 0)}>
+        <rect x="40" y="90" width="150" height="110" rx="20" fill="#cfe8f4" stroke="#3d6a94" strokeWidth="3" />
+        <circle cx="115" cy="145" r="24" fill="#a8c8e2" stroke="#3d6a94" strokeWidth="2.2" />
+        <text x="115" y="228" textAnchor="middle" fontSize="13" fill="#2c5a84" fontWeight="800">正常细胞</text>
+        <text x="115" y="250" textAnchor="middle" fontSize="12" fill="#2c5a84">圆形规则 · 核小 · 能黏连成片</text>
+        <text x="115" y="270" textAnchor="middle" fontSize="12" fill="#2c5a84">有限分裂（接触抑制）</text>
+      </g>
+      {/* 对比箭头 */}
+      <g style={dim(active, 1)}>
+        <path d="M210 140 L 278 140" fill="none" stroke="#b0483a" strokeWidth="3.5" markerEnd="url(#cc-arrow)" />
+        <text x="244" y="126" textAnchor="middle" fontSize="11.5" fill="#b0483a" fontWeight="700">致癌因子</text>
+        <text x="244" y="160" textAnchor="middle" fontSize="11" fill="#b0483a">物理·化学·病毒</text>
+      </g>
+      {/* 癌细胞（右） */}
+      <g style={dim(active, 2)}>
+        <path d="M300 100 Q 310 68 350 78 Q 400 62 428 100 Q 452 130 420 158 Q 436 196 396 210 Q 352 232 318 204 Q 284 178 300 148 Q 286 120 300 100 Z" fill="#f2c8c0" stroke="#b0483a" strokeWidth="3" />
+        <path d="M352 120 Q 380 108 392 132 Q 400 156 372 166 Q 346 170 342 146 Q 340 128 352 120 Z" fill="#7a4a8a" stroke="#4a2a6a" strokeWidth="2.2" />
+        <path d="M300 96 Q 310 78 330 84 M424 108 Q 440 96 442 116" fill="none" stroke="#b0483a" strokeWidth="2.4" strokeLinecap="round" />
+        <text x="366" y="248" textAnchor="middle" fontSize="13" fill="#8a2a1a" fontWeight="800">癌细胞</text>
+      </g>
+      {/* 三大特征 */}
+      <g style={dim(active, 3)}>
+        <rect x="60" y="290" width="400" height="66" rx="12" fill="#fff2ed" stroke="#b0483a" strokeWidth="2.4" />
+        <text x="260" y="314" textAnchor="middle" fontSize="12.5" fill="#8a2a1a" fontWeight="800">癌细胞三大特征：无限增殖 · 形态结构显著改变 · 表面糖蛋白减少（易分散转移）</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="11.5" fill="#a5603a">致癌因子引起原癌基因与抑癌基因突变 → 细胞变成不受控制的"永生"细胞</text>
+      </g>
+      <defs>
+        <marker id="cc-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0 0 L9 4.5 L0 9 Z" fill="#b0483a" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">细胞的癌变 · 正常细胞 vs 癌细胞</text>
+    </svg>
+  );
+}
+
+/* ================= 细胞学说 ================= */
+
+function CellTheorySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 三位科学家 */}
+      <g style={dim(active, 0)}>
+        <rect x="24" y="40" width="150" height="120" rx="12" fill="#e8f0fa" stroke="#3d6a94" strokeWidth="2.5" />
+        <circle cx="99" cy="72" r="14" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="2" />
+        <text x="99" y="77" textAnchor="middle" fontSize="9" fill="#1e4a68" fontWeight="800">施莱登</text>
+        <text x="99" y="106" textAnchor="middle" fontSize="11.5" fill="#1e4a68" fontWeight="700">1838 · 植物</text>
+        <text x="99" y="124" textAnchor="middle" fontSize="11" fill="#2c5a84">提出植物体由细胞组成</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <rect x="185" y="40" width="150" height="120" rx="12" fill="#e8f0fa" stroke="#3d6a94" strokeWidth="2.5" />
+        <circle cx="260" cy="72" r="14" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="2" />
+        <text x="260" y="77" textAnchor="middle" fontSize="9" fill="#1e4a68" fontWeight="800">施旺</text>
+        <text x="260" y="106" textAnchor="middle" fontSize="11.5" fill="#1e4a68" fontWeight="700">1839 · 动物</text>
+        <text x="260" y="124" textAnchor="middle" fontSize="11" fill="#2c5a84">动物体也由细胞组成</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <rect x="346" y="40" width="150" height="120" rx="12" fill="#e8f0fa" stroke="#3d6a94" strokeWidth="2.5" />
+        <circle cx="421" cy="72" r="14" fill="#b8d4ea" stroke="#3d6a94" strokeWidth="2" />
+        <text x="421" y="77" textAnchor="middle" fontSize="9" fill="#1e4a68" fontWeight="800">魏尔肖</text>
+        <text x="421" y="106" textAnchor="middle" fontSize="11.5" fill="#1e4a68" fontWeight="700">1858 · 补充</text>
+        <text x="421" y="124" textAnchor="middle" fontSize="11" fill="#2c5a84">细胞来自细胞分裂</text>
+      </g>
+      {/* 三大要点 */}
+      <g style={dim(active, 1)}>
+        <rect x="60" y="188" width="400" height="104" rx="14" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.5" />
+        <text x="80" y="216" fontSize="13" fill="#8a671b" fontWeight="800">细胞学说的要点：</text>
+        <text x="80" y="240" fontSize="12.5" fill="#6a4a1a">① 细胞是一个有机体，一切动植物都由细胞发育而来；</text>
+        <text x="80" y="264" fontSize="12.5" fill="#6a4a1a">② 细胞是一个相对独立的单位；③ 新细胞由老细胞产生。</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 2)}>
+        <text x="260" y="326" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="800">意义：揭示了动植物统一性 → 为进化论奠基</text>
+        <text x="260" y="350" textAnchor="middle" fontSize="12" fill="#49676d">显微镜（虎克 1665 发现并命名"细胞"）是它的技术前提</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">细胞学说建立过程 · 必修 1 科学史</text>
+    </svg>
+  );
+}
+
+/* ================= 无子果实培育（生长素应用） ================= */
+
+function SeedlessFruitSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 左：有子番茄（正常受粉） */}
+      <g style={dim(active, 0)}>
+        <rect x="30" y="60" width="210" height="240" rx="14" fill="#eaf4ea" stroke="#4a8a3a" strokeWidth="2.5" />
+        <text x="135" y="88" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="800">正常受粉</text>
+        <circle cx="100" cy="140" r="16" fill="#f4c76a" stroke="#b5953a" strokeWidth="2.2" />
+        <text x="100" y="176" textAnchor="middle" fontSize="11" fill="#8a671b" fontWeight="600">受粉授精</text>
+        <path d="M100 184 L100 208" stroke="#4a8a3a" strokeWidth="2.6" markerEnd="url(#sf-arrow)" />
+        <circle cx="100" cy="248" r="34" fill="#e05a3a" stroke="#a53a2c" strokeWidth="3" />
+        {[0, 1, 2].map((i) => (
+          <ellipse key={i} cx={88 + i * 12} cy={250 + (i % 2) * 6} rx="5" ry="7" fill="#f4d06a" stroke="#c9881d" strokeWidth="1.4" />
+        ))}
+        <text x="135" y="290" textAnchor="middle" fontSize="12.5" fill="#2f7a4d" fontWeight="700">有子果实（种子产生生长素催果）</text>
+      </g>
+      {/* 右：无子番茄（生长素处理） */}
+      <g style={dim(active, 1)}>
+        <rect x="280" y="60" width="210" height="240" rx="14" fill="#fdf3e2" stroke="#c9881d" strokeWidth="2.5" />
+        <text x="385" y="88" textAnchor="middle" fontSize="13" fill="#a5761d" fontWeight="800">未受粉 + 涂生长素</text>
+        <circle cx="350" cy="140" r="16" fill="#f4c76a" stroke="#b5953a" strokeWidth="2.2" />
+        <path d="M362 132 q 12 -6 18 -16" fill="none" stroke="#b5953a" strokeWidth="2" />
+        <text x="386" y="112" fontSize="10.5" fill="#8a671b" fontWeight="700">✕ 不受粉</text>
+        <path d="M350 184 L350 208" stroke="#4a8a3a" strokeWidth="2.6" markerEnd="url(#sf-arrow)" />
+        <text x="352" y="200" fontSize="10" fill="#a5761d" fontWeight="700">涂生长素</text>
+        <circle cx="350" cy="248" r="34" fill="#e05a3a" stroke="#a53a2c" strokeWidth="3" />
+        <text x="350" y="253" textAnchor="middle" fontSize="11" fill="#ffffff" fontWeight="800">无籽</text>
+        <text x="385" y="290" textAnchor="middle" fontSize="12.5" fill="#a5761d" fontWeight="700">无子果实（生长素替代种子"催果"）</text>
+      </g>
+      {/* 原理条 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="318" width="440" height="44" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="334" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">原理：种子产生生长素促进果实发育；未受粉时人工涂生长素，果实照样长大</text>
+        <text x="260" y="352" textAnchor="middle" fontSize="11.5" fill="#a5761d" fontWeight="700">——但里面没有种子</text>
+        <text x="260" y="372" textAnchor="middle" fontSize="11" fill="#a5761d">考点：生长素"促进发育"≠"促进成熟"；遗传物质未变（不是可遗传变异）</text>
+      </g>
+      <defs>
+        <marker id="sf-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#4a8a3a" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">无子果实培育原理 · 生长素的应用（选必 1 植物激素）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
   {
-    id: 'plantTissues',
+    id: 'cancerCell',
+    name: '细胞的癌变',
+    kicker: '细胞命运 · 对比模式图',
+    intro: '在物理、化学或病毒致癌因子作用下，原癌基因与抑癌基因发生突变：细胞变成能无限增殖、形态畸形、易分散转移的"永生"细胞——这就是癌变。',
+    parts: [
+      { name: '致癌因子', desc: '物理（紫外线、X 射线）、化学（黄曲霉毒素、亚硝酸盐）、病毒（如乙肝病毒）三大类。' },
+      { name: '基因突变', desc: '原癌基因过度表达、抑癌基因失活：两道"刹车"同时失灵，细胞分裂失去控制。' },
+      { name: '无限增殖', desc: '癌细胞不再受接触抑制约束，在有限营养里也能不断分裂——"永生"是它的标志。' },
+      { name: '形态结构改变', desc: '细胞由规则变畸形、核变大深染、核糖体增多——病理切片据此识别癌细胞。' },
+      { name: '易分散转移', desc: '表面糖蛋白减少、黏性下降：癌细胞彼此离散，随血液淋巴转移到全身。' },
+    ],
+    Svg: CancerCellSvg,
+  },
+  {
+    id: 'cellTheory',
+    name: '细胞学说',
+    kicker: '必修 1 · 科学史',
+    intro: '施莱登与施旺提出"一切动植物都由细胞发育而来"，魏尔肖补充"细胞只能来自细胞"——细胞学说揭示了动植物的统一性，是生物学第一块基石。',
+    parts: [
+      { name: '施莱登与施旺', desc: '1838-1839 年分别研究植物与动物，共同提出：一切动植物都由细胞发育而来。' },
+      { name: '魏尔肖的补充', desc: '"所有的细胞都来源于先前存在的细胞"——修正了"新细胞凭空产生"的错误，直指细胞分裂。' },
+      { name: '细胞学说要点', desc: '细胞是有机体结构与生命活动的基本单位；新细胞由老细胞通过分裂产生。' },
+      { name: '意义', desc: '揭示了动植物之间的统一性，阐明细胞的统一性与生物体结构的统一性，为达尔文进化论奠定基础。' },
+    ],
+    Svg: CellTheorySvg,
+  },
+  {
+    id: 'seedlessFruit',
+    name: '无子果实培育',
+    kicker: '植物激素 · 应用原理图',
+    intro: '发育中的种子能产生生长素"催大"果实：不给番茄授粉、改涂生长素，果实照样膨大——但因为没受精，里面没有种子。遗传物质未变，不是可遗传变异。',
+    parts: [
+      { name: '正常受粉', desc: '花粉完成受精后，发育中的种子产生大量生长素，促进子房发育成果实——有籽。' },
+      { name: '未受粉 + 涂生长素', desc: '花蕾期去掉雄蕊（或套袋阻止受粉），人工涂抹一定浓度生长素：子房照样发育成无籽果实。' },
+      { name: '原理辨析', desc: '生长素"促进果实发育"（子房→果实），而非"促进果实成熟"（乙烯的作用）——易混考点。' },
+      { name: '不可遗传', desc: '细胞内遗传物质没有改变，无子性状不能通过种子传给后代——与多倍体育种的无籽西瓜本质不同。' },
+    ],
+    Svg: SeedlessFruitSvg,
+  },
+  {
+    id: 'neuron',
     name: '植物的主要组织',
     kicker: '植物体 · 五大组织对比图',
     intro: '植物体由五大组织构成：分生组织是"干细胞"源源不断分裂，其余组织分工保护、制造养料、运输与支撑——一棵树就是一支协作团队。',

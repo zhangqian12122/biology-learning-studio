@@ -608,6 +608,7 @@ export type ExperimentId =
   | 'ecologicalNiche'
   | 'crispr'
   | 'foodChain'
+  | 'pasteurFlask'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -1015,6 +1016,13 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态系统能量与物质循环',
   },
+  pasteurFlask: {
+    title: '巴斯德鹅颈瓶实验',
+    kicker: '必修 1 · 分子与细胞',
+    description: '直颈瓶与鹅颈瓶对照看肉汤腐败，亲手打断鹅颈完成关键验证。',
+    relatedBook: 'technology',
+    relatedModule: '发酵工程与过程控制',
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1176,7 +1184,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'crispr', 'embryoTransfer', 'nuclearTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'crispr', 'embryoTransfer', 'nuclearTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
   },
 ];
 
@@ -1256,4 +1264,5 @@ export const experimentOrder: ExperimentId[] = [
   'choiceMedia',
   // 课外拓展
   'millerUrey',
+  'pasteurFlask',
 ];
