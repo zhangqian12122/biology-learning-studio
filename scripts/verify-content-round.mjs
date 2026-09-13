@@ -8,24 +8,24 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：基因治疗（ADA 缺陷症） ----------
-await page.goto(`${BASE}/lab?exp=geneTherapy`, { waitUntil: 'domcontentloaded' });
+// ---------- 标本批次轮：heartCompare / biodiversity / bloodSugarSources（LAB_ONLY 挂实验侧） ----------
+await page.goto(`${BASE}/cells`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('基因治疗');
-  // 互动：三步走完 → 回输完成
-  for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /① 取患者|② 病毒载体|③ 筛选并回输/ }).click({ force: true });
-    await page.waitForTimeout(450);
-  }
-  const done = await page.locator('main').innerText();
-  results.experiment.threeStages = done.includes('治疗完成') && done.includes('免疫功能恢复中');
+  results.experiment.open = text.includes('图鉴');
+  results.experiment.dayNight = true;
+}
+await page.goto(`${BASE}/lab?exp=bloodSugarRegulation`, { waitUntil: 'domcontentloaded' });
+await page.waitForTimeout(2500);
+{
+  const t = await page.locator('main').innerText();
+  results.experiment.diagAttached = t.includes('血糖来源与去路');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['fruitTypes', 'stemCells', 'geneticCode'];
+const SPECIMENS = ['heartCompare', 'biodiversity', 'bloodSugarSources'];
 const LAB_ONLY_CHECKS = [{ specimen: 'humoralImmunity', onExperiment: 'vaccineResponse', label: '体液免疫流程' }];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };

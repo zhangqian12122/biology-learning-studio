@@ -5039,6 +5039,7 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
   'pcrStages',
   'tissueCultureStages',
   'humoralImmunity',
+  'bloodSugarSources',
 ];
 
 /** 图鉴目录：按主题分类，供图鉴页筛选导航（56 个标本全覆盖） */
@@ -5053,7 +5054,7 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'verticalLayers'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -8232,7 +8233,222 @@ function GeneticCodeSvg({ active }: { active: number | null; open?: boolean }) {
 }
 
 
+/* ================= 脊椎动物心脏对比 ================= */
+
+function HeartCompareSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 鱼：1房1室 */}
+      <g style={dim(active, 0)}>
+        <rect x="24" y="70" width="126" height="120" rx="12" fill="#eaf2f8" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="87" y="92" textAnchor="middle" fontSize="13" fill="#2c5a84" fontWeight="800">🐟 鱼类</text>
+        <path d="M52 118 a 14 14 0 1 0 28 0 a 14 14 0 1 0 -28 0" fill="#e8b8b0" stroke="#a5603a" strokeWidth="2" />
+        <text x="66" y="122" textAnchor="middle" fontSize="8.5" fill="#7a3a2a" fontWeight="700">房</text>
+        <text x="88" y="122" textAnchor="middle" fontSize="8.5" fill="#7a3a2a" fontWeight="700">室</text>
+        <text x="87" y="156" textAnchor="middle" fontSize="11" fill="#2c5a84">1 心房 · 1 心室</text>
+        <text x="87" y="174" textAnchor="middle" fontSize="10" fill="#59767c">单循环 · 鳃毛细血管网</text>
+      </g>
+      {/* 两栖 */}
+      <g style={dim(active, 1)}>
+        <rect x="168" y="70" width="126" height="120" rx="12" fill="#eaf4ea" stroke="#4a9a6a" strokeWidth="2.4" />
+        <text x="231" y="92" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="800">🐸 两栖类</text>
+        <ellipse cx="212" cy="118" rx="14" ry="11" fill="#e8b8b0" stroke="#a5603a" strokeWidth="2" />
+        <ellipse cx="244" cy="118" rx="14" ry="11" fill="#e8b8b0" stroke="#a5603a" strokeWidth="2" />
+        <path d="M228 130 a 13 13 0 1 0 26 0 a 13 13 0 1 0 -26 0" fill="#e8b8b0" stroke="#a5603a" strokeWidth="2" />
+        <text x="231" y="156" textAnchor="middle" fontSize="11" fill="#2f7a4d">2 心房 · 1 心室</text>
+        <text x="231" y="174" textAnchor="middle" fontSize="10" fill="#59767c">动静脉血部分混合</text>
+      </g>
+      {/* 爬行 */}
+      <g style={dim(active, 2)}>
+        <rect x="312" y="70" width="126" height="120" rx="12" fill="#fdf6e3" stroke="#a5761d" strokeWidth="2.4" />
+        <text x="375" y="92" textAnchor="middle" fontSize="13" fill="#8a5a1d" fontWeight="800">🦎 爬行类</text>
+        <ellipse cx="356" cy="118" rx="14" ry="11" fill="#e8b8b0" stroke="#a5603a" strokeWidth="2" />
+        <ellipse cx="388" cy="118" rx="14" ry="11" fill="#e8b8b0" stroke="#a5603a" strokeWidth="2" />
+        <path d="M372 130 a 13 13 0 1 0 26 0 a 13 13 0 1 0 -26 0" fill="#e8b8b0" stroke="#a5603a" strokeWidth="2" />
+        <line x1="372" y1="118" x2="398" y2="142" stroke="#a5603a" strokeWidth="2.4" />
+        <text x="375" y="156" textAnchor="middle" fontSize="11" fill="#8a5a1d">2 房 1 室+不全分隔</text>
+        <text x="375" y="174" textAnchor="middle" fontSize="10" fill="#59767c">不完全分隔</text>
+      </g>
+      {/* 鸟/哺乳四腔 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="204" width="440" height="120" rx="12" fill="#fff2ed" stroke="#b0483a" strokeWidth="2.4" />
+        <text x="60" y="230" fontSize="13" fill="#8a2a1a" fontWeight="800">🐦 鸟类 · 🐕 哺乳类（恒温·双循环完全分开）</text>
+        <g>
+          <rect x="80" y="244" width="70" height="60" rx="10" fill="#f6c8c0" stroke="#b0483a" strokeWidth="2.4" />
+          <line x1="115" y1="244" x2="115" y2="304" stroke="#b0483a" strokeWidth="3" />
+          <line x1="80" y1="274" x2="150" y2="274" stroke="#b0483a" strokeWidth="3" />
+          <text x="97" y="266" textAnchor="middle" fontSize="9.5" fill="#7a2a1a" fontWeight="700">房</text>
+          <text x="97" y="296" textAnchor="middle" fontSize="9.5" fill="#7a2a1a" fontWeight="700">室</text>
+          <text x="132" y="266" textAnchor="middle" fontSize="9.5" fill="#7a2a1a" fontWeight="700">房</text>
+          <text x="132" y="296" textAnchor="middle" fontSize="9.5" fill="#7a2a1a" fontWeight="700">室</text>
+        </g>
+        <text x="180" y="270" fontSize="12" fill="#8a2a1a" fontWeight="700">2 心房 · 2 心室：动静脉血完全分开</text>
+        <text x="180" y="292" fontSize="11.5" fill="#59767c">输氧效率最高 → 支持恒温与剧烈运动（飞行/奔跑）</text>
+        <text x="180" y="314" fontSize="11.5" fill="#49676d">体循环 + 肺循环 完全独立</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">脊椎动物心脏的进化 · 结构与功能相适应</text>
+    </svg>
+  );
+}
+
+/* ================= 生物多样性三层次 ================= */
+
+function BiodiversitySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 基因多样性 */}
+      <g style={dim(active, 0)}>
+        <circle cx="110" cy="110" r="42" fill="#d8c8ee" stroke="#7a4a8a" strokeWidth="3" />
+        {[0, 1, 2, 3, 4].map((i) => {
+          const ang = (-90 + i * 72) * (Math.PI / 180);
+          return (
+            <circle key={i} cx={110 + Math.cos(ang) * 26} cy={110 + Math.sin(ang) * 26} r="10" fill="#e0c8ee" stroke="#7a4a8a" strokeWidth="1.8" />
+          );
+        })}
+        <text x="110" y="180" textAnchor="middle" fontSize="13" fill="#6a4a9a" fontWeight="800">基因（遗传）多样性</text>
+        <text x="110" y="200" textAnchor="middle" fontSize="11.5" fill="#8a5a9a">同种个体间基因差异</text>
+      </g>
+      {/* 物种多样性 */}
+      <g style={dim(active, 1)}>
+        <circle cx="260" cy="110" r="42" fill="#c8e2ba" stroke="#3f7f3a" strokeWidth="3" />
+        {['🐟', '🦋', '🌷', '🐦', '🍄'].map((e, i) => {
+          const ang = (-90 + i * 72) * (Math.PI / 180);
+          return <text key={i} x={260 + Math.cos(ang) * 26} y={110 + Math.sin(ang) * 26 + 6} textAnchor="middle" fontSize="14">{e}</text>;
+        })}
+        <text x="260" y="180" textAnchor="middle" fontSize="13" fill="#2f7a4d" fontWeight="800">物种多样性</text>
+        <text x="260" y="200" textAnchor="middle" fontSize="11.5" fill="#4a8a3a">群落中物种的丰富度</text>
+      </g>
+      {/* 生态系统多样性 */}
+      <g style={dim(active, 2)}>
+        <circle cx="410" cy="110" r="42" fill="#f4d06a" stroke="#b5953a" strokeWidth="3" />
+        {['🌲', '🏜️', '🌊', '🏔️', '🌾'].map((e, i) => {
+          const ang = (-90 + i * 72) * (Math.PI / 180);
+          return <text key={i} x={410 + Math.cos(ang) * 26} y={110 + Math.sin(ang) * 26 + 6} textAnchor="middle" fontSize="14">{e}</text>;
+        })}
+        <text x="410" y="180" textAnchor="middle" fontSize="13" fill="#8a671b" fontWeight="800">生态系统多样性</text>
+        <text x="410" y="200" textAnchor="middle" fontSize="11.5" fill="#a5761d">栖息地·群落类型的多样性</text>
+      </g>
+      {/* 关系 */}
+      <g style={dim(active, 3)}>
+        <path d="M152 110 L 218 110" fill="none" stroke="#59767c" strokeWidth="2.2" markerEnd="url(#bd-arrow)" />
+        <path d="M302 110 L 368 110" fill="none" stroke="#59767c" strokeWidth="2.2" markerEnd="url(#bd-arrow)" />
+        <text x="185" y="102" textAnchor="middle" fontSize="10" fill="#59767c">构成基础</text>
+        <text x="335" y="102" textAnchor="middle" fontSize="10" fill="#59767c">最直观体现</text>
+      </g>
+      {/* 保护措施 */}
+      <g style={dim(active, 4)}>
+        <rect x="40" y="236" width="440" height="112" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="262" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">保护措施：就地保护（自然保护区·最有效）+ 迁地保护（动物园·植物园·种子库）</text>
+        <text x="260" y="288" textAnchor="middle" fontSize="11.5" fill="#a5761d">保护生物多样性 = 保护基因、物种与生态系统的"全部库存"</text>
+        <text x="260" y="312" textAnchor="middle" fontSize="11.5" fill="#a54868" fontWeight="700">关键：协调好"人与生态环境"的相互关系，而非禁止利用</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#49676d">合理利用是最好的保护：反对"盲目的禁而不保"</text>
+      </g>
+      <defs>
+        <marker id="bd-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#59767c" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">生物多样性的三个层次 · 保护生物学核心概念</text>
+    </svg>
+  );
+}
+
+/* ================= 血糖来源与去路（流程图→实验侧） ================= */
+
+function BloodSugarSourcesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 血糖中心圆 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="260" cy="190" rx="96" ry="58" fill="#f4d06a" stroke="#b5953a" strokeWidth="3.5" />
+        <text x="260" y="184" textAnchor="middle" fontSize="14" fill="#7a5a1d" fontWeight="800">血糖</text>
+        <text x="260" y="206" textAnchor="middle" fontSize="11" fill="#8a6a2a">正常 3.9~6.1 mmol/L</text>
+      </g>
+      {/* 三大来源（左） */}
+      <g style={dim(active, 1)}>
+        <rect x="24" y="76" width="150" height="44" rx="10" fill="#eaf4ea" stroke="#4a9a5a" strokeWidth="2.4" />
+        <text x="99" y="96" textAnchor="middle" fontSize="12" fill="#2f7a4d" fontWeight="700">① 食物消化吸收</text>
+        <rect x="24" y="134" width="150" height="44" rx="10" fill="#eaf4ea" stroke="#4a9a5a" strokeWidth="2.4" />
+        <text x="99" y="154" textAnchor="middle" fontSize="12" fill="#2f7a4d" fontWeight="700">② 肝糖原分解</text>
+        <rect x="24" y="192" width="150" height="44" rx="10" fill="#eaf4ea" stroke="#4a9a5a" strokeWidth="2.4" />
+        <text x="99" y="212" textAnchor="middle" fontSize="12" fill="#2f7a4d" fontWeight="700">③ 非糖物质转化</text>
+        <path d="M176 98 Q 200 140 166 172" fill="none" stroke="#4a9a5a" strokeWidth="3" markerEnd="url(#bs-arrow)" />
+        <path d="M176 156 L 164 156" fill="none" stroke="#4a9a5a" strokeWidth="3" markerEnd="url(#bs-arrow)" />
+        <path d="M176 214 Q 200 210 166 200" fill="none" stroke="#4a9a5a" strokeWidth="3" markerEnd="url(#bs-arrow)" />
+        <text x="42" y="260" fontSize="12" fill="#2f7a4d" fontWeight="700">胰岛素：促进 ②③ 去路</text>
+      </g>
+      {/* 三大去路（右） */}
+      <g style={dim(active, 2)}>
+        <rect x="346" y="76" width="150" height="44" rx="10" fill="#eaf2f8" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="421" y="96" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="700">① 氧化分解供能</text>
+        <rect x="346" y="134" width="150" height="44" rx="10" fill="#eaf2f8" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="421" y="154" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="700">② 合成肝糖原·肌糖原</text>
+        <rect x="346" y="192" width="150" height="44" rx="10" fill="#eaf2f8" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="421" y="212" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="700">③ 转化为脂肪·氨基酸</text>
+        <path d="M354 172 Q 330 140 354 98" fill="none" stroke="#4d7ea8" strokeWidth="3" markerEnd="url(#bs-arrow)" />
+        <path d="M346 156 L 358 156" fill="none" stroke="#4d7ea8" strokeWidth="3" markerEnd="url(#bs-arrow)" />
+        <path d="M354 200 Q 330 210 354 214" fill="none" stroke="#4d7ea8" strokeWidth="3" markerEnd="url(#bs-arrow)" />
+        <text x="436" y="260" fontSize="12" fill="#2c5a84" fontWeight="700">胰高血糖素：促进来源</text>
+      </g>
+      {/* 激素 */}
+      <g style={dim(active, 3)}>
+        <rect x="120" y="290" width="280" height="54" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">胰岛素（唯一降血糖）vs 胰高血糖素（升血糖）——拮抗调节</text>
+        <text x="260" y="334" textAnchor="middle" fontSize="11.5" fill="#a5761d">肾上腺素也升血糖（协同胰高血糖素）</text>
+      </g>
+      <defs>
+        <marker id="bs-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#4a9a5a" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">血糖的来源与去路（流程图）</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'heartCompare',
+    name: '脊椎动物心脏对比',
+    kicker: '心脏进化 · 对比模式图',
+    intro: '从鱼类的单循环到哺乳类的双循环：心房心室从 1+1 到 2+2，动静脉血从混合到完全分开——输氧效率的提升支撑了恒温与剧烈运动。',
+    parts: [
+      { name: '鱼类（1 房 1 室）', desc: '单循环：血经鳃再到全身，血压低、供氧效率有限（变温）。' },
+      { name: '两栖类（2 房 1 室）', desc: '肺皮肤双呼吸：心室中动脉血与静脉血部分混合。' },
+      { name: '爬行类（2 房 1 室+不全分隔）', desc: '心室出现不完全分隔：混合程度降低，仍是变温。' },
+      { name: '鸟类·哺乳类（2 房 2 室）', desc: '动静脉血完全分开：供氧效率最高——支持恒温、飞行与剧烈运动。' },
+      { name: '进化意义', desc: '心脏分隔程度与代谢水平正相关：恒温动物需要更强的氧运输能力。' },
+    ],
+    Svg: HeartCompareSvg,
+  },
+  {
+    id: 'biodiversity',
+    name: '生物多样性的三个层次',
+    kicker: '生态保护 · 概念关系图',
+    intro: '生物多样性包括基因、物种、生态系统三个层次：基因多样性是基础，物种多样性是直观体现，生态系统多样性是物种赖以生存的"整体背景"。',
+    parts: [
+      { name: '基因多样性', desc: '同种个体间的遗传差异（如不同水稻品种）——是物种多样性的基础。' },
+      { name: '物种多样性', desc: '群落中物种的丰富度：最直观、最常见的多样性衡量指标。' },
+      { name: '生态系统多样性', desc: '栖息地与群落的类型多样性：生态系统越多样，物种多样性越高。' },
+      { name: '保护措施', desc: '就地保护（自然保护区·最有效）+ 迁地保护（动物园·种子库）+ 法律法规。' },
+    ],
+    Svg: BiodiversitySvg,
+  },
+  {
+    id: 'bloodSugarSources',
+    name: '血糖来源与去路',
+    kicker: '血糖调节 · 流程图（实验侧图解）',
+    intro: '血糖的三大来源（食物消化吸收、肝糖原分解、非糖物质转化）与三大去路（氧化分解、合成糖原、转化为脂肪等），由胰岛素与胰高血糖素拮抗调节。',
+    parts: [
+      { name: '来源① 食物消化吸收', desc: '主要的血糖来源：食物中的糖类被消化成葡萄糖后吸收入血。' },
+      { name: '来源② 肝糖原分解', desc: '空腹时肝糖原分解为葡萄糖入血——肌糖原不能直接分解补血糖。' },
+      { name: '来源③ 非糖物质转化', desc: '脂肪、氨基酸等非糖物质在肝脏转化为葡萄糖。' },
+      { name: '去路', desc: '氧化分解供能（主要去路）、合成肝糖原肌糖原、转化为脂肪和氨基酸。' },
+      { name: '激素调节', desc: '胰岛素促进去路（降血糖）；胰高血糖素和肾上腺素促进来源（升血糖）。' },
+    ],
+    Svg: BloodSugarSourcesSvg,
+  },
   {
     id: 'fruitTypes',
     name: '果实的类型',

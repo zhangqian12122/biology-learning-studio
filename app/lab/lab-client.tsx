@@ -90,6 +90,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   engelmann: Palette,
   crossingOver: Scissors,
   apicalDominance: Sprout,
+  doubleFertilization: Flower2,
   quadratMethod: LayoutGrid,
   urineGlucoseTest: TestTube2,
   plateStreak: FlaskConical,
@@ -169,6 +170,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   engelmann: () => import('@/components/lab/engelmann-lab').then(({ EngelmannLab }) => ({ default: EngelmannLab })),
   crossingOver: () => import('@/components/lab/crossing-over-lab').then(({ CrossingOverLab }) => ({ default: CrossingOverLab })),
   apicalDominance: () => import('@/components/lab/apical-dominance-lab').then(({ ApicalDominanceLab }) => ({ default: ApicalDominanceLab })),
+  doubleFertilization: () => import('@/components/lab/double-fertilization-lab').then(({ DoubleFertilizationLab }) => ({ default: DoubleFertilizationLab })),
   quadratMethod: () => import('@/components/lab/quadrat-method-lab').then(({ QuadratMethodLab }) => ({ default: QuadratMethodLab })),
   urineGlucoseTest: () => import('@/components/lab/urine-glucose-lab').then(({ UrineGlucoseTestLab }) => ({ default: UrineGlucoseTestLab })),
   plateStreak: () => import('@/components/lab/plate-streak-lab').then(({ PlateStreakLab }) => ({ default: PlateStreakLab })),
@@ -233,9 +235,9 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   dogma: ['centralDogma'],
   mulberryFishPond: ['sangjiPondCycle', 'carbonCycle'],
   ecosystemJar: ['carbonCycle'],
-  bloodSugarRegulation: ['waterSaltBalance'],
   pcr: ['pcrStages'],
   vaccineResponse: ['humoralImmunity'],
+  bloodSugarRegulation: ['waterSaltBalance', 'bloodSugarSources'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
