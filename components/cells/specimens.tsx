@@ -5045,15 +5045,15 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
 /** 图鉴目录：按主题分类，供图鉴页筛选导航（56 个标本全覆盖） */
 export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] = [
   { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
-  { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome'] },
-  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory'] },
+  { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome', 'vacuole'] },
+  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
-  { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen'] },
+  { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers'] },
 ];
 
@@ -8532,20 +8532,7 @@ export const SPECIMENS: Specimen[] = [
     ],
     Svg: HumoralImmunitySvg,
   },
-  {
-    id: 'neuron',
-    name: '细胞的癌变',
-    kicker: '细胞命运 · 对比模式图',
-    intro: '在物理、化学或病毒致癌因子作用下，原癌基因与抑癌基因发生突变：细胞变成能无限增殖、形态畸形、易分散转移的"永生"细胞——这就是癌变。',
-    parts: [
-      { name: '致癌因子', desc: '物理（紫外线、X 射线）、化学（黄曲霉毒素、亚硝酸盐）、病毒（如乙肝病毒）三大类。' },
-      { name: '基因突变', desc: '原癌基因过度表达、抑癌基因失活：两道"刹车"同时失灵，细胞分裂失去控制。' },
-      { name: '无限增殖', desc: '癌细胞不再受接触抑制约束，在有限营养里也能不断分裂——"永生"是它的标志。' },
-      { name: '形态结构改变', desc: '细胞由规则变畸形、核变大深染、核糖体增多——病理切片据此识别癌细胞。' },
-      { name: '易分散转移', desc: '表面糖蛋白减少、黏性下降：癌细胞彼此离散，随血液淋巴转移到全身。' },
-    ],
-    Svg: CancerCellSvg,
-  },
+
   {
     id: 'ascarid',
     name: '蛔虫',
@@ -8593,7 +8580,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: TissueCultureStagesSvg,
   },
   {
-    id: 'neuron',
+    id: 'vacuole',
     name: '液泡',
     kicker: '细胞器 · 结构模式图',
     intro: '成熟植物细胞的"储水罐"：中央大液泡占据细胞体积的 90%，细胞液里溶着糖、色素与代谢废物——充水膨胀让细胞挺立，失水就萎蔫。',
@@ -8633,7 +8620,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: AdaptationsSvg,
   },
   {
-    id: 'neuron',
+    id: 'seedCompare',
     name: '菜豆种子与玉米种子',
     kicker: '种子 · 双子叶与单子叶对比图',
     intro: '菜豆种子有 2 片肥厚子叶、无胚乳；玉米种子只有 1 片子叶、有胚乳——"单双"之分就藏在种子里，是双子叶与单子叶植物的名称由来。',
@@ -8675,7 +8662,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: SafeMedicationSvg,
   },
   {
-    id: 'neuron',
+    id: 'cancerCell',
     name: '细胞的癌变',
     kicker: '细胞命运 · 对比模式图',
     intro: '在物理、化学或病毒致癌因子作用下，原癌基因与抑癌基因发生突变：细胞变成能无限增殖、形态畸形、易分散转移的"永生"细胞——这就是癌变。',
@@ -8715,7 +8702,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: SeedlessFruitSvg,
   },
   {
-    id: 'neuron',
+    id: 'plantTissues',
     name: '植物的主要组织',
     kicker: '植物体 · 五大组织对比图',
     intro: '植物体由五大组织构成：分生组织是"干细胞"源源不断分裂，其余组织分工保护、制造养料、运输与支撑——一棵树就是一支协作团队。',
@@ -8757,7 +8744,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: InvasiveSpeciesSvg,
   },
   {
-    id: 'neuron',
+    id: 'silkwormLife',
     name: '家蚕的发育',
     kicker: '昆虫 · 完全变态发育图',
     intro: '家蚕一生经历卵、幼虫、蛹、成虫四个阶段：幼虫取食蜕皮后吐丝结茧化蛹，不食不动的蛹内发生"大改造"，羽化成蚕蛾——完全变态发育。',
@@ -8801,7 +8788,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: PcrStagesSvg,
   },
   {
-    id: 'neuron',
+    id: 'verticalLayers',
     name: '森林的垂直结构',
     kicker: '群落生态 · 分层现象图',
     intro: '森林群落自上而下分乔木、灌木、草本、地被四层：分层提高了群落利用阳光等环境资源的能力，动物的分层也随之而来。',
@@ -8842,7 +8829,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: MuscleTissuesSvg,
   },
   {
-    id: 'neuron',
+    id: 'ecosystemTypes',
     name: '生态系统的类型',
     kicker: '生态系统 · 类型总览图',
     intro: '森林、草原、海洋、湿地、农田、城市——不同环境孕育不同的生态系统：自然类型的调节能力强，人工类型则高度依赖人类维护。',
@@ -8884,7 +8871,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: EndocrineGlandsSvg,
   },
   {
-    id: 'neuron',
+    id: 'vertebrateClasses',
     name: '脊椎动物五大纲',
     kicker: '脊椎动物 · 五大纲对比表',
     intro: '鱼类、两栖类、爬行类、鸟类、哺乳类：从水生到陆生、从卵生到胎生、从变温到恒温——呼吸、生殖与体温的对比串起脊椎动物的进化主线。',
@@ -8925,7 +8912,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: BacteriaShapesSvg,
   },
   {
-    id: 'neuron',
+    id: 'speciesRelations',
     name: '种间关系',
     kicker: '群落生态 · 四类型对比图',
     intro: '同一群落里不同物种之间的关系有四种：竞争（两败俱伤）、捕食（一吃一）、寄生（一害一利）、互利共生（双方受益）——决定群落的结构。',
@@ -8968,7 +8955,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: BoneStructureSvg,
   },
   {
-    id: 'neuron',
+    id: 'pineCone',
     name: '松果（球果）',
     kicker: '裸子植物 · 球果结构图',
     intro: '松、杉、柏是裸子植物：种子裸露在种鳞上、没有子房壁包被所以不形成果实——"松果"其实是充满种鳞的球果，不是水果。',
@@ -9009,7 +8996,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: RootTypesSvg,
   },
   {
-    id: 'neuron',
+    id: 'evolutionTree',
     name: '生物进化树',
     kicker: '生物进化 · 历程图',
     intro: '进化树把 35 亿多年的生命历程画成一棵"树"：从共同原始祖先出发，分支越来越多、生物越来越多样——现代生物都是这条进化长河的"末梢"。',
@@ -9052,7 +9039,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: RumenSvg,
   },
   {
-    id: 'neuron',
+    id: 'stemStructure',
     name: '茎的结构',
     kicker: '茎 · 横切结构图',
     intro: '木质部的导管向上运水，韧皮部的筛管向下运有机物，中间的形成层不断分裂让茎逐年加粗——运输与支撑两不误。',
@@ -9094,7 +9081,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: SpongeSvg,
   },
   {
-    id: 'neuron',
+    id: 'starfish',
     name: '海星',
     kicker: '棘皮动物 · 结构模式图',
     intro: '海里的"五角星"（课外拓展）：五辐射对称的棘皮动物，靠水管系统驱动成百上千的管足缓慢爬行，甚至能把胃翻出体外消化贝壳里的猎物。',
@@ -9136,7 +9123,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: SieveTubeSvg,
   },
   {
-    id: 'neuron',
+    id: 'lizard',
     name: '蜥蜴',
     kicker: '爬行动物 · 结构模式图',
     intro: '真正适应陆地生活的爬行动物：角质鳞片防失水，肺呼吸，体内受精产羊膜卵——生殖发育彻底摆脱了对水的依赖。',
@@ -9178,7 +9165,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: EcosystemComponentsSvg,
   },
   {
-    id: 'neuron',
+    id: 'leafBud',
     name: '芽的结构',
     kicker: '叶芽 · 纵切结构图',
     intro: '芽是未发育的枝条：生长点的细胞不断分裂，叶原基发育成幼叶，芽轴发育成茎，芽原基发育成侧芽——春天展叶就是它苏醒的样子。',
@@ -9222,7 +9209,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: ShrimpSvg,
   },
   {
-    id: 'neuron',
+    id: 'birdEgg',
     name: '鸟卵结构',
     kicker: '鸟的生殖 · 结构模式图',
     intro: '鸟卵是一个自带的"营养舱 + 保育箱"：卵壳和卵白保护供水，气室供氧，卵黄提供养料，胚盘里的细胞核是胚胎发育的起点。',
@@ -9267,7 +9254,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: ChlamydomonasSvg,
   },
   {
-    id: 'neuron',
+    id: 'vessels',
     name: '血管三种类型',
     kicker: '循环系统 · 对比模式图',
     intro: '动脉、静脉、毛细血管的结构与功能相适应：管壁厚薄、弹性、血流速度各不同，毛细血管的一层细胞壁正是物质交换的"窗口"。',
@@ -9310,7 +9297,7 @@ export const SPECIMENS: Specimen[] = [
     Svg: HydraSvg,
   },
   {
-    id: 'neuron',
+    id: 'mussel',
     name: '河蚌',
     kicker: '软体动物 · 结构模式图',
     intro: '水生软体动物的代表：身体柔软，有外套膜与两片贝壳，水从入水孔进入、经鳃呼吸后由出水孔排出，靠斧足掘泥沙运动。',

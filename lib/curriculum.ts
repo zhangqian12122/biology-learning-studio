@@ -614,6 +614,7 @@ export type ExperimentId =
   | 'geneTherapy'
   | 'crossingOver'
   | 'apicalDominance'
+  | 'doubleFertilization'
   | 'markRecapture'
   | 'succession'
   | 'dnaReplication'
@@ -1064,6 +1065,14 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '内环境与稳态',
   },
+  doubleFertilization: {
+    title: '被子植物的双受精',
+    kicker: '必修 2 · 遗传与进化',
+    description: '跟随两个精子进入胚囊：一个变胚、一个变胚乳——被子植物特有。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+    extension: true,
+  },
   markRecapture: {
     title: '标志重捕法估算种群数量',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1210,7 +1219,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'crossingOver', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'crossingOver', 'doubleFertilization', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1250,6 +1259,7 @@ export const experimentOrder: ExperimentId[] = [
   'cellRespiration',
   'engelmann',
   'crossingOver',
+  'doubleFertilization',
   'mitosisObservation',
   // 必修 2 · 遗传与进化
   'traitSeparation',
