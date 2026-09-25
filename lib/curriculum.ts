@@ -633,6 +633,7 @@ export type ExperimentId =
   | 'waterQuality'
   | 'carTherapy'
   | 'circadianRhythm'
+  | 'predatorPrey'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1229,6 +1230,13 @@ export const experimentMeta: Record<
     relatedModule: '神经和体液调节',
     extension: true,
   },
+  predatorPrey: {
+    title: '捕食者-猎物周期',
+    kicker: '选择性必修 2 · 生态',
+    description: '雪兔-猞猁 10 季双曲线：滞后相位与三种情景的连锁反应。',
+    relatedBook: 'ecology',
+    relatedModule: '种群特征与群落结构',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1430,7 +1438,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecologicalNiche', 'foodChain', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'predatorPrey', 'ecologicalNiche', 'foodChain', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality'],
   },
   {
     name: '生物技术',
@@ -1509,6 +1517,7 @@ export const experimentOrder: ExperimentId[] = [
   'succession',
   'energy',
   'population',
+  'predatorPrey',
   'ecosystemJar',
   'mulberryFishPond',
   'leafDecompose',

@@ -5049,10 +5049,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
@@ -10878,7 +10878,175 @@ function MimosaSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 海马（雄性怀孕） ================= */
+
+function SeahorseSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 雄海马 */}
+      <g style={dim(active, 0)}>
+        <path d="M280 96 q 44 -18 66 14 q 16 26 8 62 q -10 44 -30 88 q -16 34 -34 56 q -14 16 -26 2 q -14 -16 2 -40 q 18 -28 24 -66 q -34 -10 -34 -48 q 0 -50 24 -68 Z" fill="#e0b860" stroke="#8a6a2a" strokeWidth="2.8" />
+        <path d="M276 90 q 20 -22 40 -8 q 14 10 6 26 q -12 14 -30 8" fill="#e8cc80" stroke="#8a6a2a" strokeWidth="2.2" />
+        <path d="M300 66 q 10 -18 26 -18 m -26 18 q 16 -4 26 -4" fill="none" stroke="#8a6a2a" strokeWidth="2.4" />
+        <circle cx="296" cy="102" r="5" fill="#3a2a0a" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M286 ${230 + i * 26} q 16 -2 24 8`} fill="none" stroke="#c9a050" strokeWidth="2" />
+        ))}
+        <text x="368" y="120" fontSize="12.5" fill="#8a6a2a" fontWeight="700">管状长吻（吸食浮游生物）</text>
+        <text x="368" y="216" fontSize="12.5" fill="#8a6a2a" fontWeight="700">尾部卷握海草固定身体</text>
+      </g>
+      {/* 育儿袋 */}
+      <g style={dim(active, 1)}>
+        <path d="M250 180 q -30 10 -28 46 q 2 34 30 40 q 26 6 32 -26 q 4 -30 -12 -52 q -10 -12 -22 -8 Z" fill="#d8a84a" stroke="#8a6a2a" strokeWidth="2.6" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <circle key={i} cx={244 + (i % 3) * 12} cy={206 + Math.floor(i / 3) * 16} r="4" fill="#f4e0a0" stroke="#a58a2a" strokeWidth="1.2" />
+        ))}
+        <text x="60" y="188" fontSize="12.5" fill="#8a6a2a" fontWeight="700">雄性育儿袋</text>
+        <text x="60" y="208" fontSize="12.5" fill="#8a6a2a">雌鱼把卵产入袋中</text>
+        <text x="60" y="228" fontSize="12.5" fill="#8a6a2a">雄海马"怀孕"约 2~4 周</text>
+        <line x1="150" y1="206" x2="224" y2="216" stroke="#8a6a2a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="296" width="440" height="66" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">雄性育幼的极端形式：幼体在袋内获氧与营养，出生率大大提高</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#a5761d">硬骨鱼纲海龙科 · 尾部卷握与拟态体色是"定栖"生活的适应</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">海马 · 雄性"怀孕"的鱼（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 黄斑与盲点 ================= */
+
+function MaculaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 眼底视图 */}
+      <g style={dim(active, 0)}>
+        <circle cx="220" cy="180" r="130" fill="#f8f0e8" stroke="#b5765a" strokeWidth="3" />
+        <path d="M320 120 q 30 -26 40 -52" fill="none" stroke="#a54838" strokeWidth="5" strokeLinecap="round" />
+        <path d="M352 76 q 14 4 12 18 m -12 -18 q 14 -4 20 8" fill="none" stroke="#a54838" strokeWidth="3.4" />
+        <ellipse cx="300" cy="150" rx="20" ry="13" fill="#e8a03a" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="356" y="150" fontSize="12.5" fill="#8a671b" fontWeight="700">视盘（生理盲点）</text>
+        <text x="356" y="170" fontSize="12.5" fill="#8a671b">神经与血管穿出·无视细胞</text>
+        <line x1="352" y1="154" x2="322" y2="152" stroke="#8a671b" strokeWidth="1.2" />
+      </g>
+      {/* 黄斑 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="180" cy="210" rx="26" ry="20" fill="#f4d06a" stroke="#a58a2a" strokeWidth="2.4" opacity="0.85" />
+        <circle cx="180" cy="210" r="7" fill="#8a671b" />
+        <text x="60" y="258" fontSize="12.5" fill="#8a671b" fontWeight="700">黄斑（中央凹）</text>
+        <text x="60" y="278" fontSize="12.5" fill="#8a671b">视锥细胞最密集·视觉最清晰</text>
+        <line x1="120" y1="264" x2="160" y2="226" stroke="#8a671b" strokeWidth="1.2" />
+      </g>
+      {/* 视细胞 */}
+      <g style={dim(active, 2)}>
+        <rect x="330" y="220" width="150" height="100" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="405" y="244" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">两类感光细胞</text>
+        <text x="405" y="266" textAnchor="middle" fontSize="11" fill="#37585f">视锥细胞：强光+彩色（700万）</text>
+        <text x="405" y="286" textAnchor="middle" fontSize="11" fill="#37585f">视杆细胞：弱光+黑白（1.2亿）</text>
+        <text x="405" y="306" textAnchor="middle" fontSize="10.5" fill="#799398">夜行动物视杆多·人黄斑全视锥</text>
+      </g>
+      {/* 盲点测试 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="318" width="440" height="46" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">盲点测试：闭右眼，左眼看"+"，书远近移动——十字消失处即盲点投射区</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">平时"看不到"盲点：大脑用周围图像自动补全（脑补的生理学依据）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">黄斑与盲点 · 视网膜上的"高清区"与"盲区"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 沼气池（微生物产能） ================= */
+
+function BiogasSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 池体 */}
+      <g style={dim(active, 0)}>
+        <path d="M110 160 q 0 -70 150 -70 q 150 0 150 70 l 0 90 q 0 40 -150 40 q -150 0 -150 -40 Z" fill="#b5a582" stroke="#7a6a4a" strokeWidth="3" />
+        <ellipse cx="260" cy="160" rx="150" ry="38" fill="#d8c9a0" stroke="#7a6a4a" strokeWidth="2.6" />
+        <path d="M120 162 q 140 34 280 0" fill="none" stroke="#a5824a" strokeWidth="2" strokeDasharray="6 4" />
+        <text x="260" y="270" textAnchor="middle" fontSize="12.5" fill="#6a5a2a" fontWeight="700">发酵池（密闭·无氧）</text>
+        <text x="260" y="290" textAnchor="middle" fontSize="11.5" fill="#8a7a4a">秸秆+粪便+生活污水 = 原料</text>
+      </g>
+      {/* 产气与利用 */}
+      <g style={dim(active, 1)}>
+        <path d="M410 140 q 30 -30 30 -66" fill="none" stroke="#3f7f3a" strokeWidth="6" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <circle key={i} cx={442 + i * 3} cy={58 - i * 12} r="6" fill="#7ab86a" opacity="0.85" />
+        ))}
+        <rect x="400" y="40" width="84" height="34" rx="8" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="442" y="62" textAnchor="middle" fontSize="10.5" fill="#2f6f2a" fontWeight="700">沼气 → 灶台</text>
+        <text x="414" y="132" fontSize="11" fill="#3f7f3a" fontWeight="600">甲烷 60~70%</text>
+      </g>
+      {/* 甲烷菌 */}
+      <g style={dim(active, 2)}>
+        <circle cx="180" cy="160" r="10" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="1.6" />
+        <circle cx="220" cy="172" r="8" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="1.4" />
+        <circle cx="340" cy="168" r="9" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="1.4" />
+        <text x="52" y="130" fontSize="12.5" fill="#3f7f3a" fontWeight="700">产甲烷菌（严格厌氧古菌）</text>
+        <text x="52" y="112" fontSize="12.5" fill="#3f7f3a" fontWeight="700">氧气会使它"窒息"</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="312" width="440" height="54" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="334" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">生态农业闭环：废物 → 能源 + 优质有机肥（沼渣沼液还田）</text>
+        <text x="260" y="354" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">物质循环再生原理的应用——农村清洁能源与卫生防疫双收益</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">沼气池 · 微生物"发电站"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'seahorse',
+    name: '海马',
+    kicker: '硬骨鱼纲 · 雄性"怀孕"的鱼（课外拓展）',
+    intro: '海马是鱼，却长得不像鱼：马头状的头部、管状长吻、能卷握海草的猴尾，靠背鳍每秒扇动几十次缓慢游动。最奇特的是繁殖——雌鱼把卵产进雄鱼的育儿袋，由雄海马"怀孕"两到四周，把发育完全的小海马"生"出来，是动物界雄性育幼的极致案例。',
+    extension: true,
+    parts: [
+      { name: '独特体形', desc: '头部似马、身体被骨质环板包裹（没有鳞片）、尾部细长可卷曲——全身"盔甲"让它几乎不游泳而是直立"漂行"。' },
+      { name: '管状长吻', desc: '无法咀嚼，靠鳃盖和吻的快速扩张把浮游生物"吸"进嘴里——吸力精确到能吸出藏在小缝里的糠虾。' },
+      { name: '雄性育儿袋', desc: '交配时雌鱼把卵产入雄鱼袋中受精；袋壁供氧供营养并调节渗透压——"孕爸"分娩时可释放数百条幼海马。' },
+      { name: '尾部卷握', desc: '尾部的抓握能力让它在海流中"锚定"海草——这使海马几乎不迁徙，栖息地破坏对它伤害极大。' },
+      { name: '拟态高手', desc: '体色可随环境变化，某些海龙科亲戚（叶海龙）更像漂浮的海藻——拟态是它们唯一的防御手段。' },
+    ],
+    Svg: SeahorseSvg,
+  },
+  {
+    id: 'retinaMacula',
+    name: '黄斑与盲点',
+    kicker: '感觉器官 · 视网膜的"高清区"与"盲区"（课外拓展）',
+    intro: '视网膜不是均匀的"感光底片"：正对瞳孔的黄斑（中央凹）挤满了约 700 万个视锥细胞，是视觉最锐利的"高清区"；而视神经和血管穿出的视盘上没有任何感光细胞——这里是名副其实的"生理盲点"。平时察觉不到盲点，是因为大脑用周围的图像自动补全了。',
+    extension: true,
+    parts: [
+      { name: '黄斑与中央凹', desc: '视网膜上直径约 1.5 mm 的黄色区域，中央凹只有视锥细胞、一个细胞对一个双极细胞——分辨率最高，读书时目光正落在这里。' },
+      { name: '两类视细胞', desc: '视锥细胞（约 700 万）负责明视与色觉，分红绿蓝三种；视杆细胞（约 1.2 亿）负责暗视，夜行动物占比极高。' },
+      { name: '视盘与生理盲点', desc: '视神经汇集穿出眼球的地方没有感光细胞——视野中存在一个永远"看不见"的区域，可用闭眼十字测试找到它。' },
+      { name: '大脑"脑补"', desc: '视觉皮层用盲点周围的图像信息自动填补空缺——我们"看到"的世界，一半是视网膜、一半是大脑的推断。' },
+      { name: '健康提示', desc: '黄斑是老年性黄斑变性的病灶区（中心视力丧失）；紫外线和长期蓝光暴露会加速黄斑损伤——户外戴墨镜有依据。' },
+    ],
+    Svg: MaculaSvg,
+  },
+  {
+    id: 'biogas',
+    name: '沼气池',
+    kicker: '微生物工程 · 农村清洁能源（课外拓展）',
+    intro: '密闭的沼气池里没有氧气，产甲烷菌（一类严格厌氧的古菌）却如鱼得水：它们把秸秆、粪便分解成以甲烷为主的沼气——可做饭、可照明。发酵残余的沼渣沼液是优质有机肥，回田又养作物——一座沼气池就是生态农业"物质循环再生"原理的活教材。',
+    extension: true,
+    parts: [
+      { name: '发酵池', desc: '密闭无氧环境：人畜粪便、秸秆、污水在多种微生物协同下分两步分解——先产酸、再产甲烷。' },
+      { name: '产甲烷菌', desc: '严格厌氧的古菌，氧气会让它无法生存——所以沼气池必须密封，这既是产气条件也是安全要求。' },
+      { name: '沼气', desc: '甲烷占 60%~70%，热值高；甲烷还是强温室气体——收集利用它比直接排放环保得多。' },
+      { name: '沼渣沼液', desc: '发酵残余物富含氮磷和有机质，是杀灭多数病菌虫卵后的优质有机肥——"废物"的完整资源化。' },
+      { name: '生态学意义', desc: '实现物质循环再生与能量多级利用：改善卫生、提供能源、减少砍柴——小池子连着大生态。' },
+    ],
+    Svg: BiogasSvg,
+  },
   {
     id: 'firefly',
     name: '萤火虫',
