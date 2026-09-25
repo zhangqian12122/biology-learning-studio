@@ -8,26 +8,28 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：carTherapy CAR-T 免疫细胞疗法 ----------
-await page.goto(`${BASE}/lab?exp=carTherapy`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：circadianRhythm 生物钟与昼夜节律 ----------
+await page.goto(`${BASE}/lab?exp=circadianRhythm`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('CAR-T 免疫细胞疗法');
+  results.experiment.open = text.includes('生物钟与昼夜节律');
   const before = text;
-  for (let i = 0; i < 4; i++) {
-    await page.getByRole('button', { name: /推进流程/ }).click();
-    await page.waitForTimeout(450);
-  }
+  const beforeClick = await page.locator('main').innerText();
+  await page.getByRole('button', { name: /熬夜刷题/ }).click();
+  await page.waitForTimeout(450);
+  const midText = await page.locator('main').innerText();
+  await page.getByRole('button', { name: /飞抵时差/ }).click();
+  await page.waitForTimeout(450);
   const afterClick = await page.locator('main').innerText();
-  results.experiment.interactive = afterClick.includes('穿孔素') && afterClick.includes('细胞因子风暴');
+  results.experiment.interactive = beforeClick.includes('规律作息') && midText.includes('推迟约 3 小时') && afterClick.includes('出发地');
   results.experiment.reference = afterClick.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['tardigrade', 'lymphNode', 'telomere'];
+const SPECIMENS = ['firefly', 'pituitary', 'mimosa'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -87,17 +89,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：carTherapy 实验页应挂载 cancerCell 图解
-await page.goto(`${BASE}/lab?exp=carTherapy`, { waitUntil: 'domcontentloaded' });
+// 回归检查：thyroidAxis 激素调节实验页仍正常
+await page.goto(`${BASE}/lab?exp=thyroidAxis`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.cancerCellDiagram = { found: t.includes('癌') || t.includes('肿瘤'), ok: t.includes('癌') || t.includes('肿瘤') };
+  results.specimens.thyroidRegression = { found: t.includes('甲状腺') || t.includes('激素'), ok: t.includes('甲状腺') || t.includes('激素') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.cancerCellDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.thyroidRegression?.ok;
 console.log('ALL_OK=' + allOk);

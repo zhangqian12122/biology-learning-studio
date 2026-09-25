@@ -632,6 +632,7 @@ export type ExperimentId =
   | 'gravitropism'
   | 'waterQuality'
   | 'carTherapy'
+  | 'circadianRhythm'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1220,6 +1221,14 @@ export const experimentMeta: Record<
     relatedModule: '免疫调节与健康',
     extension: true,
   },
+  circadianRhythm: {
+    title: '生物钟与昼夜节律',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '褪黑素与皮质醇的 24h 相位：熬夜和倒时差如何打乱生物钟。',
+    relatedBook: 'regulation',
+    relatedModule: '神经和体液调节',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1416,7 +1425,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
   },
   {
     name: '生态',
@@ -1490,6 +1499,7 @@ export const experimentOrder: ExperimentId[] = [
   'reflexArc',
   'thyroidAxis',
   'thermoRegulation',
+  'circadianRhythm',
   'sirModel',
   // 选择性必修 2 · 生物与环境
   'quadratMethod',

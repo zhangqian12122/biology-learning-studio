@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -10757,7 +10757,173 @@ function TelomereSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 萤火虫（生物发光） ================= */
+
+function FireflySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 夜色背景 */}
+      <g style={dim(active, 0)}>
+        <rect x="36" y="50" width="448" height="200" rx="14" fill="#1a2632" stroke="#0e1620" strokeWidth="2.4" />
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={`st${i}`} cx={90 + i * 120} cy={78 + (i % 2) * 26} r="1.8" fill="#c9d8e8" />
+        ))}
+        <text x="260" y="228" textAnchor="middle" fontSize="11" fill="#8a9aa8">夏夜的草丛——萤火虫的"求偶信号灯"此起彼伏</text>
+        {[0, 1, 2].map((i) => (
+          <circle key={`gl${i}`} cx={120 + i * 130} cy={150 + (i % 2) * 40} r="5" fill="#e8f0a0" opacity="0.9" />
+          ))}
+      </g>
+      {/* 萤火虫结构 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="180" cy="170" rx="34" ry="20" fill="#5a4a2a" stroke="#3a2a1a" strokeWidth="2.4" />
+        <circle cx="150" cy="158" r="11" fill="#5a4a2a" stroke="#3a2a1a" strokeWidth="2" />
+        <path d="M148 148 q -6 -16 -16 -20 m 16 20 q 2 -18 12 -24" fill="none" stroke="#3a2a1a" strokeWidth="2" />
+        <path d="M214 162 q 40 -10 66 2 q -26 14 -66 6 Z" fill="#3a2a1a" stroke="#2a1a0a" strokeWidth="2" />
+        <ellipse cx="262" cy="184" rx="16" ry="9" fill="#f4f0a0" stroke="#c9b83a" strokeWidth="2.2" />
+        <text x="300" y="266" fontSize="12.5" fill="#8a671b" fontWeight="700">腹部末端发光器</text>
+        <line x1="296" y1="258" x2="272" y2="192" stroke="#8a671b" strokeWidth="1.2" strokeDasharray="3 3" />
+        <text x="258" y="106" fontSize="12.5" fill="#8a6a3a" fontWeight="700">鞘翅（前翅硬化成盖）</text>
+      </g>
+      {/* 发光原理 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="272" width="440" height="44" rx="10" fill="#eef4d8" stroke="#6a8a2a" strokeWidth="2.2" />
+        <text x="260" y="290" textAnchor="middle" fontSize="12.5" fill="#4a6a2a" fontWeight="800">荧光素 + O₂ + ATP —荧光素酶→ 氧化荧光素 + 冷光（几乎不发热）</text>
+        <text x="260" y="308" textAnchor="middle" fontSize="11.5" fill="#5a7a2a">闪光频率与持续时间是不同种类的"密码"——种间生殖隔离的信号</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <text x="46" y="346" fontSize="12.5" fill="#4a6a2a" fontWeight="700">发光耗能巨大却信号精准——自然选择塑造的高效"通讯系统"</text>
+        <text x="46" y="366" fontSize="12" fill="#5a7a2a">荧光素酶基因已成为科研中常用的"报告基因"·萤火虫也是环境指示物种</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">萤火虫 · 生物发光（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 垂体（内分泌总司令） ================= */
+
+function PituitarySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 位置：下丘脑下方 */}
+      <g style={dim(active, 0)}>
+        <path d="M220 84 q 40 -26 80 0 q 24 18 14 40 q -54 20 -108 0 q -10 -22 14 -40 Z" fill="#e8c9d8" stroke="#a5486a" strokeWidth="2.6" />
+        <text x="322" y="80" fontSize="12.5" fill="#8a3a5a" fontWeight="700">下丘脑（节律与食欲中枢）</text>
+        <line x1="318" y1="84" x2="296" y2="94" stroke="#8a3a5a" strokeWidth="1.2" />
+        <path d="M260 124 v 22" stroke="#a5486a" strokeWidth="8" strokeLinecap="round" />
+        <ellipse cx="260" cy="172" rx="30" ry="24" fill="#d86a8a" stroke="#8a2a4a" strokeWidth="2.6" />
+        <text x="322" y="168" fontSize="12.5" fill="#8a2a4a" fontWeight="700">垂体（豌豆大小·约 0.6 g）</text>
+        <text x="322" y="188" fontSize="12.5" fill="#8a2a4a">悬于下丘脑下方·蝶鞍内</text>
+      </g>
+      {/* 两种叶 */}
+      <g style={dim(active, 1)}>
+        <path d="M240 156 q 20 -14 40 0 q 6 18 0 32 q -20 10 -40 0 q -6 -14 0 -32 Z" fill="#e88aa8" stroke="#8a2a4a" strokeWidth="2" />
+        <text x="46" y="242" fontSize="12.5" fill="#8a2a4a" fontWeight="700">腺垂体（前叶）分泌：</text>
+        <text x="46" y="262" fontSize="12" fill="#8a2a4a">生长激素（巨人症/侏儒症）</text>
+        <text x="46" y="280" fontSize="12" fill="#8a2a4a">促甲状腺激素·促性腺激素等</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="330" y="242" fontSize="12.5" fill="#4a6a8a" fontWeight="700">神经垂体（后叶）释放：</text>
+        <text x="330" y="262" fontSize="12" fill="#4a6a8a">抗利尿激素（缺尿崩症）</text>
+        <text x="330" y="280" fontSize="12" fill="#4a6a8a">催产素（由下丘脑合成）</text>
+      </g>
+      {/* 总司令 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="304" width="440" height="56" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="328" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">"内分泌总司令"：分泌促激素指挥甲状腺·肾上腺皮质·性腺</text>
+        <text x="260" y="348" textAnchor="middle" fontSize="11.5" fill="#a5761d">真正的"最高统帅"是下丘脑——它分泌激素控制垂体（神经-体液调节的枢纽）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">垂体 · 激素调节的"中转枢纽"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 含羞草（感震运动） ================= */
+
+function MimosaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 展开状态 */}
+      <g style={dim(active, 0)}>
+        <path d="M180 250 q -10 -80 30 -140" fill="none" stroke="#3f7f3a" strokeWidth="6" strokeLinecap="round" />
+        <path d="M210 110 q 60 -24 130 -6" fill="none" stroke="#3f7f3a" strokeWidth="4" strokeLinecap="round" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${232 + i * 20} 104 q 6 -22 20 -28 m -20 28 q 4 20 18 26`} fill="none" stroke="#5a9a4a" strokeWidth="3" strokeLinecap="round" />
+        ))}
+        <text x="120" y="92" fontSize="12.5" fill="#2f6f2a" fontWeight="700">舒展状态：羽状复叶展开（白天）</text>
+      </g>
+      {/* 闭合状态 */}
+      <g style={dim(active, 1)}>
+        <path d="M330 250 q 4 -60 -20 -104" fill="none" stroke="#3f7f3a" strokeWidth="6" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M312 ${150 + i * 22} q 22 -8 44 0 q -22 10 -44 0 Z`} fill="#4a7a3a" stroke="#2f6f2a" strokeWidth="2" />
+        ))}
+        <text x="314" y="310" fontSize="12.5" fill="#2f6f2a" fontWeight="700">受触碰后：小叶闭合·叶柄下垂</text>
+        <text x="330" y="330" fontSize="12.5" fill="#5a8a4a">几秒完成 · 约 10 分钟恢复</text>
+      </g>
+      {/* 叶枕机制 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="180" cy="200" rx="18" ry="12" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="46" y="176" fontSize="12.5" fill="#3f7f3a" fontWeight="700">叶枕：细胞膨压变化的"关节"</text>
+        <text x="46" y="196" fontSize="12.5" fill="#3f7f3a">受刺激 → 钾离子外流失水 → 闭合</text>
+        <line x1="150" y1="188" x2="168" y2="196" stroke="#3f7f3a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">这是植物的"运动"：不含肌肉，靠膨压与电信号传导——模拟躲避风暴与昆虫的适应</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">含羞草 · 感震运动（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'firefly',
+    name: '萤火虫',
+    kicker: '鞘翅目 · 生物发光的"信号灯"（课外拓展）',
+    intro: '萤火虫的腹部末端有一座微型"冷光灯"：荧光素在荧光素酶的催化下与氧气、ATP 反应，把化学能几乎全部转化为光而非热，效率远超人类的人造光源。每闪烁一次都是求偶信号——不同种类萤火虫的闪光节奏像"摩斯密码"，确保只与同种配对。',
+    extension: true,
+    parts: [
+      { name: '发光器', desc: '腹部末端的发光层：发光细胞内含荧光素，气管为反应供氧，反射层把光向下投射。' },
+      { name: '发光原理', desc: '荧光素 + O₂ + ATP 在荧光素酶催化下生成氧化荧光素并释放光子——冷光效率接近 100%，是无污染的"绿色光源"。' },
+      { name: '闪光密码', desc: '每种萤火虫的闪光频率、时长与飞行轨迹不同——同性别的"应答"必须对上"暗号"，这是生殖隔离的行为保障。' },
+      { name: '诱捕策略', desc: '某些种类的雌虫会模仿别种的闪光密码引诱雄虫并捕食——"攻击性拟态"的经典案例。' },
+      { name: '生态指示', desc: '萤火虫幼虫捕食蜗牛，成虫几乎不进食；对光污染与水污染极其敏感——萤火虫消失是环境退化的警报。' },
+    ],
+    Svg: FireflySvg,
+  },
+  {
+    id: 'pituitary',
+    name: '垂体',
+    kicker: '内分泌 · "总司令"的枢纽（课外拓展）',
+    intro: '垂体只有豌豆大小，藏在大脑底部的蝶鞍里，却是激素调节的"中转枢纽"：腺垂体分泌生长激素和多种促激素指挥甲状腺、肾上腺皮质、性腺；神经垂体释放由下丘脑合成的抗利尿激素和催产素。而它头顶的下丘脑才是真正的"最高统帅"——把神经信号翻译成激素指令。',
+    extension: true,
+    parts: [
+      { name: '位置', desc: '悬于下丘脑下方，借垂体柄相连，安坐在蝶骨的"蝶鞍"内——解剖位置即暗示它与脑的从属关系。' },
+      { name: '腺垂体', desc: '分泌生长激素（幼年过多→巨人症、过少→侏儒症）和促甲状腺激素、促肾上腺皮质激素、促性腺激素等"指挥官激素"。' },
+      { name: '神经垂体', desc: '不合成激素，只储存释放下丘脑运来的抗利尿激素（缺乏→尿崩症，每天排尿十几升）和催产素。' },
+      { name: '分级调节', desc: '下丘脑→垂体→靶腺的三级 axis（如甲状腺轴）实现放大与精细调控——负反馈让各级激素水平稳定。' },
+      { name: '考点提示', desc: '"垂体是内分泌枢纽，下丘脑是调节中枢"——神经调节与体液调节在此交汇。' },
+    ],
+    Svg: PituitarySvg,
+  },
+  {
+    id: 'mimosa',
+    name: '含羞草',
+    kicker: '豆科 · 会"害羞"的感震植物（课外拓展）',
+    intro: '轻碰含羞草的叶片，几秒内小叶成对闭合、叶柄下垂——它没有肌肉，靠的是叶枕细胞快速的膨压变化：受刺激后钾离子和水分从叶枕下侧细胞流出，细胞失水"瘪掉"，叶片随之垂下。这种感震运动能减少风雨伤害、吓退停落的昆虫，十分钟左右又自动恢复。',
+    extension: true,
+    parts: [
+      { name: '感震运动', desc: '受机械刺激后小叶成对闭合、整片复叶下垂——传播速度可达每秒 1~2 厘米，沿叶脉扩散。' },
+      { name: '叶枕机制', desc: '叶柄基部和小叶基部的膨大"关节"：运动细胞通过钾离子快速进出改变渗透压，失水瘪缩即闭合。' },
+      { name: '电信号传导', desc: '动作电位沿茎叶传导——与神经传导类似的"植物电"，只是速度慢得多。' },
+      { name: '适应意义', desc: '骤雨大风时闭合防损伤；突然闭合可抖落停脚的昆虫——运动也是一种防御。' },
+      { name: '睡眠运动', desc: '含羞草夜晚也会"睡觉"（叶片合拢）——由生物钟控制的感夜运动，与感震运动机制相似但触发源不同。' },
+    ],
+    Svg: MimosaSvg,
+  },
   {
     id: 'tardigrade',
     name: '水熊虫',
