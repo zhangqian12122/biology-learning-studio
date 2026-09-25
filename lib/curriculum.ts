@@ -605,6 +605,8 @@ export type ExperimentId =
   | 'vaccineResponse'
   | 'phototropism'
   | 'antibioticResistance'
+  | 'photosynthesisFactors'
+  | 'restrictionEnzyme'
   | 'ecologicalNiche'
   | 'crispr'
   | 'foodChain'
@@ -999,6 +1001,20 @@ export const experimentMeta: Record<
     relatedModule: '变异、育种与生物进化',
     extension: true,
   },
+  photosynthesisFactors: {
+    title: '影响光合作用强度的因素',
+    kicker: '必修 1 · 分子与细胞',
+    description: '调节光照强度和 CO₂ 浓度，观察金鱼藻释放气泡的速率变化。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+  },
+  restrictionEnzyme: {
+    title: '限制酶切割 DNA 模拟',
+    kicker: '选择性必修 3 · 生物技术与工程',
+    description: '选不同限制酶切割环状 DNA，看切口位置对获取目的基因的影响。',
+    relatedBook: 'technology',
+    relatedModule: '基因工程与 PCR 技术',
+  },
   ecologicalNiche: {
     title: '生态位与种间竞争',
     kicker: '选择性必修 2 · 生物与环境',
@@ -1209,7 +1225,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '酶与代谢',
     icon: '⚗️',
-    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'cellRespiration', 'pigment', 'greenhouseGas'],
+    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'greenhouseGas'],
   },
   {
     name: '细胞与膜',
@@ -1234,7 +1250,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'crispr', 'geneTherapy', 'embryoTransfer', 'nuclearTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'crispr', 'geneTherapy', 'restrictionEnzyme', 'embryoTransfer', 'nuclearTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
   },
 ];
 
@@ -1256,6 +1272,7 @@ export const experimentOrder: ExperimentId[] = [
   'greenhouseGas',
   'pigment',
   'photosynthesis',
+  'photosynthesisFactors',
   'cellRespiration',
   'engelmann',
   'crossingOver',
@@ -1317,6 +1334,7 @@ export const experimentOrder: ExperimentId[] = [
   'lacOperon',
   'crispr',
   'geneTherapy',
+  'restrictionEnzyme',
   'choiceMedia',
   // 课外拓展
   'millerUrey',

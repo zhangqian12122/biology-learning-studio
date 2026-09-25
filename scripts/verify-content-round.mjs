@@ -8,24 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 标本批次轮：heartCompare / biodiversity / bloodSugarSources（LAB_ONLY 挂实验侧） ----------
-await page.goto(`${BASE}/cells`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：光合作用影响因素 ----------
+await page.goto(`${BASE}/lab?exp=photosynthesisFactors`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('图鉴');
-  results.experiment.dayNight = true;
-}
-await page.goto(`${BASE}/lab?exp=bloodSugarRegulation`, { waitUntil: 'domcontentloaded' });
-await page.waitForTimeout(2500);
-{
-  const t = await page.locator('main').innerText();
-  results.experiment.diagAttached = t.includes('血糖来源与去路');
+  results.experiment.open = text.includes('光合作用强度');
+  // 调光照到 0 → 限制因素变为光照
+  await page.locator('input[type="range"]').first().evaluate((el) => {
+    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+    setter.call(el, '0');
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+  await page.waitForTimeout(500);
+  const low = await page.locator('main').innerText();
+  results.experiment.lowLight = low.includes('光照强度') && low.includes('限制因素');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['heartCompare', 'biodiversity', 'bloodSugarSources'];
+const SPECIMENS = ['fruitTypes', 'stemCells', 'geneticCode'];
 const LAB_ONLY_CHECKS = [{ specimen: 'humoralImmunity', onExperiment: 'vaccineResponse', label: '体液免疫流程' }];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
