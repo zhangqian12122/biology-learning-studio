@@ -630,6 +630,7 @@ export type ExperimentId =
   | 'dnaFingerprint'
   | 'bloodPressure'
   | 'gravitropism'
+  | 'waterQuality'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1202,6 +1203,14 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '内环境与稳态',
   },
+  waterQuality: {
+    title: '水质检测与生物评价',
+    kicker: '选择性必修 2 · 生态',
+    description: '沿河四站采样：理化指标 + 指示生物，判断水质等级与自净能力。',
+    relatedBook: 'ecology',
+    relatedModule: '生态保护与人与自然',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1403,7 +1412,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecologicalNiche', 'foodChain', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecologicalNiche', 'foodChain', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality'],
   },
   {
     name: '生物技术',
@@ -1485,6 +1494,7 @@ export const experimentOrder: ExperimentId[] = [
   'mulberryFishPond',
   'leafDecompose',
   'biocontrol',
+  'waterQuality',
   'ecologicalNiche',
   'foodChain',
   'bloodType',

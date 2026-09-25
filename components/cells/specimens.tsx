@@ -5045,14 +5045,14 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
 /** 图鉴目录：按主题分类，供图鉴页筛选导航（56 个标本全覆盖） */
 export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] = [
   { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
-  { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome', 'vacuole'] },
+  { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome', 'vacuole', 'endosymbiosis'] },
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
@@ -10515,7 +10515,169 @@ function MycorrhizaSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 比目鱼（眼睛搬家） ================= */
+
+function FlounderSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 幼鱼（对称） */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="120" cy="110" rx="44" ry="26" fill="#c9d8e8" stroke="#4d7ea8" strokeWidth="2.4" />
+        <circle cx="88" cy="102" r="7" fill="#2c5a84" stroke="#1a3a5a" strokeWidth="1.4" />
+        <circle cx="112" cy="96" r="7" fill="#2c5a84" stroke="#1a3a5a" strokeWidth="1.4" />
+        <path d="M164 110 q 16 -6 22 -14 m -22 14 q 16 6 22 14" fill="none" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="60" y="164" fontSize="12.5" fill="#2c5a84" fontWeight="700">幼鱼：两眼对称（正常鱼形）</text>
+        <text x="60" y="184" fontSize="12.5" fill="#2c5a84">漂浮在水的上层生活</text>
+      </g>
+      {/* 变态过程箭头 */}
+      <g style={dim(active, 1)}>
+        <path d="M228 110 h 60 m 0 0 l -9 -6 m 9 6 l -9 6" fill="none" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="258" y="92" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">变态发育：右眼"搬家"</text>
+        <text x="258" y="132" textAnchor="middle" fontSize="12" fill="#8a671b">经颅骨扭曲移到左侧</text>
+      </g>
+      {/* 成鱼（贴底） */}
+      <g style={dim(active, 2)}>
+        <path d="M300 240 q -8 -50 40 -62 q 70 -16 120 8 q 24 12 12 34 q -14 26 -70 30 q -70 6 -102 -10 Z" fill="#b5a582" stroke="#7a6a4a" strokeWidth="2.8" />
+        <circle cx="322" cy="228" r="9" fill="#3a4a3a" stroke="#1a2a1a" strokeWidth="1.6" />
+        <circle cx="352" cy="222" r="9" fill="#3a4a3a" stroke="#1a2a1a" strokeWidth="1.6" />
+        <path d="M452 224 q 22 -8 26 -22 m -26 40 q 20 0 30 -8" fill="none" stroke="#7a6a4a" strokeWidth="2.4" />
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={390 + (i % 2) * 24} cy={236 + Math.floor(i / 2) * 14} r="4" fill="#8a7a4a" />
+        ))}
+        <text x="330" y="300" fontSize="12.5" fill="#5a4a2a" fontWeight="700">成鱼：两眼同侧·侧卧海底</text>
+        <text x="330" y="320" fontSize="12.5" fill="#5a4a2a">体色随底质变化（伪装大师）</text>
+      </g>
+      {/* 适应意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="336" width="440" height="36" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="260" y="360" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="700">"躺平"的适应：底栖伏击捕食·体色拟态躲天敌——结构与功能相适应的另类案例</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">比目鱼 · 变态发育的底栖鱼类（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 肾上腺（应急激素腺） ================= */
+
+function AdrenalSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 位置 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 96 q -40 -16 -44 28 q -4 44 30 48 q 34 4 40 -30 q 4 -30 -26 -46 Z" fill="#f0d8b0" stroke="#a5763a" strokeWidth="2.6" />
+        <path d="M370 96 q 40 -16 44 28 q 4 44 -30 48 q -34 4 -40 -30 q -4 -30 26 -46 Z" fill="#f0d8b0" stroke="#a5763a" strokeWidth="2.6" />
+        <ellipse cx="112" cy="230" rx="36" ry="52" fill="#c9a08a" stroke="#8a6a4a" strokeWidth="2" opacity="0.75" />
+        <ellipse cx="408" cy="230" rx="36" ry="52" fill="#c9a08a" stroke="#8a6a4a" strokeWidth="2" opacity="0.75" />
+        <text x="330" y="286" fontSize="12.5" fill="#8a6a4a" fontWeight="700">肾（左右各一·肾上腺覆盖其上）</text>
+        <line x1="370" y1="318" x2="404" y2="282" stroke="#8a6a4a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 皮质 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="132" cy="120" rx="40" ry="46" fill="#e8b86a" stroke="#a5763a" strokeWidth="2.4" />
+        <text x="196" y="100" fontSize="12.5" fill="#a5763a" fontWeight="700">皮质（外层·三类激素）</text>
+        <text x="196" y="120" fontSize="12.5" fill="#a5763a">糖皮质激素：升高血糖·抗炎抗过敏</text>
+        <text x="196" y="140" fontSize="12.5" fill="#a5763a">盐皮质激素：保钠保水（醛固酮）</text>
+      </g>
+      {/* 髓质 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="132" cy="122" rx="18" ry="22" fill="#c96a6a" stroke="#8a2020" strokeWidth="2.2" />
+        <text x="196" y="170" fontSize="12.5" fill="#8a2020" fontWeight="700">髓质（内层·应急反应）</text>
+        <text x="196" y="190" fontSize="12.5" fill="#8a2020">肾上腺素：心跳加快·血压升高</text>
+        <text x="196" y="210" fontSize="12.5" fill="#8a2020">血糖升高——"应激"的化学基础</text>
+      </g>
+      {/* 应急 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="300" width="440" height="56" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">"吓得脸白手抖"：交感神经 + 肾上腺髓质的协同应急反应</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="11.5" fill="#a5761d">皮质激素还参与昼夜节律：早晨皮质醇高峰让人清醒（熬夜打乱它）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">肾上腺 · 应激反应的化学引擎（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 内共生学说 ================= */
+
+function EndosymbiosisSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 证据列表 */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2, 3].map((i) => (
+          <rect key={i} x="36" y={54 + i * 54} width="290" height="46" rx="10" fill={i % 2 === 0 ? '#e2f0e2' : '#e4ecf6'} stroke={i % 2 === 0 ? '#3f7f3a' : '#4d7ea8'} strokeWidth="2.2" />
+        ))}
+        <text x="52" y="72" fontSize="12" fill="#2f6f2a" fontWeight="700">① 自主复制：拥有自身 DNA · 随细胞分裂复制</text>
+        <text x="52" y="126" fontSize="12" fill="#2c5a84" fontWeight="700">② 双层膜：内膜来自原细菌·外膜来自吞噬泡</text>
+        <text x="52" y="180" fontSize="12" fill="#2f6f2a" fontWeight="700">③ 环状 DNA：与细菌相似（核基因组是线状）</text>
+        <text x="52" y="234" fontSize="12" fill="#2c5a84" fontWeight="700">④ 自有核糖体：70S 型（细菌型）而非真核 80S</text>
+      </g>
+      {/* 共生过程示意 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="410" cy="110" rx="66" ry="48" fill="#f6f4ea" stroke="#8a9a8a" strokeWidth="2.6" />
+        <path d="M400 62 q -30 10 -26 44 q 4 30 36 38 q -40 -10 -34 -50 q 6 -30 24 -32 Z" fill="#c9d8e8" stroke="#4d7ea8" strokeWidth="1.2" strokeDasharray="2 2" />
+        <ellipse cx="408" cy="112" rx="24" ry="16" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2" />
+        <text x="410" y="117" textAnchor="middle" fontSize="9.5" fill="#fff" fontWeight="700">细菌</text>
+        <text x="410" y="186" textAnchor="middle" fontSize="11" fill="#37585f" fontWeight="700">原始真核细胞吞入好氧细菌</text>
+        <text x="410" y="204" textAnchor="middle" fontSize="11" fill="#37585f">→ 演化为线粒体/叶绿体</text>
+        <path d="M400 62 q -32 8 -28 46 q 4 34 40 40" fill="none" stroke="#4d7ea8" strokeWidth="3" />
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="300" width="448" height="56" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">内共生学说：真核细胞的"发电厂"和"养料车间"曾是独立细菌</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="11.5" fill="#a5761d">这不仅解释了细胞器的起源，也说明了真核细胞的"组装式"演化历史</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">内共生学说 · 细胞器的起源（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'flounder',
+    name: '比目鱼',
+    kicker: '硬骨鱼 · 变态发育的底栖者（课外拓展）',
+    intro: '"规行矩步，比目之鱼"——比目鱼的幼鱼本是两侧对称的正常鱼形，浮在水面上生活；数周后一侧的眼睛经颅骨"搬家"到另一侧，身体侧扁贴伏海底，有眼的一侧体色还能随底质变化。从"正常"到"躺平"的变态发育，是鱼类中罕见的适应路线。',
+    extension: true,
+    parts: [
+      { name: '对称幼鱼期', desc: '孵化初期与普通鱼无异：两眼分列头两侧，在水的上层漂浮觅食。' },
+      { name: '变态发育', desc: '约数周内颅骨扭曲，一侧眼睛移位到另一侧，口也发生偏转，身体侧扁——甲状腺激素参与调控这场"大改造"。' },
+      { name: '两眼同侧', desc: '成鱼两眼位于朝上的一侧，视野覆盖上方水域——潜伏时仍能监视猎物与天敌。' },
+      { name: '体色拟态', desc: '有眼侧皮肤内的色素细胞随底质颜色调整（深沙、碎石、斑驳），无眼侧则保持白色。' },
+      { name: '底栖适应', desc: '伏击小型底栖动物、埋身沙中躲天敌——"躺平"不是退化，而是开辟底栖生态位的创新。' },
+    ],
+    Svg: FlounderSvg,
+  },
+  {
+    id: 'adrenal',
+    name: '肾上腺',
+    kicker: '内分泌 · 应急反应的引擎（课外拓展）',
+    intro: '肾上腺像两顶小帽子盖在肾脏上方的内侧，却分内外两层"车间"：外层皮质分泌糖皮质激素（升高血糖、抗炎抗过敏）和盐皮质激素（保钠保水）；内层髓质受交感神经直接支配，紧急时刻泵出肾上腺素——心跳加速、血压升高、血糖上升，这就是"应激反应"的化学基础。',
+    extension: true,
+    parts: [
+      { name: '位置与结构', desc: '左右各一，位于肾脏上内侧；从外到内分被膜、皮质、髓质三层，皮质与髓质来源、功能完全不同。' },
+      { name: '皮质·糖皮质激素', desc: '以皮质醇为代表：升高血糖、动员脂肪、抑制炎症与免疫——临床用于抗炎抗过敏，长期滥用有严重副作用。' },
+      { name: '皮质·盐皮质激素', desc: '醛固酮促进肾小管重吸收钠和水、排钾——参与水盐平衡调节（与抗利尿激素协同）。' },
+      { name: '髓质·肾上腺素', desc: '受交感神经节前纤维直接支配（可视为特化的神经节）：应急时释放肾上腺素和去甲肾上腺素——配合神经系统的"战或逃"反应。' },
+      { name: '昼夜节律', desc: '皮质醇分泌有昼夜高峰（清晨唤醒人体）；熬夜、倒班打乱节律会影响免疫与代谢——规律作息的生理学依据。' },
+    ],
+    Svg: AdrenalSvg,
+  },
+  {
+    id: 'endosymbiosis',
+    name: '内共生学说',
+    kicker: '细胞生物学 · 细胞器的起源（课外拓展）',
+    intro: '线粒体和叶绿体为什么有自己独立的 DNA 和核糖体？内共生学说的回答：它们的前身是被原始真核细胞吞入却未被消化的细菌——好氧细菌演化为线粒体（"发电厂"），蓝细菌演化为叶绿体（"养料车间"）。双层膜、环状 DNA、70S 核糖体，都是这段共生历史的"化石证据"。',
+    extension: true,
+    parts: [
+      { name: '学说的内容', desc: '约 15~20 亿年前：古真核细胞吞入好氧细菌与蓝细菌，二者未被消化反而建立共生，逐渐演化为半自主的细胞器。' },
+      { name: '证据一：自主性', desc: '线粒体和叶绿体拥有自己的环状 DNA，能半自主复制，随细胞分裂平均分配。' },
+      { name: '证据二：双层膜', desc: '内膜来自细菌自身的细胞膜，外膜来自宿主吞噬泡的膜——双层膜结构是"吞而未消"的记录。' },
+      { name: '证据三：核糖体', desc: '两者都含 70S 型核糖体（与细菌相同），而真核细胞质是 80S——抗生素（如四环素）抑制细菌核糖体也会影响它们。' },
+      { name: '演化意义', desc: '真核细胞不是"从零设计"，而是多次内共生的组装产物——这一学说把细胞生物学与演化论连接起来。' },
+    ],
+    Svg: EndosymbiosisSvg,
+  },
   {
     id: 'penguin',
     name: '企鹅',
