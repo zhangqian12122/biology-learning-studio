@@ -8,28 +8,29 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：balancedDiet 膳食营养配餐 ----------
-await page.goto(`${BASE}/lab?exp=balancedDiet`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：immobilizedEnzyme 固定化酶与连续生产 ----------
+await page.goto(`${BASE}/lab?exp=immobilizedEnzyme`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('膳食营养配餐');
+  results.experiment.open = text.includes('固定化酶与连续生产');
   const before = text;
-  const beforeClick = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '奶油面包' }).click();
-  await page.waitForTimeout(400);
-  const midText = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '燕麦粥' }).click();
-  await page.waitForTimeout(400);
+  for (let i = 0; i < 4; i++) {
+    await page.getByRole('button', { name: /推进工序/ }).click();
+    await page.waitForTimeout(400);
+  }
   const afterClick = await page.locator('main').innerText();
-  results.experiment.interactive = midText.includes('血糖像坐过山车') && afterClick.includes('比例全部落在推荐区间');
-  results.experiment.reference = afterClick.includes('注意事项');
+  await page.getByRole('button', { name: /再生产一批/ }).click();
+  await page.waitForTimeout(400);
+  const moreText = await page.locator('main').innerText();
+  results.experiment.interactive = afterClick.includes('果葡糖浆') && moreText.includes('已生产 2 批');
+  results.experiment.reference = moreText.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['dungBeetle', 'fetusPlacenta', 'caffeine'];
+const SPECIMENS = ['mantisShrimp', 'woundHealing', 'slimeMold'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -89,17 +90,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：balancedDiet 实验页应挂载 vitamins 图解
-await page.goto(`${BASE}/lab?exp=balancedDiet`, { waitUntil: 'domcontentloaded' });
+// 图解卡：immobilizedEnzyme 实验页应挂载 enzymeModel 图解
+await page.goto(`${BASE}/lab?exp=immobilizedEnzyme`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.vitaminsDiagram = { found: t.includes('维生素') || t.includes('营养'), ok: t.includes('维生素') || t.includes('营养') };
+  results.specimens.enzymeModelDiagram = { found: t.includes('酶'), ok: t.includes('酶') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.vitaminsDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.enzymeModelDiagram?.ok;
 console.log('ALL_OK=' + allOk);

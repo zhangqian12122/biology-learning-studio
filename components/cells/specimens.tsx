@@ -5049,10 +5049,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
@@ -11366,7 +11366,171 @@ function CaffeineSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 雀尾螳螂虾（"拳王"） ================= */
+
+function MantisShrimpSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M170 200 q 10 -60 90 -70 q 120 -14 200 6 q 20 6 18 24 q -30 40 -140 50 q -110 8 -168 -10 Z" fill="#4a9a6a" stroke="#1f5f3a" strokeWidth="2.8" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${210 + i * 44} ${146 - 0} h 44`} stroke="#1f5f3a" strokeWidth="2" />
+        ))}
+        <path d="M470 130 q 24 4 22 22 q -20 22 -60 28" fill="none" stroke="#1f5f3a" strokeWidth="3" />
+        <text x="392" y="102" fontSize="12.5" fill="#1f5f3a" fontWeight="700">体色艳丽（警告色）</text>
+      </g>
+      {/* 攻击足 */}
+      <g style={dim(active, 1)}>
+        <path d="M170 196 q -40 -8 -62 -30 q -12 -14 2 -22 q 16 -8 26 4 q 14 20 40 28" fill="#e88a2a" stroke="#8a4a0a" strokeWidth="2.6" />
+        <circle cx="106" cy="146" r="12" fill="#f4b83a" stroke="#8a4a0a" strokeWidth="2.2" />
+        <text x="42" y="106" fontSize="12.5" fill="#8a4a0a" fontWeight="700">第二对附肢 = "子弹拳"</text>
+        <text x="42" y="126" fontSize="12.5" fill="#8a4a0a">0.02 秒出拳·速度堪比手枪子弹</text>
+        <path d="M96 118 L 106 134" stroke="#8a4a0a" strokeWidth="1.4" strokeDasharray="3 3" />
+      </g>
+      {/* 复眼 */}
+      <g style={dim(active, 2)}>
+        <path d="M236 130 q -6 -26 -26 -34" fill="none" stroke="#1f5f3a" strokeWidth="4" strokeLinecap="round" />
+        <path d="M256 126 q -2 -28 12 -40" fill="none" stroke="#1f5f3a" strokeWidth="4" strokeLinecap="round" />
+        <circle cx="204" cy="92" r="14" fill="#c9e0d0" stroke="#1f5f3a" strokeWidth="2.2" />
+        <circle cx="274" cy="82" r="14" fill="#c9e0d0" stroke="#1f5f3a" strokeWidth="2.2" />
+        <text x="288" y="60" fontSize="12.5" fill="#1f5f3a" fontWeight="700">复眼含 12~16 种视锥类型</text>
+        <text x="288" y="80" fontSize="12.5" fill="#1f5f3a">（人类 3 种）· 还能看偏振光</text>
+      </g>
+      {/* 冲击波 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="296" width="440" height="70" rx="12" fill="#f4e4dc" stroke="#a54838" strokeWidth="2.4" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="800">出拳瞬间水被"汽化"产生冲击波与空穴效应——一击 1500 N，可击碎贝类外壳</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="11.5" fill="#a5533c">即使打空，冲击波也足以震晕猎物——"打拳带闪光"的生物力学奇迹</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">雀尾螳螂虾 · 甲壳动物"拳王"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 皮肤伤口愈合 ================= */
+
+function WoundHealingSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 阶段 1 止血 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 130 q 60 -22 130 0 q 40 12 80 0" fill="none" stroke="#c96a6a" strokeWidth="26" strokeLinecap="round" />
+        <circle cx="260" cy="132" r="18" fill="#8a2020" stroke="#5a1010" strokeWidth="2.4" />
+        {[0, 1, 2].map((i) => (
+          <circle key={i} cx={252 + i * 9} cy={128 + (i % 2) * 8} r="3" fill="#e8a0a0" />
+        ))}
+        <text x="42" y="98" fontSize="12.5" fill="#8a2020" fontWeight="700">① 止血（数分钟）：血小板聚集</text>
+        <text x="42" y="118" fontSize="12.5" fill="#8a2020">纤维蛋白网结痂·封住伤口</text>
+      </g>
+      {/* 阶段 2 炎症 */}
+      <g style={dim(active, 1)}>
+        <path d="M120 210 q 60 -20 130 0 q 40 12 80 0" fill="none" stroke="#e0a08a" strokeWidth="24" strokeLinecap="round" />
+        <ellipse cx="256" cy="206" rx="26" ry="14" fill="#c94a4a" stroke="#8a2020" strokeWidth="2" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <circle key={i} cx={244 + i * 7} cy={202 + (i % 2) * 8} r="3.4" fill="#ffffff" />
+        ))}
+        <text x="322" y="196" fontSize="12.5" fill="#8a2020" fontWeight="700">② 炎症（1~3 天）：白细胞</text>
+        <text x="322" y="216" fontSize="12.5" fill="#8a2020">清除细菌与坏死组织（红肿）</text>
+      </g>
+      {/* 阶段 3 增生 */}
+      <g style={dim(active, 2)}>
+        <path d="M120 286 q 60 -18 130 0 q 40 12 80 0" fill="none" stroke="#e8c9a8" strokeWidth="22" strokeLinecap="round" />
+        <path d="M180 280 q 80 -14 160 -2" fill="none" stroke="#d86a6a" strokeWidth="8" strokeLinecap="round" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${210 + i * 30} 274 q 8 8 2 14`} fill="none" stroke="#5a8ab5" strokeWidth="2.4" />
+        ))}
+        <text x="42" y="272" fontSize="12.5" fill="#8a5a2a" fontWeight="700">③ 增生（3 天~3 周）：成纤维细胞</text>
+        <text x="42" y="292" fontSize="12.5" fill="#8a5a2a">合成胶原·新血管长入（肉芽）</text>
+      </g>
+      {/* 重塑 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="316" width="440" height="52" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="338" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">④ 重塑（数月）：胶原重组·瘢痕变淡——四阶段环环相扣</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">感染·糖尿病·吸烟都会拖慢愈合——保持伤口清洁湿润反而好得快</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">伤口愈合 · 止血-炎症-增生-重塑（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 黏菌（会"规划路线"的原生生物） ================= */
+
+function SlimeMoldSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 食物点 */}
+      <g style={dim(active, 0)}>
+        <circle cx="90" cy="90" r="18" fill="#f4d06a" stroke="#8a671b" strokeWidth="2.6" />
+        <circle cx="430" cy="290" r="18" fill="#f4d06a" stroke="#8a671b" strokeWidth="2.6" />
+        <circle cx="300" cy="70" r="12" fill="#f4d06a" stroke="#8a671b" strokeWidth="2.2" />
+        <circle cx="140" cy="290" r="12" fill="#f4d06a" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="60" y="60" fontSize="10.5" fill="#8a671b" fontWeight="700">燕麦片（食物源）</text>
+      </g>
+      {/* 黏菌网络 */}
+      <g style={dim(active, 1)}>
+        <path d="M108 96 Q 200 40 288 68 M 312 74 Q 380 120 418 274 M 108 104 Q 180 180 284 240 Q 380 274 412 286 M 152 292 Q 240 250 280 242 M 104 108 Q 120 200 138 278" fill="none" stroke="#e8c930" strokeWidth="7" strokeLinecap="round" opacity="0.85" />
+        <path d="M112 100 Q 200 46 286 70 M 416 280 Q 320 268 286 242 M 142 284 Q 170 200 226 160" fill="none" stroke="#f4e060" strokeWidth="3" strokeLinecap="round" opacity="0.9" />
+        <text x="196" y="168" fontSize="12.5" fill="#8a671b" fontWeight="700">原生质团：一整片"会流动"的多核细胞</text>
+        <text x="196" y="190" fontSize="12" fill="#a5761d">自动删掉绕路的细管·保留主干</text>
+      </g>
+      {/* 铁路网实验 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="312" width="440" height="56" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="334" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">东京铁路网实验：食物摆成城市站点——黏菌织出的网络与真实地铁图高度相似</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">没有大脑却会"路径优化"——原生生物的群体智能（趋向营养·避开关照）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">黏菌 · 无脑的"规划师"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'mantisShrimp',
+    name: '雀尾螳螂虾',
+    kicker: '甲壳类 · 海底"拳王"（课外拓展）',
+    intro: '雀尾螳螂虾是海洋中最不好惹的小动物：第二对附肢像一对"子弹拳"，0.02 秒内弹出，加速度堪比手枪子弹；打击点水被瞬间汽化产生气泡内爆的冲击波——即使打空也能震晕猎物。它的复眼拥有 12~16 种视锥细胞（人类只有 3 种），还能看见偏振光，是动物界的"视觉冠军"。',
+    extension: true,
+    parts: [
+      { name: '子弹拳', desc: '攻击附肢由弹簧锁扣结构蓄力，瞬间释放：加速度超过 10⁴ g，打击力可达 1500 牛——足以击碎玻璃缸壁。' },
+      { name: '空穴冲击波', desc: '高速打击使水瞬间汽化形成空化气泡，气泡崩溃产生二次冲击波——物理杀伤"买一送一"。' },
+      { name: '超级复眼', desc: '每只眼分三区独立成像（立体视觉用一只眼即可）；视锥类型多达 16 种，覆盖紫外线与偏振光。' },
+      { name: '警告色', desc: '鲜艳的绿蓝红体色是对同类与捕食者的"广告"：我很危险，别惹我——警戒色的海洋版本。' },
+      { name: '与螳螂的关系', desc: '名字来自捕捉足像螳螂的"刀"，但它是甲壳类（虾的近亲），与昆虫螳螂毫无亲缘。' },
+    ],
+    Svg: MantisShrimpSvg,
+  },
+  {
+    id: 'woundHealing',
+    name: '伤口愈合',
+    kicker: '皮肤修复 · 四阶段协奏曲（课外拓展）',
+    intro: '皮肤破口后的修复是一场精密的四幕"协奏曲"：数分钟内血小板聚集止血结痂；随后 1~3 天白细胞赶到清除细菌与坏死组织（红肿热痛的炎症期）；接着成纤维细胞合成胶原、新血管长入填充创面（增生期）；最后数月里胶原重组、瘢痕逐渐软化变淡——免疫、循环与干细胞的全员协作。',
+    extension: true,
+    parts: [
+      { name: '止血期', desc: '血小板黏附聚集、凝血瀑布激活，纤维蛋白网封住破口——数分钟内完成，防止失血与入侵。' },
+      { name: '炎症期', desc: '中性粒细胞与巨噬细胞进场清创：红肿热痛正是血管扩张、免疫细胞工作的表现——"发炎"是在帮忙。' },
+      { name: '增生期', desc: '成纤维细胞大量合成胶原蛋白填补缺损，新生毛细血管形成红色肉芽组织；表皮干细胞从伤口边缘爬行覆盖。' },
+      { name: '重塑期', desc: '胶原持续重组交联、多余血管退化，瘢痕从红硬变白软——可长达一年，强度难回 100%。' },
+      { name: '愈合的敌人', desc: '感染、糖尿病高血糖、吸烟（血管收缩缺氧）都会拖延愈合——"伤口保持清洁湿润"比结干痂愈合更快。' },
+    ],
+    Svg: WoundHealingSvg,
+  },
+  {
+    id: 'slimeMold',
+    name: '黏菌',
+    kicker: '原生生物 · 无脑的"路径规划师"（课外拓展）',
+    intro: '黏菌的生命里有一段"一坨会流动的黄色多核细胞"：没有大脑、没有神经系统，却能在食物点之间织出高效的网络——把食物摆成东京及周边城市的站点，它一夜织出的管状网络竟与真实的铁路网高度相似。它通过"试探-强化-剪枝"不断优化运输管道，是群体智能的天然教科书。',
+    extension: true,
+    parts: [
+      { name: '原生质团', desc: '营养期是一整片多核的原生质团：细胞质往复流动，像"一坨会爬的黄色果冻"，可达数平方米。' },
+      { name: '觅食网络', desc: '向食物方向伸出管状脉管，管内细胞质双向流动——粗管通向大食物源、细管负责试探。' },
+      { name: '路径优化', desc: '流动加快的管道壁增厚加固，绕路低效的细管被回收删除——相当于运行"最短路径算法"。' },
+      { name: '东京铁路实验', desc: '2000 年用燕麦片标记东京重要站点，黏菌织出的网络与人类工程师数年建成的铁路网惊人相似。' },
+      { name: '智能的启示', desc: '证明"没有神经也能解题"：分布式正反馈足以实现优化——为无中央控制的网络设计提供仿生灵感。' },
+    ],
+    Svg: SlimeMoldSvg,
+  },
   {
     id: 'dungBeetle',
     name: '蜣螂',

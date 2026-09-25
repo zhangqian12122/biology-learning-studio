@@ -637,6 +637,7 @@ export type ExperimentId =
   | 'biomagnification'
   | 'hydroponics'
   | 'balancedDiet'
+  | 'immobilizedEnzyme'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1262,6 +1263,14 @@ export const experimentMeta: Record<
     relatedModule: '免疫调节与健康',
     extension: true,
   },
+  immobilizedEnzyme: {
+    title: '固定化酶与连续生产',
+    kicker: '酶工程 · 课外拓展',
+    description: '高果糖浆反应柱：包埋酶珠、连续进料、反复使用的工业经济账。',
+    relatedBook: 'technology',
+    relatedModule: '发酵工程与过程控制',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1468,7 +1477,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'immobilizedEnzyme', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
   },
 ];
 
@@ -1563,6 +1572,7 @@ export const experimentOrder: ExperimentId[] = [
   'wineVinegar',
   'pickleFerment',
   'foodPreserve',
+  'immobilizedEnzyme',
   'tissueCulture',
   'protoplastFusion',
   'pcr',
