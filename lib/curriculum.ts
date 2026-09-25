@@ -627,6 +627,7 @@ export type ExperimentId =
   | 'photosynthesisHistory'
   | 'geneticsHistory'
   | 'foodPreserve'
+  | 'dnaFingerprint'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1177,6 +1178,14 @@ export const experimentMeta: Record<
     relatedModule: '发酵工程与过程控制',
     extension: true,
   },
+  dnaFingerprint: {
+    title: 'DNA 指纹与亲子鉴定',
+    kicker: '分子技术 · 法医应用',
+    description: 'STR 位点 PCR + 电泳：条带比对排除或支持亲子关系。',
+    relatedBook: 'technology',
+    relatedModule: '基因工程与 PCR 技术',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1383,7 +1392,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
   },
 ];
 
@@ -1474,6 +1483,7 @@ export const experimentOrder: ExperimentId[] = [
   'protoplastFusion',
   'pcr',
   'gelElectrophoresis',
+  'dnaFingerprint',
   'animalCellCulture',
   'embryoTransfer',
   'nuclearTransfer',

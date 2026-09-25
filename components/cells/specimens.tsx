@@ -5049,10 +5049,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove'] },
 ];
@@ -10155,7 +10155,176 @@ function MicrobiomeSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 蜜蜂（社会性昆虫） ================= */
+
+function BeeHiveSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 蜂后 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="120" cy="120" rx="30" ry="18" fill="#c9a05a" stroke="#8a6a3a" strokeWidth="2.6" />
+        <path d="M146 120 q 66 -14 132 0 q -66 20 -132 0 Z" fill="#e0b860" stroke="#8a6a3a" strokeWidth="2.2" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${172 + i * 30} 108 q 4 12 0 24`} fill="none" stroke="#8a6a3a" strokeWidth="1.8" />
+        ))}
+        <text x="56" y="82" fontSize="12.5" fill="#8a6a3a" fontWeight="700">蜂后（唯一生殖雌·体长最大）</text>
+        <text x="56" y="102" fontSize="12.5" fill="#8a6a3a">分泌蜂王物质维持群体秩序</text>
+      </g>
+      {/* 工蜂 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <ellipse cx={110 + i * 62} cy={210} rx="16" ry="11" fill="#e0b860" stroke="#8a6a3a" strokeWidth="2" />
+            <path d={`M${94 + i * 62} 206 h 32 m -32 7 h 32`} stroke="#5a4a2a" strokeWidth="2.4" />
+            <ellipse cx={104 + i * 62} cy={198} rx="9" ry="6" fill="#d8e4f0" stroke="#8a9a9f" strokeWidth="1.4" opacity="0.9" />
+          </g>
+        ))}
+        <text x="270" y="206" fontSize="12.5" fill="#8a6a3a" fontWeight="700">工蜂（不育雌性·干所有活）</text>
+        <text x="270" y="226" fontSize="12.5" fill="#8a6a3a">保育→筑巢→守卫→采蜜 按日龄分工</text>
+      </g>
+      {/* 巢房 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3, 4].map((r) =>
+          [0, 1, 2, 3, 4, 5].map((c) => {
+            const x = 66 + c * 28 + (r % 2) * 14;
+            const y = 280 + r * 16;
+            return <path key={`${r}-${c}`} d={`M${x} ${y} l 14 0 l 7 12 l -7 12 l -14 0 l -7 -12 Z`} fill="#e0c860" stroke="#8a6a3a" strokeWidth="1.4" />;
+          }),
+        )}
+        <text x="330" y="300" fontSize="12.5" fill="#8a6a3a" fontWeight="700">六角形巢房（最省材料）</text>
+        <text x="330" y="320" fontSize="12.5" fill="#8a6a3a">育婴室 + 仓库两用</text>
+      </g>
+      {/* 8字舞 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">8 字舞角度指示蜜源方向·摇臀时长表示距离——动物"语言"的经典案例</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蜜蜂 · 社会性昆虫（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 牙齿（消化第一关） ================= */
+
+function ToothSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 三种牙 */}
+      <g style={dim(active, 0)}>
+        <path d="M92 110 q 0 -26 22 -26 q 22 0 22 26 l -4 44 q -18 12 -36 0 Z" fill="#f4f0e8" stroke="#b5a582" strokeWidth="2.4" />
+        <text x="114" y="180" textAnchor="middle" fontSize="12.5" fill="#8a6a3a" fontWeight="700">门齿（切）</text>
+        <path d="M210 84 l 36 -12 q 12 -2 12 14 l -6 62 q -24 12 -44 2 Z" fill="#f4f0e8" stroke="#b5a582" strokeWidth="2.4" />
+        <text x="236" y="180" textAnchor="middle" fontSize="12.5" fill="#8a6a3a" fontWeight="700">犬齿（撕）</text>
+        <path d="M330 92 q 4 -22 26 -22 q 24 0 26 24 l -2 34 l -10 10 l -8 -8 l -10 8 l -10 -8 Z" fill="#f4f0e8" stroke="#b5a582" strokeWidth="2.4" />
+        <text x="356" y="180" textAnchor="middle" fontSize="12.5" fill="#8a6a3a" fontWeight="700">臼齿（磨）</text>
+        <text x="240" y="212" textAnchor="middle" fontSize="12.5" fill="#6a5a2a" fontWeight="700">牙齿分化 = 哺乳动物特征（与爬行同型齿对比）</text>
+      </g>
+      {/* 结构剖面 */}
+      <g style={dim(active, 1)}>
+        <path d="M120 226 q 0 -30 30 -30 q 30 0 30 30 l -6 74 q -24 14 -48 0 Z" fill="#f8f6ee" stroke="#b5a582" strokeWidth="2.6" />
+        <path d="M124 224 q 0 -24 26 -24 q 26 0 26 24 l -5 70 q -21 11 -42 0 Z" fill="#fdf9ee" stroke="#e0d8c0" strokeWidth="2" />
+        <path d="M148 196 v 96 m -16 -20 q 16 -10 32 0" fill="none" stroke="#c9a05a" strokeWidth="2" />
+        <text x="176" y="240" fontSize="12.5" fill="#8a7a4a" fontWeight="700">釉质（人体最硬）</text>
+        <text x="176" y="264" fontSize="12.5" fill="#8a7a4a" fontWeight="700">牙本质 · 牙髓（神经血管）</text>
+        <line x1="172" y1="236" x2="152" y2="222" stroke="#8a7a4a" strokeWidth="1.2" />
+        <text x="60" y="330" fontSize="12.5" fill="#6a5a2a" fontWeight="700">牙根埋在牙槽骨·牙周膜固定</text>
+      </g>
+      {/* 龋齿 */}
+      <g style={dim(active, 2)}>
+        <path d="M370 230 q 0 -26 26 -26 q 26 0 26 26 l -4 66 q -22 12 -44 0 Z" fill="#f4f0e8" stroke="#b5a582" strokeWidth="2.4" />
+        <ellipse cx="386" cy="242" rx="9" ry="7" fill="#6a4a2a" stroke="#3a2a1a" strokeWidth="1.6" />
+        <text x="430" y="246" fontSize="12.5" fill="#6a4a2a" fontWeight="700">龋洞（蛀牙）</text>
+        <text x="330" y="330" fontSize="12.5" fill="#8a671b" fontWeight="700">糖 + 变形链球菌 → 酸腐蚀釉质</text>
+      </g>
+      {/* 保护 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">消化从口腔开始：牙齿物理研磨 + 唾液淀粉酶化学分解——细嚼慢咽减轻胃的负担</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">牙齿 · 消化的第一道工序（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 抗生素（青霉素与耐药性） ================= */
+
+function AntibioticSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 青霉素抑菌圈 */}
+      <g style={dim(active, 0)}>
+        <circle cx="180" cy="140" r="90" fill="#e8f0dc" stroke="#6a8a3a" strokeWidth="2.4" opacity="0.75" />
+        <circle cx="180" cy="140" r="22" fill="#f4d06a" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="180" y="145" textAnchor="middle" fontSize="9.5" fill="#8a671b" fontWeight="700">药敏纸片</text>
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <circle key={i} cx={290 + (i % 3) * 46} cy={96 + Math.floor(i / 3) * 44} r="12" fill="#c9d8e8" stroke="#2c5a84" strokeWidth="1.6" />
+        ))}
+        <text x="404" y="180" fontSize="12.5" fill="#2c5a84" fontWeight="700">抑菌圈 = 抗生素浓度</text>
+        <text x="404" y="200" fontSize="12.5" fill="#2c5a84">足以抑制细菌的区域</text>
+        <text x="56" y="252" fontSize="12.5" fill="#4a6a2a" fontWeight="700">青霉菌分泌物（青霉素）抑制周围细菌生长</text>
+      </g>
+      {/* 作用机制 */}
+      <g style={dim(active, 1)}>
+        <rect x="40" y="270" width="440" height="34" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="260" y="292" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">青霉素：抑制肽聚糖合成 → 细菌无法建细胞壁 → 吸水胀破（人细胞无细胞壁故不受害）</text>
+      </g>
+      {/* 耐药性 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="316" width="440" height="50" rx="10" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.4" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="800">滥用抗生素的选择作用 → 耐药菌存活并繁殖 → "超级细菌"</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5533c">对策：遵医嘱足量足疗程 · 不滥用 · 研发新药（噬菌体疗法是新方向）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">抗生素 · 人类的"化学武器"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'beeHive',
+    name: '蜜蜂',
+    kicker: '昆虫纲 · 社会性生活的典范（课外拓展）',
+    intro: '一个蜂群就是一座精密运转的"城市"：蜂后专职产卵，数万只不育的工蜂按日龄轮换保育、筑巢、守卫、采蜜的岗位，雄蜂只负责婚飞。工蜂的 8 字舞用角度和摇臀时长告诉同伴蜜源的方向和距离——昆虫也有自己的"语言"。',
+    extension: true,
+    parts: [
+      { name: '蜂后', desc: '一个蜂群唯一的生殖雌性：由受精卵幼虫持续喂蜂王浆发育而成，寿命长达数年，分泌"蜂王物质"抑制其他雌蜂卵巢发育。' },
+      { name: '工蜂', desc: '不育雌性（约 6 万只）：按日龄做保育、筑巢、守卫、采蜜工作——级型分化由食物（蜂王浆）决定，不是基因不同。' },
+      { name: '雄蜂', desc: '由未受精卵发育（单倍体），唯一职能是与新蜂后婚飞交配，之后即死亡。' },
+      { name: '六角形巢房', desc: '蜂蜡筑成的六角柱形巢房以最少的材料获得最大的容积——育婴与储蜜两用的"标准间"。' },
+      { name: '8 字舞', desc: '采蜜蜂回巢后跳 8 字舞：中轴与垂直线的夹角指示蜜源相对太阳的方向，摇臀次数表示距离——经典的动物信息传递案例。' },
+    ],
+    Svg: BeeHiveSvg,
+  },
+  {
+    id: 'tooth',
+    name: '牙齿',
+    kicker: '消化系统 · 消化的第一道工序（课外拓展）',
+    intro: '消化从牙齿开始：门齿切断、犬齿撕扯、臼齿研磨——哺乳动物的牙齿分化成不同形状（异型齿），与鱼爬行类的同型齿不同。牙冠外层的釉质是人体最坚硬的组织，但挡不住糖与细菌的联合进攻——龋齿就是"酸腐蚀"的结果。',
+    extension: true,
+    parts: [
+      { name: '三型牙齿', desc: '门齿切、犬齿撕、臼齿磨——食肉动物犬齿发达、食草动物臼齿宽平，牙齿形态与食性相适应。' },
+      { name: '牙齿结构', desc: '外层釉质（人体最硬的组织，但损坏后不可再生）→ 牙本质 → 内层牙髓（含神经血管，蛀到这一层会剧痛）。' },
+      { name: '牙周支持', desc: '牙根埋在颌骨的牙槽窝内，由牙周膜纤维悬挂固定——刷牙出血常是牙周膜发炎的信号。' },
+      { name: '龋齿的成因', desc: '变形链球菌分解糖类产酸，腐蚀釉质形成龋洞——少吃糖、认真刷牙、窝沟封闭是三道防线。' },
+      { name: '消化的起点', desc: '牙齿的物理研磨增大食物与消化酶的接触面积，配合唾液淀粉酶——细嚼慢咽是最省钱的"养胃"。' },
+    ],
+    Svg: ToothSvg,
+  },
+  {
+    id: 'antibiotic',
+    name: '抗生素',
+    kicker: '微生物药物 · 青霉素与耐药性（课外拓展）',
+    intro: '1928 年弗莱明发现青霉菌的分泌物能抑制葡萄球菌——青霉素开启抗生素时代。它像"精确制导武器"：破坏细菌独有的细胞壁合成，让细菌吸水胀破，而人体细胞没有细胞壁所以几乎不受伤害。但滥用抗生素的选择压力正在催生耐药的"超级细菌"。',
+    extension: true,
+    parts: [
+      { name: '发现史', desc: '弗莱明注意到培养皿中青霉菌周围的细菌被"清空"，1940 年代弗洛里与钱恩实现量产——三人共获 1945 年诺贝尔奖。' },
+      { name: '作用机制', desc: '青霉素抑制肽聚糖（细胞壁骨架）的交联合成：细菌不断吸水却没有"城墙"保护而胀破。' },
+      { name: '选择性毒性', desc: '靶点只存在于细菌（细胞壁、核糖体 70S、叶酸代谢）——人细胞没有这些结构，所以治疗指数高。' },
+      { name: '耐药性的本质', desc: '耐药突变在使用之前就随机存在，抗生素只是起了选择作用（定向改变菌群基因频率）——与工业害虫抗药性同原理。' },
+      { name: '合理使用', desc: '足量足疗程（半途停药等于"训练"耐药菌）、不滥用（病毒性感冒吃抗生素无效）、必要时药敏试验选药。' },
+    ],
+    Svg: AntibioticSvg,
+  },
   {
     id: 'octopus',
     name: '乌贼（头足纲）',
