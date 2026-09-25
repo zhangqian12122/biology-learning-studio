@@ -5046,13 +5046,13 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
 export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] = [
   { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
   { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome', 'vacuole'] },
-  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare'] },
+  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms'] },
 ];
@@ -8959,7 +8959,191 @@ function JellyfishSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 红绿色盲遗传 ================= */
+
+function ColorBlindnessSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 致病基因定位 */}
+      <g style={dim(active, 0)}>
+        <path d="M56 66 Q 56 44 92 44 Q 128 44 128 66 Q 128 108 92 150 Q 56 108 56 66 Z" fill="#f4d06a" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="92" y="76" textAnchor="middle" fontSize="12.5" fill="#8a5a1d" fontWeight="800">Xᴮ</text>
+        <path d="M336 44 h 96 v 96 h -96 Z" fill="none" stroke="none" />
+        <path d="M336 66 Q 336 44 372 44 Q 408 44 408 66 Q 408 108 372 150 Q 336 108 336 66 Z" fill="#e8c9c9" stroke="#a54838" strokeWidth="2.4" />
+        <text x="372" y="76" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="800">Xᵇ</text>
+        <text x="240" y="66" textAnchor="middle" fontSize="12.5" fill="#4b6c73" fontWeight="700">色盲基因 b 位于</text>
+        <text x="240" y="86" textAnchor="middle" fontSize="12.5" fill="#4b6c73" fontWeight="700">X 染色体上（隐性）</text>
+        <text x="92" y="176" textAnchor="middle" fontSize="12.5" fill="#8a5a1d" fontWeight="600">正常基因</text>
+        <text x="372" y="176" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="600">色盲基因</text>
+      </g>
+      {/* 典型婚配：携带者女性 × 正常男性 */}
+      <g style={dim(active, 1)}>
+        <circle cx="150" cy="220" r="18" fill="#f4d0d0" stroke="#a54838" strokeWidth="2.4" />
+        <text x="150" y="225" textAnchor="middle" fontSize="10.5" fill="#8a3a2a" fontWeight="700">女</text>
+        <text x="150" y="254" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="700">XᴮXᵇ 携带者</text>
+        <path d="M240 220 h 44" stroke="#4b6c73" strokeWidth="2.2" />
+        <rect x="288" y="204" width="32" height="32" rx="4" fill="#c9d8e8" stroke="#2c5a84" strokeWidth="2.4" />
+        <text x="304" y="225" textAnchor="middle" fontSize="10.5" fill="#2c5a84" fontWeight="700">男</text>
+        <text x="304" y="254" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="700">XᴮY 正常</text>
+        <path d="M262 222 v 26" stroke="#4b6c73" strokeWidth="1.6" strokeDasharray="3 3" />
+        <text x="262" y="262" textAnchor="middle" fontSize="12.5" fill="#4b6c73" fontWeight="600">婚配</text>
+      </g>
+      {/* 后代比例 */}
+      <g style={dim(active, 2)}>
+        <path d="M222 268 v 18" stroke="#4b6c73" strokeWidth="1.8" />
+        <path d="M222 286 l -6 -8 m 6 8 l 6 -8" fill="none" stroke="#4b6c73" strokeWidth="1.8" />
+        <rect x="46" y="296" width="200" height="62" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="146" y="316" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="700">女儿：XᴮXᴮ · XᴮXᵇ 全正常</text>
+        <text x="146" y="340" textAnchor="middle" fontSize="12.5" fill="#2c5a84">（一半是携带者）</text>
+        <rect x="274" y="296" width="200" height="62" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="374" y="316" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">儿子：XᴮY 正常 · XᵇY 色盲</text>
+        <text x="374" y="340" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">各占一半</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">红绿色盲 · 伴 X 染色体隐性遗传</text>
+    </svg>
+  );
+}
+
+/* ================= 螃蟹（甲壳动物） ================= */
+
+function CrabSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 头胸部甲壳 */}
+      <g style={dim(active, 0)}>
+        <path d="M148 208 Q 148 120 260 112 Q 372 120 372 208 Q 372 250 322 262 Q 260 274 198 262 Q 148 250 148 208 Z" fill="#c96a4a" stroke="#8a3a2a" strokeWidth="2.8" />
+        <path d="M196 190 Q 200 150 260 144 Q 320 150 324 190" fill="none" stroke="#8a3a2a" strokeWidth="1.6" opacity="0.6" />
+        <circle cx="212" cy="168" r="6" fill="#3a2a2a" />
+        <circle cx="308" cy="168" r="6" fill="#3a2a2a" />
+        <path d="M236 152 q 6 -10 12 0 m 8 0 q 6 -10 12 0" fill="none" stroke="#8a3a2a" strokeWidth="2" />
+        <text x="404" y="150" fontSize="12.5" fill="#8a3a2a" fontWeight="700">头胸部（背甲包裹）</text>
+        <line x1="400" y1="154" x2="368" y2="170" stroke="#8a3a2a" strokeWidth="1.4" />
+        <text x="404" y="196" fontSize="12.5" fill="#5a6a7a" fontWeight="700">眼柄上的复眼</text>
+        <line x1="400" y1="200" x2="318" y2="172" stroke="#5a6a7a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 螯足 */}
+      <g style={dim(active, 1)}>
+        <path d="M156 196 Q 96 186 78 148 Q 70 128 86 122 Q 102 116 108 134 Q 116 168 162 176" fill="#e08a5a" stroke="#8a3a2a" strokeWidth="2.4" />
+        <path d="M86 122 l -4 -22 m 14 20 l 8 -20" stroke="#8a3a2a" strokeWidth="4" strokeLinecap="round" />
+        <path d="M364 196 Q 424 186 442 148 Q 450 128 434 122 Q 418 116 412 134 Q 404 168 358 176" fill="#e08a5a" stroke="#8a3a2a" strokeWidth="2.4" />
+        <text x="416" y="98" fontSize="12.5" fill="#8a3a2a" fontWeight="700">螯足（捕食·防御）</text>
+        <text x="30" y="98" fontSize="12.5" fill="#8a3a2a" fontWeight="700">可夹碎螺贝</text>
+      </g>
+      {/* 步足 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2].map((i) => (
+          <path key={`l${i}`} d={`M176 ${214 + i * 16} Q ${118 - i * 14} ${222 + i * 18} ${96 - i * 18} ${272 + i * 12}`} fill="none" stroke="#b05a3a" strokeWidth="7" strokeLinecap="round" />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <path key={`r${i}`} d={`M344 ${214 + i * 16} Q ${402 + i * 14} ${222 + i * 18} ${424 + i * 18} ${272 + i * 12}`} fill="none" stroke="#b05a3a" strokeWidth="7" strokeLinecap="round" />
+        ))}
+        <text x="388" y="316" fontSize="12.5" fill="#8a4a2a" fontWeight="700">四对步足（侧向爬行）</text>
+      </g>
+      {/* 腹部 + 鳃 */}
+      <g style={dim(active, 3)}>
+        <path d="M232 266 Q 260 292 288 266 Q 284 296 260 300 Q 236 296 232 266 Z" fill="#d87a5a" stroke="#8a3a2a" strokeWidth="2" />
+        <text x="260" y="330" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="700">腹部（蟹脐：鉴别雌雄）</text>
+        <path d="M172 230 q 14 10 0 22 m 20 -26 q 14 12 0 26" fill="none" stroke="#e8b8a0" strokeWidth="3" opacity="0.8" />
+        <text x="76" y="196" fontSize="12.5" fill="#a56a4a" fontWeight="700">鳃在甲下（水中呼吸）</text>
+        <line x1="160" y1="200" x2="176" y2="222" stroke="#a56a4a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 特征 */}
+      <g style={dim(active, 4)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#f4e4dc" stroke="#a54838" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="700">外骨骼需蜕皮生长 · 断肢可再生 · 离水后用鳃腔保水短时呼吸</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">螃蟹 · 节肢动物门甲壳类代表（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 脾脏（最大的免疫器官） ================= */
+
+function SpleenSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 位置轮廓 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 96 Q 210 62 300 96 Q 342 112 342 170 Q 342 238 262 268 Q 186 292 148 244 Q 116 204 120 96 Z" fill="#a54858" stroke="#7a2a38" strokeWidth="3" />
+        <path d="M148 244 Q 190 258 232 250" fill="none" stroke="#7a2a38" strokeWidth="2" opacity="0.6" />
+        <text x="72" y="70" fontSize="12.5" fill="#7a2a38" fontWeight="700">脾（左上腹·胃的后外侧）</text>
+        <path d="M330 130 Q 366 118 384 96" fill="none" stroke="#7a2a38" strokeWidth="2" strokeDasharray="4 3" />
+        <text x="356" y="84" fontSize="12.5" fill="#7a2a38" fontWeight="600">膈面贴膈</text>
+        <ellipse cx="430" cy="170" rx="34" ry="58" fill="#f0d8c0" stroke="#a5765a" strokeWidth="2" opacity="0.7" />
+        <text x="430" y="248" textAnchor="middle" fontSize="12.5" fill="#8a5a3a" fontWeight="600">肾（毗邻）</text>
+      </g>
+      {/* 红髓 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <circle key={i} cx={168 + (i % 3) * 46} cy={136 + Math.floor(i / 3) * 52} r="15" fill="#c96a6a" stroke="#8a3030" strokeWidth="1.8" opacity="0.85" />
+        ))}
+        <text x="418" y="308" fontSize="12.5" fill="#8a3030" fontWeight="700">红髓：过滤血液</text>
+        <text x="418" y="328" fontSize="12.5" fill="#8a3030" fontWeight="700">吞噬衰老红细胞</text>
+        <line x1="414" y1="312" x2="286" y2="270" stroke="#8a3030" strokeWidth="1.3" strokeDasharray="3 3" />
+      </g>
+      {/* 白髓 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={200 + (i % 2) * 58} cy={210 + Math.floor(i / 2) * 34} r="8" fill="#e8ecf4" stroke="#2c5a84" strokeWidth="2" />
+        ))}
+        <text x="88" y="318" fontSize="12.5" fill="#2c5a84" fontWeight="700">白髓：淋巴细胞聚集</text>
+        <text x="88" y="338" fontSize="12.5" fill="#2c5a84" fontWeight="700">发生免疫应答的场所</text>
+        <line x1="196" y1="322" x2="206" y2="286" stroke="#2c5a84" strokeWidth="1.3" strokeDasharray="3 3" />
+      </g>
+      {/* 功能 */}
+      <g style={dim(active, 3)}>
+        <rect x="120" y="344" width="280" height="30" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">最大的免疫器官 · 储血 · 胎儿期造血</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">脾脏 · 免疫与滤血（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'colorBlindness',
+    name: '红绿色盲遗传',
+    kicker: '伴 X 染色体隐性遗传 · 婚配分析图',
+    intro: '红绿色盲由 X 染色体上的隐性致病基因（b）控制：女性需要 XᵇXᵇ 才患病，男性只需一条 Xᵇ 就会患病——所以男性患者远多于女性。携带者母亲会把致病基因传给儿子，形成"交叉遗传"。',
+    parts: [
+      { name: '致病基因定位', desc: 'b 基因位于 X 染色体上且为隐性：XᴮXᵇ 女性表现正常但携带致病基因。' },
+      { name: '典型婚配分析', desc: '女性携带者（XᴮXᵇ）× 正常男性（XᴮY）：女儿全正常（一半携带），儿子正常与色盲各半。' },
+      { name: '交叉遗传', desc: '男性的色盲基因来自母亲，将来只能传给女儿——隔代经由女性传递，称为交叉遗传。' },
+      { name: '发病率差异', desc: '男性只有一条 X 染色体，只要带 b 就患病；我国男性色盲率约 7%，女性仅约 0.5%。' },
+      { name: '遗传咨询', desc: '禁止近亲结婚可降低隐性致病基因纯合的概率；产前基因检测可评估生育风险。' },
+    ],
+    Svg: ColorBlindnessSvg,
+  },
+  {
+    id: 'crab',
+    name: '螃蟹',
+    kicker: '节肢动物门 · 甲壳类代表（课外拓展）',
+    intro: '螃蟹的身体分头胸部和腹部：头背部覆盖坚硬的几丁质背甲，五对附肢中第一对特化为螯足。它横行靠四对步足交替摆动，用鳃在水中呼吸，离水后靠鳃腔储存的水分短时维持呼吸。',
+    extension: true,
+    parts: [
+      { name: '头胸部与背甲', desc: '头胸部愈合在一起，外覆外骨骼（背甲）——保护内部器官，需定期蜕皮才能长大。' },
+      { name: '螯足', desc: '第一对附肢特化成大螯，用来捕食、夹碎螺贝和防御，也是同类争斗的武器。' },
+      { name: '步足', desc: '四对细长步足关节只能上下摆动，所以螃蟹以侧向爬行著称；步足断落后可以再生。' },
+      { name: '呼吸与蟹脐', desc: '鳃藏在背甲下的鳃腔里；腹部折叠贴在头胸部下方形成"蟹脐"——尖脐是雄蟹，圆脐是雌蟹。' },
+    ],
+    Svg: CrabSvg,
+  },
+  {
+    id: 'spleen',
+    name: '脾脏',
+    kicker: '最大的免疫器官 · 结构与功能（课外拓展）',
+    intro: '脾脏位于左上腹、胃的后外侧，是人体最大的免疫器官：红髓像"血液过滤器"，负责清除衰老的红细胞；白髓密布淋巴细胞，是发生免疫应答的场所。脾脏还能储存血液，胚胎期兼有造血功能。',
+    extension: true,
+    parts: [
+      { name: '位置形态', desc: '左上腹第 9~11 肋下方，暗红色，质脆易破——左腹受撞击可能脾破裂。' },
+      { name: '红髓', desc: '富含红细胞和巨噬细胞：过滤血液、吞噬衰老红细胞和病原体，回收铁元素。' },
+      { name: '白髓', desc: '淋巴细胞密集的区域（围绕小动脉）：识别血液中的抗原，启动体液免疫和细胞免疫。' },
+      { name: '其他功能', desc: '储存血小板和血液（应急释放）；胚胎早期是重要的造血器官，出生后由骨髓接替。' },
+      { name: '与健康的关系', desc: '脾脏虽重要但不是必需器官——脾切除后其功能可部分由淋巴结和肝脏代偿。' },
+    ],
+    Svg: SpleenSvg,
+  },
   {
     id: 'pitcherPlant',
     name: '猪笼草（捕虫叶）',

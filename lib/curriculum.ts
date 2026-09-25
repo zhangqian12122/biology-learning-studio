@@ -618,6 +618,7 @@ export type ExperimentId =
   | 'neuronTypes'
   | 'bloodLayers'
   | 'hybridoma'
+  | 'gelElectrophoresis'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1101,6 +1102,13 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '细胞工程与组织培养',
   },
+  gelElectrophoresis: {
+    title: 'DNA 的凝胶电泳',
+    kicker: '选择性必修 3 · 生物技术',
+    description: 'DNA 带负电在凝胶中向正极迁移：小片段跑得快，对照 Marker 读出片段长度。',
+    relatedBook: 'technology',
+    relatedModule: '基因工程与 PCR 技术',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1307,7 +1315,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'crispr', 'geneTherapy', 'restrictionEnzyme', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'restrictionEnzyme', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
   },
 ];
 
@@ -1392,6 +1400,7 @@ export const experimentOrder: ExperimentId[] = [
   'pickleFerment',
   'tissueCulture',
   'pcr',
+  'gelElectrophoresis',
   'embryoTransfer',
   'nuclearTransfer',
   'hybridoma',

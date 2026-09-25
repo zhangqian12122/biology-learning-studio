@@ -8,28 +8,28 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：hybridoma 单克隆抗体的制备 ----------
-await page.goto(`${BASE}/lab?exp=hybridoma`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：gelElectrophoresis DNA 的凝胶电泳 ----------
+await page.goto(`${BASE}/lab?exp=gelElectrophoresis`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('单克隆抗体的制备');
+  results.experiment.open = text.includes('DNA 的凝胶电泳');
   const before = text;
-  await page.getByRole('button', { name: /推进流程/ }).click();
+  await page.getByRole('button', { name: /接通电源|继续电泳|染色观察/ }).click();
   await page.waitForTimeout(500);
-  await page.getByRole('button', { name: /推进流程/ }).click();
+  await page.getByRole('button', { name: /接通电源|继续电泳|染色观察/ }).click();
   await page.waitForTimeout(500);
-  await page.getByRole('button', { name: /推进流程/ }).click();
+  await page.getByRole('button', { name: /接通电源|继续电泳|染色观察/ }).click();
   await page.waitForTimeout(500);
   const after = await page.locator('main').innerText();
-  results.experiment.interactive = after.includes('选择培养基') && after.includes('杂交瘤');
+  results.experiment.interactive = after.includes('荧光条带') && after.includes('扩增成功');
   results.experiment.reference = after.includes('实验原理');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['pitcherPlant', 'earStructure', 'jellyfish'];
+const SPECIMENS = ['colorBlindness', 'crab', 'spleen'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -89,17 +89,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：hybridoma 实验页应挂载 monoclonalAntibody 图解
-await page.goto(`${BASE}/lab?exp=hybridoma`, { waitUntil: 'domcontentloaded' });
+// 图解卡：pcr 实验页原有图解仍正常（回归检查）
+await page.goto(`${BASE}/lab?exp=pcr`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.monoclonalDiagram = { found: t.includes('单克隆抗体'), ok: t.includes('单克隆抗体') };
+  results.specimens.pcrRegression = { found: t.includes('PCR'), ok: t.includes('PCR') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.monoclonalDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.pcrRegression?.ok;
 console.log('ALL_OK=' + allOk);
