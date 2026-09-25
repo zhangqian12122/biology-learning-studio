@@ -5052,7 +5052,7 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'neuronTypes'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers'] },
 ];
@@ -8520,7 +8520,141 @@ function PlantHormonesSvg({ active }: { active: number | null; open?: boolean })
 }
 
 
+/* ================= 消化系统 ================= */
+
+function DigestiveSystemSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <ellipse cx="180" cy="52" rx="26" ry="14" fill="#f4c8b0" stroke="#c9708a" strokeWidth="2.5" />
+        <text x="24" y="48" fontSize="12.5" fill="#8a3a2a" fontWeight="700">口腔（咀嚼·唾液淀粉酶）</text>
+        <path d="M206 54 Q 220 66 214 80 L 218 130" fill="none" stroke="#c9a882" strokeWidth="10" strokeLinecap="round" />
+        <text x="240" y="110" fontSize="12.5" fill="#8a6a3a" fontWeight="700">食管（蠕动推送食物）</text>
+        <path d="M214 130 Q 210 176 248 184 Q 290 190 296 158 Q 296 136 262 130 Q 232 122 214 130 Z" fill="#e8b8a0" stroke="#a5603a" strokeWidth="3" />
+        <text x="304" y="168" fontSize="12.5" fill="#8a4a2a" fontWeight="700">胃（胃蛋白酶·盐酸·蠕动搅拌）</text>
+        <path d="M240 186 Q 220 220 250 240 Q 280 260 310 244 Q 340 228 320 254 Q 300 278 270 270 Q 240 262 232 284" fill="none" stroke="#e8a06a" strokeWidth="14" strokeLinecap="round" />
+        <text x="60" y="240" fontSize="12.5" fill="#c9534a" fontWeight="700">小肠（消化吸收主场所）</text>
+        <path d="M232 284 Q 260 300 310 292 Q 370 284 400 262 L 400 240" fill="none" stroke="#c9b88a" strokeWidth="18" strokeLinecap="round" />
+        <text x="330" y="322" fontSize="12.5" fill="#8a7a4a" fontWeight="700">大肠（吸收水分·形成粪便）</text>
+        <circle cx="412" cy="246" r="6" fill="#8a671b" />
+        <text x="424" y="250" fontSize="11" fill="#8a671b" fontWeight="600">肛门</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <ellipse cx="228" cy="38" rx="14" ry="9" fill="#c8e2d8" stroke="#3f9a5a" strokeWidth="2" />
+        <text x="248" y="42" fontSize="11.5" fill="#3f9a5a" fontWeight="600">唾液腺</text>
+        <path d="M278 192 Q 320 178 366 190 Q 376 200 368 214 Q 340 226 298 212 Q 274 202 278 192 Z" fill="#c9708a" stroke="#a54868" strokeWidth="2.5" />
+        <text x="380" y="206" fontSize="13" fill="#a54868" fontWeight="800">肝（最大的消化腺）</text>
+        <text x="380" y="224" fontSize="11" fill="#a54868">分泌胆汁（乳化脂肪）</text>
+        <ellipse cx="330" cy="258" rx="30" ry="12" fill="#f4d06a" stroke="#b5953a" strokeWidth="2.2" transform="rotate(-14 330 258)" />
+        <text x="240" y="276" fontSize="12.5" fill="#a5761d" fontWeight="700">胰腺（胰液+胰岛素·胰高血糖素）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">消化系统模式图 · 消化道 + 消化腺</text>
+    </svg>
+  );
+}
+
+/* ================= 呼吸系统 ================= */
+
+function RespiratorySystemSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <path d="M230 30 Q 244 22 258 30 L 256 48 L 232 48 Z" fill="#f2d8c4" stroke="#b58a6a" strokeWidth="2.5" />
+        <text x="36" y="52" fontSize="12.5" fill="#8a6a3a" fontWeight="700">鼻（温暖·湿润·清洁空气）</text>
+        <path d="M244 48 L 244 70 L 252 76 L 252 92" fill="none" stroke="#c9a882" strokeWidth="12" strokeLinecap="round" />
+        <text x="270" y="72" fontSize="12" fill="#8a6a3a" fontWeight="600">咽</text>
+        <ellipse cx="252" cy="84" rx="10" ry="8" fill="#c8e2d8" stroke="#3f9a5a" strokeWidth="2" />
+        <text x="270" y="92" fontSize="12" fill="#3f7f3a" fontWeight="700">喉（发声器官）</text>
+        <rect x="242" y="96" width="20" height="90" rx="8" fill="#d4e2e8" stroke="#7a9a9f" strokeWidth="2.5" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <line key={i} x1={242} y1={106 + i * 13} x2={262} y2={106 + i * 13} stroke="#7a9a9f" strokeWidth="2.4" />
+        ))}
+        <text x="280" y="140" fontSize="12.5" fill="#4a5a6a" fontWeight="700">气管（C 形软骨环支撑）</text>
+        <path d="M246 186 L 210 220 M254 186 L 290 220" fill="none" stroke="#c8d4dc" strokeWidth="10" strokeLinecap="round" />
+        <text x="140" y="222" fontSize="12" fill="#4a5a6a" fontWeight="600">左右支气管</text>
+        <path d="M178 220 Q 140 224 130 268 Q 126 306 168 310 Q 196 306 200 262 Q 202 234 178 220 Z" fill="#f2c8c0" stroke="#c97a6a" strokeWidth="3" />
+        <path d="M312 220 Q 360 224 370 268 Q 374 306 332 310 Q 304 306 300 262 Q 302 234 312 220 Z" fill="#f2c8c0" stroke="#c97a6a" strokeWidth="3" />
+        <text x="164" y="342" textAnchor="middle" fontSize="14" fill="#c9534a" fontWeight="800">左肺（2 叶）</text>
+        <text x="340" y="342" textAnchor="middle" fontSize="14" fill="#c9534a" fontWeight="800">右肺（3 叶）</text>
+        <text x="260" y="366" textAnchor="middle" fontSize="12" fill="#8a4a2a" fontWeight="700">肺泡壁+毛细血管壁 仅一层上皮细胞 → 高效气体交换</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">呼吸系统模式图</text>
+    </svg>
+  );
+}
+
+/* ================= 神经元的种类 ================= */
+
+function NeuronTypesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <circle cx="80" cy="80" r="20" fill="#c8e2ba" stroke="#4a9a6a" strokeWidth="2.4" />
+        <circle cx="74" cy="74" r="5" fill="#3f7f3a" />
+        <path d="M100 72 L 150 72" stroke="#4a9a6a" strokeWidth="3" />
+        <text x="80" y="60" textAnchor="middle" fontSize="10" fill="#2f7a4d" fontWeight="700">感觉神经元（假单极）</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <circle cx="180" cy="170" r="22" fill="#f4d06a" stroke="#c9a05a" strokeWidth="2.4" />
+        <text x="180" y="175" textAnchor="middle" fontSize="9" fill="#8a671b" fontWeight="800">联络</text>
+        <text x="180" y="210" textAnchor="middle" fontSize="10" fill="#c9a05a" fontWeight="600">中间神经元（中枢内）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <circle cx="290" cy="80" r="20" fill="#c8d8e8" stroke="#3d6a94" strokeWidth="2.4" />
+        <text x="290" y="86" textAnchor="middle" fontSize="9.5" fill="#1e4a68" fontWeight="800">运动</text>
+        <text x="290" y="120" textAnchor="middle" fontSize="10" fill="#3d6a94" fontWeight="600">运动神经元（传出→肌肉）</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="290" width="440" height="56" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">反射弧：感受器 → 感觉神经元 → 中间神经元 → 运动神经元 → 效应器</text>
+        <text x="260" y="334" textAnchor="middle" fontSize="11.5" fill="#a5761d">兴奋在神经元之间的传递是单向的（突触前膜→突触后膜）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">神经元的种类与连接 · 反射弧的结构基础</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'digestiveSystem',
+    name: '消化系统',
+    kicker: '人体 · 系统结构图',
+    intro: '消化道从口腔到肛门全长约 9 米：食物的消化与吸收主要在小肠完成——胆汁乳化脂肪、胰液肠液消化蛋白质糖类脂肪。',
+    parts: [
+      { name: '口腔', desc: '牙齿咀嚼磨碎食物，唾液淀粉酶初步分解淀粉为麦芽糖。' },
+      { name: '胃', desc: '胃酸杀死细菌、胃蛋白酶初步消化蛋白质——只能吸收少量水和酒精。' },
+      { name: '小肠', desc: '消化吸收的主场所：胆汁乳化脂肪、胰液肠液彻底消化，绒毛增大吸收面积。' },
+      { name: '大肠', desc: '吸收水分和无机盐，形成粪便——盲肠与阑尾也在此处。' },
+      { name: '消化腺', desc: '唾液腺、肝（最大消化腺）、胰腺——分泌消化液进入消化道。' },
+    ],
+    Svg: DigestiveSystemSvg,
+  },
+  {
+    id: 'respiratorySystem',
+    name: '呼吸系统',
+    kicker: '人体 · 系统结构图',
+    intro: '呼吸系统由呼吸道（鼻→咽→喉→气管→支气管）和肺组成：呼吸道温暖湿润清洁空气，肺是气体交换的场所。',
+    parts: [
+      { name: '鼻', desc: '鼻腔内有鼻毛和黏液：温暖、湿润、清洁吸入的空气——"空气净化器"。' },
+      { name: '咽与喉', desc: '咽是食物和气体的共同通道；喉有声带，是发声器官。' },
+      { name: '气管与支气管', desc: 'C 形软骨环支撑防止塌陷，纤毛向咽喉方向摆动清扫灰尘异物。' },
+      { name: '肺', desc: '左肺 2 叶、右肺 3 叶：约 3 亿个肺泡提供约 100 m² 的气体交换面积。' },
+    ],
+    Svg: RespiratorySystemSvg,
+  },
+  {
+    id: 'neuronTypes',
+    name: '神经元的种类',
+    kicker: '神经调节 · 分类模式图',
+    intro: '按功能分为感觉（传入）、中间（联络）和运动（传出）三种神经元：它们首尾相连构成反射弧，兴奋只能单向传递。',
+    parts: [
+      { name: '感觉神经元', desc: '传入神经元：树突末梢连感受器，将兴奋传入中枢——多为假单极。' },
+      { name: '中间神经元', desc: '位于脑和脊髓内：连接感觉和运动神经元，整合信息——数量最多、形态多样。' },
+      { name: '运动神经元', desc: '传出神经元：将中枢的指令传到效应器（肌肉或腺体），控制身体反应。' },
+      { name: '反射弧', desc: '感受器→传入神经→神经中枢→传出神经→效应器：五环节缺一不可。' },
+    ],
+    Svg: NeuronTypesSvg,
+  },
   {
     id: 'skeletonSystem',
     name: '人体骨骼系统',
