@@ -4,6 +4,7 @@ import { lazy, Suspense, useState, type ComponentType, type LazyExoticComponent 
 import Link from 'next/link';
 import {
   Activity,
+  Wind,
   Heart,
   Pill,
   Sun,
@@ -91,6 +92,11 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   cellRespiration: Activity,
   engelmann: Palette,
   waterBalance: Droplet,
+  breathingMechanics: Wind,
+  neuronTypes: Network,
+  bloodLayers: Layers,
+  transpiration: Droplets,
+  photoperiodism: Sun,
   crossingOver: Scissors,
   apicalDominance: Sprout,
   doubleFertilization: Flower2,
@@ -173,6 +179,11 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   cellRespiration: () => import('@/components/lab/cell-respiration-lab').then(({ CellRespirationLab }) => ({ default: CellRespirationLab })),
   engelmann: () => import('@/components/lab/engelmann-lab').then(({ EngelmannLab }) => ({ default: EngelmannLab })),
   waterBalance: () => import('@/components/lab/water-balance-lab').then(({ WaterBalanceLab }) => ({ default: WaterBalanceLab })),
+  breathingMechanics: () => import('@/components/lab/breathing-mechanics-lab').then(({ BreathingMechanicsLab }) => ({ default: BreathingMechanicsLab })),
+  neuronTypes: () => import('@/components/lab/neuron-types-lab').then(({ NeuronTypesLab }) => ({ default: NeuronTypesLab })),
+  bloodLayers: () => import('@/components/lab/blood-layers-lab').then(({ BloodLayersLab }) => ({ default: BloodLayersLab })),
+  transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
+  photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
   crossingOver: () => import('@/components/lab/crossing-over-lab').then(({ CrossingOverLab }) => ({ default: CrossingOverLab })),
   apicalDominance: () => import('@/components/lab/apical-dominance-lab').then(({ ApicalDominanceLab }) => ({ default: ApicalDominanceLab })),
@@ -244,6 +255,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   pcr: ['pcrStages'],
   vaccineResponse: ['humoralImmunity'],
   bloodSugarRegulation: ['waterSaltBalance', 'bloodSugarSources'],
+  bloodLayers: ['bloodClotting'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */

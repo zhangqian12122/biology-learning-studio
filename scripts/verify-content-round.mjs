@@ -8,27 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：水盐平衡调节 ----------
-await page.goto(`${BASE}/lab?exp=waterBalance`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：bloodLayers 血液的分层观察 ----------
+await page.goto(`${BASE}/lab?exp=bloodLayers`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('水盐平衡调节');
-  // 喝水 → 排尿增加；出汗 → 保水
-  await page.getByRole('button', { name: /喝水 500/ }).click({ force: true });
-  await page.waitForTimeout(500);
-  const drank = await page.locator('main').innerText();
-  results.experiment.drinkWorks = drank.includes('排尿') || drank.includes('ADH 降至');
-  await page.getByRole('button', { name: /运动出汗/ }).click({ force: true });
-  await page.waitForTimeout(500);
-  const sweat = await page.locator('main').innerText();
-  results.experiment.sweatWorks = sweat.includes('保水') || sweat.includes('大脑皮层');
+  results.experiment.open = text.includes('血液的分层观察');
+  const before = text;
+  await page.getByRole('button', { name: /静置\/离心/ }).click();
+  await page.waitForTimeout(600);
+  await page.getByRole('button', { name: /静置\/离心/ }).click();
+  await page.waitForTimeout(600);
+  const after = await page.locator('main').innerText();
+  results.experiment.interactive = after.includes('已分层') && after.includes('血浆 55%');
+  results.experiment.reference = after.includes('实验原理');
+  results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['skeletonSystem', 'apoptosisVsNecrosis', 'plantHormones'];
-const LAB_ONLY_CHECKS = [{ specimen: 'humoralImmunity', onExperiment: 'vaccineResponse', label: '体液免疫流程' }];
+const SPECIMENS = ['gramStain', 'fiveKingdoms', 'bloodClotting'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -88,18 +87,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-
-// LAB_ONLY 流程图：在对应实验页验证图解卡
-for (const chk of LAB_ONLY_CHECKS) {
-  await page.goto(`${BASE}/lab?exp=${chk.onExperiment}`, { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(1800);
+// 图解卡：bloodLayers 实验页应挂载 bloodClotting 图解
+await page.goto(`${BASE}/lab?exp=bloodLayers`, { waitUntil: 'domcontentloaded' });
+await page.waitForTimeout(1800);
+{
   const t = await page.locator('main').innerText();
-  results.specimens[chk.specimen] = { found: t.includes(chk.label), ok: t.includes(chk.label) };
+  results.specimens.bloodClottingDiagram = { found: t.includes('血液凝固过程'), ok: t.includes('血液凝固过程') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok);
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.bloodClottingDiagram?.ok;
 console.log('ALL_OK=' + allOk);

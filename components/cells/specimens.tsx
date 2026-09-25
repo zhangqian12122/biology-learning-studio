@@ -5049,12 +5049,12 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'neuronTypes'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -8718,7 +8718,147 @@ function PhotoperiodismSvg({ active }: { active: number | null; open?: boolean }
   );
 }
 
+/* ================= 革兰氏染色 ================= */
+
+function GramStainSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 革兰氏阳性（左） */}
+      <g style={dim(active, 0)}>
+        <rect x="14" y="56" width="230" height="230" rx="14" fill="#e8e4f4" stroke="#5a4a8a" strokeWidth="2.4" />
+        <text x="129" y="82" textAnchor="middle" fontSize="13" fill="#4a3a7a" fontWeight="800">革兰氏阳性（G⁺）</text>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <circle key={i} cx={48 + (i % 3) * 42} cy={112 + Math.floor(i / 3) * 52} r="14" fill="#6a3a9a" stroke="#4a2a6a" strokeWidth="2" />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <rect key={i} x={100 + i * 38} y={100 + i * 8} width="30" height="12" rx="6" fill="#6a3a9a" stroke="#4a2a6a" strokeWidth="1.8" />
+        ))}
+        <text x="129" y="196" textAnchor="middle" fontSize="11.5" fill="#4a3a7a" fontWeight="700">结晶紫染色后不被脱色（保留紫色）</text>
+        <text x="129" y="216" textAnchor="middle" fontSize="11" fill="#4a3a7a">细胞壁：肽聚糖层厚（20~80nm）</text>
+        <text x="129" y="236" textAnchor="middle" fontSize="11" fill="#4a3a7a">对青霉素敏感</text>
+        <text x="129" y="264" textAnchor="middle" fontSize="12" fill="#6a4a8a" fontWeight="600">例：金黄色葡萄球菌·链球菌</text>
+      </g>
+      {/* 革兰氏阴性（右） */}
+      <g style={dim(active, 1)}>
+        <rect x="276" y="56" width="230" height="230" rx="14" fill="#f8e4e0" stroke="#a54838" strokeWidth="2.4" />
+        <text x="391" y="82" textAnchor="middle" fontSize="13" fill="#8a3a2a" fontWeight="800">革兰氏阴性（G⁻）</text>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <rect key={i} x={306 + (i % 3) * 42} y={110 + Math.floor(i / 3) * 52} width="34" height="13" rx="6.5" fill="#d85a4a" stroke="#a53a2a" strokeWidth="2" />
+        ))}
+        <text x="391" y="196" textAnchor="middle" fontSize="11.5" fill="#8a3a2a" fontWeight="700">结晶紫染色后被脱色（复染为红色）</text>
+        <text x="391" y="216" textAnchor="middle" fontSize="11" fill="#8a3a2a">细胞壁：肽聚糖层薄（2~7nm）+外膜</text>
+        <text x="391" y="236" textAnchor="middle" fontSize="11" fill="#8a3a2a">对青霉素不敏感（有β-内酰胺酶）</text>
+        <text x="391" y="264" textAnchor="middle" fontSize="12" fill="#a5533c" fontWeight="600">例：大肠杆菌·铜绿假单胞菌</text>
+      </g>
+      {/* 区分意义 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="300" width="440" height="52" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">意义：革兰氏染色是细菌分类鉴定和选择抗生素的重要依据</text>
+        <text x="260" y="342" textAnchor="middle" fontSize="11" fill="#a5761d">G⁺ 对青霉素敏感 · G⁻ 对青霉素不敏感（需用其他抗生素）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">革兰氏染色对比 · 细菌分类（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 五界分类系统 ================= */
+
+function FiveKingdomsSvg({ active }: { active: number | null; open?: boolean }) {
+  const kingdoms = [
+    { name: '原核生物界', ex: '细菌·蓝细菌', color: '#4d7ea8', icon: '🔬' },
+    { name: '原生生物界', ex: '变形虫·草履虫·衣藻', color: '#c9a05a', icon: '🦠' },
+    { name: '真菌界', ex: '蘑菇·酵母·霉菌', color: '#8a671b', icon: '🍄' },
+    { name: '植物界', ex: '苔藓·蕨类·种子植物', color: '#3f7f3a', icon: '🌿' },
+    { name: '动物界', ex: '无脊椎·脊椎动物', color: '#b0483a', icon: '🐾' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {kingdoms.map((k, i) => (
+        <g key={k.name} style={dim(active, i)}>
+          <rect x="30" y={46 + i * 62} width="460" height="50" rx="12" fill="#f8faf6" stroke={k.color} strokeWidth="2.4" />
+          <text x={52} y={78 + i * 62} fontSize="20">{k.icon}</text>
+          <text x={86} y={78 + i * 62} fontSize="13.5" fill={k.color} fontWeight="800">{k.name}</text>
+          <text x={280} y={78 + i * 62} fontSize="11.5" fill="#59767c">{k.ex}</text>
+        </g>
+      ))}
+      <g style={dim(active, 0)}>
+        <rect x="40" y="368" width="440" height="0" fill="none" />
+        <text x="260" y="366" textAnchor="middle" fontSize="12" fill="#49676d" fontWeight="700">五界系统（Whittaker 1969）——按细胞结构与营养方式分类</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">五界分类系统 · 生物分类的"家族树"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 血液的凝固过程 ================= */
+
+function BloodClottingSvg({ active }: { active: number | null; open?: boolean }) {
+  const steps = [
+    { n: '①', t: '血管破损·血小板聚集', d: '血小板黏附于伤口释放凝血因子', x: 30, y: 70 },
+    { n: '②', t: '凝血因子级联反应', d: '凝血酶原 → 凝血酶（需 Ca²⁺ 和维生素 K）', x: 30, y: 140 },
+    { n: '③', t: '纤维蛋白原 → 纤维蛋白', d: '纤维蛋白交织成网·网住血细胞', x: 30, y: 210 },
+    { n: '④', t: '血块形成·止血', d: '血块收缩·血清析出', x: 30, y: 280 },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {steps.map((st, i) => (
+        <g key={st.n} style={dim(active, i)}>
+          <rect x={st.x} y={st.y} width="440" height="52" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+          <text x={st.x + 16} y={st.y + 22} fontSize="12" fill="#8a671b" fontWeight="800">{st.n} {st.t}</text>
+          <text x={st.x + 16} y={st.y + 42} fontSize="10.5" fill="#a5761d">{st.d}</text>
+        </g>
+      ))}
+      {/* 连接箭头 */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M250 ${122 + i * 70} L 250 ${140 + i * 70}`} fill="none" stroke="#8a671b" strokeWidth="2.4" />
+        ))}
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">血液凝固过程 · 血小板的止血功能（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'gramStain',
+    name: '革兰氏染色',
+    kicker: '细菌鉴定 · 染色反应对比（课外拓展）',
+    intro: '1884 年丹麦医生革兰发明的染色法：根据细菌细胞壁结构的差异，把细菌分为革兰氏阳性（G⁺，呈紫色）和革兰氏阴性（G⁻，呈红色）两大类，是细菌分类鉴定和选择抗生素的重要依据。',
+    parts: [
+      { name: '结晶紫初染', desc: '所有细菌先被碱性染料结晶紫染成紫色。' },
+      { name: '碘液媒染', desc: '碘与结晶紫形成不溶性复合物，把颜色固定在细胞内。' },
+      { name: '酒精脱色', desc: 'G⁻ 肽聚糖层薄且含脂较多，被酒精脱色；G⁺ 肽聚糖层厚，仍保留紫色。' },
+      { name: '复染呈色', desc: '用番红复染后，脱色的 G⁻ 呈红色，未脱色的 G⁺ 仍为紫色。' },
+    ],
+    Svg: GramStainSvg,
+  },
+  {
+    id: 'fiveKingdoms',
+    name: '五界分类系统',
+    kicker: '生物分类 · 分界方案（课外拓展）',
+    intro: '1969 年魏泰克提出的五界系统：依据细胞核有无、细胞组成和营养方式，把全部生物分为原核生物界、原生生物界、真菌界、植物界和动物界——比两界系统更真实地反映了生物的演化关系。',
+    parts: [
+      { name: '原核生物界', desc: '无以核膜为界限的细胞核，单细胞，如细菌、蓝细菌。' },
+      { name: '原生生物界', desc: '真核生物中结构简单的单细胞类群，如变形虫、草履虫、衣藻。' },
+      { name: '真菌界', desc: '真核、异养（吸收营养），如酵母菌、霉菌、蘑菇。' },
+      { name: '植物界与动物界', desc: '真核多细胞：植物能光合作用自养，动物摄取食物异养。' },
+    ],
+    Svg: FiveKingdomsSvg,
+  },
+  {
+    id: 'bloodClotting',
+    name: '血液凝固过程',
+    kicker: '止血机制 · 凝血级联（课外拓展）',
+    intro: '血管破损后，血小板在伤口处聚集并释放凝血因子，经过级联反应，血浆中的纤维蛋白原变为纤维蛋白，交织成网网住血细胞形成血块——这是人体最重要的止血防线。',
+    parts: [
+      { name: '血小板聚集', desc: '血管破损后血小板黏附、聚集在伤口，释放凝血因子启动凝血。' },
+      { name: '凝血酶形成', desc: '凝血酶原在凝血因子和 Ca²⁺ 参与下转变为有活性的凝血酶。' },
+      { name: '纤维蛋白网', desc: '凝血酶催化纤维蛋白原转变为纤维蛋白，交织成网网住血细胞。' },
+      { name: '血块与血清', desc: '血块收缩后析出淡黄色血清——血清是不含纤维蛋白原的血浆。' },
+    ],
+    Svg: BloodClottingSvg,
+  },
   {
     id: 'smallIntestineVillus',
     name: '小肠绒毛结构',

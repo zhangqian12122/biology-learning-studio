@@ -1,0 +1,118 @@
+/* ================= 小肠绒毛结构 ================= */
+
+function SmallIntestineVillusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 环形皱襞 */}
+      <g style={dim(active, 0)}>
+        <path d="M30 80 Q 260 50 490 80" fill="none" stroke="#c9885f" strokeWidth="8" strokeLinecap="round" />
+        <text x="486" y="66" textAnchor="end" fontSize="12.5" fill="#c9885f" fontWeight="700">环形皱襞（黏膜折叠）</text>
+      </g>
+      {/* 绒毛（一排手指状突起） */}
+      {[0, 1, 2, 3, 4].map((i) => (
+        <g key={i} style={dim(active, 1)}>
+          <path d={`M${80 + i * 82} 92 q 6 50 14 88 q 2 6 8 6 q 6 0 8 -6 q 8 -38 14 -88 Z`} fill="#f2d8c8" stroke="#c9885f" strokeWidth="2.2" />
+          {/* 中央乳糜管 */}
+          <path d={`M${94 + i * 82} 100 q 2 30 4 70`} fill="none" stroke="#e8b84a" strokeWidth="3" />
+          {/* 毛细血管 */}
+          <path d={`M${86 + i * 82} 100 q -2 30 6 70`} fill="none" stroke="#c94a5a" strokeWidth="2.4" />
+        </g>
+      ))}
+      <text x="486" y="120" textAnchor="end" fontSize="12.5" fill="#c9885f" fontWeight="700">小肠绒毛（手指状突起）</text>
+      {/* 微绒毛 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${200 + i * 6} 96 l 3 -14`} fill="none" stroke="#c9885f" strokeWidth="1.2" />
+        ))}
+        <text x="200" y="70" fontSize="11.5" fill="#c9885f" fontWeight="600">微绒毛（电镜下才可见）</text>
+      </g>
+      {/* 数据对比 */}
+      <g style={dim(active, 3)}>
+        <rect x="30" y="268" width="460" height="94" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="52" y="294" fontSize="12" fill="#8a671b" fontWeight="800">三级放大 · 吸收面积约 200 m²（= 一个网球场）：</text>
+        <text x="52" y="318" fontSize="11.5" fill="#7a5a1d">环形皱襞（×3）→ 绒毛（×8）→ 微绒毛（×20）——吸收面积增加约 600 倍</text>
+        <text x="52" y="344" fontSize="11.5" fill="#49676d">绒毛内含丰富的毛细血管（吸收氨基酸葡萄糖）和毛细淋巴管（吸收脂肪）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">小肠绒毛结构模式图 · 消化吸收的结构基础</text>
+    </svg>
+  );
+}
+
+/* ================= 涡虫（扁形动物） ================= */
+
+function PlanarianSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 水底背景 */}
+      <g style={dim(active, 3)}>
+        <path d="M20 310 Q 140 288 260 302 T 500 296 L 500 380 L 20 380 Z" fill="#d8c9a8" stroke="#a5885f" strokeWidth="2.5" />
+        <text x="486" y="368" textAnchor="end" fontSize="12.5" fill="#8a7a58">淡水溪流底部（涡虫栖息地）</text>
+      </g>
+      {/* 涡虫身体（三角形头+细长身体） */}
+      <g style={dim(active, 0)}>
+        <path d="M120 148 Q 160 116 220 108 Q 180 116 160 132 Q 140 120 120 136 Q 106 146 120 148 Z" fill="#c9a882" stroke="#8a6a3a" strokeWidth="2.5" />
+        <path d="M156 130 Q 240 96 330 112 Q 410 126 398 168 Q 388 204 300 212 Q 200 220 156 172 Q 146 152 156 130 Z" fill="#d8c9a8" stroke="#8a6a3a" strokeWidth="3" />
+        {/* 眼点 */}
+        {[0, 1].map((i) => (
+          <circle key={i} cx={158 + i * 16} cy={122} r="4.5" fill="#13333a" />
+        ))}
+        <text x="60" y="106" fontSize="13" fill="#5a3a1a" fontWeight="800">眼点（感光）</text>
+        <line x1="96" y1="110" x2="154" y2="120" stroke="#5a3a1a" strokeWidth="1.3" />
+      </g>
+      {/* 咽（口→咽→肠分支） */}
+      <g style={dim(active, 1)}>
+        <circle cx="230" cy="164" r="6" fill="#8a671b" />
+        <text x="200" y="152" fontSize="11" fill="#8a671b" fontWeight="700">口（体腹面中线）</text>
+        <line x1="228" y1="156" x2="228" y2="162" stroke="#8a671b" strokeWidth="1.3" />
+        <path d="M230 168 L 230 196" fill="none" stroke="#c9708a" strokeWidth="5" strokeLinecap="round" />
+        <path d="M230 196 L 200 212 M230 196 L 260 212 M230 196 L 230 216" fill="none" stroke="#c9708a" strokeWidth="3.5" strokeLinecap="round" />
+        <text x="60" y="230" fontSize="12" fill="#8a4a2a" fontWeight="700">咽（可翻出）· 三分支肠</text>
+      </g>
+      {/* 再生能力 */}
+      <g style={dim(active, 2)}>
+        <path d="M370 210 Q 420 180 460 152" fill="none" stroke="#7ab86a" strokeWidth="5" strokeLinecap="round" />
+        <path d="M460 152 l-8 -2 m8 2 l2 -8 m-14 0 l10 -4" stroke="#7ab86a" strokeWidth="2" strokeLinecap="round" />
+        <text x="374" y="130" fontSize="12.5" fill="#4a8a3a" fontWeight="800">再生：切成两段→各长成完整个体</text>
+        <text x="374" y="148" fontSize="11" fill="#4a8a3a">干细胞（新胚细胞）分布全身</text>
+      </g>
+      {/* 对比说明 */}
+      <g style={dim(active, 4)}>
+        <rect x="40" y="300" width="440" height="50" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">扁形动物门：背腹扁平 · 左右对称 · 三胚层 · 无体腔 · 有口无肛门</text>
+        <text x="260" y="342" textAnchor="middle" fontSize="11.5" fill="#a5761d">比腔肠动物（水螅）进步：三胚层 · 两侧对称 · 器官系统开始分化</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">涡虫结构模式图 · 扁形动物门（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 植物的光周期现象 ================= */
+
+function PhotoperiodismSvg({ active }: { active: number | null; open?: boolean }) {
+  const rows = [
+    { name: '短日照植物', ex: '菊花·水稻·烟草', cond: '日照 < 临界日长才开花', color: '#b0483a', icon: '🌘' },
+    { name: '长日照植物', ex: '小麦·菠菜·萝卜', cond: '日照 > 临界日长才开花', color: '#4d7ea8', icon: '🌤' },
+    { name: '日中性植物', ex: '番茄·黄瓜·棉花', cond: '日照长短不影响开花', color: '#4a9a6a', icon: '🌸' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {rows.map((r, i) => (
+        <g key={r.name} style={dim(active, i)}>
+          <rect x="24" y={56 + i * 74} width="472" height="60" rx="12" fill="#f8faf6" stroke={r.color} strokeWidth="2.4" />
+          <text x={42} y={94 + i * 74} fontSize="24">{r.icon}</text>
+          <text x={78} y={84 + i * 74} fontSize="13" fill={r.color} fontWeight="800">{r.name}</text>
+          <text x={78} y={104 + i * 74} fontSize="11.5" fill="#59767c">{r.ex}——{r.cond}</text>
+        </g>
+      ))}
+      {/* 关键概念 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="286" width="440" height="74" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="310" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">关键：感知日照长短的不是叶绿体，而是叶片中的光敏色素</text>
+        <text x="260" y="334" textAnchor="middle" fontSize="11.5" fill="#a5761d">短日照植物实际感知的是"连续黑暗的长度"——而非日照长度</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">植物的光周期现象 · 开花调控（课外拓展）</text>
+    </svg>
+  );
+}
+
+export const SPECIMENS: Specimen[] = [

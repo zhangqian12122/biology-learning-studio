@@ -614,6 +614,11 @@ export type ExperimentId =
   | 'cellRespiration'
   | 'engelmann'
   | 'waterBalance'
+  | 'breathingMechanics'
+  | 'neuronTypes'
+  | 'bloodLayers'
+  | 'transpiration'
+  | 'photoperiodism'
   | 'geneTherapy'
   | 'crossingOver'
   | 'apicalDominance'
@@ -1067,6 +1072,42 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '内环境与稳态',
   },
+  breathingMechanics: {
+    title: '呼吸运动的模拟',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '膈肌收缩与舒张引起胸廓变化，理解"负压吸气"的物理原理。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
+  neuronTypes: {
+    title: '神经元的种类与连接',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '感觉·中间·运动三种神经元的形态与反射弧中的连接。',
+    relatedBook: 'regulation',
+    relatedModule: '神经和体液调节',
+  },
+  bloodLayers: {
+    title: '血液的分层观察',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '加抗凝剂离心分层 vs 自然凝固析出血清：认识血浆与血细胞的三层分布。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
+  transpiration: {
+    title: '蒸腾作用的观察',
+    kicker: '必修 1 · 分子与细胞',
+    description: '三组对照（正常叶·涂凡士林·去叶）看水珠量，证明气孔是蒸腾的门户。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+  },
+  photoperiodism: {
+    title: '植物的光周期现象',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '短日照/长日照/日中性植物——开花受日照长短调控（课外拓展）。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+    extension: true,
+  },
   geneTherapy: {
     title: '基因治疗：ADA 缺陷症案例',
     kicker: '选择性必修 3 · 生物技术与工程',
@@ -1248,7 +1289,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'waterBalance', 'auxinCutting', 'apicalDominance', 'phototropism', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
   },
   {
     name: '生态',
@@ -1284,6 +1325,10 @@ export const experimentOrder: ExperimentId[] = [
   'cellRespiration',
   'engelmann',
   'waterBalance',
+  'breathingMechanics',
+  'neuronTypes',
+  'transpiration',
+  'photoperiodism',
   'crossingOver',
   'doubleFertilization',
   'mitosisObservation',
@@ -1305,6 +1350,7 @@ export const experimentOrder: ExperimentId[] = [
   'antibioticResistance',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
+  'bloodLayers',
   'auxinCutting',
   'apicalDominance',
   'phototropism',
