@@ -8,32 +8,31 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：humanGenome 人类基因组计划 ----------
-await page.goto(`${BASE}/lab?exp=humanGenome`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：grafting 植物嫁接 ----------
+await page.goto(`${BASE}/lab?exp=grafting`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
-  const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('人类基因组计划');
-  const before = text;
+  const before = await page.locator('main').innerText();
+  await page.locator('button', { hasText: '酸橙接穗' }).click();
   for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /推进年代/ }).evaluate((el) => (el).click());
+    await page.getByRole('button', { name: /推进嫁接/ }).evaluate((el) => el.click());
     await page.waitForTimeout(450);
   }
-  const afterClick = await page.locator('main').innerText();
-  results.experiment.interactive = afterClick.includes('读懂') && afterClick.includes('精准医疗') && afterClick.includes('千人基因组');
-  results.experiment.reference = afterClick.includes('意义与考点');
+  const after = await page.locator('main').innerText();
+  results.experiment.open = before.includes('植物嫁接');
+  results.experiment.interactive = after.includes('酸橙 ✓') && after.includes('无性生殖') && after.includes('形成层');
+  results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['hermitCrab', 'fever', 'camPlant'];
+const SPECIMENS = ['cuckoo', 'tasteBuds', 'baobab'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
 function analyze(boxes) {
-  // boxes: 归一化到 viewBox 的文字框 {x,y,w,h,text}
   const out = [];
   for (const b of boxes) {
     if (b.x < BOUND.x0 || b.y < BOUND.y0 || b.x + b.w > BOUND.x1 || b.y + b.h > BOUND.y1) {
@@ -71,33 +70,27 @@ for (const id of SPECIMENS) {
         h: (r.height / sr.height) * 380,
       };
     });
-    const heading = main.innerText;
-    return { found: true, texts, shown: heading.includes('结构图') || heading.includes('模式图') };
+    return { found: true, texts };
   });
   if (!info.found) {
     results.specimens[id] = { found: false };
     continue;
   }
   const issues = analyze(info.texts);
-  results.specimens[id] = {
-    found: true,
-    textCount: info.texts.length,
-    issues,
-    ok: issues.length === 0,
-  };
+  results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 图解卡：humanGenome 实验页应挂载 karyotype 图解
-await page.goto(`${BASE}/lab?exp=humanGenome`, { waitUntil: 'domcontentloaded' });
+// 图解卡：grafting 实验页应挂载 fruitAndSeed 图解
+await page.goto(`${BASE}/lab?exp=grafting`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.karyotypeDiagram = { found: t.includes('染色体') || t.includes('核型'), ok: t.includes('染色体') || t.includes('核型') };
+  results.specimens.fruitSeedDiagram = { found: t.includes('果实') || t.includes('种子'), ok: t.includes('果实') || t.includes('种子') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.karyotypeDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.fruitSeedDiagram?.ok;
 console.log('ALL_OK=' + allOk);

@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -11610,7 +11610,173 @@ function CamPlantSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 杜鹃（巢寄生） ================= */
+
+function CuckooSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 巢与宿主 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 200 q 20 -40 60 -44 q 44 -4 60 34 q 12 34 -18 50 q -46 22 -82 0 q -24 -16 -20 -40 Z" fill="#c9b88a" stroke="#8a7a4a" strokeWidth="2.6" />
+        {[0, 1].map((i) => (
+          <ellipse key={i} cx={196 + i * 34} cy={206} rx="13" ry="16" fill="#8ac8e8" stroke="#4a8ab5" strokeWidth="1.8" />
+        ))}
+        <ellipse cx="230" cy="204" rx="14" ry="18" fill="#d8e8e8" stroke="#7a4a3a" strokeWidth="2.2" />
+        <text x="230" y="290" textAnchor="middle" fontSize="12.5" fill="#8a7a4a" fontWeight="700">苇莺巢：自己的蛋 + 杜鹃蛋（略大·花纹相似）</text>
+      </g>
+      {/* 杜鹃成鸟 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="420" cy="90" rx="46" ry="26" fill="#8a8a9a" stroke="#4a4a5a" strokeWidth="2.6" />
+        <circle cx="462" cy="76" r="12" fill="#8a8a9a" stroke="#4a4a5a" strokeWidth="2.2" />
+        <path d="M474 74 l 16 5 l -16 6 Z" fill="#3a3a4a" />
+        <path d="M378 82 q -30 -4 -44 12" fill="none" stroke="#4a4a5a" strokeWidth="5" strokeLinecap="round" />
+        <text x="352" y="44" fontSize="12.5" fill="#4a4a5a" fontWeight="700">杜鹃成鸟：趁宿主外出</text>
+        <text x="352" y="64" fontSize="12.5" fill="#4a4a5a">衔走一枚蛋·产下自己的蛋</text>
+      </g>
+      {/* 杜鹃雏鸟排挤 */}
+      <g style={dim(active, 2)}>
+        <circle cx="230" cy="176" r="16" fill="#e8a03a" stroke="#8a5a1d" strokeWidth="2.2" />
+        <path d="M244 168 q 12 -2 16 4 m -16 -2 q 10 6 12 12 m -14 -10 q 6 8 4 14" stroke="#8a5a1d" strokeWidth="2.4" strokeLinecap="round" />
+        <path d="M196 190 l 20 -14" stroke="#c9a05a" strokeWidth="3" />
+        <text x="60" y="152" fontSize="12.5" fill="#8a5a1d" fontWeight="700">杜鹃雏鸟先孵出：</text>
+        <text x="60" y="172" fontSize="12.5" fill="#8a5a1d">用背部把巢里其他蛋/雏鸟拱出巢</text>
+        <text x="60" y="192" fontSize="12.5" fill="#8a5a1d">独占宿主亲鸟的全部投喂</text>
+      </g>
+      {/* 共演化 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="316" width="440" height="50" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">"军备竞赛"：宿主学会识别蛋 → 杜鹃蛋模拟得更像 → 相互选择的共同演化</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">巢寄生 = 种间关系中的特殊一类——一方获益（杜鹃）·一方受害（宿主）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">杜鹃 · 巢寄生的行为生态（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 味蕾（五种基本味） ================= */
+
+function TasteBudsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 舌面味区 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="160" rx="150" ry="100" fill="#e88a8a" stroke="#a54858" strokeWidth="3" />
+        <path d="M250 240 q -10 30 0 46 q 10 -16 0 -46" fill="#d87878" stroke="#a54858" strokeWidth="2" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <circle key={i} cx={160 + (i % 4) * 62} cy={116 + Math.floor(i / 4) * 62} r="6" fill="#d86868" opacity="0.7" />
+        ))}
+        <text x="200" y="300" textAnchor="middle" fontSize="12.5" fill="#8a3a4a" fontWeight="700">舌面味蕾约 2000~8000 个</text>
+      </g>
+      {/* 味蕾结构 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="440" cy="110" rx="36" ry="50" fill="#f0b8b8" stroke="#a54858" strokeWidth="2.4" />
+        <path d="M428 70 q 12 -14 24 0 m -22 -4 l 4 -12 m 8 12 l 8 -10" stroke="#a54858" strokeWidth="2" fill="none" />
+        <text x="440" y="180" textAnchor="middle" fontSize="12" fill="#8a3a4a" fontWeight="700">味孔开口</text>
+        <text x="440" y="200" textAnchor="middle" fontSize="11" fill="#8a3a4a">味细胞+支持细胞</text>
+      </g>
+      {/* 五味 */}
+      <g style={dim(active, 2)}>
+        {['酸', '甜', '苦', '咸', '鲜'].map((t, i) => (
+          <g key={t}>
+            <circle cx={72 + i * 68} cy={272} r="22" fill={['#e8d06a', '#f4f0d8', '#5a4a2a', '#d8e8f0', '#e8a860'][i]} stroke={['#8a671b', '#a5966a', '#2a1a0a', '#4a6a7a', '#8a5a2a'][i]} strokeWidth="2" />
+            <text x={72 + i * 68} y={277} textAnchor="middle" fontSize="12.5" fill={['#5a4a1a', '#5a4a2a', '#f0e0d0', '#2a4a5a', '#4a2a0a'][i]} fontWeight="800">{t}</text>
+          </g>
+        ))}
+        <text x="260" y="318" textAnchor="middle" fontSize="12" fill="#8a3a4a" fontWeight="700">苦味受体最多最敏感——苦常意味着"有毒"，是保命的警戒味</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="40" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">考点：味觉 = 化学感受；"地图舌"（舌尖甜·舌根苦）是过时说法——每种味蕾都能感受多种味</text>
+        <text x="260" y="364" textAnchor="middle" fontSize="11" fill="#a5761d">"味道"= 味觉 + 嗅觉协同（与嗅觉标本互参）· 辣不是味觉而是痛觉</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">味蕾 · 五种基本味（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 猴面包树（储水巨树） ================= */
+
+function BaobabSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 粗壮树干 */}
+      <g style={dim(active, 0)}>
+        <path d="M190 300 q -26 -120 20 -190 q 40 -58 90 0 q 46 68 20 190 q -65 14 -130 0 Z" fill="#c9a06a" stroke="#8a6a3a" strokeWidth="3" />
+        <path d="M240 120 q -8 80 0 174 m 60 -174 q 8 80 0 174" fill="none" stroke="#a5763a" strokeWidth="2.2" opacity="0.7" />
+        <text x="396" y="200" fontSize="12.5" fill="#8a6a3a" fontWeight="700">树干直径可达 10 m</text>
+        <text x="416" y="220" fontSize="12.5" fill="#8a6a3a" fontWeight="700">木质部像海绵储水</text>
+      </g>
+      {/* 枝冠（旱季落叶） */}
+      <g style={dim(active, 1)}>
+        <path d="M270 110 q -8 -40 -50 -56 m 50 56 q 0 -44 20 -66 m -20 66 q 30 -40 70 -44 m -70 44 q 56 -14 84 8" fill="none" stroke="#6a8a3a" strokeWidth="5" strokeLinecap="round" />
+        <text x="336" y="52" fontSize="12.5" fill="#4a6a2a" fontWeight="700">旱季落叶·雨季才长叶</text>
+        <text x="60" y="86" fontSize="12.5" fill="#4a6a2a" fontWeight="700">"倒栽树"：枝如根须</text>
+      </g>
+      {/* 储水机制 */}
+      <g style={dim(active, 2)}>
+        <rect x="46" y="246" width="200" height="76" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="146" y="270" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">活体"水塔"</text>
+        <text x="146" y="292" textAnchor="middle" fontSize="11" fill="#37585f">纤维贮水组织可储 12 万升</text>
+        <text x="146" y="312" textAnchor="middle" fontSize="11" fill="#37585f">旱季开花结果·动物来取水</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="40" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">适应干旱的另一解：CAM 植物"省水"·猴面包树"囤水"——同一问题不同答案</text>
+        <text x="260" y="364" textAnchor="middle" fontSize="11" fill="#a5761d">非洲草原的"生命之树"：象·猴·鸟·人都依赖它的果实与水</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">猴面包树 · 稀树草原的储水巨树（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'cuckoo',
+    name: '杜鹃',
+    kicker: '鸟纲 · 巢寄生的行为大师（课外拓展）',
+    intro: '杜鹃自己不筑巢、不孵卵、不育雏——它把蛋产进苇莺等小鸟的巢里，蛋的花纹和大小模仿得惟妙惟肖。杜鹃雏鸟总是先孵出，背部有一个敏感的"凹陷"，会把巢里其他的蛋和雏鸟一个个拱出巢外，独占"养父母"的全部投喂。宿主与杜鹃之间正上演一场识别与反识别的共同演化"军备竞赛"。',
+    extension: true,
+    parts: [
+      { name: '巢寄生', desc: '把卵产在其他鸟类的巢中，由宿主代孵代育——种间关系里"一方获益、一方受害"的寄生在行为上的延伸。' },
+      { name: '蛋的拟态', desc: '杜鹃蛋的大小、颜色、花纹与宿主蛋高度相似——不同杜鹃品系专门"专攻"不同宿主。' },
+      { name: '雏鸟的排挤行为', desc: '杜鹃雏鸟孵出时背部的触觉凹陷一被碰到就疯狂拱动，把"同巢伙伴"移出巢外——独占投喂的本能。' },
+      { name: '共同演化', desc: '宿主不断进化识别_foreign蛋的能力，杜鹃蛋模拟得越来越像——两物种相互选择的"军备竞赛"。' },
+      { name: '生态意义', desc: '杜鹃成鸟大量捕食毛虫（包括别的鸟不敢吃的带毒刺毛虫）——巢寄生之外，它也是森林治虫能手。' },
+    ],
+    Svg: CuckooSvg,
+  },
+  {
+    id: 'tasteBuds',
+    name: '味蕾',
+    kicker: '感觉器官 · 五种基本味（课外拓展）',
+    intro: '味蕾是藏在舌面、软腭等处的"化学感受器"，成人约有 2000~8000 个：每个味蕾由几十个味细胞和支持细胞组成，顶端的味孔开口于舌面。人类能分辨酸、甜、苦、咸、鲜五种基本味——苦味受体最敏感，因为"苦"在自然界常意味着有毒。辣并不是味觉，而是痛觉与温度觉的混合。',
+    extension: true,
+    parts: [
+      { name: '味蕾结构', desc: '味细胞（感受器细胞）包围味孔，食物分子溶于唾液后进入味孔与受体结合产生神经冲动。' },
+      { name: '五种基本味', desc: '酸甜苦咸鲜（鲜味来自谷氨酸类）；"舌味地图"（舌尖甜舌根苦）是旧教科书的误读——每个味蕾都能感受多种味。' },
+      { name: '苦味的警报', desc: '人类约有 25 种苦味受体——多数天然毒素都苦，对苦高度敏感是自然选择留下的"保命设置"。' },
+      { name: '味觉与嗅觉协同', desc: '吃饭感受的"风味"大部分来自嗅觉（鼻后通路）——感冒鼻塞时吃饭不香的原因。' },
+      { name: '味觉更新', desc: '味细胞约 10 天更新一次——烫伤舌头"尝不出味"两周内可恢复；年龄增长味蕾减少，老人口味偏重。' },
+    ],
+    Svg: TasteBudsSvg,
+  },
+  {
+    id: 'baobab',
+    name: '猴面包树',
+    kicker: '锦葵科 · 稀树草原的储水巨树（课外拓展）',
+    intro: '猴面包树是非洲稀树草原上的"活体水塔"：树干粗达 10 米、木质疏松如海绵，雨季可储存超过 10 万升水，旱季落叶休眠、开花结果。它的枝条像插在天上的根须，因此得到"倒栽树"的别称——象、猴、鸟和人都依赖它的果实与水分，被称为"生命之树"。',
+    extension: true,
+    parts: [
+      { name: '储水树干', desc: '柔软的木质部与纤维组织像海绵：吸水膨胀、旱季缓慢释放——粗壮的"腰围"就是它的"水箱"。' },
+      { name: '旱季策略', desc: '旱季落叶减少蒸腾，雨季快速长叶开花——生长节奏跟着降水走，而不是跟着季节历走。' },
+      { name: '倒栽树传说', desc: '枝条稀疏如根须朝天——"倒栽"外形让它成为非洲草原最具辨识度的树种。' },
+      { name: '动物的服务站', desc: '果实（猴面包）富含维生素 C；树洞储水、空心树干可供动物藏身——"生命之树"养育整片草原。' },
+      { name: '与 CAM 植物对照', desc: 'CAM 植物"省着用水"，猴面包树"囤着用水"——干旱适应的两种答案，殊途同归。' },
+    ],
+    Svg: BaobabSvg,
+  },
   {
     id: 'hermitCrab',
     name: '寄居蟹',

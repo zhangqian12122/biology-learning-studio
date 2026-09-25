@@ -639,6 +639,7 @@ export type ExperimentId =
   | 'balancedDiet'
   | 'immobilizedEnzyme'
   | 'humanGenome'
+  | 'grafting'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1280,6 +1281,14 @@ export const experimentMeta: Record<
     relatedModule: '基因工程与 PCR 技术',
     extension: true,
   },
+  grafting: {
+    title: '植物嫁接',
+    kicker: '无性生殖 · 园艺应用',
+    description: '砧木劈开接接穗：形成层对齐愈合，果实性状由接穗决定。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1471,7 +1480,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'crossingOver', 'doubleFertilization', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1520,6 +1529,7 @@ export const experimentOrder: ExperimentId[] = [
   'photoperiodism',
   'crossingOver',
   'doubleFertilization',
+  'grafting',
   'mitosisObservation',
   // 必修 2 · 遗传与进化
   'traitSeparation',

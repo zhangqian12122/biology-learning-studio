@@ -117,6 +117,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   balancedDiet: Drumstick,
   immobilizedEnzyme: FlaskConical,
   humanGenome: Dna,
+  grafting: Scissors,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -226,6 +227,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   balancedDiet: () => import('@/components/lab/balanced-diet-lab').then(({ BalancedDietLab }) => ({ default: BalancedDietLab })),
   immobilizedEnzyme: () => import('@/components/lab/immobilized-enzyme-lab').then(({ ImmobilizedEnzymeLab }) => ({ default: ImmobilizedEnzymeLab })),
   humanGenome: () => import('@/components/lab/human-genome-lab').then(({ HumanGenomeLab }) => ({ default: HumanGenomeLab })),
+  grafting: () => import('@/components/lab/grafting-lab').then(({ GraftingLab }) => ({ default: GraftingLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -314,6 +316,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   balancedDiet: ['vitamins'],
   immobilizedEnzyme: ['enzymeModel'],
   humanGenome: ['karyotype'],
+  grafting: ['fruitAndSeed'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
