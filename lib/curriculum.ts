@@ -634,6 +634,7 @@ export type ExperimentId =
   | 'carTherapy'
   | 'circadianRhythm'
   | 'predatorPrey'
+  | 'biomagnification'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1237,6 +1238,13 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '种群特征与群落结构',
   },
+  biomagnification: {
+    title: '生物富集：汞的食物链之旅',
+    kicker: '选择性必修 2 · 生态',
+    description: '从湖水到食鱼鸟：毒物沿营养级逐级放大 vs 能量逐级递减。',
+    relatedBook: 'ecology',
+    relatedModule: '生态系统能量与物质循环',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1438,7 +1446,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'predatorPrey', 'ecologicalNiche', 'foodChain', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'predatorPrey', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality'],
   },
   {
     name: '生物技术',
@@ -1525,6 +1533,7 @@ export const experimentOrder: ExperimentId[] = [
   'waterQuality',
   'ecologicalNiche',
   'foodChain',
+  'biomagnification',
   'bloodType',
   'vaccineResponse',
   'urineFormation',

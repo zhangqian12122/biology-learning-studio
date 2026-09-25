@@ -5049,10 +5049,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
@@ -11001,7 +11001,169 @@ function BiogasSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 蜈蚣（多足纲） ================= */
+
+function CentipedeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 分节身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M70 170 q 30 -30 80 -22 q 190 24 300 -6" fill="none" stroke="#a5533c" strokeWidth="26" strokeLinecap="round" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <path key={i} d={`M${116 + i * 36} ${148 - Math.min(i * 2, 12)} h 2`} stroke="#7a3a2a" strokeWidth="3" strokeLinecap="round" />
+        ))}
+        <text x="46" y="112" fontSize="12.5" fill="#7a3a2a" fontWeight="700">体分 20+ 节（每节一对足）</text>
+        <text x="46" y="132" fontSize="12.5" fill="#7a3a2a">背板交替覆盖·灵活拱曲</text>
+      </g>
+      {/* 步足 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+          <g key={i}>
+            <path d={`M${108 + i * 36} ${158 - Math.min(i * 2, 12)} l -12 -18 m 12 18 l -6 22`} stroke="#8a4a2a" strokeWidth="3.4" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="330" y="112" fontSize="12.5" fill="#8a4a2a" fontWeight="700">每节 2 只足（多足纲特征）</text>
+        <text x="330" y="132" fontSize="12.5" fill="#8a4a2a">足的波浪式推进·爬行如流水</text>
+      </g>
+      {/* 头部毒颚 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="62" cy="172" rx="26" ry="20" fill="#8a3a2a" stroke="#5a2a1a" strokeWidth="2.4" />
+        <circle cx="52" cy="164" r="4" fill="#1a0a0a" />
+        <circle cx="68" cy="160" r="4" fill="#1a0a0a" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${42 + i * 34} 186 q ${-8 + i * 4} 22 6 34`} fill="none" stroke="#5a2a1a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="70" y="240" fontSize="12.5" fill="#5a2a1a" fontWeight="700">第一对足特化为毒颚</text>
+        <text x="70" y="260" fontSize="12.5" fill="#5a2a1a">捕食昆虫·注入毒素（捕食利器）</text>
+      </g>
+      {/* 特征 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="296" width="440" height="70" rx="12" fill="#f4e4dc" stroke="#a54838" strokeWidth="2.4" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="800">节肢动物门第三大纲：多足纲——蛛形纲（4 对足）· 昆虫纲（3 对足）之外</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#a5533c">全部陆生 · 喜潮湿阴暗 · 夜行 · 气管呼吸（陆生节肢动物的标配）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蜈蚣 · 节肢动物门多足纲（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 肌节（肌肉收缩的单元） ================= */
+
+function SarcomereSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 肌纤维到肌节 */}
+      <g style={dim(active, 0)}>
+        <text x="46" y="76" fontSize="12.5" fill="#37585f" fontWeight="700">放大三级：肌肉 → 肌纤维 → 肌原纤维 → 肌节</text>
+        <path d="M60 96 h 400" stroke="#b0483a" strokeWidth="10" strokeLinecap="round" />
+        <path d="M60 96 h 400" stroke="#e8a0a0" strokeWidth="4" strokeLinecap="round" strokeDasharray="14 10" />
+      </g>
+      {/* 肌节模式图 */}
+      <g style={dim(active, 1)}>
+        <path d="M80 150 v 90 m 360 0 v -90" stroke="#5a6a7a" strokeWidth="7" />
+        {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+          <path key={`t${i}`} d={`M${118 + i * 44} 144 v 100`} stroke="#4d7ea8" strokeWidth="5" />
+        ))}
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={`m${i}`} d={`M${140 + i * 44} 128 l 0 132`} stroke="#b0483a" strokeWidth="3.4" strokeDasharray="0" />
+        ))}
+        <text x="78" y="138" textAnchor="middle" fontSize="10" fill="#5a6a7a" fontWeight="700">Z线</text>
+        <text x="260" y="122" textAnchor="middle" fontSize="10.5" fill="#4d7ea8" fontWeight="700">细肌丝（肌动蛋白）</text>
+        <text x="260" y="284" textAnchor="middle" fontSize="10.5" fill="#b0483a" fontWeight="700">粗肌丝（肌球蛋白·带横桥）</text>
+      </g>
+      {/* 滑行机制 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="300" width="440" height="66" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">收缩 = 横桥摆动拖动细肌丝向 M 线滑行 → 肌节缩短（丝不等长·相互滑行）</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="11.5" fill="#a5761d">Ca²⁺ 结合肌钙蛋白暴露位点 · ATP 供能（"尸僵"正是 ATP 耗尽的横桥无法分离）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">肌节 · 肌肉收缩的分子机制（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 冬虫夏草（真菌寄生） ================= */
+
+function CordycepsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 蝙蝠蛾幼虫体 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 240 q 10 -34 60 -36 q 90 -4 170 2 q 40 4 40 30 q 0 28 -44 32 q -110 8 -170 0 q -50 -6 -56 -28 Z" fill="#d8c9a0" stroke="#8a7a4a" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <path key={i} d={`M${170 + i * 24} 216 h 8 m -8 44 h 8`} stroke="#a5966a" strokeWidth="2.4" />
+        ))}
+        <circle cx="134" cy="226" r="4" fill="#5a4a2a" />
+        <text x="46" y="168" fontSize="12.5" fill="#8a7a4a" fontWeight="700">蝙蝠蛾幼虫（虫体 = "冬虫"）</text>
+        <text x="46" y="188" fontSize="12.5" fill="#8a7a4a">土中越冬时被真菌侵入</text>
+      </g>
+      {/* 子座 */}
+      <g style={dim(active, 1)}>
+        <path d="M300 206 q 6 -60 20 -88 q 14 -26 30 -30" fill="none" stroke="#8a6a3a" strokeWidth="8" strokeLinecap="round" />
+        <ellipse cx="352" cy="80" rx="18" ry="28" fill="#8a6a3a" stroke="#5a4a2a" strokeWidth="2.4" />
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={348 + (i % 2) * 8} cy={64 + i * 12} r="3" fill="#4a3a1a" />
+        ))}
+        <text x="384" y="88" fontSize="12.5" fill="#5a4a2a" fontWeight="700">子座（"草"部分）</text>
+        <text x="384" y="108" fontSize="12.5" fill="#5a4a2a">顶端布满子囊·散播孢子</text>
+      </g>
+      {/* 机制 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="60" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">"僵尸真菌"：孢子侵入幼虫 → 菌丝耗尽虫体组织 → 次年夏从虫头抽出子座</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">寄生关系：真菌获得养分与"移动寄主"，昆虫死亡——冬虫夏草 = 虫菌复合体</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">冬虫夏草 · 真菌的寄生智慧（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'centipede',
+    name: '蜈蚣',
+    kicker: '节肢动物门 · 多足纲代表（课外拓展）',
+    intro: '蜈蚣把"多足"玩到极致：二十多个体节几乎每节自带一对足，波浪式推进如流水滑行；头部第一对足却特化成一对"毒颚"，能注入毒素制服比它大得多的猎物。它与蜘蛛（蛛形纲）、昆虫（昆虫纲）同门不同纲——节肢动物门的三条演化支各走各路。',
+    extension: true,
+    parts: [
+      { name: '分节身体', desc: '躯干 20+ 个体节，背板宽窄交替——拱曲与钻缝的本钱，可在石块下灵活穿行。' },
+      { name: '多足', desc: '每节一对足（多足纲的"身份证"），步足波浪式依次推进——贴地爬行几乎无声。' },
+      { name: '毒颚', desc: '头部第一对附肢特化成钩状毒颚，内连毒腺：夜行捕食昆虫蜘蛛，是"有毒素的猎手"而非主动攻击者。' },
+      { name: '陆生配置', desc: '气管呼吸、马氏管排氮、几丁质外骨骼——陆生节肢动物三件套，只缺水环境，喜潮湿阴暗。' },
+      { name: '纲级对比', desc: '蛛形纲 4 对足 + 头胸部愈合；昆虫纲 3 对足 + 三段身体；多足纲每节一对足——足数是快速分类口诀。' },
+    ],
+    Svg: CentipedeSvg,
+  },
+  {
+    id: 'sarcomere',
+    name: '肌节与肌肉收缩',
+    kicker: '运动系统 · 肌丝滑行学说（课外拓展）',
+    intro: '一块肌肉放大三级是肌纤维，再放大是肌原纤维，其上一段段明暗相间的"单元"就是肌节——肌肉收缩的最小单位。粗肌丝（肌球蛋白）伸出的横桥抓住细肌丝（肌动蛋白），像划桨一样把细丝拖向中央，肌节缩短、肌肉收缩——丝本身不变长，靠的是相互滑行。',
+    extension: true,
+    parts: [
+      { name: '肌节结构', desc: '两条 Z 线之间的区域：细肌丝从 Z 线伸出，粗肌丝居中——明带（只有细丝）与暗带（粗细重叠）相间形成横纹。' },
+      { name: '滑行学说', desc: '横桥摆动拖曳细肌丝向肌节中央滑行：肌节缩短而肌丝长度不变——"划桨"模型解释了从肌肉到分子的统一机制。' },
+      { name: '钙离子触发', desc: '神经冲动 → 肌质网释放 Ca²⁺ → 与肌钙蛋白结合暴露结合位点 → 横桥才能搭上细肌丝。' },
+      { name: 'ATP 供能', desc: '横桥复位需要 ATP——人死亡后 ATP 耗尽、横桥无法分离，肌肉僵直即"尸僵"的分子解释。' },
+      { name: '运动与健康', desc: '力量训练让肌纤维增粗（肌节数量与蛋白增多）；久坐则肌纤维萎缩——"用进废退"在细胞层面成立。' },
+    ],
+    Svg: SarcomereSvg,
+  },
+  {
+    id: 'cordyceps',
+    name: '冬虫夏草',
+    kicker: '真菌界 · "僵尸真菌"的寄生策略（课外拓展）',
+    intro: '冬虫夏草既不是虫也不是草，而是"虫菌复合体"：蝙蝠蛾幼虫在高原土中越冬时，被冬虫夏草菌的孢子侵入；菌丝耗尽虫体的养分，次年夏天从虫子头顶抽出一根棒状子座散播孢子——"冬虫"与"夏草"其实是同一场寄生悲剧的两个阶段。',
+    extension: true,
+    parts: [
+      { name: '寄生过程', desc: '孢子落在幼虫体表 → 萌发侵入血腔 → 菌丝以虫体组织为食——幼虫被"掏空"并固定在土室中。' },
+      { name: '子座（草）', desc: '次年入夏，菌丝从虫头抽出棒状子座伸出地表：顶端子囊壳产生孢子——真菌的繁殖结构。' },
+      { name: '种间关系', desc: '对真菌是寄生（获益），对幼虫是致命伤害——与根瘤菌的互利共生形成鲜明对比。' },
+      { name: '僵尸真菌家族', desc: '某些虫草属真菌能操控昆虫行为（爬到高处再死亡以利传播孢子）——寄生改变宿主行为的著名案例。' },
+      { name: '资源与保护', desc: '野生冬虫夏草产自高原草甸、依赖特定蝙蝠蛾——过度采挖已致资源锐减，人工培育是保护方向。' },
+    ],
+    Svg: CordycepsSvg,
+  },
   {
     id: 'seahorse',
     name: '海马',
