@@ -640,6 +640,7 @@ export type ExperimentId =
   | 'immobilizedEnzyme'
   | 'humanGenome'
   | 'grafting'
+  | 'carbonCycleSim'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1289,6 +1290,13 @@ export const experimentMeta: Record<
     relatedModule: '遗传规律与配子分析',
     extension: true,
   },
+  carbonCycleSim: {
+    title: '碳循环与碳中和',
+    kicker: '选择性必修 2 · 生态',
+    description: '三个碳库的收支模拟：自然平衡、化石燃烧、毁林排放的对比。',
+    relatedBook: 'ecology',
+    relatedModule: '生态系统能量与物质循环',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1490,7 +1498,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'predatorPrey', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality'],
   },
   {
     name: '生物技术',
@@ -1570,6 +1578,7 @@ export const experimentOrder: ExperimentId[] = [
   'soilFaunaSurvey',
   'succession',
   'energy',
+  'carbonCycleSim',
   'population',
   'predatorPrey',
   'ecosystemJar',

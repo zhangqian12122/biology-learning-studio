@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -11731,7 +11731,189 @@ function BaobabSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 变色龙（变色的秘密） ================= */
+
+function ChameleonSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M170 210 q -6 -50 50 -66 q 80 -22 150 -8 q 44 10 46 40 q 2 30 -40 44 q -90 26 -150 16 q -50 -8 -56 -26 Z" fill="#7ab86a" stroke="#2f6f2a" strokeWidth="2.8" />
+        <path d="M214 148 q 60 -16 130 -4" fill="none" stroke="#4a8a3a" strokeWidth="2" opacity="0.7" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M${220 + i * 34} 142 q 4 -12 2 -20`} fill="none" stroke="#2f6f2a" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        <path d="M172 216 q -18 30 -44 42" fill="none" stroke="#2f6f2a" strokeWidth="10" strokeLinecap="round" />
+        <text x="370" y="150" fontSize="12.5" fill="#2f6f2a" fontWeight="700">卷尾抓握（第五只"手"）</text>
+      </g>
+      {/* 头与双眼 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="156" cy="150" rx="34" ry="28" fill="#8ac87a" stroke="#2f6f2a" strokeWidth="2.6" />
+        <path d="M180 132 q 22 -14 30 -4 q 2 10 -12 16" fill="#8ac87a" stroke="#2f6f2a" strokeWidth="2" />
+        <circle cx="142" cy="140" r="13" fill="#d8e8c8" stroke="#2f6f2a" strokeWidth="2.2" />
+        <circle cx="142" cy="140" r="5" fill="#1a2a1a" />
+        <text x="52" y="98" fontSize="12.5" fill="#2f6f2a" fontWeight="700">两只眼独立转动</text>
+        <text x="52" y="118" fontSize="12.5" fill="#2f6f2a">360° 视野·双眼同时锁定猎物</text>
+      </g>
+      {/* 舌头 */}
+      <g style={dim(active, 2)}>
+        <path d="M136 168 q -40 18 -92 12" fill="none" stroke="#d86a8a" strokeWidth="6" strokeLinecap="round" />
+        <circle cx="40" cy="178" r="7" fill="#8a3a5a" stroke="#5a1a3a" strokeWidth="1.6" />
+        <text x="46" y="230" fontSize="12.5" fill="#8a3a5a" fontWeight="700">弹射舌头：0.07 秒击中猎物</text>
+        <text x="46" y="250" fontSize="12.5" fill="#8a3a5a">舌长可达体长的 2 倍·吸盘式舌端</text>
+      </g>
+      {/* 变色机制 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">变色真相：主要不是为了伪装——而是调节体温与表达"情绪"</text>
+        <text x="260" y="334" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">皮肤双层色素细胞（含鸟嘌呤纳米晶体）：改变晶体间距 = 改变反射的波长</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">兴奋时更"鲜艳"·安静时偏"暗绿"——色彩即语言</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">变色龙 · 爬行纲避役（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 眼泪（三层泪膜） ================= */
+
+function TearsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 眼与泪膜 */}
+      <g style={dim(active, 0)}>
+        <circle cx="220" cy="160" r="80" fill="#f0f0e8" stroke="#8a9a9f" strokeWidth="3" />
+        <circle cx="220" cy="160" r="34" fill="#4a7a9a" stroke="#2a4a6a" strokeWidth="2.6" />
+        <circle cx="220" cy="160" r="14" fill="#141414" />
+        <circle cx="208" cy="148" r="5" fill="#ffffff" />
+        <path d="M140 158 q 80 -36 160 0" fill="none" stroke="#8ac8e8" strokeWidth="5" strokeLinecap="round" opacity="0.8" />
+        <text x="336" y="130" fontSize="12.5" fill="#2c5a84" fontWeight="700">泪膜（每眨眼一次重新涂布）</text>
+        <text x="336" y="150" fontSize="11.5" fill="#2c5a84">脂质层·水液层·黏蛋白层</text>
+      </g>
+      {/* 泪器 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="96" cy="86" rx="26" ry="16" fill="#d8e8f0" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="46" y="56" fontSize="12.5" fill="#2c5a84" fontWeight="700">泪腺（外上方·产泪）</text>
+        <path d="M120 96 q 60 30 100 42" fill="none" stroke="#4d7ea8" strokeWidth="2.4" strokeDasharray="4 3" />
+        <path d="M300 190 q 40 8 70 -8" fill="none" stroke="#4d7ea8" strokeWidth="3" strokeLinecap="round" />
+        <text x="336" y="216" fontSize="12.5" fill="#2c5a84" fontWeight="700">鼻泪管 → 通鼻腔</text>
+        <text x="336" y="236" fontSize="11.5" fill="#4a6a7a">哭鼻子时会"一把鼻涕一把泪"</text>
+      </g>
+      {/* 三种泪 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <rect x={46 + i * 148} y="272" width="136" height="48" rx="10" fill={['#e4ecf6', '#e2f0e2', '#f4e4ec'][i]} stroke={['#4d7ea8', '#3f7f3a', '#a5486a'][i]} strokeWidth="2" />
+            <text x={114 + i * 148} y="292" textAnchor="middle" fontSize="11" fill={['#2c5a84', '#2f6f2a', '#8a3a5a'][i]} fontWeight="800">{['基础泪（润滑）', '反射泪（进沙/切葱）', '情绪泪（人类特有）'][i]}</text>
+            <text x={114 + i * 148} y="310" textAnchor="middle" fontSize="9.5" fill="#59767c">{['全天微量分泌', '冲走刺激物', '含激素·释放情绪'][i]}</text>
+          </g>
+        ))}
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="332" width="440" height="40" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="348" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">泪液功能：润滑·杀菌（溶菌酶）·冲刷异物——干眼症即泪膜失衡</text>
+        <text x="260" y="366" textAnchor="middle" fontSize="11" fill="#a5761d">情绪泪含皮质醇等应激激素——"哭出来"可能有助减压</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">眼泪 · 三层泪膜与三种泪（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 竹子（一生一次开花） ================= */
+
+function BambooSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 竹秆 */}
+      <g style={dim(active, 0)}>
+        <path d="M180 310 L 190 80" stroke="#6a9a4a" strokeWidth="18" strokeLinecap="round" />
+        <path d="M250 310 L 245 60" stroke="#5a8a3a" strokeWidth="18" strokeLinecap="round" />
+        <path d="M310 310 L 320 90" stroke="#6a9a4a" strokeWidth="18" strokeLinecap="round" />
+        {[0, 1, 2, 3].map((i) => (
+          <g key={i}>
+            <path d={`M186 ${250 - i * 60} h 14`} stroke="#4a7a2a" strokeWidth="3.4" strokeLinecap="round" />
+            <path d={`M236 ${250 - i * 62} h 18`} stroke="#4a7a2a" strokeWidth="3.4" strokeLinecap="round" />
+            <path d={`M302 ${250 - i * 60} h 14`} stroke="#4a7a2a" strokeWidth="3.4" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="360" y="120" fontSize="12.5" fill="#3a6a2a" fontWeight="700">中空有节·一夜长高 1 米</text>
+        <text x="380" y="142" fontSize="12.5" fill="#3a6a2a">木质化的"草"（禾本科）</text>
+      </g>
+      {/* 地下竹鞭 */}
+      <g style={dim(active, 1)}>
+        <path d="M70 330 q 90 -18 190 -12 q 110 6 190 -10" fill="none" stroke="#c9a05a" strokeWidth="7" strokeLinecap="round" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${150 + i * 70} 322 q -6 14 -14 18`} fill="none" stroke="#c9a05a" strokeWidth="3.4" strokeLinecap="round" />
+        ))}
+        <text x="52" y="356" fontSize="12.5" fill="#8a6a2a" fontWeight="700">地下竹鞭（根状茎）：整片竹林可能是一株"克隆体"</text>
+      </g>
+      {/* 开花 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${196 + i * 58} 70 q 10 -18 24 -20`} fill="none" stroke="#d8b878" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={210 + i * 16} cy={54 + (i % 2) * 8} r="3.4" fill="#e8d06a" stroke="#a58a2a" strokeWidth="1.4" />
+        ))}
+        <text x="52" y="44" fontSize="12.5" fill="#a58a2a" fontWeight="700">数十甚至上百年才开一次花</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="60" width="440" height="56" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="82" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">集体开花之谜：同源竹鞭的竹林同步开花后整片枯死（一次结实）</text>
+        <text x="260" y="104" textAnchor="middle" fontSize="11.5" fill="#a5761d">开花周期是"内部生物钟"+环境共同控制——熊猫保护关注的"竹子开花"事件</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">竹子 · 禾本科"巨人"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'chameleon',
+    name: '变色龙',
+    kicker: '爬行纲 · 避役的变色真相（课外拓展）',
+    intro: '变色龙（避役）的变色主要不是为了伪装——而是调节体温和表达"情绪"：它的皮肤有两层含鸟嘌呤纳米晶体的色素细胞，改变晶体间距就能反射不同波长的光。两只眼睛可以各自独立转动、视野几乎 360°，舌头弹射 0.07 秒命中猎物，长度可达体长两倍。',
+    extension: true,
+    parts: [
+      { name: '独立双眼', desc: '左右眼可各自朝不同方向转动（360° 视野），发现猎物时双眼瞬间同时前视锁定——测距靠立体视觉。' },
+      { name: '弹射舌', desc: '舌头像蓄能弹簧：加速度可达重力加速度数百倍，0.07 秒命中；舌端吸盘湿润黏附猎物拖回口中。' },
+      { name: '变色机制', desc: '浅层色素细胞调整黄色调，深层鸟嘌呤纳米晶体改变间距——"结构色"而非简单色素扩散。' },
+      { name: '变色的用途', desc: '深色吸热保暖、浅色反光降温；求偶与争斗时全身亮色"亮剑"——情绪表达 > 伪装。' },
+      { name: '卷尾与对趾', desc: '尾巴卷握如第五肢，脚趾分成前后两组"钳状对握"——适应树枝生活的攀爬装备。' },
+    ],
+    Svg: ChameleonSvg,
+  },
+  {
+    id: 'tears',
+    name: '眼泪',
+    kicker: '感觉器官 · 三层泪膜与三种泪（课外拓展）',
+    intro: '每一次眨眼都在给眼睛"重新涂布"一层泪膜——由脂质层、水液层、黏蛋白层叠成，让角膜光滑透亮、抵御细菌。人类的眼泪有三种：全天微量的基础泪、受刺激时的反射泪，以及含应激激素的情绪泪——情绪性流泪可能是人类特有的减压方式。',
+    extension: true,
+    parts: [
+      { name: '三层泪膜', desc: '外层脂质防蒸发、中层水液（含溶菌酶杀菌）、内层黏蛋白让泪液"挂"上亲水的角膜。' },
+      { name: '泪器', desc: '泪腺位于眼眶外上方分泌泪液；泪液经泪小点、鼻泪管流入鼻腔——"一把鼻涕一把泪"的解剖学依据。' },
+      { name: '三种泪', desc: '基础泪润滑眼球；反射泪冲走异物与刺激性气体；情绪泪由情绪触发、成分独特。' },
+      { name: '情绪泪', desc: '含皮质醇等应激激素和镇痛物质——"哭出来舒服些"可能有生理学依据；情绪性流泪被认为是人类特有的社会信号。' },
+      { name: '干眼症', desc: '泪膜失衡（睑板腺功能障碍、屏幕用眼眨眼减少）导致眼干涩异物感——人工泪液是"补充涂层"。' },
+    ],
+    Svg: TearsSvg,
+  },
+  {
+    id: 'bamboo',
+    name: '竹子',
+    kicker: '禾本科 · 一生一次开花的"草"（课外拓展）',
+    intro: '竹子是木质化的"草"（禾本科）：地下横走的竹鞭让整片竹林可能只是一个"克隆体"，竹笋一夜可长高一米。最神秘的是开花——许多竹种数十年才开一次花，而且同一鞭系的竹林会同步开花、结籽后集体枯死，引发熊猫栖息地的"竹子开花"危机。',
+    extension: true,
+    parts: [
+      { name: '中空有节', desc: '秆中空、有节、木质化：以最少的材料获得最大的强度与生长速度——工程学的天然范本。' },
+      { name: '竹鞭克隆', desc: '地下根状茎横向蔓延、节上出笋——一片竹林可能源自同一株母竹的无性系克隆。' },
+      { name: '爆发式生长', desc: '节间分生组织同时活跃，春笋一夜可长高约 1 米——数周完成"成年"，之后不再长粗。' },
+      { name: '一次结实', desc: '同源竹林同步开花结籽后集体枯死（周期可达数十年）——"同步爆发"让种子逃过天敌饱和。' },
+      { name: '生态与文化', desc: '竹子快速可再生、固碳能力强；"竹子开花"会威胁大熊猫食物来源——生态保护的重要监测点。' },
+    ],
+    Svg: BambooSvg,
+  },
   {
     id: 'cuckoo',
     name: '杜鹃',

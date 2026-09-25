@@ -8,26 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：grafting 植物嫁接 ----------
-await page.goto(`${BASE}/lab?exp=grafting`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：carbonCycleSim 碳循环与碳中和 ----------
+await page.goto(`${BASE}/lab?exp=carbonCycleSim`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '酸橙接穗' }).click();
-  for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /推进嫁接/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(450);
+  await page.locator('button', { hasText: '毁林 + 燃烧' }).click();
+  for (let i = 0; i < 4; i++) {
+    await page.getByRole('button', { name: /推进十年/ }).evaluate((el) => el.click());
+    await page.waitForTimeout(400);
   }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('植物嫁接');
-  results.experiment.interactive = after.includes('酸橙 ✓') && after.includes('无性生殖') && after.includes('形成层');
+  results.experiment.open = before.includes('碳循环与碳中和');
+  results.experiment.interactive = after.includes('双重打击') && after.includes('植被碳库');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['cuckoo', 'tasteBuds', 'baobab'];
+const SPECIMENS = ['chameleon', 'tears', 'bamboo'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -80,17 +80,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 图解卡：grafting 实验页应挂载 fruitAndSeed 图解
-await page.goto(`${BASE}/lab?exp=grafting`, { waitUntil: 'domcontentloaded' });
+// 图解卡：carbonCycleSim 实验页应挂载 carbonCycle 图解
+await page.goto(`${BASE}/lab?exp=carbonCycleSim`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.fruitSeedDiagram = { found: t.includes('果实') || t.includes('种子'), ok: t.includes('果实') || t.includes('种子') };
+  results.specimens.carbonCycleDiagram = { found: t.includes('碳') || t.includes('循环'), ok: t.includes('碳') || t.includes('循环') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.fruitSeedDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.carbonCycleDiagram?.ok;
 console.log('ALL_OK=' + allOk);

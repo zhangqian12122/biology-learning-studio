@@ -118,6 +118,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   immobilizedEnzyme: FlaskConical,
   humanGenome: Dna,
   grafting: Scissors,
+  carbonCycleSim: Recycle,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -228,6 +229,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   immobilizedEnzyme: () => import('@/components/lab/immobilized-enzyme-lab').then(({ ImmobilizedEnzymeLab }) => ({ default: ImmobilizedEnzymeLab })),
   humanGenome: () => import('@/components/lab/human-genome-lab').then(({ HumanGenomeLab }) => ({ default: HumanGenomeLab })),
   grafting: () => import('@/components/lab/grafting-lab').then(({ GraftingLab }) => ({ default: GraftingLab })),
+  carbonCycleSim: () => import('@/components/lab/carbon-cycle-sim-lab').then(({ CarbonCycleSimLab }) => ({ default: CarbonCycleSimLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -317,6 +319,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   immobilizedEnzyme: ['enzymeModel'],
   humanGenome: ['karyotype'],
   grafting: ['fruitAndSeed'],
+  carbonCycleSim: ['carbonCycle'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
