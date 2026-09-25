@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms'] },
 ];
 
@@ -8819,7 +8819,191 @@ function BloodClottingSvg({ active }: { active: number | null; open?: boolean })
   );
 }
 
+/* ================= 猪笼草（捕虫叶） ================= */
+
+function PitcherPlantSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 叶 + 卷须 */}
+      <g style={dim(active, 0)}>
+        <path d="M60 96 Q 130 56 216 78 Q 236 84 224 100 Q 150 122 84 116 Q 58 112 60 96 Z" fill="#7fae6a" stroke="#4d7f3a" strokeWidth="2.4" />
+        <path d="M100 88 Q 150 74 200 86" fill="none" stroke="#4d7f3a" strokeWidth="1.6" />
+        <text x="66" y="150" fontSize="12.5" fill="#3f6f30" fontWeight="700">正常叶（光合作用）</text>
+        <path d="M222 84 Q 258 108 258 142" fill="none" stroke="#6a9a55" strokeWidth="6" strokeLinecap="round" />
+        <text x="286" y="66" fontSize="12.5" fill="#3f6f30" fontWeight="700">卷须（攀援固定）</text>
+      </g>
+      {/* 捕虫囊主体 */}
+      <g style={dim(active, 1)}>
+        <path d="M214 142 Q 206 152 208 168 Q 188 200 192 250 Q 196 306 258 314 Q 322 306 324 250 Q 328 200 308 168 Q 310 152 302 142 Q 258 132 214 142 Z" fill="#b5d49a" stroke="#4d7f3a" strokeWidth="2.8" />
+        <path d="M222 170 Q 218 200 220 240 Q 224 284 258 292" fill="none" stroke="#8fb878" strokeWidth="2" opacity="0.8" />
+        <text x="140" y="236" fontSize="12.5" fill="#3f6f30" fontWeight="700">捕虫囊（叶的变态）</text>
+        <line x1="188" y1="232" x2="206" y2="226" stroke="#3f6f30" strokeWidth="1.4" />
+      </g>
+      {/* 笼盖 + 唇（蜜腺） */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="242" cy="128" rx="58" ry="16" fill="#8fb878" stroke="#4d7f3a" strokeWidth="2.4" transform="rotate(-14 242 128)" />
+        <text x="330" y="112" fontSize="12.5" fill="#3f6f30" fontWeight="700">笼盖（挡雨水）</text>
+        <line x1="326" y1="116" x2="290" y2="124" stroke="#3f6f30" strokeWidth="1.4" />
+        <path d="M214 142 Q 258 130 302 142" fill="none" stroke="#d8a03a" strokeWidth="7" strokeLinecap="round" />
+        <text x="330" y="152" fontSize="12.5" fill="#a5761d" fontWeight="700">唇（分泌蜜汁）</text>
+        <line x1="326" y1="148" x2="302" y2="146" stroke="#a5761d" strokeWidth="1.4" />
+      </g>
+      {/* 消化液 + 昆虫 */}
+      <g style={dim(active, 3)}>
+        <path d="M206 262 Q 258 276 312 262 L 310 250 Q 258 262 208 250 Z" fill="#c9a05a" opacity="0.55" />
+        <ellipse cx="238" cy="258" rx="16" ry="7" fill="#5a4a6a" stroke="#3a2a4a" strokeWidth="1.6" />
+        <path d="M232 254 l -8 -6 m 12 4 l -2 -10 m 8 12 l 8 -6" stroke="#3a2a4a" strokeWidth="1.8" />
+        <text x="330" y="262" fontSize="12.5" fill="#7a5a2a" fontWeight="700">消化液（分解虫体）</text>
+        <line x1="326" y1="258" x2="300" y2="260" stroke="#7a5a2a" strokeWidth="1.4" />
+        <text x="404" y="212" fontSize="12.5" fill="#8a5a2a" fontWeight="700">昆虫沿蜜汁</text>
+        <text x="404" y="232" fontSize="12.5" fill="#8a5a2a" fontWeight="700">滑入囊内</text>
+      </g>
+      {/* 意义说明 */}
+      <g style={dim(active, 4)}>
+        <rect x="40" y="330" width="440" height="36" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="260" y="354" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">食虫植物：在贫瘠土壤中靠捕虫补充氮素——适应环境的经典案例</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">猪笼草 · 捕虫叶的结构（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 耳的结构与听觉 ================= */
+
+function EarStructureSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 外耳 */}
+      <g style={dim(active, 0)}>
+        <path d="M84 96 Q 60 118 72 150 Q 58 168 74 186 Q 66 210 92 216 Q 100 240 128 230 Q 150 224 148 198 Q 156 170 140 150 Q 152 120 128 102 Q 106 86 84 96 Z" fill="#f0d8c0" stroke="#a5765a" strokeWidth="2.6" />
+        <path d="M96 130 Q 112 122 124 138 Q 132 154 118 168 Q 106 180 98 168" fill="none" stroke="#c99a7a" strokeWidth="2" />
+        <text x="42" y="256" fontSize="12.5" fill="#8a5a3a" fontWeight="700">耳廓（收集声波）</text>
+        <path d="M148 196 Q 196 206 224 208" fill="none" stroke="#c99a7a" strokeWidth="18" strokeLinecap="round" opacity="0.55" />
+        <path d="M148 196 Q 196 206 224 208" fill="none" stroke="#a5765a" strokeWidth="2" strokeDasharray="5 4" />
+        <text x="120" y="298" fontSize="12.5" fill="#8a5a3a" fontWeight="700">外耳道（传导声波）</text>
+      </g>
+      {/* 中耳 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="240" cy="208" rx="9" ry="26" fill="#e8dcc8" stroke="#8a7a4a" strokeWidth="2.4" />
+        <text x="240" y="292" fontSize="12.5" fill="#8a7a4a" fontWeight="700">鼓膜（振动）</text>
+        <line x1="240" y1="278" x2="240" y2="236" stroke="#8a7a4a" strokeWidth="1.4" />
+        <path d="M254 196 l 16 -10 m -14 12 l 18 -2 m -16 8 l 16 8" stroke="#8a7a4a" strokeWidth="3.4" strokeLinecap="round" />
+        <text x="212" y="150" fontSize="12.5" fill="#8a7a4a" fontWeight="700">听小骨（锤·砧·镫）</text>
+        <path d="M288 226 Q 330 248 348 296" fill="none" stroke="#c99a7a" strokeWidth="9" strokeLinecap="round" opacity="0.6" />
+        <text x="310" y="322" fontSize="12.5" fill="#8a5a3a" fontWeight="700">咽鼓管（通咽·平衡气压）</text>
+      </g>
+      {/* 内耳 */}
+      <g style={dim(active, 2)}>
+        <path d="M300 96 Q 356 72 400 96 Q 356 108 300 116 Q 316 86 300 96 Z" fill="none" stroke="#b0483a" strokeWidth="0" />
+        <path d="M312 132 Q 312 96 352 96 Q 392 96 392 132 Q 392 168 352 168 Q 340 168 336 158" fill="none" stroke="#4d7ea8" strokeWidth="7" strokeLinecap="round" />
+        <circle cx="336" cy="158" r="5" fill="#4d7ea8" />
+        <text x="404" y="132" fontSize="12.5" fill="#2c5a84" fontWeight="700">耳蜗（听觉感受器）</text>
+        <path d="M316 118 Q 322 78 352 68 Q 386 58 400 78" fill="none" stroke="#6a8a9a" strokeWidth="5" strokeLinecap="round" />
+        <path d="M394 96 q 16 -34 -4 -46 q -18 -10 -30 6" fill="none" stroke="#6a8a9a" strokeWidth="5" strokeLinecap="round" />
+        <text x="404" y="76" fontSize="12.5" fill="#4a6a7a" fontWeight="700">半规管（位置觉）</text>
+        <path d="M352 168 Q 356 210 348 248 Q 344 268 332 280" fill="none" stroke="#b0483a" strokeWidth="3.4" />
+        <text x="356" y="252" fontSize="12.5" fill="#a53030" fontWeight="700">听神经（传向大脑）</text>
+      </g>
+      {/* 听觉形成 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="36" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="354" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">声波 → 鼓膜振动 → 听小骨 → 耳蜗感受器兴奋 → 听神经 → 大脑听觉中枢</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">耳的结构 · 听觉的形成（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 水母（刺胞动物） ================= */
+
+function JellyfishSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 伞盖 + 辐射管 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 168 Q 120 76 260 76 Q 400 76 400 168 Q 400 186 384 190 Q 260 162 136 190 Q 120 186 120 168 Z" fill="#d8e4f0" stroke="#5a7a9a" strokeWidth="2.8" opacity="0.92" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M260 84 Q ${176 + i * 42} 108 ${150 + i * 56} 186`} fill="none" stroke="#9ab4cc" strokeWidth="2.2" />
+        ))}
+        <text x="398" y="120" fontSize="12.5" fill="#3a5a7a" fontWeight="700">伞盖（胶状中胶层）</text>
+        <text x="398" y="160" fontSize="12.5" fill="#3a5a7a" fontWeight="700">辐射管（消化循环）</text>
+        <line x1="412" y1="156" x2="386" y2="168" stroke="#3a5a7a" strokeWidth="1.4" />
+      </g>
+      {/* 口腕 */}
+      <g style={dim(active, 1)}>
+        <path d="M236 182 Q 228 236 210 272 Q 202 292 212 306" fill="none" stroke="#c9a0b8" strokeWidth="10" strokeLinecap="round" opacity="0.85" />
+        <path d="M284 182 Q 292 240 306 276 Q 314 294 304 308" fill="none" stroke="#c9a0b8" strokeWidth="10" strokeLinecap="round" opacity="0.85" />
+        <text x="120" y="330" fontSize="12.5" fill="#8a4a6a" fontWeight="700">口腕（包裹食物送入口）</text>
+        <line x1="208" y1="322" x2="222" y2="300" stroke="#8a4a6a" strokeWidth="1.4" />
+        <circle cx="260" cy="176" r="10" fill="#b07898" stroke="#8a4a6a" strokeWidth="2" />
+        <text x="260" y="180" textAnchor="middle" fontSize="10.5" fill="#ffffff" fontWeight="700">口</text>
+      </g>
+      {/* 触手 + 刺细胞 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${150 + i * 42} 190 Q ${128 + i * 46} 262 ${142 + i * 44} 330`} fill="none" stroke="#8aa7c9" strokeWidth="3" strokeLinecap="round" />
+        ))}
+        <circle cx="192" cy="272" r="5" fill="#b0483a" />
+        <circle cx="276" cy="292" r="5" fill="#b0483a" />
+        <text x="392" y="272" fontSize="12.5" fill="#a53030" fontWeight="700">触手上的刺细胞</text>
+        <text x="392" y="292" fontSize="12.5" fill="#a53030" fontWeight="700">（射出刺丝麻醉猎物）</text>
+        <line x1="388" y1="276" x2="282" y2="290" stroke="#a53030" strokeWidth="1.4" strokeDasharray="4 3" />
+      </g>
+      {/* 特征 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="700">辐射对称 · 两胚层 · 网状神经——随波逐流的海洋浮游高手</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">水母 · 刺胞动物门（腔肠动物）代表（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'pitcherPlant',
+    name: '猪笼草（捕虫叶）',
+    kicker: '叶的变态 · 食虫植物（课外拓展）',
+    intro: '猪笼草的捕虫囊是叶的变态：叶尖长出卷须，卷须末端膨大成笼。笼唇分泌蜜汁引诱昆虫，囊底的消化液把猎物分解成氮素养料吸收——在贫瘠土壤中"开荤"补充营养。',
+    extension: true,
+    parts: [
+      { name: '捕虫囊', desc: '叶尖卷须末端膨大形成的笼状结构，是叶的变态（不是果实）。' },
+      { name: '笼盖与唇', desc: '笼盖挡住雨水防稀释；唇环分泌蜜汁引诱昆虫，表面光滑让昆虫滑落。' },
+      { name: '消化液', desc: '囊底含有消化酶和酸性液体，分解昆虫体内的蛋白质，吸收氨基酸等氮素。' },
+      { name: '捕虫意义', desc: '原生地土壤缺氮，捕虫是补充氮素的适应——食虫植物仍有叶绿素可光合作用。' },
+    ],
+    Svg: PitcherPlantSvg,
+  },
+  {
+    id: 'earStructure',
+    name: '耳的结构与听觉',
+    kicker: '感觉器官 · 听觉形成（课外拓展）',
+    intro: '耳分外耳、中耳、内耳三部分：耳廓收集声波，鼓膜把声波变成振动，听小骨放大振动，耳蜗里的听觉感受器把它变成神经冲动，沿听神经传到大脑皮层的听觉中枢形成听觉。',
+    extension: true,
+    parts: [
+      { name: '外耳', desc: '耳廓收集声波，外耳道把声波传导到鼓膜。' },
+      { name: '中耳', desc: '鼓膜接受声波振动，锤骨·砧骨·镫骨三块听小骨把振动放大传向内耳；咽鼓管连通咽部，平衡鼓膜两侧气压。' },
+      { name: '内耳', desc: '耳蜗内有听觉感受器，接受振动刺激产生神经冲动；半规管感受头部位置变化（晕车的来源之一）。' },
+      { name: '听觉形成', desc: '声波 → 鼓膜振动 → 听小骨 → 耳蜗产生神经冲动 → 听神经 → 大脑听觉中枢形成听觉。' },
+      { name: '保护听力', desc: '鼻咽部感染可通过咽鼓管蔓延到中耳；巨大声响会震破鼓膜——遇到巨响要张嘴或捂耳。' },
+    ],
+    Svg: EarStructureSvg,
+  },
+  {
+    id: 'jellyfish',
+    name: '水母',
+    kicker: '刺胞动物门（腔肠动物）· 海洋代表（课外拓展）',
+    intro: '水母是刺胞动物门的海洋代表：身体辐射对称，只有外胚层和内胚层两层细胞，中间是胶状中胶层。伞盖收缩喷水前进，触手上的刺细胞射出刺丝麻醉猎物——没有大脑却高效生存了数亿年。',
+    extension: true,
+    parts: [
+      { name: '伞盖', desc: '钟状身体，内充胶状中胶层（98% 是水），收缩喷水推动身体反向前进。' },
+      { name: '口与口腕', desc: '伞盖下的口是消化循环腔的唯一开口（有口无肛门），口腕负责包裹并送入食物。' },
+      { name: '触手与刺细胞', desc: '刺细胞是刺胞动物特有的攻击武器，受刺激时射出刺丝注入毒素麻醉猎物。' },
+      { name: '辐射对称', desc: '身体呈辐射对称，从任何方向接近都能感知和捕捉——适应固着或漂浮生活。' },
+      { name: '网状神经', desc: '没有中枢神经，神经细胞连成网状，协调全身收缩——最原始的神经系统。' },
+    ],
+    Svg: JellyfishSvg,
+  },
   {
     id: 'gramStain',
     name: '革兰氏染色',

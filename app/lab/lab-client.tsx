@@ -95,6 +95,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   breathingMechanics: Wind,
   neuronTypes: Network,
   bloodLayers: Layers,
+  hybridoma: FlaskRound,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -182,6 +183,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   breathingMechanics: () => import('@/components/lab/breathing-mechanics-lab').then(({ BreathingMechanicsLab }) => ({ default: BreathingMechanicsLab })),
   neuronTypes: () => import('@/components/lab/neuron-types-lab').then(({ NeuronTypesLab }) => ({ default: NeuronTypesLab })),
   bloodLayers: () => import('@/components/lab/blood-layers-lab').then(({ BloodLayersLab }) => ({ default: BloodLayersLab })),
+  hybridoma: () => import('@/components/lab/hybridoma-lab').then(({ HybridomaLab }) => ({ default: HybridomaLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -256,6 +258,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   vaccineResponse: ['humoralImmunity'],
   bloodSugarRegulation: ['waterSaltBalance', 'bloodSugarSources'],
   bloodLayers: ['bloodClotting'],
+  hybridoma: ['monoclonalAntibody'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */

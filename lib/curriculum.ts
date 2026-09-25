@@ -617,6 +617,7 @@ export type ExperimentId =
   | 'breathingMechanics'
   | 'neuronTypes'
   | 'bloodLayers'
+  | 'hybridoma'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1093,6 +1094,13 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '内环境与稳态',
   },
+  hybridoma: {
+    title: '单克隆抗体的制备',
+    kicker: '选择性必修 3 · 生物技术',
+    description: 'B 淋巴细胞 × 骨髓瘤细胞融合：筛选既能产专一抗体又能无限增殖的杂交瘤细胞。',
+    relatedBook: 'technology',
+    relatedModule: '细胞工程与组织培养',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1299,7 +1307,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'crispr', 'geneTherapy', 'restrictionEnzyme', 'embryoTransfer', 'nuclearTransfer', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'crispr', 'geneTherapy', 'restrictionEnzyme', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
   },
 ];
 
@@ -1386,6 +1394,7 @@ export const experimentOrder: ExperimentId[] = [
   'pcr',
   'embryoTransfer',
   'nuclearTransfer',
+  'hybridoma',
   'lacOperon',
   'crispr',
   'geneTherapy',
