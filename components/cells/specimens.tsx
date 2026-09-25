@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -13338,7 +13338,160 @@ function GiantWaterLilySvg({ active }: { active: number | null; open?: boolean }
   );
 }
 
+/* ================= 海豚（海洋声呐） ================= */
+
+function DolphinSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 海豚 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 190 q 60 -70 190 -56 q 80 8 120 40 q -30 40 -110 44 q -130 8 -200 -28 Z" fill="#7a9ab5" stroke="#3a5a7a" strokeWidth="2.8" />
+        <path d="M118 168 q -34 -10 -44 -34 q 26 2 40 18 q 10 10 4 16 Z" fill="#5a7a95" stroke="#3a5a7a" strokeWidth="2.2" />
+        <path d="M416 168 q 26 -6 38 -22 l 16 30 q -28 14 -54 6" fill="#5a7a95" stroke="#3a5a7a" strokeWidth="2.4" />
+        <path d="M240 132 q 40 -20 90 -8" fill="none" stroke="#a5c4d8" strokeWidth="3" opacity="0.8" />
+        <path d="M300 180 q 40 16 90 6" fill="none" stroke="#3a5a7a" strokeWidth="5" strokeLinecap="round" />
+        <path d="M200 176 q 16 -8 30 -2 m 30 4 q 16 -8 30 -2" fill="none" stroke="#3a5a7a" strokeWidth="2.6" strokeLinecap="round" />
+        <text x="396" y="140" fontSize="12.5" fill="#3a5a7a" fontWeight="700">喙状吻·永久的"微笑"</text>
+      </g>
+      {/* 回声定位 */}
+      <g style={dim(active, 1)}>
+        <path d="M110 150 Q 60 140 46 110" fill="none" stroke="#e8a03a" strokeWidth="2.6" strokeDasharray="5 4" />
+        <path d="M46 110 q 10 -6 18 -2 m -18 2 l -2 12" fill="none" stroke="#e8a03a" strokeWidth="2.2" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${34 - i * 6} ${104 - i * 8} q 6 -8 14 -6`} fill="none" stroke="#e8a03a" strokeWidth="1.8" opacity={0.9 - i * 0.25} />
+        ))}
+        <text x="52" y="80" fontSize="12.5" fill="#8a671b" fontWeight="700">回声定位："生物声呐"</text>
+        <text x="52" y="100" fontSize="12" fill="#a5761d">额隆体聚焦超声波·回波成像</text>
+      </g>
+      {/* 智慧 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">大脑/body 比值仅次于人类：有自我意识（认镜子里的自己）· 有独特"签名哨声"</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">社会性极强：群体协作捕鱼·照顾受伤同伴——"利他行为"的哺乳动物代表</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">睡眠方式特别：两个半脑轮流睡觉（半脑睡眠），一只眼睁着警戒</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">海豚 · 鲸目"智慧海洋 mammal"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 肚脐（脐带的印记） ================= */
+
+function UmbilicusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 胎儿-胎盘 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="160" cy="120" rx="64" ry="42" fill="#f0c9b0" stroke="#a5765a" strokeWidth="2.8" />
+        <text x="160" y="196" textAnchor="middle" fontSize="12" fill="#8a5a3a" fontWeight="700">胎儿在子宫内</text>
+        <path d="M214 108 q 40 -20 70 -14" fill="none" stroke="#b05a5a" strokeWidth="8" strokeLinecap="round" />
+        <ellipse cx="320" cy="90" rx="52" ry="30" fill="#8a3a3a" stroke="#5a2020" strokeWidth="2.6" />
+        <text x="320" y="50" textAnchor="middle" fontSize="12.5" fill="#5a2020" fontWeight="700">胎盘（交换站）</text>
+      </g>
+      {/* 脐带 */}
+      <g style={dim(active, 1)}>
+        <path d="M216 112 Q 260 96 288 94" fill="none" stroke="#d88a8a" strokeWidth="4" strokeLinecap="round" />
+        <text x="60" y="236" fontSize="12.5" fill="#8a3a4a" fontWeight="700">脐带：两条脐动脉 + 一条脐静脉</text>
+        <text x="60" y="256" fontSize="12" fill="#8a3a4a">结扎剪断后留下的"痕迹"= 肚脐</text>
+        <path d="M150 232 q 40 10 80 0" fill="none" stroke="#8a3a4a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 要点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">肚脐是"疤痕"而非器官：所有人都是"从肚子上的疤"开始生命故事</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">脐静脉出生后闭锁成"肝圆韧带"——血管"改行"的演化巧思</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">肚脐形状与剪脐带方式无关，取决于愈合时的个体差异（别再比谁的圆）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">肚脐 · 生命连接的"纪念章"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 秋叶（色素的谢幕演出） ================= */
+
+function AutumnLeavesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 三片叶 */}
+      <g style={dim(active, 0)}>
+        <path d="M90 150 q -40 -50 10 -80 q 50 30 10 80 q -10 14 -20 0 Z" fill="#4a9a3a" stroke="#2f6f2a" strokeWidth="2.4" />
+        <path d="M96 74 v 76" stroke="#2f6f2a" strokeWidth="2" />
+        <text x="52" y="90" fontSize="12.5" fill="#2f6f2a" fontWeight="700">夏天：叶绿素当家（绿）</text>
+        <path d="M230 150 q -40 -50 10 -80 q 50 30 10 80 q -10 14 -20 0 Z" fill="#e8a03a" stroke="#a5761d" strokeWidth="2.4" />
+        <path d="M236 74 v 76" stroke="#a5761d" strokeWidth="2" />
+        <text x="192" y="90" fontSize="12.5" fill="#a5761d" fontWeight="700">秋天：叶绿素分解</text>
+        <path d="M370 150 q -40 -50 10 -80 q 50 30 10 80 q -10 14 -20 0 Z" fill="#c94a4a" stroke="#8a2020" strokeWidth="2.4" />
+        <path d="M376 74 v 76" stroke="#8a2020" strokeWidth="2" />
+        <text x="330" y="90" fontSize="12.5" fill="#8a2020" fontWeight="700">深秋：花青素登场（红）</text>
+      </g>
+      {/* 机制 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="240" width="210" height="86" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="151" y="264" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">叶绿素"怕冷又怕光"</text>
+        <text x="151" y="288" textAnchor="middle" fontSize="11" fill="#37585f">低温+强光加速其分解</text>
+        <text x="151" y="310" textAnchor="middle" fontSize="11" fill="#37585f">原本被"绿色"盖住的黄橙色素显现</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="276" y="240" width="204" height="86" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="378" y="264" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">红色从哪来？</text>
+        <text x="378" y="288" textAnchor="middle" fontSize="10.5" fill="#a5761d">糖分在叶中合成花青素（新合成）</text>
+        <text x="378" y="310" textAnchor="middle" fontSize="10.5" fill="#a5761d">昼夜温差大 → 糖积累多 → 更红</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="334" width="440" height="34" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="356" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">落叶前养分被"回收"运回枝干——落叶不是死亡，而是资源回收与越冬策略</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">秋叶 · 色素更替的"谢幕演出"（课内拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'dolphin',
+    name: '海豚',
+    kicker: '鲸目 · 海洋"声呐"与智者（课外拓展）',
+    intro: '海豚是海洋中最聪明的哺乳动物之一：额隆体把声波聚成"声束"发射，靠回波在黑暗浑浊的水中"看清"世界——天然生物声呐。它有独特的"签名哨声"相当于名字，能认出镜子里的自己，两个半脑轮流睡觉（半脑睡眠）保持警戒。群体协作捕鱼、照顾受伤同伴——利他行为的哺乳动物代表。',
+    extension: true,
+    parts: [
+      { name: '回声定位', desc: '额隆体（额头的脂肪体）聚焦超声波"发射"，下颌脂肪接收回波传至内耳——黑暗中的"声学成像"。' },
+      { name: '签名哨声', desc: '每只海豚有独特的 Signature Whistle——像名字一样表明身份，同伴能"听声认人"。' },
+      { name: '半脑睡眠', desc: '两个大脑半球轮流休息，一只眼保持睁开警戒——既是呼吸需要也是防捕食者。' },
+      { name: '利他行为', desc: '会顶起受伤同伴（甚至人类）到水面呼吸——协作与照顾在群体中普遍存在。' },
+      { name: '与鲨鱼对比', desc: '同为海洋顶级猎手：鲨鱼靠电场与侧线"硬武器"，海豚靠声呐与团队"高科技"。' },
+    ],
+    Svg: DolphinSvg,
+  },
+  {
+    id: 'umbilicus',
+    name: '肚脐',
+    kicker: '人体 · 生命连接的"纪念章"（课外拓展）',
+    intro: '肚脐不是器官，而是一枚"疤痕"：胎儿靠脐带与胎盘相连，脐带内有两条脐动脉（胎儿血→胎盘）和一条脐静脉（养分氧气→胎儿）。出生结扎剪断脐带后，残端脱落愈合，留下肚脐——出生后脐静脉闭锁成肝圆韧带，"血管改行"是人体演化的巧思之一。',
+    extension: true,
+    parts: [
+      { name: '胎儿期的脐带', desc: '长约 50 厘米：两条脐动脉把胎儿代谢废物送到胎盘，一条脐静脉把氧气养分送回胎儿。' },
+      { name: '肚脐的形成', desc: '脐带残端干燥脱落（约 1~2 周），伤口愈合内陷形成肚脐——形状取决于愈合方式。' },
+      { name: '血管"改行"', desc: '出生后脐静脉闭锁为肝圆韧带、脐动脉闭锁为脐内侧韧带——"退役"血管变成支撑结构。' },
+      { name: '新生儿护理', desc: '脐残端要保持清洁干燥，不要"包裹覆盖"——感染（脐炎）可沿脐静脉蔓延。' },
+      { name: '冷知识', desc: '肚脐菌群是皮肤微生物组的独特"驿站"；肚脐位置是人体比例的"黄金分割点"（约 0.618）。' },
+    ],
+    Svg: UmbilicusSvg,
+  },
+  {
+    id: 'autumnLeaves',
+    name: '秋叶（色素的谢幕演出）',
+    kicker: '光合作用 · 叶色变化的科学（课内拓展）',
+    intro: '秋天叶子为什么变红变黄？夏天叶片里叶绿素含量高，把类胡萝卜素的黄色"盖"住了；入秋低温强光加速叶绿素分解，黄色类胡萝卜素显现——叶子变黄。而枫叶的红色是叶中糖分新合成的花青素：昼夜温差越大、糖分积累越多，红色越艳。落叶前养分被回收运回枝干——落叶不是衰败，而是资源回收与越冬策略。',
+    extension: true,
+    parts: [
+      { name: '绿色退场', desc: '低温强光破坏叶绿素（比类胡萝卜素更不稳定），绿色褪去后"隐藏"的黄橙色显现。' },
+      { name: '黄色与橙色', desc: '类胡萝卜素（叶黄素·胡萝卜素）原本就存在，只是被叶绿素掩盖——银杏黄叶最典型。' },
+      { name: '红色花青素', desc: '秋天糖分滞留叶中合成花青素（新合成，不是显现）——昼夜温差大的山地红叶最艳。' },
+      { name: '落叶的智慧', desc: '叶柄基部形成离层，养分回收后叶片脱落——减少蒸腾、防冻害，是主动的越冬策略。' },
+      { name: '考点联系', desc: '叶绿素（捕光）·类胡萝卜素（辅助捕光+保护）·花青素（非光合色素）——三大色素"各司其职"。' },
+    ],
+    Svg: AutumnLeavesSvg,
+  },
   {
     id: 'capybara',
     name: '水豚',

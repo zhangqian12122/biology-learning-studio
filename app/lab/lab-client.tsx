@@ -132,6 +132,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   imprinting: Bird,
   bipedalCosts: Ruler,
   synapseDrug: Pill,
+  humanTraits: Users,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -256,6 +257,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   imprinting: () => import('@/components/lab/imprinting-lab').then(({ ImprintingLab }) => ({ default: ImprintingLab })),
   bipedalCosts: () => import('@/components/lab/bipedal-costs-lab').then(({ BipedalCostsLab }) => ({ default: BipedalCostsLab })),
   synapseDrug: () => import('@/components/lab/synapse-drug-lab').then(({ SynapseDrugLab }) => ({ default: SynapseDrugLab })),
+  humanTraits: () => import('@/components/lab/human-traits-lab').then(({ HumanTraitsLab }) => ({ default: HumanTraitsLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -352,6 +354,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   bloodRoutine: ['bloodCells'],
   rhIncompatibility: ['redBloodCell'],
   synapseDrug: ['synapse'],
+  humanTraits: ['karyotype'],
   ecoStability: ['ecosystemTypes'],
 };
 

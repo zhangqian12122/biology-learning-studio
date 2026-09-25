@@ -7,28 +7,23 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：synapseDrug 突触传递与药物作用 ----------
-await page.goto(`${BASE}/lab?exp=synapseDrug`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：humanTraits 人体遗传性状调查 ----------
+await page.goto(`${BASE}/lab?exp=humanTraits`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.getByRole('button', { name: /施加动作电位/ }).evaluate((el) => el.click());
-  await page.waitForTimeout(400);
-  const midText = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '箭毒（阻断受体）' }).click();
-  await page.waitForTimeout(300);
-  await page.getByRole('button', { name: /施加动作电位/ }).evaluate((el) => el.click());
+  await page.getByRole('button', { name: /开展全班调查/ }).evaluate((el) => el.click());
   await page.waitForTimeout(400);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('突触传递与药物作用');
-  results.experiment.interactive = midText.includes('传递成功') && after.includes('肌肉松弛');
+  results.experiment.open = before.includes('人体遗传性状调查');
+  results.experiment.interactive = after.includes('基因型必为 aa') && after.includes('显性性状者');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['capybara', 'lactoseIntolerance', 'giantWaterLily'];
+const SPECIMENS = ['dolphin', 'umbilicus', 'autumnLeaves'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -80,17 +75,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：bipedalCosts 实验页仍正常
-await page.goto(`${BASE}/lab?exp=bipedalCosts`, { waitUntil: 'domcontentloaded' });
+// 回归检查：synapseDrug 实验页仍正常
+await page.goto(`${BASE}/lab?exp=synapseDrug`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.bipedalRegression = { found: t.includes('直立行走') || t.includes('演化'), ok: t.includes('直立行走') || t.includes('演化') };
+  results.specimens.synapseRegression = { found: t.includes('突触') || t.includes('递质'), ok: t.includes('突触') || t.includes('递质') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.bipedalRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.synapseRegression?.ok;
 console.log('ALL_OK=' + allOk);

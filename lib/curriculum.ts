@@ -654,6 +654,7 @@ export type ExperimentId =
   | 'imprinting'
   | 'bipedalCosts'
   | 'synapseDrug'
+  | 'humanTraits'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1408,6 +1409,13 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '神经和体液调节',
   },
+  humanTraits: {
+    title: '人体遗传性状调查',
+    kicker: '必修 2 · 实践活动',
+    description: '卷舌·耳垂·单双眼皮：班级显隐性统计与基因型推测。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1599,7 +1607,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'antibioticResistance', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'humanTraits', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'antibioticResistance', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1655,6 +1663,7 @@ export const experimentOrder: ExperimentId[] = [
   'dihybridSim',
   'sexLinkedCross',
   'rhIncompatibility',
+  'humanTraits',
   'lowTempPolyploid',
   'meiosisSlide',
   'genetics',
