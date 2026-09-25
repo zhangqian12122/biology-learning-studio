@@ -5048,12 +5048,12 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome', 'vacuole'] },
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
-  { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells'] },
+  { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers'] },
 ];
 
@@ -8407,7 +8407,161 @@ function BloodSugarSourcesSvg({ active }: { active: number | null; open?: boolea
 }
 
 
+/* ================= 人体骨骼系统 ================= */
+
+function SkeletonSystemSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="60" rx="32" ry="36" fill="#f4ecdc" stroke="#b5a582" strokeWidth="3" />
+        <path d="M226 52 Q 250 36 274 52" fill="none" stroke="#c9b88a" strokeWidth="2" />
+        <text x="310" y="48" fontSize="12" fill="#8a7a4a" fontWeight="700">颅骨（保护脑）</text>
+        <line x1="284" y1="52" x2="282" y2="60" stroke="#8a7a4a" strokeWidth="1.3" />
+        <path d="M250 96 L250 296" stroke="#c9b88a" strokeWidth="12" strokeLinecap="round" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
+          <rect key={i} x={242} y={100 + i * 18} width="16" height="10" rx="3" fill="#e8dcc8" stroke="#b5a582" strokeWidth="1.5" />
+        ))}
+        <text x="180" y="220" fontSize="12" fill="#8a7a4a" fontWeight="700">脊柱（26 块椎骨·支撑+保护脊髓）</text>
+        <line x1="182" y1="220" x2="242" y2="220" stroke="#8a7a4a" strokeWidth="1.3" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M250 ${110 + i * 22} Q ${200 + (i % 2) * 8} ${118 + i * 22} ${176} ${140 + i * 14} M250 ${110 + i * 22} Q ${300 - (i % 2) * 8} ${118 + i * 22} ${324} ${140 + i * 14}`} fill="none" stroke="#d8c9a0" strokeWidth="3" />
+        ))}
+        <text x="310" y="182" fontSize="12" fill="#8a7a4a" fontWeight="700">胸廓（12 对肋骨+胸骨·保护心肺）</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <path d="M180 130 L 140 190 L 130 240 M320 130 L 360 190 L 370 240" fill="none" stroke="#e8dcc8" strokeWidth="9" strokeLinecap="round" />
+        <path d="M130 240 l-8 14 m8 -14 l0 16 m8 -16 l8 12" stroke="#e8dcc8" strokeWidth="4" strokeLinecap="round" />
+        <path d="M370 240 l-8 14 m8 -14 l0 16 m8 -16 l8 12" stroke="#e8dcc8" strokeWidth="4" strokeLinecap="round" />
+        <text x="96" y="130" fontSize="12" fill="#6a7a8a" fontWeight="600">上肢骨</text>
+        <path d="M230 300 L 222 350 L 220 370 M270 300 L 278 350 L 280 370" fill="none" stroke="#e8dcc8" strokeWidth="10" strokeLinecap="round" />
+        <text x="296" y="344" fontSize="12" fill="#6a7a8a" fontWeight="600">下肢骨（股骨最粗）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <text x="100" y="374" fontSize="12.5" fill="#8a671b" fontWeight="700">骨连接（关节）· 成人共 206 块骨</text>
+      </g>
+    </svg>
+  );
+}
+
+/* ================= 细胞凋亡 vs 细胞坏死 ================= */
+
+function ApoptosisVsNecrosisSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <rect x="14" y="56" width="230" height="230" rx="14" fill="#eaf4ea" stroke="#4a9a5a" strokeWidth="2.4" />
+        <text x="129" y="82" textAnchor="middle" fontSize="14" fill="#2f7a4d" fontWeight="800">细胞凋亡</text>
+        <circle cx="70" cy="130" r="24" fill="#c8e2ba" stroke="#3f7f3a" strokeWidth="2" />
+        <circle cx="70" cy="130" r="10" fill="#8a671b" opacity="0.6" />
+        <text x="70" y="170" textAnchor="middle" fontSize="10" fill="#59767c">正常</text>
+        <path d="M100 132 L 136 132" stroke="#59767c" strokeWidth="2" markerEnd="url(#an-arrow)" />
+        <path d="M150 126 Q 168 118 174 134 Q 178 148 164 152 Q 146 156 142 142 Q 140 132 150 126 Z" fill="#c8e2ba" stroke="#3f7f3a" strokeWidth="2" />
+        <text x="158" y="176" textAnchor="middle" fontSize="10" fill="#59767c">皱缩·核浓缩</text>
+        {[0, 1, 2].map((i) => (
+          <circle key={i} cx={246 - i * 4} cy={162 + i * 8} r={10 - i * 2} fill="#c8e2ba" stroke="#3f7f3a" strokeWidth="1.8" />
+        ))}
+        <text x="200" y="198" textAnchor="middle" fontSize="10" fill="#59767c">形成凋亡小体 → 被吞噬</text>
+        <text x="129" y="248" textAnchor="middle" fontSize="12" fill="#2f7a4d" fontWeight="800">基因调控 · 主动 · 对机体有利</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <rect x="276" y="56" width="230" height="230" rx="14" fill="#fdeaea" stroke="#b0483a" strokeWidth="2.4" />
+        <text x="391" y="82" textAnchor="middle" fontSize="14" fill="#8a2a1a" fontWeight="800">细胞坏死</text>
+        <ellipse cx="391" cy="150" rx="42" ry="34" fill="#f2c8c0" stroke="#b0483a" strokeWidth="2.5" />
+        <circle cx="386" cy="148" r="8" fill="#8a2a1a" opacity="0.4" />
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={430 + (i % 2) * 14} cy={140 + i * 16} r="4" fill="#e8b8b0" stroke="#b0483a" strokeWidth="1.2" />
+        ))}
+        <text x="391" y="200" textAnchor="middle" fontSize="11" fill="#8a2a1a">膜破裂 · 内容物外溢</text>
+        <text x="391" y="248" textAnchor="middle" fontSize="12" fill="#8a2a1a" fontWeight="800">被动 · 引发炎症反应</text>
+        <text x="391" y="268" textAnchor="middle" fontSize="11" fill="#b0483a">例：烫伤 · 冻伤 · 缺血损伤</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="40" y="316" width="440" height="46" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">核心区别：凋亡 = 基因调控的"程序性死亡"（对机体有利）；坏死 = 被动损伤（引发炎症）</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">两者都受环境影响，但凋亡是由基因决定的细胞自动结束生命的过程</text>
+      </g>
+      <defs>
+        <marker id="an-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 Z" fill="#59767c" />
+        </marker>
+      </defs>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">细胞凋亡 vs 细胞坏死 · 必修 1 细胞命运</text>
+    </svg>
+  );
+}
+
+/* ================= 植物激素五类对比 ================= */
+
+function PlantHormonesSvg({ active }: { active: number | null; open?: boolean }) {
+  const rows = [
+    { name: '生长素 (IAA)', parts: '幼嫩芽·叶·发育种子', func: '促进伸长·向光性·低促高抑', color: '#4a9a6a', icon: '🌱' },
+    { name: '赤霉素 (GA)', parts: '幼芽·幼根·未成熟种子', func: '促进茎伸长·打破种子休眠', color: '#c9a05a', icon: '🌾' },
+    { name: '细胞分裂素', parts: '根尖（主要合成部位）', func: '促进细胞分裂·延缓衰老', color: '#4d7ea8', icon: '🧬' },
+    { name: '脱落酸 (ABA)', parts: '根冠·萎蔫的叶片', func: '抑制分裂·气孔关闭·休眠', color: '#b0483a', icon: '🍂' },
+    { name: '乙烯', parts: '植物体各部位（果实成熟时）', func: '促进果实成熟·落叶落果', color: '#c9708a', icon: '🍎' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {rows.map((r, i) => (
+        <g key={r.name} style={dim(active, i)}>
+          <rect x="20" y={54 + i * 60} width="480" height="50" rx="10" fill="#f8faf6" stroke={r.color} strokeWidth="2.2" />
+          <text x={36} y={84 + i * 60} fontSize="18">{r.icon}</text>
+          <text x={62} y={78 + i * 60} fontSize="12.5" fill={r.color} fontWeight="800">{r.name}</text>
+          <text x={62} y={96 + i * 60} fontSize="10.5" fill="#59767c">合成：{r.parts}</text>
+          <text x={300} y={84 + i * 60} fontSize="11.5" fill="#49676d" fontWeight="600">{r.func}</text>
+        </g>
+      ))}
+      <g style={dim(active, 0)}>
+        <text x="260" y="360" textAnchor="middle" fontSize="12" fill="#49676d" fontWeight="700">协同：生长素+赤霉素促进生长 · 拮抗：生长素 vs 脱落酸</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">五大类植物激素对比 · 选必 1 植物生长调节</text>
+    </svg>
+  );
+}
+
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'skeletonSystem',
+    name: '人体骨骼系统',
+    kicker: '运动系统 · 骨骼总图',
+    intro: '成人体有 206 块骨，分为中轴骨（颅骨+脊柱+胸廓）和附肢骨（上肢+下肢）：骨骼是运动的杠杆，骨髓是血细胞的"工厂"。',
+    parts: [
+      { name: '颅骨', desc: '29 块骨围成的骨性"头盔"：保护脑——最重要的中枢神经所在地。' },
+      { name: '脊柱', desc: '26 块椎骨组成的"承重柱"：从上到下分颈椎/胸椎/腰椎/骶椎/尾椎，保护脊髓。' },
+      { name: '胸廓', desc: '12 对肋骨+胸骨+胸椎围成的"笼子"：保护心、肺等胸腔器官，参与呼吸运动。' },
+      { name: '四肢骨', desc: '上肢骨（肱骨/桡骨/尺骨/手骨）+下肢骨（股骨/胫骨/腓骨/足骨）：运动杠杆。' },
+      { name: '骨髓', desc: '骨髓腔与骨松质间隙中的软组织：红骨髓具有造血功能，产生红细胞、白细胞和血小板。' },
+    ],
+    Svg: SkeletonSystemSvg,
+  },
+  {
+    id: 'apoptosisVsNecrosis',
+    name: '细胞凋亡与坏死',
+    kicker: '细胞命运 · 对比模式图',
+    intro: '细胞凋亡是由基因决定的细胞自动结束生命的过程（程序性死亡），对机体有利；细胞坏死是在不利因素下被动损伤死亡，引发炎症反应——两者的本质区别在于是否由基因调控。',
+    parts: [
+      { name: '细胞凋亡', desc: '基因调控的主动"程序性死亡"：细胞皱缩→核浓缩→形成凋亡小体→被吞噬，不引发炎症。' },
+      { name: '细胞坏死', desc: '不利因素导致的被动损伤死亡：细胞肿胀→膜破裂→内容物外溢→引发炎症反应。' },
+      { name: '凋亡的意义', desc: '清除多余/衰老/受损细胞：蝌蚪尾巴消失、人胚胎指间蹼消失、免疫系统清除感染细胞。' },
+      { name: '与癌细胞关系', desc: '癌细胞逃避凋亡（不死性）：治疗策略之一是诱导癌细胞"恢复"凋亡能力。' },
+    ],
+    Svg: ApoptosisVsNecrosisSvg,
+  },
+  {
+    id: 'plantHormones',
+    name: '植物激素五类对比',
+    kicker: '植物生长调节 · 五类激素对比表',
+    intro: '植物体内有五大类激素协同调控生长发育：生长素/赤霉素/细胞分裂素促进生长，脱落酸和乙烯抑制或促进衰老成熟——它们既协同又拮抗。',
+    parts: [
+      { name: '生长素 (IAA)', desc: '促进细胞伸长生长：低浓度促进、高浓度抑制（两重性）；引起向光性和顶端优势。' },
+      { name: '赤霉素 (GA)', desc: '促进茎的伸长（特别是节间）、种子萌发和果实发育——"拔高"激素。' },
+      { name: '细胞分裂素', desc: '促进细胞分裂和组织分化，延缓叶片衰老——主要在根尖合成。' },
+      { name: '脱落酸 (ABA)', desc: '抑制细胞分裂，促进气孔关闭和休眠——干旱胁迫下的"保水激素"。' },
+      { name: '乙烯', desc: '促进果实成熟、落叶落果——气体激素，"催熟剂"（如乙烯利催熟香蕉）。' },
+    ],
+    Svg: PlantHormonesSvg,
+  },
   {
     id: 'heartCompare',
     name: '脊椎动物心脏对比',

@@ -613,6 +613,7 @@ export type ExperimentId =
   | 'pasteurFlask'
   | 'cellRespiration'
   | 'engelmann'
+  | 'waterBalance'
   | 'geneTherapy'
   | 'crossingOver'
   | 'apicalDominance'
@@ -1059,6 +1060,13 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
   },
+  waterBalance: {
+    title: '水盐平衡调节模拟',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '喝水或运动出汗，看抗利尿激素如何调节尿量和渗透压。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
   geneTherapy: {
     title: '基因治疗：ADA 缺陷症案例',
     kicker: '选择性必修 3 · 生物技术与工程',
@@ -1240,7 +1248,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'auxinCutting', 'apicalDominance', 'phototropism', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
+    ids: ['urineGlucoseTest', 'waterBalance', 'auxinCutting', 'apicalDominance', 'phototropism', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
   },
   {
     name: '生态',
@@ -1275,6 +1283,7 @@ export const experimentOrder: ExperimentId[] = [
   'photosynthesisFactors',
   'cellRespiration',
   'engelmann',
+  'waterBalance',
   'crossingOver',
   'doubleFertilization',
   'mitosisObservation',

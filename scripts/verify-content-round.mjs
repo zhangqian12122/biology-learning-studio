@@ -8,26 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：光合作用影响因素 ----------
-await page.goto(`${BASE}/lab?exp=photosynthesisFactors`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：水盐平衡调节 ----------
+await page.goto(`${BASE}/lab?exp=waterBalance`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('光合作用强度');
-  // 调光照到 0 → 限制因素变为光照
-  await page.locator('input[type="range"]').first().evaluate((el) => {
-    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-    setter.call(el, '0');
-    el.dispatchEvent(new Event('input', { bubbles: true }));
-  });
+  results.experiment.open = text.includes('水盐平衡调节');
+  // 喝水 → 排尿增加；出汗 → 保水
+  await page.getByRole('button', { name: /喝水 500/ }).click({ force: true });
   await page.waitForTimeout(500);
-  const low = await page.locator('main').innerText();
-  results.experiment.lowLight = low.includes('光照强度') && low.includes('限制因素');
+  const drank = await page.locator('main').innerText();
+  results.experiment.drinkWorks = drank.includes('排尿') || drank.includes('ADH 降至');
+  await page.getByRole('button', { name: /运动出汗/ }).click({ force: true });
+  await page.waitForTimeout(500);
+  const sweat = await page.locator('main').innerText();
+  results.experiment.sweatWorks = sweat.includes('保水') || sweat.includes('大脑皮层');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['fruitTypes', 'stemCells', 'geneticCode'];
+const SPECIMENS = ['skeletonSystem', 'apoptosisVsNecrosis', 'plantHormones'];
 const LAB_ONLY_CHECKS = [{ specimen: 'humoralImmunity', onExperiment: 'vaccineResponse', label: '体液免疫流程' }];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
