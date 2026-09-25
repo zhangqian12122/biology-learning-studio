@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -12555,7 +12555,163 @@ function AirPlantSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 树懒（慢也是一种策略） ================= */
+
+function SlothSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 树枝 */}
+      <g style={dim(active, 0)}>
+        <path d="M60 130 q 150 -40 400 -30" fill="none" stroke="#8a6a3a" strokeWidth="14" strokeLinecap="round" />
+        <text x="396" y="86" fontSize="12.5" fill="#8a6a3a" fontWeight="700">倒挂在树冠层缓慢移动</text>
+      </g>
+      {/* 树懒 */}
+      <g style={dim(active, 1)}>
+        <path d="M200 148 q 60 -18 130 -6 q 24 6 20 24 q -6 22 -48 26 q -70 6 -104 -12 q -14 -18 2 -32 Z" fill="#a58a5a" stroke="#6a5a2a" strokeWidth="2.8" />
+        <circle cx="356" cy="164" r="22" fill="#b89a68" stroke="#6a5a2a" strokeWidth="2.4" />
+        <path d="M344 150 q 10 -6 22 -2 m -22 2 q -8 -10 -4 -18" fill="none" stroke="#6a5a2a" strokeWidth="2.4" strokeLinecap="round" />
+        <path d="M344 156 q 8 2 10 8 m 6 -10 q 6 4 6 10" stroke="#141414" strokeWidth="3" strokeLinecap="round" />
+        <path d="M300 188 q -10 26 -30 34 m 40 -28 q 2 28 -14 40 m 30 -32 q 8 24 -4 38" fill="none" stroke="#a58a5a" strokeWidth="8" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${264 - i * 18} ${224 + i * 4} l -12 8 m 12 -8 l -4 -12`} stroke="#6a5a2a" strokeWidth="3.4" strokeLinecap="round" />
+        ))}
+        <text x="60" y="240" fontSize="12.5" fill="#6a5a2a" fontWeight="700">长钩状爪（倒挂"锁死"不费力）</text>
+        <text x="60" y="260" fontSize="12.5" fill="#6a5a2a">每分钟移动约 4 米——"慢"省能量</text>
+      </g>
+      {/* 绿藻共生 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="290" width="440" height="74" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="314" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">毛发的"绿藻外衣"：与藻类共生——绿色伪装融进树冠，还可能"加餐"藻类</text>
+        <text x="260" y="338" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">一周只下树一次（排便）——树懒蛾在毛中繁殖的"移动生态系统"</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">低体温·低代谢·低食量——极端节能的生存策略</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">树懒 · 披叶藻的"慢生活家"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 唾液（消化的第一滴） ================= */
+
+function SalivaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 三对唾液腺 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="200" cy="92" rx="34" ry="22" fill="#f0d8c0" stroke="#a5765a" strokeWidth="2.4" />
+        <ellipse cx="320" cy="92" rx="34" ry="22" fill="#f0d8c0" stroke="#a5765a" strokeWidth="2.4" />
+        <text x="260" y="52" textAnchor="middle" fontSize="12.5" fill="#8a5a3a" fontWeight="700">腮腺（最大·位于耳前）</text>
+        <ellipse cx="216" cy="168" rx="26" ry="20" fill="#e8c9a8" stroke="#a5765a" strokeWidth="2.2" />
+        <ellipse cx="304" cy="168" rx="26" ry="20" fill="#e8c9a8" stroke="#a5765a" strokeWidth="2.2" />
+        <text x="330" y="196" fontSize="12.5" fill="#8a5a3a" fontWeight="700">下颌下腺·舌下腺</text>
+        <path d="M250 130 q 10 20 0 30 m -40 -20 q -6 24 4 34" fill="none" stroke="#a5765a" strokeWidth="2" strokeDasharray="3 3" />
+      </g>
+      {/* 唾液成分 */}
+      <g style={dim(active, 1)}>
+        <rect x="44" y="222" width="216" height="86" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="152" y="246" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">唾液的"三合一"功能</text>
+        <text x="152" y="268" textAnchor="middle" fontSize="11" fill="#37585f">唾液淀粉酶：淀粉 → 麦芽糖</text>
+        <text x="152" y="288" textAnchor="middle" fontSize="11" fill="#37585f">溶菌酶杀菌 · 湿润食物成食团</text>
+      </g>
+      {/* 实验 */}
+      <g style={dim(active, 2)}>
+        <rect x="280" y="222" width="196" height="86" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="378" y="246" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">家庭小实验</text>
+        <text x="378" y="268" textAnchor="middle" fontSize="10.5" fill="#a5761d">米饭嚼 1 分钟 vs 不嚼，滴碘液：</text>
+        <text x="378" y="288" textAnchor="middle" fontSize="10.5" fill="#a5761d">不嚼变蓝（淀粉在）· 嚼后浅色（已分解）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="322" width="440" height="42" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="338" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">细嚼慢咽：物理研磨 + 化学分解同步启动——唾液淀粉酶最适 pH 近中性</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11" fill="#3f7f3a">进胃后酶失活（胃酸）——所以口腔里的分解"窗口期"很宝贵</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">唾液 · 消化的第一滴（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= C4 植物（高光效"改装车"） ================= */
+
+function C4PlantSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 玉米植株 */}
+      <g style={dim(active, 0)}>
+        <path d="M240 300 v -180" stroke="#4a8a3a" strokeWidth="9" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M240 ${240 - i * 60} q -50 -20 -90 -10 m 90 10 q 50 -20 90 -10`} fill="none" stroke="#5a9a3a" strokeWidth="5" strokeLinecap="round" />
+        ))}
+        <text x="356" y="110" fontSize="12.5" fill="#2f6f2a" fontWeight="700">玉米·甘蔗·高粱（C4 植物）</text>
+        <text x="356" y="132" fontSize="12" fill="#3f7f3a">高温强光下光合效率远超 C3</text>
+      </g>
+      {/* 叶结构对比 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="180" width="200" height="60" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="146" y="202" textAnchor="middle" fontSize="11" fill="#2c5a84" fontWeight="800">C4 叶："花环结构"</text>
+        <text x="146" y="222" textAnchor="middle" fontSize="10" fill="#37585f">叶肉细胞先固碳 → 维管束鞘再加工</text>
+        <rect x="274" y="180" width="200" height="60" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="374" y="202" textAnchor="middle" fontSize="11" fill="#8a671b" fontWeight="800">C3 叶（水稻·小麦）</text>
+        <text x="374" y="222" textAnchor="middle" fontSize="10" fill="#a5761d">直接固定 CO₂ · 强光下"光呼吸"浪费</text>
+      </g>
+      {/* 对比 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="256" width="440" height="106" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="282" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">C4：CO₂ 先"打包"成四碳化合物运到维管束鞘释放——相当于浓缩 CO₂</text>
+        <text x="260" y="306" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">与 CAM 对比：CAM 是"时间分离"（夜储昼用），C4 是"空间分离"（两种细胞分工）</text>
+        <text x="260" y="330" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">优势：气孔开得小也够 CO₂（省水）· 无光呼吸浪费（高效）</text>
+        <text x="260" y="352" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">袁隆平团队的"巨型稻"与 C4 水稻研究——正是想给水稻装上这套"高光效引擎"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">C4 植物 · 高光效的光合"改装"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'sloth',
+    name: '树懒',
+    kicker: '披毛目 · "慢生活"的生存大师（课外拓展）',
+    intro: '树懒是移动最慢的哺乳动物——每分钟约 4 米，但它不是"懒"，而是把能量省到极致：低体温、低代谢、一周只下树排便一次。更妙的是它的毛发里住着共生的绿藻，让自己披上一件"绿色隐身衣"融进树冠；毛中还栖息着专属的树懒蛾——一只树懒就是一座"移动生态系统"。',
+    extension: true,
+    parts: [
+      { name: '钩爪倒挂', desc: '长钩状爪配合特化的悬挂"肌腱锁"，倒挂几乎不耗能——树懒一生大部分时间挂在同一棵树的冠层。' },
+      { name: '极端节能', desc: '代谢率只有同体型哺乳动物的 40%~50%，体温低且可变——"慢"是对低能量食物（叶片）的适应。' },
+      { name: '绿藻共生', desc: '毛发沟槽里的绿藻让树懒泛绿、与树冠融为一体（伪装）；树懒的排泄又反过来滋养藻类。' },
+      { name: '一周一便', desc: '下树排便最危险（捕食者的"死亡窗口"）——储到一周一次，一次排出可达体重三分之一。' },
+      { name: '与猎豹对比', desc: '猎豹"快"靠爆发、树懒"慢"靠节能——速度与耐力的取舍没有优劣，只有是否适应环境。' },
+    ],
+    Svg: SlothSvg,
+  },
+  {
+    id: 'saliva',
+    name: '唾液',
+    kicker: '消化系统 · 消化的"第一滴"（课外拓展）',
+    intro: '食物入口的第一道化学加工来自唾液：三对大唾液腺（腮腺、下颌下腺、舌下腺）每天分泌约 1~1.5 升。唾液淀粉酶开始分解淀粉，溶菌酶负责杀菌，黏液把食物润成便于吞咽的食团——"细嚼慢咽"给唾液淀粉酶争取了宝贵的"工作窗口"，因为进入胃的酸环境后它就失活了。',
+    extension: true,
+    parts: [
+      { name: '三对唾液腺', desc: '腮腺（耳前·最大）、下颌下腺、舌下腺——导管开口于口腔，受神经反射调节分泌。' },
+      { name: '唾液淀粉酶', desc: '把淀粉分解为麦芽糖（米饭久嚼发甜的原因）；最适 pH 近中性，进胃被胃酸灭活。' },
+      { name: '溶菌酶', desc: '破坏细菌细胞壁——口腔的"化学保安"，与眼泪中的溶菌酶同款。' },
+      { name: '湿润与成团', desc: '黏液把干燥食物润滑成食团，方便吞咽并保护口腔与食管黏膜。' },
+      { name: '家庭小实验', desc: '嚼过的米饭滴碘液不变蓝（淀粉已被分解）、未嚼的变蓝——验证酶作用的经典对照。' },
+    ],
+    Svg: SalivaSvg,
+  },
+  {
+    id: 'c4Plant',
+    name: 'C4 植物',
+    kicker: '光合作用 · 高光效的"空间改装"（课外拓展）',
+    intro: '玉米、甘蔗、高粱被称为 C4 植物：它们的 CO₂ 先在叶肉细胞被"打包"成四碳化合物，再运到维管束鞘细胞释放浓缩——相当于给光合反应"加压供料"，几乎消灭了光呼吸的浪费。与 CAM（时间分离）不同，C4 是"空间分离"：两类细胞分工合作，在强光高温下依然高效。',
+    extension: true,
+    parts: [
+      { name: '花环结构', desc: 'C4 叶的维管束鞘细胞外包一圈叶肉细胞，像"花环"——两种细胞分工完成 CO₂ 的浓缩与还原。' },
+      { name: '空间分离', desc: 'CO₂ 先固定成四碳化合物（草酰乙酸），运到鞘细胞释放高浓度 CO₂——把 Rubisco"喂饱"，抑制光呼吸。' },
+      { name: '与 CAM 对比', desc: 'CAM 夜储昼用（时间分离），C4 双细胞分工（空间分离）——两条路线都为解决"CO₂ 不足/失水"矛盾。' },
+      { name: '高光效优势', desc: '高温、强光、干旱下仍保持高光合速率——玉米产量高、甘蔗"疯长"的秘密。' },
+      { name: '科研前沿', desc: '给水稻导入 C4 途径是国际重大育种课题——若成功，水稻有望增产约 50%。' },
+    ],
+    Svg: C4PlantSvg,
+  },
   {
     id: 'honeyBadger',
     name: '蜜獾',

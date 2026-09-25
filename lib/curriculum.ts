@@ -647,6 +647,7 @@ export type ExperimentId =
   | 'bloodRoutine'
   | 'ecoStability'
   | 'algalBloom'
+  | 'energyBalance'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1347,6 +1348,14 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态保护与人与自然',
   },
+  energyBalance: {
+    title: '能量平衡与体重管理',
+    kicker: '健康与营养 · 课外拓展',
+    description: '三种饮食 × 两种运动的 8 周体重模拟：能量收支决定体重。',
+    relatedBook: 'regulation',
+    relatedModule: '免疫调节与健康',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1543,7 +1552,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'conditionedReflex', 'thyroidAxis', 'thermoRegulation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'bloodRoutine', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'conditionedReflex', 'thyroidAxis', 'thermoRegulation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1648,6 +1657,7 @@ export const experimentOrder: ExperimentId[] = [
   'balancedDiet',
   'allergySim',
   'bloodRoutine',
+  'energyBalance',
   'urineFormation',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',
