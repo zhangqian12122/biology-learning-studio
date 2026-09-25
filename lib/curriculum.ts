@@ -636,6 +636,7 @@ export type ExperimentId =
   | 'predatorPrey'
   | 'biomagnification'
   | 'hydroponics'
+  | 'balancedDiet'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1253,6 +1254,14 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: '细胞结构与物质运输',
   },
+  balancedDiet: {
+    title: '膳食营养配餐',
+    kicker: '健康与营养 · 课外拓展',
+    description: '三种早餐方案的供能比对比：糖类·脂肪·蛋白质比例 vs 推荐区间。',
+    relatedBook: 'regulation',
+    relatedModule: '免疫调节与健康',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1449,7 +1458,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'sirModel'],
   },
   {
     name: '生态',
@@ -1545,6 +1554,7 @@ export const experimentOrder: ExperimentId[] = [
   'biomagnification',
   'bloodType',
   'vaccineResponse',
+  'balancedDiet',
   'urineFormation',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',

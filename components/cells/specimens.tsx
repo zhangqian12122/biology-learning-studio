@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -11254,7 +11254,164 @@ function DodderSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 蜣螂（大自然的清道夫） ================= */
+
+function DungBeetleSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 粪球 */}
+      <g style={dim(active, 0)}>
+        <circle cx="150" cy="250" r="52" fill="#8a6a3a" stroke="#5a4a2a" strokeWidth="2.8" />
+        <path d="M116 236 q 22 -12 48 -4 m -56 24 q 26 -10 52 0" fill="none" stroke="#6a5230" strokeWidth="2" opacity="0.8" />
+        <text x="150" y="322" textAnchor="middle" fontSize="12.5" fill="#5a4a2a" fontWeight="700">滚成球的粪便（产卵床+幼虫口粮）</text>
+        <path d="M60 300 h 400" stroke="#8a9a6a" strokeWidth="2.4" />
+        <text x="444" y="292" fontSize="11.5" fill="#5a7a3a">地面</text>
+      </g>
+      {/* 蜣螂倒推粪球 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="212" cy="196" rx="30" ry="22" fill="#2a3a2a" stroke="#1a2a1a" strokeWidth="2.6" />
+        <path d="M240 190 q 30 -10 46 6 q -14 16 -46 12 Z" fill="#2a3a2a" stroke="#1a2a1a" strokeWidth="2.2" />
+        <circle cx="204" cy="188" r="4" fill="#e8e4d0" />
+        <path d="M198 216 q -12 14 -32 20 m 40 -18 q -6 18 -24 26 m 44 -20 q 0 16 -14 26" fill="none" stroke="#1a2a1a" strokeWidth="3" strokeLinecap="round" />
+        <path d="M252 182 q 22 -14 30 -34 m -24 40 q 24 -2 40 -14" fill="none" stroke="#1a2a1a" strokeWidth="2.6" strokeLinecap="round" />
+        <text x="330" y="170" fontSize="12.5" fill="#1a2a1a" fontWeight="700">头朝下倒推粪球</text>
+        <text x="330" y="190" fontSize="12.5" fill="#1a2a1a">前足搭球·中后足撑地</text>
+      </g>
+      {/* 导航与生态 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="60" width="440" height="52" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="82" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">夜行导航靠银河：滚"直线"避免绕回粪堆——昆虫中已证实的星空导航</text>
+        <text x="260" y="102" textAnchor="middle" fontSize="11.5" fill="#537078">一对粪球 = 一只幼体的全部口粮·成虫也取食粪汁</text>
+      </g>
+      {/* 生态价值 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="336" width="440" height="34" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="260" y="358" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">"清道夫"价值：埋粪肥田·传播种子·杀灭肠道寄生虫卵——澳大利亚曾进口蜣螂解决牛粪危机</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蜣螂 · 分解者明星（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 胎儿与胎盘 ================= */
+
+function FetusPlacentaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 子宫轮廓 */}
+      <g style={dim(active, 0)}>
+        <path d="M130 90 Q 260 54 390 90 Q 420 170 390 260 Q 340 330 260 332 Q 180 330 130 260 Q 100 170 130 90 Z" fill="#e8b8a8" stroke="#a54838" strokeWidth="3" />
+        <text x="56" y="72" fontSize="12.5" fill="#8a3a2a" fontWeight="700">子宫（胎儿发育的"温室"）</text>
+      </g>
+      {/* 胎盘 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="196" cy="150" rx="72" ry="40" fill="#8a3a3a" stroke="#5a2020" strokeWidth="2.6" />
+        <text x="88" y="236" fontSize="12.5" fill="#5a2020" fontWeight="700">胎盘：物质交换的"中转海关"</text>
+        <text x="88" y="256" fontSize="12.5" fill="#5a2020">母体血与胎儿血不直接混合</text>
+        <text x="88" y="276" fontSize="12.5" fill="#5a2020">O₂·养料来 / CO₂·废物去</text>
+      </g>
+      {/* 胎儿与脐带 */}
+      <g style={dim(active, 2)}>
+        <path d="M220 176 Q 250 196 262 226" fill="none" stroke="#b05a5a" strokeWidth="9" strokeLinecap="round" />
+        <text x="160" y="188" fontSize="11.5" fill="#8a3a2a" fontWeight="700">脐带（两条脐动脉·一条脐静脉）</text>
+        <circle cx="286" cy="262" r="42" fill="#f0d8c8" stroke="#a5765a" strokeWidth="2.6" />
+        <circle cx="274" cy="252" r="5" fill="#4a3a3a" />
+        <path d="M304 268 q 10 4 14 12" fill="none" stroke="#a5765a" strokeWidth="2.4" />
+        <text x="286" y="284" textAnchor="middle" fontSize="12.5" fill="#8a5a3a" fontWeight="700">胎儿（羊水中发育）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="298" width="440" height="60" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">胎儿红细胞自带"货"：胎儿的遗传物质一半来自父方——对母体是"半同种异物"</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#a5761d">胎盘是屏障也是通道：药物·酒精·病毒（风疹/艾滋）都能通过——孕妇用药须谨慎</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">胎儿与胎盘 · 母胎物质交换（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 咖啡因（植物的"防御武器"） ================= */
+
+function CaffeineSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 咖啡因分子 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 150 h 90 l 45 78 l -45 78 h -90 l -45 -78 Z" fill="#e8dcc8" stroke="#8a7a4a" strokeWidth="2.8" />
+        {[0, 1, 2].map((i) => (
+          <text key={i} x={188 + (i % 2) * 52} y={196 + Math.floor(i / 2) * 78 + (i === 2 ? 0 : 0)} fontSize="11" fill="#5a4a2a" fontWeight="700">N</text>
+        ))}
+        <text x="262" y="196" fontSize="11" fill="#5a4a2a" fontWeight="700">O</text>
+        <text x="196" y="128" fontSize="11" fill="#3a5a3a" fontWeight="700">CH₃</text>
+        <text x="110" y="196" fontSize="11" fill="#3a5a3a" fontWeight="700">CH₃</text>
+        <text x="180" y="290" textAnchor="middle" fontSize="12.5" fill="#5a4a2a" fontWeight="700">咖啡因（嘌呤类生物碱）</text>
+      </g>
+      {/* 植物端 */}
+      <g style={dim(active, 1)}>
+        <path d="M400 90 q -44 30 -50 84 q -4 46 30 66" fill="none" stroke="#3f7f3a" strokeWidth="6" strokeLinecap="round" />
+        <ellipse cx="356" cy="96" rx="30" ry="15" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="2" transform="rotate(-30 356 96)" />
+        <ellipse cx="390" cy="230" rx="26" ry="14" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="2" transform="rotate(20 390 230)" />
+        <circle cx="382" cy="160" r="9" fill="#8a5a3a" stroke="#5a3a2a" strokeWidth="1.8" />
+        <text x="352" y="66" fontSize="12.5" fill="#2f6f2a" fontWeight="700">咖啡·茶·可可</text>
+        <text x="300" y="288" fontSize="12" fill="#3f7f3a" fontWeight="600">嫩叶与种子浓度最高——驱杀昆虫</text>
+      </g>
+      {/* 人体作用 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="300" width="440" height="66" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">人体端：咖啡因"冒充"腺苷占用受体 → 困意信号被阻断 → 提神</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="11.5" fill="#a5761d">过量：心悸·失眠·依赖——代谢半衰期约 5 小时（下午的咖啡会"加班"到深夜）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">咖啡因 · 植物次生代谢物的攻与防（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'dungBeetle',
+    name: '蜣螂',
+    kicker: '鞘翅目 · 大自然的清道夫（课外拓展）',
+    intro: '蜣螂（屎壳郎）是地球上最敬业的"回收工程师"：把粪便滚成球推走埋藏，既当食物又是产卵床。它们能在夜里沿着银河的微光滚出直线，避免绕回粪堆——这是昆虫中首个被证实的"星空导航"。澳大利亚曾因牛粪堆积成灾专门进口蜣螂，可见分解者多么不可或缺。',
+    extension: true,
+    parts: [
+      { name: '滚粪球', desc: '头朝下、前足抱球、后足撑地倒推——直线前进防止迷路；粪球既是幼虫的"育婴房"也是口粮。' },
+      { name: '星空导航', desc: '夜间依靠银河等天光的偏振定位直线方向——2013 年实验证实，蜣螂成为已知唯一用星空导航的昆虫。' },
+      { name: '分解者角色', desc: '快速埋掉粪便：肥沃土壤、传播种子、切断苍蝇和寄生虫的生活史——草原健康的"守门员"。' },
+      { name: '力量纪录', desc: '能推动相当于自身体重 1000 倍的粪球——相对力量最强的动物之一。' },
+      { name: '生物防治案例', desc: '澳大利亚引入异国蜣螂处理堆积如山的牛粪——引进分解者治理生态问题的经典成功案例。' },
+    ],
+    Svg: DungBeetleSvg,
+  },
+  {
+    id: 'fetusPlacenta',
+    name: '胎儿与胎盘',
+    kicker: '生殖 · 母胎物质交换的"海关"（课外拓展）',
+    intro: '胎盘是胎儿与母体之间的"中转海关"：胎儿通过脐带与胎盘相连，母体血液中的氧气和养料经扩散进入胎儿血液，胎儿的二氧化碳和废物反向排出——但两者血液始终不直接混合。胎儿体内一半基因来自父方，对母体而言是"半同种异物"，胎盘的免疫屏障让它安然发育九个月。',
+    extension: true,
+    parts: [
+      { name: '胎盘结构', desc: '胎儿绒毛膜绒毛浸浴在母体血窦中：两层血管之间仅隔薄薄的组织——扩散交换高效进行。' },
+      { name: '脐带', desc: '一条脐静脉给胎儿送含氧血，两条脐动脉把胎儿的代谢废物送回胎盘——"三车道物资线"。' },
+      { name: '屏障与通道', desc: '氧气、葡萄糖、氨基酸可过；多数细菌被挡下；但病毒（风疹、艾滋）、酒精、药物能通过——孕妇用药须遵医嘱。' },
+      { name: '免疫的特殊性', desc: '胎儿一半基因来自父方却未被母体排斥：胎盘的免疫豁免机制是免疫学的重要课题。' },
+      { name: '羊水', desc: '胎儿悬浮在羊水中：缓冲撞击、恒温、允许自由活动以促进肌肉骨骼发育。' },
+    ],
+    Svg: FetusPlacentaSvg,
+  },
+  {
+    id: 'caffeine',
+    name: '咖啡因',
+    kicker: '次生代谢物 · 植物的"化学武器"与人类的"提神药"（课外拓展）',
+    intro: '咖啡、茶、可可都含咖啡因——它不是为人类准备的礼物，而是植物的防御武器：嫩叶和种子中浓度最高，啃食的昆虫会中毒麻痹。对人类而言，咖啡因的作用机制是"冒充"困意信号分子腺苷、抢先占住受体，让大脑收不到"该睡了"的通知——提神的本质是屏蔽，不是消除疲劳。',
+    extension: true,
+    parts: [
+      { name: '化学身份', desc: '嘌呤类生物碱（与 DNA 里的腺嘌呤是"亲戚"），天然存在于咖啡、茶、可可、可乐果等植物中。' },
+      { name: '植物的用途', desc: '次生代谢产物：高浓度下毒杀甲虫毛虫、落叶后渗入土壤抑制竞争者发芽——"化学战"防御。' },
+      { name: '人体作用机制', desc: '咖啡因与腺苷分子结构相似，占据腺苷受体却不触发困意——掩蔽疲劳信号，实际疲劳并未消除。' },
+      { name: '代谢与半衰期', desc: '肝脏代谢，半衰期约 5 小时——下午 4 点的一杯咖啡到晚上 9 点体内还剩一半，影响入睡。' },
+      { name: '适量原则', desc: '健康成人每日 ≤400 mg（约 3~4 杯咖啡）；过量致心悸、焦虑；青少年应严格限量。' },
+    ],
+    Svg: CaffeineSvg,
+  },
   {
     id: 'termite',
     name: '白蚁',

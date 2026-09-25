@@ -8,28 +8,28 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：hydroponics 缺素培养与无土栽培 ----------
-await page.goto(`${BASE}/lab?exp=hydroponics`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：balancedDiet 膳食营养配餐 ----------
+await page.goto(`${BASE}/lab?exp=balancedDiet`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('缺素培养与无土栽培');
+  results.experiment.open = text.includes('膳食营养配餐');
   const before = text;
   const beforeClick = await page.locator('main').innerText();
-  await page.getByRole('button', { name: /缺铁（-Fe）/ }).click();
-  await page.getByRole('button', { name: /培养一周/ }).click();
+  await page.locator('button', { hasText: '奶油面包' }).click();
   await page.waitForTimeout(400);
-  await page.getByRole('button', { name: /培养一周/ }).click();
+  const midText = await page.locator('main').innerText();
+  await page.locator('button', { hasText: '燕麦粥' }).click();
   await page.waitForTimeout(400);
   const afterClick = await page.locator('main').innerText();
-  results.experiment.interactive = beforeClick.includes('完全营养液') && afterClick.includes('新叶发黄') && afterClick.includes('难移动');
-  results.experiment.reference = afterClick.includes('考点');
+  results.experiment.interactive = midText.includes('血糖像坐过山车') && afterClick.includes('比例全部落在推荐区间');
+  results.experiment.reference = afterClick.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['termite', 'bloodTransfusion', 'dodder'];
+const SPECIMENS = ['dungBeetle', 'fetusPlacenta', 'caffeine'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -89,17 +89,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：hydroponics 实验页应挂载 rootTypes 图解
-await page.goto(`${BASE}/lab?exp=hydroponics`, { waitUntil: 'domcontentloaded' });
+// 图解卡：balancedDiet 实验页应挂载 vitamins 图解
+await page.goto(`${BASE}/lab?exp=balancedDiet`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.rootTypesDiagram = { found: t.includes('根'), ok: t.includes('根') };
+  results.specimens.vitaminsDiagram = { found: t.includes('维生素') || t.includes('营养'), ok: t.includes('维生素') || t.includes('营养') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.rootTypesDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.vitaminsDiagram?.ok;
 console.log('ALL_OK=' + allOk);
