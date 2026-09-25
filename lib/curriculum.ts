@@ -628,6 +628,7 @@ export type ExperimentId =
   | 'geneticsHistory'
   | 'foodPreserve'
   | 'dnaFingerprint'
+  | 'bloodPressure'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1186,6 +1187,13 @@ export const experimentMeta: Record<
     relatedModule: '基因工程与 PCR 技术',
     extension: true,
   },
+  bloodPressure: {
+    title: '血压的调节',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '运动·紧张·失血·药物四种事件的血压曲线与负反馈恢复。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1382,7 +1390,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'bloodSugarRegulation', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
   },
   {
     name: '生态',
@@ -1450,6 +1458,7 @@ export const experimentOrder: ExperimentId[] = [
   'apicalDominance',
   'phototropism',
   'bloodSugarRegulation',
+  'bloodPressure',
   'impulse',
   'reflexArc',
   'thyroidAxis',

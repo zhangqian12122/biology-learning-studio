@@ -5051,10 +5051,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -10279,7 +10279,169 @@ function AntibioticSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 鳄鱼（爬行纲的"例外"） ================= */
+
+function CrocodileSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 体形 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 220 Q 150 172 240 168 Q 330 166 366 196 Q 380 210 372 224 Q 300 248 200 246 Q 140 244 120 220 Z" fill="#6a8a5a" stroke="#3a5a2a" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M${196 + i * 34} 172 l 5 -12 l 5 12`} fill="#4d6a3a" stroke="#3a5a2a" strokeWidth="1.6" />
+        ))}
+        <text x="46" y="150" fontSize="12.5" fill="#3a5a2a" fontWeight="700">背部角质鳞甲 + 骨质脊棱</text>
+        <text x="248" y="300" fontSize="12.5" fill="#3a5a2a" fontWeight="700">侧扁的粗壮尾部（水中推进器）</text>
+      </g>
+      {/* 头部 */}
+      <g style={dim(active, 1)}>
+        <path d="M366 196 q 60 -22 104 -6 l 20 14 l -18 12 q -48 14 -106 -6 Z" fill="#6a8a5a" stroke="#3a5a2a" strokeWidth="2.6" />
+        <path d="M398 208 l 8 12 m 14 -10 l 8 12 m 14 -9 l 7 11" stroke="#e8e4d0" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="446" cy="196" r="4" fill="#1a2a1a" />
+        <text x="46" y="88" fontSize="12.5" fill="#3a5a2a" fontWeight="700">长吻·圆锥齿（咬住后翻滚撕扯）</text>
+        <text x="46" y="108" fontSize="12.5" fill="#3a5a2a">眼鼻位于头顶（潜伏水面下）</text>
+      </g>
+      {/* 四腔心 */}
+      <g style={dim(active, 2)}>
+        <rect x="46" y="176" width="40" height="40" rx="8" fill="#c94a4a" stroke="#8a2020" strokeWidth="2.2" />
+        <path d="M60 180 v 32 m -8 -16 h 24" stroke="#f0d0d0" strokeWidth="1.8" />
+        <text x="46" y="242" fontSize="12.5" fill="#8a2020" fontWeight="700">四个腔的心脏（爬行纲唯一）</text>
+        <text x="46" y="262" fontSize="12.5" fill="#8a2020">血液分隔更完全·代谢更旺盛</text>
+      </g>
+      {/* 育幼 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="300" width="440" height="50" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">母性关怀：守巢·听叫声破壳·衔幼鳄下水——爬行动物中罕见</text>
+        <text x="260" y="342" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">温度依赖型性别决定：巢温 31~32°C 上下分别孵出雌或雄</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">鳄鱼 · 爬行纲鳄目的"例外"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 大肠与阑尾 ================= */
+
+function LargeIntestineSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 大肠走形 */}
+      <g style={dim(active, 0)}>
+        <path d="M170 110 L 380 110 Q 404 110 404 134 L 404 190 Q 404 214 380 214 L 150 214 Q 126 214 126 238 L 126 270 Q 126 294 150 294 L 210 294"
+          fill="none" stroke="#c9a06a" strokeWidth="34" strokeLinecap="round" />
+        <path d="M170 110 L 380 110 Q 404 110 404 134 L 404 190 Q 404 214 380 214 L 150 214 Q 126 214 126 238 L 126 270 Q 126 294 150 294 L 210 294"
+          fill="none" stroke="#e0b878" strokeWidth="24" strokeLinecap="round" />
+        <text x="250" y="86" fontSize="12.5" fill="#a5763a" fontWeight="700">结肠（升→横→降→乙状）</text>
+        <text x="252" y="330" fontSize="12.5" fill="#a5763a" fontWeight="700">直肠（暂存粪便·排便反射）</text>
+        <line x1="212" y1="296" x2="238" y2="318" stroke="#a5763a" strokeWidth="1.2" />
+      </g>
+      {/* 盲肠与阑尾 */}
+      <g style={dim(active, 1)}>
+        <path d="M136 106 Q 108 112 110 138 Q 112 160 136 158 L 158 128 Q 152 108 136 106 Z" fill="#c9a06a" stroke="#a5763a" strokeWidth="2.6" />
+        <path d="M118 152 q -14 34 -6 62 q 14 -6 18 -26 q 4 -20 4 -34" fill="#b88a5a" stroke="#8a5a2a" strokeWidth="2.4" />
+        <text x="42" y="196" fontSize="12.5" fill="#8a5a2a" fontWeight="700">盲肠+阑尾</text>
+        <text x="42" y="216" fontSize="12.5" fill="#8a5a2a">阑尾是免疫器官（富含淋巴）</text>
+        <text x="42" y="236" fontSize="12.5" fill="#8a5a2a">梗阻发炎 → 转移性右下腹痛</text>
+      </g>
+      {/* 功能 */}
+      <g style={dim(active, 2)}>
+        <rect x="300" y="240" width="170" height="66" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="385" y="262" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">三大任务</text>
+        <text x="385" y="282" textAnchor="middle" fontSize="11" fill="#3f7f3a">吸收水分与无机盐</text>
+        <text x="385" y="298" textAnchor="middle" fontSize="11" fill="#3f7f3a">合成维生素 K · 形成粪便</text>
+      </g>
+      {/* 健康 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">膳食纤维增加残渣刺激蠕动 · 大肠癌早期信号：排便习惯改变·便血</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">大肠 · 水分回收站（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 生态系统的服务 ================= */
+
+function EcosystemServicesSvg({ active }: { active: number | null; open?: boolean }) {
+  const services = [
+    { n: '供给服务', ex: '粮食·淡水·木材·药材', c: '#3f7f3a' },
+    { n: '调节服务', ex: '调节气候·净化水气·防洪', c: '#2c5a84' },
+    { n: '支持服务', ex: '土壤形成·养分循环·传粉', c: '#8a671b' },
+    { n: '文化服务', ex: '游憩·审美·科研教育', c: '#7a4a8a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {services.map((sv, i) => (
+        <g key={sv.n} style={dim(active, i)}>
+          <rect x="36" y={50 + i * 60} width="300" height="50" rx="12" fill="#f6faf4" stroke={sv.c} strokeWidth="2.4" />
+          <text x="54" y={70 + i * 60} fontSize="13" fill={sv.c} fontWeight="800">{sv.n}</text>
+          <text x="54" y={90 + i * 60} fontSize="11" fill="#59767c">{sv.ex}</text>
+        </g>
+      ))}
+      {/* 价值示意 */}
+      <g style={dim(active, 2)}>
+        <path d="M380 96 q 34 -26 62 -8 q 24 16 4 38 q -24 24 -56 6 q -18 -14 -10 -36 Z" fill="#c9d8e8" stroke="#2c5a84" strokeWidth="2.2" />
+        <path d="M408 108 q 8 -12 0 -20" fill="none" stroke="#2c5a84" strokeWidth="2" />
+        <text x="352" y="170" fontSize="12.5" fill="#2c5a84" fontWeight="700">全球生态系统年服务价值</text>
+        <text x="352" y="190" fontSize="12.5" fill="#2c5a84" fontWeight="700">估算超过全球 GDP 总和</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="300" width="440" height="60" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">"看不见的免费账单"：破坏生态系统 = 巨额隐性负债</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">绿水青山就是金山银山——生态保护的经济逻辑（生态补偿·GEP 核算）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">生态系统的服务 · 自然对人类的馈赠（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'crocodile',
+    name: '鳄鱼',
+    kicker: '爬行纲 · 鳄目的"例外"（课外拓展）',
+    intro: '鳄鱼是爬行动物中的"高性能例外"：唯一拥有四个腔心脏的现生爬行动物，血液分隔更完全、代谢更旺盛；母鳄还会守巢护卵、听幼鳄叫声帮它们破壳下水——颠覆"爬行动物冷血无情"的刻板印象。',
+    extension: true,
+    parts: [
+      { name: '鳞甲与脊棱', desc: '背部角质鳞片下有骨质板甲，背部的角质脊棱既防御又调节浮力。' },
+      { name: '长吻与齿', desc: '圆锥形牙齿只会"钳咬"不会咀嚼，猎物靠翻滚撕扯成块；牙终生可更换（一生约换 50 次）。' },
+      { name: '四腔心脏', desc: '爬行纲中独一份：两心房两心室，动静脉血分隔完全——支持更活跃的水陆两栖生活。' },
+      { name: '半水生潜伏', desc: '眼、鼻孔、耳孔都排在头顶同一直线——身体完全没入水中也能看、听、呼吸。' },
+      { name: '温度决定性别', desc: '巢温约 31~32°C 是"分水岭"：偏暖多雄、偏凉多雌——全球变暖正威胁鳄类种群的性别比例。' },
+      { name: '育幼行为', desc: '母鳄守巢数月，听到幼鳄叫声会帮忙破壳并衔它们下水——爬行动物中少见的亲代抚育。' },
+    ],
+    Svg: CrocodileSvg,
+  },
+  {
+    id: 'largeIntestine',
+    name: '大肠与阑尾',
+    kicker: '消化管末端 · 水分回收站（课外拓展）',
+    intro: '大肠分盲肠、结肠、直肠三段，每天回收约 1.5 L 水分和无机盐，把食糜残渣"压缩"成粪便；肠道细菌在这里合成维生素 K。挂在盲肠末端的阑尾并非无用——它富含淋巴组织是免疫器官，只是发炎时会给你一场"转移性右下腹痛"。',
+    extension: true,
+    parts: [
+      { name: '结肠走形', desc: '升结肠→横结肠→降结肠→乙状结肠，形成"门"字形框架包围小肠。' },
+      { name: '吸收水分', desc: '食物残渣在大肠停留十几个小时，90% 以上的水分在此被回收——腹泻的本质就是水分来不及吸收。' },
+      { name: '菌群与维生素', desc: '大肠细菌合成维生素 K 和部分 B 族维生素供人体吸收——与"肠道菌群"标本互为补充。' },
+      { name: '阑尾', desc: '盲肠末端的细长盲管：富含淋巴组织参与免疫；粪石梗阻继发细菌感染即阑尾炎，典型表现是转移性右下腹痛。' },
+      { name: '排便反射', desc: '粪便进入直肠牵张感受器 → 传向脊髓低级中枢 → 大脑决定是否排便——又一例"低级中枢受高级中枢调控"。' },
+    ],
+    Svg: LargeIntestineSvg,
+  },
+  {
+    id: 'ecosystemServices',
+    name: '生态系统的服务',
+    kicker: '保护生物学 · 生态价值（课外拓展）',
+    intro: '生态系统默默为人类提供四类"服务"：供给服务（粮食淡水木材）、调节服务（调节气候净化环境）、支持服务（土壤形成养分循环传粉）和文化服务（游憩审美科研）。这些"看不见的账单"价值估算超过全球 GDP——保护生态不是慈善，而是守护人类自己的资产负债表。',
+    extension: true,
+    parts: [
+      { name: '供给服务', desc: '食物、淡水、木材、纤维、药材——最直观、最容易被计入 GDP 的一类。' },
+      { name: '调节服务', desc: '森林固碳调节气候、湿地净化水质、红树林消浪防洪——"看不见"却不可替代。' },
+      { name: '支持服务', desc: '土壤形成、养分循环、传粉与物种维持——支撑其他所有服务的基础性服务。' },
+      { name: '文化服务', desc: '自然景观的游憩与审美价值、科研教育价值——绿水青山的精神馈赠。' },
+      { name: '保护的经济逻辑', desc: '传粉昆虫支撑全球约三分之一农作物；破坏支持服务的代价远超短期开发收益——"绿水青山就是金山银山"。' },
+    ],
+    Svg: EcosystemServicesSvg,
+  },
   {
     id: 'beeHive',
     name: '蜜蜂',

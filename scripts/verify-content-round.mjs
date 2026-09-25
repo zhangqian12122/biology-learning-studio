@@ -8,29 +8,34 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：dnaFingerprint DNA 指纹与亲子鉴定 ----------
-await page.goto(`${BASE}/lab?exp=dnaFingerprint`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：bloodPressure 血压的调节 ----------
+await page.goto(`${BASE}/lab?exp=bloodPressure`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('DNA 指纹与亲子鉴定');
+  results.experiment.open = text.includes('血压的调节');
   const before = text;
-  await page.getByRole('button', { name: '候选父亲 A' }).click();
-  await page.getByRole('button', { name: /出具鉴定报告/ }).click();
+  await page.getByRole('button', { name: /剧烈运动/ }).click();
+  await page.getByRole('button', { name: /推进 10 min/ }).click();
   await page.waitForTimeout(400);
-  const reportA = await page.locator('main').innerText();
-  await page.getByRole('button', { name: '候选父亲 B' }).click();
-  await page.getByRole('button', { name: /出具鉴定报告/ }).click();
+  await page.getByRole('button', { name: /剧烈运动/ }).click();
+  await page.getByRole('button', { name: /推进 10 min/ }).click();
   await page.waitForTimeout(400);
-  const reportB = await page.locator('main').innerText();
-  results.experiment.interactive = reportA.includes('排除 A') && reportB.includes('支持 B');
-  results.experiment.reference = reportB.includes('判读逻辑');
+  const midText = await page.locator('main').innerText();
+  await page.getByRole('button', { name: /安静休息/ }).click();
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole('button', { name: /推进 10 min/ }).click();
+    await page.waitForTimeout(400);
+  }
+  const afterClick = await page.locator('main').innerText();
+  results.experiment.interactive = midText.includes('超出正常范围') && afterClick.includes('负反馈调节');
+  results.experiment.reference = afterClick.includes('实验原理');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['beeHive', 'tooth', 'antibiotic'];
+const SPECIMENS = ['crocodile', 'largeIntestine', 'ecosystemServices'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -90,17 +95,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 回归检查：pcr 实验页仍正常（dnaFingerprint 与其共用 PCR 原理）
-await page.goto(`${BASE}/lab?exp=pcr`, { waitUntil: 'domcontentloaded' });
+// 图解卡：bloodPressure 实验页应挂载 vessels 图解
+await page.goto(`${BASE}/lab?exp=bloodPressure`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.pcrRegression = { found: t.includes('PCR'), ok: t.includes('PCR') };
+  results.specimens.vesselsDiagram = { found: t.includes('血管') || t.includes('动脉'), ok: t.includes('血管') || t.includes('动脉') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.pcrRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.vesselsDiagram?.ok;
 console.log('ALL_OK=' + allOk);
