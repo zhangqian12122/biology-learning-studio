@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -13446,7 +13446,176 @@ function AutumnLeavesSvg({ active }: { active: number | null; open?: boolean }) 
   );
 }
 
+/* ================= 鸵鸟（最大的鸟·不会飞） ================= */
+
+function OstrichSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="230" cy="180" rx="92" ry="66" fill="#4a4a4a" stroke="#1a1a1a" strokeWidth="2.8" />
+        <path d="M200 150 q 60 -16 110 6" fill="none" stroke="#6a6a6a" strokeWidth="2.4" opacity="0.7" />
+        <path d="M318 196 q 30 10 42 34 l -10 6 q -22 -18 -40 -24" fill="#4a4a4a" stroke="#1a1a1a" strokeWidth="2.2" />
+        <text x="46" y="56" fontSize="12.5" fill="#1a1a1a" fontWeight="700">世界最大的鸟（可重 150 kg）</text>
+        <text x="356" y="170" fontSize="12" fill="#1a1a1a">羽毛无"飞行小钩"——不能飞</text>
+      </g>
+      {/* 头颈 */}
+      <g style={dim(active, 1)}>
+        <path d="M300 128 q 20 -40 34 -60" fill="none" stroke="#b5764a" strokeWidth="8" strokeLinecap="round" />
+        <ellipse cx="342" cy="60" rx="22" ry="14" fill="#b5764a" stroke="#7a4a2a" strokeWidth="2.4" />
+        <circle cx="336" cy="56" r="4.5" fill="#141414" />
+        <path d="M362 60 l 12 2 m -12 6 l 10 4" stroke="#7a4a2a" strokeWidth="2.2" strokeLinecap="round" />
+        <text x="60" y="82" fontSize="12.5" fill="#7a4a2a" fontWeight="700">小头长颈 · 大眼睛睫毛浓密</text>
+        <text x="60" y="98" fontSize="12" fill="#7a4a2a">视力极佳——"远望哨兵"</text>
+      </g>
+      {/* 腿 */}
+      <g style={dim(active, 2)}>
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${206 + i * 52} 244 q ${-4 + i * 6} 34 ${-10 + i * 8} 60`} fill="none" stroke="#b5764a" strokeWidth="9" strokeLinecap="round" />
+        ))}
+        {[0, 1].map((i) => (
+          <path key={`f${i}`} d={`M${194 + i * 50} 306 h 20`} stroke="#8a5a2a" strokeWidth="6" strokeLinecap="round" />
+        ))}
+        <text x="52" y="290" fontSize="12.5" fill="#7a4a2a" fontWeight="700">只有 2 个脚趾（ unique）· 奔跑 70 km/h</text>
+        <path d="M156 306 h 24 m 160 0 h 24" stroke="#7a4a2a" strokeWidth="5" strokeLinecap="round" />
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="322" width="440" height="46" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="342" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">"不会飞的鸟"失去飞行换来巨腿冲刺——机会成本式的演化权衡</text>
+        <text x="260" y="360" textAnchor="middle" fontSize="11" fill="#a5761d">公鸟孵卵守夜（羽毛拟态灌木）· 与蜂鸟（最小鸟）对比记忆</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">鸵鸟 · 平胸鸟类代表（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 痛觉（身体的警报系统） ================= */
+
+function PainReceptorSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 皮肤痛觉感受器 */}
+      <g style={dim(active, 0)}>
+        <path d="M80 120 h 360 q 14 0 14 14 v 56 q 0 14 -14 14 h -360 q -14 0 -14 -14 v -56 q 0 -14 14 -14 Z" fill="#f4d0b8" stroke="#a5765a" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <circle key={i} cx={120 + i * 80} cy={152} r="8" fill="#c94a4a" stroke="#8a2020" strokeWidth="1.8" />
+        ))}
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={`n${i}`} d={`M${120 + i * 80} 160 v 30`} stroke="#b0483a" strokeWidth="2.6" strokeLinecap="round" />
+        ))}
+        <text x="96" y="106" fontSize="12.5" fill="#8a2020" fontWeight="700">痛觉感受器（游离神经末梢）</text>
+        <text x="96" y="230" fontSize="12" fill="#8a5a3a">遍布皮肤·内脏·肌肉——"报警器"密布全身</text>
+      </g>
+      {/* 反射 */}
+      <g style={dim(active, 1)}>
+        <path d="M260 208 q 0 34 -30 48" fill="none" stroke="#4d7ea8" strokeWidth="3.4" strokeLinecap="round" />
+        <text x="60" y="266" fontSize="12.5" fill="#2c5a84" fontWeight="700">缩手反射快于"感到痛"——先撤手后觉痛（保命优先）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">痛觉 = 危险警报：先天性无痛觉症患者因感觉不到受伤而伤痕累累</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">痛觉没有"适应"（不会因持续刺激而忽略）——这是演化的"安全设计"</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">痛觉在大脑皮层产生——"幻觉肢痛"说明痛觉最终是大脑的"解读"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">痛觉 · 身体永不熄灭的"警报器"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 传粉者危机 ================= */
+
+function PollinatorDeclineSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 蜜蜂与花 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 230 q 60 -60 150 -50" fill="none" stroke="#3f7f3a" strokeWidth="8" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <ellipse key={i} cx={200 + i * 60} cy={160 + i * 12} rx="28" ry="16" fill="#f0a0c0" stroke="#c96a8a" strokeWidth="2.2" transform={`rotate(${i * 12} ${200 + i * 60} ${160 + i * 12})`} />
+        ))}
+        <ellipse cx="230" cy="150" rx="12" ry="8" fill="#e8c83a" stroke="#8a671b" strokeWidth="1.8" transform="rotate(-20 230 150)" />
+        {[0, 1].map((i) => (
+          <path key={`w${i}`} d={`M${226 + i * 8} 142 q 6 -8 14 -6`} fill="none" stroke="#d8d8f0" strokeWidth="2" />
+        ))}
+        <text x="352" y="150" fontSize="12.5" fill="#8a671b" fontWeight="700">全球约 75% 的农作物</text>
+        <text x="352" y="170" fontSize="12" fill="#8a671b">在不同程度上依赖动物传粉</text>
+      </g>
+      {/* 威胁因素 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="196" width="130" height="96" rx="10" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.2" />
+        <text x="111" y="220" textAnchor="middle" fontSize="11.5" fill="#8a3a2a" fontWeight="800">危机三重奏</text>
+        <text x="111" y="242" textAnchor="middle" fontSize="10.5" fill="#a5533c">农药（新烟碱类）</text>
+        <text x="111" y="262" textAnchor="middle" fontSize="10.5" fill="#a5533c">栖息地破碎化</text>
+        <text x="111" y="282" textAnchor="middle" fontSize="10.5" fill="#a5533c">气候变化错峰</text>
+      </g>
+      {/* 保护 */}
+      <g style={dim(active, 2)}>
+        <rect x="196" y="196" width="130" height="96" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="261" y="220" textAnchor="middle" fontSize="11.5" fill="#2f6f2a" fontWeight="800">我们能做到</text>
+        <text x="261" y="242" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">种植多样蜜源植物</text>
+        <text x="261" y="262" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">减少花园农药使用</text>
+        <text x="261" y="282" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">支持生态农业</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="346" y="196" width="130" height="96" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="411" y="220" textAnchor="middle" fontSize="11.5" fill="#8a671b" fontWeight="800">没有免费午餐</text>
+        <text x="411" y="242" textAnchor="middle" fontSize="10.5" fill="#a5761d">全球 1/3 粮食作物</text>
+        <text x="411" y="262" textAnchor="middle" fontSize="10.5" fill="#a5761d">依赖传粉者</text>
+        <text x="411" y="282" textAnchor="middle" fontSize="10.5" fill="#a5761d">经济价值数千万亿</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">传粉者危机 · 保护生物学（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'ostrich',
+    name: '鸵鸟',
+    kicker: '鸟纲 · 不会飞的"奔跑冠军"（课外拓展）',
+    intro: '鸵鸟是世界最大的鸟类（可重 150 千克、高 2.7 米），也是彻底放弃飞行的"平胸鸟"：羽毛没有互相勾连的小钩，不能形成飞行翼面。但它把"飞行预算"全投给了双腿——只有 2 个脚趾、长腿肌肉发达，冲刺速度可达 70 km/h，一步能跨 3 米多。与蜂鸟（最小）相对，它是鸟类体型的另一极端。',
+    extension: true,
+    parts: [
+      { name: '体型之最', desc: '雄鸟可重 150 千克、高 2.7 米——最大的现生鸟类，蛋也是所有鸟蛋中最大的。' },
+      { name: '不飞的翅膀', desc: '平胸鸟类羽毛蓬松没有"飞行小钩"，翅膀用于平衡转弯和求偶炫耀，而非飞行。' },
+      { name: '两趾长腿', desc: '鸟类中独一无二的 2 趾足（减少重量）、腿肌占体重大——冲刺 70 km/h、可持续 30 分钟。' },
+      { name: '长颈哨兵', desc: '长颈与大眼让它成为草原"瞭望塔"——常常与斑马羚羊混群，为大家预警天敌（互利共生）。' },
+      { name: '公鸟孵卵', desc: '白天雌鸟孵卵（羽色似沙），夜间公鸟接班（黑羽隐蔽）——双亲分工的育幼策略。' },
+    ],
+    Svg: OstrichSvg,
+  },
+  {
+    id: 'painReceptor',
+    name: '痛觉',
+    kicker: '感觉器官 · 永不熄灭的"警报器"（课外拓展）',
+    intro: '痛觉是身体的"警报系统"：游离神经末梢（痛觉感受器）遍布皮肤、内脏和肌肉，组织受损时释放的化学物质激活它们，冲动传向脊髓与大脑——"疼"了才懂得躲避。缩手反射甚至在"感到痛"之前就完成（保命优先）。先天性无痛觉症患者因感觉不到受伤而伤痕累累——疼痛虽苦，却是演化的恩赐。',
+    extension: true,
+    parts: [
+      { name: '游离神经末梢', desc: '痛觉感受器是裸露的神经末梢：高温、强机械力、化学物质都能激活它们。' },
+      { name: '痛觉 vs 触觉', desc: '触觉有"适应"（衣服压身久而不觉），痛觉几乎不适应——警报不能被"习惯"掉。' },
+      { name: '反射优先', desc: '缩手反射由脊髓完成，快于大脑"解读"出痛觉——先撤手、后觉得疼的顺序是保命设计。' },
+      { name: '大脑的解读', desc: '痛觉最终在大脑皮层产生——截肢者仍觉"已失去的肢体疼痛"（幻觉肢痛）证明痛觉是脑的产物。' },
+      { name: '无痛觉的代价', desc: '先天性无痛觉症因感觉不到骨折、烫伤、内脏病变而危及生命——疼痛是保护性的。' },
+    ],
+    Svg: PainReceptorSvg,
+  },
+  {
+    id: 'pollinatorDecline',
+    name: '传粉者危机',
+    kicker: '保护生物学 · 蜜蜂在"求救"（课外拓展）',
+    intro: '全球约 75% 的农作物在不同程度上依赖动物传粉——蜜蜂、熊蜂、蝴蝶、蜂鸟都是"农业员工"。但农药（新烟碱类影响蜜蜂导航）、栖息地破碎化、气候变化导致的"花期错峰"正让传粉者数量下降。传粉者危机不只是"没蜂蜜吃"：全球三分之一粮食作物依赖传粉，这是一个关乎粮食安全的生态问题。',
+    extension: true,
+    parts: [
+      { name: '传粉服务', desc: '全球约 75% 农作物依赖动物传粉，估计年经济价值达数千亿美元——"免费农业劳动力"。' },
+      { name: '危机因素', desc: '新烟碱类农药损害蜜蜂导航与免疫；单一化种植减少蜜源；气候变暖使花期与传粉者活动"错峰"。' },
+      { name: '蜂群崩溃', desc: '蜂巢中工蜂集体消失（CCD）现象在多国报告——病原体、农药、营养压力可能"多重打击"。' },
+      { name: '传粉者多样性', desc: '野生传粉者（独居蜂、食蚜蝇、蝴蝶）与蜜蜂同样重要——保护它们的巢址与蜜源植物是关键。' },
+      { name: '个人行动', desc: '阳台种花（薄荷·薰衣草·百日草）、少用杀虫剂、支持本地蜂蜜——每个人都能当"传粉者盟友"。' },
+    ],
+    Svg: PollinatorDeclineSvg,
+  },
   {
     id: 'dolphin',
     name: '海豚',
@@ -13721,7 +13890,7 @@ export const SPECIMENS: Specimen[] = [
     id: 'shark',
     name: '鲨鱼',
     kicker: '软骨鱼纲 · 4 亿年的海洋猎手（课外拓展）',
-    intro: '鲨鱼与我们熟悉的鲤鱼分属鱼类两大分支：它的骨骼全由软骨构成（硬骨鱼是硬骨），没有鳔，靠不断的游动和富含油脂的巨大肝脏获得浮力。鲨鱼的"黑科技"很多：多排可终生更换的三角齿、感知水波振动的侧线系统，甚至能探测猎物肌肉电场的罗伦氏壶腹——4 亿年来几乎" unchanged "的顶级捕食设计。',
+    intro: '鲨鱼与我们熟悉的鲤鱼分属鱼类两大分支：它的骨骼全由软骨构成（硬骨鱼是硬骨），没有鳔，靠不断的游动和富含油脂的巨大肝脏获得浮力。鲨鱼的"黑科技"很多：多排可终生更换的三角齿、感知水波振动的侧线系统，甚至能探测猎物肌肉电场的罗伦氏壶腹——4 亿年来几乎"没变样"的顶级捕食设计。',
     extension: true,
     parts: [
       { name: '软骨骨骼', desc: '骨骼全为软骨（钙化增强）：比硬骨轻而有弹性——软骨鱼纲与硬骨鱼纲的根本区别。' },

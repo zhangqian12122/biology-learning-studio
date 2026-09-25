@@ -647,6 +647,7 @@ export type ExperimentId =
   | 'bloodRoutine'
   | 'ecoStability'
   | 'algalBloom'
+  | 'invasiveSim'
   | 'energyBalance'
   | 'rhIncompatibility'
   | 'hibernation'
@@ -1355,6 +1356,13 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态保护与人与自然',
   },
+  invasiveSim: {
+    title: '生物入侵模拟',
+    kicker: '选择性必修 2 · 生态',
+    description: '水葫芦入侵湿地：三种应对策略下入侵种与本地种的较量。',
+    relatedBook: 'ecology',
+    relatedModule: '生态保护与人与自然',
+  },
   energyBalance: {
     title: '能量平衡与体重管理',
     kicker: '健康与营养 · 课外拓展',
@@ -1617,7 +1625,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'gauseCompetition', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'gauseCompetition', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim'],
   },
   {
     name: '生物技术',
@@ -1716,6 +1724,7 @@ export const experimentOrder: ExperimentId[] = [
   'biocontrol',
   'waterQuality',
   'algalBloom',
+  'invasiveSim',
   'ecologicalNiche',
   'foodChain',
   'biomagnification',
