@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -11485,7 +11485,177 @@ function SlimeMoldSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 寄居蟹（背着"房子"的搬家高手） ================= */
+
+function HermitCrabSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 螺壳 */}
+      <g style={dim(active, 0)}>
+        <path d="M330 220 q -30 -110 60 -130 q 80 -18 96 52 q 12 58 -40 92 q -50 32 -116 -14 Z" fill="#d8a860" stroke="#8a6a2a" strokeWidth="3" />
+        <path d="M352 214 q -16 -82 48 -98 q 56 -12 68 40 q 8 44 -34 70 q -42 24 -82 -12 Z" fill="#e8c880" stroke="#8a6a2a" strokeWidth="1.8" />
+        <path d="M420 104 q 18 4 20 22" fill="none" stroke="#8a6a2a" strokeWidth="4" strokeLinecap="round" />
+        <text x="46" y="66" fontSize="12.5" fill="#8a6a2a" fontWeight="700">螺壳（别人用过的"二手房"）</text>
+      </g>
+      {/* 寄居蟹身体 */}
+      <g style={dim(active, 1)}>
+        <path d="M240 214 q -20 -24 6 -40 q 18 -10 34 4 q 12 12 4 30 q -12 22 -44 6 Z" fill="#c96a4a" stroke="#8a3a2a" strokeWidth="2.4" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${244 + i * 10} 172 q 2 -12 12 -14`} fill="none" stroke="#8a3a2a" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        <path d="M242 218 q -16 22 -40 24 q -18 0 -20 -14 q 22 0 38 -18" fill="#c96a4a" stroke="#8a3a2a" strokeWidth="2.2" />
+        <path d="M238 226 q -30 -6 -52 8 m 54 -4 q -16 18 -40 22" fill="none" stroke="#8a3a2a" strokeWidth="4" strokeLinecap="round" />
+        <path d="M300 210 q 24 -8 44 -4 m -44 14 q 20 2 40 10" fill="none" stroke="#8a3a2a" strokeWidth="3.4" strokeLinecap="round" />
+        <text x="60" y="150" fontSize="12.5" fill="#8a3a2a" fontWeight="700">柔软的螺旋腹部</text>
+        <text x="60" y="170" fontSize="12.5" fill="#8a3a2a">正好卡进螺壳的螺旋腔</text>
+        <text x="60" y="196" fontSize="12.5" fill="#8a3a2a" fontWeight="700">尾肢钩住壳轴·紧"锁门"</text>
+      </g>
+      {/* 海葵共生 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2].map((i) => (
+          <ellipse key={i} cx={318 + i * 26} cy={196 - i * 6} rx="14" ry="9" fill="#b87ac9" stroke="#7a4a8a" strokeWidth="1.8" />
+        ))}
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${314 + i * 14} 182 q 2 -10 8 -12`} fill="none" stroke="#c99ad8" strokeWidth="2" strokeLinecap="round" />
+        ))}
+        <text x="96" y="246" fontSize="12.5" fill="#7a4a8a" fontWeight="700">壳上共生的海葵：</text>
+        <text x="96" y="266" fontSize="12.5" fill="#7a4a8a">刺细胞帮"房东"御敌，海葵搭车觅食</text>
+      </g>
+      {/* 特征 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="306" width="440" height="56" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="330" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">换壳仪式：排队按体型"以大换小"——空壳市场的"链条交换"</text>
+        <text x="260" y="350" textAnchor="middle" fontSize="11.5" fill="#537078">种间关系三连：占据螺壳（种间竞争）· 与海葵互利共生 · 躲避捕食者</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">寄居蟹 · 背着房子的甲壳类（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 发烧（体温调定点上移） ================= */
+
+function FeverSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 体温曲线 */}
+      <g style={dim(active, 0)}>
+        <path d="M60 150 Q 130 148 180 132 Q 240 110 300 130 Q 360 150 400 142" fill="none" stroke="#b0483a" strokeWidth="3.4" />
+        <path d="M60 190 h 340" stroke="#3f7f3a" strokeWidth="2" strokeDasharray="7 5" />
+        <text x="404" y="194" fontSize="10" fill="#2f6f2a" fontWeight="700">37°C</text>
+        <text x="60" y="120" fontSize="12.5" fill="#8a671b" fontWeight="700">致热原 → 下丘脑调定点上移 → 发烧</text>
+        <text x="60" y="220" fontSize="12" fill="#4b6c73">体温调定点的"目标温度"被重设，身体主动产热"烧"上去</text>
+      </g>
+      {/* 免疫意义 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="244" width="200" height="70" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="146" y="268" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">适度发烧是"帮忙"</text>
+        <text x="146" y="290" textAnchor="middle" fontSize="11" fill="#3f7f3a">增强免疫细胞活性</text>
+        <text x="146" y="308" textAnchor="middle" fontSize="11" fill="#3f7f3a">抑制部分病原体繁殖</text>
+      </g>
+      {/* 注意 */}
+      <g style={dim(active, 2)}>
+        <rect x="274" y="244" width="200" height="70" rx="10" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.2" />
+        <text x="374" y="268" textAnchor="middle" fontSize="12" fill="#8a3a2a" fontWeight="800">过高则危险</text>
+        <text x="374" y="290" textAnchor="middle" fontSize="11" fill="#a5533c">&gt;39~40°C 影响酶与神经</text>
+        <text x="374" y="308" textAnchor="middle" fontSize="11" fill="#a5533c">高热惊厥需及时降温就医</text>
+      </g>
+      {/* 机制 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="40" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">寒战（骨骼肌产热）+ 皮肤血管收缩（散热减少）= 体温冲向新调定点</text>
+        <text x="260" y="364" textAnchor="middle" fontSize="11" fill="#a5761d">退烧 = 调定点回落 → 出汗散热——"捂汗"并不能治发烧</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">发烧 · 调定点学说（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 景天酸代谢（CAM） ================= */
+
+function CamPlantSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 菠萝/龙舌兰 */}
+      <g style={dim(active, 0)}>
+        <path d="M240 250 q -70 -14 -80 -90 q -6 -58 40 -96 q 60 -46 120 -6 q 46 34 40 96 q -10 76 -80 96 q -22 6 -40 0 Z" fill="#7ab86a" stroke="#2f6f2a" strokeWidth="2.8" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M300 ${110 + i * 30} l 40 -14 m -40 14 l 44 2`} stroke="#4a8a3a" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        <text x="368" y="120" fontSize="12.5" fill="#2f6f2a" fontWeight="700">菠萝/龙舌兰/多肉</text>
+        <text x="368" y="140" fontSize="12.5" fill="#2f6f2a">CAM 植物：夜间开气孔</text>
+      </g>
+      {/* 昼夜分工 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="86" width="150" height="60" rx="10" fill="#1a2632" stroke="#0e1620" strokeWidth="2.2" />
+        <text x="121" y="110" textAnchor="middle" fontSize="11.5" fill="#c9d8e8" fontWeight="800">夜 间：开气孔</text>
+        <text x="121" y="132" textAnchor="middle" fontSize="10.5" fill="#8a9aa8">吸入 CO₂ → 苹果酸储存</text>
+        <rect x="46" y="160" width="150" height="60" rx="10" fill="#f4d06a" stroke="#c9a05a" strokeWidth="2.2" />
+        <text x="121" y="184" textAnchor="middle" fontSize="11.5" fill="#8a5a1d" fontWeight="800">白 天：关气孔</text>
+        <text x="121" y="206" textAnchor="middle" fontSize="10.5" fill="#8a671b">苹果酸分解释 CO₂ → 光合</text>
+      </g>
+      {/* 机制图 */}
+      <g style={dim(active, 2)}>
+        <path d="M250 200 h 130 q 40 0 40 -36 q 0 -30 -30 -34" fill="none" stroke="#8a671b" strokeWidth="2.4" strokeDasharray="6 4" />
+        <path d="M390 130 l 8 -6 m -8 6 l 10 2" fill="none" stroke="#8a671b" strokeWidth="2" />
+        <text x="316" y="230" fontSize="12" fill="#8a671b" fontWeight="700">CO₂ 夜储昼用——"囤粮过沙漠"</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="252" width="440" height="66" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="276" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">水分账本：白天高温开孔的失水量是夜间的数倍——CAM 把气孔开在凉快的夜里</text>
+        <text x="260" y="298" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">代价：生长缓慢（光合"库存"有限）——适应干旱的"保水优先"策略</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">景天酸代谢 · 干旱环境的光合变招（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'hermitCrab',
+    name: '寄居蟹',
+    kicker: '甲壳类 · 背着"二手房子"的搬家高手（课外拓展）',
+    intro: '寄居蟹的腹部柔软，没有自己的硬壳护身——它想出的办法是"住进别人用过的螺壳"：柔软的螺旋腹部正好卡进壳腔，尾肢钩住壳轴，大螯一收就"关门"。遇到更好的空壳还会排队按体型"以大换小"；不少个体背上还养着海葵，用刺细胞当"保镖"，组成一套精妙的种间关系组合。',
+    extension: true,
+    parts: [
+      { name: '占螺为壳', desc: '利用海螺死后留下的空壳保护柔软腹部——遇到危险整只缩入，螯足当"门板"封口。' },
+      { name: '换壳链条', desc: '同种个体按体型排队，新壳出现时依次"以大换小"——空壳资源在群体中链式流转。' },
+      { name: '与海葵共生', desc: '把海葵驮在壳上：海葵的刺细胞帮御敌，寄居蟹移动带海葵"觅食旅游"——互利共生。' },
+      { name: '身体特化', desc: '腹部长而柔软、不对称（适应螺壳螺旋腔）；左螯常大于右螯——形态为"住址"而改变。' },
+      { name: '种间关系清单', desc: '与螺壳（竞争使用）、与海葵（互利共生）、与捕食者（躲避）——一只小蟹演绎全套生态关系。' },
+    ],
+    Svg: HermitCrabSvg,
+  },
+  {
+    id: 'fever',
+    name: '发烧',
+    kicker: '稳态调节 · 体温调定点上移（课外拓展）',
+    intro: '发烧不是"体温调节失灵"，而是调节系统被"重新设定"：病原体致热原让下丘脑的体温调定点上移，身体便主动产热（寒战）、减少散热（皮肤血管收缩），把体温"烧"到新目标——这个区间里免疫细胞更活跃、部分病原体繁殖受抑。但超过 39~40°C 就开始伤及自身酶与神经，需要科学退热。',
+    extension: true,
+    parts: [
+      { name: '调定点学说', desc: '下丘脑体温调节中枢设有"目标温度"：致热原把它从 37°C 上调，机体误以为"冷"而主动升温。' },
+      { name: '产热与散热', desc: '寒战是骨骼肌快速收缩产热；皮肤血管收缩、手脚冰凉是减少散热——"打寒战"往往是要发烧的信号。' },
+      { name: '免疫意义', desc: '适度发热增强白细胞吞噬与增殖、干扰病原体繁殖——是进化保留下来的防御策略。' },
+      { name: '过热的危险', desc: '超过 39~40°C 影响酶活性与神经系统（高热惊厥）；体温过高需物理降温并就医。' },
+      { name: '退热的真相', desc: '退烧药让调定点回落，身体靠出汗散热降温——"捂汗"反而阻碍散热，并不是退烧的正确方式。' },
+    ],
+    Svg: FeverSvg,
+  },
+  {
+    id: 'camPlant',
+    name: '景天酸代谢（CAM）',
+    kicker: '光合作用 · 干旱环境的"夜班模式"（课外拓展）',
+    intro: '菠萝、龙舌兰和多肉植物把光合作用玩出了"夜班"花样：凉爽的夜里才打开气孔，把二氧化碳固定成苹果酸储存在液泡中；白天烈日当空时气孔紧闭保水，苹果酸分解释放 CO₂ 供给光反应之后的暗反应。这套景天酸代谢（CAM）让它们在沙漠里"保水优先"，代价是生长极其缓慢。',
+    extension: true,
+    parts: [
+      { name: '夜间开孔', desc: '夜凉气孔开放：气孔开度小、失水少，却能持续吸入 CO₂——把"呼吸门户"开在安全的时段。' },
+      { name: 'CO₂ 囤积', desc: 'CO₂ 在 PEP 羧化酶作用下固定成苹果酸，储入液泡过夜——相当于"先囤原料，白天再加工"。' },
+      { name: '白天关孔', desc: '白天光反应照常进行，苹果酸分解释放 CO₂ 供暗反应——气孔紧闭几乎不失水。' },
+      { name: '适应性代价', desc: '液泡容量有限，夜间固定的 CO₂ 总量少——CAM 植物普遍生长缓慢，是"保水优先"的权衡。' },
+      { name: '演化意义', desc: 'CAM 与 C4 途径是植物应对"高温干旱但必须光合"的两套独立方案——同一路径的殊途同归。' },
+    ],
+    Svg: CamPlantSvg,
+  },
   {
     id: 'mantisShrimp',
     name: '雀尾螳螂虾',

@@ -8,29 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：immobilizedEnzyme 固定化酶与连续生产 ----------
-await page.goto(`${BASE}/lab?exp=immobilizedEnzyme`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：humanGenome 人类基因组计划 ----------
+await page.goto(`${BASE}/lab?exp=humanGenome`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('固定化酶与连续生产');
+  results.experiment.open = text.includes('人类基因组计划');
   const before = text;
-  for (let i = 0; i < 4; i++) {
-    await page.getByRole('button', { name: /推进工序/ }).click();
-    await page.waitForTimeout(400);
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole('button', { name: /推进年代/ }).evaluate((el) => (el).click());
+    await page.waitForTimeout(450);
   }
   const afterClick = await page.locator('main').innerText();
-  await page.getByRole('button', { name: /再生产一批/ }).click();
-  await page.waitForTimeout(400);
-  const moreText = await page.locator('main').innerText();
-  results.experiment.interactive = afterClick.includes('果葡糖浆') && moreText.includes('已生产 2 批');
-  results.experiment.reference = moreText.includes('注意事项');
+  results.experiment.interactive = afterClick.includes('读懂') && afterClick.includes('精准医疗') && afterClick.includes('千人基因组');
+  results.experiment.reference = afterClick.includes('意义与考点');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['mantisShrimp', 'woundHealing', 'slimeMold'];
+const SPECIMENS = ['hermitCrab', 'fever', 'camPlant'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -90,17 +87,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：immobilizedEnzyme 实验页应挂载 enzymeModel 图解
-await page.goto(`${BASE}/lab?exp=immobilizedEnzyme`, { waitUntil: 'domcontentloaded' });
+// 图解卡：humanGenome 实验页应挂载 karyotype 图解
+await page.goto(`${BASE}/lab?exp=humanGenome`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.enzymeModelDiagram = { found: t.includes('酶'), ok: t.includes('酶') };
+  results.specimens.karyotypeDiagram = { found: t.includes('染色体') || t.includes('核型'), ok: t.includes('染色体') || t.includes('核型') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.enzymeModelDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.karyotypeDiagram?.ok;
 console.log('ALL_OK=' + allOk);

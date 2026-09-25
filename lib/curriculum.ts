@@ -638,6 +638,7 @@ export type ExperimentId =
   | 'hydroponics'
   | 'balancedDiet'
   | 'immobilizedEnzyme'
+  | 'humanGenome'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1271,6 +1272,14 @@ export const experimentMeta: Record<
     relatedModule: '发酵工程与过程控制',
     extension: true,
   },
+  humanGenome: {
+    title: '人类基因组计划',
+    kicker: '分子生物学 · 课外拓展',
+    description: '六国测 24 条染色体：桑格法+霰弹法拼出 30 亿碱基对的"生命天书"。',
+    relatedBook: 'technology',
+    relatedModule: '基因工程与 PCR 技术',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1477,7 +1486,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'immobilizedEnzyme', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'immobilizedEnzyme', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'humanGenome', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
   },
 ];
 
@@ -1578,6 +1587,7 @@ export const experimentOrder: ExperimentId[] = [
   'pcr',
   'gelElectrophoresis',
   'dnaFingerprint',
+  'humanGenome',
   'animalCellCulture',
   'embryoTransfer',
   'nuclearTransfer',
