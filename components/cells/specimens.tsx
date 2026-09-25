@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -12449,7 +12449,158 @@ function TulipBulbSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 蜜獾（无所畏惧的"平头哥"） ================= */
+
+function HoneyBadgerSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 220 q -8 -54 70 -62 q 100 -10 190 10 q 46 10 44 40 q -4 34 -60 40 q -120 12 -190 -4 q -50 -10 -54 -24 Z" fill="#3a3a3a" stroke="#1a1a1a" strokeWidth="2.8" />
+        <path d="M150 176 q 80 -26 220 -12 q 40 4 54 18 l -6 16 q -120 -20 -220 -6 q -40 6 -50 -4 Z" fill="#e8e4d8" stroke="#a5a090" strokeWidth="2.2" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${170 + i * 60} 244 q 6 10 2 18 m 16 -14 q 6 10 2 18`} fill="none" stroke="#1a1a1a" strokeWidth="3.4" strokeLinecap="round" />
+        ))}
+        <text x="392" y="240" fontSize="12.5" fill="#1a1a1a" fontWeight="700">背部银灰·腹面黑色</text>
+      </g>
+      {/* 头部 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="132" cy="170" rx="36" ry="26" fill="#3a3a3a" stroke="#1a1a1a" strokeWidth="2.6" />
+        <path d="M104 178 q -14 8 -18 18 l 24 6 q 8 -10 8 -20" fill="#e8e4d8" stroke="#a5a090" strokeWidth="2" />
+        <circle cx="112" cy="162" r="4" fill="#141414" />
+        <path d="M118 146 q 4 -14 14 -18" fill="none" stroke="#1a1a1a" strokeWidth="2.4" strokeLinecap="round" />
+        <text x="56" y="120" fontSize="12.5" fill="#1a1a1a" fontWeight="700">"平头哥"：头顶扁平·利爪利齿</text>
+        <text x="56" y="140" fontSize="12.5" fill="#1a1a1a">敢与狮子对视·追击毒蛇为食</text>
+      </g>
+      {/* 技能 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">"技能包"：厚皮可反咬 · 抗蛇毒 · 会用工具（叠石够高处）</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">食谱：昆虫·啮齿类·蛇·蜂蜜（引渡 honey guide 蜜鴷合作"指路"）</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">所谓"无所畏惧"：体型小、防御强、代谢猛——进攻是最好的防御</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蜜獾 · 鼬科"平头哥"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 黑色素与晒伤 ================= */
+
+function MelaninSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 皮肤剖面 */}
+      <g style={dim(active, 0)}>
+        <path d="M80 130 h 360 q 14 0 14 14 v 60 q 0 14 -14 14 h -360 q -14 0 -14 -14 v -60 q 0 -14 14 -14 Z" fill="#f4d0b8" stroke="#a5765a" strokeWidth="2.8" />
+        <path d="M66 218 h 388 v 30 q 0 14 -14 14 h -360 q -14 0 -14 -14 Z" fill="#f8e4d4" stroke="#c99a7a" strokeWidth="2" />
+        <text x="96" y="156" fontSize="11.5" fill="#8a5a3a" fontWeight="700">表皮（黑色素细胞在此）</text>
+        <text x="96" y="240" fontSize="11.5" fill="#8a5a3a" fontWeight="700">真皮（血管·神经·感受器）</text>
+      </g>
+      {/* 黑色素细胞 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <circle cx={170 + i * 90} cy={152} r="9" fill="#5a3a2a" stroke="#3a2a1a" strokeWidth="1.6" />
+            {[0, 1, 2, 3].map((j) => (
+              <path key={j} d={`M${170 + i * 90} 152 l ${Math.cos((j * Math.PI) / 2) * 18} ${Math.sin((j * Math.PI) / 2) * 18}`} stroke="#5a3a2a" strokeWidth="2" strokeLinecap="round" />
+            ))}
+          </g>
+        ))}
+        <text x="400" y="140" fontSize="12.5" fill="#5a3a2a" fontWeight="700">UV 照射 → 黑色素</text>
+        <text x="400" y="160" fontSize="12.5" fill="#5a3a2a" fontWeight="700">增多（晒黑的本质）</text>
+        <text x="374" y="180" fontSize="11.5" fill="#8a5a3a">天然"遮阳伞"包裹细胞核</text>
+      </g>
+      {/* 肤色演化 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">肤色演化的地理逻辑：强紫外地区深色（防叶酸分解）· 弱紫外地区浅色（保维生素 D 合成）</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">晒伤 = UV 破坏细胞 DNA 的炎症警报——反复晒伤显著升高皮肤癌风险</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">防晒的本质：给"分子防护伞"减负——硬防晒（衣帽）优于防晒霜</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">黑色素 · 肤色与紫外线的演化（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 空气凤梨（不用土的植物） ================= */
+
+function AirPlantSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 枝头附生 */}
+      <g style={dim(active, 0)}>
+        <path d="M100 230 q 40 -60 160 -66 q 120 -6 190 -40" fill="none" stroke="#8a6a3a" strokeWidth="14" strokeLinecap="round" />
+        <path d="M180 210 q 30 -20 70 -18" fill="none" stroke="#6a8a4a" strokeWidth="2.4" opacity="0.7" />
+        <text x="336" y="100" fontSize="12.5" fill="#8a6a3a" fontWeight="700">附生在树枝·电线甚至岩石上</text>
+        <text x="356" y="120" fontSize="12.5" fill="#8a6a3a" fontWeight="700">完全不需要土壤！</text>
+      </g>
+      {/* 空气凤梨本体 */}
+      <g style={dim(active, 1)}>
+        <path d="M250 190 q -30 -60 -70 -74 m 70 74 q -6 -70 -34 -96 m 34 96 q 10 -66 44 -88 m -44 88 q 26 -40 66 -46" fill="none" stroke="#8ab86a" strokeWidth="5" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${230 + i * 20} ${116 + i * 14} q 6 -12 16 -14`} fill="none" stroke="#a8d888" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        <text x="60" y="130" fontSize="12.5" fill="#4a8a3a" fontWeight="700">银灰色绒毛鳞叶</text>
+        <text x="60" y="150" fontSize="12" fill="#4a8a3a">叶面吸收水分与灰尘养分</text>
+      </g>
+      {/* 机制 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">附生 ≠ 寄生：只"借宿"不"抢食"——不从宿主夺取养分</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">银色鳞毛（盾状毛）捕获空气中的水汽与尘埃养分；根仅作固定</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">趋同案例：雨林的附生兰·鸟巢蕨——"上树"只为争取光照</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">空气凤梨 · 附生植物的代表（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'honeyBadger',
+    name: '蜜獾',
+    kicker: '鼬科 · 无所畏惧的"平头哥"（课外拓展）',
+    intro: '蜜獾是非洲草原上"最不好惹的小个子"：皮肤厚而松弛（被咬住还能反咬），对蛇毒有部分抗性，甚至会用石块、树枝当工具。它敢追着狮子跑、把毒蛇当辣条吃，"平头哥"的名号来自那股天不怕地不怕的劲头。它还爱吃蜂蜜，常跟着一种叫"蜜鴷"的小鸟合作——蜜鴷引路、蜜獾开路，共享蜂巢大餐。',
+    extension: true,
+    parts: [
+      { name: '防御装备', desc: '皮肤厚而松弛：被捕咬住后仍可扭头反击；加上猛烈的肛门腺气味——让大型捕食者"吃相难看"。' },
+      { name: '抗蛇毒', desc: '对眼镜蛇等蛇毒有部分抗性——追击毒蛇被咬后常只是"睡一觉"，醒来继续吃。' },
+      { name: '使用工具', desc: '动物园观察记录到它堆叠石块、用树枝搭"梯子"翻越围墙——会用工具的非人动物之一。' },
+      { name: '与蜜鴷合作', desc: '蜜鴷发现蜂巢后鸣叫引路，蜜獾捣毁蜂巢分享蜂蜡幼虫——跨物种"合作觅食"的罕见案例。' },
+      { name: '生态角色', desc: '杂食性猎手：控制啮齿类与昆虫种群、清理动物尸体——中小型捕食者的生态功能代表。' },
+    ],
+    Svg: HoneyBadgerSvg,
+  },
+  {
+    id: 'melanin',
+    name: '黑色素与肤色',
+    kicker: '皮肤 · 紫外线塑造的演化地图（课外拓展）',
+    intro: '肤色的差异不是"地域吃出来的"，而是黑色素细胞对紫外线的演化应答：黑色素是包裹在细胞核上的"分子遮阳伞"，可以吸收紫外线、保护 DNA。赤道强紫外地区深色皮肤防止叶酸被紫外线分解；高纬度弱紫外地区浅色皮肤保证维生素 D 的合成——肤色地图是自然选择写下的"紫外线浓度表"。',
+    extension: true,
+    parts: [
+      { name: '黑色素细胞', desc: '表皮基底的黑色素细胞把黑色素颗粒"配送"给周围的角质细胞——每个细胞核上方都撑起一把"小伞"。' },
+      { name: '晒黑的本质', desc: '紫外线刺激黑色素细胞加班生产、颗粒增多——肤色加深是保护性反应，晒伤则是 DNA 受损的炎症警报。' },
+      { name: '叶酸假说', desc: '紫外线会分解血液中的叶酸（影响生殖健康）——强紫外地区深肤色是保护生育能力的演化优势。' },
+      { name: '维生素 D 平衡', desc: '紫外线也帮助皮肤合成维生素 D——高纬度浅肤色是为了在弱紫外下"不错过"这一点合成。' },
+      { name: '健康提示', desc: '反复晒伤累积 DNA 突变、显著升高皮肤癌风险；防晒（衣物、遮阳、防晒霜）是不分肤色的必修课。' },
+    ],
+    Svg: MelaninSvg,
+  },
+  {
+    id: 'airPlant',
+    name: '空气凤梨',
+    kicker: '凤梨科 · 不需要土壤的植物（课外拓展）',
+    intro: '空气凤梨不用土、不用盆，挂在树枝、电线甚至岩石上就能活：它的叶片覆盖着银灰色盾状鳞毛，能从空气和雾气中捕获水分与尘埃养分；根完全退化成"挂钩"只负责固定。它是典型的附生植物——只"借宿"在树上，从不从宿主夺取养分，与寄生有本质区别。',
+    extension: true,
+    parts: [
+      { name: '附生 vs 寄生', desc: '附生只借用宿主的"位置"，自给自足光合作用；寄生则夺取宿主养分（对比：菟丝子）。' },
+      { name: '盾状鳞毛', desc: '叶面的银色鳞毛像微型"伞骨"：张开时吸收空气水汽、溶解的尘埃养分，干旱时闭合减少蒸腾。' },
+      { name: '根的退化', desc: '根失去吸收功能、特化为"挂钩"——运输与固定功能在植物中的分工"改写"。' },
+      { name: 'CAM 邻居', desc: '许多空气凤梨也走景天酸代谢路线：夜间开气孔固碳——干旱适应的又一呼应。' },
+      { name: '附生生态', desc: '雨林中附生兰、鸟巢蕨、苔藓组成"空中花园"——附生植物是雨林物种多样性的重要一环。' },
+    ],
+    Svg: AirPlantSvg,
+  },
   {
     id: 'pangolin',
     name: '穿山甲',

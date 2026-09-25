@@ -646,6 +646,7 @@ export type ExperimentId =
   | 'bloodFlow'
   | 'bloodRoutine'
   | 'ecoStability'
+  | 'algalBloom'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1339,6 +1340,13 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态系统能量与物质循环',
   },
+  algalBloom: {
+    title: '富营养化与水华',
+    kicker: '选择性必修 2 · 生态',
+    description: 'N/P 超标的双曲线：藻类爆发与溶解氧崩溃的"先繁荣后崩溃"。',
+    relatedBook: 'ecology',
+    relatedModule: '生态保护与人与自然',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1540,7 +1548,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom'],
   },
   {
     name: '生物技术',
@@ -1631,6 +1639,7 @@ export const experimentOrder: ExperimentId[] = [
   'leafDecompose',
   'biocontrol',
   'waterQuality',
+  'algalBloom',
   'ecologicalNiche',
   'foodChain',
   'biomagnification',
