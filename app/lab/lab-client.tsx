@@ -119,6 +119,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   humanGenome: Dna,
   grafting: Scissors,
   carbonCycleSim: Recycle,
+  conditionedReflex: Repeat,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -230,6 +231,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   humanGenome: () => import('@/components/lab/human-genome-lab').then(({ HumanGenomeLab }) => ({ default: HumanGenomeLab })),
   grafting: () => import('@/components/lab/grafting-lab').then(({ GraftingLab }) => ({ default: GraftingLab })),
   carbonCycleSim: () => import('@/components/lab/carbon-cycle-sim-lab').then(({ CarbonCycleSimLab }) => ({ default: CarbonCycleSimLab })),
+  conditionedReflex: () => import('@/components/lab/conditioned-reflex-lab').then(({ ConditionedReflexLab }) => ({ default: ConditionedReflexLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -320,6 +322,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   humanGenome: ['karyotype'],
   grafting: ['fruitAndSeed'],
   carbonCycleSim: ['carbonCycle'],
+  conditionedReflex: ['brainStructure'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */

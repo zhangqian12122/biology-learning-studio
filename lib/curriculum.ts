@@ -641,6 +641,7 @@ export type ExperimentId =
   | 'humanGenome'
   | 'grafting'
   | 'carbonCycleSim'
+  | 'conditionedReflex'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1297,6 +1298,13 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态系统能量与物质循环',
   },
+  conditionedReflex: {
+    title: '条件反射的建立',
+    kicker: '选择性必修 1 · 神经调节',
+    description: '巴甫洛夫的狗：铃声+食物反复配对，建立可消退的暂时联系。',
+    relatedBook: 'regulation',
+    relatedModule: '神经和体液调节',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1493,7 +1501,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'conditionedReflex', 'thyroidAxis', 'thermoRegulation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'sirModel'],
   },
   {
     name: '生态',
@@ -1567,6 +1575,7 @@ export const experimentOrder: ExperimentId[] = [
   'bloodPressure',
   'impulse',
   'reflexArc',
+  'conditionedReflex',
   'thyroidAxis',
   'thermoRegulation',
   'circadianRhythm',

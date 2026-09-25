@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -11868,7 +11868,166 @@ function BambooSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 水蛭（蛭纲·抗凝大师） ================= */
+
+function LeechSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M80 200 q 40 -44 110 -40 q 100 6 170 -20 q 50 -18 80 6 q -18 30 -70 44 q -110 30 -200 22 q -70 -4 -90 -12 Z" fill="#3a5a3a" stroke="#1f3a1f" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
+          <path key={i} d={`M${110 + i * 26} ${168 + (i % 2) * 8} q 8 22 2 44`} fill="none" stroke="#5a7a4a" strokeWidth="1.8" opacity="0.8" />
+        ))}
+        <text x="46" y="60" fontSize="12.5" fill="#2a4a2a" fontWeight="700">体表有环沟（环节动物·蛭纲）</text>
+        <text x="46" y="88" fontSize="12.5" fill="#2a4a2a" fontWeight="700">前后各一个吸盘</text>
+      </g>
+      {/* 吸盘与吸血 */}
+      <g style={dim(active, 1)}>
+        <circle cx="76" cy="176" r="18" fill="#2a4a2a" stroke="#1a3a1a" strokeWidth="2.4" />
+        <path d="M66 170 q 10 -8 20 0 q -10 10 -20 0" fill="#d8e8d0" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${60 + i * 5} 182 l -2 6`} stroke="#e8a0a0" strokeWidth="1.8" strokeLinecap="round" />
+        ))}
+        <text x="46" y="120" fontSize="12.5" fill="#2a4a2a" fontWeight="700">前吸盘内的颚片划开皮肤</text>
+        <text x="46" y="140" fontSize="12.5" fill="#2a4a2a">分泌水蛭素——吸血不凝固</text>
+      </g>
+      {/* 水蛭素医学应用 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="296" width="440" height="66" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">水蛭素：最强天然抗凝血剂之一——用于显微外科·抗血栓药物研发</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">医学水蛭疗法重新受重视（术后消除淤血）——"害虫"变"药库"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">水蛭 · 环节动物门蛭纲（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 胸腺（T 细胞的"军校"） ================= */
+
+function ThymusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 位置 */}
+      <g style={dim(active, 0)}>
+        <path d="M196 120 q 20 -30 64 -30 q 44 0 64 30 q -18 44 -64 48 q -46 -4 -64 -48 Z" fill="#f0c9b0" stroke="#a5765a" strokeWidth="2.8" />
+        <path d="M240 90 q 20 -12 40 0 m -20 0 v 34" stroke="#a5765a" strokeWidth="2" />
+        <text x="336" y="100" fontSize="12.5" fill="#8a5a3a" fontWeight="700">胸腺：胸骨后方·心脏上方</text>
+        <text x="336" y="120" fontSize="12.5" fill="#8a5a3a">两叶如"蝶翼"</text>
+      </g>
+      {/* T 细胞训练 */}
+      <g style={dim(active, 1)}>
+        <circle cx="196" cy="150" r="8" fill="#8ab4cc" stroke="#2c5a84" strokeWidth="1.6" />
+        <circle cx="216" cy="140" r="8" fill="#8ab4cc" stroke="#2c5a84" strokeWidth="1.6" />
+        <circle cx="236" cy="152" r="8" fill="#8ab4cc" stroke="#2c5a84" strokeWidth="1.6" />
+        <circle cx="286" cy="142" r="8" fill="#e8a0a0" stroke="#8a3030" strokeWidth="1.6" />
+        <text x="60" y="196" fontSize="12.5" fill="#2c5a84" fontWeight="700">"入学"的 T 细胞前体：</text>
+        <text x="60" y="216" fontSize="12.5" fill="#2c5a84">阳性选择（认识自己 MHC）+</text>
+        <text x="60" y="236" fontSize="12.5" fill="#2c5a84">阴性选择（不攻击自身组织）</text>
+        <text x="316" y="150" fontSize="12" fill="#8a3030" fontWeight="700">不合格者被淘汰（~95%）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="262" width="440" height="66" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="288" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">T = Thymus：T 细胞在胸腺"毕业"后才具备免疫功能</text>
+        <text x="260" y="312" textAnchor="middle" fontSize="11.5" fill="#a5761d">青春期后胸腺逐渐萎缩（脂肪化），但已训练的 T 细胞可存活多年</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">胸腺 · 免疫细胞的"军校"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 风媒花与虫媒花 ================= */
+
+function PollinationTypesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 风媒花 */}
+      <g style={dim(active, 0)}>
+        <path d="M90 190 v -70" stroke="#6a8a3a" strokeWidth="6" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M90 122 q ${-10 + i * 10} -24 ${-6 + i * 10} -34`} fill="none" stroke="#c9b88a" strokeWidth="3" strokeLinecap="round" />
+        ))}
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={80 + i * 10} cy={62 + (i % 2) * 10} r="3.4" fill="#e8d8a0" stroke="#a58a2a" strokeWidth="1.2" />
+        ))}
+        <path d="M60 40 q 30 -14 60 4 m -66 12 q 34 -10 68 6" fill="none" stroke="#b5c99a" strokeWidth="2" opacity="0.8" />
+        <text x="46" y="236" fontSize="12.5" fill="#6a8a3a" fontWeight="700">风媒花（小麦·玉米）</text>
+        <text x="46" y="256" fontSize="12" fill="#5a7a2a">花小不鲜艳·无蜜·花粉多而轻</text>
+      </g>
+      {/* 虫媒花 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3, 4].map((i) => {
+          const ang = (i * 2 * Math.PI) / 5 - Math.PI / 2;
+          return <ellipse key={i} cx={336 + Math.cos(ang) * 30} cy={140 + Math.sin(ang) * 30} rx="20" ry="13" fill="#f0a0c0" stroke="#c96a8a" strokeWidth="2" transform={`rotate(${(i * 72)} 336 140)`} />;
+        })}
+        <circle cx="336" cy="140" r="16" fill="#e8c83a" stroke="#a58a2a" strokeWidth="2" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <circle key={i} cx={330 + (i % 3) * 7} cy={134 + Math.floor(i / 3) * 8} r="1.8" fill="#8a671b" />
+        ))}
+        <ellipse cx="268" cy="196" rx="14" ry="9" fill="#e8b83a" stroke="#8a671b" strokeWidth="1.8" transform="rotate(-30 268 196)" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M262 ${196 - i * 6} l -14 -8`} stroke="#8a671b" strokeWidth="1.6" />
+        ))}
+        <text x="248" y="236" fontSize="12.5" fill="#c96a8a" fontWeight="700">虫媒花（桃·油菜）</text>
+        <text x="248" y="256" fontSize="12" fill="#a5533c">花大鲜艳·有蜜·花粉少而黏</text>
+      </g>
+      {/* 对应关系 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="296" width="440" height="66" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">花的形态与传粉方式相适应——结构与功能观、生物与环境的统一</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#a5761d">风媒：花粉量巨大"广撒网" · 虫媒：蜜汁与色彩"精准投递"（互利共生）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">传粉 · 风媒与虫媒（课内拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'leech',
+    name: '水蛭',
+    kicker: '环节动物门 · 蛭纲"抗凝大师"（课外拓展）',
+    intro: '水蛭（蚂蟥）与蚯蚓同属环节动物：身体有环沟、前后各有一个吸盘。它吸血时用颚片划开皮肤，分泌水蛭素阻止血液凝固——一次可吸自身体重数倍的血。水蛭素是最强效的天然抗凝血剂之一，让这只"吸血虫"摇身变成显微外科与抗血栓药物的资源宝库。',
+    extension: true,
+    parts: [
+      { name: '蛭纲特征', desc: '体表有环沟但体节数固定（34 节）；前后吸盘用于"尺蠖式"爬行与吸附——比蚯蚓更特化的运动方式。' },
+      { name: '吸血装备', desc: '前吸盘内有颚片划开皮肤，咽部肌肉泵血；唾液中的水蛭素抑制凝血酶，血液保持流动直至吸满。' },
+      { name: '水蛭素', desc: '65 个氨基酸的多肽，特异性抑制凝血酶——比肝素更直接，是抗血栓药物研究的重要分子。' },
+      { name: '医学应用', desc: '显微外科（断指再植）用医用水蛭消除术后淤血；人工合成水蛭素已用于抗凝治疗。' },
+      { name: '生态角色', desc: '淡水底栖捕食者/暂时寄生者：吸食鱼、蛙、昆虫体液——食物链中的"流动环节"。' },
+    ],
+    Svg: LeechSvg,
+  },
+  {
+    id: 'thymus',
+    name: '胸腺',
+    kicker: '免疫器官 · T 细胞的"军校"（课外拓展）',
+    intro: '胸腺位于胸骨后方、心脏上方，是 T 淋巴细胞的"训练营"（T 就是 Thymus 的首字母）：从骨髓迁来的 T 细胞前体要在这里经受"阳性选择"（会识别敌人）与"阴性选择"（不攻击自己）的双重考核，约 95% 被淘汰，毕业的才成为合格的免疫战士。青春期后胸腺逐渐萎缩，但毕业的 T 细胞能存活多年。',
+    extension: true,
+    parts: [
+      { name: '位置与形态', desc: '两叶如蝶翼，位于胸骨后、大血管前方——婴儿期最大，青春期后逐渐脂肪化萎缩。' },
+      { name: 'T 细胞训练', desc: '阳性选择筛选能识别 MHC 的细胞，阴性选择清除攻击自身组织的细胞——建立"自我耐受"。' },
+      { name: '淘汰率', desc: '约 95% 的前体细胞在选择中凋亡——严格的"质量控制"防止自身免疫病。' },
+      { name: '分泌胸腺激素', desc: '胸腺肽类激素促进 T 细胞成熟与分化——胸腺既是淋巴器官也是内分泌器官。' },
+      { name: '临床关联', desc: '先天胸腺发育不全（DiGeorge 综合征）导致 T 细胞缺陷、免疫力低下——可见胸腺的不可替代性。' },
+    ],
+    Svg: ThymusSvg,
+  },
+  {
+    id: 'pollinationTypes',
+    name: '风媒花与虫媒花',
+    kicker: '植物繁殖 · 传粉的两种策略',
+    intro: '花的设计透露着它的"物流方案"：风媒花（小麦、玉米）花小不鲜艳、无蜜，花粉多而轻，靠风力"广撒网"；虫媒花（桃、油菜）花大艳丽、有蜜腺，花粉少而黏，靠昆虫"精准投递"。花色、花蜜、花粉的性状差异，正是自然选择塑造的"结构与功能相适应"。',
+    parts: [
+      { name: '风媒花', desc: '花粉干燥轻小、数量巨大（一朵玉米雄花可散粉数千万粒）；柱头常呈羽毛状扩大接收面积。' },
+      { name: '虫媒花', desc: '鲜艳花冠、芳香与蜜汁"广告+报酬"；花粉外壁黏、带刺钩——容易挂在昆虫身上带走。' },
+      { name: '互利共生', desc: '虫媒传粉是植物与昆虫的互利共生：花供蜜、虫传粉——两者形态常相互"定制"（如长距彗星兰与预测的天蛾）。' },
+      { name: '自花与异花', desc: '虫媒多促进异花传粉（基因交流大、后代生活力强）；自花传粉（豌豆！）纯系稳定——孟德尔选它正因如此。' },
+      { name: '农业应用', desc: '温室授粉放养蜜蜂；玉米制种要设隔离带防串粉——传粉生物学直接服务生产。' },
+    ],
+    Svg: PollinationTypesSvg,
+  },
   {
     id: 'chameleon',
     name: '变色龙',

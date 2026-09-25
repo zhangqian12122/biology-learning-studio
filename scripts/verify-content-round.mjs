@@ -8,27 +8,27 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：carbonCycleSim 碳循环与碳中和 ----------
-await page.goto(`${BASE}/lab?exp=carbonCycleSim`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：conditionedReflex 条件反射的建立 ----------
+await page.goto(`${BASE}/lab?exp=conditionedReflex`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '毁林 + 燃烧' }).click();
-  for (let i = 0; i < 4; i++) {
-    await page.getByRole('button', { name: /推进十年/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(400);
+  for (let i = 0; i < 5; i++) {
+    await page.getByRole('button', { name: /铃声 \+ 食物/ }).evaluate((el) => el.click());
+    await page.waitForTimeout(350);
   }
+  await page.getByRole('button', { name: /只摇铃（测试）/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(400);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('碳循环与碳中和');
-  results.experiment.interactive = after.includes('双重打击') && after.includes('植被碳库');
+  results.experiment.open = before.includes('条件反射的建立');
+  results.experiment.interactive = after.includes('条件刺激') && after.includes('100 滴');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['chameleon', 'tears', 'bamboo'];
-// viewBox 尺寸
+const SPECIMENS = ['leech', 'thymus', 'pollinationTypes'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -80,17 +80,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 图解卡：carbonCycleSim 实验页应挂载 carbonCycle 图解
-await page.goto(`${BASE}/lab?exp=carbonCycleSim`, { waitUntil: 'domcontentloaded' });
+// 图解卡：conditionedReflex 实验页应挂载 brainStructure 图解
+await page.goto(`${BASE}/lab?exp=conditionedReflex`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.carbonCycleDiagram = { found: t.includes('碳') || t.includes('循环'), ok: t.includes('碳') || t.includes('循环') };
+  results.specimens.brainDiagram = { found: t.includes('大脑') || t.includes('脑'), ok: t.includes('大脑') || t.includes('脑') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.carbonCycleDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.brainDiagram?.ok;
 console.log('ALL_OK=' + allOk);
