@@ -625,6 +625,7 @@ export type ExperimentId =
   | 'biocontrol'
   | 'stemCellTherapy'
   | 'photosynthesisHistory'
+  | 'geneticsHistory'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1159,6 +1160,14 @@ export const experimentMeta: Record<
     relatedModule: 'ATP、呼吸作用与光合作用',
     extension: true,
   },
+  geneticsHistory: {
+    title: '遗传学的发现史',
+    kicker: '必修 2 · 科学史',
+    description: '从孟德尔豌豆到双螺旋：现象→规律→因子→载体→本质的百年接力。',
+    relatedBook: 'genetics',
+    relatedModule: 'DNA 的复制、转录与翻译',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1350,7 +1359,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'crossingOver', 'doubleFertilization', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'crossingOver', 'doubleFertilization', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1410,6 +1419,7 @@ export const experimentOrder: ExperimentId[] = [
   'dogma',
   'dnaReplication',
   'phageExperiment',
+  'geneticsHistory',
   'breedingDesigner',
   'chromosomeVariation',
   'geneFrequency',

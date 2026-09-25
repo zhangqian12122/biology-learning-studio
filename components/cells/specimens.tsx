@@ -5051,8 +5051,8 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove'] },
 ];
@@ -9915,7 +9915,173 @@ function SeedDormancySvg({ active }: { active: number | null; open?: boolean }) 
   );
 }
 
+/* ================= 螳螂（捕捉足与拟态） ================= */
+
+function MantisSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 头部 */}
+      <g style={dim(active, 0)}>
+        <path d="M348 130 q 40 -18 74 6 q 14 12 6 26 q -10 16 -40 12 q -36 -6 -40 -44 Z" fill="#7aa85a" stroke="#3f7f3a" strokeWidth="2.6" />
+        <circle cx="386" cy="140" r="4.5" fill="#1a3a1a" />
+        <circle cx="404" cy="146" r="4.5" fill="#1a3a1a" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${400 + i * 12} 122 q 6 -22 2 -32`} fill="none" stroke="#3f7f3a" strokeWidth="2" strokeLinecap="round" />
+        ))}
+        <text x="250" y="80" fontSize="12.5" fill="#2f6f2a" fontWeight="700">三角形头·灵活转动</text>
+        <text x="250" y="100" fontSize="12.5" fill="#2f6f2a">双眼立体视觉测距</text>
+      </g>
+      {/* 捕捉足 */}
+      <g style={dim(active, 1)}>
+        <path d="M340 150 q -60 10 -96 44 q -10 12 2 18 q 14 6 26 -6 q 26 -28 74 -34" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2.6" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M262 ${188 + i * 5} l -9 -4`} stroke="#3f7f3a" strokeWidth="2" strokeLinecap="round" />
+        ))}
+        <text x="60" y="150" fontSize="12.5" fill="#2f6f2a" fontWeight="700">一对捕捉足（镰刀状）</text>
+        <text x="60" y="170" fontSize="12.5" fill="#2f6f2a">内侧列生尖刺·夹住猎物不脱落</text>
+      </g>
+      {/* 身体与翅 */}
+      <g style={dim(active, 2)}>
+        <path d="M340 152 q -20 30 -60 190 l 26 6 q 36 -140 60 -180 Z" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="2.4" />
+        <path d="M356 158 q 30 90 -6 182 l 20 4 q 40 -100 8 -184 Z" fill="#a5c98a" stroke="#3f7f3a" strokeWidth="2" opacity="0.85" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${300 - i * 4} ${300 + i * 14} l -22 14 m 22 -14 l 8 22`} fill="none" stroke="#3f7f3a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="330" y="366" fontSize="12.5" fill="#2f6f2a" fontWeight="700">中后胸与两对步行足</text>
+      </g>
+      {/* 拟态 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="56" width="180" height="60" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="130" y="80" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">兰花螳螂：拟态花瓣</text>
+        <text x="130" y="100" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">守株待兔捕食访花昆虫</text>
+        <text x="42" y="352" fontSize="12.5" fill="#537078" fontWeight="700">不完全变态：卵鞘（螵蛸）→ 若虫 → 成虫（无蛹）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">螳螂 · 昆虫纲螳螂目（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 鼻与嗅觉 ================= */
+
+function NasalCavitySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 鼻腔剖面 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 80 q -16 60 -6 130 q 4 34 22 54 l 60 0 q -30 -30 -30 -80 q 0 -56 18 -104 Z" fill="#f0d8c0" stroke="#a5765a" strokeWidth="2.8" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M158 ${104 + i * 34} q 24 -8 44 2`} fill="none" stroke="#c99a7a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="46" y="70" fontSize="12.5" fill="#8a5a3a" fontWeight="700">鼻前庭（鼻毛滤尘）</text>
+        <text x="46" y="90" fontSize="12.5" fill="#8a5a3a" fontWeight="700">鼻甲（加温加湿）</text>
+        <line x1="130" y1="96" x2="158" y2="108" stroke="#8a5a3a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 嗅黏膜 */}
+      <g style={dim(active, 1)}>
+        <path d="M224 88 q 10 36 8 76 q -2 28 -14 52" fill="none" stroke="#b07898" strokeWidth="7" strokeLinecap="round" opacity="0.8" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <circle key={i} cx={232 + (i % 2) * 10} cy={104 + i * 22} r="4.5" fill="#8a4a6a" stroke="#5a2a4a" strokeWidth="1.2" />
+        ))}
+        <text x="330" y="96" fontSize="12.5" fill="#8a4a6a" fontWeight="700">嗅黏膜（鼻腔顶部的黄褐色区域）</text>
+        <text x="330" y="116" fontSize="12.5" fill="#8a4a6a">嗅细胞 = 唯一暴露于体表的神经元</text>
+        <line x1="326" y1="110" x2="252" y2="130" stroke="#8a4a6a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 嗅觉传导 */}
+      <g style={dim(active, 2)}>
+        <path d="M238 92 Q 260 56 300 44" fill="none" stroke="#4d7ea8" strokeWidth="3.4" />
+        <ellipse cx="330" cy="40" rx="40" ry="18" fill="#d8c0e0" stroke="#7a4a8a" strokeWidth="2.2" />
+        <text x="382" y="52" fontSize="12.5" fill="#7a4a8a" fontWeight="700">嗅球 → 嗅神经</text>
+        <text x="382" y="72" fontSize="12.5" fill="#7a4a8a">→ 大脑嗅觉中枢</text>
+        <text x="46" y="210" fontSize="12.5" fill="#2c5a84" fontWeight="700">人类约 400 种嗅觉受体</text>
+        <text x="46" y="230" fontSize="12.5" fill="#2c5a84">可分辨约 1 万亿种气味</text>
+      </g>
+      {/* 与味觉协同 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="270" width="440" height="90" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="296" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">"味道"= 味觉（舌·酸甜苦咸鲜）+ 嗅觉（鼻后气味）的协同</text>
+        <text x="260" y="320" textAnchor="middle" fontSize="11.5" fill="#a5761d">感冒鼻塞时吃饭不香——嗅觉通路被堵，只剩味觉的五种基本味</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#a5761d">气味分子必须溶于嗅黏膜的黏液才能刺激嗅细胞（湿的鼻子才灵敏）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">鼻与嗅觉 · 化学感受（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 疫苗的种类 ================= */
+
+function VaccineTypesSvg({ active }: { active: number | null; open?: boolean }) {
+  const vaccines = [
+    { n: '减毒活疫苗', ex: '麻疹·水痘·卡介苗', d: '毒力减弱的活病毒/菌·免疫强而持久', c: '#3f7f3a' },
+    { n: '灭活疫苗', ex: '狂犬·流感·新冠灭活', d: '加热/甲醛杀死的病原·安全但需加强针', c: '#2c5a84' },
+    { n: '亚单位/类毒素', ex: '乙肝·百白破', d: '只用病原的蛋白片段或解毒毒素', c: '#8a671b' },
+    { n: 'mRNA/载体疫苗', ex: '新冠 mRNA·埃博拉', d: '递送"图纸"让细胞自己造抗原', c: '#7a4a8a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {vaccines.map((v, i) => (
+        <g key={v.n} style={dim(active, i)}>
+          <rect x="36" y={52 + i * 62} width="448" height="52" rx="12" fill="#f8faf6" stroke={v.c} strokeWidth="2.4" />
+          <text x="54" y={74 + i * 62} fontSize="13" fill={v.c} fontWeight="800">{v.n}</text>
+          <text x="200" y={74 + i * 62} fontSize="11" fill="#59767c">{v.ex}</text>
+          <text x="54" y={94 + i * 62} fontSize="11" fill="#59767c">{v.d}</text>
+        </g>
+      ))}
+      <g style={dim(active, 4)}>
+        <rect x="40" y="316" width="440" height="50" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">共同原理：抗原（无害）→ 初次免疫产生记忆细胞 → 再次遇到病原时二次免疫更快更强</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#537078">免疫最强：减毒活 &gt; 灭活 &gt; 亚单位；最安全：亚单位/mRNA（不含完整病原）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">疫苗的种类 · 人工主动免疫（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'mantis',
+    name: '螳螂',
+    kicker: '昆虫纲 · 捕食性拟态大师（课外拓展）',
+    intro: '螳螂是昆虫世界的伏击猎手：三角形的头可以灵活转动，双眼形成立体视觉精确测距；一对镰刀状的捕捉足内侧列生尖刺，夹住猎物便无法脱身。兰花螳螂更是把拟态玩到极致——身体酷似花瓣，静候访花昆虫自投罗网。',
+    extension: true,
+    parts: [
+      { name: '三角形头', desc: '头部可在近 180° 范围转动（昆虫中罕见），一对大眼间距宽，能立体视觉判断猎物距离。' },
+      { name: '捕捉足', desc: '前足特化为折叠的"镰刀"，股节与胫节内侧两排尖刺像咬合的夹子——出击只需约 0.1 秒。' },
+      { name: '拟态', desc: '兰花螳螂拟态花瓣、枯叶螳螂拟态叶片——体色形态欺骗猎物或天敌，是自然选择塑造的适应。' },
+      { name: '螵蛸', desc: '雌虫分泌泡沫把卵包成卵鞘（中药名"螵蛸"），泡沫硬化抵御寒冬——卵在鞘内越年后孵化。' },
+      { name: '发育类型', desc: '不完全变态：卵 → 若虫 → 成虫，没有蛹期；若虫形似成虫但翅未长成（对比家蚕的完全变态）。' },
+    ],
+    Svg: MantisSvg,
+  },
+  {
+    id: 'nasalCavity',
+    name: '鼻与嗅觉',
+    kicker: '感觉器官 · 化学感受（课外拓展）',
+    intro: '鼻腔不只是空气通道：鼻毛和鼻甲把吸入的空气过滤、加温、加湿，而鼻腔顶部的黄褐色嗅黏膜藏着约 400 种嗅觉受体——嗅细胞是人体唯一暴露于体表的神经元，它们把气味分子的信息直接传给嗅球和大脑，让我们分辨约 1 万亿种气味。',
+    extension: true,
+    parts: [
+      { name: '鼻腔的预处理', desc: '鼻毛过滤灰尘、鼻甲黏膜血管丰富——把冷空气加温加湿到接近体温再进入肺。' },
+      { name: '嗅黏膜与嗅细胞', desc: '位于鼻腔顶部：气味分子必须先溶于黏液才能与嗅细胞上的受体结合——所以鼻子湿才灵敏。' },
+      { name: '嗅觉传导通路', desc: '嗅细胞（唯一直接暴露于外界的神经元）→ 嗅球 → 嗅神经 → 大脑嗅觉中枢，不经丘脑直达皮层——所以气味最容易唤起记忆。' },
+      { name: '嗅觉与味觉协同', desc: '吃饭闻到的"香味"大部分来自咀嚼时从鼻后通路到达嗅黏膜的气味——感冒鼻塞时味觉只剩酸甜苦咸鲜五种基本味。' },
+      { name: '灵敏度的代价', desc: '嗅觉适应很快（久居兰室不闻其香——受体暂时钝化），但对有害气体（煤气加臭味剂）的预警依然关键。' },
+    ],
+    Svg: NasalCavitySvg,
+  },
+  {
+    id: 'vaccineTypes',
+    name: '疫苗的种类',
+    kicker: '免疫预防 · 人工主动免疫（课外拓展）',
+    intro: '疫苗的共同原理是把"无害的抗原"送进人体，让免疫系统在真正遇到病原之前先进行一次演习：产生抗体和记忆细胞。按技术路线可分四代——减毒活疫苗、灭活疫苗、亚单位/类毒素疫苗，以及最新的 mRNA 和病毒载体疫苗。',
+    extension: true,
+    parts: [
+      { name: '减毒活疫苗', desc: '毒力大幅减弱但仍能有限复活的活病原（麻疹、水痘、卡介苗）：免疫反应强而持久，往往只需一两针；免疫功能低下者慎用。' },
+      { name: '灭活疫苗', desc: '物理或化学方法彻底杀死的病原（狂犬、流感）：非常安全，但不能增殖，通常需要多次接种加强。' },
+      { name: '亚单位/类毒素疫苗', desc: '只用病原的蛋白片段或脱毒的毒素（乙肝、百白破）：不含完整病原、最安全，常需配佐剂增强免疫。' },
+      { name: 'mRNA/载体疫苗', desc: '递送编码抗原的 mRNA 或改造病毒"图纸"，让人体细胞自己生产抗原——研发速度快（新冠 mRNA 疫苗）。' },
+      { name: '原理与记忆', desc: '疫苗引起的是人工主动免疫：初次免疫慢而弱但留下记忆细胞，真正的病原再来时二次免疫快而强——对比：注射抗体（如抗毒素）是人工被动免疫。' },
+    ],
+    Svg: VaccineTypesSvg,
+  },
   {
     id: 'dragonfly',
     name: '蜻蜓',
