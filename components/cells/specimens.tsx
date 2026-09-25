@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect'] },
 ];
 
@@ -9373,7 +9373,192 @@ function GreenhouseEffectSvg({ active }: { active: number | null; open?: boolean
   );
 }
 
+/* ================= 绦虫（扁形动物寄生代表） ================= */
+
+function TapewormSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 头节 */}
+      <g style={dim(active, 0)}>
+        <path d="M78 170 q -12 -22 8 -36 q 22 -14 40 2 q 14 14 2 32 q -24 16 -50 2 Z" fill="#e8dcc8" stroke="#8a7a4a" strokeWidth="2.6" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M84 ${142 + i * 12} l 8 -6`} stroke="#6a5a3a" strokeWidth="2.2" strokeLinecap="round" />
+        ))}
+        <circle cx="112" cy="156" r="7" fill="none" stroke="#6a5a3a" strokeWidth="2" />
+        <text x="44" y="108" fontSize="12.5" fill="#8a7a4a" fontWeight="700">头节（小钩+吸盘）</text>
+        <text x="44" y="128" fontSize="12.5" fill="#8a7a4a" fontWeight="700">钩挂在肠壁上</text>
+        <line x1="90" y1="134" x2="98" y2="146" stroke="#8a7a4a" strokeWidth="1.2" />
+      </g>
+      {/* 颈节与幼节 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3].map((i) => (
+          <rect key={i} x={132 + i * 34} y={142 - i * 3} width="30" height={56 + i * 6} rx="6" fill="#e8dcc8" stroke="#a5966a" strokeWidth="2" />
+        ))}
+        <text x="150" y="248" fontSize="12.5" fill="#8a7a4a" fontWeight="700">颈部（新生节片）</text>
+        <text x="150" y="268" fontSize="12.5" fill="#8a7a4a">幼节逐节向后推移</text>
+      </g>
+      {/* 孕卵节片 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2].map((i) => (
+          <rect key={i} x={272 + i * 48} y={128 - i * 2} width="44" height={84 + i * 4} rx="6" fill="#e8c9a0" stroke="#a5763a" strokeWidth="2.2" />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <g key={`e${i}`}>
+            {[0, 1, 2, 3, 4, 5].map((j) => (
+              <circle key={j} cx={284 + (j % 3) * 14 + i * 48} cy={152 + Math.floor(j / 3) * 22 - i * 2} r="4" fill="#c99a5a" stroke="#8a671b" strokeWidth="1.2" />
+            ))}
+          </g>
+        ))}
+        <text x="304" y="252" fontSize="12.5" fill="#8a671b" fontWeight="700">孕卵节片（装满虫卵）</text>
+        <text x="304" y="272" fontSize="12.5" fill="#8a671b">最长可体长 10 米、数千节片</text>
+      </g>
+      {/* 寄生适应 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="296" width="440" height="70" rx="12" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="800">寄生适应：没有消化器官和运动器官——直接用体表吸收宿主肠内养料</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="12" fill="#a5533c">防治：不喝生水·不生食猪肉牛肉（米猪肉含囊尾蚴）·孕节随粪便检查确诊</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">猪肉绦虫 · 扁形动物寄生代表（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 胃的结构与消化 ================= */
+
+function StomachSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 外形 */}
+      <g style={dim(active, 0)}>
+        <path d="M118 84 Q 96 78 90 100 Q 84 124 116 136 Q 160 260 246 292 Q 322 318 366 280 Q 396 254 386 212 L 380 168 Q 372 108 320 88 Q 220 66 118 84 Z" fill="#d88a6a" stroke="#a5533c" strokeWidth="3" />
+        <text x="56" y="72" fontSize="12.5" fill="#a5533c" fontWeight="700">贲门（接食管）</text>
+        <line x1="100" y1="78" x2="104" y2="94" stroke="#a5533c" strokeWidth="1.3" />
+        <text x="396" y="238" fontSize="12.5" fill="#a5533c" fontWeight="700">幽门（接十二指肠）</text>
+        <line x1="392" y1="242" x2="372" y2="252" stroke="#a5533c" strokeWidth="1.3" />
+      </g>
+      {/* 黏膜皱襞与胃腺 */}
+      <g style={dim(active, 1)}>
+        <path d="M150 140 q 20 34 34 84 m 36 -100 q 16 40 24 92 m 40 -104 q 12 44 12 96" fill="none" stroke="#a5533c" strokeWidth="2.4" opacity="0.7" />
+        <text x="330" y="120" fontSize="12.5" fill="#8a3a2a" fontWeight="700">黏膜皱襞（拉伸展开）</text>
+        <circle cx="196" cy="180" r="5" fill="#f4d06a" stroke="#8a671b" strokeWidth="1.6" />
+        <circle cx="212" cy="196" r="5" fill="#f4d06a" stroke="#8a671b" strokeWidth="1.6" />
+        <text x="330" y="146" fontSize="12.5" fill="#8a671b" fontWeight="700">胃腺：盐酸 + 胃蛋白酶原</text>
+        <text x="330" y="168" fontSize="12.5" fill="#8a671b">盐酸杀菌·激活胃蛋白酶</text>
+        <text x="330" y="188" fontSize="12.5" fill="#8a671b">胃蛋白酶分解蛋白质</text>
+      </g>
+      {/* 肌层蠕动 */}
+      <g style={dim(active, 2)}>
+        <path d="M240 96 q -24 90 6 190 m 60 -196 q -20 92 8 188" fill="none" stroke="#b05a3a" strokeWidth="4" opacity="0.5" />
+        <text x="86" y="216" fontSize="12.5" fill="#8a4a2a" fontWeight="700">三层平滑肌收缩</text>
+        <text x="86" y="236" fontSize="12.5" fill="#8a4a2a" fontWeight="700">搅拌+磨碎食物</text>
+        <line x1="146" y1="224" x2="180" y2="210" stroke="#8a4a2a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 功能与屏障 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="322" width="440" height="44" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="340" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">功能：暂存食物 · 初步消化蛋白质（蛋白质 → 多肽）</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11.5" fill="#a5761d">黏液-碳酸氢盐屏障挡住盐酸——屏障受损则发生胃炎、胃溃疡</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">胃 · 消化管最膨大的部分（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 种子的传播 ================= */
+
+function SeedDispersalSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 风力传播 */}
+      <g style={dim(active, 0)}>
+        <path d="M46 130 q 26 -34 62 -22 q 30 10 24 40 q -6 28 -38 24 q -34 -4 -48 -42 Z" fill="#e8f0dc" stroke="#6a8a3a" strokeWidth="2" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${120 + i * 26} ${96 + i * 12} q 10 -10 22 -6`} fill="none" stroke="#b5c99a" strokeWidth="1.8" />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <circle key={i} cx={176 + i * 34} cy={78 + i * 18} r="5" fill="#c9a05a" stroke="#8a6a3a" strokeWidth="1.4" />
+        ))}
+        <text x="44" y="216" fontSize="12.5" fill="#6a8a3a" fontWeight="700">风：蒲公英冠毛·枫翅果</text>
+      </g>
+      {/* 动物传播 */}
+      <g style={dim(active, 1)}>
+        <path d="M228 100 Q 258 66 300 76 Q 336 84 334 116 Q 332 146 296 150 Q 254 152 240 128 Q 230 112 228 100 Z" fill="#c9a05a" stroke="#8a6a3a" strokeWidth="2.2" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${244 + (i % 3) * 30} ${86 + Math.floor(i / 3) * 26} l 7 -7 m -7 7 l 8 2`} stroke="#8a6a3a" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        <path d="M338 120 q 30 -4 44 8 m -8 -10 q 16 4 20 16" fill="none" stroke="#8a6a3a" strokeWidth="2" />
+        <text x="228" y="216" fontSize="12.5" fill="#8a6a3a" fontWeight="700">动物：苍耳钩刺挂皮毛</text>
+        <text x="228" y="236" fontSize="12.5" fill="#8a6a3a">果实被吞食·种子随粪便远播</text>
+      </g>
+      {/* 水力与弹射 */}
+      <g style={dim(active, 2)}>
+        <circle cx="430" cy="120" r="34" fill="#8ab4c9" stroke="#4d7ea8" strokeWidth="2.2" opacity="0.5" />
+        <ellipse cx="430" cy="104" rx="20" ry="11" fill="#a58a5a" stroke="#6a5a2a" strokeWidth="2" />
+        <path d="M392 140 q 10 8 20 0 m 18 6 q 10 8 20 0" fill="none" stroke="#4d7ea8" strokeWidth="2" />
+        <text x="386" y="196" fontSize="12.5" fill="#2c5a84" fontWeight="700">水：椰子漂流</text>
+        <path d="M396 236 q 22 -22 20 -46 m 20 46 q -18 -26 -8 -50" fill="none" stroke="#3f7f3a" strokeWidth="2.2" />
+        {[0, 1, 2].map((i) => (
+          <circle key={i} cx={386 + i * 22} cy={172 - i * 6} r="4" fill="#8a5a3a" stroke="#5a3a2a" strokeWidth="1.2" />
+        ))}
+        <text x="386" y="262" fontSize="12.5" fill="#3f7f3a" fontWeight="700">弹射：凤仙花果荚炸开</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="296" width="440" height="70" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">传播的意义：把种子送往远方新领地，避免与亲代植株争夺阳光水肥</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#3f7f3a">果实与种子的形态适应 = 自然选择塑造的"旅行装备"——结构与功能相适应</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">种子的传播 · 植物的"旅行方式"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'tapeworm',
+    name: '猪肉绦虫',
+    kicker: '扁形动物门 · 寄生代表（课外拓展）',
+    intro: '绦虫是扁形动物中高度适应寄生生活的代表：头节用小钩和吸盘挂在人的小肠壁上，身体由数千个节片连成链状，最长可达 10 米。它没有消化器官——直接用体表吸收宿主已消化的养料，每个孕卵节片都装满虫卵，随粪便排出感染新的宿主。',
+    extension: true,
+    parts: [
+      { name: '头节', desc: '顶端有小钩和四个吸盘，牢牢钩挂在小肠壁上——寄生生活的"固定装置"。' },
+      { name: '颈部与幼节', desc: '颈部不断分裂产生新节片，幼节逐渐向后推移发育——身体可以持续生长变长。' },
+      { name: '孕卵节片', desc: '后端的成熟节片几乎被上万的虫卵填满，脱落后随宿主粪便排出体外。' },
+      { name: '寄生适应', desc: '没有消化器官（体表吸收养料）、没有运动和感觉器官（环境稳定无需运动）、生殖器官极度发达。' },
+      { name: '生活史与防治', desc: '虫卵被猪吞食发育为囊尾蚴——人误食未煮熟的"米猪肉"即被感染；不吃生肉、粪便管理可预防。' },
+    ],
+    Svg: TapewormSvg,
+  },
+  {
+    id: 'stomach',
+    name: '胃的结构与消化',
+    kicker: '消化管 · 初步消化蛋白质（课外拓展）',
+    intro: '胃是消化管最膨大的部分：暂存食物并通过三层平滑肌的蠕动搅拌磨碎；黏膜上的胃腺分泌盐酸和胃蛋白酶，把蛋白质初步分解为多肽。胃本身不会被消化，靠的是黏液-碳酸氢盐屏障——这道屏障被破坏就会发生胃炎和胃溃疡。',
+    extension: true,
+    parts: [
+      { name: '外形与出入口', desc: '上连食管（贲门），下接十二指肠（幽门）；幽门括约肌控制食糜分批进入小肠。' },
+      { name: '黏膜皱襞', desc: '胃壁上的纵行皱襞，胃充满食物时被拉伸展开——增大胃腺分布面积。' },
+      { name: '胃腺', desc: '分泌盐酸（杀菌、激活胃蛋白酶原）和胃蛋白酶（最适 pH 约 1.8，把蛋白质分解为多肽）。' },
+      { name: '蠕动', desc: '环行、纵行、斜行三层平滑肌协调收缩，把食物与胃液搅拌混合成食糜。' },
+      { name: '自我保护', desc: '黏液-碳酸氢盐屏障中和盐酸、隔离胃蛋白酶；幽门螺杆菌破坏该屏障与胃溃疡发病密切相关。' },
+    ],
+    Svg: StomachSvg,
+  },
+  {
+    id: 'seedDispersal',
+    name: '种子的传播',
+    kicker: '植物繁殖 · 适应与自然选择（课外拓展）',
+    intro: '种子成熟后不能落在母亲脚下——那里阳光水肥已被亲代占据。植物进化出五花八门的"旅行装备"：蒲公英的冠毛和枫树的翅果乘风飞翔，苍耳的钩刺搭动物皮毛的顺风车，椰子随海流漂洋过海，凤仙花干脆把果荚变成弹射器。',
+    extension: true,
+    parts: [
+      { name: '风力传播', desc: '蒲公英瘦果上的冠毛像降落伞，枫树翅果自带"滑翔翼"——轻、带翅或毛的结构减少空气阻力。' },
+      { name: '动物传播', desc: '苍耳果实的钩刺挂住动物皮毛搭车远行；浆果被鸟类吞食后，不被消化的种子随粪便"空投"到远处。' },
+      { name: '水力传播', desc: '椰子的纤维果壳疏松能漂浮，随洋流漂流数千公里在海岛登陆——椰林多分布于海岸。' },
+      { name: '自体弹射', desc: '凤仙花、大豆的果荚成熟后扭曲炸裂，把种子弹射到数米之外。' },
+      { name: '适应的意义', desc: '扩大分布范围、避免同种竞争——果实与种子的多样形态是自然选择塑造的结构与功能相适应。' },
+    ],
+    Svg: SeedDispersalSvg,
+  },
   {
     id: 'snail',
     name: '蜗牛',

@@ -621,6 +621,7 @@ export type ExperimentId =
   | 'gelElectrophoresis'
   | 'proteinEngineering'
   | 'protoplastFusion'
+  | 'animalCellCulture'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1125,6 +1126,13 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '细胞工程与组织培养',
   },
+  animalCellCulture: {
+    title: '动物细胞培养',
+    kicker: '选择性必修 3 · 生物技术',
+    description: '胰蛋白酶分散、贴壁生长、接触抑制与传代——动物细胞工程的基础技术。',
+    relatedBook: 'technology',
+    relatedModule: '细胞工程与组织培养',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1331,7 +1339,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
   },
 ];
 
@@ -1418,6 +1426,7 @@ export const experimentOrder: ExperimentId[] = [
   'protoplastFusion',
   'pcr',
   'gelElectrophoresis',
+  'animalCellCulture',
   'embryoTransfer',
   'nuclearTransfer',
   'hybridoma',

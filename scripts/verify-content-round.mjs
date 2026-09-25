@@ -8,26 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：protoplastFusion 植物体细胞杂交 ----------
-await page.goto(`${BASE}/lab?exp=protoplastFusion`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：animalCellCulture 动物细胞培养 ----------
+await page.goto(`${BASE}/lab?exp=animalCellCulture`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('植物体细胞杂交');
+  results.experiment.open = text.includes('动物细胞培养');
   const before = text;
   for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /推进流程/ }).click();
+    await page.getByRole('button', { name: /推进培养/ }).click();
     await page.waitForTimeout(450);
   }
   const after = await page.locator('main').innerText();
-  results.experiment.interactive = after.includes('脱分化') && after.includes('生殖隔离');
+  results.experiment.interactive = after.includes('接触抑制') && after.includes('HeLa');
   results.experiment.reference = after.includes('实验原理');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['snail', 'liver', 'greenhouseEffect'];
+const SPECIMENS = ['tapeworm', 'stomach', 'seedDispersal'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -87,17 +87,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：tissueCulture 实验页回归检查（protoplastFusion 与其共用组培原理）
-await page.goto(`${BASE}/lab?exp=tissueCulture`, { waitUntil: 'domcontentloaded' });
+// 图解卡：hybridoma 实验页依赖动物细胞培养——回归检查单抗图解卡
+await page.goto(`${BASE}/lab?exp=hybridoma`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.tissueCultureRegression = { found: t.includes('组织培养'), ok: t.includes('组织培养') };
+  results.specimens.hybridomaRegression = { found: t.includes('单克隆抗体'), ok: t.includes('单克隆抗体') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.tissueCultureRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.hybridomaRegression?.ok;
 console.log('ALL_OK=' + allOk);
