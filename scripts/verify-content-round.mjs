@@ -7,25 +7,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：gauseCompetition 竞争排斥实验 ----------
-await page.goto(`${BASE}/lab?exp=gauseCompetition`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：imprinting 印随行为 ----------
+await page.goto(`${BASE}/lab?exp=imprinting`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  for (let i = 0; i < 16; i++) {
-    await page.getByRole('button', { name: /推进一天/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(180);
+  await page.locator('button', { hasText: '蓝色气球' }).click();
+  for (let i = 0; i < 2; i++) {
+    await page.getByRole('button', { name: /推进成长/ }).evaluate((el) => el.click());
+    await page.waitForTimeout(400);
   }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('竞争排斥实验');
-  results.experiment.interactive = after.includes('竞争排斥') && after.includes('消失');
-  results.experiment.reference = after.includes('注意事项');
+  results.experiment.open = before.includes('印随行为');
+  results.experiment.interactive = after.includes('气球当"妈妈"') || after.includes('来者不拒');
+  results.experiment.reference = after.includes('关键期');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['kangaroo', 'hair', 'bark'];
+const SPECIMENS = ['poisonDartFrog', 'sweatGland', 'pollenGrain'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -77,17 +78,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：hibernation 实验页仍正常
-await page.goto(`${BASE}/lab?exp=hibernation`, { waitUntil: 'domcontentloaded' });
+// 回归检查：conditionedReflex 实验页仍正常
+await page.goto(`${BASE}/lab?exp=conditionedReflex`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.hibernationRegression = { found: t.includes('冬眠') || t.includes('代谢'), ok: t.includes('冬眠') || t.includes('代谢') };
+  results.specimens.reflexRegression = { found: t.includes('条件反射') || t.includes('巴甫洛夫'), ok: t.includes('条件反射') || t.includes('巴甫洛夫') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.hibernationRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.reflexRegression?.ok;
 console.log('ALL_OK=' + allOk);

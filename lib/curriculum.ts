@@ -651,6 +651,7 @@ export type ExperimentId =
   | 'rhIncompatibility'
   | 'hibernation'
   | 'gauseCompetition'
+  | 'imprinting'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1382,6 +1383,14 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '种群特征与群落结构',
   },
+  imprinting: {
+    title: '印随行为',
+    kicker: '行为生态 · 课外拓展',
+    description: '劳伦兹与小鹅：关键期、第一眼"认妈"、无需强化的铭印。',
+    relatedBook: 'regulation',
+    relatedModule: '神经和体液调节',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1578,7 +1587,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'conditionedReflex', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'bloodRoutine', 'energyBalance', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1655,6 +1664,7 @@ export const experimentOrder: ExperimentId[] = [
   'impulse',
   'reflexArc',
   'conditionedReflex',
+  'imprinting',
   'thyroidAxis',
   'thermoRegulation',
   'hibernation',

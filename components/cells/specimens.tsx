@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -12988,7 +12988,172 @@ function BarkSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 箭毒蛙（美丽的"毒王"） ================= */
+
+function PoisonDartFrogSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 蛙 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="240" cy="230" rx="66" ry="46" fill="#2a6adb" stroke="#1a3a8a" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <ellipse key={i} cx={204 + (i % 3) * 34} cy={214 + Math.floor(i / 3) * 22} rx="9" ry="6" fill="#f4d03a" stroke="#8a671b" strokeWidth="1.4" />
+        ))}
+        <circle cx="290" cy="188" r="22" fill="#2a6adb" stroke="#1a3a8a" strokeWidth="2.4" />
+        <circle cx="296" cy="180" r="5" fill="#141414" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${304 + i * 26} ${206 + i * 30} q 20 8 34 0 m -34 0 l -6 -14`} stroke="#1a3a8a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="330" y="170" fontSize="12.5" fill="#1a3a8a" fontWeight="700">蓝底黄斑——鲜艳的"警告牌"</text>
+        <text x="356" y="192" fontSize="12.5" fill="#1a3a8a" fontWeight="700">毒性最强的脊椎动物之一</text>
+      </g>
+      {/* 毒素来源 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="120" width="150" height="60" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="121" y="144" textAnchor="middle" fontSize="11.5" fill="#8a671b" fontWeight="800">毒素来自食物</text>
+        <text x="121" y="164" textAnchor="middle" fontSize="10.5" fill="#a5761d">野外吃有毒蚂蚁·螨虫</text>
+        <path d="M200 168 q 30 -16 40 -34" fill="none" stroke="#8a671b" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 育幼 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">育幼行为：亲蛙背蝌蚪"搬家"，逐个放入凤梨科植物的"水杯"中</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">母蛙还会回来给每杯产未受精卵作为"口粮"——两栖动物中的模范家长</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">警戒色 + 毒素 = 不被捕食的"免死金牌"（与保护色策略相反）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">箭毒蛙 · 两栖纲无尾目（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 汗腺（人体的"空调"） ================= */
+
+function SweatGlandSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 皮肤剖面 + 汗腺 */}
+      <g style={dim(active, 0)}>
+        <path d="M80 120 h 360 q 14 0 14 14 v 70 q 0 14 -14 14 h -360 q -14 0 -14 -14 v -70 q 0 -14 14 -14 Z" fill="#f4d0b8" stroke="#a5765a" strokeWidth="2.8" />
+        <path d="M66 218 h 388 v 46 q 0 14 -14 14 h -360 q -14 0 -14 -14 Z" fill="#f8e4d4" stroke="#c99a7a" strokeWidth="2" />
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <path d={`M${170 + i * 100} 138 q -4 30 0 60 q -30 30 8 52`} fill="none" stroke="#4d7ea8" strokeWidth="4" strokeLinecap="round" />
+            <circle cx={178 + i * 100} cy={254} r="9" fill="#d8e8f0" stroke="#2c5a84" strokeWidth="1.8" />
+            <path d={`M${172 + i * 100} 134 v -12`} stroke="#b0483a" strokeWidth="2.4" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="392" y="146" fontSize="12.5" fill="#2c5a84" fontWeight="700">汗腺：盘曲的管状腺</text>
+        <text x="392" y="168" fontSize="12" fill="#4b6c73">导管开口于皮肤表面</text>
+      </g>
+      {/* 出汗原理 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="252" width="216" height="86" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="154" y="276" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">出汗 = 蒸发散热</text>
+        <text x="154" y="298" textAnchor="middle" fontSize="11" fill="#37585f">汗液蒸发带走热量</text>
+        <text x="154" y="318" textAnchor="middle" fontSize="11" fill="#37585f">人体最有效的"降温系统"</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="282" y="252" width="198" height="86" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="381" y="276" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">汗液 ≠ 只排水</text>
+        <text x="381" y="298" textAnchor="middle" fontSize="11" fill="#a5761d">还排出无机盐·少量尿素</text>
+        <text x="381" y="318" textAnchor="middle" fontSize="11" fill="#a5761d">大出汗后要补盐不是空话</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="40" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">汗腺发达 = 人类耐跑的秘密：全身 200~500 万汗腺，散热能力冠绝哺乳动物</text>
+        <text x="260" y="364" textAnchor="middle" fontSize="11" fill="#3f7f3a">汗液本身几乎无味——"汗味"来自皮肤细菌分解汗液成分</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">汗腺 · 人体的"空调系统"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 花粉（植物的"快递"） ================= */
+
+function PollenGrainSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 花粉粒放大 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="200" cy="160" rx="100" ry="80" fill="#e8c86a" stroke="#a5822a" strokeWidth="3" />
+        <path d="M100 160 q 100 -40 200 0" fill="none" stroke="#a5822a" strokeWidth="2.4" />
+        {[0, 1, 2].map((i) => (
+          <ellipse key={i} cx={170 + i * 40} cy={160 + (i % 2) * 26 - 13} rx="9" ry="12" fill="#c9a03a" stroke="#8a671b" strokeWidth="1.6" />
+        ))}
+        <text x="330" y="120" fontSize="12.5" fill="#8a671b" fontWeight="700">外壁含"孢粉素"：极耐腐蚀</text>
+        <text x="330" y="142" fontSize="12" fill="#8a671b">花纹因种而异（化石鉴定依据）</text>
+        <text x="330" y="164" fontSize="12" fill="#a5761b" fontWeight="600">萌发孔：花粉管伸出的"门"</text>
+      </g>
+      {/* 结构 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="240" width="210" height="86" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="151" y="264" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">花粉粒 = 雄性"快递员"</text>
+        <text x="151" y="288" textAnchor="middle" fontSize="11" fill="#37585f">外壁 + 内壁 + 营养细胞</text>
+        <text x="151" y="310" textAnchor="middle" fontSize="11" fill="#37585f">+ 生殖细胞（将分裂成两个精子）</text>
+      </g>
+      {/* 过敏 */}
+      <g style={dim(active, 2)}>
+        <rect x="276" y="240" width="204" height="86" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="378" y="264" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">花粉过敏（花粉症）</text>
+        <text x="378" y="288" textAnchor="middle" fontSize="10.5" fill="#a5761d">风媒花粉小而轻·易入呼吸道</text>
+        <text x="378" y="310" textAnchor="middle" fontSize="10.5" fill="#a5761d">虫媒花粉少致敏（黏重不飘散）</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="334" width="440" height="34" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="356" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">孢粉学：地层中的花粉化石是重建古植被与古气候的"时间胶囊"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">花粉 · 植物的雄性"快递"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'poisonDartFrog',
+    name: '箭毒蛙',
+    kicker: '两栖纲 · 美丽的"毒王"（课外拓展）',
+    intro: '箭毒蛙是中美洲雨林里最耀眼的"蓝底黄斑小宝石"，也是毒性最强的脊椎动物之一。它的毒素并非自己合成，而是从食物（有毒蚂蚁、螨虫）中积累而来——人工饲养的箭毒蛙几乎无毒。鲜艳的体色是警戒色，告诉捕食者"我不好吃"；亲蛙还会背着蝌蚪逐个放入凤梨"水杯"精心养育。',
+    extension: true,
+    parts: [
+      { name: '警戒色', desc: '鲜艳的蓝、黄、红斑纹向捕食者宣告"我有毒，别碰我"——与保护色的"藏"相反，警戒色靠"亮"求生。' },
+      { name: '毒素来源', desc: '野生箭毒蛙的毒素来自食物链中的有毒节肢动物——人工饲养（喂果蝇）的个体几乎无毒。' },
+      { name: '带娃搬家', desc: '亲蛙把蝌蚪一个个背到凤梨科植物叶杯的"小水塘"里分开养育，避免蝌蚪互相竞争。' },
+      { name: '未受精卵口粮', desc: '母蛙定期回到每个水杯产下未受精卵喂给蝌蚪——两栖动物中罕见的精细育幼。' },
+      { name: '人类应用', desc: '当地原住民用箭毒蛙毒液涂吹箭狩猎；其毒素成为镇痛药物研发的重要分子。' },
+    ],
+    Svg: PoisonDartFrogSvg,
+  },
+  {
+    id: 'sweatGland',
+    name: '汗腺',
+    kicker: '皮肤 · 人体的"空调系统"（课外拓展）',
+    intro: '人体有 200~500 万个汗腺，是天生的"空调系统"：汗液在皮肤表面蒸发时带走大量热量，让人类在长跑中都能保持体温稳定——散热能力在哺乳动物中数一数二。汗液里除了水，还有无机盐和少量尿素——大出汗后要补水补盐，因为出汗同时也是一条"排泄通道"。',
+    extension: true,
+    parts: [
+      { name: '汗腺结构', desc: '盘曲在真皮深部的管状腺：分泌部盘绕成球，导管蜿蜒开口于皮肤表面的汗孔。' },
+      { name: '蒸发散热', desc: '1 克汗液蒸发约带走 0.58 千卡热量——与皮肤血管舒张配合，是体温调节的"主力空调"。' },
+      { name: '排泄功能', desc: '汗液排出水、无机盐（氯化钠为主）和少量尿素——与肾脏排泄形成互补。' },
+      { name: '汗味真相', desc: '汗液本身几乎无味，"汗味"来自皮肤表面细菌分解汗液成分的产物。' },
+      { name: '耐跑的秘密', desc: '人类失去浓密体毛、保留发达汗腺——"持久追猎假说"认为这正是祖先的狩猎优势。' },
+    ],
+    Svg: SweatGlandSvg,
+  },
+  {
+    id: 'pollenGrain',
+    name: '花粉',
+    kicker: '植物繁殖 · 雄性的"快递包裹"（课外拓展）',
+    intro: '每一粒花粉都是一座微型"时光胶囊"：外壁含极耐腐蚀的孢粉素，花纹因植物种类而异，可在地层中保存数千万年——孢粉学家靠它重建古代植被与气候。花粉粒内藏雄性生殖细胞，萌发孔是花粉管伸出的"门"；风媒花粉小而轻易引发过敏，虫媒花粉黏重反而"温和"。',
+    extension: true,
+    parts: [
+      { name: '花粉粒结构', desc: '外壁（孢粉素·耐腐蚀）+ 内壁 + 营养细胞 + 生殖细胞（萌发后分裂成两个精子）。' },
+      { name: '外壁花纹', desc: '刺状、网状、瘤状花纹因种而异——"身份条形码"，是孢粉学鉴定植物种类的依据。' },
+      { name: '萌发孔', desc: '花粉管从萌发孔伸出，把两个精子送入胚囊——一个与卵结合、一个形成胚乳（双受精）。' },
+      { name: '花粉过敏', desc: '风媒花粉（豚草·柏树）小而轻、大量飘散引发花粉症——致敏的是"风播"的禾草树花粉而非艳丽的虫媒花。' },
+      { name: '孢粉学应用', desc: '地层花粉组合重建古植被古气候、鉴定蜜源植物（蜂蜜溯源）、侦破案件（花粉"证人"）。' },
+    ],
+    Svg: PollenGrainSvg,
+  },
   {
     id: 'kangaroo',
     name: '袋鼠',
