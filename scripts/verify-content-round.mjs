@@ -8,28 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：gelElectrophoresis DNA 的凝胶电泳 ----------
-await page.goto(`${BASE}/lab?exp=gelElectrophoresis`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：proteinEngineering 蛋白质工程 ----------
+await page.goto(`${BASE}/lab?exp=proteinEngineering`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('DNA 的凝胶电泳');
+  results.experiment.open = text.includes('蛋白质工程：改造耐高温酶');
   const before = text;
-  await page.getByRole('button', { name: /接通电源|继续电泳|染色观察/ }).click();
-  await page.waitForTimeout(500);
-  await page.getByRole('button', { name: /接通电源|继续电泳|染色观察/ }).click();
-  await page.waitForTimeout(500);
-  await page.getByRole('button', { name: /接通电源|继续电泳|染色观察/ }).click();
-  await page.waitForTimeout(500);
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole('button', { name: /推进设计/ }).click();
+    await page.waitForTimeout(450);
+  }
   const after = await page.locator('main').innerText();
-  results.experiment.interactive = after.includes('荧光条带') && after.includes('扩增成功');
+  results.experiment.interactive = after.includes('第二代基因工程') && after.includes('创造新基因');
   results.experiment.reference = after.includes('实验原理');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['colorBlindness', 'crab', 'spleen'];
+const SPECIMENS = ['turtle', 'pancreaticIslet', 'livingFossil'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -89,17 +87,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：pcr 实验页原有图解仍正常（回归检查）
-await page.goto(`${BASE}/lab?exp=pcr`, { waitUntil: 'domcontentloaded' });
+// 图解卡：proteinEngineering 实验页应挂载 geneticCode 图解
+await page.goto(`${BASE}/lab?exp=proteinEngineering`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.pcrRegression = { found: t.includes('PCR'), ok: t.includes('PCR') };
+  results.specimens.geneticCodeDiagram = { found: t.includes('密码子') || t.includes('遗传密码'), ok: t.includes('密码子') || t.includes('遗传密码') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.pcrRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.geneticCodeDiagram?.ok;
 console.log('ALL_OK=' + allOk);

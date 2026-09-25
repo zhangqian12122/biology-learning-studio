@@ -5051,10 +5051,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -9100,7 +9100,180 @@ function SpleenSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 乌龟（爬行纲） ================= */
+
+function TurtleSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 背甲 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 218 Q 120 116 260 108 Q 400 116 400 218 Q 400 234 380 238 L 140 238 Q 120 234 120 218 Z" fill="#5a7a4a" stroke="#3a5a2a" strokeWidth="3" />
+        <path d="M260 108 L 200 170 L 260 238 L 320 170 Z" fill="#7a9a5a" stroke="#3a5a2a" strokeWidth="2" />
+        <path d="M200 170 L 150 150 L 120 218 M320 170 L 370 150 L 400 218 M200 170 L 140 238 M320 170 L 380 238" fill="none" stroke="#3a5a2a" strokeWidth="1.6" opacity="0.7" />
+        <text x="36" y="90" fontSize="12.5" fill="#3a5a2a" fontWeight="700">背甲（骨质+角质盾片）</text>
+        <line x1="100" y1="96" x2="150" y2="126" stroke="#3a5a2a" strokeWidth="1.4" />
+        <path d="M140 238 h 240 v 14 q 0 10 -12 10 h -216 q -12 0 -12 -10 Z" fill="#c9b88a" stroke="#8a7a4a" strokeWidth="2.2" />
+        <text x="36" y="272" fontSize="12.5" fill="#8a7a4a" fontWeight="700">腹甲（与背甲连成"盔甲箱"）</text>
+        <line x1="120" y1="262" x2="150" y2="252" stroke="#8a7a4a" strokeWidth="1.4" />
+      </g>
+      {/* 头颈 */}
+      <g style={dim(active, 1)}>
+        <path d="M126 200 Q 96 194 84 176 Q 74 160 88 152 Q 104 144 116 156 Q 128 168 138 182" fill="#8aa860" stroke="#3a5a2a" strokeWidth="2.4" />
+        <circle cx="98" cy="162" r="4.5" fill="#222" />
+        <text x="42" y="128" fontSize="12.5" fill="#3a5a2a" fontWeight="700">头可缩入壳内（防御）</text>
+        <line x1="80" y1="134" x2="92" y2="150" stroke="#3a5a2a" strokeWidth="1.3" strokeDasharray="3 3" />
+      </g>
+      {/* 四肢与尾 */}
+      <g style={dim(active, 2)}>
+        <path d="M170 250 l -16 34 q -4 12 8 12 l 18 -4" fill="#8aa860" stroke="#3a5a2a" strokeWidth="2.2" />
+        <path d="M350 250 l 16 34 q 4 12 -8 12 l -18 -4" fill="#8aa860" stroke="#3a5a2a" strokeWidth="2.2" />
+        <path d="M226 254 l -8 40 h 20 l 6 -38" fill="#8aa860" stroke="#3a5a2a" strokeWidth="2.2" />
+        <path d="M296 254 l 8 40 h -20 l -6 -38" fill="#8aa860" stroke="#3a5a2a" strokeWidth="2.2" />
+        <path d="M398 236 q 22 2 24 16 q -14 6 -24 -2" fill="#8aa860" stroke="#3a5a2a" strokeWidth="2" />
+        <text x="356" y="306" fontSize="12.5" fill="#3a5a2a" fontWeight="700">四肢柱状·短尾</text>
+      </g>
+      {/* 羊膜卵 */}
+      <g style={dim(active, 3)}>
+        <ellipse cx="150" cy="330" rx="40" ry="26" fill="#f4ecdc" stroke="#b5a582" strokeWidth="2.4" />
+        <text x="150" y="335" textAnchor="middle" fontSize="10.5" fill="#8a7a4a" fontWeight="700">羊膜卵</text>
+        <text x="230" y="322" fontSize="12.5" fill="#8a671b" fontWeight="700">卵壳防干燥·胚胎在羊水中发育</text>
+        <text x="230" y="344" fontSize="12.5" fill="#8a671b" fontWeight="700">摆脱对水的依赖，真正登陆</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">乌龟 · 爬行动物代表（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 胰岛（α 细胞与 β 细胞） ================= */
+
+function PancreaticIsletSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 胰腺轮廓 + 胰岛 */}
+      <g style={dim(active, 0)}>
+        <path d="M96 190 Q 96 150 150 138 Q 230 120 330 128 Q 400 134 420 164 Q 430 184 400 196 Q 320 226 220 224 Q 130 224 96 190 Z" fill="#e8c9a0" stroke="#a5763a" strokeWidth="2.8" />
+        <text x="424" y="150" fontSize="12.5" fill="#a5763a" fontWeight="700">胰腺</text>
+        <text x="300" y="112" fontSize="12.5" fill="#a5763a" fontWeight="600">胰腺中的内分泌细胞群——胰岛</text>
+        {[0, 1, 2].map((i) => (
+          <circle key={i} cx={150 + i * 90} cy={170} r="7" fill="#4d7ea8" opacity="0.6" />
+        ))}
+        <text x="86" y="128" fontSize="12.5" fill="#4b6c73" fontWeight="700">放大一个胰岛 ↓</text>
+        <path d="M150 178 q -6 18 -34 22" fill="none" stroke="#4b6c73" strokeWidth="1.4" strokeDasharray="3 3" />
+      </g>
+      {/* β 细胞 */}
+      <g style={dim(active, 1)}>
+        <circle cx="176" cy="262" r="46" fill="#c9d8e8" stroke="#2c5a84" strokeWidth="2.8" />
+        <text x="176" y="256" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">β 细胞</text>
+        <text x="176" y="276" textAnchor="middle" fontSize="10.5" fill="#2c5a84">约占 70%</text>
+        <text x="176" y="292" textAnchor="middle" fontSize="10.5" fill="#2c5a84">分泌胰岛素</text>
+        <text x="286" y="240" fontSize="12.5" fill="#2c5a84" fontWeight="700">降血糖：促进细胞摄取、</text>
+        <text x="286" y="260" fontSize="12.5" fill="#2c5a84" fontWeight="700">利用和储存葡萄糖</text>
+        <line x1="282" y1="252" x2="226" y2="262" stroke="#2c5a84" strokeWidth="1.4" />
+      </g>
+      {/* α 细胞 */}
+      <g style={dim(active, 2)}>
+        <circle cx="176" cy="262" r="20" fill="#f4d0c9" stroke="#a54838" strokeWidth="2.4" />
+        <text x="176" y="267" textAnchor="middle" fontSize="10" fill="#8a3a2a" fontWeight="700">α</text>
+        <text x="60" y="318" fontSize="12.5" fill="#8a3a2a" fontWeight="700">α 细胞（约 20%）→ 胰高血糖素</text>
+        <text x="286" y="308" fontSize="12.5" fill="#8a3a2a" fontWeight="700">升血糖：促进肝糖原分解、</text>
+        <text x="286" y="328" fontSize="12.5" fill="#8a3a2a" fontWeight="700">非糖物质转化</text>
+      </g>
+      {/* 拮抗 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">胰岛素 ↓ 与胰高血糖素 ↑ 拮抗作用——共同维持血糖 3.9~6.1 mmol/L 稳态</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">胰岛 · 血糖调节的内分泌细胞群</text>
+    </svg>
+  );
+}
+
+/* ================= 孑遗植物（活化石） ================= */
+
+function LivingFossilSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 银杏 */}
+      <g style={dim(active, 0)}>
+        <path d="M70 120 q -18 -34 14 -46 q 30 -10 40 16 q 8 26 -18 36 q -22 8 -36 -6 Z" fill="#c9d86a" stroke="#6a7a2a" strokeWidth="2.2" />
+        <path d="M96 76 q 4 22 -2 44" fill="none" stroke="#6a7a2a" strokeWidth="1.6" />
+        <text x="60" y="156" fontSize="12.5" fill="#6a7a2a" fontWeight="700">银杏（扇形叶·裸子植物）</text>
+        <text x="60" y="176" fontSize="12.5" fill="#6a7a2a">2.7 亿年前出现，白垩纪末近全灭</text>
+      </g>
+      {/* 水杉 */}
+      <g style={dim(active, 1)}>
+        <path d="M236 172 v -78 l 24 -10 v 88 Z" fill="#8a5a3a" stroke="#5a3a2a" strokeWidth="2.2" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M260 ${86 + i * 20} q 26 -6 44 -14 M260 ${96 + i * 20} q -26 -4 -44 -12`} fill="none" stroke="#3f7f3a" strokeWidth="3" strokeLinecap="round" />
+        ))}
+        <text x="222" y="196" fontSize="12.5" fill="#3f7f3a" fontWeight="700">水杉（羽状对生小叶）</text>
+        <text x="222" y="216" fontSize="12.5" fill="#3f7f3a">1943 年在湖北利川重新发现</text>
+      </g>
+      {/* 珙桐 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="408" cy="112" rx="38" ry="22" fill="#f0ead8" stroke="#8a9a7a" strokeWidth="2.2" transform="rotate(-12 408 112)" />
+        <ellipse cx="442" cy="138" rx="34" ry="20" fill="#f0ead8" stroke="#8a9a7a" strokeWidth="2.2" transform="rotate(10 442 138)" />
+        <circle cx="424" cy="126" r="9" fill="#7a5a8a" stroke="#4a3a5a" strokeWidth="1.6" />
+        <text x="360" y="82" fontSize="12.5" fill="#5a6a7a" fontWeight="700">珙桐（鸽子树）</text>
+        <text x="360" y="170" fontSize="12.5" fill="#5a6a7a">大苞片似白鸽展翅</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="252" width="440" height="92" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="280" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">"活化石"：曾在地质历史中广布、近缘类群大多灭绝</text>
+        <text x="260" y="306" textAnchor="middle" fontSize="12.5" fill="#2f6f2a">孑遗植物保留了古老类群的形态特征，是研究植物演化</text>
+        <text x="260" y="330" textAnchor="middle" fontSize="12.5" fill="#2f6f2a">和古气候的"活标本"——均被列为国家重点保护植物</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">孑遗植物 · 植物界的活化石（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'turtle',
+    name: '乌龟',
+    kicker: '爬行动物 · 甲壳与羊膜卵（课外拓展）',
+    intro: '乌龟是爬行动物的代表：背甲与腹甲连成一个"盔甲箱"，遇险时头颈和四肢都能缩入壳内。真正让它称霸陆地的是羊膜卵——卵壳防止水分散失，胚胎在羊水中发育，繁殖彻底摆脱了对水的依赖。',
+    extension: true,
+    parts: [
+      { name: '背甲与腹甲', desc: '背甲由脊椎和肋骨与骨质板愈合而成，表面覆盖角质盾片；腹甲与背甲相连，共同保护内脏。' },
+      { name: '可伸缩的头颈', desc: '颈部能折叠缩回壳内——遇到危险时最有效的防御姿态。' },
+      { name: '四肢与尾', desc: '陆生种类的四肢呈柱状支撑身体爬行；海龟的四肢则变成桨状适应游泳。' },
+      { name: '羊膜卵', desc: '卵壳坚韧防止干燥，胚胎在羊水中发育，以卵黄为营养——爬行动物登陆繁殖的关键创新。' },
+      { name: '变温与长寿', desc: '体温随环境变化、代谢低（靠晒太阳升温）；细胞分裂代数多，寿命常达几十年上百年。' },
+    ],
+    Svg: TurtleSvg,
+  },
+  {
+    id: 'pancreaticIslet',
+    name: '胰岛（α 细胞与 β 细胞）',
+    kicker: '内分泌 · 血糖调节的细胞基础',
+    intro: '胰腺的外分泌部产出消化酶，而散布在腺泡之间的约 100 万个"小岛"——胰岛，负责内分泌：β 细胞（约 70%）分泌胰岛素降血糖，α 细胞（约 20%）分泌胰高血糖素升血糖，两者拮抗调节维持血糖稳态。',
+    parts: [
+      { name: '胰岛', desc: '胰腺内约 1%~2% 的细胞聚集成球形细胞团，富含毛细血管，激素直接进入血液。' },
+      { name: 'β 细胞', desc: '约占胰岛细胞 70%，分泌胰岛素——唯一能降血糖的激素：促进组织细胞摄取、利用和储存葡萄糖。' },
+      { name: 'α 细胞', desc: '约占 20%，分泌胰高血糖素——促进肝糖原分解和非糖物质转化，使血糖升高。' },
+      { name: '拮抗调节', desc: '血糖升高→胰岛素分泌↑；血糖降低→胰高血糖素分泌↑。一降一升相互拮抗，把血糖稳定在 3.9~6.1 mmol/L。' },
+      { name: '与糖尿病的关系', desc: '1 型糖尿病是 β 细胞被免疫破坏导致胰岛素缺乏；2 型糖尿病多为靶细胞对胰岛素不敏感。' },
+    ],
+    Svg: PancreaticIsletSvg,
+  },
+  {
+    id: 'livingFossil',
+    name: '孑遗植物（活化石）',
+    kicker: '保护生物学 · 古老植物的幸存者（课外拓展）',
+    intro: '孑遗植物是地质历史时期曾经广布、如今近缘类群大多灭绝，仅存少数"幸存者"的古老植物：银杏、水杉、珙桐都是代表。它们保留着祖先的形态特征，是研究植物演化和古气候的"活标本"。',
+    extension: true,
+    parts: [
+      { name: '什么是孑遗植物', desc: '曾繁盛于地质历史时期，经历大灭绝或气候剧变后分布区大幅退缩、仅零星残存的古老植物。' },
+      { name: '银杏', desc: '2.7 亿年前就出现的裸子植物，扇形叶独一无二；野生种群仅存于浙江天目山一带。' },
+      { name: '水杉', desc: '白垩纪曾广布北半球，被认为早已灭绝；1943 年在湖北利川谋道溪重新发现，轰动植物学界。' },
+      { name: '珙桐', desc: '第三纪孑遗植物，两片白色大苞片如鸽翼——"鸽子树"；中国特有，国家一级重点保护。' },
+      { name: '保护价值', desc: '孑遗植物携带独特的基因库和演化信息，迁地保护（植物园）与就地保护（自然保护区）并举。' },
+    ],
+    Svg: LivingFossilSvg,
+  },
   {
     id: 'colorBlindness',
     name: '红绿色盲遗传',

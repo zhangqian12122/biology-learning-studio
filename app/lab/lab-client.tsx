@@ -97,6 +97,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   bloodLayers: Layers,
   hybridoma: FlaskRound,
   gelElectrophoresis: Ruler,
+  proteinEngineering: Target,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -186,6 +187,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   bloodLayers: () => import('@/components/lab/blood-layers-lab').then(({ BloodLayersLab }) => ({ default: BloodLayersLab })),
   hybridoma: () => import('@/components/lab/hybridoma-lab').then(({ HybridomaLab }) => ({ default: HybridomaLab })),
   gelElectrophoresis: () => import('@/components/lab/gel-electrophoresis-lab').then(({ GelElectrophoresisLab }) => ({ default: GelElectrophoresisLab })),
+  proteinEngineering: () => import('@/components/lab/protein-engineering-lab').then(({ ProteinEngineeringLab }) => ({ default: ProteinEngineeringLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -261,6 +263,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   bloodSugarRegulation: ['waterSaltBalance', 'bloodSugarSources'],
   bloodLayers: ['bloodClotting'],
   hybridoma: ['monoclonalAntibody'],
+  proteinEngineering: ['geneticCode'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */

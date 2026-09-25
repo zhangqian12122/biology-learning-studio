@@ -619,6 +619,7 @@ export type ExperimentId =
   | 'bloodLayers'
   | 'hybridoma'
   | 'gelElectrophoresis'
+  | 'proteinEngineering'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1109,6 +1110,13 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '基因工程与 PCR 技术',
   },
+  proteinEngineering: {
+    title: '蛋白质工程：改造耐高温酶',
+    kicker: '选择性必修 3 · 生物技术',
+    description: '从预期功能逆推结构、序列与基因：定点突变让天然酶在 70°C 保持活性。',
+    relatedBook: 'technology',
+    relatedModule: '基因工程与 PCR 技术',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1315,7 +1323,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'restrictionEnzyme', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
   },
 ];
 
@@ -1407,6 +1415,7 @@ export const experimentOrder: ExperimentId[] = [
   'lacOperon',
   'crispr',
   'geneTherapy',
+  'proteinEngineering',
   'restrictionEnzyme',
   'choiceMedia',
   // 课外拓展
