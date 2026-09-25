@@ -653,6 +653,7 @@ export type ExperimentId =
   | 'gauseCompetition'
   | 'imprinting'
   | 'bipedalCosts'
+  | 'synapseDrug'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1400,6 +1401,13 @@ export const experimentMeta: Record<
     relatedModule: '变异、育种与生物进化',
     extension: true,
   },
+  synapseDrug: {
+    title: '突触传递与药物作用',
+    kicker: '选择性必修 1 · 神经调节',
+    description: '递质释放-结合-清除三步：箭毒·有机磷·SSRI 的作用靶点。',
+    relatedBook: 'regulation',
+    relatedModule: '神经和体液调节',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1596,7 +1604,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'bloodRoutine', 'energyBalance', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1672,6 +1680,7 @@ export const experimentOrder: ExperimentId[] = [
   'bloodSugarRegulation',
   'bloodPressure',
   'impulse',
+  'synapseDrug',
   'reflexArc',
   'conditionedReflex',
   'imprinting',

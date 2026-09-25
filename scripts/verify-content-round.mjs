@@ -7,25 +7,28 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：bipedalCosts 直立行走的演化代价 ----------
-await page.goto(`${BASE}/lab?exp=bipedalCosts`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：synapseDrug 突触传递与药物作用 ----------
+await page.goto(`${BASE}/lab?exp=synapseDrug`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /推进演化/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(400);
-  }
+  await page.getByRole('button', { name: /施加动作电位/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(400);
+  const midText = await page.locator('main').innerText();
+  await page.locator('button', { hasText: '箭毒（阻断受体）' }).click();
+  await page.waitForTimeout(300);
+  await page.getByRole('button', { name: /施加动作电位/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(400);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('直立行走的演化代价');
-  results.experiment.interactive = after.includes('窄骨盆 vs 大脑袋') && after.includes('早产');
+  results.experiment.open = before.includes('突触传递与药物作用');
+  results.experiment.interactive = midText.includes('传递成功') && after.includes('肌肉松弛');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['owl', 'twins', 'tendrilPlant'];
+const SPECIMENS = ['capybara', 'lactoseIntolerance', 'giantWaterLily'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -77,17 +80,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：imprinting 实验页仍正常
-await page.goto(`${BASE}/lab?exp=imprinting`, { waitUntil: 'domcontentloaded' });
+// 回归检查：bipedalCosts 实验页仍正常
+await page.goto(`${BASE}/lab?exp=bipedalCosts`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.imprintRegression = { found: t.includes('印随') || t.includes('劳伦兹'), ok: t.includes('印随') || t.includes('劳伦兹') };
+  results.specimens.bipedalRegression = { found: t.includes('直立行走') || t.includes('演化'), ok: t.includes('直立行走') || t.includes('演化') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.imprintRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.bipedalRegression?.ok;
 console.log('ALL_OK=' + allOk);

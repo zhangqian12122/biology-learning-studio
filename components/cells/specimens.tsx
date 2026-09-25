@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -13224,7 +13224,166 @@ function TendrilPlantSvg({ active }: { active: number | null; open?: boolean }) 
   );
 }
 
+/* ================= 水豚（动物界的"社交达人"） ================= */
+
+function CapybaraSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 水豚 */}
+      <g style={dim(active, 0)}>
+        <path d="M130 220 q 4 -70 90 -76 q 110 -8 160 20 q 40 22 30 58 q -10 40 -80 44 q -130 8 -200 -46 Z" fill="#a5763a" stroke="#6a4a1a" strokeWidth="2.8" />
+        <rect x="340" y="176" width="52" height="30" rx="12" fill="#a5763a" stroke="#6a4a1a" strokeWidth="2.4" />
+        <circle cx="398" cy="186" r="4" fill="#2a1a0a" />
+        <path d="M352 168 q 6 -12 14 -14" fill="none" stroke="#6a4a1a" strokeWidth="3" strokeLinecap="round" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${160 + i * 60} 254 v 34 m -8 -30 h 16`} stroke="#6a4a1a" strokeWidth="5" strokeLinecap="round" />
+        ))}
+        <text x="60" y="140" fontSize="12.5" fill="#6a4a1a" fontWeight="700">世界最大的啮齿动物（可重 65 kg）</text>
+        <text x="60" y="162" fontSize="12" fill="#8a6a3a">半水生：趾间有蹼·游泳健将</text>
+      </g>
+      {/* 背上的小鸟 */}
+      <g style={dim(active, 1)}>
+        {[0, 1].map((i) => (
+          <g key={i}>
+            <ellipse cx={220 + i * 60} cy={148} rx="10" ry="7" fill="#e8a03a" stroke="#8a671b" strokeWidth="1.6" />
+            <path d={`M${228 + i * 60} 144 l 8 -4`} stroke="#8a671b" strokeWidth="1.6" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="300" y="146" fontSize="12" fill="#8a671b" fontWeight="600">背上常"搭便车"的小鸟</text>
+      </g>
+      {/* 社交与生态 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="292" width="440" height="74" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="316" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">"动物界社交达人"：鳄鱼·鸟·猫甚至其他种动物都爱挨着它</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="11.5" fill="#a5761d">群体生活（10~20 只家族群）· 性情温和——平和可能也是一种生存策略</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11.5" fill="#a5761d">与其他啮齿类对比：家鼠夜间独来独往·水豚白天群聚水边</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">水豚 · 啮齿目的"暖男"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 乳糖不耐受 ================= */
+
+function LactoseIntoleranceSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 正常消化 */}
+      <g style={dim(active, 0)}>
+        <rect x="46" y="60" width="200" height="130" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="146" y="86" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">乳糖酶充足（多数成人祖先牧奶）</text>
+        <text x="146" y="112" textAnchor="middle" fontSize="11" fill="#3f7f3a">乳糖（双糖）</text>
+        <text x="146" y="132" textAnchor="middle" fontSize="11" fill="#3f7f3a">→ 乳糖酶水解 →</text>
+        <text x="146" y="152" textAnchor="middle" fontSize="11" fill="#3f7f3a">葡萄糖 + 半乳糖（吸收）</text>
+        <text x="146" y="174" textAnchor="middle" fontSize="10.5" fill="#59767c">喝奶无恙·还补钙</text>
+      </g>
+      {/* 不耐受 */}
+      <g style={dim(active, 1)}>
+        <rect x="274" y="60" width="200" height="130" rx="12" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.4" />
+        <text x="374" y="86" textAnchor="middle" fontSize="12" fill="#8a3a2a" fontWeight="800">乳糖酶不足（成人普遍现象）</text>
+        <text x="374" y="112" textAnchor="middle" fontSize="11" fill="#a5533c">乳糖未被分解 → 进入大肠</text>
+        <text x="374" y="132" textAnchor="middle" fontSize="11" fill="#a5533c">细菌发酵产气 → 腹胀腹泻</text>
+        <text x="374" y="152" textAnchor="middle" fontSize="11" fill="#a5533c">渗透压升高 → 水分入肠</text>
+        <text x="374" y="174" textAnchor="middle" fontSize="10.5" fill="#59767c">喝奶"闹肚子"不是过敏</text>
+      </g>
+      {/* 演化视角 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">有趣真相：断奶后"关闭"乳糖酶基因才是哺乳动物的默认程序</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">欧洲等牧奶民族演化出"乳糖酶持续"基因突变（约 7500 年前）——基因与文化共同演化</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">对策：无乳糖奶·酸奶（菌已预消化）·少量多次</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">乳糖不耐受 · 基因与饮食文化（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 王莲（大力士浮叶） ================= */
+
+function GiantWaterLilySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 水面 */}
+      <g style={dim(active, 0)}>
+        <rect x="36" y="46" width="448" height="240" rx="14" fill="#8ab4c9" stroke="#4d7ea8" strokeWidth="2.4" opacity="0.55" />
+        <path d="M60 90 q 40 -10 80 0 m 200 180 q 50 -12 90 0" fill="none" stroke="#b5d8e8" strokeWidth="2.4" />
+        <text x="60" y="72" fontSize="11.5" fill="#2c5a84" fontWeight="700">亚马孙河</text>
+      </g>
+      {/* 巨叶 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="240" cy="150" rx="150" ry="60" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="3" />
+        <path d="M390 150 q 40 -8 44 -26 q 10 20 -14 34" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="2.2" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M${140 + i * 50} 120 q ${20 + i * 6} 30 ${10 + i * 8} 58`} fill="none" stroke="#3f7f3a" strokeWidth="2.4" opacity="0.8" />
+        ))}
+        <path d="M96 156 q 100 26 190 10" fill="none" stroke="#4a8a3a" strokeWidth="3" opacity="0.8" />
+        <text x="352" y="122" fontSize="12.5" fill="#2f6f2a" fontWeight="700">叶径可达 2~3 米</text>
+        <text x="352" y="196" fontSize="12.5" fill="#2f6f2a" fontWeight="700">叶缘上卷防浪·叶脉如伞骨</text>
+      </g>
+      {/* 结构与巧思 */}
+      <g style={dim(active, 2)}>
+        <rect x="46" y="252" width="200" height="70" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="146" y="276" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">"大力士"浮叶</text>
+        <text x="146" y="298" textAnchor="middle" fontSize="11" fill="#3f7f3a">叶脉粗壮呈肋条状·可承重</text>
+        <text x="146" y="316" textAnchor="middle" fontSize="11" fill="#3f7f3a">小孩坐上去都不沉（约 40 kg）</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="274" y="252" width="210" height="70" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="379" y="276" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">结构智慧</text>
+        <text x="379" y="298" textAnchor="middle" fontSize="11" fill="#a5761d">背面网格状叶脉 + 空腔浮力</text>
+        <text x="379" y="316" textAnchor="middle" fontSize="11" fill="#a5761d">仿生学：伦敦"水晶宫"屋顶</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">王莲 · 水生植物的"结构力学"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'capybara',
+    name: '水豚',
+    kicker: '啮齿目 · "社交达人"（课外拓展）',
+    intro: '水豚是世界上最大的啮齿动物（可重 65 千克），也是"动物界社交达人"：半水生、脾气好到不可思议，鳄鱼、水鸟、甚至猫都爱挨着它或站在它背上。水豚过家族群生活（10~20 只），白天群聚水边吃草——温和并不是"软弱"，群居警觉与水边避险同样是生存智慧。',
+    extension: true,
+    parts: [
+      { name: '体型之最', desc: '啮齿目体型冠军：肩高约 60 厘米——与家鼠同目却体型悬殊，可见辐射演化的幅度。' },
+      { name: '半水生适应', desc: '趾间有蹼、眼鼻耳都在头顶同一直线（与鳄鱼同款设计）——水中移动自如，遇险即跳水。' },
+      { name: '群居生活', desc: '家族群 10~20 只，由优势雄性带领；群体互相警戒——"人多眼睛多"降低被捕食风险。' },
+      { name: '温和性格', desc: '受威胁时通常"躲"而非"斗"：入水潜伏——与蜜獾的"主动出击"是两种相反的生存策略。' },
+      { name: '生态角色', desc: '取食水草控制植被、粪便滋养水域；同时是美洲豹与 Anaconda 蟒的重要猎物——食物链的中间节点。' },
+    ],
+    Svg: CapybaraSvg,
+  },
+  {
+    id: 'lactoseIntolerance',
+    name: '乳糖不耐受',
+    kicker: '消化 · 基因与饮食文化的共同演化（课外拓展）',
+    intro: '喝牛奶后腹胀、腹泻？这是乳糖不耐受：小肠乳糖酶分泌不足，乳糖未被分解就进入大肠，被细菌发酵产气、还会拉水分入肠。有趣的是，断奶后"关闭"乳糖酶才是哺乳动物的默认程序——欧洲等牧奶民族的祖先演化出"乳糖酶持续"突变，能终身消化牛奶，是基因与文化共同演化的经典案例。',
+    extension: true,
+    parts: [
+      { name: '成因', desc: '乳糖是葡萄糖+半乳糖组成的双糖，必须由小肠绒毛的乳糖酶水解才能吸收。' },
+      { name: '症状机制', desc: '未分解的乳糖在大肠被细菌发酵产气、升高渗透压拉入水分——腹胀、腹痛、腹泻。' },
+      { name: '与过敏的区别', desc: '乳糖不耐受是"酶不足"（消化问题）；牛奶过敏是免疫系统对乳蛋白的攻击——两者机制完全不同。' },
+      { name: '演化故事', desc: '乳糖酶持续（LCT 基因调控突变）在牧奶人群中被强烈正选择——文化（养奶牛）改变了基因频率。' },
+      { name: '对策', desc: '无乳糖牛奶（预先水解）、酸奶奶酪（菌已部分消化）、少量多次随餐饮用。' },
+    ],
+    Svg: LactoseIntoleranceSvg,
+  },
+  {
+    id: 'giantWaterLily',
+    name: '王莲',
+    kicker: '睡莲科 · "大力士"浮叶（课外拓展）',
+    intro: '王莲拥有世界上最大的水生植物叶片：直径 2~3 米，叶缘上卷防浪，叶背肋条状的粗壮叶脉撑起"网格结构"——能稳稳托住一个小孩（约 40 千克）而不下沉。它的结构智慧启发了建筑：第一届世博会的伦敦"水晶宫"屋顶就借鉴了王莲叶脉的力学设计。',
+    extension: true,
+    parts: [
+      { name: '巨型浮叶', desc: '圆盘状叶片直径可达 2~3 米，边缘直立上卷 5~10 厘米——像一口口"绿色大锅"漂在水面。' },
+      { name: '网格叶脉', desc: '叶背粗壮主脉分出网状支脉，中空充气辅助浮力——"伞骨+桥梁"的力学结构。' },
+      { name: '承重原理', desc: '载荷分散到放射状肋条、重心低、水面张力辅助——结构力学与生物生长的完美结合。' },
+      { name: '变温开花', desc: '花两天两色（白转粉红），第一天雌蕊先熟、散发热量引甲虫传粉——精确的"虫媒时间表"。' },
+      { name: '仿生启示', desc: '1851 年水晶宫的帕克斯顿从王莲叶脉获得屋顶结构灵感——生物结构仿生的经典起点。' },
+    ],
+    Svg: GiantWaterLilySvg,
+  },
   {
     id: 'owl',
     name: '猫头鹰',
