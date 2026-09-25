@@ -648,6 +648,7 @@ export type ExperimentId =
   | 'ecoStability'
   | 'algalBloom'
   | 'invasiveSim'
+  | 'geneticDrift'
   | 'energyBalance'
   | 'rhIncompatibility'
   | 'hibernation'
@@ -1363,6 +1364,14 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态保护与人与自然',
   },
+  geneticDrift: {
+    title: '遗传漂变与瓶颈效应',
+    kicker: '演化 · 课外拓展',
+    description: '小种群 vs 大种群的等位基因随机波动：固定、丢失与保护启示。',
+    relatedBook: 'genetics',
+    relatedModule: '变异、育种与生物进化',
+    extension: true,
+  },
   energyBalance: {
     title: '能量平衡与体重管理',
     kicker: '健康与营养 · 课外拓展',
@@ -1615,7 +1624,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'humanTraits', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'antibioticResistance', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'humanTraits', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'geneticDrift', 'antibioticResistance', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1685,6 +1694,7 @@ export const experimentOrder: ExperimentId[] = [
   'geneFrequency',
   'selection',
   'bipedalCosts',
+  'geneticDrift',
   'antibioticResistance',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',

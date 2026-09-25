@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -13570,7 +13570,161 @@ function PollinatorDeclineSvg({ active }: { active: number | null; open?: boolea
   );
 }
 
+/* ================= 啄木鸟（树医生） ================= */
+
+function WoodpeckerSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 树干 */}
+      <g style={dim(active, 0)}>
+        <path d="M250 60 L 250 320" stroke="#8a6a3a" strokeWidth="52" strokeLinecap="round" />
+        <path d="M224 40 q 26 -14 52 0 l -8 40 l -36 0 Z" fill="#5a9a3a" stroke="#2f6f2a" strokeWidth="2.4" />
+        <ellipse cx="180" cy="60" rx="34" ry="16" fill="#5a9a3a" stroke="#2f6f2a" strokeWidth="2" transform="rotate(-24 180 60)" />
+        <ellipse cx="320" cy="60" rx="34" ry="16" fill="#5a9a3a" stroke="#2f6f2a" strokeWidth="2" transform="rotate(24 320 60)" />
+        <text x="380" y="44" fontSize="12.5" fill="#2f6f2a" fontWeight="700">凿树洞：取食+筑巢两用</text>
+      </g>
+      {/* 啄木鸟 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="250" cy="150" rx="34" ry="46" fill="#1a1a1a" stroke="#000000" strokeWidth="2.4" />
+        <path d="M224 128 q 26 -20 52 0" fill="none" stroke="#e8e4d8" strokeWidth="2.4" />
+        <circle cx="244" cy="118" r="9" fill="#1a1a1a" stroke="#000" strokeWidth="2" />
+        <circle cx="247" cy="115" r="3" fill="#141414" />
+        <path d="M252 114 l 22 8 l -22 8 Z" fill="#4a3a2a" />
+        <path d="M226 176 l -8 24 m 24 -20 l 6 26 m 22 -28 l 8 22" stroke="#8a6a3a" strokeWidth="3.4" strokeLinecap="round" />
+        <path d="M258 168 l 18 -14" stroke="#e8e4d8" strokeWidth="3" strokeLinecap="round" />
+        <text x="330" y="140" fontSize="12.5" fill="#4a3a2a" fontWeight="700">刚尾羽"撑"在树上当三脚架</text>
+        <text x="330" y="160" fontSize="12" fill="#4a3a2a">每秒啄 15~20 次·一天上万次</text>
+      </g>
+      {/* 防震秘诀 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">防震"三件套"：海绵状颅骨 · 舌骨绕颅一圈像"安全带" · 上喙略长分散冲击</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">直线啄击避免旋转伤 · 眼内"幕帘"防视网膜震落——冲击力千倍重力也不脑震荡</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">"树医生"：啄食树皮下蛀虫·旧树洞成为猫头鹰等几十种动物的"二手房"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">啄木鸟 · 鴷形目"树医生"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 软骨（关节的"减震垫"） ================= */
+
+function CartilageSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 耳廓软骨 */}
+      <g style={dim(active, 0)}>
+        <path d="M110 130 q -16 -40 24 -50 q 40 -10 56 18 q 12 22 -6 40 q -22 20 -46 8 q -24 -10 -28 -16 Z" fill="#f0d8c0" stroke="#a5765a" strokeWidth="2.6" />
+        <text x="60" y="170" fontSize="12.5" fill="#8a5a3a" fontWeight="700">弹性软骨：耳廓·鼻尖（捏了会弹回）</text>
+      </g>
+      {/* 关节透明软骨 */}
+      <g style={dim(active, 1)}>
+        <path d="M250 130 q 20 -30 60 -26 l 60 10 q 20 6 16 26 q -6 20 -30 16 l -50 -6 q -40 -2 -56 -20 Z" fill="#d8e8f0" stroke="#4d7ea8" strokeWidth="2.6" />
+        <path d="M266 136 q 30 -10 54 -4" fill="none" stroke="#8ab4d8" strokeWidth="2" />
+        <text x="300" y="178" fontSize="12.5" fill="#2c5a84" fontWeight="700">透明软骨：关节"减震垫"</text>
+        <text x="330" y="198" fontSize="12" fill="#4b6c73">摩擦系数比人工关节低数十倍</text>
+      </g>
+      {/* 纤维软骨 */}
+      <g style={dim(active, 2)}>
+        <path d="M96 260 q 30 -18 70 -8 l 60 6 q 24 4 20 22 q -6 16 -30 12 l -60 -4 q -40 2 -60 -28 Z" fill="#f4f0e4" stroke="#8a671b" strokeWidth="2.6" />
+        <text x="96" y="330" fontSize="12.5" fill="#8a671b" fontWeight="700">纤维软骨：椎间盘·半月板（抗压"垫片"）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="260" y="364" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">软骨无血管神经——靠关节液"泡着"供养，损伤后极难自愈（运动护膝的意义）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">软骨 · 关节的"减震垫"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 木兰（古老的花） ================= */
+
+function MagnoliaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 花 */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2, 3, 4, 5].map((i) => {
+          const ang = -Math.PI / 2 + (i - 2.5) * 0.55;
+          return <ellipse key={i} cx={260 + Math.cos(ang) * 30} cy={150 + Math.sin(ang) * 30} rx="26" ry="44" fill="#f0d8e8" stroke="#c98a8a" strokeWidth="2.2" transform={`rotate(${(i - 2.5) * 32} 260 150)`} />;
+        })}
+        <ellipse cx="260" cy="150" rx="18" ry="34" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="330" y="100" fontSize="12.5" fill="#8a3a5a" fontWeight="700">花被未分化（无萼瓣之分）</text>
+        <text x="330" y="120" fontSize="12" fill="#8a3a5a">——被子植物的"原始特征"</text>
+      </g>
+      {/* 树 */}
+      <g style={dim(active, 1)}>
+        <path d="M250 250 v 90" stroke="#8a6a3a" strokeWidth="18" strokeLinecap="round" />
+        <path d="M250 250 q -30 -40 -20 -80 m 20 80 q 30 -40 20 -80" fill="none" stroke="#8a6a3a" strokeWidth="10" strokeLinecap="round" />
+        <text x="60" y="250" fontSize="12.5" fill="#6a5a2a" fontWeight="700">木兰科：现存最古老的被子植物之一</text>
+        <text x="60" y="270" fontSize="12" fill="#6a5a2a">白垩纪就开花——比蜜蜂出现更早</text>
+      </g>
+      {/* 甲虫传粉 */}
+      <g style={dim(active, 2)}>
+        <rect x="300" y="180" width="180" height="76" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="390" y="204" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">甲虫传粉的"活化石"</text>
+        <text x="390" y="226" textAnchor="middle" fontSize="10.5" fill="#a5761d">花大而"结实"（耐甲虫爬踩）</text>
+        <text x="390" y="246" textAnchor="middle" fontSize="10.5" fill="#a5761d">那时还没有蜜蜂与蝴蝶</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">"先花后叶"：早春抢在展叶前开花——利用落叶期阳光·避免叶片遮挡传粉者视线</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">与孑遗植物银杏呼应：木兰是被子植物起源研究的"活化石"</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">考点：花被未分化·花药长·心皮多数着生——木兰科保留多个原始特征</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">木兰 · 被子植物的"古老贵族"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'woodpecker',
+    name: '啄木鸟',
+    kicker: '鴷形目 · "树医生"的防震术（课外拓展）',
+    intro: '啄木鸟每秒啄树 15~20 次、一天啄上万次，冲击力可达自身重力的一千倍——却不脑震荡。它的"防震三件套"：海绵状颅骨缓冲震动、超长的舌骨绕头骨一圈像"安全带"、直线的啄击路线避免旋转伤。啄出的树洞既是粮仓也是巢穴，旧树洞还成为猫头鹰、山雀等几十种动物的"二手房"。',
+    extension: true,
+    parts: [
+      { name: '凿嘴与舌', desc: '楔形嘴凿开树皮取食蛀虫；舌骨绕过颅骨从右鼻孔伸出——舌可伸出喙外约 10 厘米钩取虫子。' },
+      { name: '防震结构', desc: '海绵状骨小梁缓冲冲击、舌骨"安全带"分散能量、直线啄击避免旋转——冲击千倍重力不伤脑。' },
+      { name: '刚尾羽', desc: '坚硬的尾羽顶在树干上与双脚构成"三脚架"，支撑垂直攀爬与大力啄击。' },
+      { name: '树洞 architect', desc: '每年凿新巢，旧洞留给猫头鹰、山雀、飞鼠——一只啄木鸟养活一片"二手房市场"。' },
+      { name: '森林医生', desc: '啄食树皮下的天牛幼虫等蛀干害虫——保护森林健康的"全科医生"。' },
+    ],
+    Svg: WoodpeckerSvg,
+  },
+  {
+    id: 'cartilage',
+    name: '软骨',
+    kicker: '运动系统 · 关节的"减震垫"（课外拓展）',
+    intro: '软骨是坚固又柔韧的结缔组织，人体的"减震系统"：耳廓鼻尖是弹性软骨（捏了会弹回），关节面覆盖透明软骨（光滑如冰、摩擦系数极低），椎间盘和半月板是纤维软骨（抗压垫片）。软骨内没有血管，靠关节液"泡着"供养——损伤后极难自愈，这就是运动护膝的意义。',
+    extension: true,
+    parts: [
+      { name: '三种软骨', desc: '透明软骨（关节面·肋软骨）、弹性软骨（耳廓·会厌）、纤维软骨（椎间盘·半月板）——成分与功能各异。' },
+      { name: '超低摩擦', desc: '关节透明软骨表面摩擦系数约 0.001~0.03，比最好的滑雪板还滑——人造关节仍在追赶。' },
+      { name: '无血管供养', desc: '软骨没有血管神经，靠滑液渗透营养——损伤后几乎不能自我修复（与骨"骨折能愈合"对比）。' },
+      { name: '半月板', desc: '膝关节内的纤维软骨"垫片"：分散压力、稳定关节——半月板撕裂是运动损伤的常客。' },
+      { name: '生长板也是软骨', desc: '长骨两端的生长板（骺板）就是透明软骨——软骨不仅"减震"，还是骨骼生长的"发动机"（与生长板标本互参）。' },
+    ],
+    Svg: CartilageSvg,
+  },
+  {
+    id: 'magnolia',
+    name: '木兰',
+    kicker: '木兰科 · 被子植物的"古老贵族"（课外拓展）',
+    intro: '木兰是被子植物中现存的"古老贵族"：白垩纪就已开花，比蜜蜂的出现还早——它的花大而"结实"（耐甲虫爬踩），靠甲虫传粉。花被片没有萼片与花瓣之分、花药长、心皮多数螺旋排列——这些"原始特征"记录着被子植物起源的秘密。先花后叶的习性让它早春满树繁花，成为园林珍品。',
+    extension: true,
+    parts: [
+      { name: '原始花被', desc: '花被片未分化成萼片与花瓣、螺旋状排列在柱状花托上——保留了被子植物祖先的"原始版式"。' },
+      { name: '甲虫传粉', desc: '出现早于蜂蝶等"高级传粉者"：靠甲虫爬行传粉，花朵厚实耐踩——传粉方式的"活化石"。' },
+      { name: '先花后叶', desc: '早春抢在展叶前开花：利用落叶期的阳光、避免叶片遮挡传粉者的视线。' },
+      { name: '演化地位', desc: '木兰科被认为接近被子植物的基部类群——研究它就是研究"第一朵花"的模样。' },
+      { name: '保护价值', desc: '原始类群基因库独特、野生种群稀少——木兰科多种被列为国家重点保护植物。' },
+    ],
+    Svg: MagnoliaSvg,
+  },
   {
     id: 'ostrich',
     name: '鸵鸟',

@@ -7,26 +7,28 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：invasiveSim 生物入侵模拟 ----------
-await page.goto(`${BASE}/lab?exp=invasiveSim`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：geneticDrift 遗传漂变与瓶颈效应 ----------
+await page.goto(`${BASE}/lab?exp=geneticDrift`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '生物防治（象甲）' }).click();
-  for (let i = 0; i < 8; i++) {
-    await page.getByRole('button', { name: /推进一年/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(300);
+  let done = false;
+  for (let i = 0; i < 20 && !done; i++) {
+    await page.getByRole('button', { name: /繁殖一代/ }).evaluate((el) => el.click());
+    await page.waitForTimeout(200);
+    const t = await page.locator('main').innerText();
+    done = t.includes('已固定') || t.includes('已丢失');
   }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('生物入侵模拟');
-  results.experiment.interactive = after.includes('以虫治草') && after.includes('水葫芦');
+  results.experiment.open = before.includes('遗传漂变与瓶颈效应');
+  results.experiment.interactive = done && after.includes('随机');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['ostrich', 'painReceptor', 'pollinatorDecline'];
+const SPECIMENS = ['woodpecker', 'cartilage', 'magnolia'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -78,17 +80,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：humanTraits 实验页仍正常
-await page.goto(`${BASE}/lab?exp=humanTraits`, { waitUntil: 'domcontentloaded' });
+// 回归检查：invasiveSim 实验页仍正常
+await page.goto(`${BASE}/lab?exp=invasiveSim`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.traitsRegression = { found: t.includes('性状调查') || t.includes('显性'), ok: t.includes('性状调查') || t.includes('显性') };
+  results.specimens.invasiveRegression = { found: t.includes('入侵') || t.includes('水葫芦'), ok: t.includes('入侵') || t.includes('水葫芦') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.traitsRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.invasiveRegression?.ok;
 console.log('ALL_OK=' + allOk);
