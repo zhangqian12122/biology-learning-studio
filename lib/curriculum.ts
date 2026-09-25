@@ -622,6 +622,7 @@ export type ExperimentId =
   | 'proteinEngineering'
   | 'protoplastFusion'
   | 'animalCellCulture'
+  | 'biocontrol'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1133,6 +1134,13 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '细胞工程与组织培养',
   },
+  biocontrol: {
+    title: '生物防治策略模拟',
+    kicker: '选择性必修 2 · 生态',
+    description: '化学农药 vs 天敌瓢虫 vs 性引诱剂：8 周蚜虫-天敌数量动态对比。',
+    relatedBook: 'ecology',
+    relatedModule: '生态保护与人与自然',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1334,7 +1342,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecologicalNiche', 'foodChain', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'population', 'ecologicalNiche', 'foodChain', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol'],
   },
   {
     name: '生物技术',
@@ -1411,6 +1419,7 @@ export const experimentOrder: ExperimentId[] = [
   'ecosystemJar',
   'mulberryFishPond',
   'leafDecompose',
+  'biocontrol',
   'ecologicalNiche',
   'foodChain',
   'bloodType',

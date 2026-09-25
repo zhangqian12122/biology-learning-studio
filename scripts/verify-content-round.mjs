@@ -8,26 +8,27 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：animalCellCulture 动物细胞培养 ----------
-await page.goto(`${BASE}/lab?exp=animalCellCulture`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：biocontrol 生物防治策略模拟 ----------
+await page.goto(`${BASE}/lab?exp=biocontrol`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('动物细胞培养');
+  results.experiment.open = text.includes('生物防治策略模拟');
   const before = text;
+  await page.getByRole('button', { name: '释放天敌瓢虫' }).click();
   for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /推进培养/ }).click();
+    await page.getByRole('button', { name: /推进一周/ }).click();
     await page.waitForTimeout(450);
   }
   const after = await page.locator('main').innerText();
-  results.experiment.interactive = after.includes('接触抑制') && after.includes('HeLa');
+  results.experiment.interactive = after.includes('以虫治虫') && after.includes('只/株');
   results.experiment.reference = after.includes('实验原理');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['tapeworm', 'stomach', 'seedDispersal'];
+const SPECIMENS = ['coral', 'cerebralCortex', 'mangrove'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -87,17 +88,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：hybridoma 实验页依赖动物细胞培养——回归检查单抗图解卡
-await page.goto(`${BASE}/lab?exp=hybridoma`, { waitUntil: 'domcontentloaded' });
+// 回归检查：sirModel 生态模型实验页仍正常
+await page.goto(`${BASE}/lab?exp=sirModel`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.hybridomaRegression = { found: t.includes('单克隆抗体'), ok: t.includes('单克隆抗体') };
+  results.specimens.sirRegression = { found: t.length > 200, ok: t.length > 200 };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.hybridomaRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.sirRegression?.ok;
 console.log('ALL_OK=' + allOk);

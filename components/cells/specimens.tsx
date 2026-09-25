@@ -5051,10 +5051,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -9513,7 +9513,202 @@ function SeedDispersalSvg({ active }: { active: number | null; open?: boolean })
   );
 }
 
+/* ================= 珊瑚虫（造礁刺胞动物） ================= */
+
+function CoralSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 珊瑚虫个体 */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <path d={`M${110 + i * 56} 168 q -4 -30 4 -44 q 6 -10 12 0 q 8 14 4 44`} fill="#e8a0a0" stroke="#a54858" strokeWidth="2.2" />
+            {[0, 1, 2, 3, 4].map((j) => (
+              <path key={j} d={`M${116 + i * 56} 126 q ${-14 + j * 7} -16 ${-10 + j * 5} -26`} fill="none" stroke="#f0b8b8" strokeWidth="3.4" strokeLinecap="round" />
+            ))}
+          </g>
+        ))}
+        <text x="44" y="82" fontSize="12.5" fill="#a54858" fontWeight="700">珊瑚虫：触手捕食浮游生物</text>
+        <text x="44" y="102" fontSize="12.5" fill="#a54858">刺细胞麻醉猎物（同水母）</text>
+        <line x1="96" y1="108" x2="112" y2="118" stroke="#a54858" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 石灰质外骨骼 */}
+      <g style={dim(active, 1)}>
+        <path d="M60 208 q 100 -34 200 0 q 40 12 90 0 l 0 26 q -60 18 -110 4 q -100 -26 -180 0 Z" fill="#e8d8c0" stroke="#a5966a" strokeWidth="2.4" />
+        <text x="380" y="222" fontSize="12.5" fill="#8a7a4a" fontWeight="700">石灰质外骨骼</text>
+        <text x="380" y="242" fontSize="12.5" fill="#8a7a4a">虫体死亡后堆积成礁</text>
+        <line x1="376" y1="218" x2="346" y2="210" stroke="#8a7a4a" strokeWidth="1.2" />
+      </g>
+      {/* 虫黄藻共生 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={92 + i * 26} cy={266 + (i % 2) * 12} r="8" fill="#b8d878" stroke="#6a8a3a" strokeWidth="1.8" />
+        ))}
+        <text x="196" y="274" fontSize="12.5" fill="#4a6a2a" fontWeight="700">体内共生虫黄藻（光合供能·赋予珊瑚色彩）</text>
+        <text x="196" y="294" fontSize="12.5" fill="#4a6a2a">水温升高 → 藻离开 → 珊瑚白化死亡</text>
+      </g>
+      {/* 造礁意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="322" width="440" height="44" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="260" y="340" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="700">珊瑚礁：海洋中物种多样性最高的生态系统之一（"海底热带雨林"）</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11.5" fill="#537078">保护珊瑚礁 = 保护四分之一海洋物种的家园</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">珊瑚虫 · 造礁刺胞动物（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 大脑皮层功能区 ================= */
+
+function CerebralCortexSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 大脑轮廓（侧面） */}
+      <g style={dim(active, 0)}>
+        <path d="M110 190 Q 96 96 210 72 Q 340 50 400 130 Q 420 190 386 240 Q 340 300 250 306 Q 160 310 126 252 Q 108 220 110 190 Z" fill="#e8d8d0" stroke="#a5765a" strokeWidth="3" />
+        <path d="M170 100 q 30 20 6 46 q -22 24 6 44 m 60 -110 q 26 22 4 50 q -20 26 8 46 m 66 -96 q 24 24 2 50" fill="none" stroke="#c9a08a" strokeWidth="2" opacity="0.7" />
+        <text x="42" y="310" fontSize="12.5" fill="#a5765a" fontWeight="700">大脑皮层（约 2~3 mm 厚·140 亿神经元）</text>
+      </g>
+      {/* 运动区（中央前回） */}
+      <g style={dim(active, 1)}>
+        <path d="M212 84 q 16 40 -2 96 l 26 4 q 20 -58 4 -104 Z" fill="#f4b87a" stroke="#8a5a1d" strokeWidth="2" />
+        <text x="238" y="70" fontSize="12.5" fill="#8a5a1d" fontWeight="700">躯体运动中枢</text>
+        <text x="238" y="88" fontSize="12.5" fill="#8a5a1d">（对侧支配·倒置分布）</text>
+        <line x1="236" y1="76" x2="226" y2="88" stroke="#8a5a1d" strokeWidth="1.2" />
+      </g>
+      {/* 感觉区（中央后回） */}
+      <g style={dim(active, 2)}>
+        <path d="M178 92 q 20 42 4 100 l 24 4 q 16 -62 0 -108 Z" fill="#b8d8b0" stroke="#3f7f3a" strokeWidth="2" />
+        <text x="66" y="120" fontSize="12.5" fill="#2f6f2a" fontWeight="700">躯体感觉中枢</text>
+        <text x="66" y="138" fontSize="12.5" fill="#2f6f2a">（管理对侧躯体感觉）</text>
+        <line x1="150" y1="128" x2="184" y2="136" stroke="#2f6f2a" strokeWidth="1.2" />
+      </g>
+      {/* 语言与视听区 */}
+      <g style={dim(active, 3)}>
+        <ellipse cx="352" cy="196" rx="30" ry="22" fill="#d8c0e0" stroke="#7a4a8a" strokeWidth="2" />
+        <text x="394" y="186" fontSize="12.5" fill="#7a4a8a" fontWeight="700">语言中枢（人类特有）</text>
+        <text x="394" y="204" fontSize="12.5" fill="#7a4a8a">S区说话 · H区听懂</text>
+        <ellipse cx="322" cy="108" rx="26" ry="18" fill="#a8c8e8" stroke="#2c5a84" strokeWidth="2" />
+        <text x="42" y="72" fontSize="12.5" fill="#2c5a84" fontWeight="700">视觉中枢</text>
+        <line x1="96" y1="76" x2="296" y2="104" stroke="#2c5a84" strokeWidth="1.2" />
+        <ellipse cx="322" cy="262" rx="24" ry="16" fill="#f0d090" stroke="#8a671b" strokeWidth="2" />
+        <text x="42" y="276" fontSize="12.5" fill="#8a671b" fontWeight="700">听觉中枢</text>
+        <line x1="96" y1="272" x2="298" y2="264" stroke="#8a671b" strokeWidth="1.2" />
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 4)}>
+        <rect x="40" y="318" width="440" height="46" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">考点：中央前回倒置管理对侧运动（头面部正立）· 言语区受损致失语症</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">S 区受损：能听懂写不出（运动性失语）· H 区受损：听不懂（听觉性失语）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">大脑皮层 · 功能定位（课内拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 红树林（海岸卫士） ================= */
+
+function MangroveSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 潮间带 */}
+      <g style={dim(active, 0)}>
+        <path d="M40 250 q 60 -14 130 0 q 80 16 160 0 q 80 -14 150 4 l 0 50 l -440 0 Z" fill="#8aa7c9" stroke="#4d7ea8" strokeWidth="2.2" opacity="0.75" />
+        <path d="M40 300 h 440" stroke="#5a7a8a" strokeWidth="2.4" />
+        <text x="296" y="272" fontSize="12.5" fill="#2c5a84" fontWeight="700">海岸潮间带：每天被潮水淹没两次</text>
+        <text x="296" y="290" fontSize="12.5" fill="#2c5a84">普通植物在这里无法呼吸生根</text>
+      </g>
+      {/* 红树植株 */}
+      <g style={dim(active, 1)}>
+        {[0, 1].map((i) => (
+          <g key={i}>
+            <path d={`M${150 + i * 190} 246 v -70`} stroke="#6a4a2a" strokeWidth="8" strokeLinecap="round" />
+            <path d={`M${150 + i * 190} 186 q -30 -14 -44 -44 m 44 44 q 30 -14 44 -44 m -44 44 q -2 -36 0 -56`} fill="none" stroke="#3f7f3a" strokeWidth="5" strokeLinecap="round" />
+            <ellipse cx={100 + i * 190} cy="132" rx="26" ry="15" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="1.8" />
+            <ellipse cx={200 + i * 190} cy="132" rx="26" ry="15" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="1.8" />
+            <ellipse cx={150 + i * 190} cy="118" rx="28" ry="16" fill="#6aa85a" stroke="#2f6f2a" strokeWidth="1.8" />
+          </g>
+        ))}
+        <text x="60" y="100" fontSize="12.5" fill="#2f6f2a" fontWeight="700">红树（树皮含单宁呈红色）</text>
+      </g>
+      {/* 呼吸根与支柱根 */}
+      <g style={dim(active, 2)}>
+        {[0, 1].map((i) => (
+          <g key={i}>
+            <path d={`M${150 + i * 190} 246 l -26 34 m 26 -34 l 24 34 m -24 -34 l 0 38`} stroke="#8a6a3a" strokeWidth="4.4" strokeLinecap="round" />
+            {[0, 1, 2].map((j) => (
+              <path key={j} d={`M${118 + i * 190 + j * 24} 288 q 4 -26 12 -38`} fill="none" stroke="#a5824a" strokeWidth="3" strokeLinecap="round" />
+            ))}
+          </g>
+        ))}
+        <text x="42" y="216" fontSize="12.5" fill="#8a6a3a" fontWeight="700">支柱根（固定淤泥）</text>
+        <text x="330" y="216" fontSize="12.5" fill="#a5824a" fontWeight="700">呼吸根（退潮时换气）</text>
+        <line x1="122" y1="220" x2="128" y2="244" stroke="#8a6a3a" strokeWidth="1.2" strokeDasharray="3 3" />
+        <line x1="356" y1="220" x2="330" y2="252" stroke="#a5824a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 胎生苗 */}
+      <g style={dim(active, 3)}>
+        <path d="M390 246 l 12 -40 q 10 -16 22 -4 q 10 14 -4 24 l -30 20 Z" fill="#7aa87a" stroke="#2f6f2a" strokeWidth="2.2" />
+        <text x="330" y="60" fontSize="12.5" fill="#2f6f2a" fontWeight="700">胎生苗：种子在母树上萌发成</text>
+        <text x="330" y="80" fontSize="12.5" fill="#2f6f2a">棒状幼苗，脱落插入淤泥生根</text>
+        <line x1="392" y1="88" x2="404" y2="200" stroke="#2f6f2a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 价值 */}
+      <g style={dim(active, 4)}>
+        <rect x="40" y="322" width="440" height="44" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="260" y="340" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">"海岸卫士"：消浪护堤 · 净化海水 · 为鱼虾鸟类提供繁殖与觅食地</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">固碳能力约为同面积热带雨林的 3~5 倍——重要的蓝碳生态系统</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">红树林 · 海岸湿地生态系统（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'coral',
+    name: '珊瑚虫与珊瑚礁',
+    kicker: '刺胞动物 · 造礁与共生（课外拓展）',
+    intro: '珊瑚虫是与水母同门的刺胞动物：一个个只有几毫米到几厘米的小个体，用触手捕食浮游生物，同时分泌石灰质外骨骼。千万年来无数虫体的"骨骼"层层堆积，形成了珊瑚礁——海洋中物种多样性最高的生态系统之一。',
+    extension: true,
+    parts: [
+      { name: '珊瑚虫个体', desc: '圆筒状身体，顶端是口，口周围一圈触手，用刺细胞麻醉浮游生物——与水母同属刺胞动物门。' },
+      { name: '石灰质外骨骼', desc: '虫体基部和体壁分泌碳酸钙形成"房子"；虫体死亡后骨骼保留，一代代堆积成礁。' },
+      { name: '虫黄藻共生', desc: '体内共生单细胞虫黄藻：藻类光合作用提供养分和氧气，珊瑚提供住所和 CO₂——珊瑚缤纷的色彩来自藻类。' },
+      { name: '珊瑚白化', desc: '海水升温或污染使虫黄藻离开或死亡，珊瑚失去颜色和主要能源而死亡——全球变暖正威胁大堡礁等珊瑚礁。' },
+      { name: '造礁意义', desc: '珊瑚礁覆盖海底不足 0.2%，却养育着约四分之一的海洋物种，被称为"海底热带雨林"。' },
+    ],
+    Svg: CoralSvg,
+  },
+  {
+    id: 'cerebralCortex',
+    name: '大脑皮层功能区',
+    kicker: '神经调节 · 皮层功能定位',
+    intro: '大脑皮层厚约 2~3 毫米，却有约 140 亿个神经元，是神经系统的"最高司令部"：中央前回的躯体运动中枢管理对侧身体的运动，中央后回的躯体感觉中枢接收对侧感觉，还有人类特有的语言中枢——S 区受损会得运动性失语症，H 区受损则听不懂别人的话。',
+    parts: [
+      { name: '躯体运动中枢', desc: '中央前回：皮层代表区位置倒置（头面部正立），交叉管理对侧躯体的运动，代表区大小与运动精细程度成正比。' },
+      { name: '躯体感觉中枢', desc: '中央后回：管理对侧躯体的皮肤、肌肉等感觉，代表区大小与感觉灵敏程度成正比。' },
+      { name: '语言中枢', desc: '人类特有：S 区（运动性语言区）受损——能看懂听懂但不会说话（运动性失语）；H 区（听觉性语言区）受损——听得见声音但听不懂（听觉性失语）。' },
+      { name: '视觉与听觉中枢', desc: '视觉中枢位于枕叶，听觉中枢位于颞叶——一侧中枢管理双眼双侧视野/双耳的信息。' },
+      { name: '低级中枢与高级中枢', desc: '排尿、呼吸等低级中枢在脊髓和脑干，但受大脑皮层高级中枢调控——"憋尿"就是高级中枢控制脊髓低级中枢的例子。' },
+    ],
+    Svg: CerebralCortexSvg,
+  },
+  {
+    id: 'mangrove',
+    name: '红树林',
+    kicker: '海岸湿地 · 蓝碳生态系统（课外拓展）',
+    intro: '红树林是生长在热带亚热带海岸潮间带的盐生木本植物群落：每天被潮水淹没两次，土壤缺氧、盐分高。红树进化出支柱根站稳淤泥、呼吸根退潮换气，甚至种子还在母树上就萌发成棒状幼苗（胎生），脱落后直插泥中生根——被称为"海岸卫士"。',
+    extension: true,
+    parts: [
+      { name: '潮间带环境', desc: '周期性被潮水淹没：缺氧淤泥、高盐海水、风浪冲击——普通植物无法在此生存。' },
+      { name: '支柱根', desc: '从树干下部斜插入淤泥的弓形根，像支架一样固定植株，抵抗潮汐和风浪。' },
+      { name: '呼吸根', desc: '指状根伸出淤泥表面，表皮有皮孔，退潮时为地下根系换气——应对缺氧淤泥。' },
+      { name: '胎生繁殖', desc: '种子在果实里就萌发成棒状幼苗，成熟后脱落垂直插入淤泥，几小时即可生根定植——不被潮水冲走。' },
+      { name: '生态价值', desc: '消浪护堤、净化海水、为鱼虾候鸟提供家园；固碳能力是同面积热带雨林的 3~5 倍（蓝碳），我国正大力修复红树林。' },
+    ],
+    Svg: MangroveSvg,
+  },
   {
     id: 'tapeworm',
     name: '猪肉绦虫',
