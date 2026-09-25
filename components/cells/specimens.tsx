@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -12343,7 +12343,158 @@ function SunflowerSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 穿山甲（披鳞的食蚁兽） ================= */
+
+function PangolinSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体鳞片 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 220 q -6 -70 70 -88 q 100 -22 190 6 q 60 18 60 62 q 0 44 -70 58 q -120 22 -190 -6 q -56 -22 -60 -32 Z" fill="#c9a06a" stroke="#8a6a3a" strokeWidth="3" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <path key={i} d={`M${150 + i * 32} ${168 + (i % 2) * 10} l 22 -6 m -22 20 l 22 -4`} stroke="#8a6a3a" strokeWidth="2.6" strokeLinecap="round" />
+        ))}
+        <path d="M120 226 q -20 30 -44 40 m 44 -40 q -6 34 -20 48" fill="none" stroke="#8a6a3a" strokeWidth="4" strokeLinecap="round" />
+        <text x="46" y="60" fontSize="12.5" fill="#8a6a3a" fontWeight="700">角质鳞片（哺乳动物的"铠甲"）</text>
+        <text x="386" y="170" fontSize="12" fill="#a5763a">遇险卷成球·鳞片边缘锋利</text>
+      </g>
+      {/* 头与长舌 */}
+      <g style={dim(active, 1)}>
+        <path d="M124 176 q -26 -14 -38 -34 l 18 -10 q 12 16 32 24" fill="#c9a06a" stroke="#8a6a3a" strokeWidth="2.4" />
+        <circle cx="100" cy="140" r="4" fill="#2a2a1a" />
+        <path d="M112 132 q -18 -30 -44 -38" fill="none" stroke="#8a6a3a" strokeWidth="3.4" strokeLinecap="round" />
+        <text x="46" y="82" fontSize="12.5" fill="#8a6a3a" fontWeight="700">无牙·长舌可达 40 cm</text>
+        <text x="46" y="102" fontSize="12.5" fill="#8a6a3a">黏稠唾液粘食白蚁蚂蚁</text>
+      </g>
+      {/* 保护 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="800">全球走私量最大的哺乳动物之一——鳞片"入药"并无科学依据（成分≈指甲角蛋白）</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5533c">已升级为国家一级保护动物 · 2020 年起鳞片从药典除名</text>
+        <text x="260" y="354" textAnchor="middle" fontSize="11.5" fill="#a5533c">一只穿山甲一年吃掉约 700 万只白蚁蚂蚁——森林"卫士"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">穿山甲 · 鳞甲目（课外拓展·保护动物）</text>
+    </svg>
+  );
+}
+
+/* ================= 膀胱与排尿 ================= */
+
+function UrinaryBladderSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 输尿管+膀胱 */}
+      <g style={dim(active, 0)}>
+        <path d="M170 80 q -16 60 -14 118" fill="none" stroke="#8ab4c9" strokeWidth="8" strokeLinecap="round" />
+        <path d="M350 80 q 16 60 14 118" fill="none" stroke="#8ab4c9" strokeWidth="8" strokeLinecap="round" />
+        <text x="330" y="66" fontSize="12.5" fill="#2c5a84" fontWeight="700">输尿管（左右各一·输送尿液）</text>
+        <path d="M150 200 q 0 -40 110 -40 q 110 0 110 40 q 0 60 -40 96 l -140 0 q -40 -36 -40 -96 Z" fill="#d8e8b0" stroke="#6a9a3a" strokeWidth="2.8" />
+        <text x="260" y="238" textAnchor="middle" fontSize="12.5" fill="#4a6a2a" fontWeight="700">膀胱（平滑肌构成的"气球"）</text>
+        <path d="M258 296 v 40" stroke="#8a6a3a" strokeWidth="8" strokeLinecap="round" />
+        <text x="292" y="292" fontSize="12.5" fill="#8a6a3a" fontWeight="700">尿道</text>
+      </g>
+      {/* 括约肌与反射 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="258" cy="290" rx="20" ry="9" fill="#c9a05a" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="46" y="252" fontSize="12.5" fill="#8a671b" fontWeight="700">尿道括约肌（"阀门"）</text>
+        <rect x="300" y="120" width="180" height="66" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="390" y="144" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">容量约 400~500 mL</text>
+        <text x="390" y="166" textAnchor="middle" fontSize="11" fill="#37585f">牵张感受器 → 排尿反射</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="298" width="440" height="60" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">低级中枢在脊髓·受大脑皮层高级中枢调控——"憋尿"与婴儿尿床的原理</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#a5761d">脊髓损伤（截瘫）→ 大脑无法下达"忍住"指令→尿失禁（与脊髓标本互参）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">膀胱 · 尿液的"暂存仓库"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 郁金香鳞茎（越冬的"能量仓"） ================= */
+
+function TulipBulbSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 植株 */}
+      <g style={dim(active, 0)}>
+        <path d="M260 230 v -110" stroke="#3f7f3a" strokeWidth="8" strokeLinecap="round" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M260 ${180 - i * 30} q ${-40 - i * 8} -16 -58 -4 m 58 4 q ${40 + i * 8} -16 58 -4`} fill="none" stroke="#5a9a4a" strokeWidth="5" strokeLinecap="round" />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <path key={`p${i}`} d={`M244 ${100 - i * 6} q 16 ${-18 - i * 4} 32 0 q -16 ${10 + i * 2} -32 0 Z`} fill={['#e84a6a', '#e8b83a', '#c94a4a'][i]} stroke="#8a2a3a" strokeWidth="1.8" />
+        ))}
+        <text x="330" y="100" fontSize="12.5" fill="#8a2a3a" fontWeight="700">郁金香：春日花冠</text>
+        <text x="330" y="120" fontSize="12" fill="#8a671b" fontWeight="600">花芽早在头年鳞茎内形成</text>
+      </g>
+      {/* 鳞茎剖面 */}
+      <g style={dim(active, 1)}>
+        <path d="M150 300 q -50 -8 -46 -60 q 4 -46 46 -58 q 44 12 48 58 q 4 52 -48 60 Z" fill="#f4ecd8" stroke="#b5a582" strokeWidth="2.8" />
+        <path d="M150 300 q -6 -60 0 -116 m -22 110 q -14 -50 -4 -100 m 48 104 q 12 -54 2 -106" fill="none" stroke="#d8c9a0" strokeWidth="2.4" />
+        <path d="M144 190 q 6 -20 12 0 l 2 30 q -8 8 -16 0 Z" fill="#a5c98a" stroke="#3f7f3a" strokeWidth="1.8" />
+        <text x="246" y="248" fontSize="12.5" fill="#8a7a4a" fontWeight="700">鳞茎剖面：肥厚的鳞叶（储养）</text>
+        <text x="246" y="268" fontSize="12" fill="#8a7a4a">包裹顶芽（来年的花与叶）</text>
+        <text x="246" y="288" fontSize="12" fill="#8a7a4a">基盘生根——越冬"能量仓"</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="66" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">鳞茎 = 营养繁殖器官：不靠种子，子鳞茎分株即"克隆"出相同品种</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">秋种春花：鳞茎经冬季低温（春化）才能开花——冰箱冷藏球可人工"骗"它开花</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">郁金香鳞茎 · 地下的能量仓库（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'pangolin',
+    name: '穿山甲',
+    kicker: '鳞甲目 · 披鳞的"森林卫士"（课外拓展·保护动物）',
+    intro: '穿山甲是唯一披着鳞甲的哺乳动物：角质鳞片遇险时让全身卷成"铁球"。它没有牙齿，靠 40 厘米的长舌黏食白蚁蚂蚁，一只一年能吃掉约 700 万只——是名副其实的"森林卫士"。讽刺的是，这身鳞片让它成为全球走私量最大的哺乳动物之一（鳞片成分与指甲相同的角蛋白，"药用"并无科学依据），现已升为国家一级保护动物。',
+    extension: true,
+    parts: [
+      { name: '角质鳞片', desc: '约 500~600 枚鳞片随体节排列，成分是角蛋白（与指甲同源）——卷成球时边缘锋利御敌。' },
+      { name: '长舌', desc: '舌可伸出体外 40 厘米、几乎连到盆腔；黏稠唾液把洞穴深处的白蚁"粘"出来。' },
+      { name: '食蚁专化', desc: '没有牙齿、胃部靠吞入的小石子"磨碎"猎物——与食蚁兽的趋同演化。' },
+      { name: '生态价值', desc: '一只穿山甲一年食蚁约 700 万只，控制白蚁种群、保护森林——生态位不可替代。' },
+      { name: '保护现状', desc: '因鳞片与肉的非法贸易被过度捕猎：所有 8 个种均受威胁；我国已将其从药典除名并升级为一级保护。' },
+    ],
+    Svg: PangolinSvg,
+  },
+  {
+    id: 'urinaryBladder',
+    name: '膀胱与排尿',
+    kicker: '泌尿系统 · 尿液的"暂存仓库"（课外拓展）',
+    intro: '肾脏源源不断地生成尿液，经输尿管汇入膀胱暂存：膀胱壁的平滑肌可以像气球一样舒张，容量约 400~500 毫升。储存到一定量时，壁上的牵张感受器发出信号，脊髓排尿反射启动——但成人的大脑皮层可以"否决"它，直到合适的时机才排尿。婴儿大脑控制未成熟，所以会尿床。',
+    extension: true,
+    parts: [
+      { name: '膀胱结构', desc: '平滑肌构成的弹性"储水囊"：空虚时壁厚皱缩，充满时可膨胀数十倍（顶部朝腹腔伸展）。' },
+      { name: '括约肌', desc: '尿道周围的括约肌是"阀门"：内括约肌受自主神经管，外括约肌受大脑意识控制。' },
+      { name: '排尿反射', desc: '牵张感受器 → 脊髓低级中枢 → 膀胱收缩、括约肌放开——低级反射中枢在脊髓。' },
+      { name: '大脑的调控', desc: '大脑皮层可延迟排尿（"憋尿"）——高级中枢控制低级中枢的经典例证；截瘫患者失去该控制而尿失禁。' },
+      { name: '健康提示', desc: '长期憋尿使细菌滞留易引发尿路感染——有尿意及时排，多喝水冲刷尿路。' },
+    ],
+    Svg: UrinaryBladderSvg,
+  },
+  {
+    id: 'tulipBulb',
+    name: '郁金香鳞茎',
+    kicker: '百合科 · 地下的"能量仓库"（课外拓展）',
+    intro: '郁金香春天开花的全部"本钱"，早在头年秋天就藏在地下鳞茎里：层层肥厚的鳞叶储存着养分，包裹着发育完备的花芽。鳞茎既是越冬的"能量仓库"（需经冬季低温春化才开花），又是营养繁殖的"克隆工具"——母鳞茎旁长出的子鳞茎分株栽下，就能长出与母株一模一样的花。',
+    extension: true,
+    parts: [
+      { name: '鳞茎结构', desc: '短缩的茎（基盘）+ 肉质鳞叶（储存养分）+ 被膜外皮；顶芽来年发育为花茎与叶。' },
+      { name: '春化需求', desc: '必须经历 12~16 周低温（2~9°C）花芽才能正常发育——荷兰郁金香靠冬季冷凉土壤"天然春化"。' },
+      { name: '营养繁殖', desc: '母鳞茎每年分化出子鳞茎，分株栽培即得"克隆"植株——品种花色不会像种子繁殖那样分离。' },
+      { name: '家庭催花', desc: '把球放冰箱冷藏数周再水培——人工"骗"过冬天，春节就能看花。' },
+      { name: '经济与文化', desc: '17 世纪荷兰"郁金香狂热"是史上著名的经济泡沫——如今荷兰仍是全球球根贸易中心。' },
+    ],
+    Svg: TulipBulbSvg,
+  },
   {
     id: 'cicada',
     name: '蝉',

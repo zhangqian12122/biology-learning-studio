@@ -8,23 +8,27 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：bloodRoutine 血常规化验单解读 ----------
-await page.goto(`${BASE}/lab?exp=bloodRoutine`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：ecoStability 生态系统的稳定性 ----------
+await page.goto(`${BASE}/lab?exp=ecoStability`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '发热·咽痛' }).click();
-  await page.waitForTimeout(450);
+  await page.locator('button', { hasText: '农田（单一作物' }).click();
+  await page.locator('button', { hasText: '虫害爆发' }).click();
+  for (let i = 0; i < 8; i++) {
+    await page.getByRole('button', { name: /推进一年/ }).evaluate((el) => el.click());
+    await page.waitForTimeout(350);
+  }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('血常规化验单解读');
-  results.experiment.interactive = after.includes('14.5') && after.includes('细菌感染');
+  results.experiment.open = before.includes('生态系统的稳定性');
+  results.experiment.interactive = after.includes('全军覆没') || after.includes('低水平');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['cicada', 'mammaryGland', 'sunflower'];
+const SPECIMENS = ['pangolin', 'urinaryBladder', 'tulipBulb'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -76,17 +80,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 图解卡：bloodRoutine 实验页应挂载 bloodCells 图解
-await page.goto(`${BASE}/lab?exp=bloodRoutine`, { waitUntil: 'domcontentloaded' });
+// 图解卡：ecoStability 实验页应挂载 ecosystemTypes 图解
+await page.goto(`${BASE}/lab?exp=ecoStability`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.bloodCellsDiagram = { found: t.includes('血细胞') || t.includes('血液'), ok: t.includes('血细胞') || t.includes('血液') };
+  results.specimens.ecoTypesDiagram = { found: t.includes('生态系统') || t.includes('群落'), ok: t.includes('生态系统') || t.includes('群落') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.bloodCellsDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.ecoTypesDiagram?.ok;
 console.log('ALL_OK=' + allOk);

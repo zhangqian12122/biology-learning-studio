@@ -123,6 +123,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   allergySim: Pill,
   bloodFlow: Heart,
   bloodRoutine: ClipboardCheck,
+  ecoStability: Waves,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -238,6 +239,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   allergySim: () => import('@/components/lab/allergy-sim-lab').then(({ AllergySimLab }) => ({ default: AllergySimLab })),
   bloodFlow: () => import('@/components/lab/blood-flow-lab').then(({ BloodFlowLab }) => ({ default: BloodFlowLab })),
   bloodRoutine: () => import('@/components/lab/blood-routine-lab').then(({ BloodRoutineLab }) => ({ default: BloodRoutineLab })),
+  ecoStability: () => import('@/components/lab/eco-stability-lab').then(({ EcoStabilityLab }) => ({ default: EcoStabilityLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -332,6 +334,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   allergySim: ['antibody'],
   bloodFlow: ['heartCirculation'],
   bloodRoutine: ['bloodCells'],
+  ecoStability: ['ecosystemTypes'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */

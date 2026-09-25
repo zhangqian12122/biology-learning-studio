@@ -645,6 +645,7 @@ export type ExperimentId =
   | 'allergySim'
   | 'bloodFlow'
   | 'bloodRoutine'
+  | 'ecoStability'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1331,6 +1332,13 @@ export const experimentMeta: Record<
     relatedModule: '免疫调节与健康',
     extension: true,
   },
+  ecoStability: {
+    title: '生态系统的稳定性',
+    kicker: '选择性必修 2 · 生态',
+    description: '森林 vs 农田受干扰对比：抵抗力稳定性与恢复力稳定性。',
+    relatedBook: 'ecology',
+    relatedModule: '生态系统能量与物质循环',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1532,7 +1540,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality'],
   },
   {
     name: '生物技术',
@@ -1613,6 +1621,7 @@ export const experimentOrder: ExperimentId[] = [
   'yeastPopulation',
   'soilFaunaSurvey',
   'succession',
+  'ecoStability',
   'energy',
   'carbonCycleSim',
   'population',
