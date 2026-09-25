@@ -8,27 +8,28 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：conditionedReflex 条件反射的建立 ----------
-await page.goto(`${BASE}/lab?exp=conditionedReflex`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：allergySim 过敏反应机制 ----------
+await page.goto(`${BASE}/lab?exp=allergySim`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole('button', { name: /铃声 \+ 食物/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(350);
+  for (let i = 0; i < 2; i++) {
+    await page.getByRole('button', { name: /第一次接触|再次接触/ }).evaluate((el) => el.click());
+    await page.waitForTimeout(400);
   }
-  await page.getByRole('button', { name: /只摇铃（测试）/ }).evaluate((el) => el.click());
+  const midText = await page.locator('main').innerText();
+  await page.getByRole('button', { name: /观察症状/ }).evaluate((el) => el.click());
   await page.waitForTimeout(400);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('条件反射的建立');
-  results.experiment.interactive = after.includes('条件刺激') && after.includes('100 滴');
+  results.experiment.open = before.includes('过敏反应机制');
+  results.experiment.interactive = midText.includes('桥联') && after.includes('荨麻疹') && after.includes('免疫"过度"');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['leech', 'thymus', 'pollinationTypes'];
+const SPECIMENS = ['anglerfish', 'cochleaHair', 'ethylene'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -80,17 +81,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 图解卡：conditionedReflex 实验页应挂载 brainStructure 图解
-await page.goto(`${BASE}/lab?exp=conditionedReflex`, { waitUntil: 'domcontentloaded' });
+// 图解卡：allergySim 实验页应挂载 antibody 图解
+await page.goto(`${BASE}/lab?exp=allergySim`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.brainDiagram = { found: t.includes('大脑') || t.includes('脑'), ok: t.includes('大脑') || t.includes('脑') };
+  results.specimens.antibodyDiagram = { found: t.includes('抗体') || t.includes('抗原'), ok: t.includes('抗体') || t.includes('抗原') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.brainDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.antibodyDiagram?.ok;
 console.log('ALL_OK=' + allOk);

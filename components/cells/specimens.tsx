@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -11983,7 +11983,173 @@ function PollinationTypesSvg({ active }: { active: number | null; open?: boolean
   );
 }
 
+/* ================= 深海鮟鱇（提灯的猎手） ================= */
+
+function AnglerfishSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 深海背景 */}
+      <g style={dim(active, 0)}>
+        <rect x="36" y="46" width="448" height="220" rx="14" fill="#0e1620" stroke="#0a1018" strokeWidth="2.4" />
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={80 + i * 130} cy={80 + (i % 2) * 30} r="1.6" fill="#4a5a6a" />
+        ))}
+        <text x="260" y="246" textAnchor="middle" fontSize="11" fill="#4a5a6a">深海 200~2000 m：没有阳光·食物稀少·一片漆黑</text>
+      </g>
+      {/* 鮟鱇鱼 */}
+      <g style={dim(active, 1)}>
+        <path d="M170 160 q 30 -50 110 -46 q 90 4 110 50 q 12 40 -30 62 q -70 30 -140 6 q -60 -22 -50 -72 Z" fill="#3a2a3a" stroke="#1f1220" strokeWidth="2.8" />
+        <path d="M160 138 q -30 -20 -60 -18 m 60 40 q -34 -6 -66 4" fill="none" stroke="#1f1220" strokeWidth="4" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M330 ${130 + i * 34} l 40 ${-6 + i * 8}`} stroke="#1f1220" strokeWidth="3.4" strokeLinecap="round" />
+        ))}
+        <path d="M200 128 q 40 -26 80 -6" fill="none" stroke="#2a1a2a" strokeWidth="3" />
+        <path d="M238 104 q 4 -20 24 -28" fill="none" stroke="#5a4a6a" strokeWidth="3.4" />
+        <circle cx="266" cy="70" r="10" fill="#c9e8f0" stroke="#7ac8d8" strokeWidth="2" />
+        <text x="352" y="96" fontSize="12.5" fill="#7ac8d8" fontWeight="700">发光器"小灯笼"</text>
+        <text x="352" y="116" fontSize="12.5" fill="#7ac8d8">（共生的发光细菌）</text>
+        {[0, 1].map((i) => (
+          <circle key={i} cx={216 + i * 26} cy={168} r="7" fill="#f4d06a" stroke="#8a671b" strokeWidth="1.8" />
+        ))}
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M${190 + i * 22} 210 l 8 14 m 8 -12 l 6 12`} stroke="#e8e4d0" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+      </g>
+      {/* 机制 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">"提灯诱鱼"：灯光引好奇的猎物靠近 → 张口吞食（0.01 秒）</text>
+        <text x="260" y="334" textAnchor="middle" fontSize="11.5" fill="#537078">发光来自共生细菌——深海中"借光捕猎"的互利共生</text>
+        <text x="260" y="354" textAnchor="middle" fontSize="11.5" fill="#537078">极端适应：口大胃可撑·雄鱼远小于雌鱼（性寄生）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">深海鮟鱇 · 极端环境的适应（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 耳蜗毛细胞（听力） ================= */
+
+function CochleaHairSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 耳蜗剖面 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 190 q -6 -60 60 -78 q 90 -24 150 20 q 40 30 20 70 q -24 44 -100 40 q -80 -4 -110 -30" fill="none" stroke="#4d7ea8" strokeWidth="26" strokeLinecap="round" />
+        <path d="M128 186 q -2 -48 58 -64" fill="none" stroke="#dceaea" strokeWidth="10" strokeLinecap="round" />
+        <text x="330" y="248" fontSize="12.5" fill="#2c5a84" fontWeight="700">耳蜗（蜗牛壳状·2.5 圈）</text>
+        <text x="330" y="268" fontSize="12" fill="#4b6c73">内含毛细胞与听觉神经末梢</text>
+      </g>
+      {/* 毛细胞 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3, 4].map((i) => (
+          <g key={i}>
+            <path d={`M${150 + i * 34} 140 v -20`} stroke="#b05a3a" strokeWidth="4" strokeLinecap="round" />
+            {[0, 1, 2].map((j) => (
+              <path key={j} d={`M${144 + i * 34 + j * 5} ${120 - j * 4} l 4 -8`} stroke="#e8a080" strokeWidth="1.8" strokeLinecap="round" />
+            ))}
+          </g>
+        ))}
+        <text x="330" y="110" fontSize="12.5" fill="#8a4a2a" fontWeight="700">毛细胞顶部的"听毛"</text>
+        <text x="330" y="130" fontSize="12" fill="#8a4a2a">随声波振动弯曲 → 产生电信号</text>
+        <line x1="326" y1="112" x2="290" y2="122" stroke="#8a4a2a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 听力损伤 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="292" width="440" height="72" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="316" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">毛细胞不可再生：长期戴耳机大音量→毛细胞"过劳死"→噪声性听力损失</text>
+        <text x="260" y="338" textAnchor="middle" fontSize="11.5" fill="#a5761d">60-60 原则：音量不超最大 60%·连续使用不超 60 分钟</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11" fill="#a5761d">高频听力最先受损——"听得见但听不清"要警惕</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">耳蜗毛细胞 · 听力的"耗材"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 乙烯（果实催熟的激素） ================= */
+
+function EthyleneSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 未熟 vs 催熟 */}
+      <g style={dim(active, 0)}>
+        <text x="120" y="90" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">乙烯：气态植物激素</text>
+        <path d="M110 150 q 10 -18 26 -14 q 4 -14 20 -10 q 16 -4 20 12 q 14 6 6 20 q -6 12 -22 10 l -38 0 q -18 -2 -12 -18 Z" fill="#8ac86a" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="140" y="192" textAnchor="middle" fontSize="11" fill="#3f7f3a" fontWeight="600">青番茄（未熟）</text>
+        <path d="M300 150 q 10 -18 26 -14 q 4 -14 20 -10 q 16 -4 20 12 q 14 6 6 20 q -6 12 -22 10 l -38 0 q -18 -2 -12 -18 Z" fill="#e05a3a" stroke="#a53030" strokeWidth="2.4" />
+        <text x="330" y="192" textAnchor="middle" fontSize="11" fill="#a53030" fontWeight="600">红番茄（乙烯催熟）</text>
+        <path d="M196 150 h 60 m 0 0 l -8 -5 m 8 5 l 8 5" fill="none" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="226" y="132" textAnchor="middle" fontSize="10" fill="#8a671b" fontWeight="700">乙烯气体</text>
+      </g>
+      {/* 作用 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="216" width="200" height="70" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="146" y="240" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">促进成熟</text>
+        <text x="146" y="262" textAnchor="middle" fontSize="11" fill="#3f7f3a">催熟果实（柿子·香蕉）</text>
+        <text x="146" y="280" textAnchor="middle" fontSize="11" fill="#3f7f3a">促进落叶落果（老叶黄化）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="274" y="216" width="200" height="70" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="374" y="240" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">生活应用</text>
+        <text x="374" y="262" textAnchor="middle" fontSize="11" fill="#37585f">苹果与生香蕉同放催熟</text>
+        <text x="374" y="280" textAnchor="middle" fontSize="11" fill="#37585f">保鲜膜/冷藏延缓乙烯作用</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="300" width="440" height="66" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">特点：唯一以气体形式存在的植物激素 · 可在植株间"隔空"传递成熟信号</text>
+        <text x="260" y="348" textAnchor="middle" fontSize="11.5" fill="#a5761d">五大类激素各司其职：生长素·赤霉素·细胞分裂素·脱落酸·乙烯——协同与拮抗并存</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">乙烯 · 果实成熟的"信号兵"（课内拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'anglerfish',
+    name: '深海鮟鱇',
+    kicker: '硬骨鱼纲 · 提灯的深海猎手（课外拓展）',
+    intro: '深海 2000 米没有一丝阳光，雌性鮟鱇鱼却在"额头"上点起一盏小灯笼：灯笼里的共生发光细菌发出冷光，引诱好奇的猎物靠近——张口的瞬间（0.01 秒）猎物已被吸入。它的胃可以撑大到吞下与自身等长的猎物，雄鱼体长只有雌鱼的几分之一，找到雌鱼后终身"依附"其上。',
+    extension: true,
+    parts: [
+      { name: '发光诱饵', desc: '背鳍前端的拟饵内含共生发光细菌——化学发光不发热，是深海稀缺光线中的"路灯"。' },
+      { name: '伏击式捕食', desc: '潜伏不动只摆"灯笼"；猎物靠近时张口吸入——口腔与胃可极度扩张，吞下与自身等长的猎物。' },
+      { name: '性寄生', desc: '雄鱼体长仅为雌鱼的 1/10，找到雌鱼后用牙齿咬住其体侧、逐渐愈合共生——精子随时可用，弥补深海"相遇难"。' },
+      { name: '深海适应', desc: '骨骼细软、肌肉松弛——耐受巨大水压；黑暗中视觉退化、侧线系统发达（感知水流振动）。' },
+      { name: '共生启示', desc: '发光细菌获得营养"住所"，鮟鱇获得"诱饵"——共生关系是极端环境中常见的生存策略。' },
+    ],
+    Svg: AnglerfishSvg,
+  },
+  {
+    id: 'cochleaHair',
+    name: '耳蜗毛细胞',
+    kicker: '感觉器官 · 听力的"耗材"（课外拓展）',
+    intro: '耳蜗里排列着约 1.5 万个毛细胞：顶端的"听毛"随声波振动弯曲，把机械振动转成电信号——这是听觉的起点。残酷的是毛细胞不可再生：长期大音量听音乐会让毛细胞"过劳死"，造成不可逆的噪声性听力损失。记住"60-60 原则"守护自己的听力。',
+    extension: true,
+    parts: [
+      { name: '毛细胞与听毛', desc: '声波使基底膜振动、听毛随之弯曲，打开离子通道产生神经冲动——机械能→电能的"换能器"。' },
+      { name: '频率定位', desc: '基底膜底部感受高频、顶部感受低频——不同位置的毛细胞分工不同，所以高频听力最先受损。' },
+      { name: '不可再生', desc: '人类毛细胞出生即定量、损坏无法补充——鸟类可再生毛细胞，哺乳动物不能（研究热点）。' },
+      { name: '噪声性听力损失', desc: '长期 >85 分贝环境或大音量耳机渐进损伤；"听得见但听不清"（高频损失）是早期信号。' },
+      { name: '保护原则', desc: '60-60 原则：音量不超过最大 60%、连续使用不超过 60 分钟；嘈杂环境用降噪耳机反而护耳。' },
+    ],
+    Svg: CochleaHairSvg,
+  },
+  {
+    id: 'ethylene',
+    name: '乙烯',
+    kicker: '植物激素 · 果实成熟的"信号兵"（课内拓展）',
+    intro: '乙烯是唯一以气体形式存在的植物激素：它最著名的本领是促进果实成熟——一个成熟的苹果释放的乙烯，能让一箱青香蕉几天内变黄变软（"一果熟，箱中熟"）。它还促进叶片脱落与衰老，与生长素、赤霉素、细胞分裂素、脱落酸共同组成植物激素"五人组"。',
+    extension: true,
+    parts: [
+      { name: '气体激素', desc: '常温下为气体、可在植株间传递——"一箱苹果里一个熟果催熟全箱"的原理。' },
+      { name: '促进成熟', desc: '诱导纤维素酶与果胶酶合成，果实细胞壁松散变软；淀粉转糖、涩味消失（柿子脱涩）。' },
+      { name: '促进脱落', desc: '促进叶柄基部离层形成——深秋落叶、棉花催熟脱叶都用乙烯（利）的一面。' },
+      { name: '协同与拮抗', desc: '与脱落酸协同促进衰老；与生长素、细胞分裂素"促生长"作用相拮抗——激素间是复杂的网络调控。' },
+      { name: '农业应用', desc: '乙烯利（液态释放乙烯）用于香蕉催熟、棉花催熟脱叶；储运中则要抑制乙烯（低温、吸除）保鲜。' },
+    ],
+    Svg: EthyleneSvg,
+  },
   {
     id: 'leech',
     name: '水蛭',
