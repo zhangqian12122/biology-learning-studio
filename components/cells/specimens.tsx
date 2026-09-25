@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -12885,7 +12885,155 @@ function VenusFlytrapSvg({ active }: { active: number | null; open?: boolean }) 
   );
 }
 
+/* ================= 袋鼠（有袋类"妈妈"） ================= */
+
+function KangarooSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M180 300 q -30 -60 -8 -140 q 8 -44 48 -56 q 10 -26 34 -20 q 20 6 12 30 q 60 20 76 96 q 10 50 -20 74 q 30 4 60 -6 m -60 6 q 20 16 44 20 m -130 -22 q -20 18 -44 20" fill="none" stroke="#b5764a" strokeWidth="0" />
+        <path d="M196 302 q -26 -64 -6 -142 q 10 -46 52 -56 l 10 -30 q 6 -16 22 -8 q 14 8 6 26 l -8 20 q 66 22 82 100 q 8 46 -24 76 q 26 -2 52 -14 q -22 26 -56 24 l -8 22 h -20 l 6 -20 l -60 4 l 4 18 h -20 l 2 -20 q -20 -2 -42 -8" fill="#b5764a" stroke="#7a4a2a" strokeWidth="2.8" />
+        <path d="M292 60 q 12 -10 22 -4" fill="none" stroke="#7a4a2a" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="296" cy="88" r="4" fill="#2a1a0a" />
+        <text x="356" y="120" fontSize="12.5" fill="#7a4a2a" fontWeight="700">强壮后腿 + 大尾巴</text>
+        <text x="356" y="140" fontSize="12" fill="#7a4a2a">"三足鼎立"的休息姿态</text>
+      </g>
+      {/* 育儿袋 */}
+      <g style={dim(active, 1)}>
+        <path d="M226 214 q 34 -20 68 0 q -8 34 -34 36 q -26 -2 -34 -36 Z" fill="#e8b898" stroke="#8a5a3a" strokeWidth="2.4" />
+        <circle cx="260" cy="222" r="9" fill="#f4d0b0" stroke="#8a5a3a" strokeWidth="1.6" />
+        <text x="46" y="196" fontSize="12.5" fill="#8a5a3a" fontWeight="700">育儿袋中的幼崽（joey）</text>
+        <text x="46" y="216" fontSize="12.5" fill="#8a5a3a">早产似"胚胎"，爬入袋中完成发育</text>
+      </g>
+      {/* 对比 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="290" width="440" height="74" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="314" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">有袋类 vs 胎盘类：妊娠极短（约 33 天）· 幼崽在袋中哺乳长大</text>
+        <text x="260" y="338" textAnchor="middle" fontSize="11.5" fill="#537078">没有真正的胎盘——演化走了"体外完成发育"的另一条路</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#537078">澳大利亚的"孤岛演化"：有袋类占据了胎盘类在各大陆的生态位</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">袋鼠 · 有袋类代表（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 毛发（皮肤的"天线"） ================= */
+
+function HairSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 皮肤剖面与毛囊 */}
+      <g style={dim(active, 0)}>
+        <path d="M80 130 h 360 q 14 0 14 14 v 56 q 0 14 -14 14 h -360 q -14 0 -14 -14 v -56 q 0 -14 14 -14 Z" fill="#f4d0b8" stroke="#a5765a" strokeWidth="2.8" />
+        <path d="M66 214 h 388 v 40 q 0 14 -14 14 h -360 q -14 0 -14 -14 Z" fill="#f8e4d4" stroke="#c99a7a" strokeWidth="2" />
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <path d={`M${160 + i * 100} 216 q ${-6 - i * 2} -60 0 -86`} fill="none" stroke="#8a5a3a" strokeWidth="6" strokeLinecap="round" />
+            <ellipse cx={160 + i * 100} cy={232} rx="14" ry="10" fill="#f0d8c0" stroke="#a5765a" strokeWidth="2" />
+            <path d={`M${160 + i * 100} 230 l -14 10 m 14 -10 l 14 10`} stroke="#a5765a" strokeWidth="1.8" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="392" y="150" fontSize="12.5" fill="#8a5a3a" fontWeight="700">毛囊（毛的"根"）</text>
+        <text x="358" y="244" fontSize="12.5" fill="#8a5a3a" fontWeight="700">毛球底部的毛乳头供营养</text>
+      </g>
+      {/* 竖毛肌 */}
+      <g style={dim(active, 1)}>
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${146 + i * 100} 196 l 18 22`} stroke="#b0483a" strokeWidth="3" strokeLinecap="round" />
+        ))}
+        <text x="46" y="196" fontSize="12.5" fill="#b0483a" fontWeight="700">竖毛肌收缩 → "鸡皮疙瘩"</text>
+        <text x="46" y="216" fontSize="12" fill="#a5761d">（祖先立毛保暖/威吓的遗迹）</text>
+      </g>
+      {/* 生长周期 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">毛发生长周期：生长期（2~6 年）→ 退行期 → 休止期脱落→ 再生</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">每天掉 50~100 根头发属正常"代谢"；毛囊坏死则不再长（秃发的根源）</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">功能演化：保暖·防晒·触觉"天线"——人类只剩头发等少数区域浓密</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">毛发 · 皮肤的附属结构（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 树皮（树的"铠甲"） ================= */
+
+function BarkSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 树干横剖 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 96 q 140 -30 280 0 q 20 60 0 130 q -140 34 -280 0 q -20 -70 0 -130 Z" fill="#c9a06a" stroke="#8a6a3a" strokeWidth="3" />
+        <path d="M150 110 q 120 -24 240 4 q 12 50 -6 96 q -120 26 -240 -2 q -16 -46 6 -98 Z" fill="#e8d8a8" stroke="#b5a582" strokeWidth="2.4" />
+        <path d="M180 124 q 90 -16 180 6 q 10 42 -8 78 q -90 18 -180 -4 q -14 -38 8 -80 Z" fill="#d8c9a0" stroke="#b5a582" strokeWidth="2" />
+        <text x="354" y="120" fontSize="12.5" fill="#8a6a3a" fontWeight="700">树皮（周皮+韧皮部）</text>
+        <line x1="412" y1="124" x2="368" y2="118" stroke="#8a6a3a" strokeWidth="1.2" />
+        <text x="354" y="206" fontSize="12.5" fill="#8a6a3a" fontWeight="700">木质部（木材·运水）</text>
+        <line x1="412" y1="210" x2="368" y2="206" stroke="#8a6a3a" strokeWidth="1.2" />
+      </g>
+      {/* 形成层与树皮功能 */}
+      <g style={dim(active, 1)}>
+        <text x="60" y="286" fontSize="12.5" fill="#2f6f2a" fontWeight="700">树皮的"防线"：防失水·防病菌·防虫蛀·防火（厚树皮耐火）</text>
+        <text x="60" y="310" fontSize="12" fill="#5a7a2a">树皮受伤 → 韧皮部受损 → 有机物运输"断供"（环剥致死原理）</text>
+      </g>
+      {/* 树皮之美 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="322" width="440" height="46" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="342" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">树皮形态千姿百态：白桦"剥层纸"·栓皮栎"软木塞"·龙爪枣"拧麻花"</text>
+        <text x="260" y="360" textAnchor="middle" fontSize="11" fill="#a5761d">树皮栓皮层不含"活细胞"——软木塞砍树不伤树（每 9 年剥一层）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">树皮 · 树的"铠甲"与运输要道（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'kangaroo',
+    name: '袋鼠',
+    kicker: '有袋类 · "体外怀孕"的妈妈（课外拓展）',
+    intro: '袋鼠是有袋类的代表：妊娠只有约 33 天，"早产"的幼崽只有花生米大小，却凭本能爬进妈妈的育儿袋，吸附乳头继续发育数月——相当于把"怀孕的后半程"搬到了袋子里。没有真正的胎盘，幼崽靠哺乳长大——有袋类用"体外完成发育"的策略，在澳大利亚演化出与胎盘类各大陆物种平行的丰富类群。',
+    extension: true,
+    parts: [
+      { name: '育儿袋', desc: '袋内乳头固定"专座"，幼崽数月不离开——袋内环境恒温恒湿，是"体外子宫"。' },
+      { name: '超短妊娠', desc: '受精仅约 33 天即"分娩"，新生儿发育极不完全、只有花生米大——靠本能爬入育儿袋。' },
+      { name: '胚胎滞育', desc: '袋鼠有"备用胚胎"绝技：一个幼崽在袋中时，子宫里的胚胎暂停发育，等它离袋再启动。' },
+      { name: '后腿与尾', desc: '跳跃式移动（一跳 9 米）极省能量；粗尾作为"第三条腿"支撑——运动结构高度特化。' },
+      { name: '孤岛演化', desc: '澳大利亚与其他大陆隔离数千万年，有袋类辐射演化出"袋狼、袋熊、袋鼹"等平行物种——地理隔离与演化的经典案例。' },
+    ],
+    Svg: KangarooSvg,
+  },
+  {
+    id: 'hair',
+    name: '毛发',
+    kicker: '皮肤 · "天线"与保暖层（课外拓展）',
+    intro: '每根毛发都来自皮肤深处的毛囊：毛球底部的毛乳头源源供给营养，让毛干以每月约 1 厘米的速度生长。毛发有生长周期（生长期→退行期→休止期），每天掉 50~100 根是正常"新陈代谢"。立毛肌收缩让毛发竖起——人类的"鸡皮疙瘩"，是祖先立毛保暖与威吓对手留下的遗迹。',
+    extension: true,
+    parts: [
+      { name: '毛囊结构', desc: '毛球底部的毛乳头含血管与神经，供养毛母细胞分裂——毛囊坏死则毛发不再生长。' },
+      { name: '生长周期', desc: '生长期（头发达 2~6 年）→ 退行期 → 休止期脱落再生——不同步生长保证"总有头发"。' },
+      { name: '竖毛肌', desc: '连接毛囊与真皮的平滑肌，寒冷或紧张时收缩使毛发直立——"鸡皮疙瘩"的来源。' },
+      { name: '功能演化', desc: '毛发原本保暖、防晒、触觉"天线"；人类演化中体毛退化，仅保留头发（防晒）等——散热需求驱动。' },
+      { name: '脱发', desc: '毛囊未坏死只是"休眠"时可以再生；雄激素性脱发是毛囊对激素敏感而萎缩——"地中海"的成因。' },
+    ],
+    Svg: HairSvg,
+  },
+  {
+    id: 'bark',
+    name: '树皮',
+    kicker: '木本茎 · 树的"铠甲"与运输要道（课外拓展）',
+    intro: '树皮不只是树的"外衣"：外层周皮是死细胞的铠甲（防失水、防虫、防火），内层韧皮部则是运输有机物的"高速公路"。令人意外的是，树干增粗会不断"撑破"树皮——靠形成层向外产生新的周皮来更新。环剥一圈树皮会切断有机物运输，导致根系"饿死"——树皮的运输要道有多重要。',
+    extension: true,
+    parts: [
+      { name: '周皮', desc: '最外层的死细胞"铠甲"：栓皮层不透水、隔热绝缘——软木塞就取自栓皮栎的周皮。' },
+      { name: '韧皮部', desc: '筛管向下运输叶片制造的有机物到根部——"自上而下的粮道"，分布在大树皮内侧。' },
+      { name: '环剥的危害', desc: '环状剥掉一圈树皮切断筛管，根系得不到有机物最终整株死亡——"树怕剥皮"的科学原理。' },
+      { name: '树皮形态', desc: '白桦横纹剥落、栓皮栎厚软如海绵、悬铃木"迷彩"斑驳——不同树种的周皮开裂方式各异。' },
+      { name: '树皮的生存智慧', desc: '厚树皮耐火（桉树·红杉）；树皮含单宁防虫蛀——树皮的"厚度与化学"都是防御投资。' },
+    ],
+    Svg: BarkSvg,
+  },
   {
     id: 'electricEel',
     name: '电鳗',

@@ -650,6 +650,7 @@ export type ExperimentId =
   | 'energyBalance'
   | 'rhIncompatibility'
   | 'hibernation'
+  | 'gauseCompetition'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1374,6 +1375,13 @@ export const experimentMeta: Record<
     relatedModule: '神经和体液调节',
     extension: true,
   },
+  gauseCompetition: {
+    title: '竞争排斥实验',
+    kicker: '选择性必修 2 · 群落',
+    description: '高斯的双草履虫实验：生态位重叠的物种不能长期共存。',
+    relatedBook: 'ecology',
+    relatedModule: '种群特征与群落结构',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1575,7 +1583,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'gauseCompetition', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom'],
   },
   {
     name: '生物技术',
@@ -1663,6 +1671,7 @@ export const experimentOrder: ExperimentId[] = [
   'carbonCycleSim',
   'population',
   'predatorPrey',
+  'gauseCompetition',
   'ecosystemJar',
   'mulberryFishPond',
   'leafDecompose',
