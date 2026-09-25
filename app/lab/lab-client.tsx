@@ -135,6 +135,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   humanTraits: Users,
   invasiveSim: X,
   geneticDrift: Dices,
+  altitudeAdaptation: Activity,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -262,6 +263,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   humanTraits: () => import('@/components/lab/human-traits-lab').then(({ HumanTraitsLab }) => ({ default: HumanTraitsLab })),
   invasiveSim: () => import('@/components/lab/invasive-sim-lab').then(({ InvasiveSimLab }) => ({ default: InvasiveSimLab })),
   geneticDrift: () => import('@/components/lab/genetic-drift-lab').then(({ GeneticDriftLab }) => ({ default: GeneticDriftLab })),
+  altitudeAdaptation: () => import('@/components/lab/altitude-adaptation-lab').then(({ AltitudeAdaptationLab }) => ({ default: AltitudeAdaptationLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -360,6 +362,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   synapseDrug: ['synapse'],
   humanTraits: ['karyotype'],
   invasiveSim: ['invasiveSpecies'],
+  altitudeAdaptation: ['alveolus'],
   ecoStability: ['ecosystemTypes'],
 };
 

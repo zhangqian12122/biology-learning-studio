@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -13679,7 +13679,167 @@ function MagnoliaSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 弹涂鱼（会爬树的鱼） ================= */
+
+function MudskipperSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 泥滩 */}
+      <g style={dim(active, 0)}>
+        <path d="M40 250 q 220 -26 440 0 l 0 80 l -440 0 Z" fill="#8a7a5a" stroke="#6a5a3a" strokeWidth="2.4" />
+        <path d="M60 260 q 100 -14 200 -4 m -180 30 q 90 -10 170 -2" fill="none" stroke="#a5966a" strokeWidth="2" opacity="0.7" />
+        <text x="60" y="146" fontSize="12.5" fill="#5a4a2a" fontWeight="700">红树林泥滩：潮间带的"两栖世界"</text>
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${130 + i * 110} 240 q 2 -26 14 -34`} fill="none" stroke="#3f7f3a" strokeWidth="3.4" strokeLinecap="round" />
+        ))}
+      </g>
+      {/* 弹涂鱼 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="210" cy="230" rx="52" ry="26" fill="#5a7a8a" stroke="#2a4a5a" strokeWidth="2.6" />
+        <path d="M256 216 q 20 -10 30 -2 q -8 14 -30 14" fill="#5a7a8a" stroke="#2a4a5a" strokeWidth="2.2" />
+        <circle cx="196" cy="216" r="8" fill="#f4f0d8" stroke="#2a4a5a" strokeWidth="1.8" />
+        <circle cx="198" cy="217" r="3.4" fill="#141414" />
+        <path d="M172 208 q 8 -16 26 -14" fill="none" stroke="#2a4a5a" strokeWidth="2" />
+        {[0, 1].map((i) => (
+          <path key={`f${i}`} d={`M${190 + i * 44} 250 q 6 -18 18 -20 m -14 22 q 10 -10 24 -8`} fill="none" stroke="#3a5a5a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="330" y="244" fontSize="12.5" fill="#2a4a5a" fontWeight="700">胸鳍变"拐杖"·支撑跳跃</text>
+        <text x="330" y="264" fontSize="12" fill="#2a4a5a">能爬红树林根（吸盘状腹鳍）</text>
+      </g>
+      {/* 适应 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">离水呼吸"三件套"：湿润皮肤换气 · 口腔黏膜呼吸 · 鳃腔储水</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#537078">眼睛高突头顶且能转动——水陆两头兼顾的"潜望镜"</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#537078">演化视角：它们是脊椎动物登陆艰辛历程的"活体提醒"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">弹涂鱼 · 辐鳍鱼纲虾虎鱼科（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 利手（左撇子与右撇子） ================= */
+
+function HandednessSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 大脑偏侧化 */}
+      <g style={dim(active, 0)}>
+        <path d="M180 110 q -40 6 -44 50 q -4 44 34 58 q 40 14 56 -18 q 14 -34 -8 -62 q -18 -24 -38 -28 Z" fill="#e8b8c8" stroke="#a5486a" strokeWidth="2.6" />
+        <path d="M340 110 q 40 6 44 50 q 4 44 -34 58 q -40 14 -56 -18 q -14 -34 8 -62 q 18 -24 38 -28 Z" fill="#b8c8e8" stroke="#4a6a9a" strokeWidth="2.6" />
+        <text x="214" y="130" fontSize="11.5" fill="#8a3a5a" fontWeight="700">左脑：语言·逻辑</text>
+        <text x="214" y="150" fontSize="11.5" fill="#8a3a5a">控制右手</text>
+        <text x="214" y="240" fontSize="11.5" fill="#4a6a9a" fontWeight="700">右脑：空间·音乐</text>
+        <text x="214" y="260" fontSize="11.5" fill="#4a6a9a">控制左手</text>
+      </g>
+      {/* 统计 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="286" width="216" height="70" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="154" y="310" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">约 90% 人是右利手</text>
+        <text x="154" y="332" textAnchor="middle" fontSize="10.5" fill="#a5761d">左撇子约 10%·古今中外比例稳定</text>
+        <text x="154" y="348" textAnchor="middle" fontSize="10" fill="#a5761d">提示有遗传基础（可能与单基因相关）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="286" y="286" width="190" height="70" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="381" y="310" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">不是"习惯"，是偏侧化</text>
+        <text x="381" y="332" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">胎儿期吮吸偏好已现端倪</text>
+        <text x="381" y="348" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">强行改手可能引起口吃紧张</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">利手 · 大脑的左右分工（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 荷花（自洁效应） ================= */
+
+function LotusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 荷叶 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="190" rx="120" ry="86" fill="#4a9a3a" stroke="#2f6f2a" strokeWidth="3" />
+        <ellipse cx="250" cy="200" rx="14" ry="6" fill="#3a7a2a" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <path key={i} d={`M250 190 L ${130 + i * 34} ${168 + (i % 2) * 34}`} stroke="#3a7a2a" strokeWidth="2" opacity="0.8" />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <ellipse key={`d${i}`} cx={180 + i * 60} cy={168 + (i % 2) * 20} rx="9" ry="5" fill="#a8d8e8" stroke="#4d7ea8" strokeWidth="1.4" />
+        ))}
+        <text x="380" y="120" fontSize="12.5" fill="#2f6f2a" fontWeight="700">水珠在叶面滚成"水银珠"</text>
+        <text x="366" y="140" fontSize="12" fill="#2f6f2a">滚走灰尘（自洁）</text>
+      </g>
+      {/* 荷花 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3, 4].map((i) => {
+          const ang = -Math.PI / 2 + (i - 2) * 0.5;
+          return <ellipse key={i} cx={400 + Math.cos(ang) * 22} cy={230 + Math.sin(ang) * 22} rx="14" ry="24" fill="#f0b8c8" stroke="#c96a8a" strokeWidth="2" transform={`rotate(${(i - 2) * 26} 400 230)`} />;
+        })}
+        <circle cx="400" cy="230" r="10" fill="#e8c83a" stroke="#a58a2a" strokeWidth="1.8" />
+        <text x="300" y="278" fontSize="12" fill="#c96a8a" fontWeight="600">花与叶都高出水面</text>
+      </g>
+      {/* 莲蓬莲藕 */}
+      <g style={dim(active, 2)}>
+        <rect x="46" y="60" width="170" height="80" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="131" y="84" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">"出淤泥而不染"</text>
+        <text x="131" y="106" textAnchor="middle" fontSize="10.5" fill="#a5761d">微观：叶面乳突+蜡质晶体</text>
+        <text x="131" y="124" textAnchor="middle" fontSize="10.5" fill="#a5761d">水珠滚落带走灰尘——自洁效应</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="40" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">莲藕是根状茎（节上生根）·荷叶效应催生自洁玻璃·防污涂料等仿生产品</text>
+        <text x="260" y="364" textAnchor="middle" fontSize="11" fill="#3f7f3a">结构决定性质：超疏水靠的是"微观形貌+低表面能物质"的组合</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">荷花 · 自洁效应与仿生学（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'mudskipper',
+    name: '弹涂鱼',
+    kicker: '辐鳍鱼纲 · 会爬树的"鱼"（课外拓展）',
+    intro: '弹涂鱼是红树林泥滩上的"两栖特技演员"：胸鳍像拐杖支撑身体跳跃爬树，皮肤和口腔黏膜能直接换气（鳃腔里还"自带水壶"），高突的双眼像潜望镜一样水陆两用——离水数小时照样活跃。它是脊椎动物从水中走向陆地那段艰辛历程的"活体提醒"。',
+    extension: true,
+    parts: [
+      { name: '胸鳍拐杖', desc: '特化的胸鳍像两根"拐杖"，配合尾鳍弹跳——能在泥滩跳跃、爬上红树林根。' },
+      { name: '皮肤呼吸', desc: '皮肤和口腔黏膜薄而湿润、布满毛细血管——直接与空气交换气体（辅助鳃呼吸）。' },
+      { name: '鳃腔储水', desc: '离水前把鳃腔"水壶"灌满水，维持鳃丝湿润——随身携带的"氧气瓶"。' },
+      { name: '潜望镜眼', desc: '眼睛高突头顶且可转动，水陆两头兼顾；视野重叠提供立体视觉捕捉猎物。' },
+      { name: '挖洞筑巢', desc: '泥滩挖"U 形"洞穴：涨潮时躲入、封住洞口储空气——繁殖与避难的地下基地。' },
+    ],
+    Svg: MudskipperSvg,
+  },
+  {
+    id: 'handedness',
+    name: '利手（左右撇子）',
+    kicker: '神经系统 · 大脑的左右分工（课外拓展）',
+    intro: '约 90% 的人是右利手——这与大脑的"左右分工"有关：左脑掌管语言与逻辑并控制右手，右脑擅长空间与音乐并控制左手。利手偏好在胎儿期就已显现，且有遗传基础（约 10% 的左撇子比例古今中外都稳定）。强行"纠正"左撇子可能带来口吃、紧张等问题——尊重大脑的天然 wiring 才是科学态度。',
+    extension: true,
+    parts: [
+      { name: '大脑偏侧化', desc: '左脑语言·逻辑·控制右手；右脑空间·音乐·控制左手——分工提高处理效率。' },
+      { name: '90:10 之谜', desc: '右撇子占绝对多数且比例古今稳定——提示利手有遗传基础（与.handiness 相关基因仍在研究中）。' },
+      { name: '胎儿期萌芽', desc: '超声波观察到胎儿吮吸某侧手指的偏好——利手在出生前就已"选边"。' },
+      { name: '不要强行纠正', desc: '强迫左撇子改用右手可能与口吃、阅读困难相关——顺其自然是科学的选择。' },
+      { name: '左撇子名人', desc: '达·芬奇、爱因斯坦（一说）、多位美国总统都是左撇子——左右手并无优劣之分。' },
+    ],
+    Svg: HandednessSvg,
+  },
+  {
+    id: 'lotus',
+    name: '荷花（自洁效应）',
+    kicker: '莲科 · "出淤泥而不染"的仿生学（课外拓展）',
+    intro: '荷叶"出淤泥而不染"的秘密在微观世界：叶面布满微米级乳突，乳突上还有纳米级蜡质晶体——水滴接触面积极小而滚成珠，滚动时顺便带走灰尘。这就是"荷叶效应"（Lotus Effect）：微观形貌+低表面能物质的组合，催生了自洁玻璃、防污涂料等仿生产品。莲藕则是地下根状茎——荷花把"防御"与"存储"都做到了极致。',
+    extension: true,
+    parts: [
+      { name: '超疏水表面', desc: '微米乳突+纳米蜡晶的双重结构让水滴只能"点接触"——接触角大于 150°，水珠一滚即走。' },
+      { name: '自洁效应', desc: '滚动的水珠像"微型吸尘器"带走叶面灰尘——比人工清洗更高效的"雨水自清洁"。' },
+      { name: '仿生应用', desc: '自洁玻璃、防污涂料、防水布料——"荷叶效应"已是材料学的重要研究方向。' },
+      { name: '莲藕是茎', desc: '荷花的地下根状茎（藕）有节、节上生根——食用的"藕"是茎而非根（易错点）。' },
+      { name: '与文化', desc: '"出淤泥而不染"的文学意象与科学原理在此相遇——周敦颐《爱莲说》的生物学注脚。' },
+    ],
+    Svg: LotusSvg,
+  },
   {
     id: 'woodpecker',
     name: '啄木鸟',

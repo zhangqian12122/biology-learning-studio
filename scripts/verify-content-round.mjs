@@ -7,28 +7,25 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：geneticDrift 遗传漂变与瓶颈效应 ----------
-await page.goto(`${BASE}/lab?exp=geneticDrift`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：altitudeAdaptation 高原适应 ----------
+await page.goto(`${BASE}/lab?exp=altitudeAdaptation`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  let done = false;
-  for (let i = 0; i < 20 && !done; i++) {
-    await page.getByRole('button', { name: /繁殖一代/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(200);
-    const t = await page.locator('main').innerText();
-    done = t.includes('已固定') || t.includes('已丢失');
+  for (const site of ['高原反应区（3000 m）', '高海拔（4500 m）', '极高海拔营地（5500 m）']) {
+    await page.locator('button', { hasText: site }).click();
+    await page.waitForTimeout(350);
   }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('遗传漂变与瓶颈效应');
-  results.experiment.interactive = done && after.includes('随机');
+  results.experiment.open = before.includes('高原适应');
+  results.experiment.interactive = after.includes('EPAS1') && after.includes('74%');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['woodpecker', 'cartilage', 'magnolia'];
+const SPECIMENS = ['mudskipper', 'handedness', 'lotus'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -80,17 +77,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：invasiveSim 实验页仍正常
-await page.goto(`${BASE}/lab?exp=invasiveSim`, { waitUntil: 'domcontentloaded' });
+// 回归检查：geneticDrift 实验页仍正常
+await page.goto(`${BASE}/lab?exp=geneticDrift`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.invasiveRegression = { found: t.includes('入侵') || t.includes('水葫芦'), ok: t.includes('入侵') || t.includes('水葫芦') };
+  results.specimens.driftRegression = { found: t.includes('漂变') || t.includes('基因频率'), ok: t.includes('漂变') || t.includes('基因频率') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.invasiveRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.driftRegression?.ok;
 console.log('ALL_OK=' + allOk);
