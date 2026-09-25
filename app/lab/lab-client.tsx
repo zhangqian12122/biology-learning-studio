@@ -126,6 +126,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   ecoStability: Waves,
   algalBloom: Droplet,
   energyBalance: Flame,
+  rhIncompatibility: Baby,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -244,6 +245,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   ecoStability: () => import('@/components/lab/eco-stability-lab').then(({ EcoStabilityLab }) => ({ default: EcoStabilityLab })),
   algalBloom: () => import('@/components/lab/algal-bloom-lab').then(({ AlgalBloomLab }) => ({ default: AlgalBloomLab })),
   energyBalance: () => import('@/components/lab/energy-balance-lab').then(({ EnergyBalanceLab }) => ({ default: EnergyBalanceLab })),
+  rhIncompatibility: () => import('@/components/lab/rh-incompatibility-lab').then(({ RhIncompatibilityLab }) => ({ default: RhIncompatibilityLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -338,6 +340,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   allergySim: ['antibody'],
   bloodFlow: ['heartCirculation'],
   bloodRoutine: ['bloodCells'],
+  rhIncompatibility: ['redBloodCell'],
   ecoStability: ['ecosystemTypes'],
 };
 

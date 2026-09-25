@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -12666,7 +12666,165 @@ function C4PlantSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 鲨鱼（软骨鱼·海洋猎手） ================= */
+
+function SharkSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M80 180 q 40 -60 150 -66 q 130 -8 190 30 l 50 -34 q 16 44 -20 78 q 30 30 16 64 l -56 -26 q -70 34 -180 26 q -110 -8 -150 -72 Z" fill="#5a7a8a" stroke="#2a4a5a" strokeWidth="2.8" />
+        <path d="M210 116 q 30 -30 60 -22 l -14 26" fill="#4a6a7a" stroke="#2a4a5a" strokeWidth="2.4" />
+        <path d="M240 190 q 130 10 230 -12" fill="none" stroke="#e8e4d8" strokeWidth="3" />
+        <text x="384" y="248" fontSize="12.5" fill="#2a4a5a" fontWeight="700">歪形尾（上下叶不等）</text>
+        <path d="M96 190 q 16 12 40 16" fill="none" stroke="#e8e4d8" strokeWidth="3" strokeLinecap="round" />
+      </g>
+      {/* 头部与齿 */}
+      <g style={dim(active, 1)}>
+        <path d="M80 180 q 20 -34 60 -40 q 20 22 12 52 q -40 14 -72 -12 Z" fill="#4a6a7a" stroke="#2a4a5a" strokeWidth="2.4" />
+        <path d="M84 176 q 24 -14 52 -8" fill="none" stroke="#e8e4d8" strokeWidth="2" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${88 + i * 12} ${176 + (i % 2) * 4} l 3 8 m 4 -6 l 3 8`} stroke="#f0f0e8" strokeWidth="2" strokeLinecap="round" />
+        ))}
+        <circle cx="112" cy="150" r="4.5" fill="#141414" />
+        <text x="52" y="118" fontSize="12.5" fill="#2a4a5a" fontWeight="700">多排三角齿（终生更换）</text>
+        <text x="52" y="236" fontSize="12.5" fill="#2a4a5a" fontWeight="700">侧线系统感知猎物"水波"</text>
+        <path d="M96 200 q 40 20 90 24" fill="none" stroke="#7ac8d8" strokeWidth="1.6" strokeDasharray="4 3" />
+      </g>
+      {/* 软骨与电感受 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">鲨鱼是软骨鱼：骨骼全为软骨（与硬骨鱼的硬骨对比）· 无鳔靠游动与肝脏浮力</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#537078">罗伦氏壶腹可感知生物电场——躲进沙里的猎物也无所遁形</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#537078">4 亿年几乎"没变样"的顶级设计——海洋顶级捕食者</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">鲨鱼 · 软骨鱼纲代表（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 智齿（演化的"遗迹"） ================= */
+
+function WisdomToothSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 颌骨示意 */}
+      <g style={dim(active, 0)}>
+        <path d="M110 120 q 150 -40 300 0 q -20 60 -70 74 l -160 0 q -50 -14 -70 -74 Z" fill="#f0c9b0" stroke="#a5765a" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <rect key={i} x={136 + i * 46} y={132} width="30" height="34" rx="5" fill="#f8f6ee" stroke="#b5a582" strokeWidth="1.8" />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <circle key={i} cx={150 + i * 54} cy={172} r="5" fill="#d88a6a" stroke="#a5533c" strokeWidth="1.4" />
+        ))}
+        <text x="336" y="128" fontSize="12.5" fill="#8a5a3a" fontWeight="700">现代人的"拥挤"颌骨</text>
+        <text x="336" y="148" fontSize="12" fill="#8a671b" fontWeight="600">智齿常常"横着长"（阻生）</text>
+      </g>
+      {/* 演化解释 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="212" width="210" height="86" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="151" y="238" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">祖先的"刚需"</text>
+        <text x="151" y="260" textAnchor="middle" fontSize="10.5" fill="#a5761d">远古人类吃生硬食物</text>
+        <text x="151" y="278" textAnchor="middle" fontSize="10.5" fill="#a5761d">颌骨宽大 · 需要三颗磨牙</text>
+        <rect x="274" y="212" width="200" height="86" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="374" y="238" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">现代的"尴尬"</text>
+        <text x="374" y="260" textAnchor="middle" fontSize="10.5" fill="#37585f">食物精细 → 颌骨变小</text>
+        <text x="374" y="278" textAnchor="middle" fontSize="10.5" fill="#37585f">智齿空间不足 → 阻生发炎</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="312" width="440" height="52" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="334" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">智齿是"演化遗迹"器官：环境变了，祖先的装备还在</text>
+        <text x="260" y="354" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">同类的遗迹结构：阑尾·智齿·动耳肌·尾椎骨——演化留下的"历史档案"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">智齿 · 演化遗迹器官（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 橡胶树（会"流泪"的树） ================= */
+
+function RubberTreeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 树干与割胶 */}
+      <g style={dim(active, 0)}>
+        <path d="M200 320 q -10 -140 10 -220" fill="none" stroke="#8a6a3a" strokeWidth="26" strokeLinecap="round" />
+        <path d="M320 320 q 14 -140 -6 -220" fill="none" stroke="#8a6a3a" strokeWidth="26" strokeLinecap="round" />
+        <path d="M210 140 q 50 30 100 0" fill="none" stroke="#6a8a3a" strokeWidth="20" strokeLinecap="round" opacity="0.6" />
+        <path d="M212 150 q 48 26 96 2" fill="none" stroke="#f4f0e8" strokeWidth="2.4" />
+        <path d="M214 156 q 46 22 92 4" fill="none" stroke="#f4f0e8" strokeWidth="2.4" />
+        <circle cx="216" cy="156" r="6" fill="#f4f0e8" stroke="#c9c4b8" strokeWidth="1.4" />
+        <text x="60" y="130" fontSize="12.5" fill="#8a6a3a" fontWeight="700">螺旋割线：只割树皮不伤形成层</text>
+        <path d="M216 158 q 6 30 2 60" fill="none" stroke="#f4f0e8" strokeWidth="4" strokeLinecap="round" />
+        <ellipse cx="218" cy="230" rx="12" ry="18" fill="#f4f0e8" stroke="#c9c4b8" strokeWidth="2" />
+        <text x="252" y="238" fontSize="12" fill="#8a7a4a" fontWeight="700">乳胶滴入收集杯</text>
+      </g>
+      {/* 乳胶 */}
+      <g style={dim(active, 1)}>
+        <rect x="330" y="140" width="160" height="100" rx="10" fill="#f4f0e8" stroke="#b5a582" strokeWidth="2.4" />
+        <text x="410" y="166" textAnchor="middle" fontSize="12" fill="#5a4a2a" fontWeight="800">乳胶 = 天然橡胶</text>
+        <text x="410" y="190" textAnchor="middle" fontSize="10.5" fill="#59767c">聚异戊二烯长链分子</text>
+        <text x="410" y="210" textAnchor="middle" fontSize="10.5" fill="#59767c">弹性·耐磨·防水</text>
+        <text x="410" y="230" textAnchor="middle" fontSize="10" fill="#799398">轮胎·手套·气球原料</text>
+      </g>
+      {/* 防御本质 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="300" width="440" height="66" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">乳胶是植物的"防御武器"：伤口处凝固封口·黏住啃食昆虫的口器</text>
+        <text x="260" y="348" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">与咖啡因（毒害）·玫瑰刺（物理）同为植物次生代谢防御——人类"借"来用</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">橡胶树 · 植物防御的"工业转译"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'shark',
+    name: '鲨鱼',
+    kicker: '软骨鱼纲 · 4 亿年的海洋猎手（课外拓展）',
+    intro: '鲨鱼与我们熟悉的鲤鱼分属鱼类两大分支：它的骨骼全由软骨构成（硬骨鱼是硬骨），没有鳔，靠不断的游动和富含油脂的巨大肝脏获得浮力。鲨鱼的"黑科技"很多：多排可终生更换的三角齿、感知水波振动的侧线系统，甚至能探测猎物肌肉电场的罗伦氏壶腹——4 亿年来几乎" unchanged "的顶级捕食设计。',
+    extension: true,
+    parts: [
+      { name: '软骨骨骼', desc: '骨骼全为软骨（钙化增强）：比硬骨轻而有弹性——软骨鱼纲与硬骨鱼纲的根本区别。' },
+      { name: '歪形尾', desc: '尾鳍上下叶不等长（上长下短），配合胸肝产生升力——弥补"没有鳔"的浮力缺陷。' },
+      { name: '多排牙齿', desc: '三角齿成排"后备"，前齿脱落后后排前移顶替——一生可更换上万颗。' },
+      { name: '侧线与电感受', desc: '侧线感知水流振动锁定猎物方向；吻部的罗伦氏壶腹能感知微弱生物电——"透视"藏在沙底的猎物。' },
+      { name: '生态警戒', desc: '顶级捕食者控制中小型鱼类种群、清除病弱个体；过度捕捞（鱼翅贸易）正威胁多种鲨鱼生存。' },
+    ],
+    Svg: SharkSvg,
+  },
+  {
+    id: 'wisdomTooth',
+    name: '智齿',
+    kicker: '消化系统 · 演化遗迹的"提醒"（课外拓展）',
+    intro: '智齿是第三磨牙，通常在 17~25 岁"迟到"萌出。远古人类咀嚼生硬的根茎兽肉，需要宽大的颌骨和三颗磨牙轮班研磨；现代食物精细柔软，颌骨缩短变窄，最后萌出的智齿常常"无家可归"——横着长、顶着邻牙（阻生智齿）。智齿、阑尾、动耳肌、尾椎骨并称演化遗迹器官——祖先生存的装备，成了现代的"历史档案"。',
+    extension: true,
+    parts: [
+      { name: '什么是智齿', desc: '第三磨牙，共 0~4 颗（有人天生缺失）——萌出最晚，故名"智"齿，其实与智力无关。' },
+      { name: '阻生智齿', desc: '颌骨空间不足，智齿横卧、斜顶或埋伏在骨内——顶坏邻牙、反复发炎时通常需拔除。' },
+      { name: '演化遗迹', desc: '环境改变后失去功能但尚未消失的结构：智齿·阑尾·动耳肌·尾椎骨——演化"渐进性"的证据。' },
+      { name: '颌骨退化', desc: '火的使用与食物加工让咀嚼负担锐减，人类颌骨在数万年间显著缩小——牙齿却"没跟上缩编"。' },
+      { name: '个体差异', desc: '约 25% 的人天生缺失至少一颗智齿——基因多样性与演化仍在进行中的例证。' },
+    ],
+    Svg: WisdomToothSvg,
+  },
+  {
+    id: 'rubberTree',
+    name: '橡胶树',
+    kicker: '大戟科 · 植物防御的"工业转译"（课外拓展）',
+    intro: '橡胶树受伤时会流出乳白色的"眼泪"——乳胶：一种聚异戊二烯长链分子的悬浮液。对树来说，乳胶是防御武器：在伤口凝固封口、黏住啃食的昆虫口器；对人类来说，硫化处理后它成了轮胎、手套、气球的原料——从植物防御化学到现代工业的"完美转译"。',
+    extension: true,
+    parts: [
+      { name: '乳胶与乳管', desc: '树皮中的乳管（特化的长管细胞）储存乳胶；割胶沿螺旋线切割乳管但不伤形成层——树可割数十年。' },
+      { name: '防御本质', desc: '乳胶属于次生代谢产物：凝固封住伤口防病菌、黏住昆虫口器——化学防御的"物理执行"。' },
+      { name: '硫化橡胶', desc: '天然乳胶加硫加热硫化：长链分子交联成网——弹性、强度、耐温大幅提升（固特异发明）。' },
+      { name: '经济作物', desc: '原产亚马逊，主产东南亚；一棵橡胶树可割胶 25~30 年——重要的热带经济作物。' },
+      { name: '次生代谢家族', desc: '乳胶（物理黏阻）·咖啡因（毒害）·芳香物（驱避）——次生代谢产物是植物"化学武器库"的全谱系。' },
+    ],
+    Svg: RubberTreeSvg,
+  },
   {
     id: 'sloth',
     name: '树懒',

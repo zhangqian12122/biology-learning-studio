@@ -648,6 +648,7 @@ export type ExperimentId =
   | 'ecoStability'
   | 'algalBloom'
   | 'energyBalance'
+  | 'rhIncompatibility'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1356,6 +1357,14 @@ export const experimentMeta: Record<
     relatedModule: '免疫调节与健康',
     extension: true,
   },
+  rhIncompatibility: {
+    title: 'Rh 血型与新生儿溶血',
+    kicker: '遗传 · 医学应用',
+    description: 'Rh⁻ 母亲的两胎故事：二次免疫应答与抗 D 免疫球蛋白预防。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1547,7 +1556,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1602,6 +1611,7 @@ export const experimentOrder: ExperimentId[] = [
   'traitSeparation',
   'dihybridSim',
   'sexLinkedCross',
+  'rhIncompatibility',
   'lowTempPolyploid',
   'meiosisSlide',
   'genetics',

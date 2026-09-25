@@ -7,27 +7,29 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：energyBalance 能量平衡与体重管理 ----------
-await page.goto(`${BASE}/lab?exp=energyBalance`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：rhIncompatibility Rh 血型与新生儿溶血 ----------
+await page.goto(`${BASE}/lab?exp=rhIncompatibility`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '暴饮暴食' }).click();
-  await page.locator('button', { hasText: '每天运动 1 小时' }).click();
-  for (let i = 0; i < 8; i++) {
-    await page.getByRole('button', { name: /推进一周/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(300);
-  }
+  await page.getByRole('button', { name: /第一胎妊娠/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(400);
+  await page.getByRole('button', { name: /第一胎分娩/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(350);
+  await page.getByRole('button', { name: /抗 D 免疫球蛋白/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(350);
+  await page.getByRole('button', { name: /第二胎妊娠/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(400);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('能量平衡与体重管理');
-  results.experiment.interactive = after.includes('缓慢上升') || after.includes('kg（');
+  results.experiment.open = before.includes('Rh 血型与新生儿溶血');
+  results.experiment.interactive = after.includes('平安出生') && after.includes('二次应答');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['sloth', 'saliva', 'c4Plant'];
+const SPECIMENS = ['shark', 'wisdomTooth', 'rubberTree'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -79,17 +81,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：algalBloom 实验页仍正常
-await page.goto(`${BASE}/lab?exp=algalBloom`, { waitUntil: 'domcontentloaded' });
+// 回归检查：energyBalance 实验页仍正常
+await page.goto(`${BASE}/lab?exp=energyBalance`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.algaeRegression = { found: t.includes('水华') || t.includes('富营养化'), ok: t.includes('水华') || t.includes('富营养化') };
+  results.specimens.energyRegression = { found: t.includes('能量平衡') || t.includes('体重'), ok: t.includes('能量平衡') || t.includes('体重') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.algaeRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.energyRegression?.ok;
 console.log('ALL_OK=' + allOk);
