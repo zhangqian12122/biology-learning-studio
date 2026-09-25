@@ -629,6 +629,7 @@ export type ExperimentId =
   | 'foodPreserve'
   | 'dnaFingerprint'
   | 'bloodPressure'
+  | 'gravitropism'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1194,6 +1195,13 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '内环境与稳态',
   },
+  gravitropism: {
+    title: '向重力性：根向地·茎背地',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '横放幼苗看生长素重分布：根的向地性证明生长素的两重性。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1390,7 +1398,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'thyroidAxis', 'thermoRegulation', 'bloodType', 'urineFormation', 'vaccineResponse', 'sirModel'],
   },
   {
     name: '生态',
@@ -1457,6 +1465,7 @@ export const experimentOrder: ExperimentId[] = [
   'auxinCutting',
   'apicalDominance',
   'phototropism',
+  'gravitropism',
   'bloodSugarRegulation',
   'bloodPressure',
   'impulse',

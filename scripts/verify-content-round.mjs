@@ -8,34 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：bloodPressure 血压的调节 ----------
-await page.goto(`${BASE}/lab?exp=bloodPressure`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：gravitropism 向重力性 ----------
+await page.goto(`${BASE}/lab?exp=gravitropism`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('血压的调节');
+  results.experiment.open = text.includes('向重力性：根向地·茎背地');
   const before = text;
-  await page.getByRole('button', { name: /剧烈运动/ }).click();
-  await page.getByRole('button', { name: /推进 10 min/ }).click();
-  await page.waitForTimeout(400);
-  await page.getByRole('button', { name: /剧烈运动/ }).click();
-  await page.getByRole('button', { name: /推进 10 min/ }).click();
-  await page.waitForTimeout(400);
-  const midText = await page.locator('main').innerText();
-  await page.getByRole('button', { name: /安静休息/ }).click();
   for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /推进 10 min/ }).click();
-    await page.waitForTimeout(400);
+    await page.getByRole('button', { name: /横放幼苗|继续培养|分析弯曲/ }).click();
+    await page.waitForTimeout(450);
   }
   const afterClick = await page.locator('main').innerText();
-  results.experiment.interactive = midText.includes('超出正常范围') && afterClick.includes('负反馈调节');
-  results.experiment.reference = afterClick.includes('实验原理');
+  results.experiment.interactive = afterClick.includes('弯向下') && afterClick.includes('弯向上') && afterClick.includes('两重性');
+  results.experiment.reference = afterClick.includes('考点');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['crocodile', 'largeIntestine', 'ecosystemServices'];
+const SPECIMENS = ['penguin', 'boneMarrow', 'mycorrhiza'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -95,17 +87,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：bloodPressure 实验页应挂载 vessels 图解
-await page.goto(`${BASE}/lab?exp=bloodPressure`, { waitUntil: 'domcontentloaded' });
+// 图解卡：gravitropism 实验页应挂载 rootTip 图解
+await page.goto(`${BASE}/lab?exp=gravitropism`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.vesselsDiagram = { found: t.includes('血管') || t.includes('动脉'), ok: t.includes('血管') || t.includes('动脉') };
+  results.specimens.rootTipDiagram = { found: t.includes('根尖') || t.includes('根冠'), ok: t.includes('根尖') || t.includes('根冠') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.vesselsDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.rootTipDiagram?.ok;
 console.log('ALL_OK=' + allOk);

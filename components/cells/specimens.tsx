@@ -5049,10 +5049,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
@@ -10395,7 +10395,172 @@ function EcosystemServicesSvg({ active }: { active: number | null; open?: boolea
   );
 }
 
+/* ================= 企鹅（鸟类的"例外"） ================= */
+
+function PenguinSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M200 92 q 70 -26 122 8 q 26 60 4 148 q -14 62 -66 66 q -54 -4 -66 -66 q -20 -88 6 -156 Z" fill="#2c3a4a" stroke="#1a2632" strokeWidth="2.8" />
+        <path d="M232 116 q 52 -14 82 12 q 14 62 0 130 q -22 46 -46 48 q -28 -6 -42 -50 q -14 -70 6 -140 Z" fill="#f0f0e8" stroke="#d8d8cc" strokeWidth="2" />
+        <text x="356" y="130" fontSize="12.5" fill="#1a2632" fontWeight="700">"燕尾服"配色：</text>
+        <text x="356" y="150" fontSize="12.5" fill="#1a2632">背面深·腹面浅（水中隐蔽）</text>
+      </g>
+      {/* 头与鳍翅 */}
+      <g style={dim(active, 1)}>
+        <circle cx="252" cy="80" r="30" fill="#2c3a4a" stroke="#1a2632" strokeWidth="2.6" />
+        <circle cx="242" cy="72" r="4" fill="#ffffff" />
+        <circle cx="262" cy="72" r="4" fill="#ffffff" />
+        <path d="M276 78 l 26 8 l -26 8 q 6 -8 0 -16 Z" fill="#e08a2a" stroke="#a5533c" strokeWidth="1.6" />
+        <path d="M198 130 q -30 26 -24 66 q 2 16 14 12 q 20 -8 24 -52" fill="#2c3a4a" stroke="#1a2632" strokeWidth="2.2" />
+        <path d="M316 128 q 32 28 26 68 q -2 16 -14 12 q -20 -8 -26 -54" fill="#2c3a4a" stroke="#1a2632" strokeWidth="2.2" />
+        <text x="60" y="120" fontSize="12.5" fill="#1a2632" fontWeight="700">鳍翅（翅膀变桨）</text>
+        <text x="60" y="140" fontSize="12.5" fill="#1a2632">"飞"进水里每小时 10 km</text>
+        <line x1="140" y1="140" x2="176" y2="160" stroke="#1a2632" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 脚与皮下脂肪 */}
+      <g style={dim(active, 2)}>
+        <path d="M236 314 l -8 16 h 26 l -4 -16 m 22 0 l -6 16 h 26 l -6 -16" fill="#e08a2a" stroke="#a5533c" strokeWidth="2" />
+        <text x="120" y="344" fontSize="12.5" fill="#a5533c" fontWeight="700">脚蹼在身体最后方（直立行走·企鹅式摇摆）</text>
+        <text x="356" y="216" fontSize="12.5" fill="#1a2632" fontWeight="700">皮下厚脂肪层 +</text>
+        <text x="356" y="236" fontSize="12.5" fill="#1a2632">羽毛密罩 = 抗 -60°C</text>
+      </g>
+      {/* 特征 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="700">鸟类的"例外"：前肢变鳍放弃飞行 · 骨骼有骨髓不中空 · 雄帝企鹅孵卵（孵化期禁食 65 天）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">企鹅 · 鸟纲企鹅目（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 骨髓（造血工厂） ================= */
+
+function BoneMarrowSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 骨骼剖面 */}
+      <g style={dim(active, 0)}>
+        <path d="M180 60 h 160 q 20 0 20 22 v 180 q 0 22 -20 22 h -160 q -20 0 -20 -22 v -180 q 0 -22 20 -22 Z" fill="#f4f0e4" stroke="#b5a582" strokeWidth="3" />
+        <path d="M188 68 h 144 v 30 h -144 Z M 188 246 h 144 v 30 h -144 Z" fill="#e8e4d4" stroke="#c9b88a" strokeWidth="1.8" />
+        <rect x="196" y="104" width="128" height="136" rx="10" fill="#c96a6a" stroke="#8a3030" strokeWidth="2.4" />
+        <text x="260" y="130" textAnchor="middle" fontSize="12.5" fill="#5a2020" fontWeight="800">红骨髓（长骨中段剖面）</text>
+        <text x="42" y="96" fontSize="12.5" fill="#8a7a4a" fontWeight="700">骨密质（外层坚硬）</text>
+        <line x1="150" y1="92" x2="196" y2="80" stroke="#8a7a4a" strokeWidth="1.2" />
+      </g>
+      {/* 造血干细胞 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3, 4].map((i) => (
+          <circle key={i} cx={222 + (i % 3) * 38} cy={162 + Math.floor(i / 3) * 40} r="10" fill="#e8a0a0" stroke="#8a3030" strokeWidth="1.8" />
+        ))}
+        <text x="42" y="150" fontSize="12.5" fill="#8a3030" fontWeight="700">造血干细胞（专能）</text>
+        <text x="42" y="170" fontSize="12.5" fill="#8a3030">终身更新各种血细胞</text>
+        <line x1="150" y1="154" x2="214" y2="162" stroke="#8a3030" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 三系分化 */}
+      <g style={dim(active, 2)}>
+        <text x="42" y="210" fontSize="12" fill="#a53030" fontWeight="700">→ 红细胞（运 O₂）</text>
+        <text x="42" y="230" fontSize="12" fill="#2c5a84" fontWeight="700">→ 白细胞（防御）</text>
+        <text x="42" y="250" fontSize="12" fill="#8a671b" fontWeight="700">→ 血小板（凝血）</text>
+        <text x="56" y="290" fontSize="12.5" fill="#4b6c73" fontWeight="700">5 岁后长骨两端与髂骨的红骨髓保持造血（其余黄骨髓化）</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="316" width="440" height="50" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">白血病 = 造血干细胞恶变 → 骨髓移植重建造血与免疫（"配型"即 HLA 相容）</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">脐带血含丰富造血干细胞——是重要的移植来源</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">骨髓 · 人体的"造血工厂"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 菌根（真菌与根的联盟） ================= */
+
+function MycorrhizaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 植物 */}
+      <g style={dim(active, 0)}>
+        <path d="M260 190 v -100 m 0 0 q -34 -10 -52 -38 m 52 38 q 34 -10 52 -38 m -52 38 q -4 -34 0 -52" fill="none" stroke="#3f7f3a" strokeWidth="6" strokeLinecap="round" />
+        <ellipse cx="200" cy="46" rx="28" ry="16" fill="#6aa85a" stroke="#2f6f2a" strokeWidth="2" />
+        <ellipse cx="320" cy="46" rx="28" ry="16" fill="#6aa85a" stroke="#2f6f2a" strokeWidth="2" />
+        <ellipse cx="260" cy="32" rx="30" ry="17" fill="#7ab86a" stroke="#2f6f2a" strokeWidth="2" />
+        <path d="M260 190 q -10 -30 -30 -44 m 30 44 q 10 -30 30 -44" fill="none" stroke="#b88a5a" strokeWidth="4" />
+        <text x="238" y="168" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">植物根</text>
+      </g>
+      {/* 菌丝网络 */}
+      <g style={dim(active, 1)}>
+        <path d="M230 190 q -60 20 -110 12 m 118 -24 q -30 -14 -46 -40 m 156 52 q 60 22 116 10 m -110 -28 q 34 -16 48 -44" fill="none" stroke="#c9a05a" strokeWidth="2.6" />
+        <path d="M120 202 q -20 14 -18 34 m 118 -58 q -12 -18 -8 -36 m 190 44 q 22 12 26 32 m -34 -60 q 12 -20 6 -38" fill="none" stroke="#d8b078" strokeWidth="2" />
+        <text x="46" y="264" fontSize="12.5" fill="#a5763a" fontWeight="700">菌丝延伸到根毛够不到的地方</text>
+        <text x="46" y="284" fontSize="12.5" fill="#a5763a">吸收面积放大数百倍</text>
+      </g>
+      {/* 交换 */}
+      <g style={dim(active, 2)}>
+        <rect x="300" y="236" width="180" height="60" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="390" y="258" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">互利共生"以物易物"</text>
+        <text x="390" y="278" textAnchor="middle" fontSize="11" fill="#3f7f3a">植物给糖 · 真菌给水与磷</text>
+      </g>
+      {/* 木维网 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="316" width="440" height="50" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">地下菌丝网络连通整片森林（"木维网"）：可传递养分甚至预警信号</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">约 90% 的陆生植物都有菌根——植物登陆的"功臣"之一</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">菌根 · 真菌与根的地下联盟（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'penguin',
+    name: '企鹅',
+    kicker: '鸟纲 · 放弃飞行的潜水冠军（课外拓展）',
+    intro: '企鹅是鸟类最彻底的"转型者"：前肢变成鳍翅"飞"进水里，骨骼不再中空而是充满骨髓以利潜水，皮下厚脂肪和片状羽毛叠成的"防寒服"能抵御南极 -60°C 的严寒。帝企鹅更是把育雏做到极致——雄鸟在极夜中孵卵 65 天禁食不进食。',
+    extension: true,
+    parts: [
+      { name: '鳍翅', desc: '前肢高度特化为坚硬短桨：游速可达每小时 10 km，还能跃出冰面——飞行能力换来了"水中飞行"。' },
+      { name: '拟态配色', desc: '背面深色腹面白色：水中捕食者从上往下看是深色海面、从下往上看是亮色天空——与鲨鱼相同的 countershading 策略。' },
+      { name: '防寒装备', desc: '皮下脂肪厚达数厘米；羽毛细密如鳞片彼此咬合锁住空气层—— feathers 出水即抖干。' },
+      { name: '直立行走', desc: '腿位于身体最后方——陆地上左右摇摆步行或俯冲滑行，模样笨拙却是水中灵活的代价。' },
+      { name: '雄性孵卵', desc: '帝企鹅雄鸟把单枚卵放在脚上用腹部皮褶覆盖，极夜中孵卵约 65 天、禁食减重近半——亲代投资的极端案例。' },
+    ],
+    Svg: PenguinSvg,
+  },
+  {
+    id: 'boneMarrow',
+    name: '骨髓',
+    kicker: '造血器官 · 血细胞的"摇篮"（课外拓展）',
+    intro: '骨髓藏在长骨的髓腔和骨松质的空隙里：婴幼儿的骨骼几乎全是红骨髓，5 岁后长骨中段转为黄骨髓（脂肪储存），但长骨两端、髂骨和脊椎的红骨髓终身造血。造血干细胞在这里源源不断地分化出红细胞、白细胞和血小板——白血病骨髓移植正是用它"重装系统"。',
+    extension: true,
+    parts: [
+      { name: '红骨髓与黄骨髓', desc: '红骨髓有活跃的造血功能；黄骨髓以脂肪为主（大出血时可重新转化造血——应急储备）。' },
+      { name: '造血干细胞', desc: '专能干细胞：自我更新的同时分化为红细胞、白细胞、血小板三系——血细胞寿命短（红细胞约 120 天），靠它终身补充。' },
+      { name: '血细胞的三条出路', desc: '红细胞运氧、白细胞防御、血小板凝血——检验血常规就是检查这三条"生产线"是否正常。' },
+      { name: '骨髓移植', desc: '白血病的造血干细胞恶变：大剂量化疗清除后移植健康造血干细胞重建造血与免疫——"配型"即 HLA 相容性筛选。' },
+      { name: '捐献的真相', desc: '现代外周血造血干细胞捐献类似"延长版献血"：注射动员剂把干细胞从骨髓"赶"到血液中采集——并非抽骨髓。' },
+    ],
+    Svg: BoneMarrowSvg,
+  },
+  {
+    id: 'mycorrhiza',
+    name: '菌根',
+    kicker: '真菌与根的地下联盟（课外拓展）',
+    intro: '约 90% 的陆生植物根系都与真菌结成"菌根"同盟：真菌菌丝像千万条微管深入根毛够不到的土壤缝隙，把水和磷、锌等矿物质送给植物，植物则把光合产物（糖类）分给真菌。这些菌丝还在地下连成"木维网"，让整片森林共享资源、互通信号。',
+    extension: true,
+    parts: [
+      { name: '菌根结构', desc: '外生菌根包裹根尖（松树、栎树）；内生菌根（丛枝菌根）侵入根皮层细胞内——大多数植物属于后者。' },
+      { name: '吸收面积放大', desc: '一根菌丝直径仅几微米却能延伸数米——使植物根系的吸收面积扩大数百倍，尤其高效吸收磷。' },
+      { name: '互利共生', desc: '植物提供光合产物（糖类），真菌回报水分和矿物质——两者相互依赖，单独培养都长得差。' },
+      { name: '木维网', desc: '菌丝把同种甚至不同种的树连成地下网络：可以传递碳、氮和防御信号（"母树"通过它哺育幼苗）。' },
+      { name: '演化意义', desc: '4 亿年前真菌联盟帮助最早的植物登上陆地获取养分——没有菌根，可能就没有今天的森林。' },
+    ],
+    Svg: MycorrhizaSvg,
+  },
   {
     id: 'crocodile',
     name: '鳄鱼',

@@ -107,6 +107,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   foodPreserve: Flame,
   dnaFingerprint: Search,
   bloodPressure: Activity,
+  gravitropism: RefreshCw,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -206,6 +207,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   foodPreserve: () => import('@/components/lab/food-preserve-lab').then(({ FoodPreserveLab }) => ({ default: FoodPreserveLab })),
   dnaFingerprint: () => import('@/components/lab/dna-fingerprint-lab').then(({ DnaFingerprintLab }) => ({ default: DnaFingerprintLab })),
   bloodPressure: () => import('@/components/lab/blood-pressure-lab').then(({ BloodPressureLab }) => ({ default: BloodPressureLab })),
+  gravitropism: () => import('@/components/lab/gravitropism-lab').then(({ GravitropismLab }) => ({ default: GravitropismLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -287,6 +289,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   geneticsHistory: ['dnaHelix'],
   foodPreserve: ['foodPreservation'],
   bloodPressure: ['vessels'],
+  gravitropism: ['rootTip'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
