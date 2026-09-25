@@ -122,6 +122,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   conditionedReflex: Repeat,
   allergySim: Pill,
   bloodFlow: Heart,
+  bloodRoutine: ClipboardCheck,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -236,6 +237,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   conditionedReflex: () => import('@/components/lab/conditioned-reflex-lab').then(({ ConditionedReflexLab }) => ({ default: ConditionedReflexLab })),
   allergySim: () => import('@/components/lab/allergy-sim-lab').then(({ AllergySimLab }) => ({ default: AllergySimLab })),
   bloodFlow: () => import('@/components/lab/blood-flow-lab').then(({ BloodFlowLab }) => ({ default: BloodFlowLab })),
+  bloodRoutine: () => import('@/components/lab/blood-routine-lab').then(({ BloodRoutineLab }) => ({ default: BloodRoutineLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -329,6 +331,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   conditionedReflex: ['brainStructure'],
   allergySim: ['antibody'],
   bloodFlow: ['heartCirculation'],
+  bloodRoutine: ['bloodCells'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */

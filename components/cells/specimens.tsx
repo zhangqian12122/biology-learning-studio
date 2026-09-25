@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -12223,7 +12223,172 @@ function BanyanRootsSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 蝉（十七年蝉的"时间钟"） ================= */
+
+function CicadaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 蝉成虫 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="260" cy="150" rx="70" ry="42" fill="#3a3a2a" stroke="#1f1f14" strokeWidth="2.8" />
+        <path d="M232 118 q 28 -30 56 0 q -28 -12 -56 0 Z" fill="#4a4a34" stroke="#1f1f14" strokeWidth="2" />
+        <path d="M232 150 q -50 -40 -90 -36 q 20 46 80 58 m 66 -58 q 50 -40 90 -36 q -20 46 -80 58" fill="none" stroke="#c9d4d4" strokeWidth="2.4" opacity="0.75" />
+        <circle cx="228" cy="120" r="6" fill="#c9d4d4" stroke="#1f1f14" strokeWidth="1.6" />
+        <circle cx="292" cy="120" r="6" fill="#c9d4d4" stroke="#1f1f14" strokeWidth="1.6" />
+        <text x="380" y="130" fontSize="12.5" fill="#3a3a2a" fontWeight="700">半透明大翅膀</text>
+        <text x="380" y="150" fontSize="12.5" fill="#3a3a2a">雄蝉腹部有发音器</text>
+        <path d="M240 190 q 20 14 40 0" fill="none" stroke="#1f1f14" strokeWidth="2.6" />
+      </g>
+      {/* 地下若虫 */}
+      <g style={dim(active, 1)}>
+        <path d="M170 296 q 60 -20 180 -6" fill="none" stroke="#8a7a4a" strokeWidth="20" strokeLinecap="round" />
+        <ellipse cx="260" cy="288" rx="30" ry="14" fill="#c9a05a" stroke="#8a6a2a" strokeWidth="2.2" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${250 + i * 8} 278 l -2 -8`} stroke="#8a6a2a" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        <text x="80" y="252" fontSize="12.5" fill="#8a6a2a" fontWeight="700">若虫在地下蛰伏 3~17 年</text>
+        <text x="80" y="272" fontSize="12.5" fill="#8a6a2a">吸食树根汁液（不完全变态）</text>
+      </g>
+      {/* 周期策略 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="318" width="440" height="48" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="338" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">十七年蝉的"质数周期"：同步羽化数以亿计·捕食者根本"吃不完"</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11" fill="#a5761d">周期为质数（13/17 年）避免与天敌周期重合——生存策略的数学之美</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蝉 · 昆虫纲半翅目（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 乳腺（哺乳动物的"名片"） ================= */
+
+function MammaryGlandSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 结构 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 100 q 0 -50 100 -50 q 100 0 100 50 l 0 90 q 0 30 -40 30 l -120 0 q -40 0 -40 -30 Z" fill="#f0c9b0" stroke="#a5765a" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${200 + (i % 3) * 50} ${130 + Math.floor(i / 3) * 40} q 8 -14 24 -12`} fill="none" stroke="#c99a7a" strokeWidth="2" />
+        ))}
+        <path d="M210 170 q 40 10 80 0 l 0 30 q -40 14 -80 0 Z" fill="#e8b898" stroke="#a5765a" strokeWidth="2" />
+        <text x="380" y="130" fontSize="12.5" fill="#8a5a3a" fontWeight="700">腺泡细胞泌乳</text>
+        <text x="380" y="150" fontSize="12.5" fill="#8a5a3a">输乳管汇合至乳头</text>
+      </g>
+      {/* 乳汁成分 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="240" width="200" height="76" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="146" y="264" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">乳汁的"黄金配方"</text>
+        <text x="146" y="286" textAnchor="middle" fontSize="11" fill="#a5761d">蛋白质·脂肪·乳糖</text>
+        <text x="146" y="304" textAnchor="middle" fontSize="11" fill="#a5761d">+ 抗体（初乳含 IgA）</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 2)}>
+        <rect x="274" y="240" width="200" height="76" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="374" y="264" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">哺乳 = 亲代抚育顶配</text>
+        <text x="374" y="286" textAnchor="middle" fontSize="11" fill="#3f7f3a">营养+免疫"双投递"</text>
+        <text x="374" y="304" textAnchor="middle" fontSize="11" fill="#3f7f3a">幼崽成活率大幅提高</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="40" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">哺乳动物之名正源于"乳腺"：胎生+哺乳是提高后代成活率的演化创新</text>
+        <text x="260" y="364" textAnchor="middle" fontSize="11" fill="#537078">初乳的抗体给新生儿"被动免疫"——与疫苗的主动免疫对比记忆</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">乳腺 · 哺乳动物的定义特征（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 向日葵（追光的数学） ================= */
+
+function SunflowerSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 花盘 */}
+      <g style={dim(active, 0)}>
+        <circle cx="250" cy="150" r="78" fill="#8a6a2a" stroke="#5a4a1a" strokeWidth="3" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => {
+          const ang = i * 2.4;
+          const r = Math.sqrt(i) * 21;
+          return <circle key={i} cx={250 + Math.cos(ang) * r} cy={150 + Math.sin(ang) * r} r="6.5" fill="#e8a03a" stroke="#8a5a1d" strokeWidth="1.4" />;
+        })}
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
+          const ang = (i * 2 * Math.PI) / 15;
+          return <ellipse key={`p${i}`} cx={250 + Math.cos(ang) * 88} cy={150 + Math.sin(ang) * 88} rx="15" ry="8" fill="#f4d03a" stroke="#c9a02a" strokeWidth="1.6" transform={`rotate(${(i * 24) + 90} ${250 + Math.cos(ang) * 88} ${150 + Math.sin(ang) * 88})`} />;
+        })}
+        <path d="M250 240 v 80" stroke="#4a8a3a" strokeWidth="9" strokeLinecap="round" />
+        <ellipse cx="215" cy="286" rx="26" ry="11" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="1.8" transform="rotate(-24 215 286)" />
+        <text x="380" y="120" fontSize="12.5" fill="#8a5a1d" fontWeight="700">花盘小花按黄金角</text>
+        <text x="380" y="140" fontSize="12.5" fill="#8a5a1d" fontWeight="700">（约 137.5°）螺旋排列</text>
+        <text x="380" y="160" fontSize="12" fill="#a5761d">排布最密·无浪费空间</text>
+      </g>
+      {/* 向日性 */}
+      <g style={dim(active, 1)}>
+        <path d="M70 150 a 40 40 0 0 1 60 -30" fill="none" stroke="#e8b83a" strokeWidth="2.6" />
+        <path d="M118 116 l 12 -2 m -12 2 l 4 -11" fill="none" stroke="#e8b83a" strokeWidth="2.4" />
+        <circle cx="66" cy="104" r="14" fill="#f4d06a" stroke="#c9a05a" strokeWidth="2.2" />
+        <text x="46" y="236" fontSize="12.5" fill="#8a671b" fontWeight="700">幼株白天"追太阳"：</text>
+        <text x="46" y="256" fontSize="12" fill="#a5761d">东→西转动（生长素不对称）</text>
+        <text x="46" y="276" fontSize="12" fill="#a5761d">成熟后固定朝东（提前升温）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="300" width="440" height="66" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">向日性 ≠ 向光性完整体：幼株追光靠生长素，成熟"朝东"是提高授粉率的策略</text>
+        <text x="260" y="348" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">数学×生物：花盘的斐波那契螺旋是小花排布的最优解（排最多·不重叠）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">向日葵 · 追光的数学（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'cicada',
+    name: '蝉',
+    kicker: '昆虫纲 · 十七年蝉的质数钟（课外拓展）',
+    intro: '蝉的一生大部分时间在地下度过：若虫蛰伏 3~17 年吸食树根汁液，破土羽化后只喧鸣几周。最神奇的是北美十七年蝉——每 17 年同步羽化数以亿计，捕食者根本"吃不完"；而 13、17 这样的质数周期让天敌的繁殖周期难以与之重合，是生存策略的"数学之美"。',
+    extension: true,
+    parts: [
+      { name: '不完全变态', desc: '卵 → 若虫 → 成虫，无蛹期：若虫在地下多次蜕皮，羽化时"金蝉脱壳"。' },
+      { name: '地下蛰伏', desc: '若虫以刺吸式口器吸食树根汁液，生活史最长可达 17 年——昆虫界的"长寿冠军"之一。' },
+      { name: '雄蝉发音器', desc: '腹部的鼓膜肌每秒收缩数百次使膜振动发声——只有雄蝉会"唱歌"，用于求偶。' },
+      { name: '质数周期', desc: '13/17 年周期是质数：与任何小于它的天敌周期重合频率最低——同步爆发的"捕食者饱和"策略。' },
+      { name: '羽化与天敌', desc: '破土羽化集中在几个夜晚——鸟、蛙、兽"吃撑了也吃不完"，剩余个体足以延续种群。' },
+    ],
+    Svg: CicadaSvg,
+  },
+  {
+    id: 'mammaryGland',
+    name: '乳腺',
+    kicker: '哺乳动物 · "哺乳"二字的来源（课外拓展）',
+    intro: '哺乳动物（Mammalia）的名字正来自乳腺（Mammary gland）：这是本纲动物独有的器官。乳腺由特化的汗腺演化而来，腺泡细胞分泌乳汁——蛋白质、脂肪、乳糖与抗体（初乳富含 IgA）的"黄金配方"，把营养与免疫一起传递给幼崽，让哺乳动物的后代成活率大幅提升。',
+    extension: true,
+    parts: [
+      { name: '结构与泌乳', desc: '腺泡细胞合成乳汁，经输乳管汇合至乳头；泌乳由催乳激素（垂体）促进、在吸吮刺激下维持。' },
+      { name: '乳汁成分', desc: '蛋白质构建身体、脂肪供能、乳糖供能补钙——初乳（头几天的乳汁）抗体含量极高。' },
+      { name: '被动免疫', desc: '初乳中的 IgA 抗体覆盖幼崽肠道黏膜——在自身免疫系统成熟前"借"来的保护伞。' },
+      { name: '演化意义', desc: '胎生+哺乳的组合让幼崽在最脆弱的阶段获得稳定供给——哺乳动物征服全球的关键之一。' },
+      { name: '对比记忆', desc: '胎生哺乳 vs 卵生（数千枚卵仅少数存活）：亲代投资越高、后代成活率越高——两种策略各有代价。' },
+    ],
+    Svg: MammaryGlandSvg,
+  },
+  {
+    id: 'sunflower',
+    name: '向日葵',
+    kicker: '菊科 · 追光的数学家（课外拓展）',
+    intro: '向日葵的花盘藏着两门科学：幼株白天随太阳从东转向西（生长素分布不均所致），成熟后固定朝东让花盘提前升温吸引传粉者；花盘上的小花按约 137.5° 的黄金角螺旋排列——数学上最优的密排方案，让每朵小花都平均享受空间，结出最多的种子。',
+    extension: true,
+    parts: [
+      { name: '向日运动', desc: '幼株茎尖在白天自东向西追踪太阳（生长素背光侧分布更多），夜晚再缓慢转回东方。' },
+      { name: '朝东成熟', desc: '成熟花盘固定朝东：清晨更快升温、更醒目——吸引更多传粉昆虫、利于种子发育。' },
+      { name: '黄金角螺旋', desc: '小花以 137.5° 黄金角依次发生，形成斐波那契螺旋（常为 34/55 等连续数）——密排不重叠。' },
+      { name: '花盘的秘密', desc: '"一朵花"其实是头状花序：外围不育的舌状花负责"广告"，中央数百朵管状花负责结果。' },
+      { name: '数学之美', desc: '向日葵、松果、菠萝都有斐波那契螺旋——植物按最简单的生长规则"算"出了最优化方案。' },
+    ],
+    Svg: SunflowerSvg,
+  },
   {
     id: 'hummingbird',
     name: '蜂鸟',

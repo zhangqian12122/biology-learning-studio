@@ -644,6 +644,7 @@ export type ExperimentId =
   | 'conditionedReflex'
   | 'allergySim'
   | 'bloodFlow'
+  | 'bloodRoutine'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1322,6 +1323,14 @@ export const experimentMeta: Record<
     relatedModule: '内环境与稳态',
     extension: true,
   },
+  bloodRoutine: {
+    title: '血常规化验单解读',
+    kicker: '健康与检验 · 课外拓展',
+    description: '贫血/感染/健康三张化验单对比：找箭头·定家族·联症状。',
+    relatedBook: 'regulation',
+    relatedModule: '免疫调节与健康',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1518,7 +1527,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'conditionedReflex', 'thyroidAxis', 'thermoRegulation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'conditionedReflex', 'thyroidAxis', 'thermoRegulation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'bloodRoutine', 'sirModel'],
   },
   {
     name: '生态',
@@ -1620,6 +1629,7 @@ export const experimentOrder: ExperimentId[] = [
   'vaccineResponse',
   'balancedDiet',
   'allergySim',
+  'bloodRoutine',
   'urineFormation',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',
