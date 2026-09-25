@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -11118,7 +11118,188 @@ function CordycepsSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 白蚁（共生消化纤维素） ================= */
+
+function TermiteSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 白蚁个体 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="200" cy="170" rx="24" ry="20" fill="#e8d8b8" stroke="#8a7a4a" strokeWidth="2.4" />
+        <path d="M224 162 q 44 -14 96 -8 q 30 4 30 22 q 0 22 -36 24 q -60 4 -90 -12" fill="#e8d8b8" stroke="#8a7a4a" strokeWidth="2.4" />
+        <path d="M350 176 q 26 -4 36 -18 q 4 12 -6 20 q 10 2 18 -6 q 0 14 -20 18" fill="none" stroke="#c9b88a" strokeWidth="3" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${240 + i * 40} 200 l -8 16 m 8 -16 l 10 16`} stroke="#b5a582" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        <path d="M188 152 q -8 -16 -2 -26 m 8 26 q 6 -16 14 -22" fill="none" stroke="#8a7a4a" strokeWidth="2" />
+        <text x="390" y="150" fontSize="12.5" fill="#8a7a4a" fontWeight="700">工蚁（白色柔软·无翅）</text>
+        <text x="390" y="196" fontSize="12.5" fill="#8a7a4a" fontWeight="700">渐变态发育（无蛹期）</text>
+      </g>
+      {/* 肠内共生鞭毛虫 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="300" cy="176" rx="34" ry="18" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${288 + i * 12} 168 q 6 -10 16 -8`} fill="none" stroke="#b0483a" strokeWidth="1.8" />
+        ))}
+        <text x="60" y="140" fontSize="12.5" fill="#8a671b" fontWeight="700">肠内的共生鞭毛虫</text>
+        <text x="60" y="160" fontSize="12.5" fill="#8a671b">分泌纤维素酶——白蚁才能消化木头</text>
+        <line x1="120" y1="152" x2="268" y2="170" stroke="#8a671b" strokeWidth="1.2" strokeDasharray="3 3" />
+        <text x="60" y="250" fontSize="12.5" fill="#a5761d" fontWeight="700">互利共生：虫供住所 · 鞭毛虫"代消化"</text>
+        <text x="60" y="270" fontSize="12.5" fill="#a5761d">脱皮后需重新感染——否则吃木头会饿死</text>
+      </g>
+      {/* 等级社会 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="296" width="440" height="70" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">与蜜蜂不同的社会性昆虫：蚁后·蚁王·工蚁·兵蚁，渐变态发育</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#537078">白蚁不是"白色的蚂蚁"——蚂蚁是膜翅目（蜜蜂近亲），白蚁属蜚蠊目（蟑螂近亲）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">白蚁 · 社会性与共生消化（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 输血与血型凝集 ================= */
+
+function BloodTransfusionSvg({ active }: { active: number | null; open?: boolean }) {
+  const cells = [
+    { abo: 'A 型', rbc: 'A 抗原', plasma: '抗 B 凝集素', give: 'A、AB', get: 'A、O', c: '#c94a4a' },
+    { abo: 'B 型', rbc: 'B 抗原', plasma: '抗 A 凝集素', give: 'B、AB', get: 'B、O', c: '#4d7ea8' },
+    { abo: 'AB 型', rbc: 'A+B 抗原', plasma: '无凝集素', give: 'AB', get: '全型（万能受血者）', c: '#8a671b' },
+    { abo: 'O 型', rbc: '无抗原', plasma: '抗 A + 抗 B', give: 'O（万能供血者）', get: 'O', c: '#3f7f3a' },
+  ];
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 凝集反应演示 */}
+      <g style={dim(active, 0)}>
+        <rect x="56" y="56" width="190" height="110" rx="12" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.4" />
+        <text x="151" y="80" textAnchor="middle" fontSize="11.5" fill="#8a3a2a" fontWeight="800">错误输血：A 型血 + B 型血浆</text>
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={96 + (i % 2) * 30} cy={100 + Math.floor(i / 2) * 26} r="9" fill="#c94a4a" stroke="#8a2020" strokeWidth="1.6" />
+        ))}
+        <text x="111" y="88" fontSize="8.5" fill="#8a2020" fontWeight="700">A</text>
+        <text x="151" y="126" textAnchor="middle" fontSize="10.5" fill="#8a3a2a" fontWeight="700">红细胞凝集成团 ✗</text>
+        <text x="151" y="152" textAnchor="middle" fontSize="9.5" fill="#a5533c">抗 B 凝集素"抱团" A 抗原</text>
+        <rect x="274" y="56" width="190" height="110" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="369" y="80" textAnchor="middle" fontSize="11.5" fill="#2f6f2a" fontWeight="800">正确输血：O 型 → A 型</text>
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={`g${i}`} cx={314 + (i % 2) * 30} cy={100 + Math.floor(i / 2) * 26} r="9" fill="#7ab86a" stroke="#2f6f2a" strokeWidth="1.6" />
+        ))}
+        <text x="369" y="126" textAnchor="middle" fontSize="10.5" fill="#2f6f2a" fontWeight="700">红细胞均匀分散 ✓</text>
+        <text x="369" y="152" textAnchor="middle" fontSize="9.5" fill="#3f7f3a">无对应抗原·不凝集</text>
+      </g>
+      {/* 表格 */}
+      <g style={dim(active, 1)}>
+        <rect x="40" y="184" width="440" height="112" rx="10" fill="#f8faf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="60" y="208" fontSize="11" fill="#2c5a84" fontWeight="800">血型</text>
+        <text x="150" y="208" fontSize="11" fill="#2c5a84" fontWeight="800">红细胞抗原</text>
+        <text x="270" y="208" fontSize="11" fill="#2c5a84" fontWeight="800">血浆凝集素</text>
+        <text x="388" y="208" fontSize="11" fill="#2c5a84" fontWeight="800">可接受（受血）</text>
+        {cells.map((c, i) => (
+          <g key={c.abo}>
+            <text x="60" y={232 + i * 16} fontSize="10.5" fill={c.c} fontWeight="700">{c.abo}</text>
+            <text x="150" y={232 + i * 16} fontSize="10.5" fill="#37585f">{c.rbc}</text>
+            <text x="270" y={232 + i * 16} fontSize="10.5" fill="#59767c">{c.plasma}</text>
+            <text x="388" y={232 + i * 16} fontSize="10.5" fill="#59767c">{c.get}</text>
+          </g>
+        ))}
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="308" width="440" height="56" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="330" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">原则：同型相输；紧急时 O 型可少量输给他人（"万能供血"也有限度）</text>
+        <text x="260" y="350" textAnchor="middle" fontSize="11.5" fill="#a5761d">输血前必须做交叉配血试验——ABO 之外还有 Rh 系统等几十种血型</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">输血与血型 · 凝集反应（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 菟丝子（寄生植物） ================= */
+
+function DodderSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 宿主 */}
+      <g style={dim(active, 0)}>
+        <path d="M390 300 v -150" stroke="#3f7f3a" strokeWidth="8" strokeLinecap="round" />
+        <path d="M390 190 q -36 -12 -58 -40 m 58 40 q 36 -12 58 -40" fill="none" stroke="#3f7f3a" strokeWidth="4" strokeLinecap="round" />
+        <ellipse cx="330" cy="140" rx="30" ry="16" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="2" />
+        <ellipse cx="450" cy="140" rx="30" ry="16" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="2" />
+        <ellipse cx="390" cy="126" rx="32" ry="17" fill="#6aa85a" stroke="#2f6f2a" strokeWidth="2" />
+        <text x="322" y="164" fontSize="12.5" fill="#2f6f2a" fontWeight="700">宿主植物（大豆/柳树）</text>
+      </g>
+      {/* 菟丝子 */}
+      <g style={dim(active, 1)}>
+        <path d="M170 300 q -16 -90 40 -130 q 50 -36 130 -30 q 50 4 62 -30" fill="none" stroke="#c9a05a" strokeWidth="7" strokeLinecap="round" />
+        <path d="M260 236 q -40 6 -56 -18 m 62 -34 q 36 -12 60 4" fill="none" stroke="#d8b878" strokeWidth="5" strokeLinecap="round" />
+        <text x="60" y="120" fontSize="12.5" fill="#8a671b" fontWeight="700">菟丝子：金黄色细藤（无叶）</text>
+        <text x="60" y="140" fontSize="12.5" fill="#8a671b">缠绕茎上到处是"吸器"</text>
+        <path d="M120 152 q 50 20 140 44" fill="none" stroke="#8a671b" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 吸器 */}
+      <g style={dim(active, 2)}>
+        <path d="M330 240 q 16 10 20 30 m -20 -30 q -14 8 -18 28" fill="none" stroke="#b88a2a" strokeWidth="4" strokeLinecap="round" />
+        <text x="60" y="196" fontSize="12.5" fill="#a5761d" fontWeight="700">吸器伸入宿主韧皮部</text>
+        <text x="60" y="216" fontSize="12.5" fill="#a5761d">"白吃"现成有机物</text>
+        <text x="60" y="236" fontSize="12.5" fill="#a5761d">没有叶绿素·不能光合</text>
+      </g>
+      {/* 对比 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="296" width="440" height="66" rx="12" fill="#f4ecd8" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">全寄生植物 vs 猪笼草（食虫）：前者"蹭饭"有机物·后者自己光合只"开荤"补氮</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#a5761d">防除要点：种子小而多·随土壤传播——与宿主同时播种前处理土壤</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">菟丝子 · 植物界的"寄生虫"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'termite',
+    name: '白蚁',
+    kicker: '蜚蠊目 · 共生消化木头的工程师（课外拓展）',
+    intro: '白蚁是"搞错名字"的昆虫：它与蟑螂是近亲（蜚蠊目），与蚂蚁反而没有亲缘。工蚁通体白色柔软，靠肠内共生的鞭毛虫分泌纤维素酶才能消化木头——这段互利共生如此深度绑定，以至于工蚁每次蜕皮丢失共生生物后，必须重新取食同伴的"肛液"补种，否则会饿死。',
+    extension: true,
+    parts: [
+      { name: '等级社会', desc: '蚁后（可存活十余年、每天产卵数千）、蚁王、工蚁、兵蚁——由信息素与幼虫期食物决定分化。' },
+      { name: '共生消化', desc: '后肠鞭毛虫（原生动物）与细菌分泌纤维素酶分解木头——白蚁、共生生物"双赢"的互利共生。' },
+      { name: '渐变态发育', desc: '卵 → 若虫 → 成虫，没有蛹期（与蜜蜂的完全变态不同）；若虫即可参与巢内劳动。' },
+      { name: ' architects 白蚁丘', desc: '蚁冢高达数米，内部烟道系统自动调节温湿度——没有图纸的"集体建筑设计"。' },
+      { name: '生态贡献', desc: '分解木质纤维素、改良土壤——在热带生态系统中是不可或缺的"回收站"。' },
+    ],
+    Svg: TermiteSvg,
+  },
+  {
+    id: 'bloodTransfusion',
+    name: '输血与血型凝集',
+    kicker: '循环系统 · ABO 血型系统（课外拓展）',
+    intro: '输血的历史曾是一场"俄罗斯轮盘赌"，直到兰德斯坦纳发现 ABO 血型：红细胞的抗原遇血浆中的对应凝集素会"抱团"凝集，堵塞血管致命。输血原则是同型相输；O 型红细胞无抗原可少量输给他人（万能供血），AB 型血浆无凝集素可少量接受多型（万能受血）——但输血前都必须做交叉配血。',
+    extension: true,
+    parts: [
+      { name: '凝集原理', desc: 'A 抗原 + 抗 A 凝集素相遇即凝集：红细胞"抱团"溶血、堵塞微循环——错误输血的致命机制。' },
+      { name: '四种血型', desc: 'A 型（A 抗原·抗 B 凝集素）、B 型、AB 型（双抗原·无凝集素）、O 型（无抗原·双凝集素）——抗原抗体"互补不相容"。' },
+      { name: '输血原则', desc: '同型相输为原则；O 型为"万能供血者"、AB 型为"万能受血者"，但仅限紧急少量——量大仍会凝集。' },
+      { name: '交叉配血', desc: '供血者红细胞 + 受血者血清、反向再配一次——双向都不凝集才能输；ABO 之外还有 Rh 等 30 余种系统。' },
+      { name: '成分输血', desc: '现代输血按需供给：贫血输红细胞、凝血障碍输血小板——一血多用，效率与安全兼得。' },
+    ],
+    Svg: BloodTransfusionSvg,
+  },
+  {
+    id: 'dodder',
+    name: '菟丝子',
+    kicker: '旋花科 · 全寄生植物（课外拓展）',
+    intro: '菟丝子是植物界的"寄生虫"：种子萌发后如果几天内找不到宿主就会死亡；一旦缠上大豆或柳树，茎上便生出无数吸器刺入宿主韧皮部，直接"白吃"现成的有机物——它没有叶绿素、叶片退化成细小鳞片，金黄色的细藤就是它全部的"身体"。',
+    extension: true,
+    parts: [
+      { name: '全寄生', desc: '无叶绿素、根系退化，有机物、水、无机盐全部从宿主夺取——与半寄生（保留光合）的桑寄生不同。' },
+      { name: '吸器', desc: '茎与宿主接触处生出吸器，穿透表皮伸达维管柱——直接"插管"到宿主的输导系统。' },
+      { name: '化学侦察', desc: '幼苗能"嗅"到宿主释放的挥发性物质并朝其生长——命中率极高的定向搜索。' },
+      { name: '种间信号窃听', desc: '菟丝子还能"接收"宿主间的开花信号分子，同步自己的开花时间——寄生关系中的"窃听者"。' },
+      { name: '危害与防除', desc: '种子极小、数量巨大、随土壤与灌溉传播；轮作、清沟除苗、播种前土壤处理是主要防除手段。' },
+    ],
+    Svg: DodderSvg,
+  },
   {
     id: 'centipede',
     name: '蜈蚣',

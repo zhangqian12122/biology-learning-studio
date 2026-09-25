@@ -8,27 +8,28 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：biomagnification 生物富集 ----------
-await page.goto(`${BASE}/lab?exp=biomagnification`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：hydroponics 缺素培养与无土栽培 ----------
+await page.goto(`${BASE}/lab?exp=hydroponics`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('生物富集：汞的食物链之旅');
+  results.experiment.open = text.includes('缺素培养与无土栽培');
   const before = text;
-  await page.getByRole('button', { name: /重度排放/ }).click();
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole('button', { name: /沿食物链上升/ }).click();
-    await page.waitForTimeout(400);
-  }
+  const beforeClick = await page.locator('main').innerText();
+  await page.getByRole('button', { name: /缺铁（-Fe）/ }).click();
+  await page.getByRole('button', { name: /培养一周/ }).click();
+  await page.waitForTimeout(400);
+  await page.getByRole('button', { name: /培养一周/ }).click();
+  await page.waitForTimeout(400);
   const afterClick = await page.locator('main').innerText();
-  results.experiment.interactive = afterClick.includes('食鱼鸟') && afterClick.includes('水俣病') && afterClick.includes('重度排放');
-  results.experiment.reference = afterClick.includes('经典案例');
+  results.experiment.interactive = beforeClick.includes('完全营养液') && afterClick.includes('新叶发黄') && afterClick.includes('难移动');
+  results.experiment.reference = afterClick.includes('考点');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['centipede', 'sarcomere', 'cordyceps'];
+const SPECIMENS = ['termite', 'bloodTransfusion', 'dodder'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -88,17 +89,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：biomagnification 实验页应挂载 bioaccumulation 图解
-await page.goto(`${BASE}/lab?exp=biomagnification`, { waitUntil: 'domcontentloaded' });
+// 图解卡：hydroponics 实验页应挂载 rootTypes 图解
+await page.goto(`${BASE}/lab?exp=hydroponics`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.bioaccumDiagram = { found: t.includes('富集') || t.includes('汞'), ok: t.includes('富集') || t.includes('汞') };
+  results.specimens.rootTypesDiagram = { found: t.includes('根'), ok: t.includes('根') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.bioaccumDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.rootTypesDiagram?.ok;
 console.log('ALL_OK=' + allOk);

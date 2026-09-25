@@ -635,6 +635,7 @@ export type ExperimentId =
   | 'circadianRhythm'
   | 'predatorPrey'
   | 'biomagnification'
+  | 'hydroponics'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1245,6 +1246,13 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态系统能量与物质循环',
   },
+  hydroponics: {
+    title: '缺素培养与无土栽培',
+    kicker: '必修 1 · 溶液培养法',
+    description: '缺 N/缺 Mg/缺铁三组对照：症状出现的新老叶位置暴露元素的"可移动性"。',
+    relatedBook: 'molecules',
+    relatedModule: '细胞结构与物质运输',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1426,7 +1434,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '酶与代谢',
     icon: '⚗️',
-    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'photosynthesisHistory', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'greenhouseGas'],
+    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'photosynthesisHistory', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'hydroponics', 'greenhouseGas'],
   },
   {
     name: '细胞与膜',
@@ -1472,6 +1480,7 @@ export const experimentOrder: ExperimentId[] = [
   'enzyme',
   'greenhouseGas',
   'pigment',
+  'hydroponics',
   'photosynthesis',
   'photosynthesisFactors',
   'cellRespiration',

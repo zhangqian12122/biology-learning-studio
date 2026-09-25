@@ -113,6 +113,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   circadianRhythm: Sun,
   predatorPrey: TrendingUp,
   biomagnification: Recycle,
+  hydroponics: Sprout,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -218,6 +219,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   circadianRhythm: () => import('@/components/lab/circadian-rhythm-lab').then(({ CircadianRhythmLab }) => ({ default: CircadianRhythmLab })),
   predatorPrey: () => import('@/components/lab/predator-prey-lab').then(({ PredatorPreyLab }) => ({ default: PredatorPreyLab })),
   biomagnification: () => import('@/components/lab/biomagnification-lab').then(({ BiomagnificationLab }) => ({ default: BiomagnificationLab })),
+  hydroponics: () => import('@/components/lab/hydroponics-lab').then(({ HydroponicsLab }) => ({ default: HydroponicsLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -302,6 +304,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   carTherapy: ['cancerCell'],
   gravitropism: ['rootTip'],
   biomagnification: ['bioaccumulation'],
+  hydroponics: ['rootTypes'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
