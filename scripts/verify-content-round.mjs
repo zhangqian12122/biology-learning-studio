@@ -7,29 +7,25 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：rhIncompatibility Rh 血型与新生儿溶血 ----------
-await page.goto(`${BASE}/lab?exp=rhIncompatibility`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：hibernation 冬眠与代谢调节 ----------
+await page.goto(`${BASE}/lab?exp=hibernation`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.getByRole('button', { name: /第一胎妊娠/ }).evaluate((el) => el.click());
-  await page.waitForTimeout(400);
-  await page.getByRole('button', { name: /第一胎分娩/ }).evaluate((el) => el.click());
-  await page.waitForTimeout(350);
-  await page.getByRole('button', { name: /抗 D 免疫球蛋白/ }).evaluate((el) => el.click());
-  await page.waitForTimeout(350);
-  await page.getByRole('button', { name: /第二胎妊娠/ }).evaluate((el) => el.click());
-  await page.waitForTimeout(400);
+  for (let i = 0; i < 8; i++) {
+    await page.getByRole('button', { name: /环境降温/ }).evaluate((el) => el.click());
+    await page.waitForTimeout(280);
+  }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('Rh 血型与新生儿溶血');
-  results.experiment.interactive = after.includes('平安出生') && after.includes('二次应答');
+  results.experiment.open = before.includes('冬眠与代谢调节');
+  results.experiment.interactive = after.includes('觉醒回暖') && after.includes('代谢率');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['shark', 'wisdomTooth', 'rubberTree'];
+const SPECIMENS = ['electricEel', 'growthPlate', 'venusFlytrap'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -81,17 +77,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：energyBalance 实验页仍正常
-await page.goto(`${BASE}/lab?exp=energyBalance`, { waitUntil: 'domcontentloaded' });
+// 回归检查：rhIncompatibility 实验页仍正常
+await page.goto(`${BASE}/lab?exp=rhIncompatibility`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.energyRegression = { found: t.includes('能量平衡') || t.includes('体重'), ok: t.includes('能量平衡') || t.includes('体重') };
+  results.specimens.rhRegression = { found: t.includes('Rh') || t.includes('溶血'), ok: t.includes('Rh') || t.includes('溶血') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.energyRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.rhRegression?.ok;
 console.log('ALL_OK=' + allOk);

@@ -649,6 +649,7 @@ export type ExperimentId =
   | 'algalBloom'
   | 'energyBalance'
   | 'rhIncompatibility'
+  | 'hibernation'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1365,6 +1366,14 @@ export const experimentMeta: Record<
     relatedModule: '遗传规律与配子分析',
     extension: true,
   },
+  hibernation: {
+    title: '冬眠与代谢调节',
+    kicker: '选择性必修 1 · 延伸',
+    description: '降温模拟：冬眠鼠与对照鼠的体温、代谢率曲线对比。',
+    relatedBook: 'regulation',
+    relatedModule: '神经和体液调节',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1561,7 +1570,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'conditionedReflex', 'thyroidAxis', 'thermoRegulation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'bloodRoutine', 'energyBalance', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'reflexArc', 'conditionedReflex', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1640,6 +1649,7 @@ export const experimentOrder: ExperimentId[] = [
   'conditionedReflex',
   'thyroidAxis',
   'thermoRegulation',
+  'hibernation',
   'circadianRhythm',
   'sirModel',
   // 选择性必修 2 · 生物与环境

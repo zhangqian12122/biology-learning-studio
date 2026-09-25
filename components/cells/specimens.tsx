@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -12779,7 +12779,158 @@ function RubberTreeSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 电鳗（生物电"高压线"） ================= */
+
+function ElectricEelSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M96 180 q 130 -50 250 -22 q 60 14 80 34 q -24 22 -84 26 q -130 10 -246 -38 Z" fill="#3a4a5a" stroke="#1f2a34" strokeWidth="2.8" />
+        <path d="M96 180 q 90 -10 230 14" fill="none" stroke="#5a6a7a" strokeWidth="2" opacity="0.7" />
+        <path d="M420 192 l 40 20 m -40 -20 l 44 -6" stroke="#1f2a34" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="112" cy="158" r="5" fill="#e8e8d8" stroke="#1f2a34" strokeWidth="1.4" />
+        <path d="M100 142 q -4 -14 6 -20" fill="none" stroke="#1f2a34" strokeWidth="2.6" strokeLinecap="round" />
+        <text x="390" y="130" fontSize="12.5" fill="#1f2a34" fontWeight="700">可长至 2.5 米</text>
+        <text x="60" y="120" fontSize="12.5" fill="#1f2a34" fontWeight="700">"电"的器官占体重 80%</text>
+      </g>
+      {/* 放电 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${210 + i * 40} ${150 + i * 8} q 20 -14 44 -6 q 22 8 44 -2`} fill="none" stroke="#f4d03a" strokeWidth="2.6" strokeLinecap="round" opacity={0.9 - i * 0.2} />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <path key={`z${i}`} d={`M${238 + i * 40} ${156 + i * 8} l 8 -6 l -2 8 l 10 -4`} fill="none" stroke="#e8e85a" strokeWidth="2" strokeLinecap="round" />
+        ))}
+        <text x="60" y="244" fontSize="12.5" fill="#8a671b" fontWeight="700">放电可达 600~860 伏特</text>
+        <text x="60" y="264" fontSize="12" fill="#a5761d">击晕猎物·电场"定位"黑暗中的目标</text>
+      </g>
+      {/* 机制 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">成千上万个"发电细胞"串联（像电池组）·同时放电瞬间形成高压</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">低电压脉冲用于"雷达"导航与交流·高电压脉冲用于捕食与防御</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">生物电的本质：离子跨膜流动产生的电位差——与神经冲动同源</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">电鳗 · 生物电的"高压线"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 生长板（长高的秘密） ================= */
+
+function GrowthPlateSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 长骨剖面 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 70 h 220 q 24 0 24 26 v 20 h -44 v 160 h 44 v 20 q 0 26 -24 26 h -220 q -24 0 -24 -26 v -20 h 44 v -160 h -44 v -20 q 0 -26 24 -26 Z" fill="#f4f0e4" stroke="#b5a582" strokeWidth="3" transform="rotate(90 260 190)" />
+        <rect x="236" y="80" width="48" height="18" rx="6" fill="#8ac8e8" stroke="#2c5a84" strokeWidth="2.2" />
+        <rect x="236" y="282" width="48" height="18" rx="6" fill="#8ac8e8" stroke="#2c5a84" strokeWidth="2.2" />
+        <text x="386" y="96" fontSize="12.5" fill="#2c5a84" fontWeight="700">生长板（骺板·软骨）</text>
+        <line x1="400" y1="100" x2="286" y2="90" stroke="#2c5a84" strokeWidth="1.2" strokeDasharray="3 3" />
+        <text x="376" y="288" fontSize="12.5" fill="#2c5a84" fontWeight="700">两端各一块·软骨细胞增殖</text>
+      </g>
+      {/* 激素调控 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="60" width="130" height="80" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="111" y="84" textAnchor="middle" fontSize="11.5" fill="#2f6f2a" fontWeight="800">生长激素</text>
+        <text x="111" y="104" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">垂体分泌·刺激生长板</text>
+        <text x="111" y="122" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">过多→巨人症 过少→侏儒</text>
+      </g>
+      {/* 闭合 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="300" width="440" height="64" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">青春期结束时生长板"闭合"（软骨骨化）——身高就此"封顶"</text>
+        <text x="260" y="348" textAnchor="middle" fontSize="11.5" fill="#a5761d">女孩约 14~16 岁·男孩约 16~18 岁闭合——性激素是闭合的"发令枪"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">生长板 · 长高的秘密（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 捕蝇草（会"合掌"的猎手） ================= */
+
+function VenusFlytrapSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 张开叶夹 */}
+      <g style={dim(active, 0)}>
+        <path d="M200 210 q -30 -70 30 -96 q 40 30 44 92 q -40 22 -74 4 Z" fill="#c94a4a" stroke="#8a2020" strokeWidth="2.8" />
+        <path d="M272 212 q 26 -74 -20 -98 q -36 34 -40 96 q 32 20 60 2 Z" fill="#c94a4a" stroke="#8a2020" strokeWidth="2.8" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${214 + i * 12} 130 l 12 6 m -12 -6 l -2 14`} stroke="#f0d0d0" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        <text x="330" y="130" fontSize="12.5" fill="#8a2020" fontWeight="700">叶缘的"睫毛"刺：</text>
+        <text x="330" y="150" fontSize="12" fill="#a53030">闭合后交错如牢笼</text>
+      </g>
+      {/* 触毛触发 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${234 + i * 10} 158 l ${6 + i * 2} -14`} stroke="#f4e0a0" strokeWidth="2.6" strokeLinecap="round" />
+        ))}
+        <text x="60" y="140" fontSize="12.5" fill="#8a671b" fontWeight="700">感应触毛：20 秒内碰 2 次</text>
+        <text x="60" y="160" fontSize="12.5" fill="#8a671b">→ 触发动作电位（1 次不够防误触）</text>
+        <path d="M150 150 q 40 12 80 6" fill="none" stroke="#8a671b" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 机制 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">0.1 秒闭合：外层细胞快速吸水膨大——"酸生长"驱动的快速运动</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">双触毛确认机制防误触（雨滴/落叶不算）·闭合后分泌消化酶"吃肉"补氮</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">主动捕虫 vs 猪笼草被动陷阱——食虫植物的两大流派</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">捕蝇草 · 植物的"动作电位"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'electricEel',
+    name: '电鳗',
+    kicker: '裸背电鳗科 · 生物电"高压线"（课外拓展）',
+    intro: '电鳗是水中的"移动电池"：体内约 80% 是成千上万个串联排列的发电细胞（电板），同时放电可产生 600~860 伏的高压——足以击晕猎物与天敌。它还用低压电脉冲当作"雷达"，在浑浊黑暗的水域中定位猎物、与同伴交流——生物电的攻防与通讯一体两用。',
+    extension: true,
+    parts: [
+      { name: '发电细胞', desc: '由肌肉细胞特化：像微型电池，单个电压很小，但数千个"串联"叠加起来可输出近千伏。' },
+      { name: '高压捕猎', desc: '高压脉冲让猎物肌肉痉挛失去行动能力——先"电晕"再吞食，成功率远高于追捕。' },
+      { name: '低压雷达', desc: '低电压脉冲遇到物体发生"畸变"，电鳗通过感受回波定位与识别——活体"声呐"的电学版。' },
+      { name: '离子机制', desc: '发电细胞一侧离子通道密集开放产生电位差——本质与神经膜电位相同，只是规模放大。' },
+      { name: '为什么电不死自己', desc: '大部分电流经水与猎物身体导走；重要器官被绝缘脂肪包裹——"自保"设计精妙。' },
+    ],
+    Svg: ElectricEelSvg,
+  },
+  {
+    id: 'growthPlate',
+    name: '生长板（骺板）',
+    kicker: '运动系统 · 长高的秘密（课外拓展）',
+    intro: '人的身高由长骨的生长板（骺板）决定：这是长骨两端的一层透明软骨，软骨细胞在其中不断增殖、骨化，把骨头"从两端顶长"。生长激素昼夜 pulses 刺激生长板工作；青春期性激素一方面加速蹿长、另一方面"发令"让生长板闭合骨化——闭合后身高就定型了。',
+    extension: true,
+    parts: [
+      { name: '生长板结构', desc: '长骨两端的透明软骨层：靠近关节侧不断增殖新软骨，骨干侧持续骨化——骨头两头"同时生长"。' },
+      { name: '激素调控', desc: '生长激素（垂体）与甲状腺素促进生长板增殖；过多致巨人症、过少致侏儒症。' },
+      { name: '板闭合', desc: '青春期后期性激素促使生长板骨化闭合（女孩约 14~16 岁、男孩 16~18 岁）——身高停止增长。' },
+      { name: '骨骺线', desc: '闭合后 X 光片上留下一条致密的"骨骺线"——医生据此判断还有没有长高空间。' },
+      { name: '健康提示', desc: '睡眠高峰期生长激素分泌最旺；脊柱椎间盘早晚厚度差 1~2 cm——"早上比晚上高"是暂时的。' },
+    ],
+    Svg: GrowthPlateSvg,
+  },
+  {
+    id: 'venusFlytrap',
+    name: '捕蝇草',
+    kicker: '茅膏菜科 · 会"合掌"的主动猎手（课外拓展）',
+    intro: '捕蝇草的叶夹是植物界最快的"动作"之一：昆虫碰到感应触毛，0.1 秒内两瓣叶片猛然闭合，边缘的刺毛交错成笼。触发机制极聪明——20 秒内必须触碰 2 次才关闭，雨滴落叶都不会"误触发"。与被动等待的猪笼草不同，捕蝇草是主动出击的猎手，靠的是植物版的"动作电位"。',
+    extension: true,
+    parts: [
+      { name: '叶夹', desc: '叶是变态的"捕虫夹"：内面红色（引诱昆虫），边缘的长刺毛闭合后交错成笼，猎物逃不出。' },
+      { name: '二次触发', desc: '感应触毛被碰 1 次不关闭（可能是雨滴），20 秒内第 2 次触碰才闭合——"双确认"防误动作。' },
+      { name: '闭合机制', desc: '动作电位沿叶片传导，外层细胞迅速吸水膨大、内层细胞松弛——叶片由凹变凸瞬间"弹"合。' },
+      { name: '消化捕虫', desc: '闭合后腺体分泌消化酶（蛋白酶·几丁质酶），约 10 天"吃"完一只昆虫，补充氮磷营养。' },
+      { name: '数数能力', desc: '研究显示捕蝇草能"数"触毛次数决定分泌酶的量——植物的"信息处理"能力刷新认知。' },
+    ],
+    Svg: VenusFlytrapSvg,
+  },
   {
     id: 'shark',
     name: '鲨鱼',
