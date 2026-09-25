@@ -620,6 +620,7 @@ export type ExperimentId =
   | 'hybridoma'
   | 'gelElectrophoresis'
   | 'proteinEngineering'
+  | 'protoplastFusion'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1117,6 +1118,13 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '基因工程与 PCR 技术',
   },
+  protoplastFusion: {
+    title: '植物体细胞杂交',
+    kicker: '选择性必修 3 · 生物技术',
+    description: '酶解去壁获得原生质体，PEG 诱导融合再组织培养成株——"番茄-马铃薯"构想。',
+    relatedBook: 'technology',
+    relatedModule: '细胞工程与组织培养',
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1323,7 +1331,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
   },
 ];
 
@@ -1407,6 +1415,7 @@ export const experimentOrder: ExperimentId[] = [
   'wineVinegar',
   'pickleFerment',
   'tissueCulture',
+  'protoplastFusion',
   'pcr',
   'gelElectrophoresis',
   'embryoTransfer',

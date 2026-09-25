@@ -5051,10 +5051,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -9229,7 +9229,196 @@ function LivingFossilSvg({ active }: { active: number | null; open?: boolean }) 
   );
 }
 
+/* ================= 蜗牛（软体动物） ================= */
+
+function SnailSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 螺旋壳 */}
+      <g style={dim(active, 0)}>
+        <circle cx="300" cy="170" r="104" fill="#d8b078" stroke="#8a6a3a" strokeWidth="3" />
+        <path d="M300 170 m -104 0 a 104 104 0 1 1 104 104" fill="none" stroke="#8a6a3a" strokeWidth="2" />
+        <path d="M300 170 m -76 0 a 76 76 0 1 1 76 76" fill="none" stroke="#a5824a" strokeWidth="2.2" />
+        <path d="M300 170 m -48 0 a 48 48 0 1 1 48 48" fill="none" stroke="#a5824a" strokeWidth="2.2" />
+        <circle cx="300" cy="170" r="20" fill="#c9a05a" stroke="#8a6a3a" strokeWidth="2.2" />
+        <text x="300" y="296" textAnchor="middle" fontSize="12.5" fill="#8a6a3a" fontWeight="700">螺旋壳（回旋生长·可整体缩入）</text>
+      </g>
+      {/* 触角与眼 */}
+      <g style={dim(active, 1)}>
+        <path d="M176 210 Q 168 190 158 182" fill="none" stroke="#a5c99a" strokeWidth="10" strokeLinecap="round" />
+        <circle cx="158" cy="178" r="7" fill="#6a8a5a" stroke="#4a6a3a" strokeWidth="2" />
+        <path d="M186 196 Q 196 168 190 152" fill="none" stroke="#a5c99a" strokeWidth="12" strokeLinecap="round" />
+        <circle cx="190" cy="146" r="8" fill="#6a8a5a" stroke="#4a6a3a" strokeWidth="2.2" />
+        <text x="46" y="120" fontSize="12.5" fill="#4a6a3a" fontWeight="700">两对触角（后长前短）</text>
+        <text x="46" y="142" fontSize="12.5" fill="#4a6a3a" fontWeight="700">眼点在长触角顶端</text>
+      </g>
+      {/* 腹足 */}
+      <g style={dim(active, 2)}>
+        <path d="M96 250 Q 160 226 260 244 Q 380 264 448 250 Q 470 258 456 274 Q 350 296 240 282 Q 130 272 92 276 Q 72 268 96 250 Z" fill="#a5c99a" stroke="#4a6a3a" strokeWidth="2.6" />
+        <path d="M140 262 q 30 -8 60 0 m 30 4 q 30 -8 60 0 m 30 4 q 30 -8 60 0" fill="none" stroke="#7aa87a" strokeWidth="2" opacity="0.8" />
+        <text x="120" y="316" fontSize="12.5" fill="#4a6a3a" fontWeight="700">腹足（肌肉波状收缩爬行）</text>
+        <path d="M300 300 q 24 8 48 0 m -36 10 q 20 6 40 0" fill="none" stroke="#8ab4c9" strokeWidth="3" opacity="0.7" />
+        <text x="366" y="322" fontSize="12.5" fill="#4a6a7a" fontWeight="700">黏液减少摩擦</text>
+      </g>
+      {/* 齿舌与呼吸孔 */}
+      <g style={dim(active, 3)}>
+        <path d="M150 216 l 10 8 m -4 -12 l 10 8 m -4 -12 l 10 8" stroke="#6a8a5a" strokeWidth="2.4" strokeLinecap="round" />
+        <text x="76" y="196" fontSize="12.5" fill="#4a6a3a" fontWeight="700">口内的齿舌（刮食叶片）</text>
+        <line x1="130" y1="202" x2="150" y2="212" stroke="#4a6a3a" strokeWidth="1.2" />
+        <circle cx="262" cy="228" r="7" fill="#8a6a3a" stroke="#5a4a2a" strokeWidth="2" />
+        <text x="220" y="206" fontSize="12.5" fill="#5a4a2a" fontWeight="700">呼吸孔（"肺"开口）</text>
+      </g>
+      {/* 特征 */}
+      <g style={dim(active, 4)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#e8f0dc" stroke="#6a8a3a" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#4a6a2a" fontWeight="700">软体动物：身体柔软分头·足·内脏团，外套膜分泌形成贝壳</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蜗牛 · 软体动物门肺螺类（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 肝脏（最大的消化腺） ================= */
+
+function LiverSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 外形 */}
+      <g style={dim(active, 0)}>
+        <path d="M70 130 Q 130 84 240 88 Q 350 92 408 128 Q 436 148 420 186 Q 400 236 330 244 Q 250 252 200 238 Q 110 250 74 206 Q 52 168 70 130 Z" fill="#8a3a3a" stroke="#5a2020" strokeWidth="3" />
+        <path d="M232 90 Q 240 150 236 244" fill="none" stroke="#5a2020" strokeWidth="2.2" opacity="0.7" />
+        <text x="96" y="70" fontSize="12.5" fill="#5a2020" fontWeight="700">肝（右叶大·左叶小）</text>
+        <text x="380" y="286" fontSize="12.5" fill="#5a2020" fontWeight="700">成人体内约 1.5 kg</text>
+        <line x1="376" y1="280" x2="330" y2="246" stroke="#5a2020" strokeWidth="1.3" strokeDasharray="3 3" />
+      </g>
+      {/* 胆囊与胆汁 */}
+      <g style={dim(active, 1)}>
+        <path d="M300 240 Q 306 268 336 274 Q 362 278 366 260 Q 368 246 344 238 Q 318 232 300 240 Z" fill="#7aa87a" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="330" y="308" textAnchor="middle" fontSize="12.5" fill="#3f7f3a" fontWeight="700">胆囊（储存浓缩胆汁）</text>
+        <path d="M300 246 L 260 258 L 196 236" fill="none" stroke="#3f7f3a" strokeWidth="3.4" />
+        <text x="120" y="288" fontSize="12.5" fill="#3f7f3a" fontWeight="700">胆汁经导管流入小肠</text>
+        <line x1="180" y1="280" x2="220" y2="248" stroke="#3f7f3a" strokeWidth="1.3" />
+      </g>
+      {/* 肝小叶/肝细胞 */}
+      <g style={dim(active, 2)}>
+        <circle cx="130" cy="170" r="34" fill="#a5533c" stroke="#5a2020" strokeWidth="2" opacity="0.9" />
+        <path d="M130 170 l 0 -34 m 0 34 l 30 17 m -30 -17 l -30 17" stroke="#f0d0b0" strokeWidth="2" />
+        <text x="40" y="232" fontSize="12.5" fill="#8a5a2a" fontWeight="700">肝小叶（肝的基本单位）</text>
+        <line x1="176" y1="226" x2="160" y2="206" stroke="#8a5a2a" strokeWidth="1.2" strokeDasharray="3 3" />
+        <text x="42" y="100" fontSize="12.5" fill="#8a5a2a" fontWeight="700">合成肝糖原储存能量</text>
+        <text x="42" y="120" fontSize="12.5" fill="#8a5a2a" fontWeight="700">血浆蛋白也在这里合成</text>
+      </g>
+      {/* 功能 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="40" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">三大功能：分泌胆汁（不含酶·乳化脂肪）· 解毒（转化氨等有毒物）· 物质转化枢纽</text>
+        <text x="260" y="364" textAnchor="middle" fontSize="11" fill="#a5761d">肝细胞再生能力强——捐献部分肝后可逐渐恢复</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">肝脏 · 最大的消化腺与"化工厂"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 温室效应 ================= */
+
+function GreenhouseEffectSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 太阳辐射 */}
+      <g style={dim(active, 0)}>
+        <circle cx="90" cy="76" r="26" fill="#f4d06a" stroke="#c9a05a" strokeWidth="2.6" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+          const ang = (i * Math.PI) / 4;
+          return <line key={i} x1={90 + Math.cos(ang) * 32} y1={76 + Math.sin(ang) * 32} x2={90 + Math.cos(ang) * 42} y2={76 + Math.sin(ang) * 42} stroke="#c9a05a" strokeWidth="2.4" strokeLinecap="round" />;
+        })}
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M130 ${100 + i * 34} l 26 12 l 26 -8 l 26 12`} fill="none" stroke="#e8b83a" strokeWidth="2.6" strokeDasharray="7 4" />
+        ))}
+        <text x="152" y="66" fontSize="12.5" fill="#8a671b" fontWeight="700">太阳短波辐射穿过大气到达地面</text>
+      </g>
+      {/* 大气层 */}
+      <g style={dim(active, 1)}>
+        <rect x="220" y="96" width="240" height="64" rx="10" fill="#cfe0ec" stroke="#4d7ea8" strokeWidth="2.2" opacity="0.85" />
+        <text x="340" y="122" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">CO₂ · CH₄ 等温室气体层</text>
+        <text x="340" y="144" textAnchor="middle" fontSize="11.5" fill="#2c5a84">吸收地面反射的长波辐射</text>
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M418 ${140 - i * 26} q -20 16 -40 6 q -18 -10 -34 4`} fill="none" stroke="#b0483a" strokeWidth="2.4" strokeDasharray="6 4" />
+        ))}
+        <path d="M300 176 l 20 -14 m 12 20 l 16 -16" stroke="#b0483a" strokeWidth="2.4" strokeDasharray="6 4" />
+        <text x="60" y="248" fontSize="12.5" fill="#a53030" fontWeight="700">长波辐射被"锁"在大气内 → 增温</text>
+      </g>
+      {/* 地面与来源 */}
+      <g style={dim(active, 2)}>
+        <path d="M60 280 h 400" stroke="#3f7f3a" strokeWidth="3" />
+        <path d="M60 280 q 200 -10 400 0" fill="#c9e0b0" stroke="#3f7f3a" strokeWidth="2" />
+        <text x="96" y="304" fontSize="12.5" fill="#2f6f2a" fontWeight="700">地面受热升温</text>
+        {/* 工厂 */}
+        <rect x="290" y="236" width="70" height="44" fill="#8a9a9f" stroke="#4a5a5f" strokeWidth="2" />
+        <rect x="300" y="204" width="14" height="34" fill="#6a7a7f" stroke="#4a5a5f" strokeWidth="1.8" />
+        <circle cx="307" cy="196" r="9" fill="#b0b0b0" opacity="0.8" />
+        <circle cx="316" cy="182" r="12" fill="#c0c0c0" opacity="0.7" />
+        <text x="368" y="226" fontSize="12.5" fill="#4a5a5f" fontWeight="700">化石燃料燃烧</text>
+        {/* 树桩 */}
+        <rect x="150" y="258" width="14" height="22" fill="#8a6a3a" stroke="#5a4a2a" strokeWidth="1.6" />
+        <text x="170" y="272" fontSize="12.5" fill="#5a4a2a" fontWeight="700">砍伐森林</text>
+      </g>
+      {/* 影响 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="322" width="440" height="44" rx="10" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.2" />
+        <text x="260" y="340" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="700">影响：冰川融化·海平面上升·极端天气增多·物种分布改变</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11.5" fill="#a5533c">应对：减排温室气体 · 植树造林 · 开发清洁能源（碳中和）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">温室效应 · 碳循环失衡（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'snail',
+    name: '蜗牛',
+    kicker: '软体动物门 · 肺螺类（课外拓展）',
+    intro: '蜗牛是软体动物的陆生代表：外套膜形成螺旋壳，受惊时整体缩入壳内。它靠腹足肌肉的波状收缩爬行，黏液减少摩擦；口内有一条布满细齿的"齿舌"刮食叶片——这个"慢吞吞"的家伙是世界上牙齿最多的动物之一。',
+    extension: true,
+    parts: [
+      { name: '螺旋壳', desc: '外套膜分泌碳酸钙形成的保护壳，随生长回旋扩大；干燥时可分泌膜厣封住壳口休眠。' },
+      { name: '触角与眼', desc: '两对可伸缩的触角：长的一对顶端有眼点，负责感光；短的一对触觉灵敏。' },
+      { name: '腹足', desc: '腹部肌肉足通过波状收缩推进身体，足腺分泌黏液降低摩擦、防止爬行时被擦伤。' },
+      { name: '齿舌', desc: '口内一条带角质细齿的"锉带"，像锉刀一样刮食植物叶片，上有上万颗微小齿。' },
+      { name: '陆生呼吸', desc: '肺螺类没有鳃——外套膜腔内壁血管密布，形成"肺"，经呼吸孔直接呼吸空气。' },
+    ],
+    Svg: SnailSvg,
+  },
+  {
+    id: 'liver',
+    name: '肝脏',
+    kicker: '最大的消化腺 · 人体"化工厂"（课外拓展）',
+    intro: '肝脏是人体最大的消化腺（约 1.5 kg）：它分泌的胆汁不含消化酶，却能乳化脂肪帮助消化；同时它是全身的物质转化枢纽——合成肝糖原储存能量、合成血浆蛋白，还能把氨等有毒物质转化后随尿排出。',
+    extension: true,
+    parts: [
+      { name: '外形与位置', desc: '位于腹腔右上部，分右叶（大）和左叶（小），深红色，质地脆而易受撞击损伤。' },
+      { name: '胆汁', desc: '肝细胞分泌胆汁，经导管流入小肠、储存在胆囊；胆汁不含消化酶，但能把脂肪乳化成微粒，扩大脂肪酶的作用面积。' },
+      { name: '物质转化枢纽', desc: '血糖多余时合成肝糖原储存，血糖低时分解补充；血浆白蛋白等也在肝内合成。' },
+      { name: '解毒', desc: '把肠道吸收或代谢产生的有毒物质（如氨）转化为无毒形式，经肾排出——"喝酒伤肝"的道理。' },
+      { name: '再生能力', desc: '肝细胞再生能力极强，切除部分肝脏后可以逐渐恢复原体积，这也是活体肝移植的基础。' },
+    ],
+    Svg: LiverSvg,
+  },
+  {
+    id: 'greenhouseEffect',
+    name: '温室效应',
+    kicker: '碳循环失衡 · 全球气候变化（课外拓展）',
+    intro: '阳光（短波辐射）穿过大气加热地面，地面又以长波辐射把热量反射回太空——但二氧化碳、甲烷等温室气体会吸收长波辐射，把热量"锁"在大气层里。化石燃料燃烧和森林砍伐让温室气体越积越多，全球变暖由此加剧。',
+    extension: true,
+    parts: [
+      { name: '温室效应原理', desc: '短波辐射进得来、长波辐射出不去——温室气体像"棉被"一样截留热量，让地表保持温暖（适度温室效应本是生命存在的保障）。' },
+      { name: '主要温室气体', desc: '二氧化碳（最主要）、甲烷（更强但量少）、水蒸气等；工业革命以来大气 CO₂ 浓度上升约 50%。' },
+      { name: '人为来源', desc: '化石燃料（煤·石油·天然气）燃烧是最大来源；森林砍伐削弱了光合作用对 CO₂ 的固定。' },
+      { name: '生态影响', desc: '冰川融化、海平面上升淹没低地；极端天气增多；物种分布区向高纬高海拔迁移，来不及适应的将灭绝。' },
+      { name: '应对措施', desc: '减少化石燃料使用、开发清洁能源、植树造林增加碳汇——我国提出 2060 年实现"碳中和"目标。' },
+    ],
+    Svg: GreenhouseEffectSvg,
+  },
   {
     id: 'turtle',
     name: '乌龟',
