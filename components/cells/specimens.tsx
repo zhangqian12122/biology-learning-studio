@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -12104,7 +12104,171 @@ function EthyleneSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 蜂鸟（最小的鸟） ================= */
+
+function HummingbirdSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 花 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 320 q -6 -70 30 -120" fill="none" stroke="#3f7f3a" strokeWidth="6" strokeLinecap="round" />
+        {[0, 1, 2, 3, 4].map((i) => {
+          const ang = -Math.PI / 2 + (i - 2) * 0.5;
+          return <ellipse key={i} cx={180 + Math.cos(ang) * 20} cy={200 + Math.sin(ang) * 20} rx="14" ry="7" fill="#f0a0c0" stroke="#c96a8a" strokeWidth="1.8" transform={`rotate(${i * 40 - 80} 180 200)`} />;
+        })}
+        <circle cx="180" cy="198" r="8" fill="#e8c83a" stroke="#a58a2a" strokeWidth="1.8" />
+        <text x="92" y="268" fontSize="12.5" fill="#2f6f2a" fontWeight="700">管状花：每 10~15 分钟"访问"一次</text>
+      </g>
+      {/* 蜂鸟悬停 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="268" cy="170" rx="44" ry="22" fill="#2a9a5a" stroke="#1a6a3a" strokeWidth="2.8" transform="rotate(-18 268 170)" />
+        <circle cx="312" cy="146" r="13" fill="#2a9a5a" stroke="#1a6a3a" strokeWidth="2.2" />
+        <path d="M324 142 l 24 8 l -24 8 q 4 -8 0 -16 Z" fill="#1a1a1a" />
+        <circle cx="316" cy="142" r="3.4" fill="#141414" />
+        <path d="M252 158 q -20 -28 -52 -30 q 14 26 40 34" fill="#58c8e8" stroke="#2a9a5a" strokeWidth="2" opacity="0.85" />
+        <path d="M256 176 q -24 16 -50 12 q 20 18 46 6" fill="#58c8e8" stroke="#2a9a5a" strokeWidth="2" opacity="0.85" />
+        <path d="M226 178 q -26 20 -56 56" fill="none" stroke="#1a6a3a" strokeWidth="2.6" strokeLinecap="round" />
+        <text x="330" y="230" fontSize="12.5" fill="#1a6a3a" fontWeight="700">翅膀"8 字"划动·可悬停倒飞</text>
+        <text x="330" y="250" fontSize="12" fill="#1a6a3a">每秒扇翅 50~80 次（蜂鸣声来源）</text>
+      </g>
+      {/* 特性 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">最小的鸟（蜂鸟仅 2~20 g）· 心跳可达每分钟 1000 次</text>
+        <text x="260" y="334" textAnchor="middle" fontSize="11.5" fill="#537078">超高代谢靠花蜜（糖类）支撑——夜间"蛰伏"降代谢省能量</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#537078">与管状花互利共生：鸟得蜜·花借传粉（喙形与花形相互"定制"）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蜂鸟 · 悬停的"直升机"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 指纹 ================= */
+
+function FingerprintSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 放大指纹 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="260" cy="150" rx="92" ry="120" fill="#f4ecdc" stroke="#b5a582" strokeWidth="3" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+          <ellipse key={i} cx="260" cy="150" rx={16 + i * 9} ry={30 + i * 10.5} fill="none" stroke="#c9a05a" strokeWidth="2.4" />
+        ))}
+        <path d="M226 150 q 34 -28 68 0 q -34 26 -68 0 Z" fill="none" stroke="#a5763a" strokeWidth="2.6" />
+        <text x="260" y="304" textAnchor="middle" fontSize="12.5" fill="#8a6a3a" fontWeight="700">斗形·箕形·弓形——三种基本纹型</text>
+      </g>
+      {/* 功能 */}
+      <g style={dim(active, 1)}>
+        <rect x="44" y="60" width="180" height="76" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="134" y="84" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">为什么要指纹？</text>
+        <text x="134" y="106" textAnchor="middle" fontSize="10.5" fill="#37585f">嵴线增大摩擦——抓握防滑</text>
+        <text x="134" y="124" textAnchor="middle" fontSize="10.5" fill="#37585f">密布触觉小体——感知纹理</text>
+      </g>
+      {/* 唯一性 */}
+      <g style={dim(active, 2)}>
+        <rect x="296" y="60" width="180" height="76" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="386" y="84" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">独一无二且终身不变</text>
+        <text x="386" y="106" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">胎儿期即形成（遗传+随机）</text>
+        <text x="386" y="124" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">同卵双胞胎也不同！</text>
+      </g>
+      {/* 应用 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="322" width="440" height="44" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">应用：指纹解锁·法医鉴定——每个人的指纹由基因"定基调"、发育中随机"定细节"</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">灵长类都有"皮纹"·考拉也有指纹（甚至能混淆现场！）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">指纹 · 皮肤与个体识别（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 榕树（独木成林） ================= */
+
+function BanyanRootsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 树冠 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="260" cy="96" rx="180" ry="58" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="2.8" />
+        {[0, 1, 2].map((i) => (
+          <ellipse key={i} cx={140 + i * 120} cy="76" rx="60" ry="26" fill="#6aa85a" stroke="#2f6f2a" strokeWidth="1.8" opacity="0.9" />
+        ))}
+        <text x="380" y="60" fontSize="12.5" fill="#2f6f2a" fontWeight="700">树冠直径可达数十米</text>
+      </g>
+      {/* 主干+支柱根 */}
+      <g style={dim(active, 1)}>
+        <path d="M250 130 v 130" stroke="#8a6a3a" strokeWidth="20" strokeLinecap="round" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M${150 + i * 55} ${118 - (i % 2) * 8} q ${i < 2 ? -14 : 14} 60 ${i < 2 ? -10 : 10} 130`} fill="none" stroke="#a5763a" strokeWidth={7 - Math.abs(i - 2)} strokeLinecap="round" />
+        ))}
+        <path d="M60 320 h 400" stroke="#c9b88a" strokeWidth="4" />
+        <text x="46" y="86" fontSize="12.5" fill="#2f6f2a" fontWeight="700">气生根下垂落地→长成"支柱根"</text>
+        <text x="46" y="302" fontSize="12.5" fill="#8a6a3a" fontWeight="700">"独木成林"：支柱根可达上千条</text>
+      </g>
+      {/* 生态 */}
+      <g style={dim(active, 2)}>
+        <rect x="300" y="150" width="180" height="70" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="390" y="174" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">热带雨林"会走路的树"</text>
+        <text x="390" y="196" textAnchor="middle" fontSize="11" fill="#3f7f3a">支柱根支撑冠幅扩张</text>
+        <text x="390" y="214" textAnchor="middle" fontSize="11" fill="#3f7f3a">为鸟兽提供"公寓与食堂"</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="40" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">绞杀现象的"反面教材"：榕树与传粉榕小蜂是严格的互利共生（一对一）</text>
+        <text x="260" y="364" textAnchor="middle" fontSize="11" fill="#a5761d">村口大榕树常是社区"圣地"——文化中的生态保护传统</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">榕树 · 独木成林（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'hummingbird',
+    name: '蜂鸟',
+    kicker: '鸟纲 · 悬停的"微型直升机"（课外拓展）',
+    intro: '蜂鸟是世界上最小的鸟（最轻仅 2 克），却是飞行技术最强的"直升机"：翅膀每秒扇动 50~80 次，可以悬停、倒飞、横向移动。它的心跳可达每分钟 1000 次，超高代谢靠花蜜（糖类）支撑；到了夜里则进入"蛰伏"状态降低代谢省能量——与管状花组成互利共生的"黄金搭档"。',
+    extension: true,
+    parts: [
+      { name: '悬停飞行', desc: '翅膀以"8 字"轨迹划动，上下挥拍都产生升力——像昆虫一样悬停，还能倒飞（鸟类中唯一）。' },
+      { name: '超高代谢', desc: '心跳每分钟可达 1000 次、体温 40°C——每天需访问上千朵花，摄入超过体重一半的糖。' },
+      { name: '蛰伏现象', desc: '夜间体温可降到 10°C 左右、代谢率降到 1/30——"省电模式"熬过没有花蜜的夜晚。' },
+      { name: '与花共演化', desc: '细长喙与特定管状花相互"定制"：喙越长越弯的花，蜜越深——形态是自然选择刻下的"钥匙与锁"。' },
+      { name: '体型纪录', desc: '蜜蜂蜂鸟体重约 2 克、卵只有豌豆大——是世界上最小的鸟与最小的鸟蛋。' },
+    ],
+    Svg: HummingbirdSvg,
+  },
+  {
+    id: 'fingerprint',
+    name: '指纹',
+    kicker: '皮肤 · 个体识别的"身份证"（课外拓展）',
+    intro: '指尖皮肤上的嵴线与沟纹组成了独一无二的指纹：斗形、箕形、弓形三种基本纹型，细节却人人不同——连同卵双胞胎都不一样！指纹的嵴线能增大抓握摩擦、密布触觉感受器增强触觉；胎儿期由遗传"定基调"、发育中随机"定细节"，且终身不变——因此成为法医鉴定与生物识别的基石。',
+    extension: true,
+    parts: [
+      { name: '嵴线与功能', desc: '凸起的嵴线像轮胎纹增大摩擦力，防滑防脱；嵴间密布触觉小体——指尖是全身触觉最敏锐的部位之一。' },
+      { name: '三种基本纹型', desc: '斗形（同心圆）、箕形（簸箕状）、弓形（拱桥状）——中国人约半数为斗形。' },
+      { name: '形成机制', desc: '胎儿 3~4 个月时由遗传设定大格局，局部发育的随机性决定细节——所以同卵双胞胎指纹也不同。' },
+      { name: '终身不变', desc: '只要基底层（生发层）不受损，指纹终身稳定；浅表擦伤愈合后原样长回。' },
+      { name: '趣闻', desc: '考拉手指的指纹与人类极为相似，曾在犯罪现场"以假乱真"——灵长类与树栖有袋类的趋同演化。' },
+    ],
+    Svg: FingerprintSvg,
+  },
+  {
+    id: 'banyanRoots',
+    name: '榕树（独木成林）',
+    kicker: '桑科 · 会"长脚"的巨树（课外拓展）',
+    intro: '榕树的枝干上会垂下一条条"气生根"，一旦触地就扎进土壤、长粗成支柱根——一棵大榕树的支柱根可达上千条，树冠覆盖数亩地面，"独木成林"。榕树与传粉的榕小蜂是严格的"一对一"互利共生：没有榕小蜂就没有榕树籽，没有榕树花榕小蜂就无法繁殖——合作数千万年的老搭档。',
+    extension: true,
+    parts: [
+      { name: '气生根与支柱根', desc: '枝干上垂生的气生根触地后木质化为支柱根——像无数"脚"撑住不断扩张的树冠。' },
+      { name: '独木成林', desc: '孟加拉榕的树冠覆盖面积曾达上万平方米——一棵树就是一片"森林"，为鸟兽提供栖息地。' },
+      { name: '与榕小蜂共生', desc: '榕果的隐头花序只有榕小蜂能钻入传粉；榕小蜂幼虫只在榕果内发育——数千万年的"一对一"合作。' },
+      { name: '绞杀现象', desc: '有些榕（绞杀榕）种子在别的树冠发芽，气生根最终"绞死"宿主——热带雨林竞争的极端形式。' },
+      { name: '文化意义', desc: '华南与东南亚的村口大榕树常被视为"风水树"——传统信仰客观上保护了古树资源。' },
+    ],
+    Svg: BanyanRootsSvg,
+  },
   {
     id: 'anglerfish',
     name: '深海鮟鱇',
