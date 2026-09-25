@@ -652,6 +652,7 @@ export type ExperimentId =
   | 'hibernation'
   | 'gauseCompetition'
   | 'imprinting'
+  | 'bipedalCosts'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1391,6 +1392,14 @@ export const experimentMeta: Record<
     relatedModule: '神经和体液调节',
     extension: true,
   },
+  bipedalCosts: {
+    title: '直立行走的演化代价',
+    kicker: '人类演化 · 课外拓展',
+    description: '解放双手的收益 vs 腰痛·痔疮·难产的代价——演化的折中方案。',
+    relatedBook: 'genetics',
+    relatedModule: '变异、育种与生物进化',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1582,7 +1591,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'antibioticResistance', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'antibioticResistance', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1650,6 +1659,7 @@ export const experimentOrder: ExperimentId[] = [
   'chromosomeVariation',
   'geneFrequency',
   'selection',
+  'bipedalCosts',
   'antibioticResistance',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',

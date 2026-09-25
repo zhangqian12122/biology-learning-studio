@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -13108,7 +13108,168 @@ function PollenGrainSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 猫头鹰（夜行猛禽） ================= */
+
+function OwlSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 树枝 */}
+      <g style={dim(active, 0)}>
+        <path d="M90 280 q 160 -30 350 -16" fill="none" stroke="#8a6a3a" strokeWidth="12" strokeLinecap="round" />
+      </g>
+      {/* 身体 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="260" cy="190" rx="88" ry="100" fill="#8a7a5a" stroke="#4a3a2a" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${200 + (i % 3) * 50} ${140 + Math.floor(i / 3) * 30} q 24 -10 48 2`} fill="none" stroke="#6a5a3a" strokeWidth="2" opacity="0.8" />
+        ))}
+        <text x="380" y="120" fontSize="12.5" fill="#4a3a2a" fontWeight="700">蓬松羽毛的"锯齿"边缘</text>
+        <text x="380" y="140" fontSize="12" fill="#4a3a2a">消音飞行——夜袭无声</text>
+      </g>
+      {/* 头与脸盘 */}
+      <g style={dim(active, 2)}>
+        <circle cx="260" cy="104" r="46" fill="#a58a5a" stroke="#4a3a2a" strokeWidth="2.6" />
+        <path d="M222 84 q 38 -18 76 0 q -38 22 -76 0" fill="#d8c8a8" stroke="#8a6a3a" strokeWidth="2" />
+        {[0, 1].map((i) => (
+          <circle key={i} cx={238 + i * 44} cy={88} r="10" fill="#f4d03a" stroke="#8a671b" strokeWidth="2" />
+        ))}
+        {[0, 1].map((i) => (
+          <circle key={`p${i}`} cx={238 + i * 44} cy={88} r="4" fill="#141414" />
+        ))}
+        <path d="M252 96 l 8 22 l 8 -22 Z" fill="#e8b83a" stroke="#8a671b" strokeWidth="1.6" />
+        <text x="42" y="84" fontSize="12.5" fill="#4a3a2a" fontWeight="700">脸盘像"卫星天线"</text>
+        <text x="42" y="104" fontSize="12.5" fill="#4a3a2a" fontWeight="700">汇聚声波·夜视超群</text>
+        <text x="42" y="124" fontSize="12" fill="#4a3a2a">眼睛固定·转头 270° 补偿</text>
+      </g>
+      {/* 特征 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="300" width="440" height="66" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">吐食丸：把无法消化的骨头毛发团成丸吐出——研究它就能知道"昨晚吃了啥"</text>
+        <text x="260" y="348" textAnchor="middle" fontSize="11.5" fill="#a5761d">不对称耳孔精确定位声源 · 雪夜捕鼠命中率极高——顶级夜行猛禽</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">猫头鹰 · 夜行猛禽（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 双胞胎（同卵与异卵） ================= */
+
+function TwinsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 同卵 */}
+      <g style={dim(active, 0)}>
+        <rect x="46" y="60" width="200" height="150" rx="12" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="146" y="86" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">同卵双胞胎（一个受精卵）</text>
+        <circle cx="110" cy="130" r="18" fill="#f4d0b8" stroke="#a5765a" strokeWidth="2.2" />
+        <circle cx="150" cy="130" r="18" fill="#f4d0b8" stroke="#a5765a" strokeWidth="2.2" />
+        <text x="130" y="168" textAnchor="middle" fontSize="10.5" fill="#37585f">受精卵分裂成两个胚胎</text>
+        <text x="130" y="188" textAnchor="middle" fontSize="10.5" fill="#37585f">遗传物质几乎完全相同</text>
+      </g>
+      {/* 异卵 */}
+      <g style={dim(active, 1)}>
+        <rect x="274" y="60" width="200" height="150" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="374" y="86" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">异卵双胞胎（两个受精卵）</text>
+        <circle cx="330" cy="130" r="18" fill="#f4d0b8" stroke="#a5765a" strokeWidth="2.2" />
+        <circle cx="370" cy="130" r="18" fill="#e8c9a8" stroke="#8a5a3a" strokeWidth="2.2" />
+        <text x="374" y="168" textAnchor="middle" fontSize="10.5" fill="#37585f">两个卵同时受精</text>
+        <text x="374" y="188" textAnchor="middle" fontSize="10.5" fill="#37585f">遗传相似度如普通兄妹（50%）</text>
+      </g>
+      {/* 龙凤胎 */}
+      <g style={dim(active, 2)}>
+        <rect x="60" y="228" width="400" height="60" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="260" y="252" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">"龙凤胎"必是异卵：性别不同的双胞胎不可能来自同一个受精卵</text>
+        <text x="260" y="274" textAnchor="middle" fontSize="11" fill="#3f7f3a">同卵双胞胎是天然的"克隆研究组"——研究遗传与环境影响的绝佳样本</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="306" width="440" height="48" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="326" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">考点：同卵=1 个受精卵分裂（性别必同）· 异卵=2 个卵分别受精（性别可不同）</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="11.5" fill="#a5761d">双胞胎率与遗传（母系家族）·辅助生殖技术相关</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">双胞胎 · 胚胎发育的两种起点（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 卷须（攀援的"手"） ================= */
+
+function TendrilPlantSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 支架 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 90 L 120 320 M 390 60 L 390 320" stroke="#8a7a4a" strokeWidth="7" strokeLinecap="round" />
+        <path d="M120 90 L 390 60" stroke="#8a7a4a" strokeWidth="5" strokeLinecap="round" />
+        <path d="M120 200 L 390 180" stroke="#8a7a4a" strokeWidth="5" strokeLinecap="round" />
+        <text x="430" y="70" fontSize="12.5" fill="#8a7a4a" fontWeight="700">支架/灌木</text>
+      </g>
+      {/* 卷须缠绕 */}
+      <g style={dim(active, 1)}>
+        <path d="M120 96 q 60 -20 130 -14 q 70 6 132 -12" fill="none" stroke="#5a9a3a" strokeWidth="9" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${190 + i * 60} 88 q 4 -18 -8 -28 q -12 -8 -20 2 q -6 10 6 16`} fill="none" stroke="#7ab84a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <path d="M320 76 q 20 30 52 24" fill="none" stroke="#7ab84a" strokeWidth="5" strokeLinecap="round" />
+        <text x="60" y="330" fontSize="12.5" fill="#4a8a3a" fontWeight="700">卷须碰到支撑物 → 数分钟内缠绕并卷成弹簧状收紧</text>
+      </g>
+      {/* 机制 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="240" width="440" height="72" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="264" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">向触性：接触侧生长减慢·背侧加速 → 卷须"螺旋化"缠紧支架</text>
+        <text x="260" y="288" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">豌豆用叶须·黄瓜用茎卷须·葡萄用枝卷须——不同器官"改装"出同一功能</text>
+        <text x="260" y="312" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">攀援策略让藤本"借力上树"争夺阳光——雨林下层植物的生存智慧</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">卷须 · 植物的攀援"手"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'owl',
+    name: '猫头鹰',
+    kicker: '鸟纲 · 夜行猛禽"忍者"（课外拓展）',
+    intro: '猫头鹰是夜空中的"无声忍者"：脸盘像卫星天线汇聚声波，不对称的耳孔能精确定位雪下老鼠的位置；羽毛边缘的锯齿结构让飞行几乎无声。它的眼睛固定在眼窝里不能转动，却靠异常灵活的颈椎转头 270° 来"环顾四周"。它还会把不能消化的骨头和毛发团成"食丸"吐出来——解剖食丸就能知道它昨晚吃了什么。',
+    extension: true,
+    parts: [
+      { name: '脸盘', desc: '环绕眼睛的放射状硬羽构成"卫星天线"，把微弱声波汇聚到耳孔——听觉定位精度惊人。' },
+      { name: '不对称耳孔', desc: '两耳孔位置一高一低：接收同一声源的时间差与强度差不同——精准计算猎物的方位与高度。' },
+      { name: '无声飞行', desc: '飞羽前缘梳状锯齿破碎气流旋涡——飞行的"空气动力噪音"被消除，夜袭悄无声息。' },
+      { name: '转头 270°', desc: '眼睛呈管状固定在眼窝内不能转动，颈椎加倍（14 块）让它可以大幅转头补偿。' },
+      { name: '食丸', desc: '无法消化的骨头、毛发、昆虫外骨骼在胃中团成食丸吐出——科学家分析食丸即可研究它的食性。' },
+    ],
+    Svg: OwlSvg,
+  },
+  {
+    id: 'twins',
+    name: '双胞胎',
+    kicker: '生殖发育 · 同卵与异卵（课外拓展）',
+    intro: '双胞胎分两种：同卵双胞胎来自同一个受精卵的分裂——遗传物质几乎完全相同，性别一定相同；异卵双胞胎是两个卵同时受精——遗传相似度和普通兄妹一样（约 50%），性别可以不同。"龙凤胎"必是异卵。同卵双胞胎是天然的"克隆对照组"——科学家借他们研究遗传与环境的相对影响。',
+    extension: true,
+    parts: [
+      { name: '同卵双胞胎', desc: '一个受精卵在早期分裂成两个胚胎：基因几乎相同，外貌极像，性别必同。' },
+      { name: '异卵双胞胎', desc: '两个卵同时排出、分别受精：基因相似度与普通兄弟姐妹相同，性别可同可异。' },
+      { name: '龙凤胎原理', desc: '性别不同的双胞胎必然来自两个受精卵——是判断"同卵还是异卵"的最直观证据。' },
+      { name: '研究价值', desc: '同卵双胞胎分别养育的比较研究是估算"遗传 vs 环境"贡献度的经典方法（行为遗传学基石）。' },
+      { name: '形成机制', desc: '同卵分裂发生在受精后 1~14 天：时间不同可导致各自独立胎盘或"连体"的风险差异。' },
+    ],
+    Svg: TwinsSvg,
+  },
+  {
+    id: 'tendrilPlant',
+    name: '卷须（攀援植物）',
+    kicker: '植物运动 · 攀援的"手"（课外拓展）',
+    intro: '豌豆、黄瓜、葡萄都有一套"攀岩装备"——卷须：细须一碰到支撑物，接触侧生长减慢、外侧加速，几小时内卷成弹簧状把植株拉向支架。这种向触性运动让藤本植物不花力气建造粗壮茎干，就能"借力上树"夺取阳光。豌豆用叶变成的须、黄瓜用茎卷须、葡萄用枝卷须——不同器官"改装"出了同一功能。',
+    extension: true,
+    parts: [
+      { name: '向触性', desc: '接触支撑物后生长素分布改变：背侧长得快、接触侧长得慢——卷须螺旋缠绕并绷紧。' },
+      { name: '弹簧收紧', desc: '卷成螺旋的卷须像弹簧，能在狂风中拉伸缓冲——既固定植株又不断裂。' },
+      { name: '器官改装', desc: '豌豆卷须是叶的部分、黄瓜卷须是侧枝、葡萄卷须是花序变态——"同功不同源"的演化案例。' },
+      { name: '攀援的意义', desc: '茎纤细软弱的藤本借支架攀到林冠层获取阳光——省下建造木质支持结构的巨大成本。' },
+      { name: '应用', desc: '园艺上给瓜豆搭架引蔓，正是顺应卷须攀援习性——提高通风采光与产量。' },
+    ],
+    Svg: TendrilPlantSvg,
+  },
   {
     id: 'poisonDartFrog',
     name: '箭毒蛙',
