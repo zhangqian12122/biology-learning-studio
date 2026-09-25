@@ -109,6 +109,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   bloodPressure: Activity,
   gravitropism: RefreshCw,
   waterQuality: Waves,
+  carTherapy: Zap,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -210,6 +211,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   bloodPressure: () => import('@/components/lab/blood-pressure-lab').then(({ BloodPressureLab }) => ({ default: BloodPressureLab })),
   gravitropism: () => import('@/components/lab/gravitropism-lab').then(({ GravitropismLab }) => ({ default: GravitropismLab })),
   waterQuality: () => import('@/components/lab/water-quality-lab').then(({ WaterQualityLab }) => ({ default: WaterQualityLab })),
+  carTherapy: () => import('@/components/lab/car-therapy-lab').then(({ CarTherapyLab }) => ({ default: CarTherapyLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -291,6 +293,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   geneticsHistory: ['dnaHelix'],
   foodPreserve: ['foodPreservation'],
   bloodPressure: ['vessels'],
+  carTherapy: ['cancerCell'],
   gravitropism: ['rootTip'],
 };
 

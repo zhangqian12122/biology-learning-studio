@@ -631,6 +631,7 @@ export type ExperimentId =
   | 'bloodPressure'
   | 'gravitropism'
   | 'waterQuality'
+  | 'carTherapy'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1211,6 +1212,14 @@ export const experimentMeta: Record<
     relatedModule: '生态保护与人与自然',
     extension: true,
   },
+  carTherapy: {
+    title: 'CAR-T 免疫细胞疗法',
+    kicker: '生物技术前沿 · 基因与细胞治疗',
+    description: '给患者 T 细胞装上"导航头"再回输——以细胞为药的癌症疗法。',
+    relatedBook: 'technology',
+    relatedModule: '免疫调节与健康',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1417,7 +1426,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
   },
 ];
 
@@ -1519,6 +1528,7 @@ export const experimentOrder: ExperimentId[] = [
   'lacOperon',
   'crispr',
   'geneTherapy',
+  'carTherapy',
   'proteinEngineering',
   'restrictionEnzyme',
   'choiceMedia',

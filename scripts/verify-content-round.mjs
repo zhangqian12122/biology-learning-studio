@@ -8,28 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：waterQuality 水质检测与生物评价 ----------
-await page.goto(`${BASE}/lab?exp=waterQuality`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：carTherapy CAR-T 免疫细胞疗法 ----------
+await page.goto(`${BASE}/lab?exp=carTherapy`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('水质检测与生物评价');
+  results.experiment.open = text.includes('CAR-T 免疫细胞疗法');
   const before = text;
-  const beforeClick = await page.locator('main').innerText();
-  await page.getByRole('button', { name: /② 排污口下游/ }).click();
-  await page.waitForTimeout(400);
-  const midText = await page.locator('main').innerText();
-  await page.getByRole('button', { name: /④ 河口湿地/ }).click();
-  await page.waitForTimeout(400);
+  for (let i = 0; i < 4; i++) {
+    await page.getByRole('button', { name: /推进流程/ }).click();
+    await page.waitForTimeout(450);
+  }
   const afterClick = await page.locator('main').innerText();
-  results.experiment.interactive = beforeClick.includes('Ⅱ类') && midText.includes('劣Ⅴ类') && midText.includes('颤蚓') && afterClick.includes('Ⅲ类');
-  results.experiment.reference = afterClick.includes('考点');
+  results.experiment.interactive = afterClick.includes('穿孔素') && afterClick.includes('细胞因子风暴');
+  results.experiment.reference = afterClick.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['flounder', 'adrenal', 'endosymbiosis'];
+const SPECIMENS = ['tardigrade', 'lymphNode', 'telomere'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -89,17 +87,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 回归检查：biocontrol 生态模拟页仍正常
-await page.goto(`${BASE}/lab?exp=biocontrol`, { waitUntil: 'domcontentloaded' });
+// 图解卡：carTherapy 实验页应挂载 cancerCell 图解
+await page.goto(`${BASE}/lab?exp=carTherapy`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.biocontrolRegression = { found: t.includes('生物防治') || t.includes('瓢虫'), ok: t.includes('生物防治') || t.includes('瓢虫') };
+  results.specimens.cancerCellDiagram = { found: t.includes('癌') || t.includes('肿瘤'), ok: t.includes('癌') || t.includes('肿瘤') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.biocontrolRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.cancerCellDiagram?.ok;
 console.log('ALL_OK=' + allOk);

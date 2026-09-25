@@ -5048,11 +5048,11 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome', 'vacuole', 'endosymbiosis'] },
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
-  { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
+  { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
@@ -10632,7 +10632,177 @@ function EndosymbiosisSvg({ active }: { active: number | null; open?: boolean })
   );
 }
 
+/* ================= 水熊虫（缓步动物） ================= */
+
+function TardigradeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 180 q 0 -52 50 -60 q 60 -10 110 0 q 50 8 50 60 q 0 52 -50 60 q -60 10 -110 0 q -50 -8 -50 -60 Z" fill="#c9d8b0" stroke="#6a8a4a" strokeWidth="3" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${210 + i * 44} 122 q 6 58 0 118`} fill="none" stroke="#8aa868" strokeWidth="2" opacity="0.8" />
+        ))}
+        <circle cx="182" cy="146" r="6" fill="#3a4a2a" />
+        <circle cx="210" cy="140" r="6" fill="#3a4a2a" />
+        <text x="46" y="90" fontSize="12.5" fill="#4a6a2a" fontWeight="700">体长仅 0.5 mm（显微观察）</text>
+        <text x="380" y="160" fontSize="12.5" fill="#4a6a2a">分节的"小熊掌"步态</text>
+      </g>
+      {/* 八条腿 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3].map((i) => (
+          <g key={`l${i}`}>
+            <path d={`M${188 + i * 46} 146 q -26 6 -34 28 q -4 14 8 14`} fill="none" stroke="#6a8a4a" strokeWidth="5" strokeLinecap="round" />
+            <path d={`M${188 + i * 46} 214 q -26 -6 -34 -28 q -4 -14 8 -14`} fill="none" stroke="#6a8a4a" strokeWidth="5" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="60" y="288" fontSize="12.5" fill="#4a6a2a" fontWeight="700">四对短腿·缓步爬行（缓步动物门）</text>
+        <path d="M172 158 q 8 -8 16 -2" fill="none" stroke="#3a4a2a" strokeWidth="2.4" />
+        <path d="M166 168 q 8 -8 16 -2" fill="none" stroke="#3a4a2a" strokeWidth="2.4" />
+        <text x="380" y="200" fontSize="12.5" fill="#4a6a2a" fontWeight="700">口针可刺入植物细胞吸食</text>
+      </g>
+      {/* 隐生 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="316" width="440" height="52" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="338" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">"隐生"绝技：脱水成"小桶"休眠——耐受 -272°C～151°C、真空、强辐射数十年</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11.5" fill="#537078">遇水复苏重启生命活动——已在太空舱外裸露 10 天后成功繁殖后代</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">水熊虫 · 缓步动物门（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 淋巴结（免疫过滤站） ================= */
+
+function LymphNodeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 结体 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="170" rx="120" ry="80" fill="#e8b8b8" stroke="#a54858" strokeWidth="3" />
+        {[0, 1, 2].map((i) => (
+          <ellipse key={i} cx={196 + i * 54} cy={140} rx="22" ry="14" fill="#d88a8a" stroke="#a54858" strokeWidth="1.8" />
+        ))}
+        <text x="380" y="126" fontSize="12.5" fill="#8a3a3a" fontWeight="700">皮质淋巴小结</text>
+        <text x="380" y="146" fontSize="12.5" fill="#8a3a3a">（B 细胞聚居区）</text>
+        <line x1="376" y1="132" x2="274" y2="140" stroke="#8a3a3a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 输入输出淋巴管 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${128 + i * 26} ${108 - (i % 2) * 12} q -26 -14 -44 -30`} fill="none" stroke="#4d7ea8" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="42" y="58" fontSize="12.5" fill="#2c5a84" fontWeight="700">输入淋巴管（多条）</text>
+        <path d="M370 216 q 40 16 66 40" fill="none" stroke="#2f6f2a" strokeWidth="6" strokeLinecap="round" />
+        <text x="330" y="282" fontSize="12.5" fill="#2f6f2a" fontWeight="700">输出淋巴管（经"门"部）</text>
+      </g>
+      {/* 功能 */}
+      <g style={dim(active, 2)}>
+        <rect x="60" y="216" width="150" height="72" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="135" y="240" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">过滤站：拦截</text>
+        <text x="135" y="260" textAnchor="middle" fontSize="11" fill="#37585f">淋巴液中的病原体</text>
+        <text x="135" y="278" textAnchor="middle" fontSize="11" fill="#37585f">与癌细胞（转移前哨）</text>
+        <rect x="300" y="300" width="180" height="56" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="390" y="322" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">活化场：T/B 细胞</text>
+        <text x="390" y="342" textAnchor="middle" fontSize="11" fill="#3f7f3a">识别抗原后增殖分化</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <text x="30" y="332" fontSize="12.5" fill="#8a671b" fontWeight="700">"摸到淋巴结肿大"：免疫应答进行中</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">淋巴结 · 免疫系统的"边防哨所"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 端粒与细胞衰老 ================= */
+
+function TelomereSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 染色体端粒 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 150 q -8 -34 30 -40 q 44 -8 60 20 l 60 100 q 10 34 -28 42 q -44 10 -62 -18 Z" fill="#c9a8d8" stroke="#7a4a8a" strokeWidth="3" />
+        <rect x="146" y="102" width="70" height="26" rx="12" fill="#e8a03a" stroke="#8a671b" strokeWidth="2.4" transform="rotate(-10 181 115)" />
+        <text x="62" y="92" fontSize="12.5" fill="#8a671b" fontWeight="700">端粒：染色体末端的"保护帽"</text>
+        <text x="62" y="112" fontSize="12.5" fill="#8a671b">（重复 DNA 序列·像鞋带头）</text>
+        <line x1="140" y1="104" x2="168" y2="108" stroke="#8a671b" strokeWidth="1.2" />
+      </g>
+      {/* 每次分裂缩短 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <path d={`M${300 + i * 62} 120 v 44`} stroke="#7a4a8a" strokeWidth="7" strokeLinecap="round" />
+            <rect x={292 + i * 62} y={106 - i * 10} width="16" height={12 + i * 0} rx="5" fill="#e8a03a" stroke="#8a671b" strokeWidth="1.6" />
+            <text x={308 + i * 62} y={104 - i * 10} fontSize="9.5" fill="#59767c">{i === 0 ? '新细胞' : i === 1 ? '分裂25次' : '分裂50次'}</text>
+          </g>
+        ))}
+        <text x="60" y="205" fontSize="12.5" fill="#8a671b" fontWeight="700">每次分裂端粒缩短一截</text>
+        <text x="60" y="225" fontSize="12.5" fill="#8a671b">短到临界 → 细胞停止分裂（Hayflick 极限）</text>
+      </g>
+      {/* 端粒酶 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="120" cy="270" rx="30" ry="20" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="120" y="275" textAnchor="middle" fontSize="9.5" fill="#fff" fontWeight="700">端粒酶</text>
+        <text x="60" y="316" fontSize="12.5" fill="#2f6f2a" fontWeight="700">生殖细胞和癌细胞有端粒酶（修复端粒→近乎不死）</text>
+        <text x="60" y="336" fontSize="12.5" fill="#2f6f2a">正常体细胞几乎没有——衰老的"分子时钟"</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">细胞衰老特征：水分减少·酶活性降低·色素积累·膜通透性改变——与个体衰老不同步</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">端粒 · 细胞寿命的"倒计时器"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'tardigrade',
+    name: '水熊虫',
+    kicker: '缓步动物门 · 极端生存冠军（课外拓展）',
+    intro: '水熊虫体长不到 1 毫米，用八条小短腿在苔藓水膜里缓步爬行，却是地球上生命力最强的动物：环境恶化时脱水蜷成"小桶"进入隐生状态，代谢几乎归零，却能耐受 -272°C 的极寒、151°C 的高温、真空和强辐射，遇水几十年后仍能满血复活——它们甚至在国际空间站舱外裸露 10 天后成功繁殖了后代。',
+    extension: true,
+    parts: [
+      { name: '形态与分类', desc: '缓步动物门：体长 0.05~1.2 mm，八条腿带爪，用口针刺入植物细胞或捕食微型动物。' },
+      { name: '隐生现象', desc: '脱水时身体收缩成"小桶"（tun），用海藻糖替代水保护细胞结构，代谢降到正常水平的 0.01% 以下。' },
+      { name: '极端耐受', desc: '记录到的耐受范围：接近绝对零度到 151°C、600 MPa 高压、真空、强紫外线与宇宙辐射——没有其他多细胞动物能与之相比。' },
+      { name: '太空实验', desc: '2007 年"生命之光"任务把水熊虫直接暴露在太空真空与紫外线下 10 天，返回后不仅存活还产下健康后代。' },
+      { name: '抗性机制', desc: '体内独有的 Dsup 蛋白像"盾牌"一样包裹 DNA，抵抗辐射造成的断裂——为材料与医学研究提供了灵感。' },
+    ],
+    Svg: TardigradeSvg,
+  },
+  {
+    id: 'lymphNode',
+    name: '淋巴结',
+    kicker: '免疫器官 · 淋巴液的"边防哨所"（课外拓展）',
+    intro: '全身约有 500~800 枚淋巴结串在淋巴管沿途，像一处处"边防哨所"：输入淋巴管把组织液中的病原体、异物碎片甚至转移的癌细胞送进结内，巨噬细胞与树突状细胞负责拦截呈递，B 细胞和 T 细胞在皮质与髓质里识别抗原、活化增殖——感冒时颌下能摸到的"小疙瘩"，正是免疫应答正在进行的信号。',
+    extension: true,
+    parts: [
+      { name: '结构', desc: '豆形，大小 1~25 mm：皮质有淋巴小结（B 细胞区），深层副皮质区（T 细胞区），髓质含浆细胞与巨噬细胞。' },
+      { name: '过滤功能', desc: '淋巴液缓缓流过淋巴窦，其中的病原体被巨噬细胞吞噬清除——"哨所"拦截率极高。' },
+      { name: '免疫活化场', desc: '树突状细胞把抗原呈递给 T 细胞，B 细胞在生发中心快速增殖分化为浆细胞——适应性免疫的"指挥部"。' },
+      { name: '淋巴结肿大', desc: '局部感染时淋巴细胞大量增殖导致肿大、触痛（如颌下、腋窝、腹股沟）；无痛性进行性肿大需警惕淋巴瘤。' },
+      { name: '临床意义', desc: '癌细胞常沿淋巴管转移——手术清扫"前哨淋巴结"可判断肿瘤扩散范围。' },
+    ],
+    Svg: LymphNodeSvg,
+  },
+  {
+    id: 'telomere',
+    name: '端粒与细胞衰老',
+    kicker: '细胞生物学 · 衰老的分子时钟（课外拓展）',
+    intro: '端粒是染色体末端由重复 DNA 序列组成的"保护帽"，像鞋带头的塑料套防止遗传物质磨损。问题是：每次细胞分裂，端粒都会缩短一小截——短到临界值，细胞就停止分裂进入衰老（Hayflick 极限约 50 次）。生殖细胞和癌细胞靠端粒酶修复端粒而"近乎不死"，正常体细胞则几乎没有——端粒就是细胞寿命的分子时钟。',
+    extension: true,
+    parts: [
+      { name: '端粒的结构', desc: '染色体末端的重复序列（人类为 TTAGGG）与结合蛋白：像"鞋带头"保护染色体末端不被降解、不互相粘连。' },
+      { name: '末端复制难题', desc: 'DNA 聚合酶无法完全复制链末端——每分裂一次端粒缩短 50~100 个碱基，这是细胞分裂次数有限的根本原因。' },
+      { name: 'Hayflick 极限', desc: '人类体细胞在体外培养约分裂 50 次便停止——1961 年发现，推翻了"细胞永生"的旧观念。' },
+      { name: '端粒酶', desc: '以自身 RNA 为模板延长端粒的逆转录酶：生殖细胞、干细胞有活性，约 85% 的癌细胞重新激活它而获得无限增殖能力。' },
+      { name: '研究意义', desc: '端粒长度被视为"生物学年龄"的指标之一；2009 年诺贝尔奖授予端粒与端粒酶的发现——但盲目"补端粒"会放大癌症风险。' },
+    ],
+    Svg: TelomereSvg,
+  },
   {
     id: 'flounder',
     name: '比目鱼',
