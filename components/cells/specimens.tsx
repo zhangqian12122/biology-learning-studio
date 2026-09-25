@@ -5052,9 +5052,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
   { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'neuronTypes'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'neuronTypes'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones'] },
-  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers'] },
+  { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism'] },
 ];
 
 /** 图鉴大分组（粗分类入口）：点大磁贴进入后再用 ATLAS_CATEGORIES 细分浏览 */
@@ -8614,7 +8614,153 @@ function NeuronTypesSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 小肠绒毛结构 ================= */
+
+function SmallIntestineVillusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <path d="M30 80 Q 260 50 490 80" fill="none" stroke="#c9885f" strokeWidth="8" strokeLinecap="round" />
+        <text x="486" y="66" textAnchor="end" fontSize="12.5" fill="#c9885f" fontWeight="700">环形皱襞（黏膜折叠）</text>
+      </g>
+      {[0, 1, 2, 3, 4].map((i) => (
+        <g key={i} style={dim(active, 1)}>
+          <path d={`M${80 + i * 82} 92 q 6 50 14 88 q 2 6 8 6 q 6 0 8 -6 q 8 -38 14 -88 Z`} fill="#f2d8c8" stroke="#c9885f" strokeWidth="2.2" />
+          <path d={`M${94 + i * 82} 100 q 2 30 4 70`} fill="none" stroke="#e8b84a" strokeWidth="3" />
+          <path d={`M${86 + i * 82} 100 q -2 30 6 70`} fill="none" stroke="#c94a5a" strokeWidth="2.4" />
+        </g>
+      ))}
+      <text x="486" y="120" textAnchor="end" fontSize="12.5" fill="#c9885f" fontWeight="700">小肠绒毛（手指状突起）</text>
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M${200 + i * 6} 96 l 3 -14`} fill="none" stroke="#c9885f" strokeWidth="1.2" />
+        ))}
+        <text x="200" y="70" fontSize="11.5" fill="#c9885f" fontWeight="600">微绒毛（电镜下才可见）</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="30" y="268" width="460" height="94" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="52" y="294" fontSize="12" fill="#8a671b" fontWeight="800">三级放大 · 吸收面积约 200 m²（= 一个网球场）：</text>
+        <text x="52" y="318" fontSize="11.5" fill="#7a5a1d">环形皱襞（×3）→ 绒毛（×8）→ 微绒毛（×20）——吸收面积增加约 600 倍</text>
+        <text x="52" y="344" fontSize="11.5" fill="#49676d">绒毛内含丰富的毛细血管（吸收氨基酸葡萄糖）和毛细淋巴管（吸收脂肪）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">小肠绒毛结构模式图 · 消化吸收的结构基础</text>
+    </svg>
+  );
+}
+
+/* ================= 涡虫（扁形动物） ================= */
+
+function PlanarianSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 3)}>
+        <path d="M20 310 Q 140 288 260 302 T 500 296 L 500 380 L 20 380 Z" fill="#d8c9a8" stroke="#a5885f" strokeWidth="2.5" />
+        <text x="486" y="368" textAnchor="end" fontSize="12.5" fill="#8a7a58">淡水溪流底部（涡虫栖息地）</text>
+      </g>
+      <g style={dim(active, 0)}>
+        <path d="M156 130 Q 240 96 330 112 Q 410 126 398 168 Q 388 204 300 212 Q 200 220 156 172 Q 146 152 156 130 Z" fill="#d8c9a8" stroke="#8a6a3a" strokeWidth="3" />
+        {[0, 1].map((i) => (
+          <circle key={i} cx={158 + i * 16} cy={122} r="4.5" fill="#13333a" />
+        ))}
+        <text x="60" y="106" fontSize="13" fill="#5a3a1a" fontWeight="800">眼点（感光）</text>
+        <line x1="96" y1="110" x2="154" y2="120" stroke="#5a3a1a" strokeWidth="1.3" />
+      </g>
+      <g style={dim(active, 1)}>
+        <circle cx="230" cy="164" r="6" fill="#8a671b" />
+        <text x="200" y="152" fontSize="11" fill="#8a671b" fontWeight="700">口（体腹面中线）</text>
+        <path d="M230 168 L 230 196" fill="none" stroke="#c9708a" strokeWidth="5" strokeLinecap="round" />
+        <path d="M230 196 L 200 212 M230 196 L 260 212 M230 196 L 230 216" fill="none" stroke="#c9708a" strokeWidth="3.5" strokeLinecap="round" />
+        <text x="60" y="230" fontSize="12" fill="#8a4a2a" fontWeight="700">咽（可翻出）· 三分支肠</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <path d="M370 210 Q 420 180 460 152" fill="none" stroke="#7ab86a" strokeWidth="5" strokeLinecap="round" />
+        <text x="288" y="130" fontSize="12.5" fill="#4a8a3a" fontWeight="800">再生：切成两段→各长成完整个体</text>
+        <text x="288" y="148" fontSize="11" fill="#4a8a3a">干细胞（新胚细胞）分布全身</text>
+      </g>
+      <g style={dim(active, 4)}>
+        <rect x="40" y="300" width="440" height="50" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">扁形动物门：背腹扁平 · 左右对称 · 三胚层 · 无体腔 · 有口无肛门</text>
+        <text x="260" y="342" textAnchor="middle" fontSize="11.5" fill="#a5761d">比腔肠动物（水螅）进步：三胚层 · 两侧对称 · 器官系统开始分化</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">涡虫结构模式图 · 扁形动物门（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 植物的光周期现象 ================= */
+
+function PhotoperiodismSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      <g style={dim(active, 0)}>
+        <circle cx="110" cy="110" r="42" fill="#f4d06a" stroke="#b5953a" strokeWidth="3" />
+        <text x="110" y="106" textAnchor="middle" fontSize="12" fill="#7a5a1d" fontWeight="800">短日照</text>
+        <text x="110" y="124" textAnchor="middle" fontSize="11" fill="#8a671b">菊花·水稻</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <circle cx="260" cy="110" r="42" fill="#c8e2ba" stroke="#3f7f3a" strokeWidth="3" />
+        <text x="260" y="106" textAnchor="middle" fontSize="12" fill="#2f7a4d" fontWeight="800">长日照</text>
+        <text x="260" y="124" textAnchor="middle" fontSize="11" fill="#3f7f3a">小麦·菠菜</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <circle cx="410" cy="110" r="42" fill="#c8e2d8" stroke="#3f7f6a" strokeWidth="3" />
+        <text x="410" y="106" textAnchor="middle" fontSize="12" fill="#2f7a6a" fontWeight="800">日中性</text>
+        <text x="410" y="124" textAnchor="middle" fontSize="11" fill="#2f7a6a">番茄·黄瓜</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="236" width="440" height="112" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="262" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">关键：感知日照长短的不是叶绿体，而是叶片中的光敏色素</text>
+        <text x="260" y="286" textAnchor="middle" fontSize="11.5" fill="#a5761d">短日照植物实际感知的是"连续黑暗的长度"——而非日照长度</text>
+        <text x="260" y="314" textAnchor="middle" fontSize="12" fill="#a54868" fontWeight="700">应用：通过遮光或补光控制花期，让菊花在春节开花</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">植物的光周期现象 · 开花调控（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'smallIntestineVillus',
+    name: '小肠绒毛结构',
+    kicker: '消化吸收 · 结构基础图',
+    intro: '环形皱襞→绒毛→微绒毛三级放大，使小肠吸收面积约 200 m²（≈1 个网球场）：绒毛内丰富的毛细血管和毛细淋巴管高效吸收营养物质。',
+    parts: [
+      { name: '环形皱襞', desc: '黏膜向肠腔折叠形成的环状隆起，增加了小肠的表面积。' },
+      { name: '小肠绒毛', desc: '黏膜表面的手指状突起：内含毛细血管和毛细淋巴管，直接吸收营养物质。' },
+      { name: '微绒毛', desc: '绒毛上皮细胞表面的微小突起（电镜下才可见），进一步增大吸收面积。' },
+      { name: '吸收效率', desc: '三级放大使吸收面积增加约 600 倍——结构与功能相适应的经典案例。' },
+    ],
+    Svg: SmallIntestineVillusSvg,
+  },
+  {
+    id: 'planarian',
+    name: '涡虫',
+    kicker: '扁形动物门 · 结构模式图（课外拓展）',
+    intro: '生活在淡水溪流底部的扁形动物：背腹扁平、左右对称、三胚层，有口无肛门。切成两段能各自再生为完整个体——著名的再生模型生物。',
+    extension: true,
+    parts: [
+      { name: '两侧对称', desc: '身体可分前后左右背面腹面：运动定向、感觉集中在前端——比辐射对称进步。' },
+      { name: '三胚层', desc: '外胚层+中胚层+内胚层：比水螅（两胚层）多一个中胚层，器官系统开始分化。' },
+      { name: '眼点', desc: '头部两侧的色素杯结构：感光但不能成像——帮助涡虫避开强光寻找食物。' },
+      { name: '咽与肠', desc: '咽可从口中翻出包裹食物，三分支肠将消化后的营养扩散到全身（无循环系统）。' },
+      { name: '再生能力', desc: '全身富含新胚细胞（干细胞）：切成数段，每段可再生为完整个体——再生研究的模式生物。' },
+    ],
+    Svg: PlanarianSvg,
+  },
+  {
+    id: 'photoperiodism',
+    name: '植物的光周期现象',
+    kicker: '植物生长调节 · 开花调控（课外拓展）',
+    intro: '植物通过叶片中的光敏色素感知日照长短，从而调控开花时间：菊花是短日照植物——连续黑暗足够长才开花，夜间闪光会打断黑暗抑制开花。',
+    extension: true,
+    parts: [
+      { name: '短日照植物', desc: '日照短于临界日长才开花：菊花、水稻、烟草——秋季开花的植物多属此类。' },
+      { name: '长日照植物', desc: '日照长于临界日长才开花：小麦、菠菜、萝卜——春夏开花的植物多属此类。' },
+      { name: '日中性植物', desc: '开花不受日照长短影响：番茄、黄瓜、棉花——由其他因素调控开花。' },
+      { name: '光敏色素', desc: '叶片中的光感受蛋白：感知红光/远红光比例变化，将信号传导至开花基因。' },
+    ],
+    Svg: PhotoperiodismSvg,
+  },
   {
     id: 'digestiveSystem',
     name: '消化系统',
