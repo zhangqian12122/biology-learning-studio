@@ -623,6 +623,7 @@ export type ExperimentId =
   | 'protoplastFusion'
   | 'animalCellCulture'
   | 'biocontrol'
+  | 'stemCellTherapy'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1141,6 +1142,14 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态保护与人与自然',
   },
+  stemCellTherapy: {
+    title: '干细胞与再生医学',
+    kicker: '选择性必修 3 · 延伸',
+    description: 'ESC / 成体干细胞 / iPS 三种来源对比：分化潜能、伦理争议与治疗前景。',
+    relatedBook: 'technology',
+    relatedModule: '细胞工程与组织培养',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1347,7 +1356,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
   },
 ];
 
@@ -1448,4 +1457,5 @@ export const experimentOrder: ExperimentId[] = [
   // 课外拓展
   'millerUrey',
   'pasteurFlask',
+  'stemCellTherapy',
 ];

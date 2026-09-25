@@ -8,27 +8,27 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：biocontrol 生物防治策略模拟 ----------
-await page.goto(`${BASE}/lab?exp=biocontrol`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：stemCellTherapy 干细胞与再生医学 ----------
+await page.goto(`${BASE}/lab?exp=stemCellTherapy`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('生物防治策略模拟');
+  results.experiment.open = text.includes('干细胞与再生医学');
   const before = text;
-  await page.getByRole('button', { name: '释放天敌瓢虫' }).click();
-  for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /推进一周/ }).click();
-    await page.waitForTimeout(450);
-  }
-  const after = await page.locator('main').innerText();
-  results.experiment.interactive = after.includes('以虫治虫') && after.includes('只/株');
-  results.experiment.reference = after.includes('实验原理');
+  const beforeClick = await page.locator('main').innerText();
+  await page.getByRole('button', { name: '胚胎干细胞（ESC）' }).click();
+  await page.waitForTimeout(500);
+  await page.getByRole('button', { name: '成体干细胞（ASC）' }).click();
+  await page.waitForTimeout(500);
+  const afterClick = await page.locator('main').innerText();
+  results.experiment.interactive = beforeClick.includes('iPS') && afterClick.includes('白血病骨髓移植') && afterClick.includes('专能');
+  results.experiment.reference = afterClick.includes('什么是干细胞');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['coral', 'cerebralCortex', 'mangrove'];
+const SPECIMENS = ['spider', 'spinalCord', 'treeRings'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -88,17 +88,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 回归检查：sirModel 生态模型实验页仍正常
-await page.goto(`${BASE}/lab?exp=sirModel`, { waitUntil: 'domcontentloaded' });
+// 图解卡：stemCellTherapy 实验页应挂载 stemCells 图解
+await page.goto(`${BASE}/lab?exp=stemCellTherapy`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.sirRegression = { found: t.length > 200, ok: t.length > 200 };
+  results.specimens.stemCellsDiagram = { found: t.includes('干细胞'), ok: t.includes('干细胞') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.sirRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.stemCellsDiagram?.ok;
 console.log('ALL_OK=' + allOk);

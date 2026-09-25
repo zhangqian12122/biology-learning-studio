@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove'] },
 ];
 
@@ -9664,7 +9664,183 @@ function MangroveSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 蜘蛛（蛛形纲） ================= */
+
+function SpiderSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 头胸部 + 眼 */}
+      <g style={dim(active, 0)}>
+        <path d="M196 190 q -4 -34 34 -44 q 40 -10 62 8 q 16 14 10 34 q -8 24 -44 26 q -50 2 -62 -24 Z" fill="#5a4a3a" stroke="#3a2a1a" strokeWidth="2.6" />
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={216 + (i % 2) * 12} cy={162 + Math.floor(i / 2) * 10} r="3.4" fill="#1a1a1a" />
+        ))}
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={`r${i}`} cx={240 + (i % 2) * 12} cy={162 + Math.floor(i / 2) * 10} r="3.4" fill="#1a1a1a" />
+        ))}
+        <text x="66" y="132" fontSize="12.5" fill="#3a2a1a" fontWeight="700">头胸部（愈合成一节）</text>
+        <text x="66" y="152" fontSize="12.5" fill="#3a2a1a">8 颗单眼（无复眼）</text>
+        <line x1="150" y1="148" x2="200" y2="160" stroke="#3a2a1a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 步足 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3].map((i) => (
+          <path key={`l${i}`} d={`M210 ${168 + i * 10} Q ${140 - i * 16} ${158 + i * 16} ${96 - i * 20} ${196 + i * 22} q -12 14 -26 18`} fill="none" stroke="#6a5a4a" strokeWidth="5.4" strokeLinecap="round" />
+        ))}
+        {[0, 1, 2, 3].map((i) => (
+          <path key={`r${i}`} d={`M294 ${168 + i * 10} Q ${364 + i * 16} ${158 + i * 16} ${408 + i * 20} ${196 + i * 22} q 12 14 26 18`} fill="none" stroke="#6a5a4a" strokeWidth="5.4" strokeLinecap="round" />
+        ))}
+        <text x="66" y="286" fontSize="12.5" fill="#3a2a1a" fontWeight="700">四对步足（节肢·弹跳突袭）</text>
+        <text x="330" y="308" fontSize="12.5" fill="#3a2a1a">一对触肢（辅助取食）</text>
+      </g>
+      {/* 腹部 + 纺器 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="342" cy="206" rx="72" ry="58" fill="#8a6a4a" stroke="#5a3a2a" strokeWidth="2.8" />
+        <path d="M310 178 q 24 -8 44 4 m -52 34 q 30 -10 58 2" fill="none" stroke="#c9a05a" strokeWidth="2" opacity="0.8" />
+        <text x="330" y="122" fontSize="12.5" fill="#5a3a2a" fontWeight="700">腹部（大而柔软）</text>
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M388 ${242 + i * 10} q 20 -4 30 6`} fill="none" stroke="#d8d8d8" strokeWidth="2" />
+        ))}
+        <text x="396" y="276" fontSize="12.5" fill="#5a6a7a" fontWeight="700">末端纺器吐丝</text>
+        <path d="M40 322 q 80 -28 160 -10 q 90 18 170 -6 q 60 -16 110 8" fill="none" stroke="#e8e8e8" strokeWidth="2.4" />
+        <text x="66" y="306" fontSize="12.5" fill="#7a8a8a" fontWeight="700">蛛丝：韧性强于等粗度的钢铁</text>
+      </g>
+      {/* 特征 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="336" width="440" height="34" rx="10" fill="#f4e4dc" stroke="#a54838" strokeWidth="2.2" />
+        <text x="260" y="358" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="700">蛛形纲特征：头胸部+腹部·四对步足·无触角·书肺呼吸（与昆虫三对足相对）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蜘蛛 · 节肢动物蛛形纲代表（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 脊髓（低级中枢与传导通路） ================= */
+
+function SpinalCordSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 横切面 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="170" rx="86" ry="64" fill="#f0e8dc" stroke="#b5a582" strokeWidth="3" />
+        <path d="M250 130 q -40 -6 -52 18 q -10 22 12 30 q -14 16 4 32 q 20 16 36 -2 q 16 18 36 2 q 18 -16 4 -32 q 22 -8 12 -30 q -12 -24 -52 -18 Z" fill="#c9b0b8" stroke="#8a5a6a" strokeWidth="2.4" />
+        <text x="358" y="140" fontSize="12.5" fill="#8a5a6a" fontWeight="700">灰质（蝴蝶形·神经元胞体）</text>
+        <line x1="364" y1="144" x2="316" y2="162" stroke="#8a5a6a" strokeWidth="1.2" />
+        <text x="368" y="206" fontSize="12.5" fill="#8a7a4a" fontWeight="700">白质（神经纤维传导束）</text>
+        <line x1="364" y1="202" x2="322" y2="190" stroke="#8a7a4a" strokeWidth="1.2" />
+      </g>
+      {/* 脊神经根 */}
+      <g style={dim(active, 1)}>
+        <path d="M168 128 Q 116 116 84 96" fill="none" stroke="#4d7ea8" strokeWidth="5" strokeLinecap="round" />
+        <path d="M168 216 Q 116 228 84 248" fill="none" stroke="#b0483a" strokeWidth="5" strokeLinecap="round" />
+        <circle cx="128" cy="116" r="7" fill="#4d7ea8" stroke="#2c5a84" strokeWidth="1.8" />
+        <text x="42" y="76" fontSize="12.5" fill="#2c5a84" fontWeight="700">背根（传入·感觉）</text>
+        <text x="42" y="94" fontSize="12.5" fill="#2c5a84">背根神经节</text>
+        <text x="42" y="298" fontSize="12.5" fill="#a53030" fontWeight="700">腹根（传出·运动）</text>
+      </g>
+      {/* 功能 */}
+      <g style={dim(active, 2)}>
+        <path d="M332 120 Q 420 70 448 44" fill="none" stroke="#3f7f3a" strokeWidth="4" strokeLinecap="round" />
+        <path d="M448 44 l -12 2 m 12 -2 l -2 12" fill="none" stroke="#3f7f3a" strokeWidth="4" strokeLinecap="round" />
+        <path d="M332 224 Q 420 272 448 300" fill="none" stroke="#8a671b" strokeWidth="4" strokeLinecap="round" />
+        <path d="M448 300 l -2 -12 m 2 12 l -12 -2" fill="none" stroke="#8a671b" strokeWidth="4" strokeLinecap="round" />
+        <text x="330" y="52" fontSize="12.5" fill="#2f6f2a" fontWeight="700">上行传导：感觉 → 脑</text>
+        <text x="300" y="322" fontSize="12.5" fill="#8a671b" fontWeight="700">下行传导：脑 → 运动</text>
+        <text x="96" y="344" fontSize="12.5" fill="#4b6c73" fontWeight="700">反射中枢：膝跳反射、排尿反射的低级中枢在脊髓</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">脊髓 · 反射中枢与上传下达的"信息高速路"</text>
+    </svg>
+  );
+}
+
+/* ================= 树的年轮 ================= */
+
+function TreeRingsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 横切面年轮 */}
+      <g style={dim(active, 0)}>
+        <circle cx="220" cy="190" r="150" fill="#c9a05a" stroke="#8a6a3a" strokeWidth="3" />
+        {[150, 132, 114, 96, 78, 60, 42].map((r, i) => (
+          <circle key={r} cx="220" cy="190" r={r} fill="none" stroke={i % 2 === 0 ? '#a5763a' : '#8a6a3a'} strokeWidth={i % 2 === 0 ? 7 : 3} opacity="0.9" />
+        ))}
+        <circle cx="220" cy="190" r="18" fill="#d8b078" stroke="#8a6a3a" strokeWidth="2" />
+        <text x="46" y="140" fontSize="12.5" fill="#8a6a3a" fontWeight="700">树干横切：7 个年轮 = 生长了 7 年</text>
+      </g>
+      {/* 春材秋材 */}
+      <g style={dim(active, 1)}>
+        <rect x="392" y="96" width="26" height="22" rx="4" fill="#d8b078" stroke="#8a6a3a" strokeWidth="1.6" />
+        <rect x="392" y="124" width="26" height="10" rx="3" fill="#8a6a3a" />
+        <text x="426" y="108" fontSize="12.5" fill="#8a6a3a" fontWeight="700">春材（宽·色浅）</text>
+        <text x="426" y="130" fontSize="12.5" fill="#8a6a3a" fontWeight="700">秋材（窄·色深）</text>
+        <text x="392" y="158" fontSize="12.5" fill="#6a5a2a">一宽一窄 = 一圈年轮</text>
+      </g>
+      {/* 形成层 */}
+      <g style={dim(active, 2)}>
+        <circle cx="220" cy="190" r="154" fill="none" stroke="#3f7f3a" strokeWidth="4" strokeDasharray="9 6" />
+        <text x="46" y="70" fontSize="12.5" fill="#2f6f2a" fontWeight="700">形成层（最外圈绿色虚线）</text>
+        <text x="46" y="90" fontSize="12.5" fill="#2f6f2a">每年向外产生新韧皮部</text>
+        <text x="46" y="110" fontSize="12.5" fill="#2f6f2a">向内产生新木质部（年轮）</text>
+      </g>
+      {/* 气候记录 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="316" width="440" height="48" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="334" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">宽轮 = 水热充足的丰收年 · 窄轮 = 干旱低温的歉收年</text>
+        <text x="260" y="354" textAnchor="middle" fontSize="11.5" fill="#a5761d">树轮定年（树木年代学）：重建千年气候史 · 校准碳-14 测年 · 鉴定古建筑年代</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">年轮 · 树木的"气候日记"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'spider',
+    name: '蜘蛛',
+    kicker: '节肢动物门 · 蛛形纲代表（课外拓展）',
+    intro: '蜘蛛与昆虫同门不同纲：身体分头胸部和腹部两部分，有四对步足（昆虫只有三对）、没有触角，用书肺呼吸。它的纺器能吐出强度超过等粗钢丝的蛛丝——一张网既是陷阱也是"美食保存柜"，蛛毒则把猎物化成可以吸食的"汤"。',
+    extension: true,
+    parts: [
+      { name: '头胸部', desc: '头部与胸部愈合为一节，长有 8 颗单眼（无复眼）、一对螯肢（毒牙）和一对触肢。' },
+      { name: '四对步足', desc: '蛛形纲的标志性特征——三对足的是昆虫（含 6 足），四对足的才是蜘蛛（8 足）。' },
+      { name: '腹部与纺器', desc: '腹部末端有 2~3 对纺器，把丝腺中的丝蛋白拉成蛛丝：结网、拖卵、飞航（"气球飞行"）全靠它。' },
+      { name: '书肺', desc: '像书页一样层层叠叠的呼吸器官，通过腹部的气门交换气体——陆生节肢动物的两种呼吸方式之一（昆虫用气管）。' },
+      { name: '捕食方式', desc: '结网蜘蛛靠网拦截飞虫，游猎蜘蛛（如跳蛛）靠发达的视觉主动突袭——毒液把猎物内部化为液体再吸食。' },
+    ],
+    Svg: SpiderSvg,
+  },
+  {
+    id: 'spinalCord',
+    name: '脊髓',
+    kicker: '低级中枢 · 反射与传导',
+    intro: '脊髓位于椎管内，上端与脑干相连：横切面上蝴蝶形的灰质是神经元胞体聚集处，是膝跳反射、排尿反射等低级反射的中枢；周围的白质则是上下行的传导束。脊髓把全身的感觉信息上传给大脑，又把大脑的指令下达给肌肉——但它也能独立完成最基础的反射。',
+    parts: [
+      { name: '灰质', desc: '横切面呈蝴蝶形（H 形），前角有运动神经元胞体，后角与感觉信息传入有关——反射弧的中枢部分。' },
+      { name: '白质', desc: '围绕灰质的神经纤维束：上行束把感觉冲动传向大脑，下行束把大脑指令传向脊髓——"信息高速路"。' },
+      { name: '脊神经根', desc: '背根（后根）传入感觉信号，上有背根神经节；腹根（前根）传出运动信号——背进腹出。' },
+      { name: '反射功能', desc: '膝跳反射的中枢就在脊髓灰质：不需要大脑参与，两神经元即可完成最简单的反射。' },
+      { name: '受大脑调控', desc: '脊髓是低级中枢，受大脑皮层高级中枢控制——成人能有意识地控制排尿，而脊髓损伤（截瘫）后这种控制消失。' },
+    ],
+    Svg: SpinalCordSvg,
+  },
+  {
+    id: 'treeRings',
+    name: '树的年轮',
+    kicker: '木本茎 · 气候的"日记"（课外拓展）',
+    intro: '温带木本植物的形成层活动有季节节奏：春天水分充足，产生细胞大、颜色浅的春材；夏末秋初产生的秋材细胞小、颜色深——一宽一窄的交替在树干横切面上留下一圈圈年轮。一个年轮就是一年，读年轮就像读树的成长日记，还能反推几千年前的气候。',
+    extension: true,
+    parts: [
+      { name: '年轮的成因', desc: '形成层分生活动随季节快慢交替，产生春材（宽·浅）与秋材（窄·深）的同心环——一年一圈。' },
+      { name: '形成层', desc: '树皮与木质部之间的一层分生组织：向外产生韧皮部（运输有机物），向内产生木质部（运输水·构成木材）。' },
+      { name: '气候记录', desc: '年轮宽 = 当年水热条件好，窄 = 干旱或低温；从活树、枯木、古建筑木料拼接年轮序列，可重建上千年气候史。' },
+      { name: '科学应用', desc: '树木年代学用年轮为古物定年、校准碳-14 测年；考古学家曾用年轮序列鉴定维京人登陆北美的确切年份。' },
+      { name: '热带例外', desc: '热带地区四季不明显、全年可生长，许多树木不形成明显年轮——年轮是环境季节性的"盖章"。' },
+    ],
+    Svg: TreeRingsSvg,
+  },
   {
     id: 'coral',
     name: '珊瑚虫与珊瑚礁',
