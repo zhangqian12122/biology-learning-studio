@@ -104,6 +104,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   stemCellTherapy: RefreshCw,
   photosynthesisHistory: Lightbulb,
   geneticsHistory: Dna,
+  foodPreserve: Flame,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -200,6 +201,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   stemCellTherapy: () => import('@/components/lab/stem-cell-therapy-lab').then(({ StemCellTherapyLab }) => ({ default: StemCellTherapyLab })),
   photosynthesisHistory: () => import('@/components/lab/photosynthesis-history-lab').then(({ PhotosynthesisHistoryLab }) => ({ default: PhotosynthesisHistoryLab })),
   geneticsHistory: () => import('@/components/lab/genetics-history-lab').then(({ GeneticsHistoryLab }) => ({ default: GeneticsHistoryLab })),
+  foodPreserve: () => import('@/components/lab/food-preserve-lab').then(({ FoodPreserveLab }) => ({ default: FoodPreserveLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -279,6 +281,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   stemCellTherapy: ['stemCells'],
   photosynthesisHistory: ['photosyntheticPigments'],
   geneticsHistory: ['dnaHelix'],
+  foodPreserve: ['foodPreservation'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */

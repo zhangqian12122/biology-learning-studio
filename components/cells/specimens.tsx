@@ -5049,10 +5049,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove'] },
 ];
@@ -10036,7 +10036,171 @@ function VaccineTypesSvg({ active }: { active: number | null; open?: boolean }) 
   );
 }
 
+/* ================= 乌贼（头足纲） ================= */
+
+function OctopusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 外套膜 + 喷水漏斗 */}
+      <g style={dim(active, 0)}>
+        <path d="M296 100 q 90 -14 138 28 q 30 30 12 66 q -22 40 -86 36 q -64 -4 -84 -48 q -12 -46 20 -82 Z" fill="#c9a8b8" stroke="#8a5a7a" strokeWidth="2.8" />
+        {[0, 1, 2].map((i) => (
+          <ellipse key={i} cx={370 + i * 26} cy={140 + i * 16} rx="9" ry="6" fill="#e8d0e0" stroke="#8a5a7a" strokeWidth="1.4" opacity="0.8" />
+        ))}
+        <path d="M300 190 l -34 20 q 8 14 26 8 l 22 -14 Z" fill="#b08a9a" stroke="#8a5a7a" strokeWidth="2" />
+        <text x="46" y="140" fontSize="12.5" fill="#6a3a5a" fontWeight="700">外套膜（闭合喷水）</text>
+        <text x="46" y="200" fontSize="12.5" fill="#6a3a5a" fontWeight="700">漏斗（反冲推进）</text>
+        <line x1="200" y1="136" x2="330" y2="138" stroke="#6a3a5a" strokeWidth="1.2" strokeDasharray="3 3" />
+        <line x1="162" y1="196" x2="268" y2="204" stroke="#6a3a5a" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 眼 + 腕 */}
+      <g style={dim(active, 1)}>
+        <circle cx="322" cy="130" r="16" fill="#f0e8d8" stroke="#6a3a5a" strokeWidth="2.4" />
+        <ellipse cx="322" cy="130" rx="9" ry="12" fill="#2a2a2a" />
+        <text x="230" y="104" fontSize="12.5" fill="#6a3a5a" fontWeight="700">发达的眼（最像脊椎动物）</text>
+        <line x1="286" y1="112" x2="308" y2="122" stroke="#6a3a5a" strokeWidth="1.2" strokeDasharray="3 3" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M310 ${176 + i * 10} q -70 ${18 + i * 10} -150 ${8 + i * 16} q -30 -4 -48 -20`} fill="none" stroke="#b08a9a" strokeWidth={9 - i} strokeLinecap="round" opacity={0.95 - i * 0.06} />
+        ))}
+        <text x="46" y="330" fontSize="12.5" fill="#6a3a5a" fontWeight="700">8 条腕 + 2 条长触腕（乌贼）· 腕上吸盘捕猎</text>
+      </g>
+      {/* 变色与墨囊 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="56" width="150" height="60" rx="12" fill="#e4dcec" stroke="#7a4a8a" strokeWidth="2.2" />
+        <text x="115" y="80" textAnchor="middle" fontSize="12.5" fill="#5a3a6a" fontWeight="800">色素细胞变色</text>
+        <text x="115" y="100" textAnchor="middle" fontSize="11" fill="#6a4a7a">伪装+交流（无脊椎最快）</text>
+        <ellipse cx="316" cy="250" rx="20" ry="14" fill="#3a3a4a" stroke="#1a1a2a" strokeWidth="2" />
+        <text x="344" y="254" fontSize="12.5" fill="#3a3a4a" fontWeight="700">墨囊：喷墨逃跑</text>
+      </g>
+      {/* 特征 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="344" width="440" height="30" rx="10" fill="#f4ecf4" stroke="#8a5a7a" strokeWidth="2.2" />
+        <text x="260" y="365" textAnchor="middle" fontSize="12.5" fill="#6a3a5a" fontWeight="700">头足纲 = 软体动物的"巅峰"：闭管循环 · 最发达的无脊椎大脑 · 皮肤即可视语言</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">乌贼 · 软体动物门头足纲（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 扁桃体（咽喉守门员） ================= */
+
+function TonsilSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 口咽腔 */}
+      <g style={dim(active, 0)}>
+        <path d="M170 90 Q 260 62 350 90 Q 386 170 350 268 Q 260 300 170 268 Q 134 170 170 90 Z" fill="#f0b8a8" stroke="#a54838" strokeWidth="2.8" />
+        <path d="M206 96 Q 260 78 314 96 Q 322 110 314 120 Q 260 104 206 120 Q 198 110 206 96 Z" fill="#d88a6a" stroke="#a54838" strokeWidth="1.8" />
+        <text x="260" y="78" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="700">口咽腔（食物与气体的十字路口）</text>
+      </g>
+      {/* 腭扁桃体 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="212" cy="176" rx="26" ry="40" fill="#d86a6a" stroke="#a53030" strokeWidth="2.6" />
+        <ellipse cx="308" cy="176" rx="26" ry="40" fill="#d86a6a" stroke="#a53030" strokeWidth="2.6" />
+        {[0, 1, 2].map((i) => (
+          <circle key={`l${i}`} cx={206 + (i % 2) * 12} cy={160 + i * 20} r="2.6" fill="#8a2020" />
+        ))}
+        <text x="60" y="140" fontSize="12.5" fill="#a53030" fontWeight="700">腭扁桃体（一对）</text>
+        <text x="60" y="160" fontSize="12.5" fill="#a53030">表面的隐窝 诱捕病原菌</text>
+        <line x1="150" y1="150" x2="188" y2="164" stroke="#a53030" strokeWidth="1.2" strokeDasharray="3 3" />
+      </g>
+      {/* 免疫功能 */}
+      <g style={dim(active, 2)}>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <circle key={i} cx={250 + (i % 3) * 10} cy={168 + Math.floor(i / 3) * 16} r="3.4" fill="#4d7ea8" stroke="#2c5a84" strokeWidth="1" />
+        ))}
+        <text x="330" y="230" fontSize="12.5" fill="#2c5a84" fontWeight="700">淋巴细胞密集：</text>
+        <text x="330" y="250" fontSize="12.5" fill="#2c5a84">5~7 岁免疫最活跃的"练兵场"</text>
+        <text x="330" y="270" fontSize="12.5" fill="#2c5a84">属于第二道防线周边的免疫关卡</text>
+      </g>
+      {/* 发炎 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="296" width="440" height="60" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">"扁桃体发炎" = 免疫系统正在战斗：红肿热痛是炎症反应的表现</text>
+        <text x="260" y="342" textAnchor="middle" fontSize="11.5" fill="#a5761d">反复化脓性发炎才考虑切除——它毕竟是前线的免疫器官，不轻易摘</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">扁桃体 · 咽喉的免疫关卡（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 肠道菌群（微生物组） ================= */
+
+function MicrobiomeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 肠道 */}
+      <g style={dim(active, 0)}>
+        <path d="M90 110 Q 250 54 410 110 Q 456 128 448 180 Q 440 240 350 250 Q 200 266 120 240 Q 60 220 66 170 Q 70 130 90 110 Z" fill="#e8c9a0" stroke="#a5763a" strokeWidth="3" />
+        <path d="M100 130 Q 250 84 400 130" fill="none" stroke="#c9a05a" strokeWidth="2" opacity="0.7" />
+        <text x="250" y="306" textAnchor="middle" fontSize="12.5" fill="#a5763a" fontWeight="700">人的肠道：约 100 万亿细菌共生（人体细胞的 3 倍以上）</text>
+      </g>
+      {/* 菌群构成 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <circle key={`g${i}`} cx={140 + (i % 3) * 52} cy={150 + Math.floor(i / 3) * 40} r="11" fill="#8ab86a" stroke="#3f7f3a" strokeWidth="1.8" />
+        ))}
+        <text x="316" y="158" fontSize="12.5" fill="#3f7f3a" fontWeight="700">有益菌（双歧杆菌·乳酸菌）</text>
+        <text x="316" y="178" fontSize="12.5" fill="#3f7f3a">合成维生素 K·B 族·促进免疫</text>
+        <text x="88" y="222" fontSize="12.5" fill="#8a5a3a" fontWeight="700">菌群失衡（有害菌占优）→ 腹泻·肥胖·过敏风险↑</text>
+      </g>
+      {/* 功能 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="322" width="440" height="44" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="260" y="340" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">"第二基因组"：帮助消化（分解纤维素）· 训练免疫系统 · 甚至影响情绪（肠-脑轴）</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">膳食纤维 = 益生菌的"口粮"（益生元）· 酸奶泡菜 = 补充益生菌的传统智慧</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">肠道菌群 · 人体微生物组（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'octopus',
+    name: '乌贼（头足纲）',
+    kicker: '软体动物门 · 头足纲代表（课外拓展）',
+    intro: '乌贼把软体动物的设计推向极致：外套膜与漏斗配合"喷水推进"，是海洋里的喷气式快艇；8 条腕加 2 条长触腕布满吸盘；皮肤上的色素细胞能在眨眼间变色"说话"，遇到危险还能喷墨遁逃。它的眼和大脑是所有无脊椎动物中最发达的。',
+    extension: true,
+    parts: [
+      { name: '外套膜与漏斗', desc: '外套膜腔吸水后用力收缩，水流从漏斗喷出——靠反冲推进后退疾游，是头足纲的"喷气引擎"。' },
+      { name: '腕与触腕', desc: '8 条短腕 + 2 条可伸缩的长触腕，内缘排列吸盘，迅速擒住鱼虾送入口中撕食。' },
+      { name: '色素细胞', desc: '皮肤里数百万个色素囊受神经直接控制，不到一秒就能切换"迷彩服"——伪装与"对话"两用（无脊椎动物中最快的变色）。' },
+      { name: '墨囊', desc: '储存浓稠的墨汁，遇险时喷入水中形成"烟幕弹"，还能麻痹捕食者的嗅觉。' },
+      { name: '高配的大脑', desc: '神经系统高度集中形成软骨保护的脑，学习与记忆能力堪比脊椎动物——与蜗牛等低等软体动物对比鲜明。' },
+    ],
+    Svg: OctopusSvg,
+  },
+  {
+    id: 'tonsil',
+    name: '扁桃体',
+    kicker: '免疫关卡 · 咽喉守门员（课外拓展）',
+    intro: '张口发出的"啊——"两侧各有一枚椭圆的腭扁桃体：表面凹凸的隐窝像陷阱一样截留随空气和食物入侵的病原菌，内部密集的淋巴细胞则是围歼它们的"部队"。扁桃体发炎的红肿热痛，正是免疫系统在前线战斗的炎症反应。',
+    extension: true,
+    parts: [
+      { name: '位置', desc: '一对腭扁桃体位于口咽两侧，是进食和呼吸的必经关卡——病原菌入侵的"第一现场"。' },
+      { name: '隐窝结构', desc: '表面凹陷的隐窝增加接触面积，截留抗原物质并"递送"给内部的免疫细胞识别。' },
+      { name: '免疫功能', desc: '富含淋巴细胞和巨噬细胞，儿童期（5~7 岁）最活跃——是训练免疫应答的"新兵训练营"。' },
+      { name: '扁桃体炎', desc: '隐窝内细菌大量繁殖引发感染：红肿、疼痛、化脓——多数由链球菌引起，是免疫战斗的表现。' },
+      { name: '要不要切', desc: '只有反复化脓性发炎、影响生活或引发肾炎风湿时才考虑切除——它毕竟是重要的免疫器官。' },
+    ],
+    Svg: TonsilSvg,
+  },
+  {
+    id: 'microbiome',
+    name: '肠道菌群',
+    kicker: '人体微生物组 · "第二基因组"（课外拓展）',
+    intro: '人的肠道里生活着约 100 万亿个细菌，数量是人体自身细胞的 3 倍以上：它们帮你消化纤维素、合成维生素 K 和 B 族、训练免疫系统，甚至通过"肠-脑轴"影响情绪。菌群平衡是健康的重要一环——膳食纤维就是有益菌最爱的"口粮"。',
+    extension: true,
+    parts: [
+      { name: '数量与构成', desc: '肠道细菌约 100 万亿个，以拟杆菌、双歧杆菌、乳酸菌等为主——基因总数是人类的百余倍，被称为"第二基因组"。' },
+      { name: '消化功能', desc: '人类没有分解纤维素的酶，肠道菌把它发酵成短链脂肪酸供肠上皮利用——"吃草"能力全靠共生菌。' },
+      { name: '免疫训练', desc: '无菌动物免疫系统发育不全：肠道菌群持续"低强度演练"免疫系统，学会区分敌我——过敏与菌群失衡相关。' },
+      { name: '肠-脑轴', desc: '肠道菌产生的神经活性物质可经迷走神经和血液影响大脑——"吃得对心情好"有微生物学依据。' },
+      { name: '养护菌群', desc: '膳食纤维（益生元）喂养有益菌；酸奶、泡菜等发酵食品补充益生菌；滥用抗生素会"误伤"菌群导致失衡。' },
+    ],
+    Svg: MicrobiomeSvg,
+  },
   {
     id: 'mantis',
     name: '螳螂',

@@ -626,6 +626,7 @@ export type ExperimentId =
   | 'stemCellTherapy'
   | 'photosynthesisHistory'
   | 'geneticsHistory'
+  | 'foodPreserve'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1168,6 +1169,14 @@ export const experimentMeta: Record<
     relatedModule: 'DNA 的复制、转录与翻译',
     extension: true,
   },
+  foodPreserve: {
+    title: '食品保存的原理',
+    kicker: '微生物应用 · 防腐',
+    description: '冷藏·盐渍·干燥·巴氏消毒五种策略的抑菌杀菌对比模拟。',
+    relatedBook: 'technology',
+    relatedModule: '发酵工程与过程控制',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1374,7 +1383,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'crispr', 'geneTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
   },
 ];
 
@@ -1460,6 +1469,7 @@ export const experimentOrder: ExperimentId[] = [
   'plateStreak',
   'wineVinegar',
   'pickleFerment',
+  'foodPreserve',
   'tissueCulture',
   'protoplastFusion',
   'pcr',
