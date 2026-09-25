@@ -8,27 +8,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：stemCellTherapy 干细胞与再生医学 ----------
-await page.goto(`${BASE}/lab?exp=stemCellTherapy`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：photosynthesisHistory 光合作用的发现史 ----------
+await page.goto(`${BASE}/lab?exp=photosynthesisHistory`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const text = await page.locator('main').innerText();
-  results.experiment.open = text.includes('干细胞与再生医学');
+  results.experiment.open = text.includes('光合作用的发现史');
   const before = text;
-  const beforeClick = await page.locator('main').innerText();
-  await page.getByRole('button', { name: '胚胎干细胞（ESC）' }).click();
-  await page.waitForTimeout(500);
-  await page.getByRole('button', { name: '成体干细胞（ASC）' }).click();
-  await page.waitForTimeout(500);
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole('button', { name: /推进年代/ }).click();
+    await page.waitForTimeout(450);
+  }
   const afterClick = await page.locator('main').innerText();
-  results.experiment.interactive = beforeClick.includes('iPS') && afterClick.includes('白血病骨髓移植') && afterClick.includes('专能');
-  results.experiment.reference = afterClick.includes('什么是干细胞');
+  results.experiment.interactive = afterClick.includes('萨克斯') && afterClick.includes('饥饿处理');
+  results.experiment.reference = afterClick.includes('科学史脉络');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['spider', 'spinalCord', 'treeRings'];
+const SPECIMENS = ['dragonfly', 'larynx', 'seedDormancy'];
 // viewBox 尺寸
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
@@ -88,17 +87,17 @@ for (const id of SPECIMENS) {
   };
 }
 
-// 图解卡：stemCellTherapy 实验页应挂载 stemCells 图解
-await page.goto(`${BASE}/lab?exp=stemCellTherapy`, { waitUntil: 'domcontentloaded' });
+// 图解卡：photosynthesisHistory 实验页应挂载 photosyntheticPigments 图解
+await page.goto(`${BASE}/lab?exp=photosynthesisHistory`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.stemCellsDiagram = { found: t.includes('干细胞'), ok: t.includes('干细胞') };
+  results.specimens.pigmentsDiagram = { found: t.includes('色素') || t.includes('叶绿素'), ok: t.includes('色素') || t.includes('叶绿素') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.stemCellsDiagram?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.pigmentsDiagram?.ok;
 console.log('ALL_OK=' + allOk);

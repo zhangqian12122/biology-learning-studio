@@ -102,6 +102,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   animalCellCulture: Bubbles,
   biocontrol: Sprout,
   stemCellTherapy: RefreshCw,
+  photosynthesisHistory: Lightbulb,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -196,6 +197,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   animalCellCulture: () => import('@/components/lab/animal-cell-culture-lab').then(({ AnimalCellCultureLab }) => ({ default: AnimalCellCultureLab })),
   biocontrol: () => import('@/components/lab/biocontrol-lab').then(({ BiocontrolLab }) => ({ default: BiocontrolLab })),
   stemCellTherapy: () => import('@/components/lab/stem-cell-therapy-lab').then(({ StemCellTherapyLab }) => ({ default: StemCellTherapyLab })),
+  photosynthesisHistory: () => import('@/components/lab/photosynthesis-history-lab').then(({ PhotosynthesisHistoryLab }) => ({ default: PhotosynthesisHistoryLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -273,6 +275,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   hybridoma: ['monoclonalAntibody'],
   proteinEngineering: ['geneticCode'],
   stemCellTherapy: ['stemCells'],
+  photosynthesisHistory: ['photosyntheticPigments'],
 };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */

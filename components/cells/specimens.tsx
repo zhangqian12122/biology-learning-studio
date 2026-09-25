@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove'] },
 ];
 
@@ -9796,7 +9796,172 @@ function TreeRingsSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 蜻蜓（半变态昆虫） ================= */
+
+function DragonflySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 复眼 + 头 */}
+      <g style={dim(active, 0)}>
+        <circle cx="150" cy="170" r="26" fill="#3a8a7a" stroke="#1a5a4a" strokeWidth="2.6" />
+        <circle cx="136" cy="160" r="11" fill="#2a5a5a" stroke="#1a3a3a" strokeWidth="2" />
+        <circle cx="164" cy="160" r="11" fill="#2a5a5a" stroke="#1a3a3a" strokeWidth="2" />
+        <path d="M150 196 l 0 34 m 0 -34 l 0 34" stroke="#1a5a4a" strokeWidth="5" strokeLinecap="round" />
+        <text x="46" y="112" fontSize="12.5" fill="#1a5a4a" fontWeight="700">一对巨大复眼</text>
+        <text x="46" y="132" fontSize="12.5" fill="#1a5a4a">（约 3 万个小眼·几乎 360° 视野）</text>
+        <line x1="120" y1="140" x2="138" y2="152" stroke="#1a5a4a" strokeWidth="1.2" strokeDasharray="3 3" />
+        <text x="46" y="248" fontSize="12.5" fill="#1a5a4a" fontWeight="700">咀嚼式口器（捕食蚊子）</text>
+      </g>
+      {/* 四翅 */}
+      <g style={dim(active, 1)}>
+        <path d="M176 176 q 60 -74 150 -76 q -8 60 -110 88 Z" fill="#c9d8e8" stroke="#4d7ea8" strokeWidth="2" opacity="0.85" />
+        <path d="M176 176 q 76 30 160 92 q -70 26 -160 -66 Z" fill="#c9d8e8" stroke="#4d7ea8" strokeWidth="2" opacity="0.85" />
+        <path d="M186 180 q 50 -50 118 -56 m -112 64 q 56 22 124 70" fill="none" stroke="#8ab4cc" strokeWidth="1.4" />
+        <text x="336" y="76" fontSize="12.5" fill="#2c5a84" fontWeight="700">两对等长的膜翅</text>
+        <text x="336" y="96" fontSize="12.5" fill="#2c5a84">前后翅可分别振动·悬停飞行</text>
+        <text x="336" y="116" fontSize="12.5" fill="#2c5a84">每秒捕捉成功率约 95%</text>
+      </g>
+      {/* 细长腹 */}
+      <g style={dim(active, 2)}>
+        <path d="M150 204 q 100 10 220 -6 q 60 -8 100 -2" fill="none" stroke="#3a8a7a" strokeWidth="9" strokeLinecap="round" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <circle key={i} cx={260 + i * 36} cy={201 - i * 0.8} r="3" fill="#1a5a4a" />
+        ))}
+        <text x="330" y="248" fontSize="12.5" fill="#1a5a4a" fontWeight="700">细长分节的腹部</text>
+      </g>
+      {/* 半变态 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="296" width="440" height="70" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="322" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">半变态发育：卵 → 稚虫（水虿·水生用直肠鳃呼吸）→ 成虫</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#537078">没有蛹期——与家蚕（完全变态：卵→幼虫→蛹→成虫）对比记忆</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蜻蜓 · 昆虫纲蜻蜓目（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 喉与声带（发声原理） ================= */
+
+function LarynxSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 气道 */}
+      <g style={dim(active, 0)}>
+        <path d="M216 60 q 44 -14 88 0 l -10 60 q -34 -10 -68 0 Z" fill="#f0d8c0" stroke="#a5765a" strokeWidth="2.6" />
+        <path d="M230 120 q 30 26 60 0 l 16 96 q -46 22 -92 0 Z" fill="#e8c9a8" stroke="#a5765a" strokeWidth="2.6" />
+        <text x="330" y="84" fontSize="12.5" fill="#8a5a3a" fontWeight="700">咽（食物与气体共用通道）</text>
+        <line x1="326" y1="88" x2="296" y2="84" stroke="#8a5a3a" strokeWidth="1.2" />
+        <text x="330" y="230" fontSize="12.5" fill="#8a5a3a" fontWeight="700">气管（软骨环支撑）</text>
+        <line x1="326" y1="234" x2="292" y2="220" stroke="#8a5a3a" strokeWidth="1.2" />
+      </g>
+      {/* 声带 */}
+      <g style={dim(active, 1)}>
+        <path d="M234 176 q 26 20 52 0 l -6 14 q -20 12 -40 0 Z" fill="#d86a6a" stroke="#a53030" strokeWidth="2.4" />
+        <text x="60" y="170" fontSize="12.5" fill="#a53030" fontWeight="700">声带（两片弹性黏膜皱襞）</text>
+        <text x="60" y="190" fontSize="12.5" fill="#a53030">气流冲击振动 → 发出声音</text>
+        <line x1="200" y1="180" x2="232" y2="182" stroke="#a53030" strokeWidth="1.2" />
+        <text x="330" y="182" fontSize="12.5" fill="#8a3a2a" fontWeight="700">男声带长厚 → 音调低</text>
+        <text x="330" y="202" fontSize="12.5" fill="#8a3a2a">青春期变声的由来</text>
+      </g>
+      {/* 会厌 */}
+      <g style={dim(active, 2)}>
+        <path d="M228 128 q 32 22 64 0 q -6 26 -32 26 q -26 0 -32 -26 Z" fill="#c9a05a" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="42" y="120" fontSize="12.5" fill="#8a671b" fontWeight="700">会厌软骨（吞咽时盖住喉口）</text>
+        <text x="42" y="140" fontSize="12.5" fill="#8a671b">防食物入气管——吃饭说笑易呛</text>
+      </g>
+      {/* 原理 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="300" width="440" height="60" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="324" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">发声三要素：肺部气流（动力）+ 声带振动（声源）+ 口腔舌唇（共鸣与吐字）</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="11.5" fill="#a5761d">音调由声带振动频率决定（紧张度·长度）· 音量由气流强度决定</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">喉与声带 · 人为什么会说话（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 种子的休眠 ================= */
+
+function SeedDormancySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 休眠原因 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="130" cy="130" rx="52" ry="34" fill="#c9a05a" stroke="#8a6a3a" strokeWidth="2.6" />
+        <text x="130" y="136" textAnchor="middle" fontSize="10.5" fill="#5a4a2a" fontWeight="700">坚硬种皮</text>
+        <text x="200" y="102" fontSize="12.5" fill="#8a6a3a" fontWeight="700">原因一：种皮限制</text>
+        <text x="200" y="122" fontSize="12.5" fill="#8a6a3a">不透水不透气·机械阻碍</text>
+        <text x="200" y="142" fontSize="12.5" fill="#8a6a3a">莲子的种皮可休眠上千年</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <ellipse cx="130" cy="240" rx="52" ry="34" fill="#b8d8b0" stroke="#3f7f3a" strokeWidth="2.6" />
+        <text x="130" y="246" textAnchor="middle" fontSize="10.5" fill="#2f6f2a" fontWeight="700">胚未成熟</text>
+        <text x="200" y="212" fontSize="12.5" fill="#3f7f3a" fontWeight="700">原因二：后熟作用</text>
+        <text x="200" y="232" fontSize="12.5" fill="#3f7f3a">胚未发育完全·需低温层积</text>
+        <text x="200" y="252" fontSize="12.5" fill="#3f7f3a">脱落酸（ABA）维持休眠</text>
+      </g>
+      {/* 打破休眠 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="292" width="440" height="34" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="260" y="314" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">打破休眠：低温层积（沙藏）· 温水浸种 · 磨破种皮（机械处理）· 赤霉素浸泡</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="336" width="440" height="34" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="358" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">意义：躲过寒冬旱季、错开萌发风险——是对季节性环境的适应（自然选择的结果）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">种子的休眠 · 植物的"等待智慧"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'dragonfly',
+    name: '蜻蜓',
+    kicker: '昆虫纲 · 半变态捕食者（课外拓展）',
+    intro: '蜻蜓是昆虫界的"战斗机"：一对几乎覆盖全视野的巨大复眼、两对可以分别振动的等长膜翅，能悬停、倒飞，捕食成功率高达 95%。它与家蚕不同——发育属于半变态：卵孵化成水生稚虫"水虿"，几次蜕皮直接变为成虫，没有蛹期。',
+    extension: true,
+    parts: [
+      { name: '复眼', desc: '由约 3 万个小眼组成，视野接近 360°，对移动物体极其敏感——捕捉飞虫的"雷达"。' },
+      { name: '两对膜翅', desc: '前后翅等长且可独立振动：能悬停、侧飞、倒飞，是昆虫中飞行机动性最强的类群。' },
+      { name: '咀嚼式口器', desc: '飞行中用足兜住猎物再用口器撕咬——一只蜻蜓一小时内能吃掉上百只蚊子。' },
+      { name: '半变态发育', desc: '卵 → 稚虫（水虿，水生，用直肠鳃呼吸）→ 成虫，无蛹期——与完全变态（有蛹期）对比记忆。' },
+      { name: '水质指示', desc: '水虿只能在清洁水中生活——蜻蜓种类多是水体水质良好的标志。' },
+    ],
+    Svg: DragonflySvg,
+  },
+  {
+    id: 'larynx',
+    name: '喉与声带',
+    kicker: '呼吸通道 · 发声器官（课外拓展）',
+    intro: '喉位于咽与气管之间，既是呼吸的必经之路，也是人类的"乐器"：两片声带像琴弦，肺部呼出的气流冲击声带振动发出声音，再经口腔、舌、唇的调制变成语言。会厌软骨在吞咽时盖住喉口防止食物入气管——边吃饭边说笑容易呛咳，就是会厌"没关好门"。',
+    extension: true,
+    parts: [
+      { name: '喉的位置', desc: '上接咽、下连气管，由多块软骨作支架——保持气道开放不塌陷。' },
+      { name: '声带', desc: '两片弹性黏膜皱襞，中间的缝隙称声门；气流通过使声带振动发声——男声带长而厚，音调低，青春期"变声"由此而来。' },
+      { name: '会厌软骨', desc: '吞咽时盖住喉口引导食物进入食管；说话呼吸时抬起让空气通过。' },
+      { name: '发声三要素', desc: '肺部气流是动力，声带振动是声源，口腔舌唇共鸣与咬字——音调看声带振动频率，音量看气流强度。' },
+      { name: '保护嗓子', desc: '长时间高声说话会使声带黏膜充血形成小结；变声期要避免大喊大叫。' },
+    ],
+    Svg: LarynxSvg,
+  },
+  {
+    id: 'seedDormancy',
+    name: '种子的休眠',
+    kicker: '植物繁殖 · 环境适应（课外拓展）',
+    intro: '成熟而有生活力的种子不一定立即萌发——坚硬的种皮挡住了水和空气，未发育完全的胚需要"后熟"，脱落酸（ABA）维持着休眠状态。休眠让种子躲过寒冬旱季、错开萌发风险，是植物对季节性环境的适应；农业生产上则用低温层积、温水浸种、赤霉素处理来打破休眠。',
+    extension: true,
+    parts: [
+      { name: '什么是休眠', desc: '种子成熟后暂时不能萌发的状态——即使给予充足的水、空气和适宜温度也不萌发。' },
+      { name: '种皮限制', desc: '坚硬致密的种皮不透水、不透气并机械阻碍胚生长——古莲子的种皮可让种子休眠上千年。' },
+      { name: '胚的后熟', desc: '有些种子脱离母株时胚尚未发育完全（如银杏），需经一段低温湿润的"后熟"才能萌发。' },
+      { name: '激素调控', desc: '脱落酸（ABA）维持休眠、抑制萌发；赤霉素（GA）促进萌发——两者拮抗，与种子的"休眠开关"直接相关。' },
+      { name: '打破休眠', desc: '低温层积（沙藏）模拟越冬、温水浸种软化种皮、机械磨破种皮、赤霉素浸泡——育苗常用的四种方法。' },
+      { name: '适应意义', desc: '错开萌发时间分散风险、度过不良季节——休眠是自然选择塑造的生活史对策。' },
+    ],
+    Svg: SeedDormancySvg,
+  },
   {
     id: 'spider',
     name: '蜘蛛',

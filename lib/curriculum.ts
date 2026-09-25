@@ -624,6 +624,7 @@ export type ExperimentId =
   | 'animalCellCulture'
   | 'biocontrol'
   | 'stemCellTherapy'
+  | 'photosynthesisHistory'
   | 'transpiration'
   | 'photoperiodism'
   | 'geneTherapy'
@@ -1150,6 +1151,14 @@ export const experimentMeta: Record<
     relatedModule: '细胞工程与组织培养',
     extension: true,
   },
+  photosynthesisHistory: {
+    title: '光合作用的发现史',
+    kicker: '必修 1 · 科学史',
+    description: '从海尔蒙特的柳树到鲁宾卡门的同位素：两百年拼出光合作用的完整拼图。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+    extension: true,
+  },
   transpiration: {
     title: '蒸腾作用的观察',
     kicker: '必修 1 · 分子与细胞',
@@ -1331,7 +1340,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '酶与代谢',
     icon: '⚗️',
-    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'greenhouseGas'],
+    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'photosynthesisHistory', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'greenhouseGas'],
   },
   {
     name: '细胞与膜',
@@ -1381,6 +1390,7 @@ export const experimentOrder: ExperimentId[] = [
   'photosynthesisFactors',
   'cellRespiration',
   'engelmann',
+  'photosynthesisHistory',
   'waterBalance',
   'breathingMechanics',
   'neuronTypes',
