@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Search, Sparkles, X } from 'lucide-react';
 
 import { ATLAS_CATEGORIES, ATLAS_GROUPS, LAB_ONLY_SPECIMEN_IDS, SPECIMENS } from '@/components/cells/specimens';
@@ -58,15 +58,28 @@ function initialFromUrl() {
 }
 
 export function CellsClient() {
-  const [specimenId, setSpecimenId] = useState(() => initialFromUrl().specimenId);
+  // SSR 安全的默认值；深链参数在 useEffect 中客户端解析
+  const [specimenId, setSpecimenId] = useState(ATLAS_SPECIMENS[0].id);
   const [activePart, setActivePart] = useState<number | null>(null);
   const [stomaOpen, setStomaOpen] = useState(true);
   const [useWebGL, setUseWebGL] = useState(false);
   /** 两级导航：home = 大分类入口；group = 点进某个大分类浏览 */
-  const [level, setLevel] = useState<'home' | 'group'>(() => initialFromUrl().level);
-  const [activeGroup, setActiveGroup] = useState<string | null>(() => initialFromUrl().activeGroup);
-  const [subCategory, setSubCategory] = useState<string | null>(() => initialFromUrl().subCategory);
+  const [level, setLevel] = useState<'home' | 'group'>('home');
+  const [activeGroup, setActiveGroup] = useState<string | null>(null);
+  const [subCategory, setSubCategory] = useState<string | null>(null);
   const [search, setSearch] = useState('');
+  const [urlProcessed, setUrlProcessed] = useState(false);
+
+  // 深链：/cells?specimen=xxx 或 /cells?cat=xxx（只在客户端首次挂载后执行一次）
+  useEffect(() => {
+    if (urlProcessed) return;
+    setUrlProcessed(true);
+    const init = initialFromUrl();
+    if (init.specimenId !== ATLAS_SPECIMENS[0].id) setSpecimenId(init.specimenId);
+    if (init.level !== 'home') setLevel(init.level);
+    if (init.activeGroup !== null) setActiveGroup(init.activeGroup);
+    if (init.subCategory !== null) setSubCategory(init.subCategory);
+  }, [urlProcessed]);
 
   const specimen = ATLAS_SPECIMENS.find((item) => item.id === specimenId) ?? ATLAS_SPECIMENS[0];
   const SpecimenSvg = specimen.Svg;
