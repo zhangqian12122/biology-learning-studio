@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { SPECIMENS } from '@/components/cells/specimens';
+import { ART_KEYFRAMES, type ArtBundle } from '@/components/cells/art-shared';
+import { artLoaderFor, SPECIMENS } from '@/components/cells/specimens';
 
 /**
  * 实验页"相关图解"卡片：复用图鉴标本的 SVG 与结构清单，
@@ -10,9 +11,21 @@ import { SPECIMENS } from '@/components/cells/specimens';
  */
 export function SpecimenCard({ id }: { id: string }) {
   const [activePart, setActivePart] = useState<number | null>(null);
+  const [art, setArt] = useState<ArtBundle | null>(null);
   const specimen = SPECIMENS.find((item) => item.id === id);
+
+  useEffect(() => {
+    let alive = true;
+    setArt(null);
+    artLoaderFor(id)().then((m) => {
+      if (alive) setArt(m.ART[id] ?? null);
+    });
+    return () => {
+      alive = false;
+    };
+  }, [id]);
+
   if (!specimen) return null;
-  const Svg = specimen.Svg;
   const selectedPart = activePart == null ? null : specimen.parts[activePart];
 
   return (
@@ -23,9 +36,14 @@ export function SpecimenCard({ id }: { id: string }) {
       </div>
       <p className="mt-1.5 text-xs leading-5 text-gray-500">{specimen.intro}</p>
 
-      <div className="relative mt-3 overflow-hidden rounded-md border border-[#dceaea] bg-gradient-to-b from-[#f2fafa] to-[#e7f3f1]">
+      <style>{ART_KEYFRAMES}</style>
+      <div className="relative mt-3 overflow-hidden rounded-md border border-gray-200 bg-[#f7f6f3]">
         <div className="relative mx-auto aspect-[52/38] w-full max-w-[560px]">
-          <Svg active={activePart} />
+          {art ? (
+            <art.Svg active={activePart} />
+          ) : (
+            <div className="flex h-full items-center justify-center text-sm text-gray-400">图解加载中…</div>
+          )}
         </div>
       </div>
 

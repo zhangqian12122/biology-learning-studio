@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Search, Sparkles, X } from 'lucide-react';
 
-import { ATLAS_CATEGORIES, ATLAS_GROUPS, LAB_ONLY_SPECIMEN_IDS, SPECIMENS } from '@/components/cells/specimens';
+import { ART_KEYFRAMES, type ArtBundle } from '@/components/cells/art-shared';
+import { artLoaderFor, ATLAS_CATEGORIES, ATLAS_GROUPS, LAB_ONLY_SPECIMEN_IDS, SPECIMENS } from '@/components/cells/specimens';
 
 /** 图鉴只保留"结构/模式图"类标本；实验操作类图解移到互动实验页展示。 */
 const ATLAS_SPECIMENS = SPECIMENS.filter((item) => !LAB_ONLY_SPECIMEN_IDS.includes(item.id));
@@ -14,15 +15,7 @@ const ATLAS_VISIBLE = new Set(ATLAS_SPECIMENS.map((item) => item.id));
 const ATLAS_ORDER: string[] = ATLAS_CATEGORIES.flatMap((c) => c.ids).filter((id) => ATLAS_VISIBLE.has(id));
 const ORDER_NO = new Map(ATLAS_ORDER.map((id, i) => [id, i + 1]));
 
-const CELL_KEYFRAMES = `
-@keyframes bio-cilia-sway { 0%, 100% { transform: skewX(0deg); } 50% { transform: skewX(2.5deg); } }
-.bio-cilia { animation: bio-cilia-sway 1.8s ease-in-out infinite; transform-origin: 260px 195px; }
-@keyframes bio-flagella-wave { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(7deg); } }
-.bio-flagella { animation: bio-flagella-wave 1.3s ease-in-out infinite; }
-@media (prefers-reduced-motion: reduce) {
-  .bio-cilia, .bio-flagella { animation: none; }
-}
-`;
+const CELL_KEYFRAMES = ART_KEYFRAMES;
 
 const CIRCLED_DIGITS = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩'];
 
@@ -120,8 +113,20 @@ export function CellsClient() {
   }, []);
 
   const specimen = ATLAS_SPECIMENS.find((item) => item.id === specimenId) ?? ATLAS_SPECIMENS[0];
-  const SpecimenSvg = specimen.Svg;
   const isStoma = specimen.id === 'stoma';
+
+  // 图形分片按需加载：主包不含任何 SVG 组件
+  const [art, setArt] = useState<ArtBundle | null>(null);
+  useEffect(() => {
+    let alive = true;
+    setArt(null);
+    artLoaderFor(specimen.id)().then((m) => {
+      if (alive) setArt(m.ART[specimen.id] ?? null);
+    });
+    return () => {
+      alive = false;
+    };
+  }, [specimen.id]);
   const selectedPart = activePart == null ? null : specimen.parts[activePart];
 
   const searchLower = search.trim().toLowerCase();
@@ -450,7 +455,7 @@ export function CellsClient() {
               </button>
             </div>
           ) : null}
-          {specimen.StageWebGL ? (
+          {art?.StageWebGL ? (
             <div className="flex gap-1.5" role="group" aria-label="视角模式">
               <button
                 type="button"
@@ -490,17 +495,21 @@ export function CellsClient() {
           <div className="relative overflow-hidden border border-gray-200 bg-[#f4fbfa] rounded-lg">
             <div className="max-sm:overflow-x-auto">
               <div className="relative mx-auto aspect-[52/38] w-full max-w-[620px] max-sm:w-[520px]">
-                {specimen.StageWebGL && useWebGL ? (
-                  <>
-                    <specimen.StageWebGL active={activePart} open={stomaOpen} />
-                    <p className="pointer-events-none absolute bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full bg-white/80 px-3 py-1 text-[11px] font-medium text-gray-600 shadow-sm">
-                      🖐 单指旋转 · 双指缩放 · 松手后自动摆动
-                    </p>
-                  </>
-                ) : specimen.Stage3d ? (
-                  <specimen.Stage3d active={activePart} open={stomaOpen} />
+                {art ? (
+                  art.StageWebGL && useWebGL ? (
+                    <>
+                      <art.StageWebGL active={activePart} open={stomaOpen} />
+                      <p className="pointer-events-none absolute bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-md bg-white/85 px-3 py-1 text-[11px] font-medium text-gray-600">
+                        🖐 单指旋转 · 双指缩放 · 松手后自动摆动
+                      </p>
+                    </>
+                  ) : art.Stage3d ? (
+                    <art.Stage3d active={activePart} open={stomaOpen} />
+                  ) : (
+                    <art.Svg active={activePart} open={stomaOpen} />
+                  )
                 ) : (
-                  <SpecimenSvg active={activePart} open={stomaOpen} />
+                  <div className="flex h-full items-center justify-center text-sm text-gray-400">图解加载中…</div>
                 )}
               </div>
             </div>
