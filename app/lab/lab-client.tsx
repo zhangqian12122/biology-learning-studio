@@ -766,27 +766,6 @@ export function LabClient() {
     </section>
   );
 
-  const bottomCards = (
-    <section className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-5">
-        <div className="flex items-center gap-2">
-          <Lightbulb className="size-4 text-[#dfab01]" aria-hidden="true" />
-          <h2 className="text-sm font-semibold text-[#37352f]">实验设计清单</h2>
-        </div>
-        <ol className="mt-4 grid gap-3 text-sm text-gray-600 sm:grid-cols-3">
-          {[
-            ['01', '明确自变量和因变量'],
-            ['02', '控制无关变量'],
-            ['03', '用数据支持结论'],
-          ].map(([no, text]) => (
-            <li key={no} className="rounded-md bg-[#f7f6f3] px-3 py-2.5">
-              <span className="block font-mono text-[10px] font-semibold text-gray-400">{no}</span>
-              {text}
-            </li>
-          ))}
-        </ol>
-    </section>
-  );
-
   /* ==================== 桌面：左目录 + 右内容 ==================== */
   if (isWide) {
     return (
@@ -919,7 +898,6 @@ export function LabClient() {
 
           <div className="flex min-w-0 flex-1 flex-col gap-4 overflow-y-auto pr-0.5">
             {detailPanel}
-            {bottomCards}
           </div>
         </div>
       </div>
@@ -1010,7 +988,6 @@ export function LabClient() {
 
         {switcherSection}
         {detailPanel}
-        {bottomCards}
       </div>
 
       <style>{LAB_KEYFRAMES}</style>

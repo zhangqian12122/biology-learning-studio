@@ -1,31 +1,17 @@
 import Link from 'next/link';
 
-import { LocalProgressBadge } from '@/components/local-progress-badge';
-import type { Question } from '@/lib/curriculum';
 import { Microscope } from 'lucide-react';
 
-export type HeaderNavKey = 'home' | 'lab' | 'cells' | 'graph' | 'practice' | 'teacher';
+export type HeaderNavKey = 'home' | 'lab' | 'cells' | 'graph';
 
 const navItems: { key: HeaderNavKey; href: string; label: string }[] = [
   { key: 'home', href: '/', label: '教材总览' },
   { key: 'lab', href: '/lab', label: '互动实验' },
   { key: 'cells', href: '/cells', label: '图鉴' },
   { key: 'graph', href: '/graph', label: '知识图谱' },
-  { key: 'practice', href: '/practice', label: '题库与错题' },
-  { key: 'teacher', href: '/teacher', label: '教师中心' },
 ];
 
-export function SiteHeader({
-  active,
-  questions,
-  bankFallback,
-}: {
-  active: HeaderNavKey;
-  questions: Question[];
-  bankFallback?: boolean;
-}) {
-  // 实验与图鉴页保持纯学习场景，不出现题库相关徽章
-  const quizVisible = active !== 'lab' && active !== 'cells';
+export function SiteHeader({ active }: { active: HeaderNavKey }) {
   return (
     <header className="sticky top-0 z-40 border-b border-gray-200 bg-white shadow-[0_4px_0_#c6d4d4]">
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
@@ -35,7 +21,7 @@ export function SiteHeader({
           </div>
           <div>
             <p className="text-base font-bold leading-none text-[#37352f]">福建高中生物学习站</p>
-            <p className="mt-1 text-xs text-[#56737a]">{quizVisible ? '人教版新课标 · 师生共享题库' : '人教版新课标 · 课本内容互动学习'}</p>
+            <p className="mt-1 text-xs text-[#56737a]">人教版新课标 · 课本内容互动学习</p>
           </div>
         </Link>
 
@@ -58,20 +44,7 @@ export function SiteHeader({
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 text-xs text-[#55737a] sm:text-sm">
-          {quizVisible ? (
-            <>
-              <span className="nb-pill hidden px-3 py-1.5 font-semibold sm:inline-flex">共享题库 {questions.length} 题</span>
-              <LocalProgressBadge questions={questions} />
-            </>
-          ) : null}
-        </div>
       </div>
-      {bankFallback ? (
-        <div className="border-t border-[#f0e3c0] bg-[#fdf6e3] px-4 py-2 text-center text-xs text-[#80621c] sm:px-6">
-          题库服务暂时不可用，当前使用内置题目；作答会保存在本机，恢复后自动同步共享题库。
-        </div>
-      ) : null}
     </header>
   );
 }
