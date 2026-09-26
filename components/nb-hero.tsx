@@ -23,6 +23,15 @@ export function NbHero({
 }) {
   return (
     <div className="nb-hero relative mb-6 overflow-hidden px-6 py-7 sm:px-9 sm:py-9">
+      {/* 顶部渐变 hairline：卡片的高级感细节 */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-[3px]"
+        style={{
+          background:
+            'linear-gradient(90deg, #2eaadc 0%, #7cc4e8 30%, #95e1d3 60%, #ffe66d 100%)',
+        }}
+      />
       {WatermarkIcon ? (
         <WatermarkIcon
           aria-hidden="true"

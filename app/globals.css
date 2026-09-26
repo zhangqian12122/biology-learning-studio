@@ -114,17 +114,40 @@ textarea {
   background: #ffffff;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-  box-shadow: 0 1px 2px rgba(15, 15, 15, 0.05);
+  box-shadow:
+    0 1px 2px rgba(15, 15, 15, 0.04),
+    0 1px 3px rgba(15, 15, 15, 0.06);
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+}
+.nb-card:hover {
+  transform: translateY(-2px);
+  border-color: #d5d5d0;
+  box-shadow:
+    0 2px 4px rgba(15, 15, 15, 0.04),
+    0 12px 28px -8px rgba(15, 15, 15, 0.14);
 }
 /* 交互卡：悬停仅背景微变（无位移/无阴影跳变） */
 .nb-lift {
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
 }
 .nb-lift:hover {
-  background-color: #fafaf9;
+  transform: translateY(-3px);
+  border-color: #d5d5d0;
+  box-shadow:
+    0 2px 4px rgba(15, 15, 15, 0.04),
+    0 18px 36px -10px rgba(15, 15, 15, 0.16);
 }
 .nb-lift:active {
-  background-color: #f1f1ef;
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 2px rgba(15, 15, 15, 0.04),
+    0 8px 18px -8px rgba(15, 15, 15, 0.12);
 }
 /* 选中态：蓝色边框 + 浅蓝底 */
 .nb-active {
@@ -140,13 +163,20 @@ textarea {
   border: 1px solid #e5e5e5;
   border-radius: 6px;
   color: #37352f;
-  transition: background-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.2s ease;
 }
 .nb-pill:hover {
   background-color: #efedea;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px -2px rgba(15, 15, 15, 0.1);
 }
 .nb-pill:active {
   background-color: #e3e1db;
+  transform: translateY(0) scale(0.97);
+  box-shadow: none;
 }
 .nb-pill-active {
   background: #2eaadc;
@@ -169,13 +199,21 @@ textarea {
   border: 1px solid #e5e5e5;
   border-radius: 8px;
   box-shadow: 0 1px 2px rgba(15, 15, 15, 0.05);
-  transition: background-color 0.15s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .nb-tile:hover {
-  background-color: #efedea;
+  transform: translateY(-3px);
+  box-shadow:
+    0 2px 4px rgba(15, 15, 15, 0.04),
+    0 16px 32px -8px rgba(15, 15, 15, 0.15);
 }
 .nb-tile:active {
-  background-color: #e3e1db;
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 2px rgba(15, 15, 15, 0.05),
+    0 8px 18px -8px rgba(15, 15, 15, 0.12);
 }
 /* 深色强调块（Notion 深灰） */
 .nb-dark {
@@ -208,13 +246,16 @@ textarea {
   border-radius: 6px;
   color: #37352f;
   font-weight: 500;
-  transition: background-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .nb-btn:hover {
   background-color: #efedea;
 }
 .nb-btn:active {
   background-color: #e3e1db;
+  transform: scale(0.97);
 }
 .nb-btn-primary {
   background: #2eaadc;
@@ -296,56 +337,5 @@ textarea {
 @media (prefers-reduced-motion: reduce) {
   .nb-book-item {
     transition: none;
-  }
-}
-
-/* ===== 俏皮野兽派点缀层（Playful accents）：彩色硬阴影 + 微旋转 + 弹簧缓动 ===== */
-/* 首页门面完整表达；内页仅小剂量取色，保持 Notion 的阅读克制。 */
-:root {
-  --pb-red: #ff6b6b;
-  --pb-teal: #4ecdc4;
-  --pb-yellow: #ffe66d;
-  --pb-mint: #95e1d3;
-  --pb-coral: #f38181;
-}
-.pb-spring {
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.pb-shadow-red { box-shadow: 6px 6px 0 0 var(--pb-red); }
-.pb-shadow-teal { box-shadow: 6px 6px 0 0 var(--pb-teal); }
-.pb-shadow-yellow { box-shadow: 6px 6px 0 0 var(--pb-yellow); }
-.pb-shadow-mint { box-shadow: 6px 6px 0 0 var(--pb-mint); }
-.pb-shadow-coral { box-shadow: 6px 6px 0 0 var(--pb-coral); }
-.pb-shadow-black { box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 1); }
-/* 悬停：阴影归零 + 等量位移（Toy Spring 回弹） */
-.pb-lift {
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.pb-lift:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
-}
-.pb-lift:active {
-  transform: translate(6px, 6px);
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-}
-/* 微旋转（≤3 度） */
-.pb-tilt-l { transform: rotate(-1.2deg); }
-.pb-tilt-r { transform: rotate(1deg); }
-.pb-tilt-l2 { transform: rotate(-2deg); }
-/* 高亮标记（标题关键词） */
-.pb-marker {
-  display: inline-block;
-  padding: 0 0.15em;
-  background: var(--pb-yellow);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-@media (prefers-reduced-motion: reduce) {
-  .pb-lift, .pb-spring {
-    transition: none;
-  }
-  .pb-tilt-l, .pb-tilt-r, .pb-tilt-l2 {
-    transform: none;
   }
 }
