@@ -653,6 +653,7 @@ export type ExperimentId =
   | 'invasiveSim'
   | 'geneticDrift'
   | 'altitudeAdaptation'
+  | 'stressResponse'
   | 'epigenetics'
   | 'oxygenation'
   | 'nitrogenFixation'
@@ -1491,6 +1492,13 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '内环境与稳态',
   },
+  stressResponse: {
+    title: '应激反应：战斗或逃跑',
+    kicker: '选择性必修 1 · 稳态与调节',
+    description: '一键触发交感神经+肾上腺素：看心率、血糖、瞳孔的"求生总动员"。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
   whaleFall: {
     title: '鲸落：深海的生命绿洲',
     kicker: '深海生态 · 课外拓展',
@@ -1815,7 +1823,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'brainRegions', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'bloodDialysis', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'transplantRejection', 'autoimmune', 'bloodRoutine', 'energyBalance', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'brainRegions', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'stressResponse', 'circadianRhythm', 'bloodType', 'urineFormation', 'bloodDialysis', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'transplantRejection', 'autoimmune', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1910,6 +1918,7 @@ export const experimentOrder: ExperimentId[] = [
   'thermoRegulation',
   'hibernation',
   'altitudeAdaptation',
+  'stressResponse',
   'circadianRhythm',
   'sirModel',
   // 选择性必修 2 · 生物与环境

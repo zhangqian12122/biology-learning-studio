@@ -1,0 +1,120 @@
+/* ================= 河狸（水坝背后的"生态工程师"） ================= */
+
+function BeaverSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 河狸本体 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="150" cy="180" rx="66" ry="44" fill="#8a6a4a" stroke="#5a4322" strokeWidth="2.8" />
+        <circle cx="88" cy="152" r="24" fill="#9a7a56" stroke="#5a4322" strokeWidth="2.4" />
+        <circle cx="80" cy="146" r="3.4" fill="#141414" />
+        <path d="M68 166 q -8 8 -16 8" fill="none" stroke="#5a4322" strokeWidth="3.4" strokeLinecap="round" />
+        <path d="M62 162 l -6 -10 l 10 2 Z" fill="#e8e0d0" stroke="#5a4322" strokeWidth="1.6" />
+        <ellipse cx="222" cy="188" rx="30" ry="20" fill="#5a4322" stroke="#3a2a16" strokeWidth="2.4" />
+        <path d="M212 176 q 14 -6 24 2 M210 188 q 14 -6 26 2" fill="none" stroke="#3a2a16" strokeWidth="2" />
+        <text x="250" y="130" fontSize="12.5" fill="#5a4322" fontWeight="700">扁尾：舵+「拍水报警器」</text>
+        <text x="60" y="108" fontSize="12.5" fill="#5a4322" fontWeight="700">门牙终生生长——必须啃树磨牙</text>
+      </g>
+      {/* 水坝与湿地 */}
+      <g style={dim(active, 1)}>
+        <path d="M40 250 q 90 -26 200 -18 l 0 40 l -200 0 Z" fill="#a58a5a" stroke="#6a5238" strokeWidth="2.4" />
+        {[0, 1, 2, 3].map((i) => (
+          <line key={i} x1={58 + i * 46} y1={246} x2={66 + i * 46} y2={286} stroke="#6a5238" strokeWidth="3.4" />
+        ))}
+        <rect x="242" y="238" width="230" height="56" rx="8" fill="#a8cfe0" stroke="#4d7ea8" strokeWidth="2.4" />
+        <path d="M252 244 q 40 -8 80 0 M350 250 q 40 -6 80 2" fill="none" stroke="#d0e8f2" strokeWidth="2.4" />
+        <text x="357" y="312" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="700">坝上游成湿地：鱼·蛙·水鸟·麋鹿都来安家</text>
+        <path d="M438 250 q 26 -10 44 6" fill="none" stroke="#4d7ea8" strokeWidth="3" />
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">"生态工程师"：一座水坝把溪流变湿地——改变环境而非只适应环境（生物影响环境的例子）</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">湿地=「地球之肾」：蓄洪·净水·固碳——河狸坝是免费的生态修复工程</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">防水秘技：梳毛爪给毛皮"涂油"+瞬膜护眼+耳鼻防水瓣——半水生的全副装备</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">河狸 · 水坝背后的"生态工程师"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 耳垢（干型还是湿型，基因说了算） ================= */
+
+function EarwaxSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 外耳道剖面 */}
+      <g style={dim(active, 0)}>
+        <path d="M60 120 Q140 92 210 116 Q252 130 258 170 Q262 210 224 228 Q160 254 90 232 Q56 220 52 178 Q50 140 60 120 Z" fill="#f2d0c9" stroke="#b06a6a" strokeWidth="2.8" />
+        <path d="M96 150 Q170 138 232 168 L228 196 Q168 224 100 206 Z" fill="#e8c8c0" stroke="#b06a6a" strokeWidth="2" />
+        <text x="60" y="86" fontSize="12.5" fill="#a53030" fontWeight="700">外耳道（约 2.5 cm 的"死胡同"）</text>
+        <text x="256" y="180" fontSize="12" fill="#8a5a5a">深处=鼓膜（别掏到！）</text>
+      </g>
+      {/* 耵聍腺与两种耳垢 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3].map((i) => (
+          <ellipse key={i} cx={112 + i * 40} cy={210} rx="10" ry="7" fill="#c98ad0" stroke="#8a5aa5" strokeWidth="1.8" />
+        ))}
+        <text x="46" y="248" fontSize="12" fill="#8a5aa5" fontWeight="700">耵聍腺（变异的汗腺）+ 皮脂腺</text>
+        <rect x="300" y="60" width="196" height="120" rx="12" fill="#fdf8ea" stroke="#c9a03a" strokeWidth="2.4" />
+        <text x="398" y="84" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">两种耳垢 · 一个基因</text>
+        <text x="312" y="108" fontSize="12" fill="#8a671b">干型：黄白碎屑（东亚常见）</text>
+        <text x="312" y="128" fontSize="12" fill="#8a671b">湿型：油褐黏块（欧非常见）</text>
+        <text x="312" y="152" fontSize="11.5" fill="#59767c">ABCC11 基因一个 SNP 决定</text>
+        <text x="312" y="170" fontSize="11.5" fill="#59767c">同一个基因还决定有没有狐臭</text>
+        <rect x="300" y="196" width="196" height="100" rx="12" fill="#eef7ee" stroke="#5a9a5a" strokeWidth="2.2" />
+        <text x="398" y="218" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">耳垢的三大功劳</text>
+        <text x="312" y="240" fontSize="11.5" fill="#37585f">① 黏住灰尘虫子（物理防线）</text>
+        <text x="312" y="260" fontSize="11.5" fill="#37585f">② 抑菌防霉（化学防线）</text>
+        <text x="312" y="280" fontSize="11.5" fill="#37585f">③ 保湿防鼓膜干裂</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="304" width="448" height="62" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="326" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">自洁设计：咀嚼时外耳道软骨活动，耳垢随"传送带"外移自然排出——棉签只会越捅越深！</text>
+        <text x="260" y="350" textAnchor="middle" fontSize="12" fill="#a5761d">考点：单基因遗传的相对性状（湿型对干型为显性）——群体里统计干湿比例可估基因频率</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">耳垢 · 干湿由基因说了算（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 朊病毒（没有核酸的"蛋白质刺客"） ================= */
+
+function PrionSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 正常 vs 错误折叠 */}
+      <g style={dim(active, 0)}>
+        <text x="120" y="80" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">正常蛋白 PrPᶜ（可溶·好降解）</text>
+        <path d="M70 120 q 20 -26 50 -12 q -6 30 -36 28 q 14 14 34 8 q -20 24 -48 10 q -12 -18 0 -34" fill="none" stroke="#3f8a3f" strokeWidth="6" strokeLinecap="round" />
+        <path d="M170 108 q 24 -8 26 14 q 2 20 -22 18 q -18 -2 -12 -20 q 4 -10 12 -10" fill="none" stroke="#3f8a3f" strokeWidth="5" strokeLinecap="round" />
+        <text x="120" y="196" fontSize="12" fill="#2f6f2a">结构与功能正常的膜蛋白</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <text x="380" y="80" textAnchor="middle" fontSize="12.5" fill="#a53030" fontWeight="700">错误折叠 PrPˢᶜ（致病朊毒体）</text>
+        <path d="M330 120 q 30 -18 56 0 q 22 16 8 38 q -12 20 -38 12 q -28 -8 -26 -32 q 2 -14 14 -18 M356 140 q 16 6 26 -4" fill="none" stroke="#a53030" strokeWidth="6.4" strokeLinecap="round" />
+        <text x="380" y="196" textAnchor="middle" fontSize="12" fill="#a53030">诱导正常蛋白"学坏"——链式传染</text>
+        <path d="M232 150 L300 150" fill="none" stroke="#8a671b" strokeWidth="3" markerEnd="url(#prionArrow)" />
+        <text x="266" y="140" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">接触 → 正常蛋白跟着变坏</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="216" width="448" height="150" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="242" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">挑战中心法则：没有核酸也能"复制"（构象传递）——遗传物质=核酸的结论被迫加注脚</text>
+        <text x="260" y="266" textAnchor="middle" fontSize="12" fill="#a5761d">疾病：疯牛病（牛）·库鲁病（食葬习俗）·克雅氏病（人）——海绵样脑病变、无药可治</text>
+        <text x="260" y="290" textAnchor="middle" fontSize="12" fill="#a5761d">极端顽固：耐高温高压常规灭菌——手术器械需特殊灭活程序</text>
+        <text x="260" y="314" textAnchor="middle" fontSize="11.5" fill="#a5761d">发现者普鲁西纳获 1997 年诺贝尔奖——"离经叛道"的证据最终改写教科书</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="11.5" fill="#a5761d">考点辨析：朊病毒≠病毒（无核酸无衣壳）——它是一类错误折叠的蛋白质</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">朊病毒 · 没有核酸的"蛋白质刺客"（课外拓展）</text>
+      <defs>
+        <marker id="prionArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0 0 L6 3 L0 6 Z" fill="#8a671b" />
+        </marker>
+      </defs>
+    </svg>
+  );
+}
+
+export const SPECIMENS: Specimen[] = [

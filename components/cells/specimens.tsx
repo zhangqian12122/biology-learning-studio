@@ -5049,10 +5049,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness', 'sickleCellAnemia'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold', 'tuberculosis', 'penicillin'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold', 'tuberculosis', 'penicillin', 'prion'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus', 'seaCucumber', 'gecko', 'mantaRay', 'clownfish'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier', 'duodenum', 'swallowing', 'heartValves', 'gastricMucus'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus', 'seaCucumber', 'gecko', 'mantaRay', 'clownfish', 'beaver'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier', 'duodenum', 'swallowing', 'heartValves', 'gastricMucus', 'earwax'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation', 'rootNodule', 'guttation', 'coconut', 'amber'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
@@ -16139,7 +16139,171 @@ function PenicillinSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 河狸（水坝背后的"生态工程师"） ================= */
+
+function BeaverSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 河狸本体 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="150" cy="180" rx="66" ry="44" fill="#8a6a4a" stroke="#5a4322" strokeWidth="2.8" />
+        <circle cx="88" cy="152" r="24" fill="#9a7a56" stroke="#5a4322" strokeWidth="2.4" />
+        <circle cx="80" cy="146" r="3.4" fill="#141414" />
+        <path d="M68 166 q -8 8 -16 8" fill="none" stroke="#5a4322" strokeWidth="3.4" strokeLinecap="round" />
+        <path d="M62 162 l -6 -10 l 10 2 Z" fill="#e8e0d0" stroke="#5a4322" strokeWidth="1.6" />
+        <ellipse cx="222" cy="188" rx="30" ry="20" fill="#5a4322" stroke="#3a2a16" strokeWidth="2.4" />
+        <path d="M212 176 q 14 -6 24 2 M210 188 q 14 -6 26 2" fill="none" stroke="#3a2a16" strokeWidth="2" />
+        <text x="250" y="130" fontSize="12.5" fill="#5a4322" fontWeight="700">扁尾：舵+「拍水报警器」</text>
+        <text x="60" y="108" fontSize="12.5" fill="#5a4322" fontWeight="700">门牙终生生长——必须啃树磨牙</text>
+      </g>
+      {/* 水坝与湿地 */}
+      <g style={dim(active, 1)}>
+        <path d="M40 250 q 90 -26 200 -18 l 0 40 l -200 0 Z" fill="#a58a5a" stroke="#6a5238" strokeWidth="2.4" />
+        {[0, 1, 2, 3].map((i) => (
+          <line key={i} x1={58 + i * 46} y1={246} x2={66 + i * 46} y2={286} stroke="#6a5238" strokeWidth="3.4" />
+        ))}
+        <rect x="242" y="238" width="230" height="56" rx="8" fill="#a8cfe0" stroke="#4d7ea8" strokeWidth="2.4" />
+        <path d="M252 244 q 40 -8 80 0 M350 250 q 40 -6 80 2" fill="none" stroke="#d0e8f2" strokeWidth="2.4" />
+        <text x="357" y="258" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="700">坝上游成湿地：鱼·蛙·水鸟都来安家</text>
+        <path d="M438 250 q 26 -10 44 6" fill="none" stroke="#4d7ea8" strokeWidth="3" />
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">"生态工程师"：一座水坝把溪流变湿地——改变环境而非只适应环境（生物影响环境的例子）</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">湿地=「地球之肾」：蓄洪·净水·固碳——河狸坝是免费的生态修复工程</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">防水秘技：梳毛爪给毛皮"涂油"+瞬膜护眼+耳鼻防水瓣——半水生的全副装备</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">河狸 · 水坝背后的"生态工程师"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 耳垢（干型还是湿型，基因说了算） ================= */
+
+function EarwaxSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 外耳道剖面 */}
+      <g style={dim(active, 0)}>
+        <path d="M60 120 Q140 92 210 116 Q252 130 258 170 Q262 210 224 228 Q160 254 90 232 Q56 220 52 178 Q50 140 60 120 Z" fill="#f2d0c9" stroke="#b06a6a" strokeWidth="2.8" />
+        <path d="M96 150 Q170 138 232 168 L228 196 Q168 224 100 206 Z" fill="#e8c8c0" stroke="#b06a6a" strokeWidth="2" />
+        <text x="60" y="86" fontSize="12.5" fill="#a53030" fontWeight="700">外耳道（约 2.5 cm 的"死胡同"）</text>
+        <text x="238" y="180" textAnchor="end" fontSize="12" fill="#8a5a5a">深处=鼓膜（别掏到！）</text>
+      </g>
+      {/* 耵聍腺与两种耳垢 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3].map((i) => (
+          <ellipse key={i} cx={112 + i * 40} cy={210} rx="10" ry="7" fill="#c98ad0" stroke="#8a5aa5" strokeWidth="1.8" />
+        ))}
+        <text x="46" y="248" fontSize="12" fill="#8a5aa5" fontWeight="700">耵聍腺（变异的汗腺）+ 皮脂腺</text>
+        <rect x="300" y="60" width="196" height="120" rx="12" fill="#fdf8ea" stroke="#c9a03a" strokeWidth="2.4" />
+        <text x="398" y="84" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">两种耳垢 · 一个基因</text>
+        <text x="312" y="108" fontSize="12" fill="#8a671b">干型：黄白碎屑（东亚常见）</text>
+        <text x="312" y="128" fontSize="12" fill="#8a671b">湿型：油褐黏块（欧非常见）</text>
+        <text x="312" y="152" fontSize="11.5" fill="#59767c">ABCC11 基因一个 SNP 决定</text>
+        <text x="312" y="170" fontSize="11.5" fill="#59767c">同一个基因还决定有没有狐臭</text>
+        <rect x="300" y="196" width="196" height="100" rx="12" fill="#eef7ee" stroke="#5a9a5a" strokeWidth="2.2" />
+        <text x="398" y="218" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">耳垢的三大功劳</text>
+        <text x="312" y="240" fontSize="11.5" fill="#37585f">① 黏住灰尘虫子（物理防线）</text>
+        <text x="312" y="260" fontSize="11.5" fill="#37585f">② 抑菌防霉（化学防线）</text>
+        <text x="312" y="280" fontSize="11.5" fill="#37585f">③ 保湿防鼓膜干裂</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="304" width="448" height="62" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="326" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">自洁设计：咀嚼时外耳道软骨活动，耳垢随"传送带"外移自然排出——棉签只会越捅越深！</text>
+        <text x="260" y="350" textAnchor="middle" fontSize="12" fill="#a5761d">考点：单基因遗传的相对性状（湿型对干型为显性）——群体里统计干湿比例可估基因频率</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">耳垢 · 干湿由基因说了算（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 朊病毒（没有核酸的"蛋白质刺客"） ================= */
+
+function PrionSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 正常 vs 错误折叠 */}
+      <g style={dim(active, 0)}>
+        <text x="120" y="80" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">正常蛋白 PrPᶜ（可溶·好降解）</text>
+        <path d="M70 120 q 20 -26 50 -12 q -6 30 -36 28 q 14 14 34 8 q -20 24 -48 10 q -12 -18 0 -34" fill="none" stroke="#3f8a3f" strokeWidth="6" strokeLinecap="round" />
+        <path d="M170 108 q 24 -8 26 14 q 2 20 -22 18 q -18 -2 -12 -20 q 4 -10 12 -10" fill="none" stroke="#3f8a3f" strokeWidth="5" strokeLinecap="round" />
+        <text x="120" y="196" fontSize="12" fill="#2f6f2a">结构与功能正常的膜蛋白</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <text x="380" y="80" textAnchor="middle" fontSize="12.5" fill="#a53030" fontWeight="700">错误折叠 PrPˢᶜ（致病朊毒体）</text>
+        <path d="M330 120 q 30 -18 56 0 q 22 16 8 38 q -12 20 -38 12 q -28 -8 -26 -32 q 2 -14 14 -18 M356 140 q 16 6 26 -4" fill="none" stroke="#a53030" strokeWidth="6.4" strokeLinecap="round" />
+        <text x="380" y="196" textAnchor="middle" fontSize="12" fill="#a53030">诱导正常蛋白"学坏"——链式传染</text>
+        <path d="M232 150 L300 150" fill="none" stroke="#8a671b" strokeWidth="3" markerEnd="url(#prionArrow)" />
+        <text x="266" y="140" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">接触 → 正常蛋白跟着变坏</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="216" width="448" height="150" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="242" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">挑战中心法则：没有核酸也能"复制"（构象传递）——遗传物质=核酸的结论被迫加注脚</text>
+        <text x="260" y="266" textAnchor="middle" fontSize="12" fill="#a5761d">疾病：疯牛病（牛）·库鲁病（食葬习俗）·克雅氏病（人）——海绵样脑病变、无药可治</text>
+        <text x="260" y="290" textAnchor="middle" fontSize="12" fill="#a5761d">极端顽固：耐高温高压常规灭菌——手术器械需特殊灭活程序</text>
+        <text x="260" y="314" textAnchor="middle" fontSize="11.5" fill="#a5761d">发现者普鲁西纳获 1997 年诺贝尔奖——"离经叛道"的证据最终改写教科书</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="11.5" fill="#a5761d">考点辨析：朊病毒≠病毒（无核酸无衣壳）——它是一类错误折叠的蛋白质</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">朊病毒 · 没有核酸的"蛋白质刺客"（课外拓展）</text>
+      <defs>
+        <marker id="prionArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0 0 L6 3 L0 6 Z" fill="#8a671b" />
+        </marker>
+      </defs>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'beaver',
+    name: '河狸',
+    kicker: '啮齿目 · 水坝背后的"生态工程师"（课外拓展）',
+    intro: '河狸是少数能"改造环境"的动物：用树枝、泥巴筑起水坝，把潺潺溪流变成一片湿地——鱼、蛙、水鸟、麋鹿接踵而来，生物多样性成倍上升。它的全套装备都为"半水生"而生：防水毛皮（梳毛爪反复涂油）、能闭合的耳鼻瓣、水下护眼瞬膜、当舵又当"拍水报警器"的扁尾，以及终生生长、必须靠啃树打磨的大门牙。因皮毛被猎杀几近灭绝，保护后又被请回各地修复湿地。',
+    extension: true,
+    parts: [
+      { name: '水坝工程', desc: '树枝+泥石筑坝蓄水——把溪流变池塘湿地，蓄洪、净水、固碳，是免费的生态修复队。' },
+      { name: '扁尾', desc: '覆盖角质鳞片的扁尾——水中是"舵"，遇险猛拍水面发警报，还能支撑站立啃树。' },
+      { name: '终生生长的门牙', desc: '四颗门牙外硬内软、越磨越锋利——不啃树就会疯长到无法闭嘴，啃树顺便磨牙觅食（吃树皮）。' },
+      { name: '防水装备', desc: '梳毛爪给双层毛皮涂油脂、耳鼻有防水瓣、眼有透明瞬膜——潜水作业全副武装。' },
+      { name: '生态工程师', desc: '与人类并列为少数主动改造栖息地的物种——"生物影响环境"的教科书案例。' },
+    ],
+    Svg: BeaverSvg,
+  },
+  {
+    id: 'earwax',
+    name: '耳垢',
+    kicker: '感觉器官 · 干型还是湿型，基因说了算（课外拓展）',
+    intro: '耳垢（耵聍）是外耳道里耵聍腺与皮脂腺的联合产物——别嫌它脏，它是耳道的"驻守卫兵"：黏住灰尘小虫、抑制细菌霉菌、保湿防鼓膜干裂。它是最好的"遗传学小教具"：干型（黄白碎屑）与湿型（油褐黏块）由 ABCC11 基因的一个位点决定，东亚人多干型、欧洲非洲多湿型，同一个基因还顺带决定有没有狐臭。耳朵还有自洁设计——咀嚼时耳垢自然外移排出，棉签反而会把它们捅得更深。',
+    extension: true,
+    parts: [
+      { name: '耵聍腺', desc: '外耳道皮肤的变异汗腺——与皮脂腺联手分泌耵聍，覆盖外耳道形成保护膜。' },
+      { name: '三重防护', desc: '物理防线（黏尘防虫）+ 化学防线（溶菌酶等抑菌防霉）+ 保湿防裂——耳道的"常驻保安"。' },
+      { name: '干型与湿型', desc: '单基因相对性状：湿型为显性——东亚以干型为主、欧非以湿型为主，可用来做群体遗传统计。' },
+      { name: 'ABCC11 基因', desc: '一个 SNP 同时控制耳垢干湿与腋下分泌物（狐臭）——"一个基因多个表型"的有趣例子。' },
+      { name: '自洁机制', desc: '咀嚼说话时下颌运动推动外耳道软骨——耳垢随"传送带"向外自然排出，无需掏挖。' },
+    ],
+    Svg: EarwaxSvg,
+  },
+  {
+    id: 'prion',
+    name: '朊病毒',
+    kicker: '分子病原 · 没有核酸的"蛋白质刺客"（课外拓展）',
+    intro: '朊病毒（朊毒体）颠覆了生物学的底线：它没有 DNA 也没有 RNA，只是一类错误折叠的蛋白质——却能把同种的正常蛋白"带坏"，让它们也变成错误构象，像多米诺一样在脑内链式扩散，最终把大脑变成海绵样的"空洞"。疯牛病、库鲁病、克雅氏病都出自它手。它极度顽固，常规高温高压灭菌都杀不死。发现者普鲁西纳因此获 1997 年诺贝尔奖——"离经叛道"的证据最终写进教科书。',
+    extension: true,
+    parts: [
+      { name: '无核酸', desc: '只有蛋白质一种成分——"复制"靠构象传递：错误折叠者充当模板，把正常 PrPᶜ 扳成同伙。' },
+      { name: '致病机制', desc: '变坏的蛋白在神经元里聚集成纤维、让脑组织出现海绵样空洞——病程不可逆、无药可治。' },
+      { name: '相关疾病', desc: '疯牛病（牛）、克雅氏病（人）、库鲁病（巴布亚食葬习俗传播）——均属传染性海绵状脑病。' },
+      { name: '极端顽固', desc: '耐高温、耐紫外线、常规消毒无效——手术器械接触后需特殊高温灭活程序。' },
+      { name: '科学意义', desc: '挑战"遗传物质是核酸"的中心法则边界——蛋白质也能承载构象信息并"传染"。' },
+    ],
+    Svg: PrionSvg,
+  },
   {
     id: 'clownfish',
     name: '小丑鱼与海葵',

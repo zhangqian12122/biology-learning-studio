@@ -7,26 +7,26 @@ const results = { experiment: {}, specimens: {}, regression: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：bloodDialysis 血液透析 ----------
-await page.goto(`${BASE}/lab?exp=bloodDialysis`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：stressResponse 应激反应 ----------
+await page.goto(`${BASE}/lab?exp=stressResponse`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(3000);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '高速透析液' }).click();
-  for (let i = 0; i < 8; i++) {
-    await page.getByRole('button', { name: /推进 30 分钟/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(240);
-  }
-  const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('血液透析');
-  results.experiment.interactive = after.includes('本次透析完成') && after.includes('半透膜');
-  results.experiment.cleared = after.includes('累计清除');
-  results.experiment.reference = after.includes('注意事项');
+  await page.getByRole('button', { name: /突遇威胁/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(300);
+  const alarmText = await page.locator('main').innerText();
+  await page.getByRole('button', { name: /深呼吸放松/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(300);
+  const recoverText = await page.locator('main').innerText();
+  results.experiment.open = before.includes('应激反应');
+  results.experiment.alarm = alarmText.includes('肾上腺素') && alarmText.includes('血糖');
+  results.experiment.recover = recoverText.includes('恢复') && recoverText.includes('副交感');
+  results.experiment.reference = alarmText.includes('注意事项');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['clownfish', 'gastricMucus', 'penicillin'];
+const SPECIMENS = ['beaver', 'earwax', 'prion'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -86,11 +86,11 @@ for (const id of SPECIMENS) {
 }
 
 // ---------- 回归：上一轮实验页 ----------
-await page.goto(`${BASE}/lab?exp=brainRegions`, { waitUntil: 'domcontentloaded' });
+await page.goto(`${BASE}/lab?exp=bloodDialysis`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(2000);
 {
   const t = await page.locator('main').innerText();
-  results.regression.brainRegions = t.includes('脑区功能探索') && t.includes('点亮一个脑区');
+  results.regression.bloodDialysis = t.includes('血液透析') && t.includes('推进 30 分钟');
 }
 
 await browser.close();
