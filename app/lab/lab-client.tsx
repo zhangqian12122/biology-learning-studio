@@ -1,7 +1,6 @@
 'use client';
 
 import { lazy, Suspense, useEffect, useRef, useState, type ComponentType, type LazyExoticComponent } from 'react';
-import Link from 'next/link';
 import {
   Activity,
   Wind,
@@ -10,7 +9,6 @@ import {
   Sun,
   Syringe,
   Thermometer,
-  ArrowRight,
   Baby,
   Bird,
   Bubbles,
@@ -752,8 +750,7 @@ export function LabClient() {
   );
 
   const bottomCards = (
-    <div className="grid gap-4 xl:grid-cols-[1.25fr_0.75fr]">
-      <section className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-5">
+    <section className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-5">
         <div className="flex items-center gap-2">
           <Lightbulb className="size-4 text-[#dfab01]" aria-hidden="true" />
           <h2 className="text-sm font-semibold text-[#37352f]">实验设计清单</h2>
@@ -770,26 +767,7 @@ export function LabClient() {
             </li>
           ))}
         </ol>
-      </section>
-
-      <section className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-5">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <p className="text-xs font-medium text-gray-500">下一步</p>
-            <h2 className="mt-1 text-sm font-semibold text-[#37352f]">用本册题目检验实验理解</h2>
-          </div>
-          <Link
-            href={`/practice?book=${experiment.relatedBook}`}
-            aria-label="前往相关题库"
-            title="前往相关题库"
-            className="inline-flex h-8 items-center gap-1.5 rounded-md bg-[#2eaadc] px-3 text-xs font-medium text-white transition-colors duration-150 hover:bg-[#2596bd] active:bg-[#1d7fa8]"
-          >
-            前往题库
-            <ArrowRight className="size-3.5" aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
-    </div>
+    </section>
   );
 
   /* ==================== 桌面：左目录 + 右内容 ==================== */
