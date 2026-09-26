@@ -579,6 +579,7 @@ export type ExperimentId =
   | 'energy'
   | 'population'
   | 'geneEngine'
+  | 'agrobacterium'
   | 'dnaExtract'
   | 'plateStreak'
   | 'wineVinegar'
@@ -1459,6 +1460,13 @@ export const experimentMeta: Record<
     relatedModule: '生态保护与人与自然',
     extension: true,
   },
+  agrobacterium: {
+    title: '农杆菌转化法',
+    kicker: '选择性必修 3 · 基因工程',
+    description: '五步看"基因快递员"送件：Bt 基因搭 T-DNA 便车，整合进棉花染色体。',
+    relatedBook: 'technology',
+    relatedModule: '基因工程与 PCR 技术',
+  },
   whaleFall: {
     title: '鲸落：深海的生命绿洲',
     kicker: '深海生态 · 课外拓展',
@@ -1793,7 +1801,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'immobilizedEnzyme', 'msgFermentation', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'humanGenome', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy', 'oxygenation'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'immobilizedEnzyme', 'msgFermentation', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'humanGenome', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy', 'oxygenation', 'agrobacterium'],
   },
 ];
 
@@ -1917,6 +1925,7 @@ export const experimentOrder: ExperimentId[] = [
   'urineFormation',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',
+  'agrobacterium',
   'dnaExtract',
   'plateStreak',
   'wineVinegar',

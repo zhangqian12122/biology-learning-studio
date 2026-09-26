@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold', 'tuberculosis'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation', 'rootNodule'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus', 'seaCucumber'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier', 'duodenum'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation', 'rootNodule', 'guttation'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -15634,7 +15634,182 @@ function RootNoduleSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 海参（会"抛内脏"的棘皮动物） ================= */
+
+function SeaCucumberSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 体形与触手 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 180 Q130 132 230 126 Q350 122 400 158 Q416 172 404 196 Q340 232 220 228 Q136 222 120 180 Z" fill="#b07a6a" stroke="#7a4a3a" strokeWidth="2.8" />
+        <path d="M136 150 q 10 -14 26 -16 M180 134 q 12 -12 28 -12 M240 126 q 12 -10 28 -8" fill="none" stroke="#7a4a3a" strokeWidth="2" opacity="0.7" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M112 ${168 + i * 12} q -22 ${i === 2 ? 2 : -8} -30 ${i === 2 ? 0 : -14}`} fill="none" stroke="#8a5a8a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="60" y="118" fontSize="12.5" fill="#8a4a7a" fontWeight="700">楯状触手（口周一圈）</text>
+        <text x="60" y="136" fontSize="12" fill="#8a4a7a">扫集泥沙"吃土"取食碎屑</text>
+      </g>
+      {/* 管足、疣足与呼吸树 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+          <path key={i} d={`M${160 + i * 34} 226 l ${i % 2 === 0 ? -5 : 5} 12`} fill="none" stroke="#e0b8a8" strokeWidth="3.2" strokeLinecap="round" />
+        ))}
+        <text x="170" y="258" fontSize="12.5" fill="#a5761d" fontWeight="700">腹面管足：水管系统驱动·慢速爬行</text>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={`w${i}`} d={`M${180 + i * 36} 138 l 8 -10`} fill="none" stroke="#7a4a3a" strokeWidth="2.6" strokeLinecap="round" />
+        ))}
+        <text x="398" y="128" fontSize="12.5" fill="#7a4a3a" fontWeight="700">背面肉刺（疣足）</text>
+        <path d="M404 176 q 20 -6 30 -20 M404 186 q 22 0 32 12" fill="none" stroke="#6a9ab0" strokeWidth="4" strokeLinecap="round" />
+        <text x="388" y="222" fontSize="12.5" fill="#3a6a8a" fontWeight="700">肛门吸入海水 → 呼吸树</text>
+        <text x="356" y="240" fontSize="12" fill="#3a6a8a">一窍双用：呼吸+排脏</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">排脏逃生：遇险把内脏从肛门喷出缠敌害——回头再整套再生，"舍得一身剐"</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">夏眠：水温超过 20°C 便迁往深水、不食不动——与冬眠对应的"夏眠"代表</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">棘皮动物门第三员（海星·海胆·海参）：体呈五辐对称·水管系统·再生能力强</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">海参 · 会"抛内脏"的棘皮动物（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 十二指肠（消化的"中转枢纽"） ================= */
+
+function DuodenumSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 胃与十二指肠走形 */}
+      <g style={dim(active, 0)}>
+        <path d="M60 84 Q60 150 96 168 Q140 186 176 172 Q196 164 204 146" fill="none" stroke="#c98a8a" strokeWidth="26" strokeLinecap="round" />
+        <text x="86" y="70" fontSize="12.5" fill="#a53030" fontWeight="700">胃（幽门出口）</text>
+        <path d="M204 146 Q224 116 252 116 Q288 118 290 156 Q290 200 252 216 Q216 230 190 214 Q166 198 158 172 Q152 148 158 128" fill="none" stroke="#d8a05a" strokeWidth="24" strokeLinecap="round" />
+        <text x="300" y="106" fontSize="12.5" fill="#8a5a2a" fontWeight="700">十二指肠：C 形弯道包绕胰头</text>
+        <text x="300" y="124" fontSize="12" fill="#8a5a2a">长 12 指（约 25 cm）·胃的下游</text>
+        <path d="M158 130 Q140 210 190 252 Q226 282 280 278" fill="none" stroke="#d8a05a" strokeWidth="20" strokeLinecap="round" opacity="0.75" />
+        <text x="286" y="300" fontSize="12" fill="#8a5a2a">→ 空肠（小肠主力段）</text>
+      </g>
+      {/* 大乳头与消化液汇合 */}
+      <g style={dim(active, 1)}>
+        <path d="M392 150 q -60 -20 -124 -6" fill="none" stroke="#8a671b" strokeWidth="5" />
+        <path d="M392 190 q -70 4 -132 28" fill="none" stroke="#c9a03a" strokeWidth="5" />
+        <circle cx="258" cy="166" r="10" fill="#e8c83a" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="396" y="146" fontSize="12.5" fill="#8a671b" fontWeight="700">胆总管（胆汁）</text>
+        <text x="396" y="192" fontSize="12.5" fill="#8a671b" fontWeight="700">胰管（胰液）</text>
+        <text x="258" y="146" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">十二指肠大乳头</text>
+        <rect x="288" y="212" width="200" height="72" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="388" y="232" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">此处发生两件大事</text>
+        <text x="388" y="252" textAnchor="middle" fontSize="11.5" fill="#a5761d">① 碳酸氢钠中和胃酸（碱性环境）</text>
+        <text x="388" y="272" textAnchor="middle" fontSize="11.5" fill="#a5761d">② 胰液·胆汁·肠液"会师"彻底消化</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">胆汁不含消化酶——只靠胆盐把脂肪乳化成微粒；真正"消化脂肪"的是胰脂肪酶</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#37585f">十二指肠溃疡比胃溃疡更常见：胃酸在这里"火力最猛"，幽门螺杆菌趁机搞破坏</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#59767c">考点：消化液中只有一种酶的器官 vs 多酶混合——胰液是"全能消化酶冠军"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">十二指肠 · 消化的"中转枢纽"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 吐水（根压的"现场证据"） ================= */
+
+function GuttationSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 清晨草叶与水珠 */}
+      <g style={dim(active, 0)}>
+        <path d="M110 300 Q104 200 128 120 Q142 84 172 68" fill="none" stroke="#3f8a3f" strokeWidth="7" strokeLinecap="round" />
+        <path d="M110 300 Q124 210 108 150 Q98 116 76 104" fill="none" stroke="#4aa54a" strokeWidth="6.4" strokeLinecap="round" />
+        <path d="M110 300 Q136 230 170 196 Q196 174 222 170" fill="none" stroke="#4aa54a" strokeWidth="6.4" strokeLinecap="round" />
+        <circle cx="172" cy="62" r="8" fill="#a8d8f0" stroke="#5a9ac9" strokeWidth="2" />
+        <circle cx="74" cy="98" r="6.5" fill="#a8d8f0" stroke="#5a9ac9" strokeWidth="2" />
+        <circle cx="226" cy="164" r="7" fill="#a8d8f0" stroke="#5a9ac9" strokeWidth="2" />
+        <circle cx="169" cy="59" r="2.2" fill="#fff" />
+        <text x="196" y="58" fontSize="12.5" fill="#3a6a8a" fontWeight="700">叶尖·叶缘"挂珠"</text>
+        <text x="52" y="76" fontSize="12" fill="#3a6a8a">清晨水稻苗床亮晶晶</text>
+      </g>
+      {/* 排水器放大与根压 */}
+      <g style={dim(active, 1)}>
+        <circle cx="300" cy="120" r="58" fill="#f2faea" stroke="#7aa87a" strokeWidth="2.6" />
+        <circle cx="300" cy="112" r="9" fill="#a8d8f0" stroke="#5a9ac9" strokeWidth="2" />
+        <path d="M300 121 l 0 18 M292 132 l 16 0" fill="none" stroke="#7aa87a" strokeWidth="3" />
+        {[0, 1, 2, 3].map((i) => (
+          <circle key={i} cx={286 + i * 10} cy={148} r="3.4" fill="#8ab88a" />
+        ))}
+        <text x="300" y="196" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">排水器放大：水孔+通水组织</text>
+        <text x="300" y="214" textAnchor="middle" fontSize="12" fill="#2f6f2a">不关闭的"泄压阀"</text>
+        <path d="M300 268 L300 232" fill="none" stroke="#4d7ea8" strokeWidth="3.4" markerEnd="url(#gutArrow)" />
+        <text x="312" y="256" fontSize="12.5" fill="#3a6a8a" fontWeight="700">根压自下而上"顶"水</text>
+        <rect x="236" y="276" width="130" height="34" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2" />
+        <text x="301" y="298" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="700">根：持续吸水产生正压</text>
+      </g>
+      {/* 对比与考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="316" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">吐水靠根压（主动正压）· 蒸腾拉力才是白天水分上升主力——两条路径别混淆</text>
+        <text x="260" y="337" textAnchor="middle" fontSize="12" fill="#a5761d">条件：土壤水足+空气湿度大+蒸腾弱（清晨·夜温高）——傍晚浇多水次日易见吐水</text>
+        <text x="260" y="357" textAnchor="middle" fontSize="11" fill="#a5761d">壮苗指标：吐水旺盛=根系吸水能力强——育秧"早晨看露"判断苗情</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">吐水 · 根压的"现场证据"（课外拓展）</text>
+      <defs>
+        <marker id="gutArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0 0 L6 3 L0 6 Z" fill="#4d7ea8" />
+        </marker>
+      </defs>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'seaCucumber',
+    name: '海参',
+    kicker: '棘皮动物 · 会"抛内脏"的生存大师（课外拓展）',
+    intro: '海参长得不起眼，本领却极端：遇到天敌时把内脏从肛门整个喷出来缠住对方，之后慢慢再生一套全新的内脏；水温超过 20°C 还会"夏眠"——迁到深水一动不动。它是棘皮动物门（海星、海胆的亲戚）里的"贴地飞行者"：靠管足在海底缓慢爬行，用触手扫食泥沙里的有机碎屑，肛门吸入的海水经"呼吸树"完成气体交换。',
+    extension: true,
+    parts: [
+      { name: '楯状触手', desc: '口周一圈树枝状触手——伸进泥沙扫集碎屑和微小生物，是"吃土"型取食者。' },
+      { name: '管足', desc: '腹面两列管足由水管系统液压驱动——棘皮动物的"标配走行装置"，慢但稳。' },
+      { name: '呼吸树', desc: '泄殖腔反复吸入海水灌进树状分叉的"呼吸树"——一窍双用：呼吸+排便+排脏出口。' },
+      { name: '排脏逃生', desc: '受攻击时剧烈收缩把内脏喷出缠绕或"投喂"敌害——数周内整套再生，再生能力顶尖。' },
+      { name: '夏眠', desc: '水温升高即迁移深水、停食停动代谢骤降——"夏眠"与冬眠同样是渡过不良环境的适应。' },
+    ],
+    Svg: SeaCucumberSvg,
+  },
+  {
+    id: 'duodenum',
+    name: '十二指肠',
+    kicker: '消化系统 · 消化的"中转枢纽"（课外拓展）',
+    intro: '十二指肠只有约 25 厘米，却是整条消化道的"中转枢纽"：胃里酸性的食糜刚到，胆总管和胰管就在十二指肠大乳头"会师"开口——胆汁乳化脂肪、胰液带来全套消化酶，碳酸氢钠中和胃酸。三大营养物质在小肠的彻底消化，很大一部分就发生在这段 C 形弯道里。它也是溃疡高发区：胃酸火力最猛，幽门螺杆菌最爱在此"搞事"。',
+    extension: true,
+    parts: [
+      { name: 'C 形弯道', desc: '起于幽门、包绕胰头——"十二指"之名来自约 12 根手指并排的长度（25 cm）。' },
+      { name: '十二指肠大乳头', desc: '胆总管与胰管的共同开口——胆汁与胰液在此汇入肠腔，是消化的"总闸门"。' },
+      { name: '碱化工程', desc: '胰液中的碳酸氢钠中和胃酸——为胰酶创造最适 pH，保护肠壁不被"酸蚀"。' },
+      { name: '消化主力', desc: '胰淀粉酶、胰蛋白酶、胰脂肪酶齐全——三大营养物质在此被彻底分解成可吸收的小分子。' },
+      { name: '溃疡高发', desc: '胃酸浓度高+幽门螺杆菌定植——十二指肠溃疡发病率高于胃溃疡，规律空腹痛是信号。' },
+    ],
+    Svg: DuodenumSvg,
+  },
+  {
+    id: 'guttation',
+    name: '吐水',
+    kicker: '植物水分代谢 · 根压的"现场证据"（课外拓展）',
+    intro: '清晨的水稻田苗床上，秧苗叶尖挂着一颗颗亮晶晶的水珠——这不是露水，是植物自己"挤"出来的：夜间蒸腾几乎停止，根却还在吸水，多余的水被根压从叶尖、叶缘的排水器顶出来，这就是吐水。吐水旺盛说明根系吸水能力强，育秧的人常用"早晨看露"判断苗情。它和蒸腾是两条不同的水分出口：一个靠根压主动推送，一个靠蒸腾拉力被动散失。',
+    extension: true,
+    parts: [
+      { name: '排水器', desc: '叶尖与叶缘的特化结构：水孔+通水组织——不关闭的"泄压阀"，专司排水。' },
+      { name: '根压', desc: '夜间根仍主动吸水、把水向上顶的正压（可达 0.1~0.2 MPa）——吐水的动力源。' },
+      { name: '发生条件', desc: '土壤水分足+空气湿度大+蒸腾弱——温暖湿润的清晨最常见，傍晚浇水过多次日更明显。' },
+      { name: '与蒸腾的区别', desc: '蒸腾经气孔散失水汽（可调节）；吐水经水孔排水滴（根压推动）——出口与动力都不同。' },
+      { name: '壮苗指标', desc: '吐水旺盛=根系生命活动旺盛、吸水能力强——"苗床早晨亮晶晶"是农民的验苗经验。' },
+    ],
+    Svg: GuttationSvg,
+  },
   {
     id: 'amphioxus',
     name: '文昌鱼',

@@ -7,32 +7,28 @@ const results = { experiment: {}, specimens: {}, regression: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：coralBleaching 珊瑚白化 ----------
-await page.goto(`${BASE}/lab?exp=coralBleaching`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：agrobacterium 农杆菌转化法 ----------
+await page.goto(`${BASE}/lab?exp=agrobacterium`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(3000);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '海洋热浪 31°C' }).click();
   for (let i = 0; i < 5; i++) {
-    await page.getByRole('button', { name: /推进一周/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(260);
+    await page.getByRole('button', { name: /推进下一步/ }).evaluate((el) => el.click());
+    await page.waitForTimeout(280);
   }
   const after = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '正常海水 26°C' }).click();
-  for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /推进一周/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(200);
-  }
-  const recovered = await page.locator('main').innerText();
-  results.experiment.open = before.includes('珊瑚白化');
-  results.experiment.interactive = after.includes('白化') && after.includes('虫黄藻');
-  results.experiment.recovery = recovered.includes('恢复') || recovered.includes('回');
+  await page.getByRole('button', { name: '重置', exact: true }).evaluate((el) => el.click());
+  await page.waitForTimeout(200);
+  const resetText = await page.locator('main').innerText();
+  results.experiment.open = before.includes('农杆菌转化法');
+  results.experiment.interactive = after.includes('抗虫棉育成') && after.includes('整合');
+  results.experiment.reset = resetText.includes('准备：目的基因');
   results.experiment.reference = after.includes('注意事项');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['amphioxus', 'bloodBrainBarrier', 'rootNodule'];
+const SPECIMENS = ['seaCucumber', 'duodenum', 'guttation'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -92,11 +88,11 @@ for (const id of SPECIMENS) {
 }
 
 // ---------- 回归：上一轮实验页 ----------
-await page.goto(`${BASE}/lab?exp=autoimmune`, { waitUntil: 'domcontentloaded' });
+await page.goto(`${BASE}/lab?exp=coralBleaching`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(2000);
 {
   const t = await page.locator('main').innerText();
-  results.regression.autoimmune = t.includes('自身免疫') && t.includes('免疫警戒度');
+  results.regression.coralBleaching = t.includes('珊瑚白化') && t.includes('推进一周');
 }
 
 await browser.close();
