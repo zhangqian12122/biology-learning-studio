@@ -651,6 +651,7 @@ export type ExperimentId =
   | 'geneticDrift'
   | 'altitudeAdaptation'
   | 'epigenetics'
+  | 'oxygenation'
   | 'energyBalance'
   | 'rhIncompatibility'
   | 'hibernation'
@@ -1390,6 +1391,14 @@ export const experimentMeta: Record<
     relatedModule: 'DNA 的复制、转录与翻译',
     extension: true,
   },
+  oxygenation: {
+    title: '大氧化事件',
+    kicker: '演化史 · 课外拓展',
+    description: '蓝细菌光合放氧改变地球：从厌氧世界到臭氧层与生命登陆。',
+    relatedBook: 'genetics',
+    relatedModule: '变异、育种与生物进化',
+    extension: true,
+  },
   energyBalance: {
     title: '能量平衡与体重管理',
     kicker: '健康与营养 · 课外拓展',
@@ -1657,7 +1666,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'immobilizedEnzyme', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'humanGenome', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'immobilizedEnzyme', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'humanGenome', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy', 'oxygenation'],
   },
 ];
 
@@ -1794,4 +1803,5 @@ export const experimentOrder: ExperimentId[] = [
   'millerUrey',
   'pasteurFlask',
   'stemCellTherapy',
+  'oxygenation',
 ];

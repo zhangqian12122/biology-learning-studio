@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -13899,7 +13899,165 @@ function CacaoSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 鼹鼠（地下"挖掘机"） ================= */
+
+function MoleSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 地下隧道 */}
+      <g style={dim(active, 0)}>
+        <path d="M50 260 q 200 -40 420 -10" fill="none" stroke="#6a5230" strokeWidth="44" strokeLinecap="round" />
+        <path d="M60 256 q 200 -30 400 -6" fill="none" stroke="#8a7248" strokeWidth="30" strokeLinecap="round" />
+        <text x="52" y="86" fontSize="12.5" fill="#6a5a2a" fontWeight="700">地下隧道：终年黑暗·缺氧高二氧化碳</text>
+      </g>
+      {/* 鼹鼠 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="250" cy="248" rx="80" ry="34" fill="#2a2a2a" stroke="#111111" strokeWidth="2.8" />
+        <circle cx="168" cy="238" r="18" fill="#2a2a2a" stroke="#111" strokeWidth="2.4" />
+        <path d="M152 232 l -12 -4 m 12 8 l -14 4" stroke="#d8b890" strokeWidth="2.6" strokeLinecap="round" />
+        <path d="M162 226 q 2 -10 10 -12" fill="none" stroke="#111" strokeWidth="2" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${170 + i * 20} 232 l ${8 - i * 3} -10`} stroke="#e8c9a0" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        {[0, 1, 2, 3].map((i) => (
+          <path key={`f${i}`} d={`M${290 + i * 34} 264 q 10 14 26 16 m -26 -16 q -2 14 8 22`} fill="none" stroke="#2a2a2a" strokeWidth="6" strokeLinecap="round" />
+        ))}
+        <path d="M326 240 q 30 -8 52 -22" fill="none" stroke="#2a2a2a" strokeWidth="10" strokeLinecap="round" />
+        <text x="386" y="188" fontSize="12.5" fill="#2a2a2a" fontWeight="700">"挖掘机"前掌（外翻）</text>
+        <text x="396" y="140" fontSize="12.5" fill="#3a3a2a" fontWeight="700">眼睛退化·几乎全盲</text>
+        <text x="396" y="160" fontSize="12" fill="#3a3a2a">靠触觉与嗅觉"看"世界</text>
+      </g>
+      {/* 适应 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="312" width="440" height="56" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="336" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">地下适应：绒毛不定向（可倒退）· 血红蛋白携氧高效· 血液 pH 缓冲力强</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">每小时挖掘 30 米隧道——"移动的地下挖掘机"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">鼹鼠 · 食虫目地下生活（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 囟门（婴儿的"天窗"） ================= */
+
+function FontanelleSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 婴儿头骨 */}
+      <g style={dim(active, 0)}>
+        <circle cx="220" cy="160" r="90" fill="#f0c9b0" stroke="#a5765a" strokeWidth="3" />
+        <path d="M220 74 v 90 m -76 -20 q 76 -30 152 0" fill="none" stroke="#a5765a" strokeWidth="2.6" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${150 + i * 140} 108 q ${70 - i * 140} -34 ${140 - i * 140} -4`} fill="none" stroke="#a5765a" strokeWidth="2.2" />
+        ))}
+        <path d="M196 60 q 24 -14 48 0 q -24 -22 -48 0 Z" fill="#f4d8c0" stroke="#a5765a" strokeWidth="2" />
+        <text x="380" y="120" fontSize="12.5" fill="#8a5a3a" fontWeight="700">颅骨 5 块"骨板"未合拢</text>
+        <text x="380" y="140" fontSize="12.5" fill="#8a5a3a" fontWeight="700">留下的柔软"天窗" = 囟门</text>
+      </g>
+      {/* 前囟后囟 */}
+      <g style={dim(active, 1)}>
+        <circle cx="220" cy="86" r="9" fill="#e8a03a" stroke="#8a671b" strokeWidth="2" />
+        <circle cx="220" cy="152" r="6" fill="#e8a03a" stroke="#8a671b" strokeWidth="1.8" />
+        <text x="48" y="248" fontSize="12.5" fill="#8a671b" fontWeight="700">前囟（菱形·约 1~2 岁闭合）</text>
+        <text x="48" y="268" fontSize="12" fill="#8a671b">后囟（三角形·出生后 2~3 个月闭合）</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">囟门的两大功能：分娩时骨板"重叠"便于通过产道 · 给快速发育的大脑留"扩建空间"</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">囟门处能看到脉搏跳动（别害怕）· 平时注意保护、避免碰撞</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">囟门早闭可能限制脑发育·长期膨隆提示颅内压升高——都是就医信号</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">囟门 · 婴儿颅骨的"天窗"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 草莓（"籽"其实不是种子） ================= */
+
+function StrawberrySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 草莓 */}
+      <g style={dim(active, 0)}>
+        <path d="M170 150 q 10 -60 90 -60 q 80 0 90 60 q 8 66 -90 122 q -98 -56 -90 -122 Z" fill="#e84a4a" stroke="#a52020" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => {
+          const ang = i * 0.85;
+          const r = 34 + (i % 3) * 16;
+          return <ellipse key={i} cx={260 + Math.cos(ang) * r * 0.9} cy={160 + Math.sin(ang) * r} rx="4.5" ry="6" fill="#f4e0a0" stroke="#8a671b" strokeWidth="1.2" transform={`rotate(${ang * 30} ${260 + Math.cos(ang) * r * 0.9} ${160 + Math.sin(ang) * r})`} />;
+        })}
+        <path d="M232 92 q 28 -20 56 0 q -28 14 -56 0 Z" fill="#5a9a3a" stroke="#2f6f2a" strokeWidth="2.2" />
+        <text x="380" y="150" fontSize="12.5" fill="#8a2a2a" fontWeight="700">红色"果肉"= 膨大的花托</text>
+        <text x="340" y="170" fontSize="12.5" fill="#8a2a2a">表面"籽"=真正的果实</text>
+      </g>
+      {/* 结构揭秘 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="252" width="210" height="86" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="151" y="276" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">草莓是"聚合果"</text>
+        <text x="151" y="300" textAnchor="middle" fontSize="11" fill="#a5761d">一朵花里许多分离的雌蕊</text>
+        <text x="151" y="322" textAnchor="middle" fontSize="11" fill="#a5761d">各自发育成小瘦果·花托变"果肉"</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="286" y="252" width="190" height="86" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="381" y="276" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">易混辨析</text>
+        <text x="381" y="300" textAnchor="middle" fontSize="10.5" fill="#37585f">草莓"籽"= 果实（瘦果）</text>
+        <text x="381" y="322" textAnchor="middle" fontSize="10.5" fill="#37585f">我们吃的"果肉" = 花托</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="346" width="440" height="24" rx="8" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="260" y="363" textAnchor="middle" fontSize="11.5" fill="#2f6f2a" fontWeight="700">无性繁殖：匍匐茎的"走茎"每隔几节长出新株——草莓的"克隆"扩散</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">草莓 · 聚合果的"身份之谜"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'mole',
+    name: '鼹鼠',
+    kicker: '食虫目 · 地下"挖掘机"（课外拓展）',
+    intro: '鼹鼠一生几乎全在黑暗的地下隧道中度过：前掌外翻像两把"铲子"，每小时能掘进 30 米；眼睛退化得几乎全盲，却拥有灵敏的触觉与嗅觉。它的绒毛不指向任何方向（可以倒退），血液携氧能力超强——完美适应地下缺氧的"封闭空间"。',
+    extension: true,
+    parts: [
+      { name: '挖掘前掌', desc: '外翻的宽大前掌像两把"铁锹"，配合楔形身体与短毛——挖掘阻力降到最低。' },
+      { name: '退化眼睛', desc: '眼睛极小、被毛发覆盖（有的种连眼睛都闭合）——地下世界"用不着"视觉。' },
+      { name: '超灵敏触觉', desc: '鼻尖的艾默氏器官（Eimer organ）极其灵敏，能"触摸感知"猎物位置——黑暗中的"雷达"。' },
+      { name: '缺氧耐受', desc: '隧道内氧气少、二氧化碳多：鼹鼠血液携氧力强、对高二氧化碳耐受——与高原适应"殊途同归"（低氧耐受）。' },
+      { name: '生态角色', desc: '挖掘隧道疏松土壤、捕食地下害虫——农民眼中的"松土工程师"（虽然会拱坏草坪）。' },
+    ],
+    Svg: MoleSvg,
+  },
+  {
+    id: 'fontanelle',
+    name: '囟门',
+    kicker: '骨骼 · 婴儿颅骨的"天窗"（课外拓展）',
+    intro: '新生儿的颅骨由 5 块骨板组成，骨板之间还没完全闭合，留下的柔软区域就是囟门——头顶的菱形"天窗"。囟门不是缺陷而是"智慧设计"：分娩时骨板可以轻微重叠方便通过产道；出生后给快速发育的大脑留出"扩建空间"。前囟约 1~2 岁闭合，后囟出生后 2~3 个月就闭合。',
+    extension: true,
+    parts: [
+      { name: '颅骨骨板', desc: '新生儿颅骨分成 5 块骨板，由结缔组织膜连接——柔软的头有利于分娩与脑的快速生长。' },
+      { name: '前囟与后囟', desc: '前囟（菱形·较大）约 1~2 岁闭合；后囟（三角形·较小）出生后 2~3 个月闭合。' },
+      { name: '能看见脉搏', desc: '囟门下方就是脑与血管——轻轻触摸能感到脉搏跳动（别用力按压）。' },
+      { name: '健康信号', desc: '囟门明显膨隆提示颅内压升高（脑膜炎等）；明显凹陷提示脱水——都是就医信号。' },
+      { name: '闭合时间', desc: '闭合过早可能限制脑发育（狭颅症）；迟迟不闭可能与佝偻病（缺维生素 D）相关。' },
+    ],
+    Svg: FontanelleSvg,
+  },
+  {
+    id: 'strawberry',
+    name: '草莓',
+    kicker: '蔷薇科 · "籽"其实不是种子（课外拓展）',
+    intro: '草莓的"身份"常被误解：红色香甜的"果肉"其实是膨大的花托，表面密布的"籽"才是真正的果实（瘦果）——一朵花里有许许多多分离的雌蕊，各自发育成小瘦果，花托则变成"果肉托盘"，这种果实叫"聚合果"。草莓还会用匍匐茎进行无性繁殖——"走茎"每隔几节就长出一株新的小苗。',
+    extension: true,
+    parts: [
+      { name: '聚合果', desc: '一朵花中多个离生雌蕊各自发育成小瘦果，聚集在膨大的花托上——与"单果"（桃·番茄）结构不同。' },
+      { name: '花托变"果肉"', desc: '食用的红色部分由花托发育而来——植物学上吃的不是"果皮"，是花托组织。' },
+      { name: '瘦果即果实', desc: '表面"籽"才是真正的果实：内含一粒种子——"籽在果外"的奇特结构。' },
+      { name: '匍匐茎繁殖', desc: '走茎（匍匐茎）每隔几节生根发芽成新株——无性繁殖"克隆"出与母株基因相同的后代。' },
+      { name: '授粉与果形', desc: '瘦果发育需要授粉刺激花托膨大——授粉不均会长出"歪瓜"草莓（蜜蜂的功劳）。' },
+    ],
+    Svg: StrawberrySvg,
+  },
   {
     id: 'zebra',
     name: '斑马',
