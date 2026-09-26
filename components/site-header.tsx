@@ -16,8 +16,8 @@ export function SiteHeader({ active }: { active: HeaderNavKey }) {
     <header className="sticky top-0 z-40 border-b border-gray-200 bg-white shadow-[0_4px_0_#c6d4d4]">
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-md border border-gray-200 bg-[#2eaadc] text-white shadow-sm transition-transform duration-300 hover:-rotate-3 hover:scale-105">
-            <Microscope className="size-5" aria-hidden="true" />
+          <div className="flex size-10 -rotate-2 items-center justify-center rounded-md border-2 border-black bg-[#ffe66d] text-black">
+            <Microscope className="size-5" strokeWidth={2.5} aria-hidden="true" />
           </div>
           <div>
             <p className="text-base font-bold leading-none text-[#37352f]">福建高中生物学习站</p>
