@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold', 'tuberculosis'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus', 'seaCucumber'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier', 'duodenum'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation', 'rootNodule', 'guttation'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus', 'seaCucumber', 'gecko'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier', 'duodenum', 'swallowing'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation', 'rootNodule', 'guttation', 'coconut'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -15764,7 +15764,181 @@ function GuttationSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 壁虎（把"范德华力"穿在脚上） ================= */
+
+function GeckoSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 爬墙体形 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 176 Q150 140 220 138 Q300 136 340 158 Q356 168 352 182 Q310 204 230 202 Q156 200 120 176 Z" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="2.8" />
+        <path d="M352 176 Q390 170 428 182 Q452 190 470 186" fill="none" stroke="#7ab86a" strokeWidth="14" strokeLinecap="round" />
+        <circle cx="146" cy="160" r="17" fill="#8ec97a" stroke="#3f7f3a" strokeWidth="2.4" />
+        <circle cx="141" cy="155" r="5.5" fill="#141414" />
+        <circle cx="142.5" cy="153.5" r="1.8" fill="#fff" />
+        <path d="M120 178 q -14 4 -22 12" fill="none" stroke="#3f7f3a" strokeWidth="3" strokeLinecap="round" />
+        <text x="70" y="112" fontSize="12.5" fill="#3f7f3a" fontWeight="700">大眼无眼睑：用舌头"擦眼镜"</text>
+        <text x="358" y="222" fontSize="12.5" fill="#3f7f3a" fontWeight="700">断尾：自切保命再长回</text>
+      </g>
+      {/* 脚垫与匙毛放大 */}
+      <g style={dim(active, 1)}>
+        <path d="M180 236 l -18 26 M240 240 l 6 30 M300 238 l -2 30" fill="none" stroke="#8ec97a" strokeWidth="6" strokeLinecap="round" />
+        {[0, 1, 2, 3].map((i) => (
+          <ellipse key={i} cx={158 + i * 46} cy={270 + (i % 2) * 6} rx="16" ry="8" fill="#c9e8b8" stroke="#3f7f3a" strokeWidth="2" />
+        ))}
+        <circle cx="392" cy="98" r="62" fill="#f2faea" stroke="#7aa87a" strokeWidth="2.6" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+          const ang = (i * Math.PI) / 4;
+          return <path key={i} d={`M392 98 L${392 + Math.cos(ang) * 34} ${98 + Math.sin(ang) * 34}`} fill="none" stroke="#8ab88a" strokeWidth="3" strokeLinecap="round" />;
+        })}
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+          const ang = (i * Math.PI) / 4;
+          const tipX = 392 + Math.cos(ang) * 34;
+          const tipY = 98 + Math.sin(ang) * 34;
+          return <path key={`t${i}`} d={`M${tipX} ${tipY} l ${i % 2 === 0 ? 12 : -12} 8`} fill="none" stroke="#4aa54a" strokeWidth="2.4" strokeLinecap="round" />;
+        })}
+        <text x="392" y="176" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">脚垫放大：刚毛末端分出匙毛</text>
+        <text x="392" y="194" textAnchor="middle" fontSize="12" fill="#2f6f2a">数百万根同时"贴墙"——范德华力</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">不是"吸盘"也不是"胶水"：分子间范德华力叠加——每根刚毛力极小，百万根聚沙成塔</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">断尾自切：尾椎有"裂缝面"+自动蜷动分散捕食者注意——再生的是软骨尾</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">仿生成果：壁虎胶带·爬壁机器人——"结构与功能观"的极限案例</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">壁虎 · 把"范德华力"穿在脚上（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 吞咽（会厌的"双保险封口"） ================= */
+
+function SwallowingSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 咽喉侧剖面 */}
+      <g style={dim(active, 0)}>
+        <path d="M96 96 Q140 84 184 92" fill="none" stroke="#c98a8a" strokeWidth="18" strokeLinecap="round" />
+        <text x="100" y="76" fontSize="12.5" fill="#a53030" fontWeight="700">口腔：舌把食团推向咽</text>
+        <path d="M196 86 Q232 96 236 132 Q238 156 226 176" fill="none" stroke="#c98a4a" strokeWidth="16" strokeLinecap="round" />
+        <ellipse cx="236" cy="182" rx="14" ry="9" fill="#f2e2c9" stroke="#a5761d" strokeWidth="2.2" />
+        <text x="258" y="120" fontSize="12.5" fill="#8a671b" fontWeight="700">咽（食物与空气的十字路口）</text>
+        <path d="M226 196 Q222 236 216 282" fill="none" stroke="#4d7ea8" strokeWidth="15" strokeLinecap="round" />
+        <text x="140" y="300" fontSize="12.5" fill="#2c5a84" fontWeight="700">食道：蠕动推食入胃</text>
+        <path d="M252 196 Q268 240 288 276" fill="none" stroke="#7aa87a" strokeWidth="15" strokeLinecap="round" />
+        <text x="300" y="298" fontSize="12.5" fill="#2f6f2a" fontWeight="700">气管（通肺）</text>
+      </g>
+      {/* 会厌封口机制 */}
+      <g style={dim(active, 1)}>
+        <path d="M246 190 q -16 -20 -4 -34" fill="none" stroke="#a53030" strokeWidth="6" strokeLinecap="round" />
+        <text x="268" y="164" fontSize="12.5" fill="#a53030" fontWeight="700">会厌软骨盖住喉口（封气管）</text>
+        <path d="M180 78 q 30 -18 58 -2" fill="none" stroke="#8a5aa5" strokeWidth="5" strokeLinecap="round" />
+        <text x="250" y="66" fontSize="12.5" fill="#5a4390" fontWeight="700">软腭上抬封住鼻咽（防倒流鼻腔）</text>
+        <rect x="316" y="204" width="180" height="82" rx="10" fill="#eef4fb" stroke="#5a7aa5" strokeWidth="2.2" />
+        <text x="406" y="226" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">吞咽瞬间（约 0.5 秒）</text>
+        <text x="406" y="246" textAnchor="middle" fontSize="11.5" fill="#37585f">呼吸自动暂停 · 三处"封口"</text>
+        <text x="406" y="266" textAnchor="middle" fontSize="11.5" fill="#37585f">软腭封鼻 · 会厌封喉 · 声门闭合</text>
+        <text x="406" y="282" textAnchor="middle" fontSize="10.5" fill="#59767c">前半段随意（可停）· 后半段纯反射（停不下）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="316" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">吃饭说笑=封口被打断：食物误入气管→黏膜受刺激→剧烈咳嗽反射"排异"</text>
+        <text x="260" y="337" textAnchor="middle" fontSize="12" fill="#a5761d">食道蠕动靠环肌·纵肌交替收缩——即使倒立也能把食物"推"进胃（不是靠重力）</text>
+        <text x="260" y="357" textAnchor="middle" fontSize="11" fill="#a5761d">考点：咽是消化与呼吸的共同通道——"十字路口"由会厌与软腭分流</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">吞咽 · 会厌的"双保险封口"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 椰子（会"航海"的种子） ================= */
+
+function CoconutSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 椰子剖面 */}
+      <g style={dim(active, 0)}>
+        <circle cx="200" cy="180" r="96" fill="#8a6a3a" stroke="#5a4322" strokeWidth="3" />
+        <circle cx="200" cy="180" r="78" fill="#c9a86a" stroke="#8a6a3a" strokeWidth="2.4" />
+        <circle cx="200" cy="180" r="58" fill="#f5f0e2" stroke="#a5761d" strokeWidth="2.2" />
+        <circle cx="200" cy="184" r="38" fill="#bfe0ee" stroke="#7ab0c9" strokeWidth="2" />
+        <path d="M188 168 q 14 -8 26 2 q -6 14 -22 10 q -8 -6 -4 -12" fill="#f5f0e2" stroke="#a5761d" strokeWidth="1.8" />
+      </g>
+      {/* 结构标注 */}
+      <g style={dim(active, 1)}>
+        <line x1="120" y1="112" x2="76" y2="84" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="40" y="72" fontSize="12.5" fill="#7a4a2a" fontWeight="700">外果皮：光滑革质</text>
+        <line x1="126" y1="258" x2="82" y2="286" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="40" y="298" fontSize="12.5" fill="#8a671b" fontWeight="700">中果皮：纤维层=救生圈</text>
+        <text x="40" y="316" fontSize="12" fill="#8a671b">可漂在海上数月·随洋流远征</text>
+        <line x1="286" y1="130" x2="330" y2="102" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="336" y="98" fontSize="12.5" fill="#5a4322" fontWeight="700">内果皮：坚硬"椰壳"</text>
+        <text x="336" y="116" fontSize="12" fill="#5a4322">保护胚与胚乳</text>
+        <line x1="286" y1="204" x2="342" y2="228" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="348" y="226" fontSize="12.5" fill="#2f6f2a" fontWeight="700">椰肉：固体胚乳（成熟中形成）</text>
+        <line x1="292" y1="258" x2="356" y2="282" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="362" y="280" fontSize="12.5" fill="#3a6a8a" fontWeight="700">椰子水：液体胚乳</text>
+        <text x="362" y="298" fontSize="12" fill="#3a6a8a">早期液态胚乳·无菌</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="326" width="448" height="46" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="344" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">椰子是"种子+果实"合一：三个发芽孔只有一个真孔</text>
+        <text x="260" y="363" textAnchor="middle" fontSize="11.5" fill="#a5761d">胚从这里突破——新苗靠"自带营养液"起家</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">椰子 · 会"航海"的种子（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'gecko',
+    name: '壁虎',
+    kicker: '爬行纲 · 把"范德华力"穿在脚上（课外拓展）',
+    intro: '壁虎能在天花板倒挂狂奔，靠的不是吸盘也不是胶水：每只脚垫上数百万根刚毛，每根刚毛末端又分出上千根"匙毛"——亿万根一起贴上墙面时，分子间的范德华力叠加起来足以撑起整个身体。它还有一堆"绝活"：没有眼睑就用舌头舔眼保洁、遇到危险从尾椎的"裂缝面"自切断尾、断尾还会原地扭动吸引捕食者注意。',
+    extension: true,
+    parts: [
+      { name: '脚垫刚毛', desc: '每根刚毛末端再分支成上千匙毛——贴墙面积趋近分子级，范德华力"聚沙成塔"托起全身。' },
+      { name: '舔眼保洁', desc: '没有可动的眼睑——眼球被透明鳞片覆盖，脏了就用长舌头舔一遍"擦眼镜"。' },
+      { name: '断尾自切', desc: '尾椎上有特化"裂缝面"，遇险自动断裂；断尾原地蜷曲扭动吸引注意——再生的是软骨尾（不如原装）。' },
+      { name: '夜视之眼', desc: '大瞳孔+对颜色敏感的视锥细胞——部分壁虎是已知夜视能力最强的脊椎动物之一。' },
+      { name: '仿生应用', desc: '壁虎胶带、爬壁机器人——科学家照着匙毛结构造出可反复粘贴的干燥黏胶。' },
+    ],
+    Svg: GeckoSvg,
+  },
+  {
+    id: 'swallowing',
+    name: '吞咽',
+    kicker: '消化与呼吸 · 会厌的"双保险封口"（课外拓展）',
+    intro: '吞咽是全身最精密的"协同动作"之一：舌把食团推向咽部后，身体在约半秒内自动完成一连串反射——软腭上抬封住鼻咽、会厌软骨盖住喉口、声门闭合、呼吸暂停，食团被精准送进食道。正因为咽是消化与呼吸的"十字路口"，吃饭时说笑会打断这套封口程序，食物误入气管就引发剧烈咳嗽。而食道靠蠕动推食，即使倒立也能把食物送进胃。',
+    extension: true,
+    parts: [
+      { name: '随意阶段', desc: '舌头把咀嚼好的食团顶向上颚、推向咽部——这一步受意识控制（想咽才咽）。' },
+      { name: '反射阶段', desc: '食团一触咽壁，反射自动"接力"：软腭封鼻咽、会厌封喉口、声门闭合——三重封口。' },
+      { name: '呼吸暂停', desc: '吞咽瞬间呼吸自动停约 0.5 秒——防止食物在"路口"与空气撞车。' },
+      { name: '食道蠕动', desc: '环肌与纵肌交替收缩形成"波浪"——食物下行靠肌肉推力而非重力，倒立照样能咽。' },
+      { name: '呛咳保护', desc: '封口失败食物落入气管——黏膜受刺激立即引发剧烈咳嗽反射，把异物"弹射"出去。' },
+    ],
+    Svg: SwallowingSvg,
+  },
+  {
+    id: 'coconut',
+    name: '椰子',
+    kicker: '果实与种子 · 会"航海"的营养罐（课外拓展）',
+    intro: '椰子是最会"旅行"的果实：厚厚的纤维中果皮像救生圈，让它在海上漂几个月、随洋流远征数千公里上岸发芽。剖开看，它是一座"双层营养罐"——早期的椰子水是液体胚乳，发育中逐渐在内壁凝成固体胚乳（椰肉）；坚硬的内果皮保护着胚，三个"发芽孔"里只有一个是真孔，胚就从这里突破，靠着自带营养长成椰苗。',
+    extension: true,
+    parts: [
+      { name: '三层果皮', desc: '外果皮光滑革质、中果皮是厚纤维层（船用缆绳原料）、内果皮是坚硬的"椰壳"。' },
+      { name: '液体胚乳', desc: '椰子水=发育早期的液态胚乳——营养液无菌，历史上曾用作静脉补液的应急来源。' },
+      { name: '固体胚乳', desc: '成熟过程中胚乳在壳内壁凝成白色"椰肉"——脂肪与多糖储备，供发芽头几个月消耗。' },
+      { name: '海漂传播', desc: '纤维中果皮防水又浮力大——随洋流漂上千公里仍能发芽，所以椰林遍布热带海岸。' },
+      { name: '发芽孔', desc: '椰子顶部三个"眼"只有一个是真孔（另两个被封死）——胚由此突破，先长叶后扎根。' },
+    ],
+    Svg: CoconutSvg,
+  },
   {
     id: 'seaCucumber',
     name: '海参',

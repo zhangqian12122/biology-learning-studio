@@ -1,0 +1,130 @@
+/* ================= 壁虎（把"范德华力"穿在脚上） ================= */
+
+function GeckoSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 爬墙体形 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 176 Q150 140 220 138 Q300 136 340 158 Q356 168 352 182 Q310 204 230 202 Q156 200 120 176 Z" fill="#7ab86a" stroke="#3f7f3a" strokeWidth="2.8" />
+        <path d="M352 176 Q390 170 428 182 Q452 190 470 186" fill="none" stroke="#7ab86a" strokeWidth="14" strokeLinecap="round" />
+        <circle cx="146" cy="160" r="17" fill="#8ec97a" stroke="#3f7f3a" strokeWidth="2.4" />
+        <circle cx="141" cy="155" r="5.5" fill="#141414" />
+        <circle cx="142.5" cy="153.5" r="1.8" fill="#fff" />
+        <path d="M120 178 q -14 4 -22 12" fill="none" stroke="#3f7f3a" strokeWidth="3" strokeLinecap="round" />
+        <text x="70" y="112" fontSize="12.5" fill="#3f7f3a" fontWeight="700">大眼无眼睑：用舌头"擦眼镜"</text>
+        <text x="380" y="222" fontSize="12.5" fill="#3f7f3a" fontWeight="700">易断的尾：自切保命再长回</text>
+      </g>
+      {/* 脚垫与匙毛放大 */}
+      <g style={dim(active, 1)}>
+        <path d="M180 236 l -18 26 M240 240 l 6 30 M300 238 l -2 30" fill="none" stroke="#8ec97a" strokeWidth="6" strokeLinecap="round" />
+        {[0, 1, 2, 3].map((i) => (
+          <ellipse key={i} cx={158 + i * 46} cy={270 + (i % 2) * 6} rx="16" ry="8" fill="#c9e8b8" stroke="#3f7f3a" strokeWidth="2" />
+        ))}
+        <circle cx="392" cy="98" r="62" fill="#f2faea" stroke="#7aa87a" strokeWidth="2.6" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+          const ang = (i * Math.PI) / 4;
+          return <path key={i} d={`M392 98 L${392 + Math.cos(ang) * 34} ${98 + Math.sin(ang) * 34}`} fill="none" stroke="#8ab88a" strokeWidth="3" strokeLinecap="round" />;
+        })}
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+          const ang = (i * Math.PI) / 4;
+          const tipX = 392 + Math.cos(ang) * 34;
+          const tipY = 98 + Math.sin(ang) * 34;
+          return <path key={`t${i}`} d={`M${tipX} ${tipY} l ${i % 2 === 0 ? 12 : -12} 8`} fill="none" stroke="#4aa54a" strokeWidth="2.4" strokeLinecap="round" />;
+        })}
+        <text x="392" y="176" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">脚垫放大：刚毛末端分出匙毛</text>
+        <text x="392" y="194" textAnchor="middle" fontSize="12" fill="#2f6f2a">数百万根同时"贴墙"——范德华力</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">不是"吸盘"也不是"胶水"：分子间范德华力叠加——每根刚毛力极小，百万根聚沙成塔</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">断尾自切：尾椎有"裂缝面"+自动蜷动分散捕食者注意——再生的是软骨尾</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">仿生成果：壁虎胶带·爬壁机器人——"结构与功能观"的极限案例</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">壁虎 · 把"范德华力"穿在脚上（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 吞咽（会厌的"双保险封口"） ================= */
+
+function SwallowingSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 咽喉侧剖面 */}
+      <g style={dim(active, 0)}>
+        <path d="M96 96 Q140 84 184 92" fill="none" stroke="#c98a8a" strokeWidth="18" strokeLinecap="round" />
+        <text x="100" y="76" fontSize="12.5" fill="#a53030" fontWeight="700">口腔：舌把食团推向咽</text>
+        <path d="M196 86 Q232 96 236 132 Q238 156 226 176" fill="none" stroke="#c98a4a" strokeWidth="16" strokeLinecap="round" />
+        <ellipse cx="236" cy="182" rx="14" ry="9" fill="#f2e2c9" stroke="#a5761d" strokeWidth="2.2" />
+        <text x="258" y="120" fontSize="12.5" fill="#8a671b" fontWeight="700">咽（食物与空气的十字路口）</text>
+        <path d="M226 196 Q222 236 216 282" fill="none" stroke="#4d7ea8" strokeWidth="15" strokeLinecap="round" />
+        <text x="140" y="300" fontSize="12.5" fill="#2c5a84" fontWeight="700">食道：蠕动推食入胃</text>
+        <path d="M252 196 Q268 240 288 276" fill="none" stroke="#7aa87a" strokeWidth="15" strokeLinecap="round" />
+        <text x="300" y="298" fontSize="12.5" fill="#2f6f2a" fontWeight="700">气管（通肺）</text>
+      </g>
+      {/* 会厌封口机制 */}
+      <g style={dim(active, 1)}>
+        <path d="M246 190 q -16 -20 -4 -34" fill="none" stroke="#a53030" strokeWidth="6" strokeLinecap="round" />
+        <text x="268" y="164" fontSize="12.5" fill="#a53030" fontWeight="700">会厌软骨盖住喉口（封气管）</text>
+        <path d="M180 78 q 30 -18 58 -2" fill="none" stroke="#8a5aa5" strokeWidth="5" strokeLinecap="round" />
+        <text x="250" y="66" fontSize="12.5" fill="#5a4390" fontWeight="700">软腭上抬封住鼻咽（防倒流鼻腔）</text>
+        <rect x="316" y="204" width="180" height="82" rx="10" fill="#eef4fb" stroke="#5a7aa5" strokeWidth="2.2" />
+        <text x="406" y="226" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">吞咽瞬间（约 0.5 秒）</text>
+        <text x="406" y="246" textAnchor="middle" fontSize="11.5" fill="#37585f">呼吸自动暂停 · 三处"封口"</text>
+        <text x="406" y="266" textAnchor="middle" fontSize="11.5" fill="#37585f">软腭封鼻 · 会厌封喉 · 声门闭合</text>
+        <text x="406" y="282" textAnchor="middle" fontSize="10.5" fill="#59767c">前半段随意（可停）· 后半段纯反射（停不下）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="316" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">吃饭说笑=封口被打断：食物误入气管→黏膜受刺激→剧烈咳嗽反射"排异"</text>
+        <text x="260" y="337" textAnchor="middle" fontSize="12" fill="#a5761d">食道蠕动靠环肌·纵肌交替收缩——即使倒立也能把食物"推"进胃（不是靠重力）</text>
+        <text x="260" y="357" textAnchor="middle" fontSize="11" fill="#a5761d">考点：咽是消化与呼吸的共同通道——"十字路口"由会厌与软腭分流</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">吞咽 · 会厌的"双保险封口"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 椰子（会"航海"的种子） ================= */
+
+function CoconutSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 椰子剖面 */}
+      <g style={dim(active, 0)}>
+        <circle cx="200" cy="180" r="96" fill="#8a6a3a" stroke="#5a4322" strokeWidth="3" />
+        <circle cx="200" cy="180" r="78" fill="#c9a86a" stroke="#8a6a3a" strokeWidth="2.4" />
+        <circle cx="200" cy="180" r="58" fill="#f5f0e2" stroke="#a5761d" strokeWidth="2.2" />
+        <circle cx="200" cy="184" r="38" fill="#bfe0ee" stroke="#7ab0c9" strokeWidth="2" />
+        <path d="M188 168 q 14 -8 26 2 q -6 14 -22 10 q -8 -6 -4 -12" fill="#f5f0e2" stroke="#a5761d" strokeWidth="1.8" />
+        <text x="200" y="304" textAnchor="middle" fontSize="12" fill="#59767c">从外到内：外果皮 → 纤维中果皮 → 硬壳 → 椰肉 → 椰子水</text>
+      </g>
+      {/* 结构标注 */}
+      <g style={dim(active, 1)}>
+        <line x1="120" y1="112" x2="76" y2="84" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="40" y="72" fontSize="12.5" fill="#7a4a2a" fontWeight="700">外果皮：光滑革质</text>
+        <line x1="126" y1="258" x2="82" y2="286" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="40" y="304" fontSize="12.5" fill="#8a671b" fontWeight="700">中果皮：纤维层=救生圈</text>
+        <text x="40" y="322" fontSize="12" fill="#8a671b">可漂在海上数月·随洋流远征</text>
+        <line x1="286" y1="130" x2="330" y2="102" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="336" y="98" fontSize="12.5" fill="#5a4322" fontWeight="700">内果皮：坚硬"椰壳"</text>
+        <text x="336" y="116" fontSize="12" fill="#5a4322">保护胚与胚乳</text>
+        <line x1="286" y1="204" x2="342" y2="228" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="348" y="226" fontSize="12.5" fill="#2f6f2a" fontWeight="700">椰肉：固体胚乳（成熟中形成）</text>
+        <line x1="292" y1="258" x2="356" y2="282" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="362" y="280" fontSize="12.5" fill="#3a6a8a" fontWeight="700">椰子水：液体胚乳</text>
+        <text x="362" y="298" fontSize="12" fill="#3a6a8a">发育早期的"营养液"（无菌！）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="334" width="448" height="34" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="356" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">椰子是"种子+果实"合一：三个发芽孔只有一个真孔——胚从这里突破，长出的苗靠喝"自带营养液"起家</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">椰子 · 会"航海"的种子（课外拓展）</text>
+    </svg>
+  );
+}
+
+export const SPECIMENS: Specimen[] = [

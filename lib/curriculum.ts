@@ -680,6 +680,7 @@ export type ExperimentId =
   | 'photoperiodism'
   | 'geneTherapy'
   | 'crossingOver'
+  | 'polygenicTraits'
   | 'apicalDominance'
   | 'doubleFertilization'
   | 'markRecapture'
@@ -1467,6 +1468,13 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '基因工程与 PCR 技术',
   },
+  polygenicTraits: {
+    title: '多基因遗传与数量性状',
+    kicker: '必修 2 · 遗传与进化',
+    description: '从 1 对到 4 对基因再加环境修饰：看离散比例如何"长成"钟形曲线。',
+    relatedBook: 'genetics',
+    relatedModule: '遗传规律与配子分析',
+  },
   whaleFall: {
     title: '鲸落：深海的生命绿洲',
     kicker: '深海生态 · 课外拓展',
@@ -1786,7 +1794,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'humanTraits', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'geneticDrift', 'epigenetics', 'antibioticResistance', 'phageTherapy', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'humanTraits', 'crossingOver', 'polygenicTraits', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'geneticDrift', 'epigenetics', 'antibioticResistance', 'phageTherapy', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1839,6 +1847,7 @@ export const experimentOrder: ExperimentId[] = [
   'transpiration',
   'photoperiodism',
   'crossingOver',
+  'polygenicTraits',
   'doubleFertilization',
   'grafting',
   'mitosisObservation',

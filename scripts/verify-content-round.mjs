@@ -7,28 +7,30 @@ const results = { experiment: {}, specimens: {}, regression: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：agrobacterium 农杆菌转化法 ----------
-await page.goto(`${BASE}/lab?exp=agrobacterium`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：polygenicTraits 多基因遗传 ----------
+await page.goto(`${BASE}/lab?exp=polygenicTraits`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(3000);
 {
   const before = await page.locator('main').innerText();
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole('button', { name: /推进下一步/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(280);
-  }
-  const after = await page.locator('main').innerText();
-  await page.getByRole('button', { name: '重置', exact: true }).evaluate((el) => el.click());
-  await page.waitForTimeout(200);
-  const resetText = await page.locator('main').innerText();
-  results.experiment.open = before.includes('农杆菌转化法');
-  results.experiment.interactive = after.includes('抗虫棉育成') && after.includes('整合');
-  results.experiment.reset = resetText.includes('准备：目的基因');
-  results.experiment.reference = after.includes('注意事项');
+  await page.locator('button', { hasText: '单基因（1 对等位基因）' }).click();
+  await page.waitForTimeout(280);
+  const singleText = await page.locator('main').innerText();
+  await page.locator('button', { hasText: '多基因 + 环境修饰' }).click();
+  await page.waitForTimeout(280);
+  const envText = await page.locator('main').innerText();
+  await page.getByRole('button', { name: /重新抽样/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(280);
+  const resampled = await page.locator('main').innerText();
+  results.experiment.open = before.includes('多基因遗传');
+  results.experiment.single = singleText.includes('1 : 2 : 1') || singleText.includes('离散');
+  results.experiment.env = envText.includes('环境') && envText.includes('钟形');
+  results.experiment.resample = resampled !== envText;
+  results.experiment.reference = envText.includes('注意事项');
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['seaCucumber', 'duodenum', 'guttation'];
+const SPECIMENS = ['gecko', 'swallowing', 'coconut'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -88,11 +90,11 @@ for (const id of SPECIMENS) {
 }
 
 // ---------- 回归：上一轮实验页 ----------
-await page.goto(`${BASE}/lab?exp=coralBleaching`, { waitUntil: 'domcontentloaded' });
+await page.goto(`${BASE}/lab?exp=agrobacterium`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(2000);
 {
   const t = await page.locator('main').innerText();
-  results.regression.coralBleaching = t.includes('珊瑚白化') && t.includes('推进一周');
+  results.regression.agrobacterium = t.includes('农杆菌转化法') && t.includes('推进下一步');
 }
 
 await browser.close();
