@@ -144,6 +144,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   whaleFall: Fish,
   netPhotosynthesis: Leaf,
   germinationConditions: Sprout,
+  phageTherapy: X,
   msgFermentation: Wine,
   threeDefenses: KeyRound,
   digestionJourney: UtensilsCrossed,
@@ -285,6 +286,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   whaleFall: () => import('@/components/lab/whale-fall-lab').then(({ WhaleFallLab }) => ({ default: WhaleFallLab })),
   netPhotosynthesis: () => import('@/components/lab/net-photosynthesis-lab').then(({ NetPhotosynthesisLab }) => ({ default: NetPhotosynthesisLab })),
   germinationConditions: () => import('@/components/lab/germination-lab').then(({ GerminationLab }) => ({ default: GerminationLab })),
+  phageTherapy: () => import('@/components/lab/phage-therapy-lab').then(({ PhageTherapyLab }) => ({ default: PhageTherapyLab })),
   msgFermentation: () => import('@/components/lab/msg-fermentation-lab').then(({ MsgFermentationLab }) => ({ default: MsgFermentationLab })),
   threeDefenses: () => import('@/components/lab/three-defenses-lab').then(({ ThreeDefensesLab }) => ({ default: ThreeDefensesLab })),
   digestionJourney: () => import('@/components/lab/digestion-journey-lab').then(({ DigestionJourneyLab }) => ({ default: DigestionJourneyLab })),
@@ -400,6 +402,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   whaleFall: ['whale'],
   netPhotosynthesis: ['chloroplast'],
   germinationConditions: ['seedCompare'],
+  phageTherapy: ['phage'],
   ecoStability: ['ecosystemTypes'],
 };
 

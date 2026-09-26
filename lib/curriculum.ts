@@ -654,6 +654,7 @@ export type ExperimentId =
   | 'oxygenation'
   | 'nitrogenFixation'
   | 'ecoFootprint'
+  | 'phageTherapy'
   | 'transplantRejection'
   | 'whaleFall'
   | 'netPhotosynthesis'
@@ -1425,6 +1426,14 @@ export const experimentMeta: Record<
     relatedModule: '生态保护与人与自然',
     extension: true,
   },
+  phageTherapy: {
+    title: '噬菌体治疗',
+    kicker: '微生物应用 · 课外拓展',
+    description: '超级细菌的克星：噬菌体"精确制导"裂解耐药菌的模拟。',
+    relatedBook: 'technology',
+    relatedModule: '免疫调节与健康',
+    extension: true,
+  },
   transplantRejection: {
     title: '器官移植与免疫排斥',
     kicker: '免疫调节 · 医学应用',
@@ -1743,7 +1752,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'humanTraits', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'geneticDrift', 'epigenetics', 'antibioticResistance', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'humanTraits', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'geneticDrift', 'epigenetics', 'antibioticResistance', 'phageTherapy', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1820,6 +1829,7 @@ export const experimentOrder: ExperimentId[] = [
   'geneticDrift',
   'epigenetics',
   'antibioticResistance',
+  'phageTherapy',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
   'bloodLayers',
