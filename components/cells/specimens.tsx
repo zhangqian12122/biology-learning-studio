@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -14694,7 +14694,174 @@ function WelwitschiaSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 眼镜蛇（毒液的科学） ================= */
+
+function CobraSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 膨颈姿态 */}
+      <g style={dim(active, 0)}>
+        <path d="M240 250 q -20 -60 -60 -70 q -40 -12 -50 30 q -8 36 30 46 q 40 10 80 -6" fill="#8a6a3a" stroke="#5a3a0a" strokeWidth="2.8" />
+        <path d="M330 246 q 20 -60 -14 -70 q -36 -12 -52 28 q -12 34 20 48 q 30 12 46 -6" fill="#8a6a3a" stroke="#5a3a0a" strokeWidth="2.8" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${196 + i * 22} 190 q 8 20 2 38`} fill="none" stroke="#5a3a0a" strokeWidth="2.4" strokeLinecap="round" />
+        ))}
+        {[0, 1].map((i) => (
+          <circle key={`e${i}`} cx={278 + i * 22} cy={200} r="5" fill="#141414" />
+        ))}
+        <text x="52" y="140" fontSize="12.5" fill="#5a3a0a" fontWeight="700">膨颈威吓（不主动攻击人）</text>
+        <text x="52" y="162" fontSize="12" fill="#5a3a0a">毒液本质：捕食与防御的"化学武器"</text>
+      </g>
+      {/* 毒液成分 */}
+      <g style={dim(active, 1)}>
+        <rect x="336" y="160" width="150" height="106" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="411" y="186" textAnchor="middle" fontSize="11.5" fill="#8a671b" fontWeight="800">毒液是"鸡尾酒"</text>
+        <text x="411" y="210" textAnchor="middle" fontSize="10.5" fill="#a5761d">神经毒素（阻断神经-肌肉）</text>
+        <text x="411" y="232" textAnchor="middle" fontSize="10.5" fill="#a5761d">细胞毒素（破坏组织）</text>
+        <text x="411" y="254" textAnchor="middle" fontSize="10" fill="#799398">眼镜蛇以神经毒为主</text>
+      </g>
+      {/* 医学价值 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">毒与药一体：蛇毒成分是降压·镇痛·抗血栓药物研究的"分子宝库"</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">抗蛇毒血清 = 用少量毒素免疫马羊后提取的抗体（被动免疫）</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">被蛇咬：保持冷静·记住蛇的样子·勿奔跑（加速毒液扩散）·尽快就医</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">眼镜蛇 · 毒蛇与毒液科学（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 血浆（内环境的"载体"） ================= */
+
+function BloodPlasmaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 试管分层 */}
+      <g style={dim(active, 0)}>
+        <rect x="80" y="50" width="110" height="190" rx="14" fill="#f8f6ee" stroke="#8a9a9f" strokeWidth="3" />
+        <rect x="86" y="58" width="98" height="112" rx="8" fill="#f4e0b8" stroke="#c9a05a" strokeWidth="1.6" />
+        <text x="135" y="120" textAnchor="middle" fontSize="10.5" fill="#8a671b" fontWeight="800">血浆 55%</text>
+        <text x="135" y="138" textAnchor="middle" fontSize="9" fill="#a5761d">淡黄色液体</text>
+        <rect x="88" y="172" width="94" height="16" rx="4" fill="#f4f0e8" stroke="#8a9a9f" strokeWidth="1.4" />
+        <text x="135" y="204" textAnchor="middle" fontSize="9" fill="#8a9a9f">白细胞·血小板</text>
+        <rect x="88" y="220" width="94" height="16" rx="4" fill="#c94a4a" stroke="#8a2020" strokeWidth="1.4" />
+        <text x="135" y="252" textAnchor="middle" fontSize="9" fill="#8a9a9f">红细胞 45%</text>
+      </g>
+      {/* 血浆成分 */}
+      <g style={dim(active, 1)}>
+        <rect x="250" y="60" width="160" height="150" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="330" y="86" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">血浆成分（含水 90%）</text>
+        {[0, 1, 2, 3].map((i) => {
+          const items = ['水 ≈ 90%', '血浆蛋白 7%', '无机盐 0.9%', '葡萄糖·氨基酸·激素·废物'];
+          const y = 110 + i * 24;
+          return <text key={i} x="330" y={y} textAnchor="middle" fontSize="10.5" fill="#8a671b" fontWeight="600">{items[i]}</text>;
+        })}
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="46" y="240" width="130" height="100" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="111" y="264" textAnchor="middle" fontSize="11.5" fill="#2f6f2a" fontWeight="800">血浆 ≠ 血液</text>
+        <text x="111" y="288" textAnchor="middle" fontSize="10" fill="#3f7f3a">血浆 = 血液的液体部分</text>
+        <text x="111" y="308" textAnchor="middle" fontSize="10" fill="#3f7f3a">血清 = 去纤维蛋白的血浆</text>
+        <text x="111" y="328" textAnchor="middle" fontSize="10" fill="#3f7f3a">（与血细胞分层实验互参）</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="250" y="240" width="220" height="126" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="360" y="264" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">内环境视角</text>
+        <text x="360" y="288" textAnchor="middle" fontSize="10.5" fill="#37585f">血浆是细胞外液最重要的部分</text>
+        <text x="360" y="310" textAnchor="middle" fontSize="10.5" fill="#37585f">运载数百种物质：营养·激素·</text>
+        <text x="360" y="330" textAnchor="middle" fontSize="10.5" fill="#37585f">代谢废物·抗体·CO₂ 等</text>
+        <text x="360" y="352" textAnchor="middle" fontSize="10" fill="#799398">血浆成分稳定 = 内环境稳态的核心</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">血浆 · 运载血液的"液体载体"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 芦荟（"药用"多肉） ================= */
+
+function AloeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 芦荟 */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2, 3, 4, 5].map((i) => {
+          const ang = -Math.PI / 2 + (i - 2.5) * 0.42;
+          return <path key={i} d={`M260 300 Q ${260 + Math.cos(ang) * 55} ${210 + Math.sin(ang) * 55} ${260 + Math.cos(ang) * 105} ${195 + Math.sin(ang) * 75}`} fill="none" stroke="#5a9a4a" strokeWidth={10 - Math.abs(i - 2.5) * 1.5} strokeLinecap="round" />;
+        })}
+        {[0, 1, 2].map((i) => (
+          <path key={`t${i}`} d={`M${180 + i * 45} ${240 - i * 20} q 8 -6 18 -2`} fill="none" stroke="#3f7f3a" strokeWidth="2" strokeLinecap="round" />
+        ))}
+        <text x="350" y="130" fontSize="12.5" fill="#3f7f3a" fontWeight="700">肉质叶储水（CAM 代谢）</text>
+        <text x="380" y="150" fontSize="12" fill="#3f7f3a">叶缘锯齿防动物啃食</text>
+      </g>
+      {/* 凝胶 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="120" width="180" height="90" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="136" y="144" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">叶内凝胶：晒后修复</text>
+        <text x="136" y="168" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">多糖+水分——保湿舒缓</text>
+        <text x="136" y="190" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">"药用植物"代表的活体实例</text>
+      </g>
+      {/* CAM 与旱生 */}
+      <g style={dim(active, 2)}>
+        <rect x="274" y="230" width="200" height="100" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="374" y="254" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">旱生结构三件套</text>
+        <text x="374" y="278" textAnchor="middle" fontSize="10.5" fill="#a5761d">肉质叶储水 · 气孔夜间开放</text>
+        <text x="374" y="300" textAnchor="middle" fontSize="10.5" fill="#a5761d">蜡质角质层减少蒸腾</text>
+        <text x="374" y="322" textAnchor="middle" fontSize="10" fill="#799398">与王莲（水生）的"反向适应"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">芦荟 · 旱生植物与药用（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'cobra',
+    name: '眼镜蛇',
+    kicker: '有鳞目 · 毒液的科学（课外拓展）',
+    intro: '眼镜蛇遇险时竖起前身、展开颈部皮褶"膨颈"威吓——它并不主动攻击人，毒液本质是捕食与防御的"化学武器"：以神经毒素为主，阻断神经与肌肉之间的信号传递。毒液也是"分子宝库"：蛇毒成分是降压、镇痛、抗血栓药物研究的重要来源；抗蛇毒血清则是用少量毒素免疫马羊后提取的抗体（被动免疫）。',
+    extension: true,
+    parts: [
+      { name: '膨颈威吓', desc: '肋骨可撑开颈部皮褶，形成"头罩"威吓天敌——先警告后攻击，很少主动咬人。' },
+      { name: '神经毒素', desc: '毒液中的神经毒素与乙酰胆碱受体结合，阻断神经-肌肉传递——猎物呼吸肌麻痹而窒息。' },
+      { name: '毒液的医用药用', desc: '蛇毒成分被用于研发镇痛药、抗血栓药——"毒与药"在分子层面的一线之隔。' },
+      { name: '抗蛇毒血清', desc: '用马/羊免疫产生的抗体中和毒素——被动免疫的典型应用（与本站免疫标本互参）。' },
+      { name: '被咬急救', desc: '保持冷静、记住蛇的外形、伤肢低于心脏、尽快就医——不要奔跑、不要用嘴吸毒。' },
+    ],
+    Svg: CobraSvg,
+  },
+  {
+    id: 'bloodPlasma',
+    name: '血浆',
+    kicker: '循环系统 · 内环境的"载体"（课外拓展）',
+    intro: '血液 = 血浆 + 血细胞：血浆（淡黄色液体，约占 55%）是运载血细胞的"液体载体"，含水约 90%、血浆蛋白约 7%，以及葡萄糖、氨基酸、无机盐、激素和代谢废物。血浆是内环境最重要的组成部分——它的成分稳定，直接反映全身细胞的"工作环境"是否正常（与血细胞分层实验互参）。',
+    extension: true,
+    parts: [
+      { name: '血浆成分', desc: '水 90%+、血浆蛋白 6%~8%（白蛋白·球蛋白·纤维蛋白原）、无机盐、葡萄糖、氨基酸、激素与代谢废物。' },
+      { name: '血浆的功能', desc: '运载血细胞、运输营养物质与代谢废物、运输激素——内环境物质运输的"主干道"。' },
+      { name: '血浆 vs 血清', desc: '血清 = 去除纤维蛋白原的血浆（血液凝固后析出）——与本站血细胞分层、血常规检验互参。' },
+      { name: '内环境角色', desc: '血浆是细胞外液最重要的部分：其 pH（7.35~7.45）、渗透压、温度稳定 = 内环境稳态的核心。' },
+      { name: '临床意义', desc: '血浆蛋白异常（白蛋白低→水肿）、血糖血脂异常都是"血浆成分"出问题的信号（体检的"生化全套"）。' },
+    ],
+    Svg: BloodPlasmaSvg,
+  },
+  {
+    id: 'aloe',
+    name: '芦荟',
+    kicker: '阿福花科 · "药用"多肉（课外拓展）',
+    intro: '芦荟是经典的旱生植物与药用植物：肥厚的肉质叶储存大量水分（叶肉中的凝胶含多糖），叶片表面的蜡质角质层减少蒸腾，气孔夜间开放（CAM 代谢）——"旱生三件套"齐备。叶内透明凝胶是晒后修复凝胶与化妆品的原料；叶片黄色汁液（芦荟大黄素）则有泻下作用——"药用植物"也有"脾气"。',
+    extension: true,
+    parts: [
+      { name: '肉质叶', desc: '叶肉特化的储水组织：多糖与水分让叶片肥厚——干旱时的"水库"（与猴面包树树干同理）。' },
+      { name: 'CAM 代谢', desc: '夜间开气孔固碳、白天关闭保水——与菠萝、仙人掌同款（景天酸代谢）策略。' },
+      { name: '凝胶成分', desc: '叶肉凝胶含多糖（乙酰甘露聚糖）——保湿舒缓，用于晒后修复与护肤产品。' },
+      { name: '黄色汁液', desc: '叶片皮层的芦荟大黄素有强烈泻下作用——"芦荟产品"并非都可直接涂抹或食用。' },
+      { name: '旱生结构总结', desc: '储水组织 + CAM 代谢 + 蜡质层 + 齿状叶缘（防啃食）——旱生植物的"全套装备"。' },
+    ],
+    Svg: AloeSvg,
+  },
   {
     id: 'ant',
     name: '蚂蚁',

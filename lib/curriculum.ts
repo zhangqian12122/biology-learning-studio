@@ -653,6 +653,7 @@ export type ExperimentId =
   | 'epigenetics'
   | 'oxygenation'
   | 'nitrogenFixation'
+  | 'ecoFootprint'
   | 'msgFermentation'
   | 'threeDefenses'
   | 'digestionJourney'
@@ -1412,6 +1413,14 @@ export const experimentMeta: Record<
     relatedBook: 'ecology',
     relatedModule: '生态系统能量与物质循环',
   },
+  ecoFootprint: {
+    title: '生态足迹计算',
+    kicker: '生态保护 · 课外拓展',
+    description: '饮食与交通的选择如何改变"足迹"：可持续生活量化实验。',
+    relatedBook: 'ecology',
+    relatedModule: '生态保护与人与自然',
+    extension: true,
+  },
   msgFermentation: {
     title: '谷氨酸发酵工程',
     kicker: '选择性必修 3 · 发酵工程',
@@ -1711,7 +1720,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'nitrogenFixation', 'population', 'predatorPrey', 'gauseCompetition', 'birdMigration', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'nitrogenFixation', 'population', 'predatorPrey', 'gauseCompetition', 'birdMigration', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim', 'ecoFootprint'],
   },
   {
     name: '生物技术',
@@ -1818,6 +1827,7 @@ export const experimentOrder: ExperimentId[] = [
   'waterQuality',
   'algalBloom',
   'invasiveSim',
+  'ecoFootprint',
   'ecologicalNiche',
   'foodChain',
   'biomagnification',

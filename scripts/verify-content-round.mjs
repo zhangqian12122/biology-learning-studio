@@ -7,25 +7,24 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：nitrogenFixation 生物固氮 ----------
-await page.goto(`${BASE}/lab?exp=nitrogenFixation`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：ecoFootprint 生态足迹计算 ----------
+await page.goto(`${BASE}/lab?exp=ecoFootprint`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  for (let i = 0; i < 3; i++) {
-    await page.getByRole('button', { name: /推进共生/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(350);
-  }
+  await page.locator('button', { hasText: '顿顿有肉' }).click();
+  await page.locator('button', { hasText: '私家车通勤' }).click();
+  await page.waitForTimeout(400);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('生物固氮');
-  results.experiment.interactive = after.includes('豆科轮作') && after.includes('豆血红蛋白');
+  results.experiment.open = before.includes('生态足迹计算');
+  results.experiment.interactive = after.includes('个地球') && after.includes('超支');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['ant', 'muscleFibers', 'welwitschia'];
+const SPECIMENS = ['cobra', 'bloodPlasma', 'aloe'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -77,17 +76,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：birdMigration 实验页仍正常
-await page.goto(`${BASE}/lab?exp=birdMigration`, { waitUntil: 'domcontentloaded' });
+// 回归检查：nitrogenFixation 实验页仍正常
+await page.goto(`${BASE}/lab?exp=nitrogenFixation`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.migrationRegression = { found: t.includes('迁徙') || t.includes('候鸟'), ok: t.includes('迁徙') || t.includes('候鸟') };
+  results.specimens.nfixRegression = { found: t.includes('固氮') || t.includes('根瘤'), ok: t.includes('固氮') || t.includes('根瘤') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.migrationRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.nfixRegression?.ok;
 console.log('ALL_OK=' + allOk);

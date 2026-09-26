@@ -139,6 +139,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   epigenetics: Lightbulb,
   oxygenation: Leaf,
   nitrogenFixation: Sprout,
+  ecoFootprint: Leaf,
   msgFermentation: Wine,
   threeDefenses: KeyRound,
   digestionJourney: UtensilsCrossed,
@@ -275,6 +276,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   epigenetics: () => import('@/components/lab/epigenetics-lab').then(({ EpigeneticsLab }) => ({ default: EpigeneticsLab })),
   oxygenation: () => import('@/components/lab/oxygenation-lab').then(({ OxygenationLab }) => ({ default: OxygenationLab })),
   nitrogenFixation: () => import('@/components/lab/nitrogen-fixation-lab').then(({ NitrogenFixationLab }) => ({ default: NitrogenFixationLab })),
+  ecoFootprint: () => import('@/components/lab/eco-footprint-lab').then(({ EcoFootprintLab }) => ({ default: EcoFootprintLab })),
   msgFermentation: () => import('@/components/lab/msg-fermentation-lab').then(({ MsgFermentationLab }) => ({ default: MsgFermentationLab })),
   threeDefenses: () => import('@/components/lab/three-defenses-lab').then(({ ThreeDefensesLab }) => ({ default: ThreeDefensesLab })),
   digestionJourney: () => import('@/components/lab/digestion-journey-lab').then(({ DigestionJourneyLab }) => ({ default: DigestionJourneyLab })),
@@ -385,6 +387,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   digestionJourney: ['digestiveSystem'],
   birdBreathing: ['alveolus'],
   nitrogenFixation: ['rhizobium'],
+  ecoFootprint: ['biosphere'],
   ecoStability: ['ecosystemTypes'],
 };
 
