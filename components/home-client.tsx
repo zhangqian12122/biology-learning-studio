@@ -42,7 +42,7 @@ export function HomeClient() {
         <span aria-hidden="true" className="absolute -bottom-4 left-16 hidden size-6 rounded-full border-4 border-black bg-[#95e1d3] sm:block" />
 
         <div className="relative">
-          <p className="inline-flex -rotate-1 items-center gap-2 border-4 border-black bg-[#ffe66d] px-3 py-1 text-[11px] font-black tracking-[0.22em] text-black pb-shadow-teal">
+          <p className="inline-flex -rotate-1 items-center gap-2 whitespace-nowrap border-4 border-black bg-[#ffe66d] px-3 py-1 text-[11px] font-black tracking-[0.22em] text-black pb-shadow-teal">
             <GraduationCap className="size-4" aria-hidden="true" />
             BIOLOGY COURSE MAP · 教材总览
           </p>

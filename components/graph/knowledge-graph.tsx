@@ -316,6 +316,9 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
     let lastX = 0;
     let lastY = 0;
     let downNodeId: string | null = null;
+    // 多指跟踪：两指时进入捏合缩放（移动端）
+    const activePointers = new Map<number, { x: number; y: number }>();
+    let pinchDist = 0;
 
     const toLocal = (e: PointerEvent) => {
       const rect = svg.getBoundingClientRect();
@@ -326,6 +329,15 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
     };
 
     const onPointerDown = (e: PointerEvent) => {
+      activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (activePointers.size >= 2) {
+        const [a, b] = [...activePointers.values()];
+        pinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+        dragNode = null;
+        panning = false;
+        svg.style.cursor = '';
+        return;
+      }
       const target = e.target as Element;
       const g = target.closest('g[data-id]') as SVGGElement | null;
       const p = toLocal(e);
@@ -347,6 +359,21 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
       svg.setPointerCapture(e.pointerId);
     };
     const onPointerMove = (e: PointerEvent) => {
+      if (activePointers.has(e.pointerId)) activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (activePointers.size >= 2) {
+        const [a, b] = [...activePointers.values()];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (pinchDist > 0 && d > 0) {
+          const rect = svg.getBoundingClientRect();
+          const sx = width / rect.width;
+          const sy = height / rect.height;
+          const lx = ((a.x + b.x) / 2 - rect.left) * sx;
+          const ly = ((a.y + b.y) / 2 - rect.top) * sy;
+          zoomAt(d / pinchDist, lx, ly);
+        }
+        pinchDist = d;
+        return;
+      }
       const p = toLocal(e);
       if (dragNode) {
         moved += Math.abs(p.x - lastX) + Math.abs(p.y - lastY);
@@ -363,7 +390,10 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
       lastX = p.x;
       lastY = p.y;
     };
-    const onPointerUp = () => {
+    const onPointerUp = (e: PointerEvent) => {
+      activePointers.delete(e.pointerId);
+      if (activePointers.size < 2) pinchDist = 0;
+      if (activePointers.size > 0) return;
       if (dragNode) {
         dragNode.fixed = false;
         dragNode = null;
@@ -503,9 +533,10 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
         </div>
 
         {/* 操作提示 */}
-        <div className="pointer-events-none absolute bottom-3 left-3 hidden items-center gap-2 rounded-lg border border-gray-200 bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-gray-600 shadow-sm sm:flex">
-          <MousePointerClick className="size-3.5 text-[#2eaadc]" aria-hidden="true" />
-          拖拽移动节点 · 滚轮缩放 · 空白处拖动平移 · 点击叶子节点跳转
+        <div className="pointer-events-none absolute bottom-3 left-3 flex items-center gap-2 rounded-lg border border-gray-200 bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-gray-600 shadow-sm">
+          <MousePointerClick className="size-3.5 shrink-0 text-[#2eaadc]" aria-hidden="true" />
+          <span className="hidden sm:inline">拖拽移动节点 · 滚轮缩放 · 空白处拖动平移 · 点击叶子节点跳转</span>
+          <span className="sm:hidden">拖动节点 · 双指缩放 · 点节点跳转</span>
         </div>
       </div>
 
