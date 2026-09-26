@@ -607,6 +607,12 @@ export function LabClient() {
   const pickExperiment = (id: ExperimentId) => {
     setActiveExperiment(id);
     preloadExperiment(id);
+    // 切换实验时同步地址栏：?exp=<id> 可分享、刷新不丢
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.set('exp', id);
+      window.history.replaceState(null, '', url.pathname + url.search);
+    }
   };
 
   const toggleBook = (id: string) =>
@@ -972,7 +978,7 @@ export function LabClient() {
                         key={id}
                         type="button"
                         onClick={() => {
-                          setActiveExperiment(id);
+                          pickExperiment(id);
                           setCategoryFilter(cat.name);
                         }}
                         onMouseEnter={() => preloadExperiment(id)}

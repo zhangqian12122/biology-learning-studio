@@ -161,6 +161,21 @@ export function CellsClient() {
     setLevel('home');
     setActiveGroup(null);
     setSubCategory(null);
+    syncUrl(null);
+  };
+
+  /** 切换标本时同步地址栏：?specimen=<id> 可分享、刷新不丢 */
+  const syncUrl = (id: string | null) => {
+    if (typeof window === 'undefined') return;
+    const url = new URL(window.location.href);
+    if (id) {
+      url.searchParams.set('specimen', id);
+      url.searchParams.delete('cat');
+    } else {
+      url.searchParams.delete('specimen');
+      url.searchParams.delete('cat');
+    }
+    window.history.replaceState(null, '', url.pathname + url.search);
   };
 
   const toggleGroup = (name: string) =>
@@ -172,6 +187,7 @@ export function CellsClient() {
     setSpecimenId(id);
     setActivePart(null);
     setUseWebGL(false);
+    syncUrl(id);
     const { cat, grp } = locateSpecimen(id);
     if (grp) setOpenGroups((prev) => (prev.includes(grp.name) ? prev : [...prev, grp.name]));
     if (cat) setOpenCats((prev) => (prev.includes(cat.name) ? prev : [...prev, cat.name]));

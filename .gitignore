@@ -43,3 +43,10 @@ next-env.d.ts
 /dist-ghpages/
 /test-web/
 游戏/
+
+# iteration scratch files
+scripts/tmp-*
+scripts/dev-server.log
+scripts/shots-*
+scripts/apply-round*.py
+scripts/patch-*.py
