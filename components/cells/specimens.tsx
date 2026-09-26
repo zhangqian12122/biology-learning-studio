@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold', 'tuberculosis'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus', 'seaCucumber', 'gecko'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier', 'duodenum', 'swallowing'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation', 'rootNodule', 'guttation', 'coconut'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus', 'seaCucumber', 'gecko', 'mantaRay'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier', 'duodenum', 'swallowing', 'heartValves'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation', 'rootNodule', 'guttation', 'coconut', 'amber'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -15893,7 +15893,159 @@ function CoconutSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 蝠鲼（海里最大的"飞毯"） ================= */
+
+function MantaRaySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 体盘与头鳍 */}
+      <g style={dim(active, 0)}>
+        <path d="M260 150 Q340 128 420 158 Q466 176 470 196 Q420 200 380 216 Q310 240 260 240 Q210 240 140 216 Q100 200 50 196 Q54 176 100 158 Q180 128 260 150 Z" fill="#3a5a7a" stroke="#1f3a5a" strokeWidth="2.8" />
+        <path d="M238 152 Q244 138 260 136 Q276 138 282 152 Q270 162 260 162 Q250 162 238 152 Z" fill="#1f3a5a" stroke="#142a42" strokeWidth="2" />
+        <path d="M240 148 q -6 -16 2 -24 M280 148 q 6 -16 -2 -24" fill="none" stroke="#1f3a5a" strokeWidth="5" strokeLinecap="round" />
+        <circle cx="226" cy="166" r="5" fill="#e8f4f8" />
+        <circle cx="294" cy="166" r="5" fill="#e8f4f8" />
+        <text x="340" y="92" fontSize="12.5" fill="#1f3a5a" fontWeight="700">头鳍：像漏斗拨水进嘴</text>
+        <text x="60" y="120" fontSize="12.5" fill="#1f3a5a" fontWeight="700">眼在体盘侧面 · 嘴在前端（滤食）</text>
+      </g>
+      {/* 胸鳍与尾 */}
+      <g style={dim(active, 1)}>
+        <path d="M70 196 Q40 186 34 198 Q46 210 96 208" fill="#2c4a6a" stroke="#1f3a5a" strokeWidth="2" />
+        <path d="M452 192 Q486 184 492 198 Q478 208 436 206" fill="#2c4a6a" stroke="#1f3a5a" strokeWidth="2" />
+        <text x="20" y="176" fontSize="12" fill="#1f3a5a" fontWeight="700">翼展可达 7 米</text>
+        <path d="M470 196 Q494 208 500 238" fill="none" stroke="#1f3a5a" strokeWidth="6" strokeLinecap="round" />
+        <text x="414" y="260" fontSize="12" fill="#1f3a5a" fontWeight="700">细长尾：无毒刺</text>
+        <text x="150" y="278" fontSize="12.5" fill="#2c5a84" fontWeight="700">扇动胸鳍"飞翔"——最优雅的巡游者</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">滤食高手：吞的是浮游生物和小鱼——"最大的嘴吃最小的饭"（与鲸鲨同理）</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">脑体比是鱼类中最大的——会认镜子里的自己（鱼类少有的"自我识别"证据）</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">注意区分：蝠鲼无毒刺、性温和；"魔鬼鱼"俗称常与黄貂鱼（有毒刺）混淆</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蝠鲼 · 海里最大的"飞毯"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 心脏瓣膜（防止血液"倒车"的门） ================= */
+
+function HeartValvesSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 心脏纵剖与瓣膜位置 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 96 Q112 110 108 170 Q106 236 160 268 Q200 292 232 268 L248 254 L264 268 Q296 292 336 268 Q390 236 388 170 Q384 110 346 96 Q300 82 260 118 Q220 82 150 96 Z" fill="#f2c9c9" stroke="#a53030" strokeWidth="3" />
+        <path d="M178 132 L178 232 M252 132 L252 232" fill="none" stroke="#a53030" strokeWidth="2.4" strokeDasharray="8 5" />
+        <text x="200" y="112" textAnchor="middle" fontSize="12" fill="#a53030" fontWeight="700">左心室（壁最厚）</text>
+        <text x="298" y="176" fontSize="12" fill="#8a5a5a">右心室</text>
+      </g>
+      {/* 房室瓣与动脉瓣 */}
+      <g style={dim(active, 1)}>
+        <path d="M178 140 L192 168 L164 168 Z" fill="#e8c83a" stroke="#8a671b" strokeWidth="2" />
+        <path d="M252 140 L266 168 L238 168 Z" fill="#e8c83a" stroke="#8a671b" strokeWidth="2" />
+        <text x="106" y="150" fontSize="12.5" fill="#8a671b" fontWeight="700">房室瓣（二尖·三尖）</text>
+        <text x="106" y="168" fontSize="12" fill="#8a671b">像"荡单摆的门帘"</text>
+        <path d="M198 116 L214 96 L230 116 Z" fill="#7ab0c9" stroke="#3a6a8a" strokeWidth="2" />
+        <path d="M272 116 L288 96 L304 116 Z" fill="#7ab0c9" stroke="#3a6a8a" strokeWidth="2" />
+        <text x="322" y="102" fontSize="12.5" fill="#3a6a8a" fontWeight="700">动脉瓣（半月瓣）</text>
+        <text x="322" y="120" fontSize="12" fill="#3a6a8a">像"三个小口袋"</text>
+        <path d="M212 88 L212 58 M292 88 L292 58" fill="none" stroke="#8a9a9f" strokeWidth="3" />
+        <text x="238" y="52" fontSize="12" fill="#59767c">↑ 血液只出不回</text>
+      </g>
+      {/* 心音与考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="288" width="448" height="78" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="310" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">听诊器里的"咚—哒"：咚=房室瓣关闭（心缩开始）· 哒=动脉瓣关闭（心舒开始）</text>
+        <text x="260" y="332" textAnchor="middle" fontSize="12" fill="#37585f">瓣膜只朝一个方向开——保证血液"单向流动"；瓣膜坏了=心脏杂音（血液在"倒车"）</text>
+        <text x="260" y="354" textAnchor="middle" fontSize="11" fill="#59767c">考点：心房→心室→动脉的方向由瓣膜锁定；"房室瓣开=动脉瓣关"交替工作</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">心脏瓣膜 · 防止血液"倒车"的门（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 琥珀（树脂的时间胶囊） ================= */
+
+function AmberSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 松树流脂 */}
+      <g style={dim(active, 0)}>
+        <path d="M120 84 L120 250 M120 130 q -22 4 -34 22 M120 190 q 20 6 30 24" fill="none" stroke="#8a6f52" strokeWidth="8" strokeLinecap="round" />
+        <path d="M96 90 q 24 -34 48 0 q -24 -12 -48 0 M92 146 q 28 -36 56 0 q -28 -14 -56 0" fill="#4a7a3a" stroke="#2f5f2a" strokeWidth="2" />
+        <path d="M120 210 q 10 26 6 52" fill="none" stroke="#e8c05a" strokeWidth="7" strokeLinecap="round" />
+        <text x="60" y="66" fontSize="12.5" fill="#2f5f2a" fontWeight="700">松科树皮受伤 → 分泌树脂封口</text>
+        <text x="150" y="230" fontSize="12" fill="#8a671b" fontWeight="700">树脂=树的"创可贴"（抗菌防虫）</text>
+      </g>
+      {/* 琥珀放大 */}
+      <g style={dim(active, 1)}>
+        <path d="M300 96 Q368 76 418 116 Q450 144 442 190 Q432 240 380 252 Q322 262 296 220 Q272 178 300 96 Z" fill="#e8b84a" stroke="#a5761d" strokeWidth="3" opacity="0.9" />
+        <path d="M318 130 Q340 108 372 116" fill="none" stroke="#fbe8b8" strokeWidth="6" strokeLinecap="round" opacity="0.8" />
+        <circle cx="352" cy="176" r="4.4" fill="#5a4322" />
+        <path d="M352 172 q 8 -8 16 -4" fill="none" stroke="#5a4322" strokeWidth="1.6" />
+        <path d="M330 206 q 10 -6 18 0 M378 214 q 8 -8 18 -2" fill="none" stroke="#c99a2a" strokeWidth="1.8" />
+        <text x="296" y="284" fontSize="12.5" fill="#8a671b" fontWeight="700">昆虫·毛发·气泡的快照</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">树脂 ≠ 树液：树脂来自树皮分泌细胞（碳氢化合物）；树液是输导组织里的水与营养</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">缺氧灭菌的"时间胶囊"：琥珀内组织保存完好——但《侏罗纪公园》式取 DNA 仍是幻想</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">琥珀多产于白垩纪至第三纪的松柏森林——研究古生态与昆虫演化的"透明档案"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">琥珀 · 树脂的时间胶囊（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'mantaRay',
+    name: '蝠鲼',
+    kicker: '软骨鱼纲 · 海里最大的"飞毯"（课外拓展）',
+    intro: '蝠鲼是海洋里最会"飞"的鱼：一对翼展可达 7 米的胸鳍像翅膀一样缓慢扇动，推动巨大的身体在水中滑翔。它的头鳍像两只小漏斗，把浮游生物密集的海水拨进嘴里——"最大的嘴吃最小的饭"。蝠鲼还是鱼类中脑体比最高的一类：好奇心强、会认出镜子里的自己，性情却非常温和；它没有毒刺，常被误认成危险的"黄貂鱼"。',
+    extension: true,
+    parts: [
+      { name: '头鳍', desc: '一对可动的"小漏斗"——游泳时张开把含浮游生物的海水定向拨入口中，进食时像张开的帆。' },
+      { name: '胸鳍翼展', desc: '胸鳍与身体愈合成巨大体盘——翼展最大约 7 米，扇动产生推进力，像在水里"飞翔"。' },
+      { name: '滤食取食', desc: '鳃耙像细密的筛子——滤食浮游生物与小鱼虾，和鲸鲨一样走"大嘴吃小饭"路线。' },
+      { name: '高智商', desc: '脑体比是鱼类之最——能通过镜子自我识别测试，具备复杂社交与学习能力的证据。' },
+      { name: '无毒刺', desc: '细长的尾没有毒刺（与黄貂鱼不同）——性情温和，是潜水员最喜欢的"大飞机"。' },
+    ],
+    Svg: MantaRaySvg,
+  },
+  {
+    id: 'heartValves',
+    name: '心脏瓣膜',
+    kicker: '循环系统 · 防止血液"倒车"的门（课外拓展）',
+    intro: '心脏每分钟泵出约 5 升血液，靠的不是蛮力而是"单向阀系统"：房室瓣（二尖瓣、三尖瓣）守在心房与心室之间，动脉瓣（半月瓣）守在心室出口——血液向前流时门打开，想倒流时门立刻关上。听诊器里的"咚—哒"两声，正是两组瓣膜关闭的"关门声"。瓣膜一旦损坏，血液来回"倒车"，就会出现心脏杂音、心脏扩大。',
+    extension: true,
+    parts: [
+      { name: '房室瓣', desc: '二尖瓣（左）、三尖瓣（右）像会荡的单摆门帘——心室收缩时被血流"吹"上关闭，防止血倒回心房。' },
+      { name: '动脉瓣', desc: '三个半月形"小口袋"——心室舒张时动脉血倒灌把口袋灌满而关门，防止血倒回心室。' },
+      { name: '心音来源', desc: '"咚"=房室瓣关闭（心缩开始）、"哒"=动脉瓣关闭（心舒开始）——瓣膜病会产生杂音。' },
+      { name: '单向流动', desc: '瓣膜把血流方向锁死为"心房→心室→动脉"——心脏做功不被倒流浪费，效率最大化。' },
+      { name: '瓣膜病', desc: '风湿热可损伤瓣膜（狭窄或关不严）——严重时需置换人工瓣膜：机械瓣或生物瓣。' },
+    ],
+    Svg: HeartValvesSvg,
+  },
+  {
+    id: 'amber',
+    name: '琥珀',
+    kicker: '植物分泌物 · 树脂的时间胶囊（课外拓展）',
+    intro: '琥珀是几千万年前的树脂化石：松科树木受伤后分泌黏稠树脂封住伤口，顺树流下时恰好包住昆虫、羽毛甚至小蜥蜴，随后被泥土掩埋、历经数千万年石化，成为金黄透亮的时间胶囊。琥珀里的生物常连细毛都完好保存——是研究远古生态的"透明档案"；不过《侏罗纪公园》里从琥珀蚊子血里复活恐龙，目前仍只是科幻。',
+    extension: true,
+    parts: [
+      { name: '树脂不是树液', desc: '树脂由树皮的分泌细胞产生（抗菌、封堵伤口的碳氢化合物）；树液则是导管里的水和无机盐。' },
+      { name: '树的"创可贴"', desc: '树皮破损时树脂流出覆盖伤口——黏住啃食的昆虫、封闭真菌入侵的门户。' },
+      { name: '石化条件', desc: '树脂被沉积物掩埋、隔绝空气，历经数千万年聚合脱水——硬度、颜色随年代与成分变化。' },
+      { name: '内含物', desc: '昆虫、蛛类、羽毛、花、气泡被定格——缺氧+树脂灭菌让细节保存完好，价值远超空琥珀。' },
+      { name: '科学价值', desc: '记录白垩纪至第三纪的森林生态——灭绝昆虫的新种描述常来自琥珀标本。' },
+    ],
+    Svg: AmberSvg,
+  },
   {
     id: 'gecko',
     name: '壁虎',

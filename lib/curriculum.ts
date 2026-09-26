@@ -576,6 +576,7 @@ export type ExperimentId =
   | 'dogma'
   | 'selection'
   | 'impulse'
+  | 'brainRegions'
   | 'energy'
   | 'population'
   | 'geneEngine'
@@ -1475,6 +1476,13 @@ export const experimentMeta: Record<
     relatedBook: 'genetics',
     relatedModule: '遗传规律与配子分析',
   },
+  brainRegions: {
+    title: '脑区功能探索',
+    kicker: '选择性必修 1 · 神经调节',
+    description: '点亮七个脑区：额叶决策、小脑协调、脑干值班、下丘脑管着全身稳态。',
+    relatedBook: 'regulation',
+    relatedModule: '神经和体液调节',
+  },
   whaleFall: {
     title: '鲸落：深海的生命绿洲',
     kicker: '深海生态 · 课外拓展',
@@ -1799,7 +1807,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'transplantRejection', 'autoimmune', 'bloodRoutine', 'energyBalance', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'brainRegions', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'transplantRejection', 'autoimmune', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1885,6 +1893,7 @@ export const experimentOrder: ExperimentId[] = [
   'bloodSugarRegulation',
   'bloodPressure',
   'impulse',
+  'brainRegions',
   'synapseDrug',
   'reflexArc',
   'conditionedReflex',
