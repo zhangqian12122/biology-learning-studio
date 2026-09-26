@@ -311,28 +311,29 @@ textarea {
 .pb-spring {
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.pb-shadow-red { box-shadow: 6px 6px 0 0 var(--pb-red); }
-.pb-shadow-teal { box-shadow: 6px 6px 0 0 var(--pb-teal); }
-.pb-shadow-yellow { box-shadow: 6px 6px 0 0 var(--pb-yellow); }
-.pb-shadow-mint { box-shadow: 6px 6px 0 0 var(--pb-mint); }
-.pb-shadow-coral { box-shadow: 6px 6px 0 0 var(--pb-coral); }
-.pb-shadow-black { box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 1); }
-/* 悬停：阴影归零 + 等量位移（Toy Spring 回弹） */
+.pb-shadow-red { --pb-c: var(--pb-red); box-shadow: 6px 6px 0 0 var(--pb-c); }
+.pb-shadow-teal { --pb-c: var(--pb-teal); box-shadow: 6px 6px 0 0 var(--pb-c); }
+.pb-shadow-yellow { --pb-c: var(--pb-yellow); box-shadow: 6px 6px 0 0 var(--pb-c); }
+.pb-shadow-mint { --pb-c: var(--pb-mint); box-shadow: 6px 6px 0 0 var(--pb-c); }
+.pb-shadow-coral { --pb-c: var(--pb-coral); box-shadow: 6px 6px 0 0 var(--pb-c); }
+.pb-shadow-black { --pb-c: rgba(0, 0, 0, 1); box-shadow: 6px 6px 0 0 var(--pb-c); }
+/* 触碰上浮：悬停时元素抬起、同色硬阴影放大加深（rotate 用独立属性，与位移共存） */
 .pb-lift {
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .pb-lift:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
+  transform: translateY(-4px);
+  box-shadow: 10px 13px 0 0 var(--pb-c, rgba(0, 0, 0, 1));
 }
 .pb-lift:active {
-  transform: translate(6px, 6px);
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: translateY(0) scale(0.99);
+  box-shadow: 3px 3px 0 0 var(--pb-c, rgba(0, 0, 0, 1));
 }
-/* 微旋转（≤3 度） */
-.pb-tilt-l { transform: rotate(-1.2deg); }
-.pb-tilt-r { transform: rotate(1deg); }
-.pb-tilt-l2 { transform: rotate(-2deg); }
+.pb-tilt-l { rotate: -1.2deg; }
+.pb-tilt-r { rotate: 1deg; }
+.pb-tilt-l2 { rotate: -2deg; }
 /* 高亮标记（标题关键词） */
 .pb-marker {
   display: inline-block;

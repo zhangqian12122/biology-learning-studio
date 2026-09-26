@@ -130,7 +130,7 @@ export function HomeClient() {
                       'group flex min-h-[240px] flex-col border-4 border-black bg-white p-5',
                       play.shadow,
                       TILTS[index % TILTS.length],
-                      'pb-lift hover:rotate-0',
+                      'pb-lift',
                     )}
                   >
                     <div className="flex items-start justify-between gap-3">
