@@ -191,22 +191,22 @@ export function CellsClient() {
   /* ==================== 共用块 ==================== */
 
   const searchBox = (
-    <div className="nb-input relative flex items-center">
-      <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[#79939a]" aria-hidden="true" />
+    <div className="relative flex items-center">
+      <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-gray-400" aria-hidden="true" />
       <input
         type="search"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="在图鉴中搜索（如“线粒体”“病毒”“染色体”）…"
         aria-label="搜索图鉴标本"
-        className="min-h-10 w-full bg-transparent pl-9 pr-10 text-sm outline-none"
+        className="min-h-9 w-full rounded-md border border-gray-200 bg-white pl-9 pr-9 text-sm text-[#37352f] placeholder-gray-400 outline-none transition-all focus:border-transparent focus:ring-2 focus:ring-blue-500/30"
       />
       {search ? (
         <button
           type="button"
           onClick={() => setSearch('')}
           aria-label="清除搜索"
-          className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-[#79939a] transition-colors hover:bg-[#eef7f7]"
+          className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-md p-1.5 text-gray-400 transition-colors duration-150 hover:bg-[#efedea]"
         >
           <X className="size-4" aria-hidden="true" />
         </button>
@@ -571,23 +571,23 @@ export function CellsClient() {
         <style>{CELL_KEYFRAMES}</style>
         <div className="flex h-[calc(100dvh-116px)] gap-5">
           {/* 左：书页目录 */}
-          <aside aria-label="图鉴目录" className="flex w-[320px] shrink-0 flex-col overflow-hidden rounded-lg border-2 border-[#13333a] bg-[#fbf7ef] shadow-[5px_5px_0_#c6d4d4]">
-            <div className="border-b-2 border-[#13333a] bg-[#0e6f75] px-4 py-3 text-white">
-              <p className="text-[10px] font-bold tracking-[0.28em] opacity-80">CELL ATLAS</p>
-              <p className="mt-0.5 text-lg font-black leading-6">生物图鉴 · 目录</p>
-              <p className="mt-0.5 text-[11px] font-medium opacity-85">
+          <aside aria-label="图鉴目录" className="flex w-[320px] shrink-0 flex-col overflow-hidden rounded-lg border border-gray-200 bg-[#f7f6f3] shadow-sm">
+            <div className="border-b border-gray-200 px-4 py-3">
+              <p className="text-[10px] font-semibold tracking-[0.28em] text-gray-400">CELL ATLAS</p>
+              <p className="mt-0.5 text-base font-semibold leading-6 text-[#37352f]">生物图鉴 · 目录</p>
+              <p className="mt-0.5 text-[11px] text-gray-500">
                 共 {ATLAS_ORDER.length} 页 · {ATLAS_GROUPS.length} 章 · 按课本顺序装订
               </p>
             </div>
-            <div className="border-b-2 border-dashed border-[#d8cdb2] p-3">{searchBox}</div>
+            <div className="border-b border-gray-200 p-3">{searchBox}</div>
             <nav className="flex-1 overflow-y-auto p-2.5">
               {searchLower ? (
                 <div>
-                  <p className="px-2 pb-1.5 pt-0.5 text-[11px] font-semibold text-[#8a8266]">
+                  <p className="px-2 pb-1.5 pt-0.5 text-[11px] font-medium text-gray-500">
                     搜索“{search.trim()}” · {visibleSpecimens.length} 个结果
                   </p>
                   {visibleSpecimens.length === 0 ? (
-                    <p className="rounded-md border border-dashed border-[#cfc4a4] bg-white/70 px-3 py-6 text-center text-xs text-[#8a8266]">
+                    <p className="rounded-md border border-dashed border-gray-200 bg-white px-3 py-6 text-center text-xs text-gray-500">
                       没有匹配的标本——换个关键词试试。
                     </p>
                   ) : null}
@@ -600,9 +600,12 @@ export function CellsClient() {
                         ref={current ? currentItemRef : undefined}
                         onClick={() => pickSpecimen(item.id)}
                         aria-current={current}
-                        className={`nb-book-item ${current ? 'nb-book-item-open' : ''}`}
+                        className={`nb-book-item group ${current ? 'nb-book-item-open' : ''}`}
                       >
-                        <span className="w-8 shrink-0 text-right font-mono text-[10px] font-bold text-[#b0a284]">
+                        <span aria-hidden="true" className="w-4 shrink-0 text-center text-[10px] leading-none text-gray-300 opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+                          ⋮⋮
+                        </span>
+                        <span className="w-8 shrink-0 text-right font-mono text-[10px] text-gray-400">
                           {ORDER_NO.get(item.id)}
                         </span>
                         <span className="min-w-0 flex-1 truncate">{item.name}</span>
@@ -625,16 +628,16 @@ export function CellsClient() {
                         type="button"
                         onClick={() => toggleGroup(g.name)}
                         aria-expanded={groupOpen}
-                        className="flex w-full items-center gap-2 rounded-md px-2 py-2 text-left transition-colors hover:bg-[#f2ead8]"
+                        className="flex w-full items-center gap-2 rounded-md px-2 py-2 text-left transition-colors duration-150 hover:bg-[#efedea] active:bg-[#e3e1db]"
                       >
-                        <span className="font-mono text-[10px] font-bold text-[#b0a284]">{String(gi + 1).padStart(2, '0')}</span>
+                        <span className="font-mono text-[10px] font-semibold text-gray-400">{String(gi + 1).padStart(2, '0')}</span>
                         <span aria-hidden="true" className="text-base">{g.icon}</span>
-                        <span className="min-w-0 flex-1 truncate text-[13px] font-black text-[#13333a]">{g.name}</span>
-                        <span className="text-[10px] font-semibold text-[#a5a08e]">{catTotal}</span>
-                        <span aria-hidden="true" className="w-2 text-[10px] text-[#a5a08e]">{groupOpen ? '▾' : '▸'}</span>
+                        <span className="min-w-0 flex-1 truncate text-[13px] font-semibold text-[#37352f]">{g.name}</span>
+                        <span className="text-[10px] font-medium text-gray-400">{catTotal}</span>
+                        <span aria-hidden="true" className="w-2 text-[10px] text-gray-400">{groupOpen ? '▾' : '▸'}</span>
                       </button>
                       {groupOpen ? (
-                        <div className="ml-4 border-l-2 border-dashed border-[#d8cdb2] pl-1.5">
+                        <div className="ml-4 border-l border-gray-200 pl-1.5">
                           {cats.map((c) => {
                             const catOpen = openCats.includes(c.name);
                             return (
@@ -643,12 +646,12 @@ export function CellsClient() {
                                   type="button"
                                   onClick={() => toggleCat(c.name)}
                                   aria-expanded={catOpen}
-                                  className="flex w-full items-center gap-1.5 rounded-md px-2 py-1.5 text-left text-xs font-bold text-[#37585f] transition-colors hover:bg-[#f2ead8]"
+                                  className="flex w-full items-center gap-1.5 rounded-md px-2 py-1.5 text-left text-xs font-semibold text-gray-600 transition-colors duration-150 hover:bg-[#efedea] active:bg-[#e3e1db]"
                                 >
                                   <span aria-hidden="true">{c.icon}</span>
                                   <span className="min-w-0 flex-1 truncate">{c.name}</span>
-                                  <span className="text-[10px] font-semibold text-[#a5a08e]">{c.ids.length}</span>
-                                  <span aria-hidden="true" className="w-2 text-[9px] text-[#a5a08e]">{catOpen ? '▾' : '▸'}</span>
+                                  <span className="text-[10px] font-medium text-gray-400">{c.ids.length}</span>
+                                  <span aria-hidden="true" className="w-2 text-[9px] text-gray-400">{catOpen ? '▾' : '▸'}</span>
                                 </button>
                                 {catOpen ? (
                                   <div className="ml-2.5">
@@ -662,9 +665,12 @@ export function CellsClient() {
                                           ref={current ? currentItemRef : undefined}
                                           onClick={() => pickSpecimen(id)}
                                           aria-current={current}
-                                          className={`nb-book-item ${current ? 'nb-book-item-open' : ''}`}
+                                          className={`nb-book-item group ${current ? 'nb-book-item-open' : ''}`}
                                         >
-                                          <span className="w-7 shrink-0 text-right font-mono text-[10px] font-bold text-[#b0a284]">
+                                          <span aria-hidden="true" className="w-4 shrink-0 text-center text-[10px] leading-none text-gray-300 opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+                                            ⋮⋮
+                                          </span>
+                                          <span className="w-7 shrink-0 text-right font-mono text-[10px] text-gray-400">
                                             {ORDER_NO.get(id)}
                                           </span>
                                           <span className="min-w-0 flex-1 truncate">{sp.name}</span>
@@ -684,7 +690,7 @@ export function CellsClient() {
                 })
               )}
             </nav>
-            <div className="border-t-2 border-dashed border-[#d8cdb2] px-4 py-2 text-[10.5px] leading-4 text-[#8a8266]">
+            <div className="border-t border-gray-200 px-4 py-2 text-[10.5px] leading-4 text-gray-500">
               ⚡ = 课外拓展档案 · 点章节名收起/展开
             </div>
           </aside>
