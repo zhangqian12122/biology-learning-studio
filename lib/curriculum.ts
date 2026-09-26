@@ -655,6 +655,7 @@ export type ExperimentId =
   | 'msgFermentation'
   | 'threeDefenses'
   | 'digestionJourney'
+  | 'birdBreathing'
   | 'energyBalance'
   | 'rhIncompatibility'
   | 'hibernation'
@@ -1423,6 +1424,14 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: '细胞结构与物质运输',
   },
+  birdBreathing: {
+    title: '鸟类的双重呼吸',
+    kicker: '鸟类生理 · 课外拓展',
+    description: '气囊与肺的四相位循环：单向气流支撑飞行的超高耗氧。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+    extension: true,
+  },
   energyBalance: {
     title: '能量平衡与体重管理',
     kicker: '健康与营养 · 课外拓展',
@@ -1680,7 +1689,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'bloodRoutine', 'energyBalance', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1720,6 +1729,7 @@ export const experimentOrder: ExperimentId[] = [
   'photosynthesisHistory',
   'waterBalance',
   'breathingMechanics',
+  'birdBreathing',
   'neuronTypes',
   'transpiration',
   'photoperiodism',

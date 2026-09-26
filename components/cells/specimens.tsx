@@ -5050,10 +5050,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
-  { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard'] },
+  { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -14352,7 +14352,163 @@ function FigSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 火烈鸟（"粉色"的秘密） ================= */
+
+function FlamingoSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 腿（单腿站立） */}
+      <g style={dim(active, 0)}>
+        <path d="M240 300 v 60" stroke="#e88a8a" strokeWidth="6" strokeLinecap="round" />
+        <path d="M228 362 h 26" stroke="#e88a8a" strokeWidth="4" strokeLinecap="round" />
+        <text x="150" y="356" fontSize="12.5" fill="#c96a6a" fontWeight="700">单腿站立：减少热量散失（物理）</text>
+        <path d="M100 366 h 320" stroke="#8a9aaf" strokeWidth="2.4" />
+      </g>
+      {/* 身体 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="250" cy="250" rx="70" ry="46" fill="#f4a0a0" stroke="#c96a6a" strokeWidth="2.8" />
+        <path d="M170 240 q -40 -6 -70 8" fill="none" stroke="#f4a0a0" strokeWidth="8" strokeLinecap="round" />
+        <path d="M300 226 q 50 -14 90 2 q 40 14 20 44 q -24 26 -70 10 q -50 -16 -40 -56 Z" fill="#f4b0a8" stroke="#c96a6a" strokeWidth="2.4" />
+        <path d="M240 206 l 0 -80" stroke="#e88a8a" strokeWidth="8" strokeLinecap="round" />
+        <text x="70" y="180" fontSize="12.5" fill="#c96a6a" fontWeight="700">S 形长颈</text>
+      </g>
+      {/* 头与喙 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="240" cy="112" rx="24" ry="16" fill="#f4b0a8" stroke="#c96a6a" strokeWidth="2.4" />
+        <circle cx="246" cy="106" r="3.4" fill="#2a1a0a" />
+        <path d="M262 106 q 30 -4 42 8 q -14 8 -42 4 Z" fill="#e8e4d8" stroke="#a5765a" strokeWidth="2.2" />
+        <text x="60" y="140" fontSize="12.5" fill="#8a5a3a" fontWeight="700">下弯梳状喙：滤食藻类</text>
+        <text x="60" y="160" fontSize="12" fill="#8a5a3a">头朝下倒立滤食（独特姿态）</text>
+      </g>
+      {/* 粉色来源 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="60" width="440" height="60" rx="12" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.4" />
+        <text x="260" y="84" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="800">粉色不是天生的！来自食物中的类胡萝卜素（虾青素）</text>
+        <text x="260" y="106" textAnchor="middle" fontSize="11" fill="#a5533c">人工饲养喂无色素饲料 → 羽毛变白——"吃出颜色"的活体证明</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">火烈鸟 · 色素与食物链（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 新冠病毒（mRNA 疫苗的"原型"） ================= */
+
+function SarsCov2Svg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 病毒 */}
+      <g style={dim(active, 0)}>
+        <circle cx="240" cy="170" r="80" fill="#8a3a3a" stroke="#5a1a1a" strokeWidth="3" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => {
+          const ang = (i * 2 * Math.PI) / 10;
+          const x = 240 + Math.cos(ang) * 80;
+          const y = 170 + Math.sin(ang) * 80;
+          return <circle key={i} cx={x} cy={y} r="9" fill="#c94a4a" stroke="#8a1a1a" strokeWidth="1.8" />;
+        })}
+        <text x="240" y="176" textAnchor="middle" fontSize="11" fill="#f4d0d0" fontWeight="700">+ssRNA</text>
+        <text x="340" y="120" fontSize="12.5" fill="#8a1a1a" fontWeight="700">刺突蛋白 S（识 ACE2）</text>
+        <text x="340" y="142" fontSize="12" fill="#8a1a1a">包膜（脂质双层·宿主膜）</text>
+        <text x="340" y="164" fontSize="12" fill="#8a1a1a">单链正链 RNA（遗传）</text>
+      </g>
+      {/* mRNA 疫苗 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="270" width="440" height="96" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="294" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">mRNA 疫苗：把"刺突蛋白的制造图纸"送入人体细胞</text>
+        <text x="260" y="318" textAnchor="middle" fontSize="11.5" fill="#a5761d">人体细胞照图纸"生产"刺突蛋白 → 免疫系统识别并产生抗体与记忆细胞</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#a5761d">与灭活疫苗对比：mRNA 不含完整病毒·研发更快·需要"冷链"保存（RNA 易降解）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">新冠病毒 · mRNA 疫苗的"原型"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 风滚草（会"走路"的植物） ================= */
+
+function TumbleweedSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 地面 */}
+      <g style={dim(active, 0)}>
+        <path d="M40 300 h 440" stroke="#c9b88a" strokeWidth="3" />
+        {[0, 1, 2].map((i) => (
+          <ellipse key={i} cx={130 + i * 130} cy={314} rx="26" ry="5" fill="#d8c9a0" opacity="0.7" />
+        ))}
+      </g>
+      {/* 滚动的风滚草 */}
+      <g style={dim(active, 1)}>
+        <circle cx="300" cy="180" r="90" fill="none" stroke="#a58a5a" strokeWidth="2.6" strokeDasharray="8 6" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+          const ang = (i * 2 * Math.PI) / 8;
+          return <path key={i} d={`M300 180 Q ${300 + Math.cos(ang) * 40} ${180 + Math.sin(ang) * 40} ${300 + Math.cos(ang) * 82} ${180 + Math.sin(ang) * 82}`} fill="none" stroke="#a58a5a" strokeWidth="3" strokeLinecap="round" />;
+        })}
+        <path d="M210 180 Q 300 160 390 180" fill="none" stroke="#c9a86a" strokeWidth="2.4" />
+        <text x="340" y="80" fontSize="12.5" fill="#8a6a3a" fontWeight="700">整株从根部"断脐"</text>
+        <text x="340" y="100" fontSize="12" fill="#8a6a3a">随风滚动撒播种子</text>
+      </g>
+      {/* 策略 */}
+      <g style={dim(active, 2)}>
+        <rect x="46" y="244" width="210" height="90" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="151" y="268" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">"移动播种机"</text>
+        <text x="151" y="292" textAnchor="middle" fontSize="10.5" fill="#a5761d">一个植株滚动可撒 25 万粒种子</text>
+        <text x="151" y="314" textAnchor="middle" fontSize="10.5" fill="#a5761d">干旱平原无遮挡——风是"快递员"</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="280" y="244" width="196" height="90" rx="10" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.2" />
+        <text x="378" y="268" textAnchor="middle" fontSize="12" fill="#8a3a2a" fontWeight="800">入侵警示</text>
+        <text x="378" y="292" textAnchor="middle" fontSize="10.5" fill="#a5533c">风滚草（俄罗斯刺沙蓬）入侵北美</text>
+        <text x="378" y="314" textAnchor="middle" fontSize="10.5" fill="#a5533c">堵塞公路·加剧风蚀·挤占农田</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">风滚草 · 会"走路"的植物（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'flamingo',
+    name: '火烈鸟',
+    kicker: '鹳形目 · "吃"出来的粉色（课外拓展）',
+    intro: '火烈鸟的粉色不是天生的——它们羽毛本是灰白色，"粉色"完全来自食物：蓝藻和小虾富含类胡萝卜素（虾青素），在体内沉积于羽毛。人工饲养喂无色素饲料，羽毛会慢慢变白。它们单腿站立的"节能技巧"、S 形长颈滤食的姿态和大规模集群的壮观景象，是热带湖泊最独特的风景。',
+    extension: true,
+    parts: [
+      { name: '滤食喙', desc: '下弯的粗喙内有梳状"滤板"：头朝下倒立、喙在水中"扫荡"，滤食藻类与小型甲壳类。' },
+      { name: '粉色的来源', desc: '食物中的虾青素等类胡萝卜素沉积在羽毛与皮肤——食物链的色素"转译"（与三文鱼的粉色同理）。' },
+      { name: '单腿站立', desc: '可单腿站立数小时甚至入睡——"被动锁定"机制几乎不耗肌肉力，减少热量散失。' },
+      { name: '集群繁殖', desc: '数万只一起在盐湖泥滩筑"火山状"泥巢——集群是抵御天敌与应对环境波动的策略。' },
+      { name: '盐碱湖生活', desc: '能在高盐碱甚至强碱性的湖泊中生存（ legged 皮肤粗糙耐腐蚀）——占据其他鸟类不敢用的生态位。' },
+    ],
+    Svg: FlamingoSvg,
+  },
+  {
+    id: 'sarsCov2',
+    name: '新冠病毒',
+    kicker: '冠状病毒 · mRNA 疫苗的"原型"（课外拓展）',
+    intro: '新冠病毒（SARS-CoV-2）是带包膜的正链 RNA 病毒：表面的刺突蛋白（S 蛋白）像"钥匙"一样识别人体细胞的 ACE2 受体，打开入侵之门。mRNA 疫苗把"刺突蛋白的制造图纸"送入人体细胞——细胞照图纸生产出无害的刺突蛋白，免疫系统识别后产生抗体与记忆细胞。这是人类历史上最快研发的疫苗技术之一。',
+    extension: true,
+    parts: [
+      { name: '结构', desc: '单链正链 RNA + 刺突蛋白（S）+ 包膜蛋白（E）+ 膜蛋白（M）——包膜来自宿主细胞膜（"偷来的外衣"）。' },
+      { name: '入侵机制', desc: '刺突蛋白与人体细胞表面的 ACE2 受体结合 → 病毒包膜与细胞膜融合 → RNA 进入细胞"劫持"核糖体。' },
+      { name: 'mRNA 疫苗', desc: '把编码刺突蛋白的 mRNA 用脂质纳米颗粒送入细胞——细胞生产刺突蛋白并激发免疫（无感染风险）。' },
+      { name: '变异与免疫逃逸', desc: 'RNA 病毒变异快：刺突蛋白突变（如 Delta·Omicron）可部分逃逸抗体——是"加强针"的原因。' },
+      { name: 'RNA 病毒共性', desc: '与 HIV·流感·丙肝同属 RNA 病毒——变异率高，疫苗与药物需持续更新（与 DNA 病毒对比）。' },
+    ],
+    Svg: SarsCov2Svg,
+  },
+  {
+    id: 'tumbleweed',
+    name: '风滚草',
+    kicker: '藜科 · 会"走路"的植物（课外拓展）',
+    intro: '风滚草（俄罗斯刺沙蓬）是干旱平原上的"流浪者"：秋冬干旱时整株干枯、从根部断离，缩成一个随风滚动的"球形播种机"——一路上把几十万粒种子撒遍原野。它原产欧亚大陆，入侵北美后成为著名的"入侵植物"：堵塞公路、加剧风蚀、挤占农田——是植物传播策略与入侵风险的双重教材。',
+    extension: true,
+    parts: [
+      { name: '断离滚动', desc: '成熟后茎基部形成"离层"自动断裂——整株干枯收缩成球，风一吹就开始"旅行"。' },
+      { name: '播种策略', desc: '滚动过程中种子从裂口不断撒落——"广撒网"式传播，一个植株可撒约 25 万粒种子。' },
+      { name: '干旱适应', desc: '植株简化为细硬枝条、叶小且早落——减少蒸腾；根系浅而广，抓住每一滴降水。' },
+      { name: '入侵风险', desc: '19 世纪末随亚麻籽传入北美：无天敌控制下爆发蔓延——与生物入侵实验的"缺少天敌"原理一致。' },
+      { name: '防治', desc: '物理拔除+化学除草+生物防治（多种子专食性甲虫与真菌正在研究）——综合治理。' },
+    ],
+    Svg: TumbleweedSvg,
+  },
   {
     id: 'snowLeopard',
     name: '雪豹',
