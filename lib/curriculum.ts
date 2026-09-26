@@ -654,6 +654,7 @@ export type ExperimentId =
   | 'oxygenation'
   | 'msgFermentation'
   | 'threeDefenses'
+  | 'digestionJourney'
   | 'energyBalance'
   | 'rhIncompatibility'
   | 'hibernation'
@@ -1415,6 +1416,13 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '免疫调节与健康',
   },
+  digestionJourney: {
+    title: '消化与吸收之旅',
+    kicker: '消化系统 · 酶的作用',
+    description: '一口汉堡的五站旅行：三大营养物质的酶解路线与吸收。',
+    relatedBook: 'molecules',
+    relatedModule: '细胞结构与物质运输',
+  },
   energyBalance: {
     title: '能量平衡与体重管理',
     kicker: '健康与营养 · 课外拓展',
@@ -1657,7 +1665,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '酶与代谢',
     icon: '⚗️',
-    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'photosynthesisHistory', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'hydroponics', 'greenhouseGas'],
+    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'photosynthesisHistory', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'hydroponics', 'digestionJourney', 'greenhouseGas'],
   },
   {
     name: '细胞与膜',
@@ -1704,6 +1712,7 @@ export const experimentOrder: ExperimentId[] = [
   'greenhouseGas',
   'pigment',
   'hydroponics',
+  'digestionJourney',
   'photosynthesis',
   'photosynthesisFactors',
   'cellRespiration',

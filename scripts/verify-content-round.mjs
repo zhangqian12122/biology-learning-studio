@@ -7,24 +7,25 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：threeDefenses 三道防线保卫战 ----------
-await page.goto(`${BASE}/lab?exp=threeDefenses`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：digestionJourney 消化与吸收之旅 ----------
+await page.goto(`${BASE}/lab?exp=digestionJourney`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '伤口感染（金黄色葡萄球菌）' }).click();
-  await page.getByRole('button', { name: /发起进攻/ }).evaluate((el) => el.click());
+  await page.locator('button', { hasText: '③ 十二指肠' }).click();
+  await page.waitForTimeout(350);
+  await page.locator('button', { hasText: '④ 小肠绒毛' }).click();
   await page.waitForTimeout(400);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('三道防线保卫战');
-  results.experiment.interactive = after.includes('皮肤已破损') && after.includes('浆细胞产生抗体');
+  results.experiment.open = before.includes('消化与吸收之旅');
+  results.experiment.interactive = after.includes('毛细血管') && after.includes('90%');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['krill', 'myopia', 'plantSex'];
+const SPECIMENS = ['snowLeopard', 'thyroid', 'fig'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -76,17 +77,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：msgFermentation 实验页仍正常
-await page.goto(`${BASE}/lab?exp=msgFermentation`, { waitUntil: 'domcontentloaded' });
+// 回归检查：threeDefenses 实验页仍正常
+await page.goto(`${BASE}/lab?exp=threeDefenses`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.msgRegression = { found: t.includes('谷氨酸') || t.includes('味精'), ok: t.includes('谷氨酸') || t.includes('味精') };
+  results.specimens.defensesRegression = { found: t.includes('三道防线') || t.includes('病原体'), ok: t.includes('三道防线') || t.includes('病原体') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.msgRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.defensesRegression?.ok;
 console.log('ALL_OK=' + allOk);

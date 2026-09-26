@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -14241,7 +14241,163 @@ function PlantSexSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 雪豹（雪山之王） ================= */
+
+function SnowLeopardSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 雪山 */}
+      <g style={dim(active, 0)}>
+        <path d="M40 250 L 150 90 L 240 200 L 330 70 L 460 250 Z" fill="#e4ecf4" stroke="#8a9aaf" strokeWidth="2.6" />
+        <path d="M150 90 L 190 150 L 160 148 L 200 200 L 240 200 L 150 90 Z" fill="#f4f8fc" />
+        <path d="M330 70 L 370 140 L 340 130 L 380 210 L 460 250" fill="none" stroke="#8a9aaf" strokeWidth="1.6" />
+        <text x="356" y="62" fontSize="12.5" fill="#4a6a8a" fontWeight="700">海拔 3000~5000 米雪线</text>
+      </g>
+      {/* 雪豹 */}
+      <g style={dim(active, 1)}>
+        <path d="M180 220 q -10 -50 60 -62 q 90 -14 150 12 q 40 18 30 46 q -14 34 -90 38 q -110 6 -150 -34 Z" fill="#c9c4b8" stroke="#6a5a4a" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={i} d={`M${210 + i * 38} ${182 + (i % 2) * 14} q 8 -10 16 -2 q 6 10 -4 16 q -12 4 -12 -14`} fill="none" stroke="#5a4a3a" strokeWidth="2.2" />
+        ))}
+        <path d="M180 224 q -16 30 -44 40" fill="none" stroke="#c9c4b8" strokeWidth="14" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={`l${i}`} d={`M${230 + i * 34} 254 q 4 22 -2 38`} fill="none" stroke="#c9c4b8" strokeWidth="8" strokeLinecap="round" />
+        ))}
+        <text x="46" y="62" fontSize="12.5" fill="#4a5a4a" fontWeight="700">灰白底+玫瑰斑（雪地伪装）</text>
+        <text x="60" y="230" fontSize="12.5" fill="#4a5a4a" fontWeight="700">长尾：平衡+御寒"围巾"</text>
+      </g>
+      {/* 保护 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">高山生态系统的"伞护种"：保护雪豹就保护了整片雪山家园</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">全球仅存约 4000~6000 只·我国占 60% 以上——国家一级保护动物</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">气候变化使雪线上移→栖息地碎片化——"雪山之王"的生存告急</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">雪豹 · 高山旗舰保护物种（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 甲状腺（蝴蝶形"代谢 thermostat"） ================= */
+
+function ThyroidSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 腺体 */}
+      <g style={dim(active, 0)}>
+        <path d="M180 140 q -20 -50 40 -58 q 30 -4 40 16 q 10 -20 40 -16 q 60 8 40 58 q -14 44 -80 48 q -66 -4 -80 -48 Z" fill="#d8a898" stroke="#8a4a3a" strokeWidth="2.8" />
+        <path d="M260 82 v 60" stroke="#8a4a3a" strokeWidth="2.4" />
+        <text x="356" y="110" fontSize="12.5" fill="#8a4a3a" fontWeight="700">甲状腺（喉下·蝴蝶形）</text>
+        <text x="392" y="130" fontSize="12" fill="#8a4a3a">分泌甲状腺激素</text>
+      </g>
+      {/* 激素作用 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="196" width="210" height="96" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="151" y="220" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">甲状腺激素三件事</text>
+        <text x="151" y="244" textAnchor="middle" fontSize="11" fill="#a5761d">提高细胞代谢（产热）</text>
+        <text x="151" y="264" textAnchor="middle" fontSize="11" fill="#a5761d">促进生长发育（幼年缺→呆小症）</text>
+        <text x="151" y="284" textAnchor="middle" fontSize="11" fill="#a5761d">提高神经系统的兴奋性</text>
+      </g>
+      {/* 碘与大脖子 */}
+      <g style={dim(active, 2)}>
+        <rect x="286" y="196" width="190" height="96" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="381" y="220" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">碘是"原料"</text>
+        <text x="381" y="244" textAnchor="middle" fontSize="10.5" fill="#37585f">缺碘 → 甲状腺代偿性肿大</text>
+        <text x="381" y="264" textAnchor="middle" fontSize="10.5" fill="#37585f">（"大脖子病"·内陆山区常见）</text>
+        <text x="381" y="284" textAnchor="middle" fontSize="10.5" fill="#59767c">食盐加碘——公共卫生的胜利</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="304" width="440" height="66" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="328" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">分级调节：下丘脑→垂体→甲状腺；激素过多反过来抑制上级（负反馈）</text>
+        <text x="260" y="352" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">甲亢：代谢亢进·易怒消瘦；甲减：代谢低下·嗜睡臃肿——本站甲状腺轴实验互动</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">甲状腺 · 代谢的"恒温器"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 无花果（花藏在"果"里） ================= */
+
+function FigSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 无花果树与果 */}
+      <g style={dim(active, 0)}>
+        <path d="M180 300 q -30 -100 20 -160" fill="none" stroke="#8a6a3a" strokeWidth="14" strokeLinecap="round" />
+        <path d="M320 300 q 30 -100 -20 -160" fill="none" stroke="#8a6a3a" strokeWidth="14" strokeLinecap="round" />
+        <path d="M180 140 q 80 -40 120 0 q -60 20 -120 0" fill="none" stroke="#4a8a3a" strokeWidth="16" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <ellipse key={i} cx={230 + i * 32} cy={210 - i * 6} rx="15" ry="20" fill="#7a9a5a" stroke="#4a6a2a" strokeWidth="2.2" />
+        ))}
+        <text x="336" y="216" fontSize="12.5" fill="#4a6a2a" fontWeight="700">隐头花序：花"藏"在果内</text>
+        <text x="336" y="236" fontSize="12" fill="#4a6a2a">切开才能看见内部的"花海"</text>
+      </g>
+      {/* 共生传粉 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="120" width="180" height="80" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="136" y="144" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">榕小蜂钻入"产房"</text>
+        <text x="136" y="168" textAnchor="middle" fontSize="10.5" fill="#a5761d">在花内产卵·同时为花授粉</text>
+        <text x="136" y="190" textAnchor="middle" fontSize="10.5" fill="#a5761d">一对一的"古老契约"（数千万年）</text>
+        <path d="M226 160 q 30 30 60 10" fill="none" stroke="#8a671b" strokeWidth="1.4" strokeDasharray="3 3" />
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">"无花果"其实有花——只是花序轴内凹、花藏在"果"里（隐头花序）</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">我们吃的主要是花托膨大成的"果肉"，内部细粒才是真正的果实（瘦果）</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">与草莓（聚合果）对比：植物学"果实"的定义远比生活直觉丰富</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">无花果 · 隐头花序的共生奇迹（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'snowLeopard',
+    name: '雪豹',
+    kicker: '猫科 · 雪山之王（课外拓展·保护动物）',
+    intro: '雪豹是海拔 3000~5000 米高山雪线上的"隐士"：灰白底色配玫瑰斑完美融入乱石雪地，长而粗的尾巴既是跳跃的"平衡杆"又是睡觉的"围巾"。它被称为高山生态系统的"伞护种"——保护雪豹及其猎物，就等于保护了整片高原水源地与无数同域物种。全球仅存约 4000~6000 只，我国占六成以上。',
+    extension: true,
+    parts: [
+      { name: '伪装大师', desc: '灰白毛色与深色玫瑰斑在乱石雪地间"隐形"——蹲伏接近猎物的高手。' },
+      { name: '大尾巴', desc: '又粗又长的尾巴占体长 3/4 以上：跳跃时当"平衡杆"、睡觉时当"围巾"，还能储存脂肪。' },
+      { name: '高原装备', desc: '大而圆润的鼻腔加热稀薄冷空气；超大脚掌像"雪地靴"分散体重不陷雪。' },
+      { name: '伞护种', desc: '雪豹的家园覆盖高原水源地：保护雪豹的栖息地，同时保护了下游亿万人的水源。' },
+      { name: '生存挑战', desc: '气候变化使树线上移挤压栖息地、猎物（岩羊）减少——雪豹与人类的冲突需要"智慧化解"。' },
+    ],
+    Svg: SnowLeopardSvg,
+  },
+  {
+    id: 'thyroid',
+    name: '甲状腺',
+    kicker: '内分泌 · 代谢的"恒温器"（课外拓展）',
+    intro: '甲状腺是位于喉结下方的蝴蝶形腺体：它分泌的甲状腺激素像全身细胞的"油门"——提高代谢率、促进生长发育、提高神经兴奋性。缺碘会让甲状腺代偿性肿大（"大脖子病"），幼儿缺碘或激素不足会导致呆小症——食盐加碘是公共卫生史上最成功的干预之一。',
+    extension: true,
+    parts: [
+      { name: '蝴蝶形腺体', desc: '位于喉结下方、气管两侧，由两个侧叶+峡部连成"蝴蝶"状——成年重约 25 克。' },
+      { name: '甲状腺激素', desc: '提高细胞代谢率、增加产热（体温维持的"功臣"）；促进骨骼与神经系统的发育。' },
+      { name: '碘与健康', desc: '碘是合成甲状腺激素的原料：缺碘→代偿性肿大（大脖子病）；幼年缺碘→呆小症（智力+体格双重障碍）。' },
+      { name: '甲亢与甲减', desc: '甲亢：代谢亢进、易怒、消瘦、突眼；甲减：代谢低下、嗜睡、臃肿——"油门"失灵的两种方向。' },
+      { name: '分级调节', desc: '下丘脑→垂体（促甲状腺激素）→甲状腺的分级调控，激素过多反过来抑制上级——负反馈的教科书案例。' },
+    ],
+    Svg: ThyroidSvg,
+  },
+  {
+    id: 'fig',
+    name: '无花果',
+    kicker: '桑科 · "花藏在果里"的共生奇迹（课外拓展）',
+    intro: '"无花果"其实有花——只是花"藏"在膨大的花序轴内侧（隐头花序），切开才能看到里面密密的"花海"。榕小蜂从顶端小孔钻入产卵，同时为花授粉——数千万年"一对一大"的共生契约。我们吃的主要是花托膨大的"果肉"，内部细小的颗粒才是真正的果实和种子。',
+    extension: true,
+    parts: [
+      { name: '隐头花序', desc: '花序轴肉质膨大内凹， hundreds of 小花藏在"内壁"上——外面只见一个"果"。' },
+      { name: '榕小蜂传粉', desc: '雌蜂钻入产卵并授粉；其幼虫以部分瘿花为食——"你给我育儿女，我为你传粉"。' },
+      { name: '可食部分', desc: '食用的"果肉"主要是膨大的花托（肉质花序轴），内部小颗粒是真正的果实（瘦果）。' },
+      { name: '共生专一性', desc: '每种榕树（无花果类）几乎都有专属的榕小蜂 species——共演化"一对一"的极致案例。' },
+      { name: '营养与风险', desc: '富含膳食纤维与矿物质；未成熟乳汁含蛋白酶可能刺激皮肤——熟透才能食用。' },
+    ],
+    Svg: FigSvg,
+  },
   {
     id: 'krill',
     name: '南极磷虾',

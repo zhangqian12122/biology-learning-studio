@@ -140,6 +140,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   oxygenation: Leaf,
   msgFermentation: Wine,
   threeDefenses: KeyRound,
+  digestionJourney: UtensilsCrossed,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -272,6 +273,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   oxygenation: () => import('@/components/lab/oxygenation-lab').then(({ OxygenationLab }) => ({ default: OxygenationLab })),
   msgFermentation: () => import('@/components/lab/msg-fermentation-lab').then(({ MsgFermentationLab }) => ({ default: MsgFermentationLab })),
   threeDefenses: () => import('@/components/lab/three-defenses-lab').then(({ ThreeDefensesLab }) => ({ default: ThreeDefensesLab })),
+  digestionJourney: () => import('@/components/lab/digestion-journey-lab').then(({ DigestionJourneyLab }) => ({ default: DigestionJourneyLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -374,6 +376,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   epigenetics: ['dnaHelix'],
   msgFermentation: ['cellTypeCompare'],
   threeDefenses: ['threeDefenseLines'],
+  digestionJourney: ['digestiveSystem'],
   ecoStability: ['ecosystemTypes'],
 };
 
