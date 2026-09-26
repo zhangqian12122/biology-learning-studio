@@ -136,6 +136,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   invasiveSim: X,
   geneticDrift: Dices,
   altitudeAdaptation: Activity,
+  epigenetics: Lightbulb,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -264,6 +265,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   invasiveSim: () => import('@/components/lab/invasive-sim-lab').then(({ InvasiveSimLab }) => ({ default: InvasiveSimLab })),
   geneticDrift: () => import('@/components/lab/genetic-drift-lab').then(({ GeneticDriftLab }) => ({ default: GeneticDriftLab })),
   altitudeAdaptation: () => import('@/components/lab/altitude-adaptation-lab').then(({ AltitudeAdaptationLab }) => ({ default: AltitudeAdaptationLab })),
+  epigenetics: () => import('@/components/lab/epigenetics-lab').then(({ EpigeneticsLab }) => ({ default: EpigeneticsLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -363,6 +365,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   humanTraits: ['karyotype'],
   invasiveSim: ['invasiveSpecies'],
   altitudeAdaptation: ['alveolus'],
+  epigenetics: ['dnaHelix'],
   ecoStability: ['ecosystemTypes'],
 };
 

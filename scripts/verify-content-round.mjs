@@ -7,25 +7,24 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：altitudeAdaptation 高原适应 ----------
-await page.goto(`${BASE}/lab?exp=altitudeAdaptation`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：epigenetics 表观遗传 ----------
+await page.goto(`${BASE}/lab?exp=epigenetics`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  for (const site of ['高原反应区（3000 m）', '高海拔（4500 m）', '极高海拔营地（5500 m）']) {
-    await page.locator('button', { hasText: site }).click();
-    await page.waitForTimeout(350);
-  }
+  await page.locator('button', { hasText: '生活方式迥异' }).click();
+  await page.locator('button', { hasText: '50 岁（中年）' }).click();
+  await page.waitForTimeout(400);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('高原适应');
-  results.experiment.interactive = after.includes('EPAS1') && after.includes('74%');
+  results.experiment.open = before.includes('表观遗传');
+  results.experiment.interactive = after.includes('45%') && after.includes('基因相同，命运却可以不同');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['mudskipper', 'handedness', 'lotus'];
+const SPECIMENS = ['zebra', 'nail', 'cacao'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -77,17 +76,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：geneticDrift 实验页仍正常
-await page.goto(`${BASE}/lab?exp=geneticDrift`, { waitUntil: 'domcontentloaded' });
+// 回归检查：altitudeAdaptation 实验页仍正常
+await page.goto(`${BASE}/lab?exp=altitudeAdaptation`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.driftRegression = { found: t.includes('漂变') || t.includes('基因频率'), ok: t.includes('漂变') || t.includes('基因频率') };
+  results.specimens.altRegression = { found: t.includes('高原') || t.includes('血氧'), ok: t.includes('高原') || t.includes('血氧') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.driftRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.altRegression?.ok;
 console.log('ALL_OK=' + allOk);

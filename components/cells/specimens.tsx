@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -13794,7 +13794,157 @@ function LotusSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 斑马（条纹之谜） ================= */
+
+function ZebraSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体与条纹 */}
+      <g style={dim(active, 0)}>
+        <path d="M130 210 q -6 -60 60 -74 q 100 -20 190 6 q 50 14 48 52 q -4 42 -70 54 q -120 20 -190 -6 q -36 -14 -38 -32 Z" fill="#f0f0e8" stroke="#3a3a3a" strokeWidth="2.8" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+          <path key={i} d={`M${150 + i * 30} ${142 + (i % 3) * 6} q 6 44 -2 88`} fill="none" stroke="#2a2a2a" strokeWidth="9" strokeLinecap="round" />
+        ))}
+        <path d="M424 176 l 30 -18 m -30 30 l 32 -2" stroke="#2a2a2a" strokeWidth="5" strokeLinecap="round" />
+        <text x="380" y="112" fontSize="12.5" fill="#2a2a2a" fontWeight="700">每只斑马的条纹独一无二</text>
+        <text x="380" y="132" fontSize="12" fill="#2a2a2a">（群体识别的"条形码"）</text>
+      </g>
+      {/* 头腿 */}
+      <g style={dim(active, 1)}>
+        <path d="M134 182 q -26 -10 -34 -34 q 18 -8 32 4 q 12 10 12 26" fill="#f0f0e8" stroke="#2a2a2a" strokeWidth="2.4" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={`l${i}`} d={`M${168 + i * 60} 236 v 66`} stroke="#2a2a2a" strokeWidth="9" strokeLinecap="round" />
+        ))}
+        <path d="M158 306 h 26 m 130 -4 h 26" stroke="#2a2a2a" strokeWidth="5" strokeLinecap="round" />
+        <text x="60" y="180" fontSize="12.5" fill="#2a2a2a" fontWeight="700">条纹延伸到蹄与鬃</text>
+      </g>
+      {/* 条纹功能假说 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">条纹之谜的假说："防蝇叮咬"证据最强（条纹干扰采采蝇降落）</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">其他假说：群体"运动眩晕"扰乱捕食者·热调节（黑白条纹微气流）·社会识别</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">科学方法示范：同一问题·多个假说·逐一检验——"防蝇说"近年实验支持最多</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">斑马 · 马科"条纹之谜"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 指甲（健康的"窗口"） ================= */
+
+function NailSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 指甲结构 */}
+      <g style={dim(active, 0)}>
+        <path d="M140 200 q 0 -110 120 -110 q 120 0 120 110 l -30 90 q -90 30 -180 0 Z" fill="#f8e8e0" stroke="#c99a8a" strokeWidth="2.8" />
+        <path d="M170 120 q 90 -46 180 0 l -10 60 q -80 34 -160 0 Z" fill="#f8d8d0" stroke="#c99a8a" strokeWidth="2" />
+        <ellipse cx="230" cy="118" rx="22" ry="12" fill="#f8f0e8" stroke="#c9b8a8" strokeWidth="1.8" />
+        <text x="392" y="120" fontSize="12.5" fill="#8a5a3a" fontWeight="700">甲板（角蛋白板）</text>
+        <text x="360" y="164" fontSize="12.5" fill="#8a5a3a" fontWeight="700">甲母质（生长源头）</text>
+        <text x="392" y="204" fontSize="12.5" fill="#8a5a3a" fontWeight="700">甲床（下方的"地基"）</text>
+      </g>
+      {/* 月牙与健康 */}
+      <g style={dim(active, 1)}>
+        <path d="M170 130 a 34 26 0 0 1 60 0 q -30 16 -60 0 Z" fill="#f8f8f8" stroke="#d8d8d0" strokeWidth="1.6" />
+        <text x="60" y="150" fontSize="12.5" fill="#8a671b" fontWeight="700">甲半月（"月牙"）= 甲母质.visible 部分</text>
+        <text x="60" y="172" fontSize="12" fill="#8a671b">指甲每月长 2~3 毫米（手指比脚趾快）</text>
+        <text x="60" y="194" fontSize="12" fill="#8a671b">指甲是皮肤角蛋白的"衍生结构"</text>
+      </g>
+      {/* 信号 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="800">指甲是健康的"显示屏"：勺状甲提示缺铁 · 甲床发蓝提示缺氧</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#537078">横向凹沟（ Beau 线）记录了一场大病或高烧的"时间戳"</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#537078">角蛋白与头发同源——"指甲美容"的生物学边界（过度美甲伤甲母质）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">指甲 · 角蛋白的"健康窗口"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 可可（巧克力的源头） ================= */
+
+function CacaoSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 树与豆荚 */}
+      <g style={dim(active, 0)}>
+        <path d="M250 320 v -180" stroke="#6a8a3a" strokeWidth="14" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M250 ${200 - i * 50} q -44 -18 -70 -44 m 70 44 q 44 -18 70 -44`} fill="none" stroke="#4a8a3a" strokeWidth="5" strokeLinecap="round" />
+        ))}
+        {[0, 1, 2, 3].map((i) => (
+          <ellipse key={`p${i}`} cx={160 + (i % 2) * 190} cy={160 + Math.floor(i / 2) * 70} rx="16" ry="34" fill="#e8a03a" stroke="#8a5a1d" strokeWidth="2.2" />
+        ))}
+        <text x="60" y="110" fontSize="12.5" fill="#6a8a2a" fontWeight="700">"老茎生花"：花果直接长在树干上</text>
+      </g>
+      {/* 发酵 */}
+      <g style={dim(active, 1)}>
+        <rect x="330" y="200" width="160" height="110" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="410" y="226" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">风味来自发酵</text>
+        <text x="410" y="250" textAnchor="middle" fontSize="10.5" fill="#a5761d">酵母+乳酸菌+醋酸菌接力</text>
+        <text x="410" y="272" textAnchor="middle" fontSize="10.5" fill="#a5761d">豆内"死亡"才启动风味反应</text>
+        <text x="410" y="294" textAnchor="middle" fontSize="10" fill="#799398">5~7 天翻堆·再烘焙研磨</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="280" height="80" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="180" y="314" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">发酵食品家族的"甜品担当"</text>
+        <text x="180" y="338" textAnchor="middle" fontSize="11" fill="#3f7f3a">可可豆的苦涩在微生物发酵中</text>
+        <text x="180" y="358" textAnchor="middle" fontSize="11" fill="#3f7f3a">转化为数百种香气分子——"巧克力前传"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">可可 · 发酵与风味（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'zebra',
+    name: '斑马',
+    kicker: '马科 · 条纹之谜（课外拓展）',
+    intro: '斑马的黑白条纹是生物学上著名的"谜题"：为什么不选保护色？近年实验给出了新答案——条纹能干扰采采蝇等吸血昆虫的降落（昆虫视觉会被条纹"晃晕"）。此外，每只斑马的条纹独一无二（母子识别、群体识别），黑白条纹间还可能形成微气流帮助散热。一个"简单"的花纹，藏着多重生存功能。',
+    extension: true,
+    parts: [
+      { name: '条纹的防蝇功能', desc: '实验显示条纹表面对吸血蝇类的"降落吸引力"最低——窄条纹造成光流混乱，昆虫临降落前"急刹车"飞开。' },
+      { name: '个体识别', desc: '每只斑马条纹如"条形码"独一无二——幼驹靠条纹辨认母亲，群内靠条纹互相识别。' },
+      { name: '运动眩晕假说', desc: '群体奔跑时条纹形成的视觉噪声可能干扰狮子判断单只目标的位置与速度。' },
+      { name: '热调节假说', desc: '黑白条纹微区温差形成小气流——有降温作用的假说之一（证据仍在积累）。' },
+      { name: '科学方法示范', desc: '条纹之谜展示了"多假说竞争+实验检验"的科学过程——教科书级的探究案例。' },
+    ],
+    Svg: ZebraSvg,
+  },
+  {
+    id: 'nail',
+    name: '指甲',
+    kicker: '皮肤附属物 · 健康的"窗口"（课外拓展）',
+    intro: '指甲是皮肤的角蛋白"衍生结构"：甲母质（生长"发源地"）不断分裂角化，推动甲板向前生长——手指甲每月约长 2~3 毫米。指甲是健康的"窗口"：勺状甲提示缺铁、甲床发蓝提示缺氧、横向凹沟记录一场大病的时间——读懂指甲，就是读懂身体发出的信号。',
+    extension: true,
+    parts: [
+      { name: '指甲结构', desc: '甲板（可见的角蛋白板）覆盖在甲床上；根部的甲母质是生长"发动机"——"月牙"就是它的可见部分。' },
+      { name: '月牙（甲半月）', desc: '白色的甲半月是未完全角化的甲母质——拇指最明显，小指常看不到（均属正常）。' },
+      { name: '生长速度', desc: '指甲每月 2~3 毫米、脚趾甲每月约 1 毫米；年轻·夏天·常用手长得更快。' },
+      { name: '健康信号', desc: '勺状反甲→缺铁；甲床发蓝→缺氧（杵状指→心肺问题）；横向 Beau 线→曾经历高烧大病。' },
+      { name: '保护提醒', desc: '指甲与毛发同为角蛋白：过度美甲（打磨·卸甲水）会损伤甲板与甲母质——薄脆易断的根源。' },
+    ],
+    Svg: NailSvg,
+  },
+  {
+    id: 'cacao',
+    name: '可可',
+    kicker: '锦葵科 · 巧克力的"发酵前传"（课外拓展）',
+    intro: '巧克力香甜浓郁的源头是可可豆——但刚剖出的可可豆又苦又涩，毫无巧克力味：必须经过 5~7 天的微生物发酵（酵母→乳酸菌→醋酸菌接力），豆内发芽死亡、风味前体大量生成，再经烘焙产生数百种香气分子。"老茎生花"的可可树把果荚直接挂在树干上，方便采摘它的"黄金豆"。',
+    extension: true,
+    parts: [
+      { name: '老茎生花', desc: '花与果荚直接开在树干上（ cauliflory）——便于传粉的小型昆虫接近与人工采收。' },
+      { name: '发酵造味', desc: '果肉中的酵母产酒精、乳酸菌与醋酸菌接力——微生物代谢产生的酸与热"启动"风味物质形成。' },
+      { name: '烘焙生香', desc: '发酵后的可可豆经烘焙发生美拉德反应——生成 600 种以上的香气分子（"巧克力味"的来源）。' },
+      { name: '次生代谢', desc: '可可碱与咖啡因是可可的"防御武器"（苦味驱避动物）——与咖啡因标本同属次生代谢家族。' },
+      { name: '发酵食品家族', desc: '可可与茶叶、咖啡并称世界三大无酒精饮料原料——其中茶叶、可可都依赖微生物发酵造味。' },
+    ],
+    Svg: CacaoSvg,
+  },
   {
     id: 'mudskipper',
     name: '弹涂鱼',

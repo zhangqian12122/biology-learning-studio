@@ -650,6 +650,7 @@ export type ExperimentId =
   | 'invasiveSim'
   | 'geneticDrift'
   | 'altitudeAdaptation'
+  | 'epigenetics'
   | 'energyBalance'
   | 'rhIncompatibility'
   | 'hibernation'
@@ -1381,6 +1382,14 @@ export const experimentMeta: Record<
     relatedModule: '内环境与稳态',
     extension: true,
   },
+  epigenetics: {
+    title: '表观遗传',
+    kicker: '遗传学前沿 · 课外拓展',
+    description: '同卵双胞胎为何越来越像又越来越不同：甲基化开关与蜂王浆之谜。',
+    relatedBook: 'genetics',
+    relatedModule: 'DNA 的复制、转录与翻译',
+    extension: true,
+  },
   energyBalance: {
     title: '能量平衡与体重管理',
     kicker: '健康与营养 · 课外拓展',
@@ -1633,7 +1642,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '遗传与进化',
     icon: '🧬',
-    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'humanTraits', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'geneticDrift', 'antibioticResistance', 'geneEngine'],
+    ids: ['traitSeparation', 'dihybridSim', 'sexLinkedCross', 'rhIncompatibility', 'humanTraits', 'crossingOver', 'doubleFertilization', 'grafting', 'lowTempPolyploid', 'meiosisSlide', 'genetics', 'geneticPedigree', 'dogma', 'dnaReplication', 'phageExperiment', 'geneticsHistory', 'breedingDesigner', 'chromosomeVariation', 'geneFrequency', 'selection', 'bipedalCosts', 'geneticDrift', 'epigenetics', 'antibioticResistance', 'geneEngine'],
   },
   {
     name: '稳态与调节',
@@ -1704,6 +1713,7 @@ export const experimentOrder: ExperimentId[] = [
   'selection',
   'bipedalCosts',
   'geneticDrift',
+  'epigenetics',
   'antibioticResistance',
   // 选择性必修 1 · 稳态与调节
   'urineGlucoseTest',
