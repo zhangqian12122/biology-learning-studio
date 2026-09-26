@@ -7,23 +7,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：netPhotosynthesis 净光合与真光合 ----------
-await page.goto(`${BASE}/lab?exp=netPhotosynthesis`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：germinationConditions 种子萌发的条件 ----------
+await page.goto(`${BASE}/lab?exp=germinationConditions`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.getByRole('button', { name: /黑暗中/ }).evaluate((el) => el.click());
+  await page.locator('button', { hasText: 'B 组：干燥（缺水）' }).click();
+  await page.waitForTimeout(350);
+  const midText = await page.locator('main').innerText();
+  await page.locator('button', { hasText: 'A 组：全部条件适宜' }).click();
   await page.waitForTimeout(400);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('净光合与真光合');
-  results.experiment.interactive = after.includes('-4') && after.includes('省粮');
+  results.experiment.open = before.includes('种子萌发的条件');
+  results.experiment.interactive = midText.includes('第一个"开关"') && midText.includes('/ 10 粒') && after.includes('对照组');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['nakedMoleRat', 'eyeColor', 'hydrotropism'];
+const SPECIMENS = ['mayfly', 'bloodVolume', 'peanut'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -75,17 +78,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：whaleFall 实验页仍正常
-await page.goto(`${BASE}/lab?exp=whaleFall`, { waitUntil: 'domcontentloaded' });
+// 回归检查：netPhotosynthesis 实验页仍正常
+await page.goto(`${BASE}/lab?exp=netPhotosynthesis`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.whaleRegression = { found: t.includes('鲸落') || t.includes('化能合成'), ok: t.includes('鲸落') || t.includes('化能合成') };
+  results.specimens.netPRegression = { found: t.includes('净光合') || t.includes('总光合'), ok: t.includes('净光合') || t.includes('总光合') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.whaleRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.netPRegression?.ok;
 console.log('ALL_OK=' + allOk);

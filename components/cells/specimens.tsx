@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -15146,7 +15146,164 @@ function HydrotropismSvg({ active }: { active: number | null; open?: boolean }) 
   );
 }
 
+/* ================= 蜉蝣（"朝生暮死"的飞虫） ================= */
+
+function MayflySvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 蜉蝣成虫 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="150" rx="46" ry="20" fill="#c9b88a" stroke="#8a7a4a" strokeWidth="2.6" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${244 + i * 4} 136 q ${40 + i * 20} ${-30 - i * 8} ${96 + i * 24} ${-20 - i * 10}`} fill="none" stroke="#e8e4d0" strokeWidth="5" strokeLinecap="round" opacity="0.8" />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <path key={`t${i}`} d={`M${298 + i * 3} 148 l ${30 + i * 8} ${-6 + i * 6}`} stroke="#8a7a4a" strokeWidth="2.2" strokeLinecap="round" />
+        ))}
+        {[0, 1].map((i) => (
+          <path key={`f${i}`} d={`M${230 + i * 8} 166 l ${-4 - i * 3} 26`} stroke="#8a7a4a" strokeWidth="2.2" strokeLinecap="round" />
+        ))}
+        <text x="330" y="110" fontSize="12.5" fill="#8a7a4a" fontWeight="700">前翅大·后翅退化成小棒</text>
+        <text x="330" y="130" fontSize="12" fill="#8a7a4a">尾须细长（2~3 根"尾巴"）</text>
+      </g>
+      {/* 生活史 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="240" width="216" height="100" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="154" y="264" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">不完全变态的一生</text>
+        <text x="154" y="288" textAnchor="middle" fontSize="10.5" fill="#37585f">卵（水中）→ 稚虫（1~3 年）</text>
+        <text x="154" y="310" textAnchor="middle" fontSize="10.5" fill="#37585f">→ 亚成虫 → 成虫（数小时~数天）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="284" y="240" width="196" height="100" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="382" y="264" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">"朝生暮死"的真相</text>
+        <text x="382" y="288" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">幼期在水中生活 1~3 年</text>
+        <text x="382" y="310" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">成虫不吃不喝·只为繁殖</text>
+        <text x="382" y="332" textAnchor="middle" fontSize="9.5" fill="#59767c">口器退化——"婚飞"是唯一使命</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蜉蝣 · 水质指示昆虫（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 人体血量与献血 ================= */
+
+function BloodVolumeSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 人体血量 */}
+      <g style={dim(active, 0)}>
+        <path d="M150 70 q 80 -30 160 0 q 30 60 0 130 q -40 50 -80 50 q -40 0 -80 -50 q -30 -70 0 -130 Z" fill="#f0c9b0" stroke="#a5765a" strokeWidth="2.8" />
+        <path d="M170 100 q 60 -26 120 0 q 20 50 -4 110 q -30 40 -56 40 q -26 0 -56 -40 q -24 -60 -4 -110 Z" fill="#c94a4a" stroke="#8a2020" strokeWidth="2.2" />
+        <text x="230" y="266" textAnchor="middle" fontSize="12.5" fill="#8a3a2a" fontWeight="700">成人血量约 4000~5000 mL（体重 7%~8%）</text>
+      </g>
+      {/* 献血 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="230" width="200" height="110" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="146" y="254" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">献血 200~400 mL 安全吗？</text>
+        <text x="146" y="278" textAnchor="middle" fontSize="10.5" fill="#a5761d">不到总血量 10%·身体快速补充</text>
+        <text x="146" y="300" textAnchor="middle" fontSize="10.5" fill="#a5761d">水分无机盐数小时内恢复</text>
+        <text x="146" y="322" textAnchor="middle" fontSize="10.5" fill="#a5761d">红细胞约 1 个月恢复</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="284" y="230" width="196" height="110" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="382" y="254" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">骨髓"加班"造血</text>
+        <text x="382" y="278" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">刺激造血干细胞增殖</text>
+        <text x="382" y="300" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">适量献血促进血液"新陈代谢"</text>
+        <text x="382" y="322" textAnchor="middle" fontSize="10" fill="#59767c">与健康人：不影响健康（需符合条件）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">人体血量 · 无偿献血的生物学（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 花生（地上开花地下结果） ================= */
+
+function PeanutSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 地上开花 */}
+      <g style={dim(active, 0)}>
+        <path d="M250 230 v -110" stroke="#5a9a3a" strokeWidth="7" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M250 ${200 - i * 40} q -30 -12 -50 -8 m 50 8 q 30 -12 50 -8`} fill="none" stroke="#7ab84a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        {[0, 1].map((i) => (
+          <circle key={`f${i}`} cx={222 + i * 56} cy={132 - i * 10} r="8" fill="#e8c83a" stroke="#a58a2a" strokeWidth="1.8" />
+        ))}
+        <text x="330" y="110" fontSize="12.5" fill="#8a671b" fontWeight="700">黄色蝶形花：开在枝上</text>
+        <text x="330" y="132" fontSize="12" fill="#8a671b">受精后子房柄伸长"扎"向地面</text>
+      </g>
+      {/* 地下结果 */}
+      <g style={dim(active, 1)}>
+        <path d="M40 260 h 440" stroke="#8a7a4a" strokeWidth="2.6" />
+        <path d="M60 290 h 400 v 60 h -400 Z" fill="#c9a06a" stroke="#a5763a" strokeWidth="2.4" opacity="0.5" />
+        {[0, 1].map((i) => (
+          <g key={i}>
+            <path d={`M${200 + i * 90} 236 q 10 24 -6 40 q -10 12 -22 8 m -14 -18 q -12 16 -4 30`} fill="none" stroke="#c9a05a" strokeWidth="4" strokeLinecap="round" />
+            <ellipse cx={196 + i * 110} cy={300} rx="26" ry="16" fill="#d8b878" stroke="#8a6a2a" strokeWidth="2.2" />
+            <path d={`M${186 + i * 110} 298 q ${10 + i * 4} -2 22 2`} fill="none" stroke="#a58a3a" strokeWidth="1.8" />
+          </g>
+        ))}
+        <text x="52" y="76" fontSize="12.5" fill="#8a5a3a" fontWeight="700">地下结荚（"入土结荚"）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="290" width="440" height="76" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="314" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">受精子房柄"向地"伸长钻入土中——黑暗环境是结荚的必要条件</text>
+        <text x="260" y="338" textAnchor="middle" fontSize="11.5" fill="#a5761d">花生油来自子叶（储存脂肪）；花生也是"地上开花、地下结果"的独特作物</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">注意：花生是"荚果"——与草莓聚合果、向日葵瘦果"果实类型"对比</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">花生 · 地上开花地下结果（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'mayfly',
+    name: '蜉蝣',
+    kicker: '蜉蝣目 · "朝生暮死"的飞虫（课外拓展）',
+    intro: '"寄蜉蝣于天地"——蜉蝣成虫寿命只有数小时到数天，不吃不喝，只为完成"婚飞"繁殖。但它的幼虫（稚虫）在水中生活 1~3 年：对水质极其敏感，只生活在清洁水中——蜉蝣多，就是水质好的"天然证书"。它是"完全变态"的对立面：不完全变态、还有独特的"亚成虫"阶段。',
+    extension: true,
+    parts: [
+      { name: '古老身世', desc: '现存最古老的有翅昆虫之一：3 亿多年前就出现——翅膀不能折叠（与大多数昆虫不同）。' },
+      { name: '亚成虫', desc: '独特阶段：先羽化为"亚成虫"，再蜕一次皮才成成虫——有翅昆虫中罕见地"羽化后还蜕皮"。' },
+      { name: '退化的口器', desc: '成虫口器退化、不吃不喝——所有营养在稚虫期就储存完毕，生命唯一目标是繁殖。' },
+      { name: '婚飞', desc: '大量雄虫群飞"婚舞"，雌虫飞入群中被授精——同步婚飞减少被天敌捕食的概率。' },
+      { name: '水质指示', desc: '稚虫用鳃呼吸、对污染极敏感——蜉蝣存在=水体清洁；消失=污染警报（生物监测）。' },
+    ],
+    Svg: MayflySvg,
+  },
+  {
+    id: 'bloodVolume',
+    name: '人体血量与献血',
+    kicker: '循环系统 · 无偿献血的生物学（课外拓展）',
+    intro: '成年人的血液总量约占体重的 7%~8%（约 4000~5000 毫升）。一次献血 200~400 毫升不足总量的 10%：水分和无机盐在几小时内恢复，血浆蛋白约 1~2 天恢复，红细胞约一个月完全恢复——骨髓的造血功能会"加班"补上。适量献血不影响健康，还能挽救他人的生命。',
+    extension: true,
+    parts: [
+      { name: '人体血量', desc: '与体重相关（约 70 mL/kg）：失血超过总量的 20%~30% 才会危及生命。' },
+      { name: '献血后的恢复', desc: '水分无机盐数小时恢复；血浆蛋白 1~2 天；红细胞约一个月（骨髓加速造血）。' },
+      { name: '谁可以献血', desc: '年龄 18~55 岁、健康检查合格；体重男性≥50 kg、女性≥45 kg——保护献血者健康。' },
+      { name: '献血的误区', desc: '"献血伤元气"没有科学依据：血细胞不断更新（红细胞寿命约 120 天）——适量献血是"安全的新陈代谢"。' },
+      { name: '血型与输血', desc: '献血前检测 ABO 与 Rh 血型、乙肝等传染病——输血必须"同型相输"（与本站血型实验互参）。' },
+    ],
+    Svg: BloodVolumeSvg,
+  },
+  {
+    id: 'peanut',
+    name: '花生',
+    kicker: '豆科 · 地上开花地下结果（课外拓展）',
+    intro: '花生是最"低调"的作物：黄色的花开在枝上，受精后子房柄却伸长"扎"进土壤，在黑暗的地下结出果实（荚果）——"入土结荚"。花生的种子（花生仁）富含脂肪与蛋白质；与大豆同为豆科，根上也有根瘤菌共生固氮——"地上开花地下结果"的奇特生活方式。',
+    extension: true,
+    parts: [
+      { name: '地上开花', desc: '黄色蝶形花开在枝上，清晨开放、当天中午闭合——自花授粉（受精在开花前已完成）。' },
+      { name: '子房柄入土', desc: '受精后子房柄伸长、向地弯曲把子房"插"入土中——黑暗是荚果发育的必要条件。' },
+      { name: '荚果', desc: '花生壳是果皮，里面的"花生仁"是种子（两到四粒）——"花生米"其实是种子。' },
+      { name: '脂肪储存', desc: '子叶储存大量脂肪（约 50%）——榨花生油的原料；子叶也是幼苗萌发初期的营养来源。' },
+      { name: '根瘤共生', desc: '与大豆同为豆科：根瘤菌固氮——花生茬土壤肥沃，适合轮作禾本科作物。' },
+    ],
+    Svg: PeanutSvg,
+  },
   {
     id: 'nakedMoleRat',
     name: '裸鼹鼠',

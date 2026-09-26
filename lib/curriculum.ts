@@ -657,6 +657,7 @@ export type ExperimentId =
   | 'transplantRejection'
   | 'whaleFall'
   | 'netPhotosynthesis'
+  | 'germinationConditions'
   | 'msgFermentation'
   | 'threeDefenses'
   | 'digestionJourney'
@@ -1446,6 +1447,13 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
   },
+  germinationConditions: {
+    title: '种子萌发的条件',
+    kicker: '对照实验 · 经典设计',
+    description: '四组对照：水、空气、温度缺一不可——单一变量原则的入门实验。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+  },
   msgFermentation: {
     title: '谷氨酸发酵工程',
     kicker: '选择性必修 3 · 发酵工程',
@@ -1710,7 +1718,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '实验方法',
     icon: '📐',
-    ids: ['experimentDesigner'],
+    ids: ['experimentDesigner', 'germinationConditions'],
   },
   {
     name: '显微观察类',
@@ -1758,6 +1766,7 @@ export const experimentOrder: ExperimentId[] = [
   // 必修 1 · 分子与细胞（按课本章节先后排序）
   'microscope',
   'experimentDesigner',
+  'germinationConditions',
   'dilutionPlating',
   'tissueDetection',
   'cellMembranePrep',
