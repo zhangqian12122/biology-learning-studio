@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -14130,7 +14130,163 @@ function OrchidSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 磷虾（南大洋的能量基石） ================= */
+
+function KrillSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 磷虾群 */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+          <ellipse key={i} cx={110 + (i % 3) * 90} cy={100 + Math.floor(i / 3) * 70} rx="18" ry="8" fill="#e8a0a0" stroke="#a54858" strokeWidth="1.8" transform={`rotate(${i * 15} ${110 + (i % 3) * 90} ${100 + Math.floor(i / 3) * 70})`} />
+        ))}
+        <text x="260" y="50" textAnchor="middle" fontSize="12.5" fill="#8a3a4a" fontWeight="800">南大洋磷虾：总生物量数亿吨——地球上生物量最大的物种之一</text>
+        <text x="330" y="88" fontSize="12" fill="#a54858" fontWeight="700">体长仅 5~6 厘米</text>
+      </g>
+      {/* 食物链基石 */}
+      <g style={dim(active, 1)}>
+        <path d="M90 210 q 60 -30 120 -10 m -120 40 q 90 30 170 6 m -170 -10 q 120 40 190 10" fill="none" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="110" y="290" fontSize="12.5" fill="#2c5a84" fontWeight="700">磷虾 → 鲸·海豹·企鹅·鱼类的主粮</text>
+        <text x="110" y="312" fontSize="12" fill="#2c5a84">一只蓝鲸一天可吞食约 4 吨磷虾</text>
+      </g>
+      {/* 生态警示 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="322" width="440" height="46" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="342" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">海冰消失 → 磷虾幼体失去栖息地 → 整条南极食物链"地基"动摇</text>
+        <text x="260" y="360" textAnchor="middle" fontSize="10.5" fill="#a5761d">磷虾渔业扩张需谨慎——"基石物种"撑不起过度捕捞</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">磷虾 · 南大洋食物链的基石（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 近视与矫正 ================= */
+
+function MyopiaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 正常眼 */}
+      <g style={dim(active, 0)}>
+        <circle cx="120" cy="150" r="70" fill="#f4f0e8" stroke="#a5765a" strokeWidth="2.8" />
+        <path d="M50 150 q 70 -30 140 0" fill="none" stroke="#7ab0d8" strokeWidth="8" opacity="0.7" />
+        <circle cx="120" cy="150" r="24" fill="#d8c8a8" stroke="#8a5a3a" strokeWidth="2.2" />
+        <text x="120" y="244" textAnchor="middle" fontSize="12.5" fill="#2c5a84" fontWeight="700">正常眼：焦点落在视网膜上</text>
+      </g>
+      {/* 近视眼 */}
+      <g style={dim(active, 1)}>
+        <circle cx="340" cy="150" r="70" fill="#f4f0e8" stroke="#a5765a" strokeWidth="2.8" />
+        <path d="M270 150 q 70 -30 140 0" fill="none" stroke="#7ab0d8" strokeWidth="8" opacity="0.7" />
+        <circle cx="340" cy="150" r="24" fill="#d8c8a8" stroke="#8a5a3a" strokeWidth="2.2" />
+        <ellipse cx="424" cy="150" rx="9" ry="9" fill="#b0483a" stroke="#8a2020" strokeWidth="1.6" />
+        <text x="420" y="128" textAnchor="middle" fontSize="11" fill="#8a2020" fontWeight="700">焦点在视网膜前</text>
+        <text x="340" y="244" textAnchor="middle" fontSize="12.5" fill="#8a2020" fontWeight="700">近视眼：眼球前后径过长（或晶状体过厚）</text>
+      </g>
+      {/* 矫正 */}
+      <g style={dim(active, 2)}>
+        <path d="M120 300 h 280" stroke="#8a9a9f" strokeWidth="2" />
+        <path d="M160 300 q 30 -60 60 0" fill="none" stroke="#4d7ea8" strokeWidth="4" />
+        <path d="M280 300 q 30 -60 60 0" fill="none" stroke="#4d7ea8" strokeWidth="4" />
+        <text x="190" y="330" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="700">凹透镜矫正近视（发散光线）</text>
+        <text x="374" y="270" textAnchor="middle" fontSize="11" fill="#59767c">凸透镜矫正远视</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="334" width="440" height="34" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="356" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">预防："一尺一拳一寸" · 户外活动 2 小时（自然光抑制眼轴增长）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">近视与矫正 · 视觉健康（课内拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 花的性别系统 ================= */
+
+function PlantSexSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 两性花 */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2, 3, 4].map((i) => {
+          const ang = (i * 2 * Math.PI) / 5 - Math.PI / 2;
+          return <ellipse key={i} cx={140 + Math.cos(ang) * 34} cy={130 + Math.sin(ang) * 34} rx="22" ry="14" fill="#f0b8c8" stroke="#c96a8a" strokeWidth="2.2" transform={`rotate(${(i * 72) - 90} ${140 + Math.cos(ang) * 34} ${130 + Math.sin(ang) * 34})`} />;
+        })}
+        <circle cx="140" cy="130" r="16" fill="#e8c83a" stroke="#a58a2a" strokeWidth="2" />
+        <text x="140" y="192" textAnchor="middle" fontSize="12.5" fill="#8a3a5a" fontWeight="700">两性花（桃·百合）</text>
+        <text x="140" y="212" textAnchor="middle" fontSize="11.5" fill="#c96a8a">雌蕊雄蕊同花</text>
+      </g>
+      {/* 单性花 */}
+      <g style={dim(active, 1)}>
+        <text x="380" y="90" textAnchor="middle" fontSize="12.5" fill="#3f7f3a" fontWeight="700">单性花（玉米·黄瓜）</text>
+        <ellipse cx="330" cy="130" rx="24" ry="14" fill="#c9e0a0" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="330" y="134" textAnchor="middle" fontSize="10" fill="#3f7f3a" fontWeight="600">雌花</text>
+        <path d="M420 130 q 24 -10 44 -4" fill="none" stroke="#8a671b" strokeWidth="4" strokeLinecap="round" />
+        <text x="452" y="128" fontSize="9" fill="#8a671b" fontWeight="600">雄花</text>
+        <text x="380" y="170" textAnchor="middle" fontSize="11.5" fill="#8a671b">雌花雄花同株或异株</text>
+      </g>
+      {/* 雌雄异株 */}
+      <g style={dim(active, 2)}>
+        <circle cx="380" cy="240" r="8" fill="#e88a8a" stroke="#a53030" strokeWidth="1.8" />
+        <text x="46" y="245" fontSize="11.5" fill="#a53030" fontWeight="700">雌雄异株（银杏·杨树）</text>
+        <text x="46" y="264" fontSize="10.5" fill="#8a5a3a">雌雄花朵分长在不同植株上</text>
+      </g>
+      {/* 意义 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="296" width="440" height="72" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">性别系统与传粉策略"配套"：单性花强制异花传粉·提高后代变异性</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#a5761d">玉米顶生雄穗·侧生雌穗——授粉期遇高温干旱会"秃顶减产"</text>
+        <text x="260" y="362" textAnchor="middle" fontSize="11" fill="#a5761d">易混点：两性花≠自花传粉（桃花是两性花但多为异花传粉）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">花的性别系统 · 植物的"婚配制度"（课内拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'krill',
+    name: '南极磷虾',
+    kicker: '甲壳类 · 南大洋的"能量基石"（课外拓展）',
+    intro: '南极磷虾只有 5~6 厘米长，却是地球上生物量最大的物种之一（总重量数亿吨）：它们群集成"虾云"，是鲸、海豹、企鹅、鱼类的主粮——一只蓝鲸一天可吞食约 4 吨磷虾。磷虾以海冰下的藻类为食，海冰消失意味着整条南极食物链的"地基"动摇。',
+    extension: true,
+    parts: [
+      { name: '生物量之最', desc: '总生物量估计数亿吨——单一物种的生物量冠军，群密度可达每立方米水 1 万~3 万只。' },
+      { name: '食物链基石', desc: '南大洋食物链的关键一环：鲸·海豹·企鹅·鱼类都直接或间接以磷虾为食。' },
+      { name: '垂直迁徙', desc: '白天下沉到深水避敌，夜晚上升到水面取食——"昼夜垂直移动"的典型代表。' },
+      { name: '与海冰的关系', desc: '磷虾幼体在海冰下越冬、以冰底藻类为食——全球变暖导致海冰缩减直接威胁磷虾种群。' },
+      { name: '渔业与管理', desc: '磷虾富含蛋白质与 Omega-3，渔业规模逐年扩大——南大洋公约组织设定捕捞限额保护生态。' },
+    ],
+    Svg: KrillSvg,
+  },
+  {
+    id: 'myopia',
+    name: '近视与矫正',
+    kicker: '感觉器官 · 视力健康（课内拓展）',
+    intro: '近视眼的"焦点"落在了视网膜前面：多因眼球前后径过长或晶状体过厚。矫正方法是配戴凹透镜（发散光线让焦点后移到视网膜上）。预防的关键不是"眼保健操治近视"，而是每天 2 小时以上户外活动——自然光能刺激视网膜分泌多巴胺，抑制眼轴过度增长。',
+    extension: true,
+    parts: [
+      { name: '成像原理', desc: '近视：平行光焦点落在视网膜之前——看近清楚、看远模糊（眼轴过长或角膜曲率过大）。' },
+      { name: '凹透镜矫正', desc: '凹透镜先发散光线，使焦点"后移"回视网膜——远视则用凸透镜"前移"焦点。' },
+      { name: '假性近视', desc: '睫状肌持续紧张痉挛导致的暂时性视力下降——及时休息放松可恢复，拖延会"弄假成真"。' },
+      { name: '高度近视风险', desc: '600 度以上属高度近视：眼轴过长牵拉视网膜变薄——视网膜脱离·青光眼风险显著升高。' },
+      { name: '预防要点', desc: '"一尺一拳一寸"读写姿势 + 每天户外 2 小时（自然光多巴胺抑制眼轴增长）+ 定期查视力。' },
+    ],
+    Svg: MyopiaSvg,
+  },
+  {
+    id: 'plantSex',
+    name: '花的性别系统',
+    kicker: '植物繁殖 · 植物的"婚配制度"（课内拓展）',
+    intro: '植物也有"性别系统"：桃花是两性花（一朵花里既有雄蕊又有雌蕊）；玉米是雌雄同株异花（顶上雄花、叶腋雌花）；银杏是雌雄异株（有的树只开雌花、有的只开雄花）。单性花强制异花传粉、提高后代变异性——植物的"婚配制度"与传粉策略共同演化。',
+    extension: true,
+    parts: [
+      { name: '两性花', desc: '一朵花中兼有雄蕊与雌蕊（桃·百合·豌豆）——豌豆严格自花传粉正是孟德尔成功的前提。' },
+      { name: '单性花同株', desc: '雌花与雄花同株异位（玉米·黄瓜·南瓜）——"顶花授粉、侧花结瓜"的分工。' },
+      { name: '雌雄异株', desc: '雌雄花分生于不同植株（银杏·杨树·猕猴桃）——强制异株授粉、遗传多样性最高。' },
+      { name: '农业应用', desc: '玉米授粉期遇高温干旱会"秃顶减产"；猕猴桃种植要配植雄株作"授粉树"——性别系统的生产意义。' },
+      { name: '易混辨析', desc: '两性花不等于自花传粉（桃花两性却多异花传粉）——性别系统与传粉方式是两个维度。' },
+    ],
+    Svg: PlantSexSvg,
+  },
   {
     id: 'weaverBird',
     name: '织布鸟',

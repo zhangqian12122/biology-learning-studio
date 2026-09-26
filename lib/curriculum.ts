@@ -653,6 +653,7 @@ export type ExperimentId =
   | 'epigenetics'
   | 'oxygenation'
   | 'msgFermentation'
+  | 'threeDefenses'
   | 'energyBalance'
   | 'rhIncompatibility'
   | 'hibernation'
@@ -1407,6 +1408,13 @@ export const experimentMeta: Record<
     relatedBook: 'technology',
     relatedModule: '发酵工程与过程控制',
   },
+  threeDefenses: {
+    title: '三道防线保卫战',
+    kicker: '选择性必修 1 · 免疫调节',
+    description: '流感·伤口细菌·蛔虫三路进攻：非特异性与特异性免疫接力。',
+    relatedBook: 'regulation',
+    relatedModule: '免疫调节与健康',
+  },
   energyBalance: {
     title: '能量平衡与体重管理',
     kicker: '健康与营养 · 课外拓展',
@@ -1664,7 +1672,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'bloodRoutine', 'energyBalance', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1779,6 +1787,7 @@ export const experimentOrder: ExperimentId[] = [
   'vaccineResponse',
   'balancedDiet',
   'allergySim',
+  'threeDefenses',
   'bloodRoutine',
   'energyBalance',
   'urineFormation',

@@ -7,25 +7,24 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：msgFermentation 谷氨酸发酵工程 ----------
-await page.goto(`${BASE}/lab?exp=msgFermentation`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：threeDefenses 三道防线保卫战 ----------
+await page.goto(`${BASE}/lab?exp=threeDefenses`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  for (let i = 0; i < 5; i++) {
-    await page.getByRole('button', { name: /推进工序/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(350);
-  }
+  await page.locator('button', { hasText: '伤口感染（金黄色葡萄球菌）' }).click();
+  await page.getByRole('button', { name: /发起进攻/ }).evaluate((el) => el.click());
+  await page.waitForTimeout(400);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('谷氨酸发酵工程');
-  results.experiment.interactive = after.includes('味精') && after.includes('产酸曲线');
+  results.experiment.open = before.includes('三道防线保卫战');
+  results.experiment.interactive = after.includes('皮肤已破损') && after.includes('浆细胞产生抗体');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['weaverBird', 'muscleSoreness', 'orchid'];
+const SPECIMENS = ['krill', 'myopia', 'plantSex'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -77,17 +76,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：oxygenation 实验页仍正常
-await page.goto(`${BASE}/lab?exp=oxygenation`, { waitUntil: 'domcontentloaded' });
+// 回归检查：msgFermentation 实验页仍正常
+await page.goto(`${BASE}/lab?exp=msgFermentation`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.oxRegression = { found: t.includes('大氧化') || t.includes('蓝细菌'), ok: t.includes('大氧化') || t.includes('蓝细菌') };
+  results.specimens.msgRegression = { found: t.includes('谷氨酸') || t.includes('味精'), ok: t.includes('谷氨酸') || t.includes('味精') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.oxRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.msgRegression?.ok;
 console.log('ALL_OK=' + allOk);
