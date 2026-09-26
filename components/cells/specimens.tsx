@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold', 'tuberculosis'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation', 'rootNodule'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -15504,7 +15504,182 @@ function EtiolationSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 文昌鱼（脊椎动物的"桥梁"） ================= */
+
+function AmphioxusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体（半透明可见内部） */}
+      <g style={dim(active, 0)}>
+        <path d="M60 190 Q100 150 200 146 Q330 146 420 176 Q452 184 476 190 Q430 214 330 224 Q180 230 100 214 Q70 206 60 190 Z" fill="#d8e2ec" stroke="#5a7a9a" strokeWidth="2.8" />
+        <path d="M470 188 l 26 -14 l 0 30 Z" fill="#c8d4e0" stroke="#5a7a9a" strokeWidth="2.2" />
+        <path d="M86 176 q 8 -8 18 -6" fill="none" stroke="#5a7a9a" strokeWidth="2" />
+        <text x="46" y="130" fontSize="12.5" fill="#3a5a7a" fontWeight="700">口须（触须一撮）：滤食"纱网"</text>
+        <text x="46" y="150" fontSize="12" fill="#3a5a7a">埋沙露头·滤食浮游生物</text>
+      </g>
+      {/* 脊索与神经管、肌节、鳃裂 */}
+      <g style={dim(active, 1)}>
+        <rect x="96" y="168" width="330" height="8" rx="4" fill="#c9a54a" stroke="#8a6a1a" strokeWidth="1.6" />
+        <text x="150" y="164" fontSize="12.5" fill="#8a6a1a" fontWeight="700">脊索（终生保留的弹性"大梁"）</text>
+        <rect x="96" y="152" width="330" height="5" rx="2.5" fill="#8a6ab0" />
+        <text x="336" y="146" fontSize="12.5" fill="#5a4390" fontWeight="700">背神经管（脑的雏形）</text>
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <path key={i} d={`M${140 + i * 42} 152 L${156 + i * 42} 226`} fill="none" stroke="#7a9ab0" strokeWidth="2" opacity="0.75" />
+        ))}
+        <text x="238" y="252" fontSize="12.5" fill="#3a5a7a" fontWeight="700">V 形分节肌节——波浪式游泳的动力</text>
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={`g${i}`} d={`M${108 + i * 16} 176 L${116 + i * 16} 208`} fill="none" stroke="#b06a6a" strokeWidth="2.4" />
+        ))}
+        <text x="60" y="238" fontSize="12.5" fill="#a53030" fontWeight="700">咽部鳃裂（上百对）</text>
+        <text x="60" y="258" fontSize="12" fill="#a53030">水流过鳃裂=呼吸+过滤食物</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">头索动物=无脊椎与脊椎之间的"桥梁"：脊索·背神经管·咽鳃裂三大特征齐全且终生保留</text>
+        <text x="260" y="342" textAnchor="middle" fontSize="12" fill="#a5761d">脊椎动物只在胚胎期有脊索（后被脊柱取代）——文昌鱼 5 亿年几乎"没变样"</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">没有真正的头·脑·心脏——"鱼"名之下其实不是鱼，而是研究进化的活化石</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">文昌鱼 · 头索动物活化石（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 血脑屏障（大脑的"海关"） ================= */
+
+function BloodBrainBarrierSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 血管剖面 */}
+      <g style={dim(active, 0)}>
+        <rect x="40" y="90" width="220" height="120" rx="52" fill="#f2c9c9" stroke="#b06a6a" strokeWidth="2.6" />
+        <rect x="52" y="102" width="196" height="96" rx="44" fill="#fbeaea" />
+        <path d="M96 90 L96 210 M168 90 L168 210" fill="none" stroke="#a53030" strokeWidth="5" strokeDasharray="7 5" />
+        <circle cx="132" cy="150" r="7" fill="#c93a3a" />
+        <circle cx="150" cy="166" r="5" fill="#c93a3a" />
+        <circle cx="140" cy="132" r="5" fill="#c93a3a" />
+        <text x="150" y="70" textAnchor="middle" fontSize="12.5" fill="#a53030" fontWeight="700">脑毛细血管：内皮"焊死"（紧密连接）</text>
+        <text x="150" y="234" textAnchor="middle" fontSize="12" fill="#a53030">血液里的物质不能从细胞缝隙漏过去</text>
+        <text x="76" y="118" fontSize="11" fill="#fff" fontWeight="700">血管腔</text>
+      </g>
+      {/* 星形胶质细胞足突 + 通行清单 */}
+      <g style={dim(active, 1)}>
+        <path d="M60 78 q 30 -26 60 -12 M140 66 q 40 -18 80 2 M270 96 q 30 10 40 40 M270 200 q 28 -6 40 -34" fill="none" stroke="#c98a4a" strokeWidth="5" strokeLinecap="round" opacity="0.85" />
+        <text x="286" y="66" fontSize="12.5" fill="#a5761d" fontWeight="700">星形胶质细胞"脚"包绕血管</text>
+        <text x="286" y="84" fontSize="12" fill="#a5761d">第二道岗·参与选择通透</text>
+        <rect x="292" y="100" width="200" height="150" rx="12" fill="#eef7ee" stroke="#5a9a5a" strokeWidth="2.4" />
+        <text x="392" y="122" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">通行规则（海关清单）</text>
+        <text x="304" y="146" fontSize="12" fill="#2f6f2a">✓ O₂ / CO₂ 自由通行</text>
+        <text x="304" y="168" fontSize="12" fill="#2f6f2a">✓ 葡萄糖·氨基酸（专门转运体）</text>
+        <text x="304" y="190" fontSize="12" fill="#8a671b">⚠ 脂溶性直接穿膜：酒精·咖啡因</text>
+        <text x="304" y="212" fontSize="12" fill="#a53030">✗ 多数抗生素·大分子蛋白</text>
+        <text x="304" y="234" fontSize="12" fill="#a53030">✗ 血源性毒素与多数病原</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">双刃剑：保护大脑挡住毒素与病原波动——但也挡住药物（脑膜炎·脑瘤"用药难"）</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">酒精·咖啡因能穿屏障所以"上头"快；脑膜炎必须选能穿屏障的特效药</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">结构与功能观：屏障=结构（紧密连接+足突）决定功能（选择通透）的经典例证</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">血脑屏障 · 大脑的"海关"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 根瘤（豆科植物的"氮肥厂"） ================= */
+
+function RootNoduleSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 根系与根瘤 */}
+      <g style={dim(active, 0)}>
+        <path d="M96 70 L96 250" stroke="#8a6f52" strokeWidth="7" strokeLinecap="round" />
+        <path d="M96 120 q -26 18 -38 52 M96 150 q 26 14 36 44 M96 196 q -20 12 -26 34" fill="none" stroke="#8a6f52" strokeWidth="4.4" strokeLinecap="round" />
+        {[
+          [70, 168], [124, 186], [88, 214], [76, 130]
+        ].map(([x, y], i) => (
+          <ellipse key={i} cx={x} cy={y} rx="12" ry="9" fill="#e8b88a" stroke="#a5761d" strokeWidth="2" />
+        ))}
+        <text x="150" y="96" fontSize="12.5" fill="#8a5a2a" fontWeight="700">根瘤：根皮层被"撑"出的球形小屋</text>
+        <text x="150" y="116" fontSize="12" fill="#8a5a2a">豆科植物（大豆·豌豆·苜蓿）特有</text>
+        <path d="M84 258 q 8 16 24 20 l 0 -18 Z" fill="#d9c9a8" stroke="#8a6f52" strokeWidth="1.8" />
+        <text x="60" y="292" fontSize="12" fill="#8a6f52">细胞放大镜往下看剖面</text>
+      </g>
+      {/* 根瘤剖面与固氮流程 */}
+      <g style={dim(active, 1)}>
+        <circle cx="252" cy="182" r="62" fill="#f2c9c9" stroke="#a5761d" strokeWidth="2.8" />
+        <circle cx="252" cy="182" r="44" fill="#e89ab0" opacity="0.85" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+          const ang = (i * Math.PI) / 3.5;
+          return <rect key={i} x={252 + Math.cos(ang) * 26 - 5} y={182 + Math.sin(ang) * 26 - 2} width="10" height="4" rx="2" fill="#8a4a5a" />;
+        })}
+        <text x="252" y="262" textAnchor="middle" fontSize="12.5" fill="#a53030" fontWeight="700">剖面粉色=豆血红蛋白（活瘤粉红·死瘤发绿）</text>
+        <text x="150" y="152" fontSize="12.5" fill="#8a4a5a" fontWeight="700">类菌体：根瘤菌的"工作形态"</text>
+        <text x="316" y="140" fontSize="12.5" fill="#5a7a9a" fontWeight="700">固氮流水线</text>
+        <text x="316" y="162" fontSize="12" fill="#3a5a7a">N₂（空气）</text>
+        <text x="316" y="184" fontSize="12" fill="#2f6f2a">→ 固氮酶（怕氧！）</text>
+        <text x="316" y="206" fontSize="12" fill="#2f6f2a">→ NH₃ → 氨基酸 → 蛋白质</text>
+        <text x="316" y="230" fontSize="12" fill="#8a671b">植物回礼：光合产物糖类+庇护所</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">互利共生的教科书案例：细菌供氮（NH₃）、植物供糖和"公寓"——谁也离不开谁</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">"种豆肥田"：豆科轮作·绿肥的原理——生物固氮约占全球固氮量的九成</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">豆血红蛋白是"分子保镖"：固氮酶怕氧，它一边运氧供能一边把游离氧压到最低</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">根瘤 · 豆科植物的"氮肥厂"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'amphioxus',
+    name: '文昌鱼',
+    kicker: '头索动物 · 进化的"活化石"（课外拓展）',
+    intro: '文昌鱼只有 5 厘米左右，半透明、像一条小鱼，却不是鱼——它是头索动物的现生代表：脊索、背神经管、咽鳃裂三大特征终生保留。它没有真正的头、脑和心脏，却拥有脊椎动物身体蓝图的全部"底稿"，5 亿年来几乎没变过，是无脊椎动物向脊椎动物过渡的关键"桥梁"，也是胚胎学研究的经典材料。',
+    extension: true,
+    parts: [
+      { name: '脊索', desc: '沿身体纵贯一根弹性"大梁"——脊椎动物只在胚胎期有脊索（之后被脊柱取代），文昌鱼却终生保留。' },
+      { name: '背神经管', desc: '中枢神经是位于脊索背方的管状结构，前端略膨大——脊椎动物脑与脊髓的"雏形"。' },
+      { name: '咽鳃裂', desc: '咽壁上开口数十到上百对鳃裂——水流经过完成呼吸，同时像"筛子"一样过滤浮游生物。' },
+      { name: '分节肌节', desc: '身体两侧 V 形肌节整齐排列——收缩产生波浪式游泳，埋沙时又靠它快速钻入。' },
+      { name: '口须与滤食', desc: '口周有一圈触须——像"纱网"一样拦住过大颗粒，半埋沙中露出口部滤食。' },
+    ],
+    Svg: AmphioxusSvg,
+  },
+  {
+    id: 'bloodBrainBarrier',
+    name: '血脑屏障',
+    kicker: '神经调节 · 大脑的"海关"（课外拓展）',
+    intro: '大脑是全身"最贵"的器官，也是设防最严的地方：脑毛细血管的内皮细胞彼此"焊死"（紧密连接），外面还裹着星形胶质细胞的"脚"——这就是血脑屏障。它像海关一样选择性放行：氧气、二氧化碳、葡萄糖（走专门转运体）畅通，脂溶性的酒精、咖啡因直接穿膜，而多数药物、毒素和病原被挡在外面——保护与"用药难"是一体两面。',
+    extension: true,
+    parts: [
+      { name: '紧密连接', desc: '脑毛细血管内皮细胞间"焊死"缝隙——物质无法像别处那样从细胞间隙渗入脑组织。' },
+      { name: '星形胶质细胞足突', desc: '突起末端包绕血管形成"第二道岗"——参与选择通透并维持屏障功能。' },
+      { name: '选择通行', desc: 'O₂/CO₂ 自由扩散；葡萄糖、氨基酸走专门转运体；脂溶性物质（酒精·咖啡因·尼古丁）直接穿膜。' },
+      { name: '用药难', desc: '多数抗生素、大分子药物被挡在屏障外——脑膜炎、脑瘤必须选用能穿屏障的药或直接鞘内注射。' },
+      { name: '双刃剑', desc: '屏障挡得住毒素也挡得住"救命药"——酒精咖啡因却能轻松穿入，这正是"上头快"的结构原因。' },
+    ],
+    Svg: BloodBrainBarrierSvg,
+  },
+  {
+    id: 'rootNodule',
+    name: '根瘤',
+    kicker: '共生固氮 · 豆科植物的"氮肥厂"（课外拓展）',
+    intro: '大豆、豌豆、苜蓿的根上常挂着一个个小瘤——根瘤。那是根瘤菌入住后刺激根皮层细胞分裂膨大建成的"公寓楼"：细菌在里面变形为类菌体，用固氮酶把空气中的 N₂ 还原成 NH₃；植物则供应光合产物和住所。切开活的根瘤会看到粉色——那是豆血红蛋白，它一边运氧供细菌呼吸，一边把游离氧压到最低，保护"怕氧"的固氮酶。',
+    extension: true,
+    parts: [
+      { name: '根瘤', desc: '根皮层细胞被根瘤菌刺激而分裂膨大——细菌的"公寓楼"，一株大豆可有成百上千个。' },
+      { name: '类菌体', desc: '根瘤菌在瘤内停止分裂、变形为类菌体——专职装备固氮酶，把 N₂ 还原为 NH₃。' },
+      { name: '豆血红蛋白', desc: '根瘤特有的"分子保镖"：运氧供能又压低游离氧——活瘤粉红、死瘤发绿就是它的颜色变化。' },
+      { name: '互惠交换', desc: '细菌供氮（NH₃→氨基酸→蛋白质）、植物供糖与庇护——课本"种间互助共生"的教科书案例。' },
+      { name: '农业应用', desc: '"种豆肥田"：豆科轮作、绿肥能少施氮肥——生物固氮约占全球固氮量的九成。' },
+    ],
+    Svg: RootNoduleSvg,
+  },
   {
     id: 'armadillo',
     name: '犰狳',

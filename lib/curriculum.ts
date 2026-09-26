@@ -654,6 +654,7 @@ export type ExperimentId =
   | 'oxygenation'
   | 'nitrogenFixation'
   | 'ecoFootprint'
+  | 'coralBleaching'
   | 'phageTherapy'
   | 'transplantRejection'
   | 'autoimmune'
@@ -1450,6 +1451,14 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '免疫调节与健康',
   },
+  coralBleaching: {
+    title: '珊瑚白化：共生被高温拆散',
+    kicker: '生态系统 · 保护生物学',
+    description: '调海温推进周数：看虫黄藻撤离、珊瑚白化——及时降温还有救，热浪连击就没了。',
+    relatedBook: 'ecology',
+    relatedModule: '生态保护与人与自然',
+    extension: true,
+  },
   whaleFall: {
     title: '鲸落：深海的生命绿洲',
     kicker: '深海生态 · 课外拓展',
@@ -1779,7 +1788,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'nitrogenFixation', 'whaleFall', 'population', 'predatorPrey', 'gauseCompetition', 'birdMigration', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim', 'ecoFootprint'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'nitrogenFixation', 'whaleFall', 'population', 'predatorPrey', 'gauseCompetition', 'birdMigration', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim', 'ecoFootprint', 'coralBleaching'],
   },
   {
     name: '生物技术',
@@ -1892,6 +1901,7 @@ export const experimentOrder: ExperimentId[] = [
   'algalBloom',
   'invasiveSim',
   'ecoFootprint',
+  'coralBleaching',
   'ecologicalNiche',
   'foodChain',
   'biomagnification',
