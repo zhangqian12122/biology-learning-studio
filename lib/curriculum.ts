@@ -656,6 +656,7 @@ export type ExperimentId =
   | 'threeDefenses'
   | 'digestionJourney'
   | 'birdBreathing'
+  | 'birdMigration'
   | 'energyBalance'
   | 'rhIncompatibility'
   | 'hibernation'
@@ -1432,6 +1433,14 @@ export const experimentMeta: Record<
     relatedModule: '内环境与稳态',
     extension: true,
   },
+  birdMigration: {
+    title: '候鸟迁徙导航',
+    kicker: '行为生态 · 课外拓展',
+    description: '太阳·星辰·地磁三罗盘：斑尾塍鹬跨半球飞行的导航与补给。',
+    relatedBook: 'ecology',
+    relatedModule: '生态保护与人与自然',
+    extension: true,
+  },
   energyBalance: {
     title: '能量平衡与体重管理',
     kicker: '健康与营养 · 课外拓展',
@@ -1694,7 +1703,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'gauseCompetition', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'gauseCompetition', 'birdMigration', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim'],
   },
   {
     name: '生物技术',
@@ -1792,6 +1801,7 @@ export const experimentOrder: ExperimentId[] = [
   'population',
   'predatorPrey',
   'gauseCompetition',
+  'birdMigration',
   'ecosystemJar',
   'mulberryFishPond',
   'leafDecompose',

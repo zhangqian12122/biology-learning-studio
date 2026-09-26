@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -14463,7 +14463,169 @@ function TumbleweedSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 大象（最大的陆生动物） ================= */
+
+function ElephantSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="250" cy="200" rx="120" ry="88" fill="#9a9a9a" stroke="#5a5a5a" strokeWidth="3" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${160 + i * 60} 270 v 50`} stroke="#8a8a8a" strokeWidth="18" strokeLinecap="round" />
+        ))}
+        <path d="M180 270 q -8 -30 6 -56 m 120 60 q 10 -26 4 -50" fill="none" stroke="#6a6a6a" strokeWidth="2" opacity="0.7" />
+        <text x="380" y="150" fontSize="12.5" fill="#5a5a5a" fontWeight="700">最大的陆生动物（6 吨）</text>
+        <text x="380" y="170" fontSize="12" fill="#5a5a5a">日食 150 kg 植物</text>
+      </g>
+      {/* 头鼻耳 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="160" cy="140" rx="40" ry="44" fill="#8a8a8a" stroke="#5a5a5a" strokeWidth="2.6" />
+        <path d="M126 130 l -30 -10 m 30 22 l -34 0" stroke="#5a5a5a" strokeWidth="6" strokeLinecap="round" />
+        <circle cx="140" cy="122" r="5" fill="#2a2a2a" />
+        <path d="M148 184 q -6 60 -30 96" fill="none" stroke="#8a8a8a" strokeWidth="12" strokeLinecap="round" />
+        <text x="42" y="110" fontSize="12.5" fill="#5a5a5a" fontWeight="700">鼻+上唇= "象鼻"</text>
+        <text x="42" y="130" fontSize="12" fill="#5a5a5a">4 万块肌肉·可拾起花生</text>
+      </g>
+      {/* 象牙与耳 */}
+      <g style={dim(active, 2)}>
+        <path d="M118 148 q -14 30 -8 58" fill="none" stroke="#f4f0e4" strokeWidth="7" strokeLinecap="round" />
+        <text x="380" y="230" fontSize="12" fill="#5a5a5a" fontWeight="700">大象耳：散热" radiator"</text>
+        <text x="356" y="250" fontSize="12" fill="#5a5a5a" fontWeight="700">次声波远距交流</text>
+        <text x="360" y="270" fontSize="12" fill="#5a5a5a" fontWeight="700">象牙=特化门齿</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="40" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">"生态工程师"：开路·挖水·拆树——营造栖息地，让无数物种受益</text>
+        <text x="260" y="364" textAnchor="middle" fontSize="11" fill="#a5761d">保护现状：非洲草原象濒危·非洲森林象极危——象牙贸易是最大威胁</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">大象 · 长鼻目"生态工程师"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 打哈欠（会"传染"的秘密） ================= */
+
+function YawningSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 打哈欠的头 */}
+      <g style={dim(active, 0)}>
+        <circle cx="220" cy="150" r="70" fill="#f0c9b0" stroke="#a5765a" strokeWidth="3" />
+        <path d="M172 130 q 20 10 42 4 m -36 -18 q 12 8 26 4" fill="none" stroke="#5a3a2a" strokeWidth="2.6" strokeLinecap="round" />
+        <path d="M270 128 q 6 -14 16 -16 m -18 22 q 10 2 16 10" fill="none" stroke="#5a3a2a" strokeWidth="2.6" strokeLinecap="round" />
+        <path d="M190 180 q 30 40 60 0 q -30 24 -60 0 Z" fill="#8a3a4a" stroke="#5a1a2a" strokeWidth="2.4" />
+        <text x="360" y="120" fontSize="12.5" fill="#8a3a4a" fontWeight="700">哈欠：深吸气 + 张口呼气</text>
+        <text x="360" y="142" fontSize="12" fill="#8a3a4a">持续约 6 秒·常伴伸展</text>
+      </g>
+      {/* 假说 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="216" width="216" height="100" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="154" y="240" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">为什么打哈欠？</text>
+        <text x="154" y="264" textAnchor="middle" fontSize="10.5" fill="#37585f">大脑冷却假说：降温提神</text>
+        <text x="154" y="286" textAnchor="middle" fontSize="10.5" fill="#37585f">觉醒假说：无聊·困倦时提升警觉</text>
+        <text x="154" y="308" textAnchor="middle" fontSize="10.5" fill="#59767c">胎儿 11 周就会打哈欠！</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="282" y="216" width="196" height="100" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="380" y="240" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">传染性哈欠</text>
+        <text x="380" y="264" textAnchor="middle" fontSize="10.5" fill="#a5761d">看到·听到甚至想到都触发</text>
+        <text x="380" y="288" textAnchor="middle" fontSize="10.5" fill="#a5761d">与共情能力相关（自闭症儿童较少被"传染"）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">打哈欠 · 会"传染"的反射（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 木质素（树木的"钢筋"） ================= */
+
+function LigninSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 树木对比 */}
+      <g style={dim(active, 0)}>
+        <path d="M130 300 v -150" stroke="#8a6a3a" strokeWidth="10" strokeLinecap="round" />
+        {[0, 1].map((i) => (
+          <path key={i} d={`M130 ${200 - i * 50} q -26 -16 -40 -34 m 40 34 q 26 -16 40 -34`} fill="none" stroke="#5a9a3a" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="60" y="330" textAnchor="middle" fontSize="11.5" fill="#8a671b" fontWeight="700">草本：木质素少·柔软</text>
+        <path d="M400 310 q 6 -140 -20 -230" fill="none" stroke="#6a4a2a" strokeWidth="26" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={`b${i}`} d={`M${396 - i * 6} ${210 - i * 50} q -34 -20 -50 -40 m 50 40 q 34 -20 50 -40`} fill="none" stroke="#4a8a3a" strokeWidth="5" strokeLinecap="round" />
+        ))}
+        <text x="322" y="330" textAnchor="middle" fontSize="11.5" fill="#6a4a2a" fontWeight="700">木本：木质素多·坚硬高大</text>
+      </g>
+      {/* 木质素功能 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="60" width="200" height="110" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="146" y="84" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">木质素："钢筋"</text>
+        <text x="146" y="108" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">填充细胞壁·赋予木质部刚性</text>
+        <text x="146" y="130" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">让 100 米高的红杉"站得稳"</text>
+        <text x="146" y="152" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">抗菌防腐——千年古木不腐的秘密</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="274" y="60" width="200" height="110" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="374" y="84" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">演化大事件</text>
+        <text x="374" y="108" textAnchor="middle" fontSize="10.5" fill="#a5761d">木质素出现 → 植物才能"长高"</text>
+        <text x="374" y="130" textAnchor="middle" fontSize="10.5" fill="#a5761d">石炭纪巨型蕨类森林（煤的前身）</text>
+        <text x="374" y="152" textAnchor="middle" fontSize="10.5" fill="#59767c">早期真菌"学会"分解木质素前的煤</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="188" width="440" height="60" rx="12" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="260" y="212" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">与树皮/年轮互参：木质素在细胞壁中"加固"——造纸要"脱去"木质素</text>
+        <text x="260" y="234" textAnchor="middle" fontSize="11" fill="#537078">木质素难分解 → 部分远古植物残体未被分解 → 形成煤层</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">木质素 · 植物的"钢筋"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'elephant',
+    name: '大象',
+    kicker: '长鼻目 · 最大的陆生动物（课外拓展）',
+    intro: '大象是最大的陆生动物：象鼻由鼻子和上唇融合而成，内含 4 万块肌肉——既能卷起 300 公斤的原木，也能拾起一颗花生。大耳朵是"散热器"，扇动时血管中的血液降温；它们用次声波进行远距离"交谈"。作为"生态工程师"，大象开路、挖水、拆树，为无数物种营造栖息地。',
+    extension: true,
+    parts: [
+      { name: '象鼻', desc: '鼻子与上唇融合：无骨、由 4 万块肌肉组成——吸水、卷物、社交"握手"多功能。' },
+      { name: '象牙', desc: '特化的门齿（终生生长）：掘根、剥树皮、防御——也是非法盗猎的目标。' },
+      { name: '大耳朵', desc: '耳廓血管丰富，扇动时降温——像"自带空调"；也用于威吓展示。' },
+      { name: '次声波交流', desc: '用低频次声波远距离交流（可传数公里）——通过脚感知地面的震动信号。' },
+      { name: '生态工程师', desc: '推倒树木开辟"象道"、挖水井、传播种子——非洲草原景观的"塑造者"。' },
+    ],
+    Svg: ElephantSvg,
+  },
+  {
+    id: 'yawning',
+    name: '打哈欠',
+    kicker: '神经调节 · 会"传染"的反射（课外拓展）',
+    intro: '打哈欠是深吸气+张口呼气的反射动作，持续约 6 秒。主流"大脑冷却假说"认为：哈欠通过快速吸入冷空气、拉伸下颌促进血流，给"过热"的大脑降温提神。最奇妙的是它的"传染性"——看到、听到甚至想到哈欠都会被触发，与共情能力相关（自闭症谱系儿童较少被"传染"）。',
+    extension: true,
+    parts: [
+      { name: '哈欠的机制', desc: '深吸气 + 张口呼气，伴伸展动作；胎儿 11 周就会打哈欠——是脑干控制的先天行为。' },
+      { name: '大脑冷却假说', desc: '哈欠吸入的冷空气与血流变化给"过热"的大脑降温——困倦·无聊时大脑温度略升触发哈欠。' },
+      { name: '传染性哈欠', desc: '约 50%~70% 的人会被"传染"；与共情能力相关——自闭症谱系儿童较少被"传染"。' },
+      { name: '动物也打哈欠', desc: '从鱼类到灵长类都有哈欠；群体的同步哈欠可能具有社交同步功能。' },
+      { name: '健康信号', desc: '频繁哈欠可能是困倦·缺氧或某些疾病的信号——保持充足睡眠是根本。' },
+    ],
+    Svg: YawningSvg,
+  },
+  {
+    id: 'lignin',
+    name: '木质素',
+    kicker: '植物支持 · 树木的"钢筋"（课外拓展）',
+    intro: '木质素是填充在植物细胞壁中的"钢筋"：它让细胞壁坚硬、让树木能长到百米高而不倒。木质素还抗菌防腐——这就是千年古木不腐的秘密。石炭纪的巨型蕨类森林正是靠木质素"站了起来"；当年真菌还没"学会"分解木质素，大量残体被埋藏最终变成煤层——今天的煤很多来自那个时代。',
+    extension: true,
+    parts: [
+      { name: '木质素的成分', desc: '复杂的芳香族聚合物：填充在纤维素"框架"之间，像混凝土中的钢筋——赋予细胞壁刚性。' },
+      { name: '运输与支持', desc: '木质部细胞壁木质化后才能在负压下不塌陷——高效输水与支撑高大的"一举两得"。' },
+      { name: '抗菌防腐', desc: '木质素难以被多数微生物分解——心材因此耐腐（"千年古木"）；也使造纸需要"脱木素"。' },
+      { name: '石炭纪森林', desc: '3 亿年前石炭纪的巨型蕨类森林（木质素出现后）——当时的树木残体形成了今天的煤层。' },
+      { name: '真菌的突破', desc: '约 2.9 亿年前真菌演化出分解木质素的酶——煤的积累从此放缓（白蚁与真菌的"攻坚"）。' },
+    ],
+    Svg: LigninSvg,
+  },
   {
     id: 'flamingo',
     name: '火烈鸟',

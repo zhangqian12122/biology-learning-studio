@@ -7,25 +7,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：birdBreathing 鸟类的双重呼吸 ----------
-await page.goto(`${BASE}/lab?exp=birdBreathing`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：birdMigration 候鸟迁徙导航 ----------
+await page.goto(`${BASE}/lab?exp=birdMigration`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.getByRole('button', { name: /下一步/ }).evaluate((el) => el.click());
-  await page.waitForTimeout(350);
-  await page.getByRole('button', { name: /下一步/ }).evaluate((el) => el.click());
-  await page.waitForTimeout(400);
+  await page.locator('button', { hasText: '地磁罗盘' }).click();
+  for (let i = 0; i < 4; i++) {
+    await page.getByRole('button', { name: /飞往下一站/ }).evaluate((el) => el.click());
+    await page.waitForTimeout(350);
+  }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('鸟类的双重呼吸');
-  results.experiment.interactive = after.includes('单向气流') && after.includes('呼气');
+  results.experiment.open = before.includes('候鸟迁徙导航');
+  results.experiment.interactive = after.includes('新西兰') && after.includes('地磁罗盘');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['flamingo', 'sarsCov2', 'tumbleweed'];
+const SPECIMENS = ['elephant', 'yawning', 'lignin'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -77,17 +78,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：digestionJourney 实验页仍正常
-await page.goto(`${BASE}/lab?exp=digestionJourney`, { waitUntil: 'domcontentloaded' });
+// 回归检查：birdBreathing 实验页仍正常
+await page.goto(`${BASE}/lab?exp=birdBreathing`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.digestRegression = { found: t.includes('消化') || t.includes('吸收'), ok: t.includes('消化') || t.includes('吸收') };
+  results.specimens.breathRegression = { found: t.includes('双重呼吸') || t.includes('气囊'), ok: t.includes('双重呼吸') || t.includes('气囊') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.digestRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.breathRegression?.ok;
 console.log('ALL_OK=' + allOk);
