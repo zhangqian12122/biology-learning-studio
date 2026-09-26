@@ -138,6 +138,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   altitudeAdaptation: Activity,
   epigenetics: Lightbulb,
   oxygenation: Leaf,
+  nitrogenFixation: Sprout,
   msgFermentation: Wine,
   threeDefenses: KeyRound,
   digestionJourney: UtensilsCrossed,
@@ -273,6 +274,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   altitudeAdaptation: () => import('@/components/lab/altitude-adaptation-lab').then(({ AltitudeAdaptationLab }) => ({ default: AltitudeAdaptationLab })),
   epigenetics: () => import('@/components/lab/epigenetics-lab').then(({ EpigeneticsLab }) => ({ default: EpigeneticsLab })),
   oxygenation: () => import('@/components/lab/oxygenation-lab').then(({ OxygenationLab }) => ({ default: OxygenationLab })),
+  nitrogenFixation: () => import('@/components/lab/nitrogen-fixation-lab').then(({ NitrogenFixationLab }) => ({ default: NitrogenFixationLab })),
   msgFermentation: () => import('@/components/lab/msg-fermentation-lab').then(({ MsgFermentationLab }) => ({ default: MsgFermentationLab })),
   threeDefenses: () => import('@/components/lab/three-defenses-lab').then(({ ThreeDefensesLab }) => ({ default: ThreeDefensesLab })),
   digestionJourney: () => import('@/components/lab/digestion-journey-lab').then(({ DigestionJourneyLab }) => ({ default: DigestionJourneyLab })),
@@ -382,6 +384,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   threeDefenses: ['threeDefenseLines'],
   digestionJourney: ['digestiveSystem'],
   birdBreathing: ['alveolus'],
+  nitrogenFixation: ['rhizobium'],
   ecoStability: ['ecosystemTypes'],
 };
 

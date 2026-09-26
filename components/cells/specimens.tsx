@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -14580,7 +14580,166 @@ function LigninSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 蚂蚁（社会性昆虫的"王国"） ================= */
+
+function AntSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 蚁后 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="140" cy="150" rx="30" ry="20" fill="#8a4a2a" stroke="#4a2a0a" strokeWidth="2.6" />
+        <path d="M170 146 q 60 -16 130 -6" fill="none" stroke="#8a4a2a" strokeWidth="14" strokeLinecap="round" />
+        <circle cx="132" cy="132" r="9" fill="#5a2a0a" stroke="#3a1a0a" strokeWidth="1.8" />
+        <path d="M124 118 q -6 -14 -16 -16 m 20 16 q 4 -16 14 -18" fill="none" stroke="#4a2a0a" strokeWidth="2" strokeLinecap="round" />
+        <text x="52" y="110" fontSize="12.5" fill="#4a2a0a" fontWeight="700">蚁后（可活 10~20 年·日产卵千粒）</text>
+      </g>
+      {/* 工蚁 */}
+      <g style={dim(active, 1)}>
+        {[0, 1, 2].map((i) => (
+          <g key={i}>
+            <ellipse cx={200 + i * 70} cy={210} rx="16" ry="10" fill="#8a4a2a" stroke="#4a2a0a" strokeWidth="2" />
+            <circle cx={178 + i * 70} cy={200} r="7" fill="#5a2a0a" stroke="#3a1a0a" strokeWidth="1.6" />
+            <path d={`M${216 + i * 70} 206 q 20 -6 34 2`} fill="none" stroke="#4a2a0a" strokeWidth="6" strokeLinecap="round" />
+            {[0, 1, 2].map((j) => (
+              <path key={`l${i}${j}`} d={`M${190 + i * 70 + j * 8} 218 l -6 12 m 8 -10 l 6 12`} stroke="#4a2a0a" strokeWidth="2" strokeLinecap="round" />
+            ))}
+          </g>
+        ))}
+        <text x="60" y="252" fontSize="12.5" fill="#4a2a0a" fontWeight="700">工蚁全部为雌性（不育）· 分工：保姆→建筑→觅食→防御</text>
+      </g>
+      {/* 蚁狮? no - 搬运与协作 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">超个体：整群像"一个生物"——信息素"语言"协调百万工蚁</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">切叶蚁"种植"真菌当口粮 · 蚜虫"放牧"取蜜露——动物的"农业与畜牧"</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">与白蚁对比：蚂蚁是膜翅目（与蜜蜂同目），白蚁是蜚蠊目（蟑螂近亲）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">蚂蚁 · 膜翅目社会性昆虫（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 肌纤维（红肌与白肌） ================= */
+
+function MuscleFibersSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 慢肌（红肌） */}
+      <g style={dim(active, 0)}>
+        <rect x="46" y="60" width="200" height="130" rx="10" fill="#f4e0e0" stroke="#c94a4a" strokeWidth="2.4" />
+        <text x="146" y="86" textAnchor="middle" fontSize="12" fill="#8a2020" fontWeight="800">慢肌纤维（红肌·I 型）</text>
+        <text x="146" y="110" textAnchor="middle" fontSize="10.5" fill="#a5533c">富含毛细血管与线粒体</text>
+        <text x="146" y="132" textAnchor="middle" fontSize="10.5" fill="#a5533c">耐力强·不易疲劳·爆发力弱</text>
+        <text x="146" y="156" textAnchor="middle" fontSize="10.5" fill="#a5533c">长跑·骑行·候鸟迁徙肌</text>
+        <ellipse cx="200" cy="172" rx="18" ry="9" fill="#c94a4a" />
+      </g>
+      {/* 快肌（白肌） */}
+      <g style={dim(active, 1)}>
+        <rect x="274" y="60" width="200" height="130" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="374" y="86" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">快肌纤维（白肌·II 型）</text>
+        <text x="374" y="110" textAnchor="middle" fontSize="10.5" fill="#37585f">收缩快·力量大·易疲劳</text>
+        <text x="374" y="132" textAnchor="middle" fontSize="10.5" fill="#37585f">短跑·跳跃·爆发力项目</text>
+        <text x="374" y="156" textAnchor="middle" fontSize="10.5" fill="#37585f">鸡的胸肉"白肉"就是快肌</text>
+        <ellipse cx="428" cy="172" rx="18" ry="9" fill="#e8e4d8" stroke="#b5a582" strokeWidth="1.8" />
+      </g>
+      {/* 分布与训练 */}
+      <g style={dim(active, 2)}>
+        <rect x="46" y="206" width="440" height="60" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="230" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">比 例 由 遗 传 决 定（可训练微调）</text>
+        <text x="260" y="254" textAnchor="middle" fontSize="11" fill="#a5761d">马拉松选手慢肌多 · 短跑选手快肌多——"天生材料"与后天训练匹配</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="284" width="440" height="76" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="308" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">候鸟迁徙肌 = 慢肌"增强版"：脂肪供能 · 可连续飞行数天</text>
+        <text x="260" y="332" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">雄性招潮蟹大螯·鸣禽发声肌——"特化肌肉"遍布动物界</text>
+        <text x="260" y="352" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">红肌色的来源：肌红蛋白（储氧）——与血红蛋白"同族"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">肌纤维 · 红肌与白肌（课内拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 百岁兰（沙漠"活化石"） ================= */
+
+function WelwitschiaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 沙漠 */}
+      <g style={dim(active, 0)}>
+        <path d="M40 260 q 200 -30 440 -6 l 0 80 l -440 0 Z" fill="#e8c9a0" stroke="#c9a05a" strokeWidth="2.4" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${80 + i * 110} 268 q 30 -12 60 -4`} fill="none" stroke="#c9a06a" strokeWidth="2" opacity="0.8" />
+        ))}
+      </g>
+      {/* 百岁兰 */}
+      <g style={dim(active, 1)}>
+        <path d="M230 268 q -6 -50 20 -70" fill="none" stroke="#8a6a3a" strokeWidth="16" strokeLinecap="round" />
+        <path d="M250 198 q 60 -20 120 6 q -40 24 -104 18" fill="none" stroke="#5a9a4a" strokeWidth="8" strokeLinecap="round" />
+        <path d="M232 198 q -60 -20 -118 8 q 44 22 108 14" fill="none" stroke="#5a9a4a" strokeWidth="8" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${130 + i * 40} 206 l 14 -6 m -14 14 l 16 -4`} stroke="#3f7f3a" strokeWidth="2" strokeLinecap="round" />
+        ))}
+        <text x="330" y="170" fontSize="12.5" fill="#4a6a2a" fontWeight="700">仅两片叶子·永不脱落</text>
+        <text x="330" y="190" fontSize="12" fill="#4a6a2a">基部持续生长·寿命上千年</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">纳米布沙漠的"雾水收集器"：叶面吸收来自大西洋的晨雾</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">裸子植物孑遗（与银杏同辈）——"演化减缓的活化石"</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">两片叶被风吹裂成多条"飘带"——远看像许多叶，实为一片对生叶的裂片</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">百岁兰 · 沙漠"活化石"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'ant',
+    name: '蚂蚁',
+    kicker: '膜翅目 · "超个体"社会（课外拓展）',
+    intro: '蚂蚁是与蜜蜂同目的社会性昆虫：蚁后专职产卵（可活 10~20 年），不育的雌性工蚁承担育幼、筑巢、觅食、防御的分工。整群蚂蚁靠信息素"语言"协调，像一个"超个体"行动：切叶蚁会"种"真菌当口粮，某些蚂蚁会"放牧"蚜虫收集蜜露——动物的"农业与畜牧"早已上演。',
+    extension: true,
+    parts: [
+      { name: '等级分工', desc: '蚁后（繁殖）、工蚁（育幼·觅食·筑巢）、兵蚁（防御）——分工由幼虫期营养决定（与蜜蜂的蜂王浆机制类似）。' },
+      { name: '信息素语言', desc: '用信息素标记食物路线、召集同伴、警报敌情——"化学语言"协调百万个体。' },
+      { name: '超强力量', desc: '可搬动自身体重 50 倍的物体——靠体型小（力量与截面积比）和肌肉结构高效。' },
+      { name: '切叶蚁农业', desc: '切割叶片带回巢"种植"真菌作为口粮——与真菌的互利共生（与白蚁的肠道共生不同）。' },
+      { name: '与白蚁区分', desc: '蚂蚁是膜翅目（蜂的近亲·完全变态·体呈红黑色）；白蚁是蜚蠊目（蟑螂近亲·不完全变态·体白色）。' },
+    ],
+    Svg: AntSvg,
+  },
+  {
+    id: 'muscleFibers',
+    name: '肌纤维（红肌与白肌）',
+    kicker: '运动系统 · 快肌与慢肌（课内拓展）',
+    intro: '骨骼肌由两种肌纤维混合组成：慢肌（红肌）富含线粒体与毛细血管，耐力强、收缩慢，长跑运动员的"主力"；快肌（白肌）收缩快、力量大但易疲劳，短跑跳远的"爆发担当"。两型纤维的比例主要由遗传决定，训练只能微调——这解释了为什么有人"天生适合马拉松"、有人"天生适合短跑"。',
+    extension: true,
+    parts: [
+      { name: '慢肌（I 型）', desc: '红色（肌红蛋白与线粒体丰富）：有氧供能、抗疲劳——马拉松·骑行·候鸟迁徙"发动机"。' },
+      { name: '快肌（II 型）', desc: '白色：无氧糖酵解供能、收缩快力量大、易疲劳——短跑·举重·跳跃项目的"主力"。' },
+      { name: '遗传决定比例', desc: '个体间两型纤维比例差异很大且相对固定——运动训练主要提升纤维的功能与体积。' },
+      { name: '动物实例', desc: '候鸟的飞行肌以慢肌为主（连续飞行数天）；家鸡胸肉"白"（快肌）、腿部"暗"（慢肌）——餐桌上的比较解剖学。' },
+      { name: '与内环境联系', desc: '慢肌的有氧供能避免乳酸大量堆积——"耐力好"的化学基础（与运动乳酸实验互参）。' },
+    ],
+    Svg: MuscleFibersSvg,
+  },
+  {
+    id: 'welwitschia',
+    name: '百岁兰',
+    kicker: '裸子植物 · 沙漠"活化石"（课外拓展）',
+    intro: '百岁兰是纳米布沙漠中的"演化活化石"：一生只长两片叶子（对生叶），却永不脱落——被风吹裂成许多"飘带"，最古老的植株已活了 2000 年。它属于裸子植物孑遗类群（与银杏同时代的"贵族"），靠叶面吸收沙漠晨雾的水分生存，是极端环境适应的"活教材"。',
+    extension: true,
+    parts: [
+      { name: '两片叶子', desc: '仅有的两片对生叶终身生长、永不脱落——基部持续分裂，尖端不断磨损裂成"飘带"。' },
+      { name: '雾水收集', desc: '纳米布沙漠几乎无雨，大西洋晨雾沿海岸飘入——叶面的气孔与凝露结构捕获雾水。' },
+      { name: '裸子植物孑遗', desc: '裸子植物中独一无二的物种（单科单属单种）——与银杏、水杉同为"演化减缓的活化石"。' },
+      { name: '超长寿命', desc: '碳同位素测年显示部分植株超过 1500 岁——生长极慢（每年仅长几毫米）换来超长寿命。' },
+      { name: '雌雄异株', desc: '雄株与雌株分别产生"球花"（借风力或昆虫传粉）——与银杏同为雌雄异株的裸子植物。' },
+    ],
+    Svg: WelwitschiaSvg,
+  },
   {
     id: 'elephant',
     name: '大象',

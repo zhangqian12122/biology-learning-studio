@@ -652,6 +652,7 @@ export type ExperimentId =
   | 'altitudeAdaptation'
   | 'epigenetics'
   | 'oxygenation'
+  | 'nitrogenFixation'
   | 'msgFermentation'
   | 'threeDefenses'
   | 'digestionJourney'
@@ -1404,6 +1405,13 @@ export const experimentMeta: Record<
     relatedModule: '变异、育种与生物进化',
     extension: true,
   },
+  nitrogenFixation: {
+    title: '生物固氮',
+    kicker: '微生物与生态 · 课内拓展',
+    description: '根瘤菌与豆科植物的共生契约：氮循环入口与绿色肥田的智慧。',
+    relatedBook: 'ecology',
+    relatedModule: '生态系统能量与物质循环',
+  },
   msgFermentation: {
     title: '谷氨酸发酵工程',
     kicker: '选择性必修 3 · 发酵工程',
@@ -1703,7 +1711,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'population', 'predatorPrey', 'gauseCompetition', 'birdMigration', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'nitrogenFixation', 'population', 'predatorPrey', 'gauseCompetition', 'birdMigration', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim'],
   },
   {
     name: '生物技术',
@@ -1798,6 +1806,7 @@ export const experimentOrder: ExperimentId[] = [
   'ecoStability',
   'energy',
   'carbonCycleSim',
+  'nitrogenFixation',
   'population',
   'predatorPrey',
   'gauseCompetition',

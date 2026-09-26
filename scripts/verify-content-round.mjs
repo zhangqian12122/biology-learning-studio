@@ -7,26 +7,25 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：birdMigration 候鸟迁徙导航 ----------
-await page.goto(`${BASE}/lab?exp=birdMigration`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：nitrogenFixation 生物固氮 ----------
+await page.goto(`${BASE}/lab?exp=nitrogenFixation`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '地磁罗盘' }).click();
-  for (let i = 0; i < 4; i++) {
-    await page.getByRole('button', { name: /飞往下一站/ }).evaluate((el) => el.click());
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole('button', { name: /推进共生/ }).evaluate((el) => el.click());
     await page.waitForTimeout(350);
   }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('候鸟迁徙导航');
-  results.experiment.interactive = after.includes('新西兰') && after.includes('地磁罗盘');
+  results.experiment.open = before.includes('生物固氮');
+  results.experiment.interactive = after.includes('豆科轮作') && after.includes('豆血红蛋白');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['elephant', 'yawning', 'lignin'];
+const SPECIMENS = ['ant', 'muscleFibers', 'welwitschia'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -78,17 +77,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：birdBreathing 实验页仍正常
-await page.goto(`${BASE}/lab?exp=birdBreathing`, { waitUntil: 'domcontentloaded' });
+// 回归检查：birdMigration 实验页仍正常
+await page.goto(`${BASE}/lab?exp=birdMigration`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.breathRegression = { found: t.includes('双重呼吸') || t.includes('气囊'), ok: t.includes('双重呼吸') || t.includes('气囊') };
+  results.specimens.migrationRegression = { found: t.includes('迁徙') || t.includes('候鸟'), ok: t.includes('迁徙') || t.includes('候鸟') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.breathRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.migrationRegression?.ok;
 console.log('ALL_OK=' + allOk);
