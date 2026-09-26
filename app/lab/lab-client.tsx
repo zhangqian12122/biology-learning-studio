@@ -773,7 +773,12 @@ export function LabClient() {
         <div className="flex h-[calc(100dvh-116px)] gap-5">
           <aside aria-label="实验目录" className="flex w-[300px] shrink-0 flex-col overflow-hidden rounded-lg border border-gray-200 bg-[#f7f6f3] shadow-sm">
             <div className="border-b border-gray-200 px-4 py-3">
-              <p className="text-[10px] font-semibold tracking-[0.28em] text-gray-400">BIOLOGY LAB</p>
+              <div className="flex items-center gap-1.5">
+                <span aria-hidden="true" className="inline-block size-2 border border-black bg-[#ff6b6b]" />
+                <span aria-hidden="true" className="inline-block size-2 border border-black bg-[#4ecdc4]" />
+                <span aria-hidden="true" className="inline-block size-2 border border-black bg-[#ffe66d]" />
+                <p className="text-[10px] font-semibold tracking-[0.28em] text-gray-400">BIOLOGY LAB</p>
+              </div>
               <p className="mt-0.5 text-base font-semibold leading-6 text-[#37352f]">互动实验 · 目录</p>
               <p className="mt-0.5 text-[11px] text-gray-500">共 {experimentOrder.length} 个 · 覆盖 5 册教材</p>
             </div>
