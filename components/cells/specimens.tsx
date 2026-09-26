@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -15032,7 +15032,166 @@ function EssentialOilsSvg({ active }: { active: number | null; open?: boolean })
   );
 }
 
+/* ================= 裸鼹鼠（"最丑"的长寿哺乳动物） ================= */
+
+function NakedMoleRatSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 地下隧道 */}
+      <g style={dim(active, 0)}>
+        <path d="M40 240 q 200 -36 440 -6" fill="none" stroke="#6a5230" strokeWidth="40" strokeLinecap="round" />
+        <path d="M60 236 q 200 -26 400 -4" fill="none" stroke="#8a7248" strokeWidth="26" strokeLinecap="round" />
+      </g>
+      {/* 裸鼹鼠 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="240" cy="228" rx="64" ry="30" fill="#e8c9a8" stroke="#a5765a" strokeWidth="2.8" />
+        <circle cx="316" cy="216" r="18" fill="#e8c9a8" stroke="#a5765a" strokeWidth="2.4" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path key={`w${i}`} d={`M${308 + i * 4} 200 l -3 -12`} stroke="#a5765a" strokeWidth="2" strokeLinecap="round" />
+        ))}
+        {[0, 1].map((i) => (
+          <circle key={`e${i}`} cx={308 + i * 10} cy={214} r="2.6" fill="#2a1a0a" />
+        ))}
+        <path d="M330 218 q 20 2 30 10" fill="none" stroke="#a5765a" strokeWidth="4" strokeLinecap="round" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={`l${i}`} d={`M${196 + i * 28} 256 l -6 16 m 14 -14 l 6 16`} stroke="#c9a878" strokeWidth="3.4" strokeLinecap="round" />
+        ))}
+        <text x="60" y="140" fontSize="12.5" fill="#8a5a3a" fontWeight="700">几乎无毛的"皱皮小香肠"</text>
+        <text x="60" y="162" fontSize="12" fill="#8a5a3a">群体像蜜蜂：一只"女王"繁殖，"工鼠"挖洞找粮</text>
+      </g>
+      {/* 超能力 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">超能力合集：寿命超 30 年（同体型鼠类 30 倍）· 几乎不患癌 · 耐缺氧</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">无痛觉酸敏（不怕酸）· 体温随环境变化（近变温的哺乳动物）</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">科学研究热点：抗癌机制·抗衰老·缺氧耐受——"丑"得很重要</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">裸鼹鼠 · 啮齿目"长寿之王"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 虹膜与眼色 ================= */
+
+function EyeColorSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 虹膜 */}
+      <g style={dim(active, 0)}>
+        <circle cx="230" cy="150" r="86" fill="#f4f0e8" stroke="#a5765a" strokeWidth="3" />
+        <circle cx="230" cy="150" r="56" fill="#4a7a9a" stroke="#2a4a6a" strokeWidth="2.6" />
+        <circle cx="230" cy="150" r="20" fill="#141414" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <path key={i} d={`M230 150 L ${230 + Math.cos((i * Math.PI) / 3) * 52} ${150 + Math.sin((i * Math.PI) / 3) * 52}`} stroke="#2a4a6a" strokeWidth="1.6" />
+        ))}
+        {[0, 1].map((i) => (
+          <circle key={`h${i}`} cx={222 + i * 10} cy={142} r="4" fill="#ffffff" opacity="0.9" />
+        ))}
+        <text x="360" y="110" fontSize="12.5" fill="#2a4a6a" fontWeight="700">虹膜的"颜色"来自黑色素</text>
+        <text x="360" y="130" fontSize="12" fill="#2a4a6a">黑色素多→棕黑；少→蓝绿</text>
+        <text x="360" y="150" fontSize="11.5" fill="#4a6a7a">"蓝眼"其实是色素少+光散射</text>
+      </g>
+      {/* 遗传 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="240" width="200" height="90" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="146" y="264" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">眼色遗传（简化模型）</text>
+        <text x="146" y="288" textAnchor="middle" fontSize="10.5" fill="#a5761d">棕眼相对蓝眼为显性</text>
+        <text x="146" y="310" textAnchor="middle" fontSize="10.5" fill="#a5761d">实际由多个基因共同决定</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="274" y="240" width="200" height="90" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="374" y="264" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">为什么全球多数人是深色眼？</text>
+        <text x="374" y="288" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">深色虹膜挡紫外线保护视网膜</text>
+        <text x="374" y="310" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">高纬度弱紫外 → 浅色眼更"划算"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">虹膜与眼色 · 色素与遗传（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 向水性（根系找水） ================= */
+
+function HydrotropismSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 湿度梯度箱 */}
+      <g style={dim(active, 0)}>
+        <rect x="70" y="70" width="380" height="200" rx="12" fill="#f4ecdc" stroke="#b5a582" strokeWidth="2.8" />
+        <rect x="70" y="70" width="120" height="200" rx="12" fill="#b8d8b0" opacity="0.35" />
+        <rect x="330" y="70" width="120" height="200" rx="12" fill="#e8d8a0" opacity="0.35" />
+        <text x="130" y="58" textAnchor="middle" fontSize="11" fill="#3f7f3a" fontWeight="700">潮湿侧</text>
+        <text x="390" y="58" textAnchor="middle" fontSize="11" fill="#8a671b" fontWeight="700">干燥侧</text>
+      </g>
+      {/* 根 */}
+      <g style={dim(active, 1)}>
+        <path d="M230 96 q -6 60 -80 96 q -50 26 -70 60" fill="none" stroke="#f4f0d8" strokeWidth="6" strokeLinecap="round" />
+        <path d="M254 100 q 40 60 100 90" fill="none" stroke="#f4f0d8" strokeWidth="6" strokeLinecap="round" />
+        <path d="M232 100 q 4 60 22 100" fill="none" stroke="#f4f0d8" strokeWidth="6" strokeLinecap="round" />
+        <text x="96" y="300" fontSize="12" fill="#3f7f3a" fontWeight="700">根：向着"水多"的一侧弯曲生长</text>
+      </g>
+      {/* 机制 */}
+      <g style={dim(active, 2)}>
+        <rect x="274" y="230" width="200" height="90" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="374" y="254" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">为什么根"找水"？</text>
+        <text x="374" y="278" textAnchor="middle" fontSize="10.5" fill="#a5761d">水分影响生长素分布</text>
+        <text x="374" y="300" textAnchor="middle" fontSize="10.5" fill="#a5761d">向水侧生长受抑制→根弯向水</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="330" width="440" height="40" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">向光性、向重力性、向水性——植物通过"方向性生长"适应环境</text>
+        <text x="260" y="364" textAnchor="middle" fontSize="11" fill="#3f7f3a">滴灌技术沿着根系"精准供水"——应用向水性的农业智慧</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">向水性 · 根系"找水"的智慧（课内拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'nakedMoleRat',
+    name: '裸鼹鼠',
+    kicker: '啮齿目 · "最丑"的长寿之王（课外拓展）',
+    intro: '裸鼹鼠是东非地下隧洞里的"皱皮小香肠"：几乎无毛、眼睛退化、体温随环境变化——却是哺乳动物里的"超级英雄"：寿命超过 30 岁（同体型鼠类的 30 倍）、几乎不患癌症、极耐缺氧、对酸不敏感。它们的群体像蜜蜂一样分工：一只"女王"繁殖，"工鼠"挖洞找粮。是抗衰老与抗癌研究的重要"模型动物"。',
+    extension: true,
+    parts: [
+      { name: '真社会性', desc: '像蜜蜂一样有"女王"与"工鼠"分工——哺乳动物中极少数真社会性物种。' },
+      { name: '超长寿命', desc: '同体型鼠类寿命 3~4 年，裸鼹鼠可活 30 年以上——"衰老速率"极慢。' },
+      { name: '抗癌体质', desc: '几乎不患癌：分泌高分量的透明质酸（高分子量）抑制细胞过度增殖。' },
+      { name: '耐缺氧', desc: '地下洞穴缺氧：可像植物一样利用果糖无氧供能——"低氧代谢"切换。' },
+      { name: '无痛觉酸敏', desc: '对酸不敏感（痛觉感受器被"关闭"）——适应地下高 CO₂ 酸性环境的演化结果。' },
+    ],
+    Svg: NakedMoleRatSvg,
+  },
+  {
+    id: 'eyeColor',
+    name: '虹膜与眼色',
+    kicker: '感觉器官 · 眼睛颜色的遗传（课外拓展）',
+    intro: '眼睛的"颜色"来自虹膜中的黑色素：黑色素多→棕黑色；黑色素少→蓝色、绿色（"蓝眼"不是蓝色色素，而是色素少+光线散射的结构色——与天空为什么是蓝的原理相同）。简单模型中"棕眼对蓝眼为显性"，但实际由多个基因共同决定——是"多基因遗传"的经典例子。',
+    extension: true,
+    parts: [
+      { name: '虹膜结构', desc: '虹膜是控制瞳孔大小的"光圈"：色素量与分布决定眼睛的"颜色"。' },
+      { name: '蓝色眼睛的真相', desc: '蓝色不是蓝色色素——是虹膜前层缺乏黑色素时，光线散射形成的"结构色"（与天空蓝色同理）。' },
+      { name: '遗传模型', desc: '简化模型：棕眼（显性 B）vs 蓝眼（隐性 b）；但实际由 HERC2、OCA2 等多个基因共同调控。' },
+      { name: '演化地理', desc: '全球多数人为深色眼——深色虹膜阻挡紫外线保护视网膜；高纬度浅色眼更"划算"。' },
+      { name: '新生的"变脸"', desc: '多数婴儿出生时蓝灰色眼，数月~数年后色素增多才"定型"——虹膜色素是逐步沉积的。' },
+    ],
+    Svg: EyeColorSvg,
+  },
+  {
+    id: 'hydrotropism',
+    name: '向水性',
+    kicker: '植物运动 · 根系"找水"（课内拓展）',
+    intro: '植物的根会"找水"：当土壤水分分布不均时，根会向着水分更多的一侧弯曲生长——向水性。这与向光性、向重力性同属植物的"方向性生长"：水分影响生长素在根中的分布，让向水侧生长受抑制、根弯向水。滴灌技术沿着根系精准供水、干旱地区深根植物"扎深找水"，都是对水的"追与守"。',
+    extension: true,
+    parts: [
+      { name: '什么是向水性', desc: '根朝水分充足方向弯曲生长的特性——干旱时根会"绕开"干燥土壤、寻找湿润区。' },
+      { name: '机制', desc: '水分梯度改变根中生长素分布——向水侧生长受抑制，根弯向水（与向重力性机制类似）。' },
+      { name: '与向重力性的"博弈"', desc: '正常时根顺重力向下；当侧方有水时，向水性可以"战胜"向重力性——植物会"取舍"。' },
+      { name: '农业应用', desc: '滴灌精准供水让根系集中高效吸收；蹲苗（适度干旱）促使根向深处扎——"抗旱锻炼"。' },
+      { name: '实验设计', desc: '倾斜/单侧供水的"暗箱水培"实验：控制变量（水·光·重力）观察根的弯曲方向。' },
+    ],
+    Svg: HydrotropismSvg,
+  },
   {
     id: 'seaOtter',
     name: '海獭',

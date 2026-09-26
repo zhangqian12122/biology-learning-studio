@@ -656,6 +656,7 @@ export type ExperimentId =
   | 'ecoFootprint'
   | 'transplantRejection'
   | 'whaleFall'
+  | 'netPhotosynthesis'
   | 'msgFermentation'
   | 'threeDefenses'
   | 'digestionJourney'
@@ -1438,6 +1439,13 @@ export const experimentMeta: Record<
     relatedModule: '生态系统能量与物质循环',
     extension: true,
   },
+  netPhotosynthesis: {
+    title: '净光合与真光合',
+    kicker: '光合作用 · 高频考点',
+    description: '昼夜收支账本：净光合 = 总光合 − 呼吸，光的"开关"怎么影响积累。',
+    relatedBook: 'molecules',
+    relatedModule: 'ATP、呼吸作用与光合作用',
+  },
   msgFermentation: {
     title: '谷氨酸发酵工程',
     kicker: '选择性必修 3 · 发酵工程',
@@ -1717,7 +1725,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '酶与代谢',
     icon: '⚗️',
-    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'photosynthesisHistory', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'hydroponics', 'digestionJourney', 'greenhouseGas'],
+    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'photosynthesisHistory', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'hydroponics', 'digestionJourney', 'netPhotosynthesis', 'greenhouseGas'],
   },
   {
     name: '细胞与膜',
@@ -1765,6 +1773,7 @@ export const experimentOrder: ExperimentId[] = [
   'pigment',
   'hydroponics',
   'digestionJourney',
+  'netPhotosynthesis',
   'photosynthesis',
   'photosynthesisFactors',
   'cellRespiration',
