@@ -141,6 +141,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   nitrogenFixation: Sprout,
   ecoFootprint: Leaf,
   transplantRejection: Heart,
+  whaleFall: Fish,
   msgFermentation: Wine,
   threeDefenses: KeyRound,
   digestionJourney: UtensilsCrossed,
@@ -279,6 +280,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   nitrogenFixation: () => import('@/components/lab/nitrogen-fixation-lab').then(({ NitrogenFixationLab }) => ({ default: NitrogenFixationLab })),
   ecoFootprint: () => import('@/components/lab/eco-footprint-lab').then(({ EcoFootprintLab }) => ({ default: EcoFootprintLab })),
   transplantRejection: () => import('@/components/lab/transplant-rejection-lab').then(({ TransplantRejectionLab }) => ({ default: TransplantRejectionLab })),
+  whaleFall: () => import('@/components/lab/whale-fall-lab').then(({ WhaleFallLab }) => ({ default: WhaleFallLab })),
   msgFermentation: () => import('@/components/lab/msg-fermentation-lab').then(({ MsgFermentationLab }) => ({ default: MsgFermentationLab })),
   threeDefenses: () => import('@/components/lab/three-defenses-lab').then(({ ThreeDefensesLab }) => ({ default: ThreeDefensesLab })),
   digestionJourney: () => import('@/components/lab/digestion-journey-lab').then(({ DigestionJourneyLab }) => ({ default: DigestionJourneyLab })),
@@ -391,6 +393,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   nitrogenFixation: ['rhizobium'],
   ecoFootprint: ['biosphere'],
   transplantRejection: ['immuneOrgans'],
+  whaleFall: ['whale'],
   ecoStability: ['ecosystemTypes'],
 };
 

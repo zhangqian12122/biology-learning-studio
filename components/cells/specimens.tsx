@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -14924,7 +14924,160 @@ function RiceSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 海獭（用"工具"的海洋工程师） ================= */
+
+function SeaOtterSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 海面与海藻 */}
+      <g style={dim(active, 0)}>
+        <path d="M30 90 q 220 -26 460 0" fill="none" stroke="#4d7ea8" strokeWidth="3" />
+        <text x="60" y="66" fontSize="11.5" fill="#2c5a84" fontWeight="700">海藻林（巨藻）下</text>
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${80 + i * 140} 96 q 6 30 -4 60 q -8 26 -16 40`} fill="none" stroke="#3f7f3a" strokeWidth="3.4" strokeLinecap="round" />
+        ))}
+      </g>
+      {/* 海獭仰漂 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="250" cy="160" rx="90" ry="42" fill="#8a5a2a" stroke="#4a2a0a" strokeWidth="2.8" />
+        <path d="M170 140 q -14 -20 -2 -34 q 14 -8 24 6 q 6 12 -10 22" fill="#6a4a1a" stroke="#3a2a0a" strokeWidth="2.2" />
+        <circle cx="182" cy="112" r="4" fill="#141414" />
+        <path d="M148 128 l -16 -6 m 18 10 l -18 2" stroke="#3a2a0a" strokeWidth="2.6" strokeLinecap="round" />
+        <path d="M330 150 q 30 -10 56 -6 m -56 16 q 30 -2 58 8" fill="none" stroke="#8a5a2a" strokeWidth="5" strokeLinecap="round" />
+        <ellipse cx="200" cy="182" rx="20" ry="13" fill="#4a3a2a" stroke="#1a2a1a" strokeWidth="2" />
+        <text x="60" y="250" fontSize="12.5" fill="#4a2a0a" fontWeight="700">仰漂在藻间，胸前"砧板"放石头</text>
+        <text x="60" y="272" fontSize="12" fill="#4a2a0a">用石块砸开贝壳——动物"用工具"的案例</text>
+      </g>
+      {/* 关键种 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">"关键种"：控制海胆数量 → 保护海藻林 → 维持整片"水下森林"</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">海獭减少 → 海胆爆发 → 海藻林变成"海胆荒地"——营养级联的教科书案例</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">毛发密度全球第一（每平方厘米 10 万+ 根·无脂肪靠毛发保暖）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">海獭 · 鼬科海洋"关键种"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 骨的成分（有机物与无机物） ================= */
+
+function BoneCompositionSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 实验 A：盐酸脱钙 */}
+      <g style={dim(active, 0)}>
+        <rect x="50" y="60" width="180" height="130" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.4" />
+        <text x="140" y="86" textAnchor="middle" fontSize="11.5" fill="#2c5a84" fontWeight="800">实验 A：骨 + 盐酸</text>
+        <path d="M100 108 l 24 22 m 32 -22 l -24 22" stroke="#8a9a9f" strokeWidth="2" opacity="0.6" />
+        <path d="M96 160 q 44 14 88 0" fill="none" stroke="#b8863a" strokeWidth="10" strokeLinecap="round" />
+        <text x="140" y="130" textAnchor="middle" fontSize="10" fill="#59767c">无机盐溶解 → 剩"软骨"</text>
+        <text x="140" y="178" textAnchor="middle" fontSize="10.5" fill="#8a671b" fontWeight="700">结果：骨可弯曲打结（柔韧）</text>
+      </g>
+      {/* 实验 B：燃烧 */}
+      <g style={dim(active, 1)}>
+        <rect x="274" y="60" width="180" height="130" rx="10" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.4" />
+        <text x="364" y="86" textAnchor="middle" fontSize="11.5" fill="#8a3a2a" fontWeight="800">实验 B：骨 + 火烧</text>
+        {[0, 1].map((i) => (
+          <path key={i} d={`M${344 + i * 24} 116 l 8 -20 m -6 22 l 10 -16`} stroke="#e8a03a" strokeWidth="2.6" strokeLinecap="round" />
+        ))}
+        <path d="M300 168 q 30 10 60 2" fill="none" stroke="#d8d8d0" strokeWidth="9" strokeLinecap="round" />
+        <text x="364" y="130" textAnchor="middle" fontSize="10" fill="#59767c">有机物烧掉 → 剩脆骨</text>
+        <text x="364" y="178" textAnchor="middle" fontSize="10.5" fill="#8a671b" fontWeight="700">结果：骨一敲即碎（硬脆）</text>
+      </g>
+      {/* 结论 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="206" width="440" height="80" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="230" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">骨的成分 ≈ 2/3 无机物（钙盐·硬脆）+ 1/3 有机物（骨蛋白·柔韧）</text>
+        <text x="260" y="254" textAnchor="middle" fontSize="11" fill="#a5761d">儿童骨有机物多 → 易变形不易折（要防驼背）；老人有机物少 → 易骨折（要防摔倒）</text>
+        <text x="260" y="276" textAnchor="middle" fontSize="10.5" fill="#59767c">骨的生长与维持需要钙·维生素 D 与适当运动</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">骨的成分 · 柔韧与坚硬的平衡（课内拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 植物精油（芳香"化学武器"） ================= */
+
+function EssentialOilsSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 薰衣草与薄荷 */}
+      <g style={dim(active, 0)}>
+        <path d="M160 300 q -6 -80 0 -140" fill="none" stroke="#3f7f3a" strokeWidth="6" strokeLinecap="round" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${140 - i * 3} ${180 - i * 34} q 20 -10 40 -2`} fill="none" stroke="#8a67c9" strokeWidth="5" strokeLinecap="round" />
+        ))}
+        <path d="M360 300 q -4 -100 20 -160" fill="none" stroke="#3f7f3a" strokeWidth="6" strokeLinecap="round" />
+        {[0, 1, 2].map((i) => (
+          <ellipse key={`m${i}`} cx={340 + (i % 2) * 26} cy={160 + i * 26} rx="20" ry="12" fill="#5a9a4a" stroke="#2f6f2a" strokeWidth="2" transform={`rotate(${i * 30 - 20} ${340 + (i % 2) * 26} ${160 + i * 26})`} />
+        ))}
+        <text x="60" y="130" fontSize="12.5" fill="#8a67c9" fontWeight="700">薰衣草</text>
+        <text x="330" y="130" fontSize="12.5" fill="#3f7f3a" fontWeight="700">薄荷</text>
+      </g>
+      {/* 精油功能 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="206" width="440" height="60" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="230" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">精油 = 植物的"化学武器"：驱赶食草昆虫 · 抑制细菌真菌（保护伤口）</text>
+        <text x="260" y="254" textAnchor="middle" fontSize="11" fill="#a5761d">次生代谢产物（非生长必需，但提高生存竞争力）——与橡胶·咖啡因同族</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">人类"借"精油：香水·食品调香·芳香疗法·天然驱虫剂</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">提取方法：蒸馏（最常用）·冷压（柑橘皮）·溶剂萃取——含量极低所以"昂贵"</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">薰衣草精油含芳樟醇（助眠舒缓）·薄荷脑（清凉感来自激活冷觉受体）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">植物精油 · 次生代谢的"香气武器"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'seaOtter',
+    name: '海獭',
+    kicker: '鼬科 · 海洋"关键种"（课外拓展）',
+    intro: '海獭是海洋里最会"用工具"的动物之一：仰漂在海藻林中，胸前放一块石头当"砧板"，用石块砸开贝类硬壳取食。它是生态学上著名的"关键种"：控制海胆数量，保护整片海藻林——海獭减少，海胆爆发，海藻林就会变成"海胆荒地"。海獭没有厚脂肪层，靠全球最致密的毛发（每平方厘米超 10 万根）锁住空气层保暖。',
+    extension: true,
+    parts: [
+      { name: '使用工具', desc: '从海底捡拾石块，仰面朝天把贝壳砸在"砧板"上取食——海洋哺乳动物中少有的"工具使用"。' },
+      { name: '关键种', desc: '捕食海胆，控制海胆数量，保护海藻林——"营养级联"的教科书案例（海獭-海胆-海藻）。' },
+      { name: '超密毛发', desc: '每平方厘米超过 10 万根毛发，锁住空气层保暖——海獭几乎没有脂肪，全靠"毛皮大衣"。' },
+      { name: '仰漂进食', desc: '仰面漂在水面上进食、理毛、睡觉——用海藻缠住身体防止漂走（"锚定"睡觉）。' },
+      { name: '保护故事', desc: '因毛皮被猎杀到近乎灭绝（一度仅剩约 2000 只），保护后种群恢复——但依然受石油泄漏威胁。' },
+    ],
+    Svg: SeaOtterSvg,
+  },
+  {
+    id: 'boneComposition',
+    name: '骨的成分',
+    kicker: '运动系统 · 柔韧与坚硬的平衡（课内拓展）',
+    intro: '骨为什么既坚硬又不易折断？因为它是"复合材料"：约 2/3 是无机物（钙盐·坚硬），约 1/3 是有机物（骨蛋白·柔韧）。经典实验：骨泡在盐酸里脱去钙盐后变得可以打结（只剩有机物·柔韧）；骨在火上烧掉有机物后一敲就碎（只剩无机物·硬脆）。儿童的骨有机物比例高、柔韧易变形；老人的骨无机物比例高、硬脆易骨折。',
+    extension: true,
+    parts: [
+      { name: '脱钙实验', desc: '把骨浸入稀盐酸：钙盐溶解、留下有机物——骨变得柔韧可以打结（"柔"的来源）。' },
+      { name: '燃烧实验', desc: '把骨焚烧：有机物烧掉、留下无机物——骨变得硬脆易碎（"硬"的来源）。' },
+      { name: '年龄变化', desc: '儿童骨有机物超过 1/3（柔韧易变形，防驼背）；老人骨无机物比例高（硬脆易骨折）。' },
+      { name: '与健康', desc: '补钙+维生素 D+运动维持骨密度；老年人防跌倒——骨质疏松的预防要点。' },
+      { name: '与材料学', desc: '骨是天然的"复合材料"（硬+韧）：启发仿生材料设计——"既强又韧"是材料学的永恒追求。' },
+    ],
+    Svg: BoneCompositionSvg,
+  },
+  {
+    id: 'essentialOils',
+    name: '植物精油',
+    kicker: '次生代谢 · 香气"化学武器"（课外拓展）',
+    intro: '薰衣草的安眠香、薄荷的清凉、柑橘皮的清新——这些"精油"是植物的次生代谢产物：不是生长必需，却帮植物驱虫、抑菌、抑制竞争者。人类"借"来做成香水、食品调香、芳香疗法与天然驱虫剂。精油的"清凉感"来自薄荷脑激活冷觉受体——不是真的降温，是"骗"过了冷觉感受器。',
+    extension: true,
+    parts: [
+      { name: '什么是精油', desc: '植物挥发性的芳香物质：常储存在油细胞、腺毛或油囊中——含量极低（数百公斤花瓣才出 1 公斤玫瑰精油）。' },
+      { name: '植物的功能', desc: '驱赶食草昆虫、抑制细菌真菌、吸引传粉者、抑制周边竞争者——多功能的"化学武器库"。' },
+      { name: '常见成分', desc: '薄荷脑（薄荷·清凉）、芳樟醇（薰衣草·舒缓）、柠檬烯（柑橘·清新）——不同成分不同功效。' },
+      { name: '清凉的机制', desc: '薄荷脑激活 TRPM8 冷觉受体——"凉"的感觉是受体被激活的信号，不是温度真的降低。' },
+      { name: '使用注意', desc: '精油浓度高、不能直接大量涂抹或口服；部分成分对猫狗有毒——"天然"不等于"安全"。' },
+    ],
+    Svg: EssentialOilsSvg,
+  },
   {
     id: 'polarBear',
     name: '北极熊',

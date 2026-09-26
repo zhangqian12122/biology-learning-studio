@@ -7,23 +7,25 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：transplantRejection 器官移植与免疫排斥 ----------
-await page.goto(`${BASE}/lab?exp=transplantRejection`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：whaleFall 鲸落：深海的生命绿洲 ----------
+await page.goto(`${BASE}/lab?exp=whaleFall`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '随机供体（配型差）' }).click();
-  await page.waitForTimeout(400);
+  for (let i = 0; i < 3; i++) {
+    await page.getByRole('button', { name: /推进鲸落演替/ }).evaluate((el) => el.click());
+    await page.waitForTimeout(350);
+  }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('器官移植与免疫排斥');
-  results.experiment.interactive = after.includes('急性排斥几乎必然') && after.includes('环孢素');
+  results.experiment.open = before.includes('鲸落：深海的生命绿洲');
+  results.experiment.interactive = after.includes('化能合成') && after.includes('一鲸落，万物生');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['polarBear', 'cholesterol', 'rice'];
+const SPECIMENS = ['seaOtter', 'boneComposition', 'essentialOils'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -75,17 +77,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：ecoFootprint 实验页仍正常
-await page.goto(`${BASE}/lab?exp=ecoFootprint`, { waitUntil: 'domcontentloaded' });
+// 回归检查：transplantRejection 实验页仍正常
+await page.goto(`${BASE}/lab?exp=transplantRejection`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.footprintRegression = { found: t.includes('生态足迹') || t.includes('地球'), ok: t.includes('生态足迹') || t.includes('地球') };
+  results.specimens.trRegression = { found: t.includes('HLA') || t.includes('移植'), ok: t.includes('HLA') || t.includes('移植') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.footprintRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.trRegression?.ok;
 console.log('ALL_OK=' + allOk);

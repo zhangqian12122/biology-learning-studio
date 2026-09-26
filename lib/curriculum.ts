@@ -655,6 +655,7 @@ export type ExperimentId =
   | 'nitrogenFixation'
   | 'ecoFootprint'
   | 'transplantRejection'
+  | 'whaleFall'
   | 'msgFermentation'
   | 'threeDefenses'
   | 'digestionJourney'
@@ -1429,6 +1430,14 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '免疫调节与健康',
   },
+  whaleFall: {
+    title: '鲸落：深海的生命绿洲',
+    kicker: '深海生态 · 课外拓展',
+    description: '鲸落三阶段：从清道夫盛宴到化能自养——不靠阳光的深海生态。',
+    relatedBook: 'ecology',
+    relatedModule: '生态系统能量与物质循环',
+    extension: true,
+  },
   msgFermentation: {
     title: '谷氨酸发酵工程',
     kicker: '选择性必修 3 · 发酵工程',
@@ -1728,7 +1737,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生态',
     icon: '🌱',
-    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'nitrogenFixation', 'population', 'predatorPrey', 'gauseCompetition', 'birdMigration', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim', 'ecoFootprint'],
+    ids: ['quadratMethod', 'markRecapture', 'yeastPopulation', 'soilFaunaSurvey', 'succession', 'ecoStability', 'energy', 'carbonCycleSim', 'nitrogenFixation', 'whaleFall', 'population', 'predatorPrey', 'gauseCompetition', 'birdMigration', 'ecologicalNiche', 'foodChain', 'biomagnification', 'ecosystemJar', 'mulberryFishPond', 'leafDecompose', 'biocontrol', 'waterQuality', 'algalBloom', 'invasiveSim', 'ecoFootprint'],
   },
   {
     name: '生物技术',
@@ -1824,6 +1833,7 @@ export const experimentOrder: ExperimentId[] = [
   'energy',
   'carbonCycleSim',
   'nitrogenFixation',
+  'whaleFall',
   'population',
   'predatorPrey',
   'gauseCompetition',
