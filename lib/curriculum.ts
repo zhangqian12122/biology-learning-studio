@@ -654,6 +654,7 @@ export type ExperimentId =
   | 'oxygenation'
   | 'nitrogenFixation'
   | 'ecoFootprint'
+  | 'transplantRejection'
   | 'msgFermentation'
   | 'threeDefenses'
   | 'digestionJourney'
@@ -1421,6 +1422,13 @@ export const experimentMeta: Record<
     relatedModule: '生态保护与人与自然',
     extension: true,
   },
+  transplantRejection: {
+    title: '器官移植与免疫排斥',
+    kicker: '免疫调节 · 医学应用',
+    description: 'HLA 配型与免疫抑制：为什么器官移植"配型越近越成功"。',
+    relatedBook: 'regulation',
+    relatedModule: '免疫调节与健康',
+  },
   msgFermentation: {
     title: '谷氨酸发酵工程',
     kicker: '选择性必修 3 · 发酵工程',
@@ -1715,7 +1723,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'bloodRoutine', 'energyBalance', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'transplantRejection', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1836,6 +1844,7 @@ export const experimentOrder: ExperimentId[] = [
   'balancedDiet',
   'allergySim',
   'threeDefenses',
+  'transplantRejection',
   'bloodRoutine',
   'energyBalance',
   'urineFormation',

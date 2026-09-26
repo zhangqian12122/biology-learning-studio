@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -14816,7 +14816,160 @@ function AloeSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 北极熊（冰上巨兽） ================= */
+
+function PolarBearSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 冰原 */}
+      <g style={dim(active, 0)}>
+        <path d="M40 250 q 200 -26 440 -4 l 0 80 l -440 0 Z" fill="#d8e8f4" stroke="#8ab4c9" strokeWidth="2.4" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${80 + i * 140} 268 q 40 -12 80 -2`} fill="none" stroke="#b5d8e8" strokeWidth="2" opacity="0.8" />
+        ))}
+        <text x="52" y="86" fontSize="12.5" fill="#2c5a84" fontWeight="700">北极海冰 = 狩猎平台</text>
+      </g>
+      {/* 北极熊 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="250" cy="200" rx="110" ry="52" fill="#f8f8f4" stroke="#c9d4d4" strokeWidth="2.8" />
+        <circle cx="368" cy="150" r="26" fill="#f8f8f4" stroke="#c9d4d4" strokeWidth="2.4" />
+        <path d="M386 142 q 14 -6 18 2 m -20 10 q 14 2 18 8" fill="none" stroke="#c9d4d4" strokeWidth="2.2" strokeLinecap="round" />
+        <circle cx="374" cy="144" r="3.4" fill="#141414" />
+        {[0, 1, 2, 3].map((i) => (
+          <path key={`l${i}`} d={`M${190 + i * 46} 244 q 4 26 -2 44`} fill="none" stroke="#f8f8f4" strokeWidth="10" strokeLinecap="round" />
+        ))}
+        <path d="M150 220 q -20 10 -30 26" fill="none" stroke="#f8f8f4" strokeWidth="8" strokeLinecap="round" />
+        <text x="60" y="146" fontSize="12.5" fill="#2c5a84" fontWeight="700">毛是透明的（散射呈白色）</text>
+        <text x="60" y="166" fontSize="12" fill="#2c5a84">皮肤黑色（吸热保暖）</text>
+      </g>
+      {/* 威胁 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">气候变化的"旗舰物种"：海冰消失 → 猎海豹的平台减少 → 饥饿与数量下降</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#a5761d">北极熊依赖海冰捕捉海豹（环形海豹）——无冰期越长，生存压力越大</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#a5761d">污染物沿食物链富集到北极熊体内（与生物富集标本互参）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">北极熊 · 北极顶级捕食者（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 胆固醇与血脂 ================= */
+
+function CholesterolSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 脂蛋白 */}
+      <g style={dim(active, 0)}>
+        <circle cx="130" cy="120" r="44" fill="#d8e8f0" stroke="#4d7ea8" strokeWidth="2.6" />
+        <text x="130" y="116" textAnchor="middle" fontSize="10" fill="#2c5a84" fontWeight="800">HDL</text>
+        <text x="130" y="132" textAnchor="middle" fontSize="8.5" fill="#4a6a8a">"好胆固醇"</text>
+        <circle cx="290" cy="120" r="44" fill="#f4e0e0" stroke="#a54838" strokeWidth="2.6" />
+        <text x="290" y="116" textAnchor="middle" fontSize="10" fill="#8a2020" fontWeight="800">LDL</text>
+        <text x="290" y="132" textAnchor="middle" fontSize="8.5" fill="#a53030">"坏胆固醇"</text>
+        <text x="60" y="190" fontSize="12" fill="#3f7f3a" fontWeight="700">HDL：把胆固醇运回肝脏（清道夫）</text>
+        <text x="60" y="212" fontSize="12" fill="#8a3a2a" fontWeight="700">LDL：把胆固醇运到血管壁沉积</text>
+      </g>
+      {/* 血管斑块 */}
+      <g style={dim(active, 1)}>
+        <path d="M60 260 q 150 -24 320 0" fill="none" stroke="#c94a4a" strokeWidth="26" strokeLinecap="round" />
+        <ellipse cx="300" cy="254" rx="44" ry="16" fill="#e8d8b0" stroke="#a58a2a" strokeWidth="2.4" />
+        <text x="300" y="300" textAnchor="middle" fontSize="11.5" fill="#8a671b" fontWeight="700">LDL 沉积 → 粥样斑块 → 血管变窄</text>
+        <text x="60" y="330" fontSize="12" fill="#8a3a2a" fontWeight="700">斑块破裂 → 血栓 → 心梗/脑梗</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="334" width="440" height="34" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="356" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">胆固醇是"必需"的（细胞膜·激素原料）——问题在"过多"与"位置不对"（血液中沉积）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">胆固醇 · 血管健康的"隐形风险"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 水稻（世界一半人的主粮） ================= */
+
+function RiceSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 稻田 */}
+      <g style={dim(active, 0)}>
+        <path d="M40 250 q 220 -30 440 0 l 0 60 l -440 0 Z" fill="#c9e0b0" stroke="#8a9a6a" strokeWidth="2.4" />
+        <path d="M60 262 q 200 -18 400 0" fill="none" stroke="#a8c890" strokeWidth="2" opacity="0.8" />
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <g key={i}>
+            <path d={`M${80 + i * 62} 262 v -60`} stroke="#5a9a3a" strokeWidth="5" strokeLinecap="round" />
+            <path d={`M${80 + i * 62} 202 q 14 -12 26 -8 m -26 8 q -14 -12 -26 -8`} fill="none" stroke="#8ab84a" strokeWidth="2.6" strokeLinecap="round" />
+          </g>
+        ))}
+        <text x="260" y="330" textAnchor="middle" fontSize="12.5" fill="#4a7a2a" fontWeight="700">水稻：半水生禾本科·世界约一半人口的主粮</text>
+      </g>
+      {/* 适应水田 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="60" width="200" height="110" rx="10" fill="#e4ecf6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="146" y="84" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">耐淹的"通气系统"</text>
+        <text x="146" y="108" textAnchor="middle" fontSize="10.5" fill="#37585f">茎叶的通气组织为根部送氧</text>
+        <text x="146" y="130" textAnchor="middle" fontSize="10.5" fill="#37585f">根部细胞有乙醇酸氧化途径</text>
+        <text x="146" y="152" textAnchor="middle" fontSize="10" fill="#59767c">淹水缺氧照样生长（结构适应）</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="274" y="60" width="200" height="110" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="374" y="84" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">科学突破</text>
+        <text x="374" y="108" textAnchor="middle" fontSize="10.5" fill="#a5761d">杂交水稻（袁隆平）大幅增产</text>
+        <text x="374" y="130" textAnchor="middle" fontSize="10.5" fill="#a5761d">"海水稻"耐盐碱——盐碱地变粮田</text>
+        <text x="374" y="154" textAnchor="middle" fontSize="10" fill="#59767c">粮食安全 = 国家安全的基础</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">水稻 · 世界主粮（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'polarBear',
+    name: '北极熊',
+    kicker: '熊科 · 冰上巨兽（课外拓展）',
+    intro: '北极熊是北极的顶级捕食者，也是气候变化最醒目的"代言人"：它几乎完全依赖海冰捕猎海豹——海冰消失的时间越长，饥饿期就越长。有趣的"反差"：它的毛其实是透明中空的（看起来白是光线散射），皮肤却是黑色的（利于吸热）；厚厚的脂肪与毛层让它能在零下几十度的严寒中自如活动。',
+    extension: true,
+    parts: [
+      { name: '透明毛+黑皮肤', desc: '毛是中空透明的（白是散射光），皮肤是黑色的——"白毛黑皮"最大化吸热保暖。' },
+      { name: '海冰猎场', desc: '主要在冰面捕食环斑海豹：等在呼吸孔旁"突袭"——海冰是它的猎场，也是生存的根本。' },
+      { name: '超强嗅觉', desc: '能嗅到 30 公里外的海豹或冰下的海豹幼崽——嗅觉是北极熊最敏锐的"武器"。' },
+      { name: '游泳健将', desc: '可以连续游泳数天、上百公里（脚掌半蹼状）——但长途游泳消耗巨大，母熊带崽风险更高。' },
+      { name: '气候变化的旗舰', desc: '海冰缩减 → 猎场缩小 → 繁殖与生存压力增加——北极熊是气候变化的"指示物种"。' },
+    ],
+    Svg: PolarBearSvg,
+  },
+  {
+    id: 'cholesterol',
+    name: '胆固醇与血脂',
+    kicker: '循环系统 · 血管健康的"隐形风险"（课外拓展）',
+    intro: '胆固醇不是"坏东西"：它是细胞膜的组成成分、性激素与维生素 D 的合成原料。问题在于"运输工具"：LDL（低密度脂蛋白）把胆固醇运往血管壁沉积，形成粥样斑块，血管变窄、血栓风险升高；HDL（高密度脂蛋白）则把胆固醇运回肝脏处理——"好""坏"胆固醇的平衡才是血管健康的关键。',
+    extension: true,
+    parts: [
+      { name: '胆固醇的功能', desc: '构成细胞膜、合成性激素与肾上腺皮质激素、生成维生素 D 与胆汁酸——人体必需的脂质。' },
+      { name: 'LDL 与 HDL', desc: 'LDL 把胆固醇运向组织（过多会沉积血管壁），HDL 把胆固醇运回肝脏（"清道夫"）——血脂检查看两者比值。' },
+      { name: '动脉粥样硬化', desc: 'LDL 沉积在动脉壁→氧化→巨噬细胞吞噬形成"泡沫细胞"→粥样斑块→血管狭窄、血栓风险。' },
+      { name: '饮食与运动', desc: '减少反式脂肪与饱和脂肪、增加可溶性膳食纤维与规律有氧运动——可降低 LDL、升高 HDL。' },
+      { name: '血脂检查', desc: '体检"血脂四项"：总胆固醇、LDL-C、HDL-C、甘油三酯——与血常规（血细胞）不同的另一类检验。' },
+    ],
+    Svg: CholesterolSvg,
+  },
+  {
+    id: 'rice',
+    name: '水稻',
+    kicker: '禾本科 · 世界一半人口的主粮（课外拓展）',
+    intro: '水稻是世界约一半人口的主粮，也是独特的"半水生"作物：茎叶中的通气组织把氧气输送到水下的根部，让它在淹水的稻田中也能"呼吸"。袁隆平团队的杂交水稻利用杂种优势大幅提高产量；耐盐碱的"海水稻"正在把盐碱地变成粮田——一粒种子，关乎亿万人的粮食安全。',
+    extension: true,
+    parts: [
+      { name: '半水生适应', desc: '茎叶有通气组织（气腔）向根部运氧；根系还能氧化根际有毒的还原性物质。' },
+      { name: '杂交水稻', desc: '利用野生稻的雄性不育株实现"三系"杂交——杂种优势使产量大幅提升（袁隆平团队）。' },
+      { name: '颖花与颖果', desc: '我们吃的"米"是颖果（果皮与种皮愈合）；去壳前叫稻谷，精磨后是白米（保留米糠更有营养）。' },
+      { name: '甲烷排放', desc: '稻田淹水环境也是产甲烷菌的"主场"——节水灌溉（如间歇灌溉）可减少甲烷排放。' },
+      { name: '粮食安全', desc: '水稻约占全球热量摄入的 20%——高产、耐逆品种的育种直接关系粮食安全。' },
+    ],
+    Svg: RiceSvg,
+  },
   {
     id: 'cobra',
     name: '眼镜蛇',
