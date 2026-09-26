@@ -2,31 +2,31 @@
 import { chromium } from 'file:///D:/ClaudeCode/npm/node_modules/playwright/index.mjs';
 
 const BASE = 'http://localhost:3000';
-const results = { experiment: {}, specimens: {} };
+const results = { experiment: {}, specimens: {}, regression: {} };
 
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：goutUricAcid 尿酸与痛风 ----------
-await page.goto(`${BASE}/lab?exp=goutUricAcid`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：autoimmune 自身免疫 ----------
+await page.goto(`${BASE}/lab?exp=autoimmune`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(3000);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '高嘌呤饮食' }).click();
-  for (let i = 0; i < 7; i++) {
-    await page.getByRole('button', { name: /推进一天/ }).evaluate((el) => el.click());
-    await page.waitForTimeout(280);
-  }
+  await page.locator('button', { hasText: '胰岛 β 细胞' }).click();
+  await page.waitForTimeout(300);
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('尿酸与痛风');
-  results.experiment.interactive = after.includes('痛风发作高风险') && after.includes('大脚趾');
+  await page.locator('button', { hasText: '恢复正常警戒' }).click();
+  await page.waitForTimeout(200);
+  const resetText = await page.locator('main').innerText();
+  results.experiment.open = before.includes('自身免疫');
+  results.experiment.interactive = after.includes('1 型糖尿病') && after.includes('胰岛 β 细胞');
+  results.experiment.reset = resetText.includes('精准识别敌我');
   results.experiment.reference = after.includes('注意事项');
-  results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['parrot', 'tuberculosis', 'sickleCellAnemia'];
+const SPECIMENS = ['armadillo', 'motionSickness', 'etiolation'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -39,7 +39,8 @@ function analyze(boxes) {
   }
   for (let i = 0; i < boxes.length; i++) {
     for (let j = i + 1; j < boxes.length; j++) {
-      const a = boxes[i], c = boxes[j];
+      const a = boxes[i];
+      const c = boxes[j];
       const ox = Math.min(a.x + a.w, c.x + c.w) - Math.max(a.x, c.x);
       const oy = Math.min(a.y + a.h, c.y + c.h) - Math.max(a.y, c.y);
       if (ox > 8 && oy > 5) {
@@ -68,27 +69,33 @@ for (const id of SPECIMENS) {
         h: (r.height / sr.height) * 380,
       };
     });
-    return { found: true, texts };
+    const heading = main.innerText;
+    return { found: true, texts, shown: heading.includes('结构图') || heading.includes('模式图') || heading.includes('课外拓展') };
   });
   if (!info.found) {
     results.specimens[id] = { found: false };
     continue;
   }
   const issues = analyze(info.texts);
-  results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
+  results.specimens[id] = {
+    found: true,
+    textCount: info.texts.length,
+    issues,
+    ok: issues.length === 0,
+  };
 }
 
-// 回归检查：nitrogenFixation 实验页仍正常
-await page.goto(`${BASE}/lab?exp=nitrogenFixation`, { waitUntil: 'domcontentloaded' });
-await page.waitForTimeout(1800);
+// ---------- 回归：上一轮实验页 ----------
+await page.goto(`${BASE}/lab?exp=goutUricAcid`, { waitUntil: 'domcontentloaded' });
+await page.waitForTimeout(2000);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.nfixRegression = { found: t.includes('固氮') || t.includes('根瘤'), ok: t.includes('固氮') || t.includes('根瘤') };
+  results.regression.goutUricAcid = t.includes('尿酸与痛风') && t.includes('推进一天');
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.nfixRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && Object.values(results.regression).every(Boolean);
 console.log('ALL_OK=' + allOk);

@@ -656,6 +656,7 @@ export type ExperimentId =
   | 'ecoFootprint'
   | 'phageTherapy'
   | 'transplantRejection'
+  | 'autoimmune'
   | 'whaleFall'
   | 'netPhotosynthesis'
   | 'goutUricAcid'
@@ -1442,6 +1443,13 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '免疫调节与健康',
   },
+  autoimmune: {
+    title: '自身免疫：敌我不分',
+    kicker: '免疫调节 · 稳态失衡',
+    description: '调节滑块看"免疫耐受"松紧：从免疫缺陷、精准识别到误伤自身的类风湿与 1 型糖尿病。',
+    relatedBook: 'regulation',
+    relatedModule: '免疫调节与健康',
+  },
   whaleFall: {
     title: '鲸落：深海的生命绿洲',
     kicker: '深海生态 · 课外拓展',
@@ -1766,7 +1774,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'transplantRejection', 'bloodRoutine', 'energyBalance', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'transplantRejection', 'autoimmune', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1893,6 +1901,7 @@ export const experimentOrder: ExperimentId[] = [
   'allergySim',
   'threeDefenses',
   'transplantRejection',
+  'autoimmune',
   'bloodRoutine',
   'energyBalance',
   'urineFormation',

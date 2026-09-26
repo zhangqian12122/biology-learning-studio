@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold', 'tuberculosis'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -15362,7 +15362,194 @@ function SickleCellAnemiaSvg({ active }: { active: number | null; open?: boolean
   );
 }
 
+/* ================= 犰狳（披甲的"活坦克"） ================= */
+
+function ArmadilloSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 骨质皮甲与身体 */}
+      <g style={dim(active, 0)}>
+        <path d="M148 214 Q152 122 252 104 Q352 120 356 214 L148 214 Z" fill="#b09478" stroke="#6a5238" strokeWidth="2.8" />
+        <path d="M204 112 Q198 162 202 214 M252 104 Q252 160 252 214 M300 112 Q306 162 302 214" fill="none" stroke="#6a5238" strokeWidth="2.2" />
+        <rect x="140" y="208" width="224" height="12" rx="6" fill="#8a6f52" stroke="#6a5238" strokeWidth="2" />
+        <text x="176" y="82" fontSize="12.5" fill="#6a5238" fontWeight="700">骨质皮甲：真皮骨化+角质覆盖</text>
+        <text x="176" y="100" fontSize="12" fill="#6a5238">肩甲带·活动带·骨盆带——像"盔甲关节"</text>
+      </g>
+      {/* 头与爪 */}
+      <g style={dim(active, 1)}>
+        <path d="M152 190 Q110 184 88 200 Q108 214 150 214 Z" fill="#c9ad8a" stroke="#6a5238" strokeWidth="2.4" />
+        <path d="M128 186 l 6 -14 l 8 12" fill="#c9ad8a" stroke="#6a5238" strokeWidth="2" />
+        <circle cx="106" cy="198" r="3" fill="#141414" />
+        <text x="60" y="150" fontSize="12.5" fill="#6a5238" fontWeight="700">尖吻+小耳：拱土找白蚁</text>
+        <rect x="196" y="220" width="30" height="34" rx="10" fill="#c9ad8a" stroke="#6a5238" strokeWidth="2.2" />
+        <path d="M226 236 q 34 -6 44 10 q -12 10 -44 2 Z" fill="#c9ad8a" stroke="#6a5238" strokeWidth="2.2" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M268 ${232 + i * 8} l 26 ${i === 1 ? -2 : 4}`} fill="none" stroke="#8a7248" strokeWidth="4" strokeLinecap="round" />
+        ))}
+        <text x="300" y="262" fontSize="12.5" fill="#6a5238" fontWeight="700">第三爪如铁铲：掘穴·撕开蚁巢</text>
+        <text x="300" y="280" fontSize="12" fill="#6a5238">一晚能吃掉数万只白蚁蚂蚁</text>
+      </g>
+      {/* 蜷球与考点 */}
+      <g style={dim(active, 2)}>
+        <circle cx="440" cy="88" r="34" fill="#c9ad8a" stroke="#6a5238" strokeWidth="2.4" />
+        <path d="M414 76 Q440 60 466 76 M408 92 Q440 76 472 92 M414 108 Q440 122 466 108" fill="none" stroke="#6a5238" strokeWidth="2" />
+        <text x="428" y="140" textAnchor="middle" fontSize="12.5" fill="#6a5238" fontWeight="700">三带犰狳：能蜷成完美球</text>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">九带犰狳恒定产同卵四胞胎：一个受精卵分裂成四个胚胎——天然的"遗传学克隆"研究材料</text>
+        <text x="260" y="342" textAnchor="middle" fontSize="12" fill="#a5761d">体温仅 31~35°C——除人类外唯一自然感染麻风杆菌的哺乳动物，为麻风病药物研究立功</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">受惊可跳起 1 米高——公路上反而常被撞死，"盔甲"防不住汽车</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">犰狳 · 披甲的"活坦克"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 晕车与前庭（感觉"打架"了） ================= */
+
+function MotionSicknessSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 内耳：半规管与前庭 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="150" cy="80" rx="52" ry="16" fill="none" stroke="#b06a9a" strokeWidth="7" transform="rotate(-18 150 80)" />
+        <ellipse cx="128" cy="120" rx="46" ry="15" fill="none" stroke="#8a6ab0" strokeWidth="7" transform="rotate(42 128 120)" />
+        <ellipse cx="178" cy="126" rx="48" ry="15" fill="none" stroke="#6a86b0" strokeWidth="7" transform="rotate(-76 178 126)" />
+        <path d="M150 170 a 26 26 0 1 1 -0.1 0 M150 144 a 12 12 0 1 0 0.1 0" fill="none" stroke="#c98a4a" strokeWidth="7" />
+        <ellipse cx="152" cy="132" rx="14" ry="17" fill="#e8d0f0" stroke="#8a5aa5" strokeWidth="2.4" />
+        <text x="150" y="42" textAnchor="middle" fontSize="12.5" fill="#8a4a7a" fontWeight="700">三条半规管：感知旋转（互成直角）</text>
+        <text x="52" y="220" fontSize="12.5" fill="#8a5aa5" fontWeight="700">耳蜗：听声音</text>
+        <text x="150" y="244" textAnchor="middle" fontSize="12.5" fill="#8a5aa5" fontWeight="700">前庭（椭圆囊·球囊）：耳石感知直线加速与重力</text>
+      </g>
+      {/* 感觉冲突流程 */}
+      <g style={dim(active, 1)}>
+        <rect x="300" y="56" width="196" height="128" rx="12" fill="#eef4fb" stroke="#5a7aa5" strokeWidth="2.4" />
+        <circle cx="340" cy="96" r="16" fill="#fff" stroke="#5a7aa5" strokeWidth="2.2" />
+        <circle cx="340" cy="96" r="6" fill="#5a7aa5" />
+        <text x="362" y="92" fontSize="12.5" fill="#3a5a8a" fontWeight="700">眼睛：盯着手机=「静止」</text>
+        <path d="M410 130 q 8 -22 22 -10 q 6 -12 16 -2 q 12 -2 8 10 q 6 10 -8 10 q -4 10 -14 4 q -12 8 -16 -4 q -12 0 -8 -8" fill="#e8d0f0" stroke="#8a5aa5" strokeWidth="2" />
+        <text x="330" y="164" fontSize="12.5" fill="#8a4a7a" fontWeight="700">内耳：「一路颠簸=剧烈运动」</text>
+        <text x="398" y="152" fontSize="12" fill="#8a5aa5" fontWeight="700">大脑收到矛盾信号</text>
+        <line x1="398" y1="184" x2="398" y2="206" stroke="#a53030" strokeWidth="2.6" markerEnd="url(#msArrow)" />
+        <rect x="300" y="208" width="196" height="46" rx="12" fill="#fdf1f1" stroke="#a53030" strokeWidth="2.4" />
+        <text x="398" y="228" textAnchor="middle" fontSize="12.5" fill="#a53030" fontWeight="800">呕吐中枢被触发：恶心·出冷汗·呕吐</text>
+        <text x="398" y="246" textAnchor="middle" fontSize="11" fill="#b06a6a">进化假说：误判"神经中毒"→ 启动排毒反射</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="280" width="448" height="86" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="304" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">晕车本质：内耳（在动）与眼睛（没动）的感觉冲突——坐车看手机更容易晕</text>
+        <text x="260" y="326" textAnchor="middle" fontSize="12" fill="#a5761d">预防：看远方地平线 · 坐前排 · 开窗通风 · 提前服晕车药（抑制前庭信号）</text>
+        <text x="260" y="348" textAnchor="middle" fontSize="11.5" fill="#a5761d">考点：前庭器官与听觉（耳蜗）都藏在内耳，但功能完全不同——感受刺激类型不同</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">晕车与前庭 · 感觉"打架"（课外拓展）</text>
+      <defs>
+        <marker id="msArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0 0 L6 3 L0 6 Z" fill="#a53030" />
+        </marker>
+      </defs>
+    </svg>
+  );
+}
+
+/* ================= 黄化苗（豆芽为什么是黄的） ================= */
+
+function EtiolationSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 暗箱：黄化苗 */}
+      <g style={dim(active, 0)}>
+        <rect x="36" y="58" width="200" height="220" rx="12" fill="#3a3a30" stroke="#22221a" strokeWidth="2.4" />
+        <text x="136" y="80" textAnchor="middle" fontSize="12.5" fill="#e8e0c0" fontWeight="700">避光培养：黄化苗（豆芽）</text>
+        <path d="M136 258 Q130 200 142 160 Q150 128 128 108" fill="none" stroke="#e8e0c0" strokeWidth="7" strokeLinecap="round" />
+        <path d="M128 108 q -14 -12 -4 -24 q 12 -6 16 8" fill="none" stroke="#e8e0c0" strokeWidth="5.5" strokeLinecap="round" />
+        <path d="M138 150 q 16 -6 22 6 q -12 8 -22 2" fill="#e8e0b0" stroke="#b0a860" strokeWidth="2" />
+        <path d="M136 258 q -12 14 -24 16 M136 258 q 12 12 26 14" fill="none" stroke="#d0c8a0" strokeWidth="3" strokeLinecap="round" />
+        <ellipse cx="136" cy="266" rx="16" ry="8" fill="#c9b88a" stroke="#8a7a4a" strokeWidth="2" />
+        <text x="58" y="120" fontSize="12.5" fill="#e8e0c0" fontWeight="700">顶端弯钩：护住生长点破土</text>
+        <text x="46" y="196" fontSize="12.5" fill="#e8e0c0" fontWeight="700">茎细长发软（徒长）</text>
+        <text x="46" y="214" fontSize="12" fill="#c8c0a0">叶黄白·不展开</text>
+      </g>
+      {/* 见光：绿化苗 */}
+      <g style={dim(active, 1)}>
+        <rect x="284" y="58" width="200" height="220" rx="12" fill="#f2faea" stroke="#7aa87a" strokeWidth="2.4" />
+        <circle cx="452" cy="84" r="15" fill="#f5d75a" stroke="#c9a52a" strokeWidth="2" />
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+          const ang = (i * Math.PI) / 4;
+          return <line key={i} x1={452 + Math.cos(ang) * 19} y1={84 + Math.sin(ang) * 19} x2={452 + Math.cos(ang) * 26} y2={84 + Math.sin(ang) * 26} stroke="#c9a52a" strokeWidth="2.4" strokeLinecap="round" />;
+        })}
+        <text x="384" y="112" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">移到光下 2~3 天</text>
+        <path d="M384 258 Q388 210 380 180 Q376 156 384 132" fill="none" stroke="#3f8a3f" strokeWidth="10" strokeLinecap="round" />
+        <path d="M384 160 q -26 -4 -34 -24 q 26 -8 34 10 Z" fill="#4aa54a" stroke="#1f6f1f" strokeWidth="2.2" />
+        <path d="M384 140 q 26 -6 36 -24 q -28 -8 -36 12 Z" fill="#4aa54a" stroke="#1f6f1f" strokeWidth="2.2" />
+        <path d="M384 258 q -18 16 -34 18 M384 258 q 18 14 36 16 M384 258 q -4 18 2 22" fill="none" stroke="#8a6f52" strokeWidth="3.2" strokeLinecap="round" />
+        <ellipse cx="384" cy="266" rx="16" ry="8" fill="#c9b88a" stroke="#8a7a4a" strokeWidth="2" />
+        <text x="316" y="196" fontSize="12.5" fill="#2f6f2a" fontWeight="700">茎变粗·叶展开转绿</text>
+        <text x="316" y="214" fontSize="12" fill="#2f6f2a">根系更发达</text>
+      </g>
+      {/* 对比箭头与考点 */}
+      <g style={dim(active, 2)}>
+        <line x1="242" y1="168" x2="278" y2="168" stroke="#0e6f75" strokeWidth="3" markerEnd="url(#etArrow)" />
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">叶绿素的合成需要光——无光时叶片黄白（豆芽呈黄的真相），光照启动"光形态建成"</text>
+        <text x="260" y="342" textAnchor="middle" fontSize="12" fill="#a5761d">发豆芽遮光=黄芽菜脆嫩；见光绿化后维生素更足但口感变"老"——你选哪种？</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">考点：环境因子（光）调控植物发育——与向光性、光周期现象同属"光信号"家族</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">黄化苗 · 光形态建成（课外拓展）</text>
+      <defs>
+        <marker id="etArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0 0 L6 3 L0 6 Z" fill="#0e6f75" />
+        </marker>
+      </defs>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'armadillo',
+    name: '犰狳',
+    kicker: '贫齿目 · 披甲的"活坦克"（课外拓展）',
+    intro: '犰狳是美洲特有的"盔甲哺乳动物"：皮肤真皮骨化成骨质板、外面再覆盖角质，分成肩甲带、几条活动带和骨盆带——像一套带"关节"的盔甲，遇到危险有的种类能蜷成完美的球。它是除人类外唯一自然感染麻风杆菌的动物（体温低适合杆菌繁殖），为麻风病药物研究做出大贡献。',
+    extension: true,
+    parts: [
+      { name: '骨质皮甲', desc: '真皮骨化成骨板+角质覆盖——肩甲带、活动带、骨盆带像"盔甲关节"，柔韧又能抗挤压。' },
+      { name: '挖掘巨爪', desc: '前脚第三爪如铁铲——掘洞又快又深，主食白蚁蚂蚁，一晚能吃掉数万只。' },
+      { name: '同卵四胞胎', desc: '九带犰狳恒定一胎四仔且来自同一个受精卵——天然的"遗传学克隆"，研究"基因相同为何命运不同"的好材料。' },
+      { name: '麻风研究模型', desc: '体温仅 31~35°C、代谢慢——麻风杆菌喜欢这种"低温环境"，犰狳成为麻风病疫苗与药物试验动物。' },
+      { name: '逃生绝技', desc: '受惊瞬间弹跳 1 米高吓退捕食者——但在公路上这招反而致命；三带犰狳则靠蜷成球硬扛。' },
+    ],
+    Svg: ArmadilloSvg,
+  },
+  {
+    id: 'motionSickness',
+    name: '晕车与前庭',
+    kicker: '内耳前庭 · 感觉"打架"了（课外拓展）',
+    intro: '坐车时内耳的前庭器官报告"正在颠簸前进"，眼睛盯着手机却报告"静止不动"——大脑同时收到两个矛盾信号，就触发了恶心、出冷汗甚至呕吐：这就是晕车。进化假说认为，这种矛盾信号在自然界通常意味着"神经中毒"，于是身体启动呕吐反射"排毒"——晕车其实是古老保命机制的"误触发"。',
+    extension: true,
+    parts: [
+      { name: '半规管', desc: '三条互成直角的半规管感知旋转——车辆转弯、颠簸时内淋巴液晃动，刺激毛细胞"报警"。' },
+      { name: '前庭（耳石器）', desc: '椭圆囊与球囊里的耳石感知直线加速和重力——起步、刹车、上下颠簸全被记录。' },
+      { name: '感觉冲突', desc: '内耳说"在剧烈运动"，眼睛看手机说"静止"——大脑整合出矛盾，比单看窗外更容易晕。' },
+      { name: '呕吐反射', desc: '矛盾信号被脑干解读为"中毒"——触发恶心呕吐的"排毒"反射，伴出冷汗、面色苍白。' },
+      { name: '预防妙招', desc: '看远方地平线让眼睛与内耳"说同一件事"、坐前排、开窗通风——晕车药则抑制前庭信号传入。' },
+    ],
+    Svg: MotionSicknessSvg,
+  },
+  {
+    id: 'etiolation',
+    name: '黄化苗（豆芽）',
+    kicker: '光形态建成 · 豆芽为什么是黄的（课外拓展）',
+    intro: '在黑暗中萌发的幼苗又黄又细长，这就是"黄化现象"——菜市场上的豆芽就是典型。避光下茎细胞拼命伸长（"抢光"策略）、叶绿素无法合成（需光照激活）、顶端还保持弯钩保护生长点。一旦移到光下，几天内就"变身"：茎变粗、叶展开、转绿——光信号启动的发育程序叫"光形态建成"。',
+    extension: true,
+    parts: [
+      { name: '细长茎', desc: '避光下细胞过度伸长——茎又细又软（徒长），机械组织不发达、容易倒伏。' },
+      { name: '黄白叶', desc: '叶绿素合成需要光——无光时叶片不展开、呈黄白色；这也是"豆芽是黄的"的真相。' },
+      { name: '顶端弯钩', desc: '弯钩保护娇嫩的生长点破土时不被土壤磨损——出土见光后才伸直展开。' },
+      { name: '见光转绿', desc: '光照激活叶绿素合成、茎变粗、叶展开、根更发达——从"黄化发育"切换到"光形态建成"。' },
+      { name: '生活应用', desc: '发豆芽要遮光（黄芽菜脆嫩）；见光绿化后维生素更足但口感变"老"——光调控着餐桌上的口感。' },
+    ],
+    Svg: EtiolationSvg,
+  },
   {
     id: 'parrot',
     name: '鹦鹉',
