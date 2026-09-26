@@ -285,3 +285,33 @@ textarea {
     transition: none;
   }
 }
+/* 图鉴书页目录：米色纸底条目，选中项像夹了张书签 */
+.nb-book-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 4px 8px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #537078;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.nb-book-item:hover {
+  background: #f2ead8;
+  color: #13333a;
+}
+.nb-book-item-open {
+  background: #ffffff;
+  border-color: #0e6f75;
+  color: #0a626a;
+  box-shadow: 2px 2px 0 #9fd4cd;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nb-book-item {
+    transition: none;
+  }
+}

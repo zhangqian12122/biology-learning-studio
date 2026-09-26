@@ -1,12 +1,18 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Search, Sparkles, X } from 'lucide-react';
 
 import { ATLAS_CATEGORIES, ATLAS_GROUPS, LAB_ONLY_SPECIMEN_IDS, SPECIMENS } from '@/components/cells/specimens';
 
 /** 图鉴只保留"结构/模式图"类标本；实验操作类图解移到互动实验页展示。 */
 const ATLAS_SPECIMENS = SPECIMENS.filter((item) => !LAB_ONLY_SPECIMEN_IDS.includes(item.id));
+
+const ID_BY_SPECIMEN = new Map(ATLAS_SPECIMENS.map((item) => [item.id, item]));
+const ATLAS_VISIBLE = new Set(ATLAS_SPECIMENS.map((item) => item.id));
+/** 全书统一页码序：按分类表顺序把所有图鉴标本串成一条目录 */
+const ATLAS_ORDER: string[] = ATLAS_CATEGORIES.flatMap((c) => c.ids).filter((id) => ATLAS_VISIBLE.has(id));
+const ORDER_NO = new Map(ATLAS_ORDER.map((id, i) => [id, i + 1]));
 
 const CELL_KEYFRAMES = `
 @keyframes bio-cilia-sway { 0%, 100% { transform: skewX(0deg); } 50% { transform: skewX(2.5deg); } }
@@ -57,18 +63,31 @@ function initialFromUrl() {
   return fallback;
 }
 
+/** 标本 → 所属细分类 + 大组 */
+function locateSpecimen(id: string) {
+  const cat = ATLAS_CATEGORIES.find((c) => c.ids.includes(id));
+  const grp = cat ? ATLAS_GROUPS.find((g) => g.categories.includes(cat.name)) ?? null : null;
+  return { cat: cat ?? null, grp };
+}
+
 export function CellsClient() {
   // SSR 安全的默认值；深链参数在 useEffect 中客户端解析
   const [specimenId, setSpecimenId] = useState(ATLAS_SPECIMENS[0].id);
   const [activePart, setActivePart] = useState<number | null>(null);
   const [stomaOpen, setStomaOpen] = useState(true);
   const [useWebGL, setUseWebGL] = useState(false);
-  /** 两级导航：home = 大分类入口；group = 点进某个大分类浏览 */
+  /** 两级导航（窄屏浏览）：home = 大分类入口；group = 点进某个大分类浏览 */
   const [level, setLevel] = useState<'home' | 'group'>('home');
   const [activeGroup, setActiveGroup] = useState<string | null>(null);
   const [subCategory, setSubCategory] = useState<string | null>(null);
   const [search, setSearch] = useState('');
   const [urlProcessed, setUrlProcessed] = useState(false);
+  /** 桌面书页目录：展开的章（大组）与节（细分类） */
+  const [openGroups, setOpenGroups] = useState<string[]>([]);
+  const [openCats, setOpenCats] = useState<string[]>([]);
+  /** ≥1024px 切书页双栏；SSR 先按窄屏渲染，客户端再切换 */
+  const [isWide, setIsWide] = useState(false);
+  const currentItemRef = useRef<HTMLButtonElement | null>(null);
 
   // 深链：/cells?specimen=xxx 或 /cells?cat=xxx（只在客户端首次挂载后执行一次）
   useEffect(() => {
@@ -79,7 +98,26 @@ export function CellsClient() {
     if (init.level !== 'home') setLevel(init.level);
     if (init.activeGroup !== null) setActiveGroup(init.activeGroup);
     if (init.subCategory !== null) setSubCategory(init.subCategory);
+    // 目录树：展开当前标本/深链分类所在的章与节
+    const targetGroups = new Set<string>();
+    const targetCats = new Set<string>();
+    if (init.activeGroup) targetGroups.add(init.activeGroup);
+    if (init.subCategory) targetCats.add(init.subCategory);
+    const located = locateSpecimen(init.specimenId);
+    if (located.grp) targetGroups.add(located.grp.name);
+    if (located.cat) targetCats.add(located.cat.name);
+    setOpenGroups([...targetGroups]);
+    setOpenCats([...targetCats]);
   }, [urlProcessed]);
+
+  // 桌面断点（与布局分支保持单一渲染源，避免 WebGL 等重组件双挂载）
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    const update = () => setIsWide(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
 
   const specimen = ATLAS_SPECIMENS.find((item) => item.id === specimenId) ?? ATLAS_SPECIMENS[0];
   const SpecimenSvg = specimen.Svg;
@@ -101,6 +139,10 @@ export function CellsClient() {
     return inGroup && inSub;
   });
 
+  /** 上一个/下一个的行走顺序：搜索时在结果内循环，否则沿全书目录序 */
+  const navList = searchLower ? visibleSpecimens : ATLAS_ORDER.map((id) => ID_BY_SPECIMEN.get(id)!);
+  const navIdx = navList.findIndex((item) => item.id === specimen.id);
+
   const groupCount = (g: (typeof ATLAS_GROUPS)[number]) =>
     ATLAS_SPECIMENS.filter((item) =>
       ATLAS_CATEGORIES.some((c) => g.categories.includes(c.name) && c.ids.includes(item.id)),
@@ -121,389 +163,551 @@ export function CellsClient() {
     setSubCategory(null);
   };
 
+  const toggleGroup = (name: string) =>
+    setOpenGroups((prev) => (prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]));
+  const toggleCat = (name: string) =>
+    setOpenCats((prev) => (prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]));
+
   const pickSpecimen = (id: string) => {
     setSpecimenId(id);
     setActivePart(null);
     setUseWebGL(false);
+    const { cat, grp } = locateSpecimen(id);
+    if (grp) setOpenGroups((prev) => (prev.includes(grp.name) ? prev : [...prev, grp.name]));
+    if (cat) setOpenCats((prev) => (prev.includes(cat.name) ? prev : [...prev, cat.name]));
   };
 
-  const visibleIdx = visibleSpecimens.findIndex((item) => item.id === specimen.id);
   const step = (dir: 1 | -1) => {
-    if (visibleIdx === -1 || visibleSpecimens.length === 0) return;
-    const next = visibleSpecimens[(visibleIdx + dir + visibleSpecimens.length) % visibleSpecimens.length];
+    if (navIdx === -1 || navList.length === 0) return;
+    const next = navList[(navIdx + dir + navList.length) % navList.length];
     pickSpecimen(next.id);
   };
 
-  return (
-    <div>
-      <style>{CELL_KEYFRAMES}</style>
+  // 目录自动滚到当前条目
+  useEffect(() => {
+    currentItemRef.current?.scrollIntoView({ block: 'nearest' });
+  }, [specimen.id, isWide]);
 
-      {/* Hero 头图（白底积木块风） */}
-      <div className="nb-hero relative mb-6 overflow-hidden px-6 py-7 sm:px-9 sm:py-9">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-14 select-none text-[9rem] leading-none opacity-[0.08]">🧫</div>
-        <div aria-hidden="true" className="pointer-events-none absolute bottom-2 right-40 select-none text-6xl opacity-[0.08]">🧬</div>
-        <div className="relative">
-          <p className="inline-flex items-center gap-2 border-2 border-[#13333a] bg-[#0e6f75] px-2.5 py-1 text-[11px] font-bold tracking-[0.24em] text-white shadow-[3px_3px_0_#13333a]">
-            CELL ATLAS · 生物图鉴
+  /* ==================== 共用块 ==================== */
+
+  const searchBox = (
+    <div className="nb-input relative flex items-center">
+      <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[#79939a]" aria-hidden="true" />
+      <input
+        type="search"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="在图鉴中搜索（如“线粒体”“病毒”“染色体”）…"
+        aria-label="搜索图鉴标本"
+        className="min-h-10 w-full bg-transparent pl-9 pr-10 text-sm outline-none"
+      />
+      {search ? (
+        <button
+          type="button"
+          onClick={() => setSearch('')}
+          aria-label="清除搜索"
+          className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-[#79939a] transition-colors hover:bg-[#eef7f7]"
+        >
+          <X className="size-4" aria-hidden="true" />
+        </button>
+      ) : null}
+    </div>
+  );
+
+  const hero = (
+    /* Hero 头图（白底积木块风） */
+    <div className="nb-hero relative mb-6 overflow-hidden px-6 py-7 sm:px-9 sm:py-9">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-14 select-none text-[9rem] leading-none opacity-[0.08]">🧫</div>
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-2 right-40 select-none text-6xl opacity-[0.08]">🧬</div>
+      <div className="relative">
+        <p className="inline-flex items-center gap-2 border-2 border-[#13333a] bg-[#0e6f75] px-2.5 py-1 text-[11px] font-bold tracking-[0.24em] text-white shadow-[3px_3px_0_#13333a]">
+          CELL ATLAS · 生物图鉴
+        </p>
+        <h1 className="mt-3 text-2xl font-black tracking-wide text-[#13333a] sm:text-4xl">图鉴：把结构看清楚</h1>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-[#49676d]">
+          {ATLAS_SPECIMENS.length} 张课本级教学模式图归档入库：选一个分类进入寻找，点图中的编号或右侧结构名即可高亮并显示考点说明。
+          <span className="font-semibold text-[#b57c16]">⚡ 标记为课外拓展档案</span>；实验操作类图解已移至互动实验页。
+        </p>
+        <div className="mt-4 flex flex-wrap items-center gap-2.5">
+          {[
+            `已归档 ${ATLAS_SPECIMENS.length}`,
+            `分类 ${ATLAS_GROUPS.length}`,
+            `覆盖五册教材`,
+          ].map((chip, i) => (
+            <span
+              key={chip}
+              className="inline-flex items-center gap-1.5 border-2 border-[#13333a] bg-white px-3 py-1 text-xs font-bold text-[#13333a] shadow-[3px_3px_0_#c6d4d4]"
+            >
+              <span aria-hidden="true" className="text-[#0e6f75]">{String(i + 1).padStart(2, '0')}</span>
+              {chip}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
+  const navSection = browsing ? (
+    /* ===== 二级：组内浏览 / 搜索结果 ===== */
+    <section className="nb-card p-4 sm:p-5">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => { backHome(); setSearch(''); }}
+            className="nb-pill inline-flex min-h-9 items-center gap-1 px-3 text-xs font-semibold text-[#537078]"
+          >
+            <ChevronLeft className="size-4" aria-hidden="true" />
+            返回目录
+          </button>
+          <h2 className="text-base font-bold text-[#13333a]">
+            {searchLower ? `搜索“${search.trim()}”` : `${group!.icon} ${group!.name}`}
+            <span className="ml-2 text-xs font-medium text-[#79939a]">{visibleSpecimens.length} 个</span>
+          </h2>
+        </div>
+        <p className="text-xs text-[#79939a]">{group && !searchLower ? group.desc : '点标本卡片在下方查看大图'}</p>
+      </div>
+
+      {/* 细分类二次筛选（仅组内浏览时） */}
+      {group && !searchLower && fineCategories.length > 1 ? (
+        <div className="mb-3 flex flex-wrap gap-1.5">
+          <button
+            type="button"
+            onClick={() => setSubCategory(null)}
+            aria-pressed={subCategory == null}
+            className={`nb-pill inline-flex min-h-8 items-center px-3 text-xs font-semibold ${
+              subCategory == null ? 'nb-pill-active' : 'text-[#537078]'
+            }`}
+          >
+            全部
+          </button>
+          {fineCategories.map((c) => (
+            <button
+              key={c.name}
+              type="button"
+              onClick={() => setSubCategory(subCategory === c.name ? null : c.name)}
+              aria-pressed={subCategory === c.name}
+              className={`nb-pill inline-flex min-h-8 items-center gap-1 px-3 text-xs font-semibold ${
+                subCategory === c.name ? 'nb-pill-active' : 'text-[#537078]'
+              }`}
+            >
+              <span aria-hidden="true">{c.icon}</span>
+              {c.name}（{c.ids.length}）
+            </button>
+          ))}
+        </div>
+      ) : null}
+
+      {/* 搜索框（组内也可继续搜） */}
+      {searchBox}
+
+      {/* 标本卡片网格 */}
+      <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-4 xl:grid-cols-7">
+        {visibleSpecimens.length === 0 ? (
+          <p className="col-span-full rounded-xl border border-dashed border-[#c9dedd] bg-white px-4 py-8 text-center text-sm text-[#59767c]">
+            没有匹配的标本——换个关键词或返回目录试试。
           </p>
-          <h1 className="mt-3 text-2xl font-black tracking-wide text-[#13333a] sm:text-4xl">图鉴：把结构看清楚</h1>
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-[#49676d]">
-            {ATLAS_SPECIMENS.length} 张课本级教学模式图归档入库：选一个分类进入寻找，点图中的编号或右侧结构名即可高亮并显示考点说明。
-            <span className="font-semibold text-[#b57c16]">⚡ 标记为课外拓展档案</span>；实验操作类图解已移至互动实验页。
-          </p>
-          <div className="mt-4 flex flex-wrap items-center gap-2.5">
-            {[
-              `已归档 ${ATLAS_SPECIMENS.length}`,
-              `分类 ${ATLAS_GROUPS.length}`,
-              `覆盖五册教材`,
-            ].map((chip, i) => (
-              <span
-                key={chip}
-                className="inline-flex items-center gap-1.5 border-2 border-[#13333a] bg-white px-3 py-1 text-xs font-bold text-[#13333a] shadow-[3px_3px_0_#c6d4d4]"
-              >
-                <span aria-hidden="true" className="text-[#0e6f75]">{String(i + 1).padStart(2, '0')}</span>
-                {chip}
+        ) : null}
+        {visibleSpecimens.map((item) => {
+          const current = item.id === specimen.id;
+          return (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => pickSpecimen(item.id)}
+              aria-pressed={current}
+              className={`nb-lift flex min-h-14 flex-col items-center justify-center border-2 px-2 py-2.5 text-xs font-bold [border-radius:10px] ${
+                current
+                  ? 'nb-active border-[#0e6f75] bg-[#f0faf9] text-[#0a626a]'
+                  : 'border-[#13333a] bg-white text-[#537078]'
+              }`}
+            >
+              {item.name}
+              <span className={`mt-0.5 block text-[10px] font-medium ${item.extension ? 'text-[#b57c16]' : 'text-[#8aa1a6]'}`}>
+                {item.extension ? '⚡ 课外拓展' : item.kicker.split(' · ')[0]}
               </span>
-            ))}
+            </button>
+          );
+        })}
+      </div>
+    </section>
+  ) : (
+    /* ===== 一级：大分类入口（明日方舟式深色磁贴） ===== */
+    <section>
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+        <h2 className="flex items-center gap-2 text-sm font-bold tracking-wider text-[#13333a]">
+          <span aria-hidden="true" className="inline-block h-4 w-1.5 bg-[#0e6f75] shadow-[2px_2px_0_#c6d4d4]" />
+          选择分类 · 进入寻找
+        </h2>
+        <span className="text-xs text-[#79939a]">进入后可再按细分主题筛选</span>
+      </div>
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-6">
+        {ATLAS_GROUPS.map((g, i) => (
+          <button
+            key={g.name}
+            type="button"
+            onClick={() => openGroup(g.name)}
+            className="group nb-tile relative min-h-40 p-4 text-left max-lg:first:col-span-2"
+          >
+            {/* 序号块 */}
+            <span className="absolute right-0 top-0 border-b-2 border-l-2 border-[#13333a] bg-[#f4c76a] px-2 py-0.5 font-mono text-[11px] font-bold text-[#13333a]">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-3 right-3 text-4xl opacity-25 transition-transform duration-200 group-hover:scale-110">
+              {g.icon}
+            </span>
+            <p className="text-2xl" aria-hidden="true">{g.icon}</p>
+            <p className="mt-2 text-lg font-black leading-6 text-[#13333a]">{g.name}</p>
+            <p className="mt-1 text-xs leading-5 text-[#79939a]">{g.desc}</p>
+            <span className="mt-3 inline-flex items-center gap-1.5 border-2 border-[#13333a] bg-[#e7f2f1] px-2.5 py-0.5 text-[11px] font-bold text-[#0a626a] shadow-[2px_2px_0_#c6d4d4]">
+              {groupCount(g)} 标本
+              <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+            </span>
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+
+  const mainPanel = (
+    /* 主展示区 */
+    <section className="nb-card overflow-hidden">
+      {/* 工具栏 */}
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[#13333a] bg-[#f4faf9] px-4 py-3 sm:px-5">
+        <div className="flex min-w-0 items-center gap-2.5">
+          <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg border-2 border-[#13333a] bg-[#0e6f75] text-lg text-white shadow-[3px_3px_0_#c6d4d4]" aria-hidden="true">
+            🔬
+          </span>
+          <div className="min-w-0">
+            <p className="truncate text-[11px] font-medium text-[#67858b]">
+              {CATEGORY_LABEL(specimen.id)} · {specimen.kicker}
+              {specimen.extension ? (
+                <span className="ml-1.5 inline-flex items-center border-2 border-[#13333a] bg-[#f4c76a] px-1.5 py-0.5 text-[10px] font-bold text-[#13333a]">⚡ 课外拓展</span>
+              ) : null}
+            </p>
+            <h2 className="truncate text-lg font-bold leading-6 text-[#13333a]">{specimen.name}结构图</h2>
           </div>
+        </div>
+        <div className="flex flex-wrap items-center gap-1.5">
+          {navIdx !== -1 ? (
+            <div className="mr-1 flex items-center gap-1" role="group" aria-label="上一个/下一个标本">
+              <button
+                type="button"
+                onClick={() => step(-1)}
+                aria-label="上一个标本"
+                className="nb-btn inline-flex size-8 items-center justify-center !rounded-full !shadow-[2px_2px_0_#c6d4d4] text-[#537078]"
+              >
+                <ChevronLeft className="size-4" aria-hidden="true" />
+              </button>
+              <span className="text-[11px] font-semibold text-[#79939a]">{navIdx + 1}/{navList.length}</span>
+              <button
+                type="button"
+                onClick={() => step(1)}
+                aria-label="下一个标本"
+                className="nb-btn inline-flex size-8 items-center justify-center !rounded-full !shadow-[2px_2px_0_#c6d4d4] text-[#537078]"
+              >
+                <ChevronRight className="size-4" aria-hidden="true" />
+              </button>
+            </div>
+          ) : null}
+          {isStoma ? (
+            <div className="flex gap-1.5">
+              <button
+                type="button"
+                onClick={() => setStomaOpen(true)}
+                aria-pressed={stomaOpen}
+                className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
+                  stomaOpen ? 'nb-pill-active' : 'text-[#4b6c73]'
+                }`}
+              >
+                吸水 · 张开
+              </button>
+              <button
+                type="button"
+                onClick={() => setStomaOpen(false)}
+                aria-pressed={!stomaOpen}
+                className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
+                  !stomaOpen ? 'nb-pill-active !bg-[#b0483a]' : 'text-[#4b6c73]'
+                }`}
+              >
+                失水 · 闭合
+              </button>
+            </div>
+          ) : null}
+          {specimen.StageWebGL ? (
+            <div className="flex gap-1.5" role="group" aria-label="视角模式">
+              <button
+                type="button"
+                onClick={() => setUseWebGL(false)}
+                aria-pressed={!useWebGL}
+                className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
+                  !useWebGL ? 'nb-pill-active' : 'text-[#4b6c73]'
+                }`}
+              >
+                教学剖面
+              </button>
+              <button
+                type="button"
+                onClick={() => setUseWebGL(true)}
+                aria-pressed={useWebGL}
+                className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
+                  useWebGL ? 'nb-pill-active' : 'text-[#4b6c73]'
+                }`}
+              >
+                实景 3D
+              </button>
+            </div>
+          ) : null}
+          <button
+            type="button"
+            onClick={() => setActivePart(null)}
+            className="nb-pill px-3 py-1.5 text-xs font-medium text-[#366169]"
+          >
+            取消高亮
+          </button>
         </div>
       </div>
 
-      <div className="space-y-5">
-        {browsing ? (
-          /* ===== 二级：组内浏览 / 搜索结果 ===== */
-          <section className="nb-card p-4 sm:p-5">
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => { backHome(); setSearch(''); }}
-                  className="nb-pill inline-flex min-h-9 items-center gap-1 px-3 text-xs font-semibold text-[#537078]"
-                >
-                  <ChevronLeft className="size-4" aria-hidden="true" />
-                  返回目录
-                </button>
-                <h2 className="text-base font-bold text-[#13333a]">
-                  {searchLower ? `搜索“${search.trim()}”` : `${group!.icon} ${group!.name}`}
-                  <span className="ml-2 text-xs font-medium text-[#79939a]">{visibleSpecimens.length} 个</span>
-                </h2>
+      {/* 主体：图 + 结构清单 */}
+      <div className="grid gap-5 p-4 sm:p-5 xl:grid-cols-[1.15fr_0.85fr]">
+        <div className="min-w-0">
+          <div className="relative overflow-hidden border-2 border-[#13333a] bg-[#f4fbfa] [border-radius:10px]">
+            <div className="max-sm:overflow-x-auto">
+              <div className="relative mx-auto aspect-[52/38] w-full max-w-[620px] max-sm:w-[520px]">
+                {specimen.StageWebGL && useWebGL ? (
+                  <>
+                    <specimen.StageWebGL active={activePart} open={stomaOpen} />
+                    <p className="pointer-events-none absolute bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full bg-white/80 px-3 py-1 text-[11px] font-medium text-[#4b6c73] shadow-sm">
+                      🖐 单指旋转 · 双指缩放 · 松手后自动摆动
+                    </p>
+                  </>
+                ) : specimen.Stage3d ? (
+                  <specimen.Stage3d active={activePart} open={stomaOpen} />
+                ) : (
+                  <SpecimenSvg active={activePart} open={stomaOpen} />
+                )}
               </div>
-              <p className="text-xs text-[#79939a]">{group && !searchLower ? group.desc : '点标本卡片在下方查看大图'}</p>
             </div>
+          </div>
+          {isStoma ? (
+            <p className="mt-2.5 rounded-lg bg-[#f4faf8] px-3 py-2 text-xs leading-5 text-[#5f7076]">
+              演示原理：保卫细胞<span className="font-semibold">吸水膨胀</span> → 薄的外壁向外弯曲，增厚的内壁被拉开 → 气孔张开；
+              <span className="font-semibold">失水</span> → 两细胞回落靠拢 → 气孔闭合。一般白天张开、夜间闭合。
+            </p>
+          ) : null}
+        </div>
 
-            {/* 细分类二次筛选（仅组内浏览时） */}
-            {group && !searchLower && fineCategories.length > 1 ? (
-              <div className="mb-3 flex flex-wrap gap-1.5">
+        <div className="min-w-0">
+          <div className="nb-card px-3.5 py-3">
+            <p className="flex items-start gap-1.5 text-sm leading-6 text-[#3d5a60]">
+              <Sparkles className="mt-1 size-4 shrink-0 text-[#0e6f75]" aria-hidden="true" />
+              {specimen.intro}
+            </p>
+          </div>
+          <p className="mb-2 mt-4 text-xs font-semibold tracking-[0.08em] text-[#67858b]">
+            结构清单（点按查看功能，共 {specimen.parts.length} 项）
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {specimen.parts.map((part, index) => {
+              const current = activePart === index;
+              return (
                 <button
+                  key={part.name}
                   type="button"
-                  onClick={() => setSubCategory(null)}
-                  aria-pressed={subCategory == null}
-                  className={`nb-pill inline-flex min-h-8 items-center px-3 text-xs font-semibold ${
-                    subCategory == null ? 'nb-pill-active' : 'text-[#537078]'
+                  onClick={() => setActivePart(current ? null : index)}
+                  aria-pressed={current}
+                  className={`nb-pill inline-flex min-h-9 items-center gap-1.5 px-3 text-xs font-semibold ${
+                    current ? 'nb-pill-active' : 'text-[#537078]'
                   }`}
                 >
-                  全部
-                </button>
-                {fineCategories.map((c) => (
-                  <button
-                    key={c.name}
-                    type="button"
-                    onClick={() => setSubCategory(subCategory === c.name ? null : c.name)}
-                    aria-pressed={subCategory === c.name}
-                    className={`nb-pill inline-flex min-h-8 items-center gap-1 px-3 text-xs font-semibold ${
-                      subCategory === c.name ? 'nb-pill-active' : 'text-[#537078]'
+                  <span
+                    aria-hidden="true"
+                    className={`inline-flex size-4.5 items-center justify-center rounded-full text-[10px] font-bold ${
+                      current ? 'bg-white/25 text-white' : 'bg-[#e8f4f3] text-[#0c696f]'
                     }`}
                   >
-                    <span aria-hidden="true">{c.icon}</span>
-                    {c.name}（{c.ids.length}）
-                  </button>
-                ))}
-              </div>
-            ) : null}
-
-            {/* 搜索框（组内也可继续搜） */}
-            <div className="nb-input relative flex items-center">
-              <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[#79939a]" aria-hidden="true" />
-              <input
-                type="search"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="在图鉴中搜索（如“线粒体”“病毒”“染色体”）…"
-                aria-label="搜索图鉴标本"
-                className="min-h-10 w-full bg-transparent pl-9 pr-10 text-sm outline-none"
-              />
-              {search ? (
-                <button
-                  type="button"
-                  onClick={() => setSearch('')}
-                  aria-label="清除搜索"
-                  className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-[#79939a] transition-colors hover:bg-[#eef7f7]"
-                >
-                  <X className="size-4" aria-hidden="true" />
+                    {index + 1}
+                  </span>
+                  {part.name}
                 </button>
-              ) : null}
-            </div>
+              );
+            })}
+          </div>
 
-            {/* 标本卡片网格 */}
-            <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-4 xl:grid-cols-7">
-              {visibleSpecimens.length === 0 ? (
-                <p className="col-span-full rounded-xl border border-dashed border-[#c9dedd] bg-white px-4 py-8 text-center text-sm text-[#59767c]">
-                  没有匹配的标本——换个关键词或返回目录试试。
+          <div
+            className={`mt-4 border-2 bg-[#f9fcfc] px-4 py-3.5 [border-radius:10px] transition-colors ${
+              selectedPart ? 'border-[#0e6f75] bg-[#f0faf9] shadow-[4px_4px_0_#9fd4cd]' : 'border-[#13333a]'
+            }`}
+          >
+            {selectedPart ? (
+              <>
+                <p className="text-sm font-bold text-[#0a626a]">
+                  {activePart != null ? CIRCLED_DIGITS[activePart] : ''} {selectedPart.name}
                 </p>
-              ) : null}
-              {visibleSpecimens.map((item) => {
-                const current = item.id === specimen.id;
-                return (
-                  <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => pickSpecimen(item.id)}
-                    aria-pressed={current}
-                    className={`nb-lift flex min-h-14 flex-col items-center justify-center border-2 px-2 py-2.5 text-xs font-bold [border-radius:10px] ${
-                      current
-                        ? 'nb-active border-[#0e6f75] bg-[#f0faf9] text-[#0a626a]'
-                        : 'border-[#13333a] bg-white text-[#537078]'
-                    }`}
-                  >
-                    {item.name}
-                    <span className={`mt-0.5 block text-[10px] font-medium ${item.extension ? 'text-[#b57c16]' : 'text-[#8aa1a6]'}`}>
-                      {item.extension ? '⚡ 课外拓展' : item.kicker.split(' · ')[0]}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </section>
-        ) : (
-          /* ===== 一级：大分类入口（明日方舟式深色磁贴） ===== */
-          <section>
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-              <h2 className="flex items-center gap-2 text-sm font-bold tracking-wider text-[#13333a]">
-                <span aria-hidden="true" className="inline-block h-4 w-1.5 bg-[#0e6f75] shadow-[2px_2px_0_#c6d4d4]" />
-                选择分类 · 进入寻找
-              </h2>
-              <span className="text-xs text-[#79939a]">进入后可再按细分主题筛选</span>
-            </div>
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-6">
-              {ATLAS_GROUPS.map((g, i) => (
-                <button
-                  key={g.name}
-                  type="button"
-                  onClick={() => openGroup(g.name)}
-                  className="group nb-tile relative min-h-40 p-4 text-left max-lg:first:col-span-2"
-                >
-                  {/* 序号块 */}
-                  <span className="absolute right-0 top-0 border-b-2 border-l-2 border-[#13333a] bg-[#f4c76a] px-2 py-0.5 font-mono text-[11px] font-bold text-[#13333a]">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span aria-hidden="true" className="pointer-events-none absolute bottom-3 right-3 text-4xl opacity-25 transition-transform duration-200 group-hover:scale-110">
-                    {g.icon}
-                  </span>
-                  <p className="text-2xl" aria-hidden="true">{g.icon}</p>
-                  <p className="mt-2 text-lg font-black leading-6 text-[#13333a]">{g.name}</p>
-                  <p className="mt-1 text-xs leading-5 text-[#79939a]">{g.desc}</p>
-                  <span className="mt-3 inline-flex items-center gap-1.5 border-2 border-[#13333a] bg-[#e7f2f1] px-2.5 py-0.5 text-[11px] font-bold text-[#0a626a] shadow-[2px_2px_0_#c6d4d4]">
-                    {groupCount(g)} 标本
-                    <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
-                  </span>
-                </button>
-              ))}
-            </div>
-          </section>
-        )}
+                <p className="mt-1 text-xs leading-6 text-[#49676d]">{selectedPart.desc}</p>
+              </>
+            ) : (
+              <p className="text-xs leading-5 text-[#799398]">
+                在图中或清单里点选任一结构，这里会显示它的名称、功能与考点说明。
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 
-        {/* 主展示区 */}
-        {browsing || specimen.id ? (
-          <section className="nb-card overflow-hidden">
-            {/* 工具栏 */}
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[#13333a] bg-[#f4faf9] px-4 py-3 sm:px-5">
-              <div className="flex min-w-0 items-center gap-2.5">
-                <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg border-2 border-[#13333a] bg-[#0e6f75] text-lg text-white shadow-[3px_3px_0_#c6d4d4]" aria-hidden="true">
-                  🔬
-                </span>
-                <div className="min-w-0">
-                  <p className="truncate text-[11px] font-medium text-[#67858b]">
-                    {CATEGORY_LABEL(specimen.id)} · {specimen.kicker}
-                    {specimen.extension ? (
-                      <span className="ml-1.5 inline-flex items-center border-2 border-[#13333a] bg-[#f4c76a] px-1.5 py-0.5 text-[10px] font-bold text-[#13333a]">⚡ 课外拓展</span>
-                    ) : null}
-                  </p>
-                  <h2 className="truncate text-lg font-bold leading-6 text-[#13333a]">{specimen.name}结构图</h2>
-                </div>
-              </div>
-              <div className="flex flex-wrap items-center gap-1.5">
-                {visibleIdx !== -1 ? (
-                  <div className="mr-1 flex items-center gap-1" role="group" aria-label="上一个/下一个标本">
-                    <button
-                      type="button"
-                      onClick={() => step(-1)}
-                      aria-label="上一个标本"
-                      className="nb-btn inline-flex size-8 items-center justify-center !rounded-full !shadow-[2px_2px_0_#c6d4d4] text-[#537078]"
-                    >
-                      <ChevronLeft className="size-4" aria-hidden="true" />
-                    </button>
-                    <span className="text-[11px] font-semibold text-[#79939a]">{visibleIdx + 1}/{visibleSpecimens.length}</span>
-                    <button
-                      type="button"
-                      onClick={() => step(1)}
-                      aria-label="下一个标本"
-                      className="nb-btn inline-flex size-8 items-center justify-center !rounded-full !shadow-[2px_2px_0_#c6d4d4] text-[#537078]"
-                    >
-                      <ChevronRight className="size-4" aria-hidden="true" />
-                    </button>
-                  </div>
-                ) : null}
-                {isStoma ? (
-                  <div className="flex gap-1.5">
-                    <button
-                      type="button"
-                      onClick={() => setStomaOpen(true)}
-                      aria-pressed={stomaOpen}
-                      className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
-                        stomaOpen ? 'nb-pill-active' : 'text-[#4b6c73]'
-                      }`}
-                    >
-                      吸水 · 张开
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setStomaOpen(false)}
-                      aria-pressed={!stomaOpen}
-                      className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
-                        !stomaOpen ? 'nb-pill-active !bg-[#b0483a]' : 'text-[#4b6c73]'
-                      }`}
-                    >
-                      失水 · 闭合
-                    </button>
-                  </div>
-                ) : null}
-                {specimen.StageWebGL ? (
-                  <div className="flex gap-1.5" role="group" aria-label="视角模式">
-                    <button
-                      type="button"
-                      onClick={() => setUseWebGL(false)}
-                      aria-pressed={!useWebGL}
-                      className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
-                        !useWebGL ? 'nb-pill-active' : 'text-[#4b6c73]'
-                      }`}
-                    >
-                      教学剖面
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setUseWebGL(true)}
-                      aria-pressed={useWebGL}
-                      className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
-                        useWebGL ? 'nb-pill-active' : 'text-[#4b6c73]'
-                      }`}
-                    >
-                      实景 3D
-                    </button>
-                  </div>
-                ) : null}
-                <button
-                  type="button"
-                  onClick={() => setActivePart(null)}
-                  className="nb-pill px-3 py-1.5 text-xs font-medium text-[#366169]"
-                >
-                  取消高亮
-                </button>
-              </div>
+  const footNote = (
+    <p className="text-xs leading-5 text-[#799398]">
+      说明：以上均为教学<span className="font-semibold">模式图</span>——细胞膜、内质网、高尔基体等细微结构需在电子显微镜下才能看清；
+      图中结构位置与数量做了示意化处理，以课本插图为准。
+    </p>
+  );
+
+  /* ==================== 桌面：书页目录 + 翻开的一页 ==================== */
+  if (isWide) {
+    return (
+      <div>
+        <style>{CELL_KEYFRAMES}</style>
+        <div className="flex h-[calc(100dvh-116px)] gap-5">
+          {/* 左：书页目录 */}
+          <aside aria-label="图鉴目录" className="flex w-[320px] shrink-0 flex-col overflow-hidden rounded-lg border-2 border-[#13333a] bg-[#fbf7ef] shadow-[5px_5px_0_#c6d4d4]">
+            <div className="border-b-2 border-[#13333a] bg-[#0e6f75] px-4 py-3 text-white">
+              <p className="text-[10px] font-bold tracking-[0.28em] opacity-80">CELL ATLAS</p>
+              <p className="mt-0.5 text-lg font-black leading-6">生物图鉴 · 目录</p>
+              <p className="mt-0.5 text-[11px] font-medium opacity-85">
+                共 {ATLAS_ORDER.length} 页 · {ATLAS_GROUPS.length} 章 · 按课本顺序装订
+              </p>
             </div>
-
-            {/* 主体：图 + 结构清单 */}
-            <div className="grid gap-5 p-4 sm:p-5 xl:grid-cols-[1.15fr_0.85fr]">
-              <div className="min-w-0">
-                <div className="relative overflow-hidden border-2 border-[#13333a] bg-[#f4fbfa] [border-radius:10px]">
-                  <div className="max-sm:overflow-x-auto">
-                    <div className="relative mx-auto aspect-[52/38] w-full max-w-[620px] max-sm:w-[520px]">
-                      {specimen.StageWebGL && useWebGL ? (
-                        <>
-                          <specimen.StageWebGL active={activePart} open={stomaOpen} />
-                          <p className="pointer-events-none absolute bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full bg-white/80 px-3 py-1 text-[11px] font-medium text-[#4b6c73] shadow-sm">
-                            🖐 单指旋转 · 双指缩放 · 松手后自动摆动
-                          </p>
-                        </>
-                      ) : specimen.Stage3d ? (
-                        <specimen.Stage3d active={activePart} open={stomaOpen} />
-                      ) : (
-                        <SpecimenSvg active={activePart} open={stomaOpen} />
-                      )}
-                    </div>
-                  </div>
-                </div>
-                {isStoma ? (
-                  <p className="mt-2.5 rounded-lg bg-[#f4faf8] px-3 py-2 text-xs leading-5 text-[#5f7076]">
-                    演示原理：保卫细胞<span className="font-semibold">吸水膨胀</span> → 薄的外壁向外弯曲，增厚的内壁被拉开 → 气孔张开；
-                    <span className="font-semibold">失水</span> → 两细胞回落靠拢 → 气孔闭合。一般白天张开、夜间闭合。
+            <div className="border-b-2 border-dashed border-[#d8cdb2] p-3">{searchBox}</div>
+            <nav className="flex-1 overflow-y-auto p-2.5">
+              {searchLower ? (
+                <div>
+                  <p className="px-2 pb-1.5 pt-0.5 text-[11px] font-semibold text-[#8a8266]">
+                    搜索“{search.trim()}” · {visibleSpecimens.length} 个结果
                   </p>
-                ) : null}
-              </div>
-
-              <div className="min-w-0">
-                <div className="nb-card px-3.5 py-3">
-                  <p className="flex items-start gap-1.5 text-sm leading-6 text-[#3d5a60]">
-                    <Sparkles className="mt-1 size-4 shrink-0 text-[#0e6f75]" aria-hidden="true" />
-                    {specimen.intro}
-                  </p>
-                </div>
-                <p className="mb-2 mt-4 text-xs font-semibold tracking-[0.08em] text-[#67858b]">
-                  结构清单（点按查看功能，共 {specimen.parts.length} 项）
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {specimen.parts.map((part, index) => {
-                    const current = activePart === index;
+                  {visibleSpecimens.length === 0 ? (
+                    <p className="rounded-md border border-dashed border-[#cfc4a4] bg-white/70 px-3 py-6 text-center text-xs text-[#8a8266]">
+                      没有匹配的标本——换个关键词试试。
+                    </p>
+                  ) : null}
+                  {visibleSpecimens.map((item) => {
+                    const current = item.id === specimen.id;
                     return (
                       <button
-                        key={part.name}
+                        key={item.id}
                         type="button"
-                        onClick={() => setActivePart(current ? null : index)}
-                        aria-pressed={current}
-                        className={`nb-pill inline-flex min-h-9 items-center gap-1.5 px-3 text-xs font-semibold ${
-                          current ? 'nb-pill-active' : 'text-[#537078]'
-                        }`}
+                        ref={current ? currentItemRef : undefined}
+                        onClick={() => pickSpecimen(item.id)}
+                        aria-current={current}
+                        className={`nb-book-item ${current ? 'nb-book-item-open' : ''}`}
                       >
-                        <span
-                          aria-hidden="true"
-                          className={`inline-flex size-4.5 items-center justify-center rounded-full text-[10px] font-bold ${
-                            current ? 'bg-white/25 text-white' : 'bg-[#e8f4f3] text-[#0c696f]'
-                          }`}
-                        >
-                          {index + 1}
+                        <span className="w-8 shrink-0 text-right font-mono text-[10px] font-bold text-[#b0a284]">
+                          {ORDER_NO.get(item.id)}
                         </span>
-                        {part.name}
+                        <span className="min-w-0 flex-1 truncate">{item.name}</span>
+                        {item.extension ? <span aria-hidden="true" className="shrink-0 text-[10px]">⚡</span> : null}
                       </button>
                     );
                   })}
                 </div>
-
-                <div
-                  className={`mt-4 border-2 bg-[#f9fcfc] px-4 py-3.5 [border-radius:10px] transition-colors ${
-                    selectedPart ? 'border-[#0e6f75] bg-[#f0faf9] shadow-[4px_4px_0_#9fd4cd]' : 'border-[#13333a]'
-                  }`}
-                >
-                  {selectedPart ? (
-                    <>
-                      <p className="text-sm font-bold text-[#0a626a]">
-                        {activePart != null ? CIRCLED_DIGITS[activePart] : ''} {selectedPart.name}
-                      </p>
-                      <p className="mt-1 text-xs leading-6 text-[#49676d]">{selectedPart.desc}</p>
-                    </>
-                  ) : (
-                    <p className="text-xs leading-5 text-[#799398]">
-                      在图中或清单里点选任一结构，这里会显示它的名称、功能与考点说明。
-                    </p>
-                  )}
-                </div>
-              </div>
+              ) : (
+                ATLAS_GROUPS.map((g, gi) => {
+                  const cats = ATLAS_CATEGORIES
+                    .filter((c) => g.categories.includes(c.name))
+                    .map((c) => ({ ...c, ids: c.ids.filter((id) => ATLAS_VISIBLE.has(id)) }))
+                    .filter((c) => c.ids.length > 0);
+                  const groupOpen = openGroups.includes(g.name);
+                  const catTotal = cats.reduce((n, c) => n + c.ids.length, 0);
+                  return (
+                    <div key={g.name} className="mb-1">
+                      <button
+                        type="button"
+                        onClick={() => toggleGroup(g.name)}
+                        aria-expanded={groupOpen}
+                        className="flex w-full items-center gap-2 rounded-md px-2 py-2 text-left transition-colors hover:bg-[#f2ead8]"
+                      >
+                        <span className="font-mono text-[10px] font-bold text-[#b0a284]">{String(gi + 1).padStart(2, '0')}</span>
+                        <span aria-hidden="true" className="text-base">{g.icon}</span>
+                        <span className="min-w-0 flex-1 truncate text-[13px] font-black text-[#13333a]">{g.name}</span>
+                        <span className="text-[10px] font-semibold text-[#a5a08e]">{catTotal}</span>
+                        <span aria-hidden="true" className="w-2 text-[10px] text-[#a5a08e]">{groupOpen ? '▾' : '▸'}</span>
+                      </button>
+                      {groupOpen ? (
+                        <div className="ml-4 border-l-2 border-dashed border-[#d8cdb2] pl-1.5">
+                          {cats.map((c) => {
+                            const catOpen = openCats.includes(c.name);
+                            return (
+                              <div key={c.name}>
+                                <button
+                                  type="button"
+                                  onClick={() => toggleCat(c.name)}
+                                  aria-expanded={catOpen}
+                                  className="flex w-full items-center gap-1.5 rounded-md px-2 py-1.5 text-left text-xs font-bold text-[#37585f] transition-colors hover:bg-[#f2ead8]"
+                                >
+                                  <span aria-hidden="true">{c.icon}</span>
+                                  <span className="min-w-0 flex-1 truncate">{c.name}</span>
+                                  <span className="text-[10px] font-semibold text-[#a5a08e]">{c.ids.length}</span>
+                                  <span aria-hidden="true" className="w-2 text-[9px] text-[#a5a08e]">{catOpen ? '▾' : '▸'}</span>
+                                </button>
+                                {catOpen ? (
+                                  <div className="ml-2.5">
+                                    {c.ids.map((id) => {
+                                      const sp = ID_BY_SPECIMEN.get(id)!;
+                                      const current = id === specimen.id;
+                                      return (
+                                        <button
+                                          key={id}
+                                          type="button"
+                                          ref={current ? currentItemRef : undefined}
+                                          onClick={() => pickSpecimen(id)}
+                                          aria-current={current}
+                                          className={`nb-book-item ${current ? 'nb-book-item-open' : ''}`}
+                                        >
+                                          <span className="w-7 shrink-0 text-right font-mono text-[10px] font-bold text-[#b0a284]">
+                                            {ORDER_NO.get(id)}
+                                          </span>
+                                          <span className="min-w-0 flex-1 truncate">{sp.name}</span>
+                                          {sp.extension ? <span aria-hidden="true" className="shrink-0 text-[10px]">⚡</span> : null}
+                                        </button>
+                                      );
+                                    })}
+                                  </div>
+                                ) : null}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ) : null}
+                    </div>
+                  );
+                })
+              )}
+            </nav>
+            <div className="border-t-2 border-dashed border-[#d8cdb2] px-4 py-2 text-[10.5px] leading-4 text-[#8a8266]">
+              ⚡ = 课外拓展档案 · 点章节名收起/展开
             </div>
-          </section>
-        ) : null}
+          </aside>
 
-        <p className="text-xs leading-5 text-[#799398]">
-          说明：以上均为教学<span className="font-semibold">模式图</span>——细胞膜、内质网、高尔基体等细微结构需在电子显微镜下才能看清；
-          图中结构位置与数量做了示意化处理，以课本插图为准。
-        </p>
+          {/* 右：翻开的一页 */}
+          <div className="flex min-w-0 flex-1 flex-col gap-3 overflow-y-auto pr-0.5">
+            {mainPanel}
+            {footNote}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  /* ==================== 窄屏：保持原有纵向布局 ==================== */
+  return (
+    <div>
+      <style>{CELL_KEYFRAMES}</style>
+      {hero}
+      <div className="space-y-5">
+        {navSection}
+        {mainPanel}
+        {footNote}
       </div>
     </div>
   );
