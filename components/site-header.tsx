@@ -10,7 +10,14 @@ const navItems: { key: HeaderNavKey; href: string; label: string }[] = [
   { key: 'graph', href: '/graph', label: '知识图谱' },
 ];
 
-export function SiteHeader({ active }: { active: HeaderNavKey }) {
+export function SiteHeader({
+  active,
+  useHashLinks,
+}: {
+  active: HeaderNavKey;
+  /** 静态部署版（GitHub Pages 子路径）用 #/xxx hash 链接 */
+  useHashLinks?: boolean;
+}) {
   return (
     <header className="sticky top-0 z-40 border-b border-gray-200 bg-white shadow-[0_4px_0_#c6d4d4]">
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-end gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
@@ -19,19 +26,22 @@ export function SiteHeader({ active }: { active: HeaderNavKey }) {
           className="order-3 flex w-full items-center gap-1.5 overflow-x-auto border-t-2 border-dashed border-[#c6d4d4] pt-3 text-sm sm:order-none sm:w-auto sm:border-0 sm:pt-0"
           aria-label="主导航"
         >
-          {navItems.map((item) => (
-            <Link
-              key={item.key}
-              href={item.href}
-              aria-current={active === item.key ? 'page' : undefined}
-              className={
-                'nb-pill h-10 shrink-0 px-3 text-sm font-semibold leading-8 ' +
-                (active === item.key ? 'nb-pill-active' : 'text-gray-500')
-              }
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const href = useHashLinks ? `#/${item.key}` : item.href;
+            return (
+              <a
+                key={item.key}
+                href={href}
+                aria-current={active === item.key ? 'page' : undefined}
+                className={
+                  'nb-pill h-10 shrink-0 px-3 text-sm font-semibold leading-8 ' +
+                  (active === item.key ? 'nb-pill-active' : 'text-gray-500')
+                }
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
 
       </div>

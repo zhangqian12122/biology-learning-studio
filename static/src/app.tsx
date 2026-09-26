@@ -47,10 +47,10 @@ function StaticApp() {
 
   return (
     <main className="min-h-screen bg-[#f7f6f3] text-[#37352f]">
-      <SiteHeader active={headerActive} />
+      <SiteHeader active={headerActive} useHashLinks />
       <div className="mx-auto max-w-[1440px] px-4 py-5 sm:px-6 lg:px-8">
         {tab === 'home' ? (
-          <HomeClient />
+          <HomeClient useHashLinks />
         ) : (
           <Suspense fallback={<PageFallback />}>
             {tab === 'cells' ? <CellsClient /> : null}

@@ -18,8 +18,9 @@ const BOOK_PLAYFUL: Record<BookId, { bg: string; shadow: string; icon: string }>
 
 const TILTS = ['pb-tilt-l2', 'pb-tilt-r', 'pb-tilt-l'];
 
-export function HomeClient() {
+export function HomeClient({ useHashLinks }: { useHashLinks?: boolean }) {
   const [searchQuery, setSearchQuery] = useState('');
+  const hrefFor = (path: string) => (useHashLinks ? `#${path}` : path);
 
   const visibleTextbooks = useMemo(() => {
     const keyword = searchQuery.trim().toLocaleLowerCase();
@@ -124,7 +125,7 @@ export function HomeClient() {
                 return (
                   <Link
                     key={book.id}
-                    href="/lab"
+                    href={hrefFor("/lab")}
                     style={{ '--stagger-i': index } as React.CSSProperties}
                     className={cn(
                       'group flex min-h-[240px] flex-col border-4 border-black bg-white p-5',
@@ -168,7 +169,7 @@ export function HomeClient() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <Link
-            href="/lab"
+            href={hrefFor("/lab")}
             className="group flex items-center gap-4 border-4 border-black bg-[#ffe66d] p-5 pb-lift"
           >
             <span aria-hidden="true" className="flex size-12 shrink-0 items-center justify-center border-4 border-black bg-white">
@@ -183,7 +184,7 @@ export function HomeClient() {
             <ArrowRight className="size-5 shrink-0 text-black transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
           </Link>
           <Link
-            href="/cells"
+            href={hrefFor("/cells")}
             className="group flex items-center gap-4 border-4 border-black bg-[#4ecdc4] p-5 pb-lift"
           >
             <span aria-hidden="true" className="flex size-12 shrink-0 items-center justify-center border-4 border-black bg-white">
