@@ -658,6 +658,7 @@ export type ExperimentId =
   | 'transplantRejection'
   | 'whaleFall'
   | 'netPhotosynthesis'
+  | 'goutUricAcid'
   | 'germinationConditions'
   | 'msgFermentation'
   | 'threeDefenses'
@@ -1456,6 +1457,14 @@ export const experimentMeta: Record<
     relatedBook: 'molecules',
     relatedModule: 'ATP、呼吸作用与光合作用',
   },
+  goutUricAcid: {
+    title: '尿酸与痛风',
+    kicker: '内环境稳态 · 课外拓展',
+    description: '高嘌呤饮食一周模拟：血尿酸曲线越过警戒线与发作线的过程。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+    extension: true,
+  },
   germinationConditions: {
     title: '种子萌发的条件',
     kicker: '对照实验 · 经典设计',
@@ -1742,7 +1751,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '酶与代谢',
     icon: '⚗️',
-    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'photosynthesisHistory', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'hydroponics', 'digestionJourney', 'netPhotosynthesis', 'greenhouseGas'],
+    ids: ['catalase', 'amylaseSpecificity', 'yeastRespiration', 'enzyme', 'photosynthesis', 'engelmann', 'photosynthesisHistory', 'cellRespiration', 'photosynthesisFactors', 'pigment', 'hydroponics', 'digestionJourney', 'netPhotosynthesis', 'goutUricAcid', 'greenhouseGas'],
   },
   {
     name: '细胞与膜',
@@ -1792,6 +1801,7 @@ export const experimentOrder: ExperimentId[] = [
   'hydroponics',
   'digestionJourney',
   'netPhotosynthesis',
+  'goutUricAcid',
   'photosynthesis',
   'photosynthesisFactors',
   'cellRespiration',

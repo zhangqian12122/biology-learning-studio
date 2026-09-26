@@ -7,26 +7,26 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：phageTherapy 噬菌体治疗 ----------
-await page.goto(`${BASE}/lab?exp=phageTherapy`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：goutUricAcid 尿酸与痛风 ----------
+await page.goto(`${BASE}/lab?exp=goutUricAcid`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
-await page.waitForTimeout(2500);
+await page.waitForTimeout(3000);
 {
   const before = await page.locator('main').innerText();
-  await page.locator('button', { hasText: '噬菌体鸡尾酒治疗' }).click();
-  for (let i = 0; i < 6; i++) {
+  await page.locator('button', { hasText: '高嘌呤饮食' }).click();
+  for (let i = 0; i < 7; i++) {
     await page.getByRole('button', { name: /推进一天/ }).evaluate((el) => el.click());
     await page.waitForTimeout(280);
   }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('噬菌体治疗');
-  results.experiment.interactive = after.includes('精确制导') && after.includes('噬菌体');
+  results.experiment.open = before.includes('尿酸与痛风');
+  results.experiment.interactive = after.includes('痛风发作高风险') && after.includes('大脚趾');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['flyingFish', 'adiposeTissue', 'virusFreeSeedlings'];
+const SPECIMENS = ['parrot', 'tuberculosis', 'sickleCellAnemia'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -78,17 +78,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：humanTraits 实验页仍正常
-await page.goto(`${BASE}/lab?exp=humanTraits`, { waitUntil: 'domcontentloaded' });
+// 回归检查：nitrogenFixation 实验页仍正常
+await page.goto(`${BASE}/lab?exp=nitrogenFixation`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.traitsRegression = { found: t.includes('性状调查') || t.includes('显性'), ok: t.includes('性状调查') || t.includes('显性') };
+  results.specimens.nfixRegression = { found: t.includes('固氮') || t.includes('根瘤'), ok: t.includes('固氮') || t.includes('根瘤') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.traitsRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.nfixRegression?.ok;
 console.log('ALL_OK=' + allOk);

@@ -5046,12 +5046,12 @@ export const LAB_ONLY_SPECIMEN_IDS: string[] = [
 export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] = [
   { name: '细胞与膜', icon: '🧫', ids: ['animal', 'plant', 'nucleus', 'membraneModel', 'biofilmSystem', 'membraneTransport'] },
   { name: '细胞器', icon: '🔋', ids: ['chloroplast', 'mitochondrion', 'endoplasmicReticulum', 'golgi', 'ribosome', 'lysosome', 'centrosome', 'vacuole', 'endosymbiosis'] },
-  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness'] },
+  { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness', 'sickleCellAnemia'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold', 'tuberculosis'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot'] },
   { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
@@ -15258,7 +15258,156 @@ function PeanutSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 鹦鹉（会"说话"的鸟） ================= */
+
+function ParrotSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 身体 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="230" cy="180" rx="72" ry="50" fill="#4aa54a" stroke="#1f6f1f" strokeWidth="2.8" />
+        <path d="M158 168 q -30 -6 -44 12" fill="none" stroke="#4aa54a" strokeWidth="7" strokeLinecap="round" />
+        <ellipse cx="300" cy="230" rx="34" ry="22" fill="#e8c83a" stroke="#a58a2a" strokeWidth="2.4" />
+        <path d="M296 252 q 4 20 22 22 m -18 -16 q 8 12 20 12" fill="none" stroke="#8a6a2a" strokeWidth="3.4" strokeLinecap="round" />
+        <text x="352" y="230" fontSize="12.5" fill="#1f6f1f" fontWeight="700">对趾足（两前两后）</text>
+        <text x="352" y="250" fontSize="12" fill="#1f6f1f">抓握树枝·灵活如"手"</text>
+      </g>
+      {/* 头与喙 */}
+      <g style={dim(active, 1)}>
+        <circle cx="196" cy="116" r="24" fill="#e84a4a" stroke="#a51f1f" strokeWidth="2.4" />
+        <circle cx="188" cy="110" r="4" fill="#141414" />
+        <path d="M218 110 q 26 -6 38 10 q -14 14 -38 6 Z" fill="#e8a03a" stroke="#a5761d" strokeWidth="2.4" />
+        <text x="70" y="90" fontSize="12.5" fill="#a51f1f" fontWeight="700">钩状喙：咬开坚果硬壳</text>
+        <text x="70" y="250" fontSize="12.5" fill="#a51f1f" fontWeight="700">"学舌"原理：鸣管模仿+大脑学习</text>
+        <text x="70" y="270" fontSize="12" fill="#a51f1f">并非理解语言·但能联想"词"与"物"</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="296" width="440" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">鹦鹉"聪明"的证据：概念分类·数数·用工具·解决逻辑难题（某些个体达人类幼儿水平）</text>
+        <text x="260" y="344" textAnchor="middle" fontSize="11.5" fill="#a5761d">长寿（大型鹦鹉可活 50~80 年）· 高智力·情感需求高——"宠物"责任重大</text>
+        <text x="260" y="360" textAnchor="middle" fontSize="11" fill="#a5761d">非法捕捉贸易威胁野生种群——所有鹦鹉均为保护物种</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">鹦鹉 · 鹦形目"语言天才"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 结核杆菌（古老的传染病） ================= */
+
+function TuberculosisSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 结核杆菌 */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2, 3].map((i) => (
+          <path key={i} d={`M${140 + i * 55} ${140 + (i % 2) * 24} q 18 -10 40 -2`} fill="none" stroke="#a56a3a" strokeWidth="7" strokeLinecap="round" />
+        ))}
+        <text x="52" y="90" fontSize="12.5" fill="#8a4a1a" fontWeight="700">结核分枝杆菌（抗酸染色红色）</text>
+        <text x="46" y="66" fontSize="12" fill="#8a4a1a">细胞壁含"分枝菌酸"·脂质丰富</text>
+      </g>
+      {/* 感染特点 */}
+      <g style={dim(active, 1)}>
+        <path d="M120 230 q 60 -40 120 -20" fill="none" stroke="#c9d8b0" strokeWidth="16" strokeLinecap="round" opacity="0.9" />
+        <text x="52" y="200" fontSize="12.5" fill="#4a6a2a" fontWeight="700">经呼吸道入侵 → 肺部"潜伏"</text>
+        <text x="52" y="222" fontSize="12" fill="#4a6a2a">全世界约 1/4 人口携带潜伏感染</text>
+        <text x="52" y="244" fontSize="12" fill="#4a6a2a">免疫力下降时"复活"发病</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="40" y="272" width="440" height="94" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="298" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">历史："白色瘟疫"曾是不治之症——1943 年链霉素的发现开启化疗时代</text>
+        <text x="260" y="322" textAnchor="middle" fontSize="11.5" fill="#a5761d">卡介苗（BCG）：减毒活疫苗·保护儿童重症结核（与卡介苗"留疤"现象）</text>
+        <text x="260" y="346" textAnchor="middle" fontSize="11.5" fill="#a5761d">耐药结核：不规范用药"训练"出的超级结核菌——必须足量足疗程规范治疗</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">结核杆菌 · 细菌性传染病之王（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 镰刀型细胞贫血（分子病） ================= */
+
+function SickleCellAnemiaSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 正常与镰刀红细胞 */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2].map((i) => (
+          <ellipse key={`n${i}`} cx={110 + i * 46} cy={110} rx="24" ry="14" fill="#e84a4a" stroke="#a51515" strokeWidth="2.2" />
+        ))}
+        <text x="140" y="160" textAnchor="middle" fontSize="11.5" fill="#8a1a1a" fontWeight="700">正常红细胞（双凹圆盘）</text>
+        {[0, 1, 2].map((i) => (
+          <path key={`s${i}`} d={`M${330 + i * 44} 100 q 16 14 -2 26 q -22 12 -14 -18 q 4 -12 16 -8 Z`} fill="#e84a4a" stroke="#a51515" strokeWidth="2.2" />
+        ))}
+        <text x="370" y="160" textAnchor="middle" fontSize="11.5" fill="#8a1a1a" fontWeight="700">镰刀形红细胞（僵硬·易碎）</text>
+      </g>
+      {/* 分子机制 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="196" width="210" height="100" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="151" y="220" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">一个碱基的改变</text>
+        <text x="151" y="244" textAnchor="middle" fontSize="10.5" fill="#a5761d">血红蛋白基因突变：DNA 上</text>
+        <text x="151" y="266" textAnchor="middle" fontSize="10.5" fill="#a5761d">一个碱基替换（CTC→CAC）</text>
+        <text x="151" y="288" textAnchor="middle" fontSize="10.5" fill="#a5761d">→ 谷氨酸变缬氨酸（一个氨基酸）</text>
+      </g>
+      {/* 杂合优势 */}
+      <g style={dim(active, 2)}>
+        <rect x="274" y="196" width="200" height="100" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="374" y="220" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">疟疾区的"杂合优势"</text>
+        <text x="374" y="244" textAnchor="middle" fontSize="10.5" fill="#37585f">杂合子（Aa）轻度贫血</text>
+        <text x="374" y="266" textAnchor="middle" fontSize="10.5" fill="#37585f">但抗疟疾能力强——被自然选择保留</text>
+        <text x="374" y="290" textAnchor="middle" fontSize="10" fill="#59767c">基因"有害"与否取决于环境</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">镰刀型细胞贫血 · 分子病经典案例（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'parrot',
+    name: '鹦鹉',
+    kicker: '鹦形目 · 会"学舌"的聪明鸟（课外拓展）',
+    intro: '鹦鹉是著名的"语言天才"：它"学舌"靠的是特殊的鸣管与超强的大脑——并非机械复读，某些鹦鹉（如非洲灰鹦鹉）能把词语与事物对应，理解数量、颜色等概念。对趾足让它们能像"手"一样抓握食物，钩状喙能咬开最硬的坚果。大型鹦鹉寿命可达 50~80 年——是"陪伴一生"的宠物，也因此被过度捕捉，所有鹦鹉均为保护物种。',
+    extension: true,
+    parts: [
+      { name: '钩状喙', desc: '坚硬下弯的喙能咬开最硬的坚果——配合对趾足"手嘴并用"进食。' },
+      { name: '学舌能力', desc: '鸣管+发达的脑：模仿人声并非理解语义，但灰鹦鹉等能将"词"与"物"对应，理解简单概念。' },
+      { name: '对趾足', desc: '两趾向前、两趾向后——抓握树枝、拿取食物像"手"一样灵活（与啄木鸟对趾足趋同）。' },
+      { name: '长寿与保护', desc: '大型鹦鹉寿命 50~80 年——"宠物"变成"家庭责任"；非法捕捉使野生种群受威胁。' },
+      { name: '食性', desc: '主食坚果、种子、果实——喙的力量惊人，连夏威夷果的硬壳都能咬开。' },
+    ],
+    Svg: ParrotSvg,
+  },
+  {
+    id: 'tuberculosis',
+    name: '结核杆菌',
+    kicker: '细菌 · "白色瘟疫"的元凶（课外拓展）',
+    intro: '结核分枝杆菌是"白色瘟疫"（结核病）的元凶：它经呼吸道入侵，靠细胞壁上丰富的脂质"骗过"免疫系统，在肺部潜伏下来——全球约四分之一人口携带潜伏感染。免疫力下降时它"复活"发病。1943 年链霉素的发现让它第一次可以被治愈；但不规范用药"训练"出了耐多药结核菌——规范治疗是战胜它的关键。',
+    extension: true,
+    parts: [
+      { name: '结核分枝杆菌', desc: '细长略弯的杆菌：细胞壁富含分枝菌酸与脂质——抗酸染色阳性、生长缓慢。' },
+      { name: '感染与潜伏', desc: '经呼吸道入侵后被免疫细胞"包围"形成结核结节（潜伏），免疫力低下时活化发病。' },
+      { name: '症状与诊断', desc: '咳嗽咳痰两周以上·咯血·低热盗汗——痰涂片/培养与 X 光检查确诊。' },
+      { name: '卡介苗', desc: '减毒活疫苗：主要保护儿童免于重症结核（粟粒性结核·结核性脑膜炎）——成人保护力有限。' },
+      { name: '规范治疗', desc: '联合用药·足量足疗程（6 个月以上）——擅自停药是耐药结核产生的主要原因。' },
+    ],
+    Svg: TuberculosisSvg,
+  },
+  {
+    id: 'sickleCellAnemia',
+    name: '镰刀型细胞贫血',
+    kicker: '分子遗传 · "一个碱基"引发的疾病（课外拓展）',
+    intro: '镰刀型细胞贫血是"分子病"的经典：血红蛋白基因上仅仅一个碱基的替换，导致一个氨基酸的改变（谷氨酸→缬氨酸），红细胞在缺氧时扭曲成镰刀形——僵硬、易碎、堵塞微血管。更精妙的是：在疟疾流行区，杂合子（只有一条突变基因）反而更抗疟疾——"有害基因"在特定环境里成了"保护伞"。',
+    extension: true,
+    parts: [
+      { name: '分子病因', desc: '血红蛋白 β 链第 6 位氨基酸由谷氨酸变成缬氨酸——"一个碱基的替换"改变了整个蛋白质性质。' },
+      { name: '红细胞变形', desc: '异常血红蛋白在缺氧时聚合成纤维状，把红细胞"拉"成镰刀形——僵硬易碎、堵塞微血管。' },
+      { name: '遗传方式', desc: '常染色体隐性遗传：杂合子（Aa）通常无明显症状；纯合子（aa）患病——与"携带者"筛查相关。' },
+      { name: '杂合优势', desc: '疟疾流行区杂合子更抗疟疾——自然选择让有害基因在特定环境中保留下来（进化视角）。' },
+      { name: '基因治疗突破', desc: '2023 年基于 CRISPR 的基因疗法获批治疗镰刀型贫血——"改写基因"治愈遗传病的里程碑。' },
+    ],
+    Svg: SickleCellAnemiaSvg,
+  },
   {
     id: 'mayfly',
     name: '蜉蝣',
