@@ -138,6 +138,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   altitudeAdaptation: Activity,
   epigenetics: Lightbulb,
   oxygenation: Leaf,
+  msgFermentation: Wine,
   transpiration: Droplets,
   photoperiodism: Sun,
   crossingOver: Scissors,
@@ -268,6 +269,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   altitudeAdaptation: () => import('@/components/lab/altitude-adaptation-lab').then(({ AltitudeAdaptationLab }) => ({ default: AltitudeAdaptationLab })),
   epigenetics: () => import('@/components/lab/epigenetics-lab').then(({ EpigeneticsLab }) => ({ default: EpigeneticsLab })),
   oxygenation: () => import('@/components/lab/oxygenation-lab').then(({ OxygenationLab }) => ({ default: OxygenationLab })),
+  msgFermentation: () => import('@/components/lab/msg-fermentation-lab').then(({ MsgFermentationLab }) => ({ default: MsgFermentationLab })),
   transpiration: () => import('@/components/lab/transpiration-lab').then(({ TranspirationLab }) => ({ default: TranspirationLab })),
   photoperiodism: () => import('@/components/lab/photoperiodism-lab').then(({ PhotoperiodismLab }) => ({ default: PhotoperiodismLab })),
   photosynthesisFactors: () => import('@/components/lab/photosynthesis-factors-lab').then(({ PhotosynthesisFactorsLab }) => ({ default: PhotosynthesisFactorsLab })),
@@ -368,6 +370,7 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   invasiveSim: ['invasiveSpecies'],
   altitudeAdaptation: ['alveolus'],
   epigenetics: ['dnaHelix'],
+  msgFermentation: ['cellTypeCompare'],
   ecoStability: ['ecosystemTypes'],
 };
 

@@ -5051,9 +5051,9 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
   { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle'] },
-  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness'] },
+  { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
 
@@ -14012,7 +14012,170 @@ function StrawberrySvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 织布鸟（鸟界建筑师） ================= */
+
+function WeaverBirdSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 树枝 */}
+      <g style={dim(active, 0)}>
+        <path d="M60 80 q 200 -30 400 -8" fill="none" stroke="#8a6a3a" strokeWidth="10" strokeLinecap="round" />
+      </g>
+      {/* 挂巢 */}
+      <g style={dim(active, 1)}>
+        <path d="M240 74 q 30 -4 50 4 q 20 30 8 70 q -10 36 -34 40 q -28 -6 -36 -42 q -8 -42 12 -72 Z" fill="#c9a05a" stroke="#8a6a2a" strokeWidth="2.8" />
+        <ellipse cx="266" cy="150" rx="10" ry="7" fill="#5a3a1a" stroke="#3a2a0a" strokeWidth="1.6" />
+        {[0, 1, 2].map((i) => (
+          <path key={i} d={`M${244 + i * 22} 96 q 4 26 -2 52`} fill="none" stroke="#8a6a2a" strokeWidth="1.8" opacity="0.8" />
+        ))}
+        <text x="330" y="140" fontSize="12.5" fill="#8a6a2a" fontWeight="700">倒挂的"吊巢"：入口朝下</text>
+        <text x="330" y="160" fontSize="12" fill="#8a6a2a">蛇类难以入侵（防天敌设计）</text>
+      </g>
+      {/* 织布鸟 */}
+      <g style={dim(active, 2)}>
+        <ellipse cx="150" cy="150" rx="30" ry="20" fill="#e8c83a" stroke="#a58a2a" strokeWidth="2.4" />
+        <circle cx="178" cy="136" r="10" fill="#3a3a2a" stroke="#1a1a1a" strokeWidth="1.8" />
+        <path d="M186 132 l 12 4 m -12 4 l 10 6" stroke="#e8a03a" strokeWidth="2.4" strokeLinecap="round" />
+        <circle cx="182" cy="132" r="3" fill="#141414" />
+        <path d="M136 168 q -10 22 -30 28" fill="none" stroke="#a58a2a" strokeWidth="5" strokeLinecap="round" />
+        <text x="46" y="216" fontSize="12.5" fill="#8a671b" fontWeight="700">雄鸟用喙"织"草叶：</text>
+        <text x="46" y="236" fontSize="12" fill="#8a671b">穿·拉·打结——真正的"编织"动作</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 3)}>
+        <rect x="40" y="288" width="440" height="78" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">先天行为：从未见过的年轻织布鸟也能织出合格的巢（遗传程序）</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">后天经验让工艺更精细——先天程序 + 后天练习的组合</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">行为生态学：巢的"精装修"是雄鸟向雌鸟展示的"健康证明"</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">织布鸟 · 动物界的建筑大师（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 运动与乳酸 ================= */
+
+function MuscleSorenessSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 跑步者 */}
+      <g style={dim(active, 0)}>
+        <circle cx="230" cy="80" r="18" fill="#f0c9b0" stroke="#a5765a" strokeWidth="2.4" />
+        <path d="M230 100 q -20 40 -8 78 l 40 4 q 10 -44 -4 -82 Z" fill="#e8705a" stroke="#a53030" strokeWidth="2.4" />
+        <path d="M222 182 l -18 66 m 46 -60 l 20 62" fill="none" stroke="#3a5a8a" strokeWidth="8" strokeLinecap="round" />
+        <path d="M224 100 q -18 14 -30 8 m 44 2 q 18 10 26 24" fill="none" stroke="#f0c9b0" strokeWidth="7" strokeLinecap="round" />
+        <text x="150" y="270" textAnchor="middle" fontSize="12" fill="#8a5a3a" fontWeight="700">剧烈运动中的肌肉</text>
+      </g>
+      {/* 乳酸真相 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="60" width="210" height="120" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="151" y="84" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">"乳酸导致酸痛"是误传！</text>
+        <text x="151" y="108" textAnchor="middle" fontSize="10.5" fill="#a5761d">运动当下：肌肉内乳酸↑ · pH↓</text>
+        <text x="151" y="128" textAnchor="middle" fontSize="10.5" fill="#a5761d">（灼烧感）但 1 小时内即被代谢清除</text>
+        <text x="151" y="152" textAnchor="middle" fontSize="10.5" fill="#a5761d">第二天的酸痛 = 延迟性肌肉酸痛（DOMS）</text>
+      </g>
+      {/* 无氧呼吸 */}
+      <g style={dim(active, 2)}>
+        <rect x="280" y="60" width="196" height="120" rx="10" fill="#eef4f6" stroke="#4d7ea8" strokeWidth="2.2" />
+        <text x="378" y="84" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">肌肉的无氧呼吸</text>
+        <text x="378" y="108" textAnchor="middle" fontSize="10.5" fill="#37585f">葡萄糖 → 乳酸 + 少量 ATP</text>
+        <text x="378" y="130" textAnchor="middle" fontSize="10.5" fill="#37585f">氧气不足时的"应急供能通道"</text>
+        <text x="378" y="154" textAnchor="middle" fontSize="10.5" fill="#59767c">乳酸可被肝脏重新转为葡萄糖（科里循环）</text>
+      </g>
+      <g style={dim(active, 3)}>
+        <rect x="40" y="288" width="440" height="76" rx="12" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.4" />
+        <text x="260" y="312" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="800">DOMS：肌肉纤维微损伤引发炎症——"练后酸"是适应的开始</text>
+        <text x="260" y="336" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">循序渐进 + 充分热身拉伸——避免突然高强度训练</text>
+        <text x="260" y="356" textAnchor="middle" fontSize="11.5" fill="#3f7f3a">与内环境联系：剧烈运动时乳酸进入血浆——内环境 pH 的缓冲挑战</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">运动与乳酸 · 无氧呼吸的代价（课内拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 兰花（精巧的"骗术"） ================= */
+
+function OrchidSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 兰花 */}
+      <g style={dim(active, 0)}>
+        {[0, 1, 2].map((i) => (
+          <ellipse key={`s${i}`} cx={230 + i * 40} cy={140 - (i === 1 ? 16 : 0)} rx="22" ry="13" fill="#e8c8e8" stroke="#8a4a8a" strokeWidth="2.2" transform={`rotate(${(i - 1) * 40} ${230 + i * 40} ${140 - (i === 1 ? 16 : 0)})`} />
+        ))}
+        {[0, 1, 2].map((i) => (
+          <ellipse key={`p${i}`} cx={228 + i * 40} cy={172 - (i === 1 ? 14 : 0)} rx="20" ry="12" fill="#c98ad8" stroke="#7a3a8a" strokeWidth="2.2" transform={`rotate(${(i - 1) * 30} ${228 + i * 40} ${172 - (i === 1 ? 14 : 0)})`} />
+        ))}
+        <path d="M270 172 q 30 8 44 34 q -34 4 -48 -22 Z" fill="#f0c960" stroke="#a58a2a" strokeWidth="2.2" />
+        <text x="330" y="120" fontSize="12.5" fill="#7a3a8a" fontWeight="700">唇瓣 = 昆虫的"停机坪"</text>
+        <text x="330" y="140" fontSize="12" fill="#7a3a8a">合蕊柱：雄蕊雌蕊合体</text>
+      </g>
+      {/* 拟态骗术 */}
+      <g style={dim(active, 1)}>
+        <rect x="46" y="230" width="200" height="100" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="146" y="254" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">兰花"骗术"大赏</text>
+        <text x="146" y="278" textAnchor="middle" fontSize="10.5" fill="#a5761d">性拟态：蜂兰模仿雌蜂外形气味</text>
+        <text x="146" y="300" textAnchor="middle" fontSize="10.5" fill="#a5761d">食源性欺骗：像花蜜却"空手而归"</text>
+        <text x="146" y="322" textAnchor="middle" fontSize="10.5" fill="#a5761d">昆虫被"骗"却帮它完成了传粉</text>
+      </g>
+      <g style={dim(active, 2)}>
+        <rect x="274" y="230" width="200" height="100" rx="10" fill="#e2f0e2" stroke="#3f7f3a" strokeWidth="2.2" />
+        <text x="374" y="254" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">兰科之最</text>
+        <text x="374" y="278" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">约 2.5 万种·开花植物第二大科</text>
+        <text x="374" y="300" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">种子微小如尘（一个果数十万粒）</text>
+        <text x="374" y="322" textAnchor="middle" fontSize="10.5" fill="#3f7f3a">种子萌发需共生真菌"喂"养分</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">兰花 · 共演化与拟态大师（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'weaverBird',
+    name: '织布鸟',
+    kicker: '雀形目 · 鸟界"建筑大师"（课外拓展）',
+    intro: '织布鸟是鸟类中少有的"会用工具编织"的建筑师：雄鸟用喙把草叶撕成细条，像人类编篮子一样穿、拉、打结，在树枝下织出倒挂的"吊巢"——入口朝下防蛇入侵。筑巢技能是天生的遗传程序：从未见过长辈织巢的年轻雄鸟也能织出合格的巢，练习只会让手艺更精细。',
+    extension: true,
+    parts: [
+      { name: '吊巢', desc: '巢倒挂在树枝末端：入口朝下、巢室在上——蛇类难以爬入，暴雨时也不积水。' },
+      { name: '编织工艺', desc: '用喙把草条穿过、拉紧、打结——"打结"在动物行为中极为罕见，是真正的编织动作。' },
+      { name: '先天 + 练习', desc: '筑巢程序来自遗传（第一次就能织），多次练习后工艺显著提高——先天行为与经验的结合。' },
+      { name: '性选择', desc: '雌鸟检查巢的工艺决定是否"结婚"——巢是雄鸟的"健康与能力证明"（性选择的经典案例）。' },
+      { name: '群居织巢', desc: '许多织布鸟在同一棵树上筑几十个巢形成"巢城"——集体生活增加警戒、降低天敌风险。' },
+    ],
+    Svg: WeaverBirdSvg,
+  },
+  {
+    id: 'muscleSoreness',
+    name: '运动与乳酸',
+    kicker: '内环境 · 无氧呼吸的"代价"（课内拓展）',
+    intro: '剧烈运动时氧气供不上，肌肉启动无氧呼吸应急供能并产生乳酸——乳酸堆积让肌肉有"灼烧感"，但它在运动后一小时内就被代谢清除。第二天开始的"延迟性肌肉酸痛"（DOMS）另有原因：肌纤维的微小损伤引发的炎症反应。乳酸其实不是"废物"——肝脏能把它重新转变成葡萄糖（科里循环）。',
+    extension: true,
+    parts: [
+      { name: '无氧呼吸', desc: '氧气不足时，肌肉把葡萄糖分解为乳酸并产生少量 ATP——应急供能的"备用通道"。' },
+      { name: '灼烧感', desc: '乳酸堆积使肌细胞内 pH 下降，刺激痛觉末梢——"练到酸烧"的化学本质。' },
+      { name: '清除与利用', desc: '乳酸入血后被肝脏经糖异生重新变为葡萄糖——乳酸不是废物，是"可回收燃料"。' },
+      { name: 'DOMS', desc: '延迟性肌肉酸痛来自肌纤维微损伤与炎症（而非乳酸）——通常 24~72 小时达到高峰。' },
+      { name: '科学训练', desc: '循序渐进增加强度、充分热身、运动后整理活动——让身体逐步适应而不是"硬扛"。' },
+    ],
+    Svg: MuscleSorenessSvg,
+  },
+  {
+    id: 'orchid',
+    name: '兰花',
+    kicker: '兰科 · 精巧的拟态大师（课外拓展）',
+    intro: '兰科是开花植物的第二大家族（约 2.5 万种），也是"骗术"最高明的传粉 strategists：蜂兰模仿雌蜂的外形与气味"色诱"雄蜂，有的兰花形似花蜜丰盈却"空手而归"——被"骗"的昆虫身上粘上花粉块，飞到下一朵花时便完成了传粉。兰花的合蕊柱把雄蕊雌蕊合为一体，唇瓣则是昆虫的"停机坪"。',
+    extension: true,
+    parts: [
+      { name: '花结构特化', desc: '两轮花被 + 唇瓣（特化的"停机坪"）+ 合蕊柱（雄蕊与雌蕊柱合生）——高度特化的传粉结构。' },
+      { name: '性拟态', desc: '蜂兰释放与雌蜂相同的性信息素并模拟其外形——雄蜂"求偶"时头部粘上花粉块（欺骗式传粉）。' },
+      { name: '种子如尘', desc: '一个果实含数十万至百万颗尘状种子（无胚乳）——自然条件下需共生真菌"喂"养分才能萌发。' },
+      { name: '共生萌发', desc: '兰科菌根真菌为种子提供碳源——没有真菌"保姆"，多数兰花种子无法发育成苗。' },
+      { name: '保护挑战', desc: '过度采挖与栖息地破坏使许多野生兰花濒危——"挖一棵少一棵"，请购买人工繁育个体。' },
+    ],
+    Svg: OrchidSvg,
+  },
   {
     id: 'mole',
     name: '鼹鼠',

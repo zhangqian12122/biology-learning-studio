@@ -7,25 +7,25 @@ const results = { experiment: {}, specimens: {} };
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
 
-// ---------- 实验：oxygenation 大氧化事件 ----------
-await page.goto(`${BASE}/lab?exp=oxygenation`, { waitUntil: 'domcontentloaded' });
+// ---------- 实验：msgFermentation 谷氨酸发酵工程 ----------
+await page.goto(`${BASE}/lab?exp=msgFermentation`, { waitUntil: 'domcontentloaded' });
 await page.addStyleTag({ content: '#__vinext_dev_error_overlay_root{display:none!important}' });
 await page.waitForTimeout(2500);
 {
   const before = await page.locator('main').innerText();
-  for (let i = 0; i < 4; i++) {
-    await page.getByRole('button', { name: /推进亿年/ }).evaluate((el) => el.click());
+  for (let i = 0; i < 5; i++) {
+    await page.getByRole('button', { name: /推进工序/ }).evaluate((el) => el.click());
     await page.waitForTimeout(350);
   }
   const after = await page.locator('main').innerText();
-  results.experiment.open = before.includes('大氧化事件');
-  results.experiment.interactive = after.includes('臭氧层') && after.includes('寒武纪');
+  results.experiment.open = before.includes('谷氨酸发酵工程');
+  results.experiment.interactive = after.includes('味精') && after.includes('产酸曲线');
   results.experiment.reference = after.includes('注意事项');
   results.experiment.dayNight = before.length > 0;
 }
 
 // ---------- 标本：深链直达 + SVG 文字几何检查 ----------
-const SPECIMENS = ['mole', 'fontanelle', 'strawberry'];
+const SPECIMENS = ['weaverBird', 'muscleSoreness', 'orchid'];
 const VB = { w: 520, h: 380 };
 const BOUND = { x0: -3, x1: VB.w + 3, y0: -3, y1: VB.h + 3 };
 
@@ -77,17 +77,17 @@ for (const id of SPECIMENS) {
   results.specimens[id] = { found: true, textCount: info.texts.length, issues, ok: issues.length === 0 };
 }
 
-// 回归检查：epigenetics 实验页仍正常
-await page.goto(`${BASE}/lab?exp=epigenetics`, { waitUntil: 'domcontentloaded' });
+// 回归检查：oxygenation 实验页仍正常
+await page.goto(`${BASE}/lab?exp=oxygenation`, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(1800);
 {
   const t = await page.locator('main').innerText();
-  results.specimens.epiRegression = { found: t.includes('表观遗传') || t.includes('甲基化'), ok: t.includes('表观遗传') || t.includes('甲基化') };
+  results.specimens.oxRegression = { found: t.includes('大氧化') || t.includes('蓝细菌'), ok: t.includes('大氧化') || t.includes('蓝细菌') };
 }
 
 await browser.close();
 console.log(JSON.stringify(results, null, 2));
 const exp = results.experiment;
 const expOk = Object.values(exp).every(Boolean);
-const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.epiRegression?.ok;
+const allOk = expOk && SPECIMENS.every((id) => results.specimens[id]?.ok) && results.specimens.oxRegression?.ok;
 console.log('ALL_OK=' + allOk);

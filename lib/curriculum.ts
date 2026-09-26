@@ -652,6 +652,7 @@ export type ExperimentId =
   | 'altitudeAdaptation'
   | 'epigenetics'
   | 'oxygenation'
+  | 'msgFermentation'
   | 'energyBalance'
   | 'rhIncompatibility'
   | 'hibernation'
@@ -1399,6 +1400,13 @@ export const experimentMeta: Record<
     relatedModule: '变异、育种与生物进化',
     extension: true,
   },
+  msgFermentation: {
+    title: '谷氨酸发酵工程',
+    kicker: '选择性必修 3 · 发酵工程',
+    description: '味精的诞生：菌种、发酵罐四大旋钮与产酸曲线的工业控制。',
+    relatedBook: 'technology',
+    relatedModule: '发酵工程与过程控制',
+  },
   energyBalance: {
     title: '能量平衡与体重管理',
     kicker: '健康与营养 · 课外拓展',
@@ -1666,7 +1674,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '生物技术',
     icon: '⚙️',
-    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'immobilizedEnzyme', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'humanGenome', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy', 'oxygenation'],
+    ids: ['plateStreak', 'wineVinegar', 'pickleFerment', 'foodPreserve', 'immobilizedEnzyme', 'msgFermentation', 'tissueCulture', 'protoplastFusion', 'pcr', 'gelElectrophoresis', 'dnaFingerprint', 'humanGenome', 'crispr', 'geneTherapy', 'carTherapy', 'proteinEngineering', 'restrictionEnzyme', 'animalCellCulture', 'embryoTransfer', 'nuclearTransfer', 'hybridoma', 'choiceMedia', 'dilutionPlating', 'millerUrey', 'pasteurFlask', 'stemCellTherapy', 'oxygenation'],
   },
 ];
 
@@ -1782,6 +1790,7 @@ export const experimentOrder: ExperimentId[] = [
   'pickleFerment',
   'foodPreserve',
   'immobilizedEnzyme',
+  'msgFermentation',
   'tissueCulture',
   'protoplastFusion',
   'pcr',
