@@ -5049,10 +5049,10 @@ export const ATLAS_CATEGORIES: { name: string; icon: string; ids: string[] }[] =
   { name: '分子与遗传', icon: '🧬', ids: ['dnaHelix', 'rnaStrand', 'nucleotide', 'chromosome', 'karyotype', 'cellTheory', 'homologousOrgans', 'geneticCode', 'embryoCompare', 'colorBlindness', 'sickleCellAnemia'] },
   { name: '代谢与酶', icon: '⚗️', ids: ['atpMolecule', 'enzymeModel', 'secretoryProtein', 'photosyntheticPigments', 'cytoskeleton'] },
   { name: '细胞命运', icon: '⏳', ids: ['cellFates', 'cellDifferentiation', 'cancerCell', 'stemCells', 'apoptosisVsNecrosis', 'telomere'] },
-  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold', 'tuberculosis'] },
+  { name: '微生物', icon: '🦠', ids: ['cyanobacteria', 'ecoli', 'nitrobacteria', 'lactobacillus', 'mycoplasma', 'yeast', 'paramecium', 'spirogyra', 'amoeba', 'euglena', 'cellTypeCompare', 'rhizobium', 'penicillium', 'kelp', 'mushroom', 'chlamydomonas', 'bacteriaShapes', 'lichen', 'foodPreservation', 'gramStain', 'microbiome', 'antibiotic', 'mycorrhiza', 'biogas', 'cordyceps', 'slimeMold', 'tuberculosis', 'penicillin'] },
   { name: '病毒', icon: '🧫', ids: ['hiv', 'fluVirus', 'phage', 'tmv', 'sarsCov2'] },
-  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus', 'seaCucumber', 'gecko', 'mantaRay'] },
-  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier', 'duodenum', 'swallowing', 'heartValves'] },
+  { name: '动物世界', icon: '🐾', ids: ['earthworm', 'locust', 'fish', 'frogMetamorphosis', 'pigeon', 'mussel', 'hydra', 'birdEgg', 'shrimp', 'lizard', 'starfish', 'sponge', 'rumen', 'whale', 'vertebrateClasses', 'silkwormLife', 'adaptations', 'ascarid', 'giantPanda', 'jellyfish', 'crab', 'turtle', 'snail', 'tapeworm', 'coral', 'spider', 'dragonfly', 'mantis', 'octopus', 'beeHive', 'crocodile', 'penguin', 'flounder', 'tardigrade', 'firefly', 'seahorse', 'centipede', 'termite', 'dungBeetle', 'mantisShrimp', 'hermitCrab', 'cuckoo', 'chameleon', 'leech', 'anglerfish', 'hummingbird', 'cicada', 'pangolin', 'honeyBadger', 'sloth', 'shark', 'electricEel', 'kangaroo', 'poisonDartFrog', 'owl', 'capybara', 'dolphin', 'ostrich', 'woodpecker', 'mudskipper', 'zebra', 'mole', 'weaverBird', 'krill', 'snowLeopard', 'flamingo', 'elephant', 'ant', 'cobra', 'polarBear', 'seaOtter', 'nakedMoleRat', 'mayfly', 'parrot', 'armadillo', 'amphioxus', 'seaCucumber', 'gecko', 'mantaRay', 'clownfish'] },
+  { name: '人体与调节', icon: '🩺', ids: ['redBloodCell', 'neuron', 'synapse', 'antibody', 'homeostasisNetwork', 'internalEnvironment', 'thermoregulation', 'monoclonalAntibody', 'threeDefenseLines', 'bat', 'platypus', 'heartCirculation', 'nephron', 'joint', 'eye', 'vessels', 'skinStructure', 'bloodCells', 'alveolus', 'brainStructure', 'boneStructure', 'immuneOrgans', 'endocrineGlands', 'muscleTissues', 'vitamins', 'invasiveSpecies', 'safeMedication', 'heartCompare', 'digestiveSystem', 'respiratorySystem', 'smallIntestineVillus', 'neuronTypes', 'bloodClotting', 'earStructure', 'spleen', 'pancreaticIslet', 'liver', 'stomach', 'cerebralCortex', 'spinalCord', 'larynx', 'nasalCavity', 'vaccineTypes', 'tonsil', 'tooth', 'largeIntestine', 'boneMarrow', 'adrenal', 'lymphNode', 'pituitary', 'retinaMacula', 'sarcomere', 'bloodTransfusion', 'fetusPlacenta', 'woundHealing', 'fever', 'tasteBuds', 'tears', 'thymus', 'cochleaHair', 'fingerprint', 'mammaryGland', 'urinaryBladder', 'melanin', 'saliva', 'wisdomTooth', 'growthPlate', 'hair', 'sweatGland', 'twins', 'lactoseIntolerance', 'umbilicus', 'painReceptor', 'cartilage', 'handedness', 'nail', 'fontanelle', 'muscleSoreness', 'myopia', 'thyroid', 'yawning', 'muscleFibers', 'bloodPlasma', 'cholesterol', 'boneComposition', 'eyeColor', 'bloodVolume', 'motionSickness', 'bloodBrainBarrier', 'duodenum', 'swallowing', 'heartValves', 'gastricMucus'] },
   { name: '植物与繁殖', icon: '🌾', ids: ['stoma', 'flowerStructure', 'cornReproduction', 'fruitAndSeed', 'mossFern', 'angiospermLife', 'ginkgo', 'cactus', 'rootTip', 'leafCrossSection', 'leafBud', 'sieveTube', 'stemStructure', 'pineCone', 'rootTypes', 'plantTissues', 'seedlessFruit', 'seedCompare', 'organVariants', 'fruitTypes', 'plantHormones', 'pitcherPlant', 'seedDispersal', 'treeRings', 'seedDormancy', 'mimosa', 'dodder', 'caffeine', 'camPlant', 'baobab', 'bamboo', 'pollinationTypes', 'ethylene', 'banyanRoots', 'sunflower', 'tulipBulb', 'airPlant', 'c4Plant', 'rubberTree', 'venusFlytrap', 'bark', 'pollenGrain', 'tendrilPlant', 'giantWaterLily', 'autumnLeaves', 'pollinatorDecline', 'magnolia', 'lotus', 'cacao', 'strawberry', 'orchid', 'plantSex', 'fig', 'tumbleweed', 'lignin', 'welwitschia', 'aloe', 'rice', 'essentialOils', 'hydrotropism', 'peanut', 'etiolation', 'rootNodule', 'guttation', 'coconut', 'amber'] },
   { name: '生态', icon: '🌱', ids: ['energyPyramid', 'foodWeb', 'ageStructure', 'communityStructure', 'bioaccumulation', 'ecosystemComponents', 'evolutionTree', 'taxonomyLevel', 'biosphere', 'speciesRelations', 'ecosystemTypes', 'biodiversity', 'verticalLayers', 'photoperiodism', 'fiveKingdoms', 'livingFossil', 'greenhouseEffect', 'mangrove', 'ecosystemServices'] },
 ];
@@ -16000,7 +16000,191 @@ function AmberSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+/* ================= 小丑鱼与海葵（共生"通行证"） ================= */
+
+function ClownfishSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 海葵 */}
+      <g style={dim(active, 0)}>
+        <ellipse cx="380" cy="250" rx="96" ry="26" fill="#c98ab0" stroke="#8a4a7a" strokeWidth="2.6" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => {
+          const ang = -Math.PI / 2 + (i - 5.5) * 0.26;
+          const bx = 380 + Math.cos(ang) * 40;
+          const by = 246 + Math.sin(ang) * 18;
+          return <path key={i} d={`M${bx} ${by} q ${Math.cos(ang) * 30} ${Math.sin(ang) * 52 - 20} ${Math.cos(ang) * 58} ${Math.sin(ang) * 74 - 26}`} fill="none" stroke="#e0a8c9" strokeWidth="9" strokeLinecap="round" />;
+        })}
+        <text x="380" y="286" textAnchor="middle" fontSize="12.5" fill="#8a4a7a" fontWeight="700">海葵：触手布满刺细胞</text>
+      </g>
+      {/* 小丑鱼 */}
+      <g style={dim(active, 1)}>
+        <ellipse cx="176" cy="150" rx="46" ry="28" fill="#f08a3a" stroke="#b05a1a" strokeWidth="2.6" />
+        <path d="M148 128 q 24 -12 50 2 l -6 14 q -20 -10 -38 -2 Z" fill="#fff" stroke="#b05a1a" strokeWidth="1.8" />
+        <path d="M142 154 q 30 -8 62 0 l -4 16 q -26 -8 -54 0 Z" fill="#fff" stroke="#b05a1a" strokeWidth="1.8" />
+        <circle cx="142" cy="142" r="4.4" fill="#141414" />
+        <path d="M130 158 q -18 -4 -26 4 q 12 8 26 4 Z" fill="#f08a3a" stroke="#b05a1a" strokeWidth="2" />
+        <text x="60" y="96" fontSize="12.5" fill="#b05a1a" fontWeight="700">小丑鱼披"特殊黏液"</text>
+        <text x="60" y="114" fontSize="12" fill="#b05a1a">海葵的刺细胞认不出它——免疫通行证</text>
+        <text x="248" y="82" fontSize="12.5" fill="#2c5a84" fontWeight="700">它为海葵：引诱大鱼送餐·清理残饵·驱赶蝴蝶鱼</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">互利共生教科书案例：鱼得"安全屋"，海葵得"保镖+外卖员"——彼此离开都活得更难</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">小丑鱼出生皆无性别……群居中最大的变雌、次大的变雄——"社会等级"决定性别</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">海洋酸化让小丑鱼"认不出"海葵的家——共生关系正被气候变化拆散</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">小丑鱼与海葵 · 共生的"通行证"（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 胃黏液屏障（胃为什么不消化自己） ================= */
+
+function GastricMucusSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 胃壁剖面分层 */}
+      <g style={dim(active, 0)}>
+        <rect x="40" y="56" width="240" height="150" rx="10" fill="#fbd9d9" stroke="#b06a6a" strokeWidth="2" />
+        <text x="58" y="80" fontSize="12.5" fill="#a53030" fontWeight="700">胃腔：盐酸 pH 1.5~2</text>
+        <text x="58" y="98" fontSize="12" fill="#a53030">能溶解刀片的强酸+胃蛋白酶</text>
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <circle key={i} cx={70 + i * 34} cy={120 + (i % 2) * 18} r="4" fill="#c93a3a" />
+        ))}
+        <rect x="40" y="206" width="240" height="34" rx="6" fill="#f8e8b8" stroke="#c9a03a" strokeWidth="2.2" />
+        <text x="160" y="228" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">黏液凝胶层（约 0.5 mm）</text>
+        <rect x="40" y="240" width="240" height="52" rx="8" fill="#e8d0f0" stroke="#8a5aa5" strokeWidth="2.4" />
+        {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+          <g key={i}>
+            <ellipse cx={62 + i * 34} cy={266} rx="12" ry="11" fill="#e8d0f0" stroke="#8a5aa5" strokeWidth="1.8" />
+            <circle cx={62 + i * 34} cy={266} r="3.4" fill="#8a5aa5" />
+          </g>
+        ))}
+        <text x="160" y="312" textAnchor="middle" fontSize="12.5" fill="#5a4390" fontWeight="700">黏液细胞：分泌黏液 + 碳酸氢盐</text>
+      </g>
+      {/* pH 梯度与攻防 */}
+      <g style={dim(active, 1)}>
+        <path d="M300 96 L300 246 L486 246 L486 96 Z" fill="#f2faea" stroke="#7aa87a" strokeWidth="2.2" />
+        <text x="393" y="116" textAnchor="middle" fontSize="12" fill="#2f6f2a" fontWeight="800">pH 梯度：从腔到上皮</text>
+        <text x="393" y="140" textAnchor="middle" fontSize="12" fill="#a53030">pH 1.5（腔侧）</text>
+        <rect x="330" y="150" width="130" height="16" rx="8" fill="#f2c9c9" />
+        <rect x="330" y="166" width="130" height="16" rx="8" fill="#f8e8b8" />
+        <rect x="330" y="182" width="130" height="16" rx="8" fill="#d8f0d0" />
+        <text x="393" y="232" textAnchor="middle" fontSize="12" fill="#2f6f2a">pH 6~7（上皮表面）</text>
+        <text x="393" y="212" textAnchor="middle" fontSize="11.5" fill="#59767c">碳酸氢盐被酸"中和"出中性小环境</text>
+        <rect x="300" y="258" width="196" height="66" rx="10" fill="#fdf1f1" stroke="#a53030" strokeWidth="2.2" />
+        <text x="398" y="278" textAnchor="middle" fontSize="12" fill="#a53030" fontWeight="800">谁在拆屏障？</text>
+        <text x="398" y="297" textAnchor="middle" fontSize="11.5" fill="#b0483a">幽门螺杆菌（钻进黏液定居）</text>
+        <text x="398" y="315" textAnchor="middle" fontSize="11.5" fill="#b0483a">大剂量止痛药（抑制前列腺素）</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="328" width="448" height="40" rx="10" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.2" />
+        <text x="260" y="346" textAnchor="middle" fontSize="12" fill="#8a671b" fontWeight="800">"消化自己"=屏障失守：黏液+碳酸氢盐的"化学城墙"一破，胃酸就地造溃疡</text>
+        <text x="260" y="362" textAnchor="middle" fontSize="11" fill="#a5761d">胃上皮约 3~5 天更新一代——"边破坏边重建"，屏障修复与破坏的赛跑</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">胃黏液屏障 · 胃为什么不消化自己（课外拓展）</text>
+    </svg>
+  );
+}
+
+/* ================= 青霉素（改变世界的"霉运"） ================= */
+
+function PenicillinSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 培养皿与抑菌圈 */}
+      <g style={dim(active, 0)}>
+        <circle cx="170" cy="180" r="110" fill="#f2e8d8" stroke="#8a7a5a" strokeWidth="3" />
+        <circle cx="170" cy="180" r="100" fill="#e8d8c0" stroke="#b09a72" strokeWidth="1.6" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((i) => {
+          const ang = (i * 2.399) % (Math.PI * 2);
+          const rr = 22 + (i % 4) * 22;
+          return <circle key={i} cx={170 + Math.cos(ang) * rr} cy={180 + Math.sin(ang) * rr} r="4" fill="#b09a72" opacity="0.7" />;
+        })}
+        <circle cx="170" cy="180" r="34" fill="#fdf8ea" stroke="#c9a03a" strokeWidth="2" />
+        <text x="170" y="288" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">抑菌圈：青霉周围细菌全灭</text>
+      </g>
+      {/* 青霉放大 */}
+      <g style={dim(active, 1)}>
+        <path d="M392 70 L392 150" fill="none" stroke="#4a7a3a" strokeWidth="5" strokeLinecap="round" />
+        {[0, 1, 2, 3, 4, 5].map((i) => {
+          const ang = -1.4 + i * 0.56;
+          return <path key={i} d={`M392 ${92 + i * 8} q ${Math.cos(ang) * 26} -12 ${Math.cos(ang) * 40} -26`} fill="none" stroke="#5a9a3a" strokeWidth="3.4" strokeLinecap="round" />;
+        })}
+        {[0, 1, 2, 3, 4, 5].map((i) => {
+          const ang = -1.4 + i * 0.56;
+          const tx = 392 + Math.cos(ang) * 40;
+          const ty = 92 + i * 8 - 26;
+          return <circle key={`c${i}`} cx={tx} cy={ty} r="4" fill="#8ec97a" stroke="#3f7f3a" strokeWidth="1.6" />;
+        })}
+        <text x="392" y="46" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">青霉：帚状分生孢子梗</text>
+        <text x="330" y="196" fontSize="12" fill="#3f7f3a" fontWeight="700">孢子=青绿色的"霉点"</text>
+        <rect x="300" y="216" width="196" height="90" rx="10" fill="#eef4fb" stroke="#5a7aa5" strokeWidth="2.2" />
+        <text x="398" y="238" textAnchor="middle" fontSize="12" fill="#2c5a84" fontWeight="800">杀菌原理（考点）</text>
+        <text x="398" y="258" textAnchor="middle" fontSize="11.5" fill="#37585f">抑制细菌细胞壁（肽聚糖）合成</text>
+        <text x="398" y="277" textAnchor="middle" fontSize="11.5" fill="#37585f">细菌吸水膨胀"撑破"死亡</text>
+        <text x="398" y="296" textAnchor="middle" fontSize="11" fill="#59767c">人体细胞无细胞壁——所以基本不伤己</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="318" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">偶然中的必然：弗莱明休假回来发现"霉斑周围的葡萄球菌死了"——他没有放过这个"意外"</text>
+        <text x="260" y="340" textAnchor="middle" fontSize="12" fill="#a5761d">弗洛里与钱恩把它做成药物（1941）——三人共获 1945 年诺贝尔奖，抗生素时代开启</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">滥用催生"超级细菌"——抗生素只对细菌有效，对病毒（如流感）无效！</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">青霉素 · 改变世界的"霉运"（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const SPECIMENS: Specimen[] = [
+  {
+    id: 'clownfish',
+    name: '小丑鱼与海葵',
+    kicker: '海洋共生 · 拿着"通行证"的小鱼（课外拓展）',
+    intro: '小丑鱼一辈子住在海葵的毒刺"丛林"里却毫发无损——它体表的特殊黏液让海葵的刺细胞"认不出"这条鱼。这笔共生账很划算：海葵给小丑鱼提供全海洋最安全的安全屋，小丑鱼则给海葵当"保镖+外卖员"——赶走爱吃海葵的蝴蝶鱼、用鲜艳体色引诱大鱼靠近供海葵捕食、清理触手间的残渣。更神奇的是，小丑鱼出生时没有固定性别：群体里最大的变成雌性、次大的变成雄性。',
+    extension: true,
+    parts: [
+      { name: '刺细胞', desc: '海葵触手密布刺细胞——射出带毒的刺丝麻痹猎物；小丑鱼凭特殊黏液"免检通行"。' },
+      { name: '安全屋', desc: '海葵的触手丛是小丑鱼的产卵地与避难所——离开海葵的小丑鱼在野外很难存活。' },
+      { name: '保镖职责', desc: '小丑鱼驱赶蝴蝶鱼（海葵的天敌）、清理残饵与寄生虫——给房东"打扫+看门"。' },
+      { name: '引诱送餐', desc: '鲜艳体色引大鱼靠近海葵——海葵捕到的大餐，小丑鱼也能分一杯羹。' },
+      { name: '性别转换', desc: '出生时不分性别——群体等级决定性别：最大者变雌、次大者变雄，雌鱼死后"接班"自动补位。' },
+    ],
+    Svg: ClownfishSvg,
+  },
+  {
+    id: 'gastricMucus',
+    name: '胃黏液屏障',
+    kicker: '消化系统 · 胃为什么不消化自己（课外拓展）',
+    intro: '胃酸能腐蚀金属刀片，胃自己却安然无恙——靠的是一层不到 1 毫米的黏液凝胶屏障：黏液细胞持续分泌黏液和碳酸氢盐，在胃腔（pH 1.5）和上皮表面（pH 6~7）之间造出陡峭的 pH 梯度，让强酸和胃蛋白酶"够不着"胃壁。幽门螺杆菌偏偏会钻进黏液层定居、大剂量止痛药又会抑制黏液分泌——屏障失守，胃酸就地"消化"胃壁，溃疡就来了。',
+    extension: true,
+    parts: [
+      { name: '黏液凝胶层', desc: '黏液细胞分泌的糖蛋白凝胶，约 0.5 毫米厚——胃壁的"化学城墙"，还能润滑食物。' },
+      { name: '碳酸氢盐', desc: '上皮细胞分泌 HCO₃⁻ 向上扩散——在黏液层内侧中和氢离子，造出近中性的小环境。' },
+      { name: 'pH 梯度', desc: '腔侧 pH 1.5 → 上皮表面 pH 6~7——胃蛋白酶在近中性处失去活性，够不到胃壁。' },
+      { name: '屏障拆解者', desc: '幽门螺杆菌钻入黏液定居产尿素酶；阿司匹林等止痛药抑制前列腺素、减少黏液分泌。' },
+      { name: '动态更新', desc: '胃上皮每 3~5 天更新一代——屏障"边破坏边重建"，重建输给破坏就是溃疡。' },
+    ],
+    Svg: GastricMucusSvg,
+  },
+  {
+    id: 'penicillin',
+    name: '青霉素',
+    kicker: '微生物 · 改变世界的"霉运"（课外拓展）',
+    intro: '1928 年，弗莱明度假归来发现培养皿发了霉——霉斑周围的葡萄球菌竟然全死了。他没有扔掉这个"失败品"，而是从中追出了青霉素：由青霉产生的、能杀死细菌的物质。它抑制细菌细胞壁（肽聚糖）的合成——细菌吸水膨胀"撑破"自己，而人体细胞没有细胞壁所以几乎不受伤害。青霉素让人类第一次打赢了与细菌的正面战争，也开启了抗生素时代。',
+    extension: true,
+    parts: [
+      { name: '青霉', desc: '帚状分生孢子梗顶着一串串孢子——霉斑的青绿色就是孢子的颜色，鼎鼎大名的"产药霉菌"。' },
+      { name: '抑菌圈', desc: '青霉落周围的细菌被清空一圈——"圈"越大说明抗菌物质越强，至今仍是筛选抗生素的方法。' },
+      { name: '杀菌机制', desc: '抑制肽聚糖（细胞壁）合成——细菌在高渗环境里失去"骨架"，吸水涨破死亡。' },
+      { name: '选择性毒性', desc: '人体细胞没有细胞壁——青霉素"打细菌不伤己"，是"选择性毒性"的经典范例。' },
+      { name: '耐药警报', desc: '滥用抗生素筛选出耐药菌（超级细菌）——合理使用、用够疗程是每个人的责任。' },
+    ],
+    Svg: PenicillinSvg,
+  },
   {
     id: 'mantaRay',
     name: '蝠鲼',

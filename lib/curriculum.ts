@@ -601,6 +601,7 @@ export type ExperimentId =
   | 'leafDecompose'
   | 'bloodType'
   | 'urineFormation'
+  | 'bloodDialysis'
   | 'nuclearTransfer'
   | 'lacOperon'
   | 'greenhouseGas'
@@ -1483,6 +1484,13 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '神经和体液调节',
   },
+  bloodDialysis: {
+    title: '血液透析：人工肾',
+    kicker: '选择性必修 1 · 稳态与健康',
+    description: '半透膜模拟：废物顺浓度梯度穿膜而出——尿毒症患者的"体外肾"。',
+    relatedBook: 'regulation',
+    relatedModule: '内环境与稳态',
+  },
   whaleFall: {
     title: '鲸落：深海的生命绿洲',
     kicker: '深海生态 · 课外拓展',
@@ -1807,7 +1815,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '稳态与调节',
     icon: '⚡',
-    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'brainRegions', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'transplantRejection', 'autoimmune', 'bloodRoutine', 'energyBalance', 'sirModel'],
+    ids: ['urineGlucoseTest', 'bloodLayers', 'bloodFlow', 'waterBalance', 'breathingMechanics', 'birdBreathing', 'neuronTypes', 'transpiration', 'photoperiodism', 'auxinCutting', 'apicalDominance', 'phototropism', 'gravitropism', 'bloodSugarRegulation', 'bloodPressure', 'impulse', 'brainRegions', 'synapseDrug', 'reflexArc', 'conditionedReflex', 'imprinting', 'thyroidAxis', 'thermoRegulation', 'hibernation', 'altitudeAdaptation', 'circadianRhythm', 'bloodType', 'urineFormation', 'bloodDialysis', 'vaccineResponse', 'balancedDiet', 'allergySim', 'threeDefenses', 'transplantRejection', 'autoimmune', 'bloodRoutine', 'energyBalance', 'sirModel'],
   },
   {
     name: '生态',
@@ -1941,6 +1949,7 @@ export const experimentOrder: ExperimentId[] = [
   'bloodRoutine',
   'energyBalance',
   'urineFormation',
+  'bloodDialysis',
   // 选择性必修 3 · 生物技术与工程
   'geneEngine',
   'agrobacterium',
