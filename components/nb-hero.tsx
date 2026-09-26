@@ -31,19 +31,19 @@ export function NbHero({
       ) : null}
       {action ? <div className="relative mb-2 flex justify-end">{action}</div> : null}
       <div className="relative">
-        <p className="inline-flex items-center gap-2 border-2 border-[#13333a] bg-[#0e6f75] px-2.5 py-1 text-[11px] font-bold tracking-[0.24em] text-white shadow-[3px_3px_0_#13333a]">
+        <p className="inline-flex items-center gap-2 border border-gray-200 bg-[#2eaadc] px-2.5 py-1 text-[11px] font-bold tracking-[0.24em] text-white shadow-sm">
           {badge}
         </p>
-        <h1 className="mt-3 text-2xl font-black tracking-wide text-[#13333a] sm:text-4xl">{title}</h1>
-        <p className="mt-3 max-w-3xl text-sm leading-6 text-[#49676d]">{description}</p>
+        <h1 className="mt-3 text-2xl font-black tracking-wide text-[#37352f] sm:text-4xl">{title}</h1>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-gray-600">{description}</p>
         {stats && stats.length > 0 ? (
           <div className="mt-4 flex flex-wrap items-center gap-2.5">
             {stats.map((chip, i) => (
               <span
                 key={chip}
-                className="inline-flex items-center gap-1.5 border-2 border-[#13333a] bg-white px-3 py-1 text-xs font-bold text-[#13333a] shadow-[3px_3px_0_#c6d4d4]"
+                className="inline-flex items-center gap-1.5 border border-gray-200 bg-white px-3 py-1 text-xs font-bold text-[#37352f] shadow-sm"
               >
-                <span aria-hidden="true" className="text-[#0e6f75]">
+                <span aria-hidden="true" className="text-[#2eaadc]">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 {chip}

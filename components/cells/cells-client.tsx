@@ -215,7 +215,7 @@ export function CellsClient() {
         onChange={(e) => setSearch(e.target.value)}
         placeholder="在图鉴中搜索（如“线粒体”“病毒”“染色体”）…"
         aria-label="搜索图鉴标本"
-        className="min-h-9 w-full rounded-md border border-gray-200 bg-white pl-9 pr-9 text-sm text-[#37352f] placeholder-gray-400 outline-none transition-all focus:border-transparent focus:ring-2 focus:ring-blue-500/30"
+        className="min-h-9 w-full rounded-md border border-gray-200 bg-white pl-9 pr-9 text-sm text-[#37352f] placeholder-gray-400 outline-none transition-colors duration-150 focus:border-transparent focus:ring-2 focus:ring-blue-500/30"
       />
       {search ? (
         <button
@@ -236,11 +236,11 @@ export function CellsClient() {
       <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-14 select-none text-[9rem] leading-none opacity-[0.08]">🧫</div>
       <div aria-hidden="true" className="pointer-events-none absolute bottom-2 right-40 select-none text-6xl opacity-[0.08]">🧬</div>
       <div className="relative">
-        <p className="inline-flex items-center gap-2 border-2 border-[#13333a] bg-[#0e6f75] px-2.5 py-1 text-[11px] font-bold tracking-[0.24em] text-white shadow-[3px_3px_0_#13333a]">
+        <p className="inline-flex items-center gap-2 border border-gray-200 bg-[#2eaadc] px-2.5 py-1 text-[11px] font-bold tracking-[0.24em] text-white shadow-sm">
           CELL ATLAS · 生物图鉴
         </p>
-        <h1 className="mt-3 text-2xl font-black tracking-wide text-[#13333a] sm:text-4xl">图鉴：把结构看清楚</h1>
-        <p className="mt-3 max-w-3xl text-sm leading-6 text-[#49676d]">
+        <h1 className="mt-3 text-2xl font-black tracking-wide text-[#37352f] sm:text-4xl">图鉴：把结构看清楚</h1>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-gray-600">
           {ATLAS_SPECIMENS.length} 张课本级教学模式图归档入库：选一个分类进入寻找，点图中的编号或右侧结构名即可高亮并显示考点说明。
           <span className="font-semibold text-[#b57c16]">⚡ 标记为课外拓展档案</span>；实验操作类图解已移至互动实验页。
         </p>
@@ -252,9 +252,9 @@ export function CellsClient() {
           ].map((chip, i) => (
             <span
               key={chip}
-              className="inline-flex items-center gap-1.5 border-2 border-[#13333a] bg-white px-3 py-1 text-xs font-bold text-[#13333a] shadow-[3px_3px_0_#c6d4d4]"
+              className="inline-flex items-center gap-1.5 border border-gray-200 bg-white px-3 py-1 text-xs font-bold text-[#37352f] shadow-sm"
             >
-              <span aria-hidden="true" className="text-[#0e6f75]">{String(i + 1).padStart(2, '0')}</span>
+              <span aria-hidden="true" className="text-[#2eaadc]">{String(i + 1).padStart(2, '0')}</span>
               {chip}
             </span>
           ))}
@@ -271,17 +271,17 @@ export function CellsClient() {
           <button
             type="button"
             onClick={() => { backHome(); setSearch(''); }}
-            className="nb-pill inline-flex min-h-9 items-center gap-1 px-3 text-xs font-semibold text-[#537078]"
+            className="nb-pill inline-flex min-h-9 items-center gap-1 px-3 text-xs font-semibold text-gray-600"
           >
             <ChevronLeft className="size-4" aria-hidden="true" />
             返回目录
           </button>
-          <h2 className="text-base font-bold text-[#13333a]">
+          <h2 className="text-base font-bold text-[#37352f]">
             {searchLower ? `搜索“${search.trim()}”` : `${group!.icon} ${group!.name}`}
-            <span className="ml-2 text-xs font-medium text-[#79939a]">{visibleSpecimens.length} 个</span>
+            <span className="ml-2 text-xs font-medium text-gray-400">{visibleSpecimens.length} 个</span>
           </h2>
         </div>
-        <p className="text-xs text-[#79939a]">{group && !searchLower ? group.desc : '点标本卡片在下方查看大图'}</p>
+        <p className="text-xs text-gray-400">{group && !searchLower ? group.desc : '点标本卡片在下方查看大图'}</p>
       </div>
 
       {/* 细分类二次筛选（仅组内浏览时） */}
@@ -292,7 +292,7 @@ export function CellsClient() {
             onClick={() => setSubCategory(null)}
             aria-pressed={subCategory == null}
             className={`nb-pill inline-flex min-h-8 items-center px-3 text-xs font-semibold ${
-              subCategory == null ? 'nb-pill-active' : 'text-[#537078]'
+              subCategory == null ? 'nb-pill-active' : 'text-gray-600'
             }`}
           >
             全部
@@ -304,7 +304,7 @@ export function CellsClient() {
               onClick={() => setSubCategory(subCategory === c.name ? null : c.name)}
               aria-pressed={subCategory === c.name}
               className={`nb-pill inline-flex min-h-8 items-center gap-1 px-3 text-xs font-semibold ${
-                subCategory === c.name ? 'nb-pill-active' : 'text-[#537078]'
+                subCategory === c.name ? 'nb-pill-active' : 'text-gray-600'
               }`}
             >
               <span aria-hidden="true">{c.icon}</span>
@@ -320,7 +320,7 @@ export function CellsClient() {
       {/* 标本卡片网格 */}
       <div className="mt-4 grid grid-cols-2 gap-2.5 sm:grid-cols-4 xl:grid-cols-7">
         {visibleSpecimens.length === 0 ? (
-          <p className="col-span-full rounded-xl border border-dashed border-[#c9dedd] bg-white px-4 py-8 text-center text-sm text-[#59767c]">
+          <p className="col-span-full rounded-lg border border-dashed border-[#c9dedd] bg-white px-4 py-8 text-center text-sm text-gray-500">
             没有匹配的标本——换个关键词或返回目录试试。
           </p>
         ) : null}
@@ -332,10 +332,10 @@ export function CellsClient() {
               type="button"
               onClick={() => pickSpecimen(item.id)}
               aria-pressed={current}
-              className={`nb-lift flex min-h-14 flex-col items-center justify-center border-2 px-2 py-2.5 text-xs font-bold [border-radius:10px] ${
+              className={`nb-lift flex min-h-14 flex-col items-center justify-center border-2 px-2 py-2.5 text-xs font-bold rounded-lg ${
                 current
-                  ? 'nb-active border-[#0e6f75] bg-[#f0faf9] text-[#0a626a]'
-                  : 'border-[#13333a] bg-white text-[#537078]'
+                  ? 'nb-active border-[#0e6f75] bg-blue-50 text-[#1d7fa8]'
+                  : 'border-[#13333a] bg-white text-gray-600'
               }`}
             >
               {item.name}
@@ -351,11 +351,11 @@ export function CellsClient() {
     /* ===== 一级：大分类入口（明日方舟式深色磁贴） ===== */
     <section>
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <h2 className="flex items-center gap-2 text-sm font-bold tracking-wider text-[#13333a]">
-          <span aria-hidden="true" className="inline-block h-4 w-1.5 bg-[#0e6f75] shadow-[2px_2px_0_#c6d4d4]" />
+        <h2 className="flex items-center gap-2 text-sm font-bold tracking-wider text-[#37352f]">
+          <span aria-hidden="true" className="inline-block h-4 w-1.5 bg-[#2eaadc] shadow-sm" />
           选择分类 · 进入寻找
         </h2>
-        <span className="text-xs text-[#79939a]">进入后可再按细分主题筛选</span>
+        <span className="text-xs text-gray-400">进入后可再按细分主题筛选</span>
       </div>
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-6">
         {ATLAS_GROUPS.map((g, i) => (
@@ -366,16 +366,16 @@ export function CellsClient() {
             className="group nb-tile relative min-h-40 p-4 text-left max-lg:first:col-span-2"
           >
             {/* 序号块 */}
-            <span className="absolute right-0 top-0 border-b-2 border-l-2 border-[#13333a] bg-[#f4c76a] px-2 py-0.5 font-mono text-[11px] font-bold text-[#13333a]">
+            <span className="absolute right-0 top-0 border-b-2 border-l border-gray-200 bg-[#f4c76a] px-2 py-0.5 font-mono text-[11px] font-bold text-[#37352f]">
               {String(i + 1).padStart(2, '0')}
             </span>
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-3 right-3 text-4xl opacity-25 transition-transform duration-200 group-hover:scale-110">
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-3 right-3 text-4xl opacity-25 transition-transform duration-200 group-">
               {g.icon}
             </span>
             <p className="text-2xl" aria-hidden="true">{g.icon}</p>
-            <p className="mt-2 text-lg font-black leading-6 text-[#13333a]">{g.name}</p>
-            <p className="mt-1 text-xs leading-5 text-[#79939a]">{g.desc}</p>
-            <span className="mt-3 inline-flex items-center gap-1.5 border-2 border-[#13333a] bg-[#e7f2f1] px-2.5 py-0.5 text-[11px] font-bold text-[#0a626a] shadow-[2px_2px_0_#c6d4d4]">
+            <p className="mt-2 text-lg font-black leading-6 text-[#37352f]">{g.name}</p>
+            <p className="mt-1 text-xs leading-5 text-gray-400">{g.desc}</p>
+            <span className="mt-3 inline-flex items-center gap-1.5 border border-gray-200 bg-blue-50 px-2.5 py-0.5 text-[11px] font-bold text-[#1d7fa8] shadow-sm">
               {groupCount(g)} 标本
               <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
             </span>
@@ -389,19 +389,19 @@ export function CellsClient() {
     /* 主展示区 */
     <section className="nb-card overflow-hidden">
       {/* 工具栏 */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[#13333a] bg-[#f4faf9] px-4 py-3 sm:px-5">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 bg-[#f4faf9] px-4 py-3 sm:px-5">
         <div className="flex min-w-0 items-center gap-2.5">
-          <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg border-2 border-[#13333a] bg-[#0e6f75] text-lg text-white shadow-[3px_3px_0_#c6d4d4]" aria-hidden="true">
+          <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-[#2eaadc] text-lg text-white shadow-sm" aria-hidden="true">
             🔬
           </span>
           <div className="min-w-0">
-            <p className="truncate text-[11px] font-medium text-[#67858b]">
+            <p className="truncate text-[11px] font-medium text-gray-500">
               {CATEGORY_LABEL(specimen.id)} · {specimen.kicker}
               {specimen.extension ? (
-                <span className="ml-1.5 inline-flex items-center border-2 border-[#13333a] bg-[#f4c76a] px-1.5 py-0.5 text-[10px] font-bold text-[#13333a]">⚡ 课外拓展</span>
+                <span className="ml-1.5 inline-flex items-center border border-gray-200 bg-[#f4c76a] px-1.5 py-0.5 text-[10px] font-bold text-[#37352f]">⚡ 课外拓展</span>
               ) : null}
             </p>
-            <h2 className="truncate text-lg font-bold leading-6 text-[#13333a]">{specimen.name}结构图</h2>
+            <h2 className="truncate text-lg font-bold leading-6 text-[#37352f]">{specimen.name}结构图</h2>
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-1.5">
@@ -411,16 +411,16 @@ export function CellsClient() {
                 type="button"
                 onClick={() => step(-1)}
                 aria-label="上一个标本"
-                className="nb-btn inline-flex size-8 items-center justify-center !rounded-full !shadow-[2px_2px_0_#c6d4d4] text-[#537078]"
+                className="nb-btn inline-flex size-8 items-center justify-center !rounded-full !shadow-sm text-gray-600"
               >
                 <ChevronLeft className="size-4" aria-hidden="true" />
               </button>
-              <span className="text-[11px] font-semibold text-[#79939a]">{navIdx + 1}/{navList.length}</span>
+              <span className="text-[11px] font-semibold text-gray-400">{navIdx + 1}/{navList.length}</span>
               <button
                 type="button"
                 onClick={() => step(1)}
                 aria-label="下一个标本"
-                className="nb-btn inline-flex size-8 items-center justify-center !rounded-full !shadow-[2px_2px_0_#c6d4d4] text-[#537078]"
+                className="nb-btn inline-flex size-8 items-center justify-center !rounded-full !shadow-sm text-gray-600"
               >
                 <ChevronRight className="size-4" aria-hidden="true" />
               </button>
@@ -433,7 +433,7 @@ export function CellsClient() {
                 onClick={() => setStomaOpen(true)}
                 aria-pressed={stomaOpen}
                 className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
-                  stomaOpen ? 'nb-pill-active' : 'text-[#4b6c73]'
+                  stomaOpen ? 'nb-pill-active' : 'text-gray-600'
                 }`}
               >
                 吸水 · 张开
@@ -443,7 +443,7 @@ export function CellsClient() {
                 onClick={() => setStomaOpen(false)}
                 aria-pressed={!stomaOpen}
                 className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
-                  !stomaOpen ? 'nb-pill-active !bg-[#b0483a]' : 'text-[#4b6c73]'
+                  !stomaOpen ? 'nb-pill-active !bg-[#b0483a]' : 'text-gray-600'
                 }`}
               >
                 失水 · 闭合
@@ -457,7 +457,7 @@ export function CellsClient() {
                 onClick={() => setUseWebGL(false)}
                 aria-pressed={!useWebGL}
                 className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
-                  !useWebGL ? 'nb-pill-active' : 'text-[#4b6c73]'
+                  !useWebGL ? 'nb-pill-active' : 'text-gray-600'
                 }`}
               >
                 教学剖面
@@ -467,7 +467,7 @@ export function CellsClient() {
                 onClick={() => setUseWebGL(true)}
                 aria-pressed={useWebGL}
                 className={`nb-pill px-3 py-1.5 text-xs font-semibold ${
-                  useWebGL ? 'nb-pill-active' : 'text-[#4b6c73]'
+                  useWebGL ? 'nb-pill-active' : 'text-gray-600'
                 }`}
               >
                 实景 3D
@@ -477,7 +477,7 @@ export function CellsClient() {
           <button
             type="button"
             onClick={() => setActivePart(null)}
-            className="nb-pill px-3 py-1.5 text-xs font-medium text-[#366169]"
+            className="nb-pill px-3 py-1.5 text-xs font-medium text-gray-700"
           >
             取消高亮
           </button>
@@ -487,13 +487,13 @@ export function CellsClient() {
       {/* 主体：图 + 结构清单 */}
       <div className="grid gap-5 p-4 sm:p-5 xl:grid-cols-[1.15fr_0.85fr]">
         <div className="min-w-0">
-          <div className="relative overflow-hidden border-2 border-[#13333a] bg-[#f4fbfa] [border-radius:10px]">
+          <div className="relative overflow-hidden border border-gray-200 bg-[#f4fbfa] rounded-lg">
             <div className="max-sm:overflow-x-auto">
               <div className="relative mx-auto aspect-[52/38] w-full max-w-[620px] max-sm:w-[520px]">
                 {specimen.StageWebGL && useWebGL ? (
                   <>
                     <specimen.StageWebGL active={activePart} open={stomaOpen} />
-                    <p className="pointer-events-none absolute bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full bg-white/80 px-3 py-1 text-[11px] font-medium text-[#4b6c73] shadow-sm">
+                    <p className="pointer-events-none absolute bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full bg-white/80 px-3 py-1 text-[11px] font-medium text-gray-600 shadow-sm">
                       🖐 单指旋转 · 双指缩放 · 松手后自动摆动
                     </p>
                   </>
@@ -515,12 +515,12 @@ export function CellsClient() {
 
         <div className="min-w-0">
           <div className="nb-card px-3.5 py-3">
-            <p className="flex items-start gap-1.5 text-sm leading-6 text-[#3d5a60]">
-              <Sparkles className="mt-1 size-4 shrink-0 text-[#0e6f75]" aria-hidden="true" />
+            <p className="flex items-start gap-1.5 text-sm leading-6 text-gray-600">
+              <Sparkles className="mt-1 size-4 shrink-0 text-[#2eaadc]" aria-hidden="true" />
               {specimen.intro}
             </p>
           </div>
-          <p className="mb-2 mt-4 text-xs font-semibold tracking-[0.08em] text-[#67858b]">
+          <p className="mb-2 mt-4 text-xs font-semibold tracking-[0.08em] text-gray-500">
             结构清单（点按查看功能，共 {specimen.parts.length} 项）
           </p>
           <div className="flex flex-wrap gap-1.5">
@@ -533,13 +533,13 @@ export function CellsClient() {
                   onClick={() => setActivePart(current ? null : index)}
                   aria-pressed={current}
                   className={`nb-pill inline-flex min-h-9 items-center gap-1.5 px-3 text-xs font-semibold ${
-                    current ? 'nb-pill-active' : 'text-[#537078]'
+                    current ? 'nb-pill-active' : 'text-gray-600'
                   }`}
                 >
                   <span
                     aria-hidden="true"
                     className={`inline-flex size-4.5 items-center justify-center rounded-full text-[10px] font-bold ${
-                      current ? 'bg-white/25 text-white' : 'bg-[#e8f4f3] text-[#0c696f]'
+                      current ? 'bg-white/25 text-white' : 'bg-[#e8f4f3] text-[#1d7fa8]'
                     }`}
                   >
                     {index + 1}
@@ -551,19 +551,19 @@ export function CellsClient() {
           </div>
 
           <div
-            className={`mt-4 border-2 bg-[#f9fcfc] px-4 py-3.5 [border-radius:10px] transition-colors ${
-              selectedPart ? 'border-[#0e6f75] bg-[#f0faf9] shadow-[4px_4px_0_#9fd4cd]' : 'border-[#13333a]'
+            className={`mt-4 border-2 bg-[#f9fcfc] px-4 py-3.5 rounded-lg transition-colors ${
+              selectedPart ? 'border-[#0e6f75] bg-blue-50 shadow-sm' : 'border-[#13333a]'
             }`}
           >
             {selectedPart ? (
               <>
-                <p className="text-sm font-bold text-[#0a626a]">
+                <p className="text-sm font-bold text-[#1d7fa8]">
                   {activePart != null ? CIRCLED_DIGITS[activePart] : ''} {selectedPart.name}
                 </p>
-                <p className="mt-1 text-xs leading-6 text-[#49676d]">{selectedPart.desc}</p>
+                <p className="mt-1 text-xs leading-6 text-gray-600">{selectedPart.desc}</p>
               </>
             ) : (
-              <p className="text-xs leading-5 text-[#799398]">
+              <p className="text-xs leading-5 text-gray-400">
                 在图中或清单里点选任一结构，这里会显示它的名称、功能与考点说明。
               </p>
             )}
@@ -574,7 +574,7 @@ export function CellsClient() {
   );
 
   const footNote = (
-    <p className="text-xs leading-5 text-[#799398]">
+    <p className="text-xs leading-5 text-gray-400">
       说明：以上均为教学<span className="font-semibold">模式图</span>——细胞膜、内质网、高尔基体等细微结构需在电子显微镜下才能看清；
       图中结构位置与数量做了示意化处理，以课本插图为准。
     </p>

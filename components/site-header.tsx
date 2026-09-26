@@ -25,14 +25,14 @@ export function SiteHeader({
   bankFallback?: boolean;
 }) {
   return (
-    <header className="sticky top-0 z-40 border-b-2 border-[#13333a] bg-white shadow-[0_4px_0_#c6d4d4]">
+    <header className="sticky top-0 z-40 border-b border-gray-200 bg-white shadow-[0_4px_0_#c6d4d4]">
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-lg border-2 border-[#13333a] bg-[#0e6f75] text-white shadow-[3px_3px_0_#13333a]">
+          <div className="flex size-10 items-center justify-center rounded-lg border border-gray-200 bg-[#2eaadc] text-white shadow-sm">
             <Microscope className="size-5" aria-hidden="true" />
           </div>
           <div>
-            <p className="text-base font-bold leading-none text-[#13333a]">福建高中生物学习站</p>
+            <p className="text-base font-bold leading-none text-[#37352f]">福建高中生物学习站</p>
             <p className="mt-1 text-xs text-[#56737a]">人教版新课标 · 师生共享题库</p>
           </div>
         </Link>
@@ -48,7 +48,7 @@ export function SiteHeader({
               aria-current={active === item.key ? 'page' : undefined}
               className={
                 'nb-pill h-10 shrink-0 px-3 text-sm font-semibold leading-8 ' +
-                (active === item.key ? 'nb-pill-active' : 'text-[#59767c]')
+                (active === item.key ? 'nb-pill-active' : 'text-gray-500')
               }
             >
               {item.label}

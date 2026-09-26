@@ -137,10 +137,10 @@ export function HomeClient({
                   href={practiceHref(book.id)}
                   onClick={() => setSelectedBook(book.id)}
                   className={cn(
-                    'flex min-h-12 items-center gap-2 rounded-lg border-2 px-2.5 text-left transition-all',
+                    'flex min-h-12 items-center gap-2 rounded-lg border-2 px-2.5 text-left transition-colors duration-150',
                     active
-                      ? 'border-[#0e6f75] bg-white shadow-[3px_3px_0_#9fd4cd]'
-                      : 'border-transparent hover:border-[#c6d4d4] hover:bg-white hover:shadow-[2px_2px_0_#c6d4d4]',
+                      ? 'border-[#0e6f75] bg-white shadow-sm'
+                      : 'border-transparent hover:border-[#c6d4d4] hover:bg-white ',
                   )}
                 >
                   <span
@@ -281,10 +281,10 @@ export function HomeClient({
             <section className="nb-card p-4 sm:p-5">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <p className="text-xs font-semibold tracking-[0.08em] text-[#67858b]">
+                  <p className="text-xs font-semibold tracking-[0.08em] text-gray-500">
                     当前学习路径
                   </p>
-                  <h2 className="mt-1 text-lg font-semibold text-[#173b42]">
+                  <h2 className="mt-1 text-lg font-semibold text-[#37352f]">
                     {selectedBookData.volume} · {selectedBookData.title}
                   </h2>
                 </div>
@@ -301,7 +301,7 @@ export function HomeClient({
                   style={{ width: `${selectedBookProgress}%` }}
                 />
               </div>
-              <p className="mt-3 text-sm leading-6 text-[#46666d]">
+              <p className="mt-3 text-sm leading-6 text-gray-600">
                 {selectedBookUnfinished > 0
                   ? `本册还有 ${selectedBookUnfinished} 题未完成，从「${
                       firstUnfinished?.topic ?? selectedBookData.modules[0]
@@ -321,7 +321,7 @@ export function HomeClient({
                   return (
                     <li
                       key={module}
-                      className="border-l-2 border-[#c6d4d4] pl-3 text-sm leading-6 text-[#46666d]"
+                      className="border-l-2 border-[#c6d4d4] pl-3 text-sm leading-6 text-gray-600"
                     >
                       <span className="mb-1 block text-xs text-[#719096]">
                         0{index + 1} · {moduleQuestionCount} 题
@@ -407,13 +407,13 @@ export function HomeClient({
                 />
               </div>
               <dl className="mt-4 grid grid-cols-2 gap-2 text-xs text-[#5b777d]">
-                <div className="rounded-lg border-2 border-[#13333a] bg-white px-3 py-2 shadow-[3px_3px_0_#c6d4d4]">
+                <div className="rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-sm">
                   <dt className="text-[#6d898f]">共享题库</dt>
                   <dd className="mt-0.5 text-sm font-semibold text-[#146e73]">
                     {stats.activeCount} 题
                   </dd>
                 </div>
-                <div className="rounded-lg border-2 border-[#13333a] bg-white px-3 py-2 shadow-[3px_3px_0_#c6d4d4]">
+                <div className="rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-sm">
                   <dt className="text-[#6d898f]">全站已作答</dt>
                   <dd className="mt-0.5 text-sm font-semibold text-[#146e73]">
                     {stats.totalAnswers} 次
@@ -438,7 +438,7 @@ export function HomeClient({
               {textbooks.map((book) => {
                 const list = questionsByBook.get(book.id) ?? [];
                 return (
-                  <div key={book.id} className="rounded-lg border-2 border-[#13333a] bg-white p-3 shadow-[3px_3px_0_#c6d4d4]">
+                  <div key={book.id} className="rounded-lg border border-gray-200 bg-white p-3 shadow-sm">
                     <p className="text-xs font-medium text-[#34535a]">
                       {book.volume} · {book.title}
                     </p>
@@ -447,7 +447,7 @@ export function HomeClient({
                       {book.modules.map((module) => (
                         <li key={module} className="flex items-center justify-between gap-2">
                           <span className="truncate">{module}</span>
-                          <span className="shrink-0 font-semibold text-[#46666d]">
+                          <span className="shrink-0 font-semibold text-gray-600">
                             {
                               list.filter((question) => question.module === module).length
                             }

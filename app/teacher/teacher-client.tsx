@@ -354,7 +354,7 @@ export function TeacherClient({
               aria-pressed={tab === item.key}
               className={cn(
                 'nb-pill inline-flex h-9 items-center gap-1.5 px-3 text-sm font-semibold',
-                tab === item.key ? 'nb-pill-active' : 'text-[#59767c]',
+                tab === item.key ? 'nb-pill-active' : 'text-gray-500',
               )}
             >
               <Icon className="size-4" aria-hidden="true" />
@@ -368,12 +368,12 @@ export function TeacherClient({
       </div>
 
       {formError ? (
-        <p className="mb-4 rounded-lg border-2 border-[#13333a] bg-[#fff2ed] px-3 py-2 text-xs font-semibold text-[#9b4e39] shadow-[3px_3px_0_#c6d4d4]">
+        <p className="mb-4 rounded-lg border border-gray-200 bg-[#fff2ed] px-3 py-2 text-xs font-semibold text-[#9b4e39] shadow-sm">
           {formError}
         </p>
       ) : null}
       {formNotice ? (
-        <p className="mb-4 rounded-lg border-2 border-[#13333a] bg-[#edf9f1] px-3 py-2 text-xs font-semibold text-[#287248] shadow-[3px_3px_0_#c6d4d4]">
+        <p className="mb-4 rounded-lg border border-gray-200 bg-[#edf9f1] px-3 py-2 text-xs font-semibold text-[#287248] shadow-sm">
           {formNotice}
         </p>
       ) : null}
@@ -393,7 +393,7 @@ export function TeacherClient({
             </div>
             <div className="mt-4 space-y-4">
               <div className="grid gap-3 sm:grid-cols-2">
-                <label className="block text-xs font-medium text-[#37585f]">
+                <label className="block text-xs font-medium text-gray-700">
                   册别
                   <select
                     value={form.bookId}
@@ -410,7 +410,7 @@ export function TeacherClient({
                     ))}
                   </select>
                 </label>
-                <label className="block text-xs font-medium text-[#37585f]">
+                <label className="block text-xs font-medium text-gray-700">
                   模块
                   <select
                     value={form.module}
@@ -439,7 +439,7 @@ export function TeacherClient({
                 multiline
               />
               <div>
-                <p className="text-xs font-medium text-[#37585f]">选项（点击圆圈设为正确答案）</p>
+                <p className="text-xs font-medium text-gray-700">选项（点击圆圈设为正确答案）</p>
                 <div className="mt-2 space-y-2">
                   {form.options.map((option, index) => (
                     <div key={index} className="flex items-center gap-2">
@@ -451,8 +451,8 @@ export function TeacherClient({
                         className={cn(
                           'flex size-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold transition-colors',
                           form.answer === index
-                            ? 'border-[#2c6e4c] bg-[#edf9f1] text-[#287248] shadow-[2px_2px_0_#a8d5b8]'
-                            : 'border-[#13333a] bg-white text-[#658289] shadow-[2px_2px_0_#c6d4d4]',
+                            ? 'border-[#2c6e4c] bg-[#edf9f1] text-[#287248] '
+                            : 'border-[#13333a] bg-white text-[#658289] shadow-sm',
                         )}
                       >
                         {form.answer === index ? (
@@ -515,7 +515,7 @@ export function TeacherClient({
           </section>
 
           <section className="nb-card overflow-hidden">
-            <div className="border-b-2 border-[#13333a] bg-[#f4faf9] px-4 py-4 sm:px-5">
+            <div className="border-b border-gray-200 bg-[#f4faf9] px-4 py-4 sm:px-5">
               <h2 className="text-sm font-bold">题库列表（{questions.length}）</h2>
               <p className="mt-1 text-xs text-[#6d898f]">
                 高错率或长期无作答的题会标橙色提示；修订题目会提升版本号。
@@ -537,7 +537,7 @@ export function TeacherClient({
                   >
                     <div className="flex flex-wrap items-start justify-between gap-2">
                       <div className="min-w-0">
-                        <p className="text-xs text-[#67858b]">
+                        <p className="text-xs text-gray-500">
                           {questionSource(question.bookId)} · {question.module} ·{' '}
                           {question.origin === 'builtin' ? '内置' : '教师新增'} · v{question.version}
                         </p>
@@ -623,7 +623,7 @@ export function TeacherClient({
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[560px] text-left text-sm">
                   <thead>
-                    <tr className="border-b-2 border-[#c6d4d4] text-xs font-semibold text-[#67858b]">
+                    <tr className="border-b-2 border-[#c6d4d4] text-xs font-semibold text-gray-500">
                       <th className="px-4 py-2.5 font-semibold sm:px-5">题目</th>
                       <th className="px-4 py-2.5 font-semibold">作答</th>
                       <th className="px-4 py-2.5 font-semibold">错误率</th>
@@ -643,7 +643,7 @@ export function TeacherClient({
                               {questionSource(question.bookId)} · {question.module}
                             </p>
                           </td>
-                          <td className="px-4 py-2.5 text-xs text-[#46666d]">
+                          <td className="px-4 py-2.5 text-xs text-gray-600">
                             {question.stat.attempts} 次
                           </td>
                           <td
@@ -684,7 +684,7 @@ export function TeacherClient({
                 {insight.highWrong.map((question) => (
                   <li
                     key={question.id}
-                    className="rounded-lg border-2 border-[#13333a] bg-[#fff8e7] px-3 py-2 text-sm text-[#80621c] shadow-[3px_3px_0_#c6d4d4]"
+                    className="rounded-lg border border-gray-200 bg-[#fff8e7] px-3 py-2 text-sm text-[#80621c] shadow-sm"
                   >
                     <p className="font-medium">{question.topic}</p>
                     <p className="mt-0.5 text-xs">
@@ -713,7 +713,7 @@ export function TeacherClient({
                 {insight.coverageGaps.map((gap) => (
                   <li
                     key={`${gap.bookTitle}-${gap.module}`}
-                    className="flex items-center justify-between gap-3 rounded-lg border-2 border-[#13333a] bg-white px-3 py-2 text-sm shadow-[3px_3px_0_#c6d4d4]"
+                    className="flex items-center justify-between gap-3 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm shadow-sm"
                   >
                     <span className="min-w-0">
                       <span className="block truncate font-medium text-[#24464d]">
@@ -762,7 +762,7 @@ function Notice({ title, body }: { title: string; body: string }) {
   return (
     <div className="nb-card mx-auto mt-8 max-w-md p-6 text-center">
       <CircleAlert className="mx-auto size-6 text-[#a4533b]" aria-hidden="true" />
-      <h1 className="mt-2 text-base font-semibold text-[#173b42]">{title}</h1>
+      <h1 className="mt-2 text-base font-semibold text-[#37352f]">{title}</h1>
       <p className="mt-2 text-sm leading-6 text-[#67848a]">{body}</p>
     </div>
   );
@@ -771,7 +771,7 @@ function Notice({ title, body }: { title: string; body: string }) {
 function StatCard({ label, value, hint }: { label: string; value: string; hint: string }) {
   return (
     <div className="nb-card p-4">
-      <p className="text-xs font-semibold text-[#67858b]">{label}</p>
+      <p className="text-xs font-semibold text-gray-500">{label}</p>
       <p className="mt-1 text-2xl font-bold text-[#146e73]">{value}</p>
       <p className="mt-1 text-xs text-[#8aa3a7]">{hint}</p>
     </div>
@@ -792,7 +792,7 @@ function TextField({
   multiline?: boolean;
 }) {
   return (
-    <label className="block text-xs font-medium text-[#37585f]">
+    <label className="block text-xs font-medium text-gray-700">
       {label}
       {multiline ? (
         <textarea

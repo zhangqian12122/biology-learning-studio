@@ -39,8 +39,8 @@ export function ControlSlider({
   return (
     <div>
       <div className="mb-3 flex items-center justify-between gap-3">
-        <label className="text-sm font-medium text-[#37585f]">{label}</label>
-        <output className="rounded-md bg-[#e8f4f3] px-2.5 py-1 text-sm font-semibold text-[#0c696f]">
+        <label className="text-sm font-medium text-gray-700">{label}</label>
+        <output className="rounded-md bg-[#e8f4f3] px-2.5 py-1 text-sm font-semibold text-[#1d7fa8]">
           {value.toFixed(digits)}
           {unit ? ` ${unit}` : ''}
         </output>
@@ -57,7 +57,7 @@ export function ControlSlider({
         className={ACCENT_CLASS[accent]}
         aria-label={label}
       />
-      <div className="mt-2 flex justify-between text-[11px] text-[#799398]">
+      <div className="mt-2 flex justify-between text-[11px] text-gray-400">
         <span>
           {min}
           {unit ? ` ${unit}` : ''}
@@ -103,7 +103,7 @@ export function SceneBox({
 }) {
   return (
     <div>
-      <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-[#67858b]">{label}</p>
+      <p className="mb-2 text-xs font-semibold tracking-[0.08em] text-gray-500">{label}</p>
       <style>{scenePanCss}</style>
       <div className={`relative min-w-0 overflow-hidden rounded-md border border-[#dceaea] bg-gradient-to-b from-[#f2fafa] to-[#e7f3f1] ${heightClass}`}>
         {/* 手机上场景按固定宽度渲染（字号可读），可左右拖动平移；桌面端自适应铺满 */}
@@ -123,7 +123,7 @@ export function ObservationNote({ children }: { children: React.ReactNode }) {
   return (
     <div className="border-l-2 border-[#d39a2b] pl-3">
       <p className="text-xs font-semibold text-[#8a671b]">观察判断</p>
-      <p className="mt-1 text-sm leading-6 text-[#49676d]">{children}</p>
+      <p className="mt-1 text-sm leading-6 text-gray-600">{children}</p>
     </div>
   );
 }

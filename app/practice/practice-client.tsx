@@ -324,8 +324,8 @@ export function PracticeClient({
         <section className="nb-card p-4 sm:p-5">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold tracking-[0.08em] text-[#67858b]">教材选择</p>
-              <h2 className="mt-1 text-lg font-bold text-[#173b42]">
+              <p className="text-xs font-semibold tracking-[0.08em] text-gray-500">教材选择</p>
+              <h2 className="mt-1 text-lg font-bold text-[#37352f]">
                 {MODE_META[practiceMode].title}
               </h2>
             </div>
@@ -349,7 +349,7 @@ export function PracticeClient({
                           : mode === 'smart'
                             ? 'nb-pill-active !bg-[#5b64c7]'
                             : 'nb-pill-active'
-                        : 'text-[#59767c]',
+                        : 'text-gray-500',
                     )}
                   >
                     {MODE_META[mode].label}
@@ -361,7 +361,7 @@ export function PracticeClient({
           </div>
 
           {practiceMode === 'smart' ? (
-            <p className="mt-4 rounded-lg border-2 border-[#13333a] bg-[#f3f5fd] px-3 py-2.5 text-xs leading-5 text-[#4a5590] shadow-[3px_3px_0_#c6d4d4]">
+            <p className="mt-4 rounded-lg border border-gray-200 bg-[#f3f5fd] px-3 py-2.5 text-xs leading-5 text-[#4a5590] shadow-sm">
               <Sparkles className="mr-1 inline size-3.5" aria-hidden="true" />
               正在对全库 {smartOrder.length} 道题排序：你的错题优先，其次是全站错误率较高和未做过的题；
               答题后顺序会实时更新。
@@ -379,10 +379,10 @@ export function PracticeClient({
                     onClick={() => openBook(book.id)}
                     aria-pressed={active}
                     className={cn(
-                      'flex min-h-14 items-center gap-2 rounded-lg border-2 px-3 text-left transition-all',
+                      'flex min-h-14 items-center gap-2 rounded-lg border-2 px-3 text-left transition-colors duration-150',
                       active
-                        ? 'border-[#0e6f75] bg-white text-[#0a626a] shadow-[4px_4px_0_#9fd4cd]'
-                        : 'border-[#13333a] bg-white text-[#537078] shadow-[3px_3px_0_#c6d4d4] hover:shadow-[4px_4px_0_#b8c9c9]',
+                        ? 'border-[#0e6f75] bg-white text-[#1d7fa8] shadow-sm'
+                        : 'border-[#13333a] bg-white text-gray-600 shadow-sm ',
                     )}
                   >
                     <BookIcon className="size-4 shrink-0" aria-hidden="true" />
@@ -405,12 +405,12 @@ export function PracticeClient({
 
         <div className="grid grid-cols-1 items-start gap-5 xl:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
           <section className="nb-card overflow-hidden">
-            <div className="flex flex-wrap items-start justify-between gap-3 border-b-2 border-[#13333a] bg-[#f4faf9] px-4 py-4 sm:px-5">
+            <div className="flex flex-wrap items-start justify-between gap-3 border-b border-gray-200 bg-[#f4faf9] px-4 py-4 sm:px-5">
               <div>
-                <p className="text-xs font-semibold tracking-[0.08em] text-[#67858b]">
+                <p className="text-xs font-semibold tracking-[0.08em] text-gray-500">
                   原创题库 · {questionSource(currentQuestion.bookId)} · {currentQuestion.module}
                 </p>
-                <h2 className="mt-1 text-lg font-bold text-[#173b42]">
+                <h2 className="mt-1 text-lg font-bold text-[#37352f]">
                   {currentQuestion.topic}
                 </h2>
               </div>
@@ -436,7 +436,7 @@ export function PracticeClient({
               activeQuestions.length === 0 &&
               !reviewClearedCurrent ? (
                 <div className="py-8 text-center">
-                  <div className="mx-auto flex size-11 items-center justify-center rounded-full border-2 border-[#13333a] bg-[#edf9f1] shadow-[3px_3px_0_#c6d4d4]">
+                  <div className="mx-auto flex size-11 items-center justify-center rounded-full border border-gray-200 bg-[#edf9f1] shadow-sm">
                     <Check className="size-5 text-[#287248]" aria-hidden="true" />
                   </div>
                   <h3 className="mt-3 text-base font-bold text-[#1d444c]">
@@ -458,7 +458,7 @@ export function PracticeClient({
                       size="sm"
                       variant="outline"
                       onClick={() => switchPracticeMode('all')}
-                      className="border-[#cbdede] bg-white text-[#366169] hover:bg-[#eef7f7]"
+                      className="border-[#cbdede] bg-white text-gray-700 hover:bg-[#efedea]"
                     >
                       返回全部题库
                     </Button>
@@ -504,14 +504,14 @@ export function PracticeClient({
                             aria-label={dotLabel}
                             title={dotLabel}
                             className={cn(
-                              'flex size-9 items-center justify-center rounded-lg border-2 text-xs font-bold transition-all',
+                              'flex size-9 items-center justify-center rounded-lg border-2 text-xs font-bold transition-colors duration-150',
                               isCurrent
-                                ? 'border-[#13333a] bg-[#0e7779] text-white shadow-[3px_3px_0_#13333a]'
+                                ? 'border-[#13333a] bg-[#0e7779] text-white shadow-sm'
                                 : isWrong
-                                  ? 'border-[#13333a] bg-[#fff2ed] text-[#a4533b] shadow-[2px_2px_0_#c6d4d4]'
+                                  ? 'border-[#13333a] bg-[#fff2ed] text-[#a4533b] shadow-sm'
                                   : isCorrect
-                                    ? 'border-[#13333a] bg-[#edf9f1] text-[#287248] shadow-[2px_2px_0_#c6d4d4]'
-                                    : 'border-[#13333a] bg-white text-[#658289] shadow-[2px_2px_0_#c6d4d4] hover:shadow-[3px_3px_0_#b8c9c9]',
+                                    ? 'border-[#13333a] bg-[#edf9f1] text-[#287248] shadow-sm'
+                                    : 'border-[#13333a] bg-white text-[#658289] shadow-sm ',
                             )}
                           >
                             {practiceMode === 'smart' ? index + 1 : originalIndex + 1}
@@ -540,14 +540,14 @@ export function PracticeClient({
                               : currentAnswer !== undefined
                           }
                           className={cn(
-                            'flex min-h-12 items-center gap-3 rounded-lg border-2 px-3 text-left text-sm transition-all disabled:cursor-default',
+                            'flex min-h-12 items-center gap-3 rounded-lg border-2 px-3 text-left text-sm transition-colors duration-150 disabled:cursor-default',
                             correct
-                              ? 'border-[#2c6e4c] bg-[#edf9f1] text-[#226341] shadow-[3px_3px_0_#a8d5b8]'
+                              ? 'border-[#2c6e4c] bg-[#edf9f1] text-[#226341] '
                               : incorrect
-                                ? 'border-[#a4533b] bg-[#fff2ed] text-[#9b4e39] shadow-[3px_3px_0_#ecc7b8]'
+                                ? 'border-[#a4533b] bg-[#fff2ed] text-[#9b4e39] '
                                 : !answerRevealed && chosen
                                   ? 'border-dashed border-[#c07840] bg-[#fff8f2] text-[#8a5a36]'
-                                  : 'border-[#13333a] bg-white text-[#46666d] shadow-[3px_3px_0_#c6d4d4] hover:shadow-[4px_4px_0_#b8c9c9]',
+                                  : 'border-[#13333a] bg-white text-gray-600 shadow-sm ',
                           )}
                         >
                           <span className="flex size-6 shrink-0 items-center justify-center rounded-full border border-current text-xs font-semibold">
@@ -592,7 +592,7 @@ export function PracticeClient({
                             variant="outline"
                             size="sm"
                             onClick={moveToNextQuestion}
-                            className="border-[#cbdede] bg-white text-[#366169] hover:bg-[#eef7f7]"
+                            className="border-[#cbdede] bg-white text-gray-700 hover:bg-[#efedea]"
                           >
                             下一道错题（剩 {activeQuestions.length} 题）
                             <ArrowRight className="size-3.5" aria-hidden="true" />
@@ -602,7 +602,7 @@ export function PracticeClient({
                           variant="outline"
                           size="sm"
                           onClick={() => switchPracticeMode('all')}
-                          className="border-[#cbdede] bg-white text-[#366169] hover:bg-[#eef7f7]"
+                          className="border-[#cbdede] bg-white text-gray-700 hover:bg-[#efedea]"
                         >
                           返回全部题库
                         </Button>
@@ -632,7 +632,7 @@ export function PracticeClient({
                         variant="outline"
                         size="sm"
                         onClick={moveToNextQuestion}
-                        className="mt-4 border-[#cbdede] bg-white text-[#366169] hover:bg-[#eef7f7]"
+                        className="mt-4 border-[#cbdede] bg-white text-gray-700 hover:bg-[#efedea]"
                       >
                         下一题
                         <ArrowRight className="size-3.5" aria-hidden="true" />
@@ -734,13 +734,13 @@ ${selectedBookCorrect} 题答对`}
                 width={720}
                 height={240}
                 sizes="(min-width: 1280px) 33vw, 100vw"
-                className="h-32 w-full border-b-2 border-[#13333a] object-cover object-center"
+                className="h-32 w-full border-b border-gray-200 object-cover object-center"
               />
               <div className="p-4">
-                <p className="text-xs font-semibold tracking-[0.08em] text-[#67858b]">
+                <p className="text-xs font-semibold tracking-[0.08em] text-gray-500">
                   本册重点
                 </p>
-                <p className="mt-1 text-sm leading-6 text-[#46666d]">
+                <p className="mt-1 text-sm leading-6 text-gray-600">
                   {selectedBookData.modules.join(' · ')}
                 </p>
                 <Link

@@ -443,11 +443,11 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
           <Network className="size-40" />
         </div>
         <div className="relative">
-          <p className="inline-flex items-center gap-2 border-2 border-[#13333a] bg-[#0e6f75] px-2.5 py-1 text-[11px] font-bold tracking-[0.24em] text-white shadow-[3px_3px_0_#13333a]">
+          <p className="inline-flex items-center gap-2 border border-gray-200 bg-[#2eaadc] px-2.5 py-1 text-[11px] font-bold tracking-[0.24em] text-white shadow-sm">
             KNOWLEDGE GRAPH · 知识图谱
           </p>
-          <h1 className="mt-3 text-2xl font-black tracking-wide text-[#13333a] sm:text-4xl">知识图谱：五册一张网</h1>
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-[#49676d]">
+          <h1 className="mt-3 text-2xl font-black tracking-wide text-[#37352f] sm:text-4xl">知识图谱：五册一张网</h1>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-gray-600">
             {KNOWLEDGE_NODE_COUNT} 个知识点、{KNOWLEDGE_LINK_COUNT} 条关联：五册教材 → 模块 → 互动实验，外加图鉴名词档案分支。
             <span className="font-semibold text-[#b57c16]">点实验节点进实验，点档案夹进图鉴</span>
             ；节点可拖拽，滚轮缩放，悬停看关联。
@@ -456,14 +456,14 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
             {Object.entries(BOOK_LABELS).map(([id, label]) => (
               <span
                 key={id}
-                className="inline-flex items-center gap-1.5 border-2 border-[#13333a] bg-white px-3 py-1 text-xs font-bold text-[#13333a] shadow-[3px_3px_0_#c6d4d4]"
+                className="inline-flex items-center gap-1.5 border border-gray-200 bg-white px-3 py-1 text-xs font-bold text-[#37352f] shadow-sm"
               >
-                <span aria-hidden="true" className="inline-block size-3 rounded-full border-2 border-[#13333a]" style={{ background: BOOK_COLORS[id] ?? '#999' }} />
+                <span aria-hidden="true" className="inline-block size-3 rounded-full border border-gray-200" style={{ background: BOOK_COLORS[id] ?? '#999' }} />
                 {label}
               </span>
             ))}
-            <span className="inline-flex items-center gap-1.5 border-2 border-[#13333a] bg-white px-3 py-1 text-xs font-bold text-[#13333a] shadow-[3px_3px_0_#c6d4d4]">
-              <span aria-hidden="true" className="inline-block size-3 rounded-full border-2 border-[#13333a] bg-[#fdf1cf]" />
+            <span className="inline-flex items-center gap-1.5 border border-gray-200 bg-white px-3 py-1 text-xs font-bold text-[#37352f] shadow-sm">
+              <span aria-hidden="true" className="inline-block size-3 rounded-full border border-gray-200 bg-[#fdf1cf]" />
               图鉴档案夹
             </span>
           </div>
@@ -472,7 +472,7 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
 
       {/* 图谱画布 */}
       <div className="relative" ref={wrapRef}>
-        <div className="overflow-hidden rounded-xl border-2 border-[#13333a] bg-[#f7fbfa] shadow-[6px_6px_0_#c6d4d4]">
+        <div className="overflow-hidden rounded-lg border border-gray-200 bg-[#f7fbfa] shadow-sm">
           <svg ref={svgRef} className="block h-[500px] w-full touch-none select-none sm:h-[660px]" role="img" aria-label="生物知识图谱" />
         </div>
 
@@ -487,7 +487,7 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
               type="button"
               title={title}
               onClick={fn}
-              className="flex size-9 items-center justify-center rounded-lg border-2 border-[#13333a] bg-white text-[#13333a] shadow-[3px_3px_0_#c6d4d4] transition-transform hover:-translate-y-0.5"
+              className="flex size-9 items-center justify-center rounded-lg border border-gray-200 bg-white text-[#37352f] shadow-sm transition-transform hover:-translate-y-0.5"
             >
               <Icon className="size-4" aria-hidden="true" />
             </button>
@@ -496,15 +496,15 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
             type="button"
             title="复位视图"
             onClick={() => resetRef.current?.()}
-            className="flex size-9 items-center justify-center rounded-lg border-2 border-[#13333a] bg-white text-[#13333a] shadow-[3px_3px_0_#c6d4d4] transition-transform hover:-translate-y-0.5"
+            className="flex size-9 items-center justify-center rounded-lg border border-gray-200 bg-white text-[#37352f] shadow-sm transition-transform hover:-translate-y-0.5"
           >
             <Expand className="size-4" aria-hidden="true" />
           </button>
         </div>
 
         {/* 操作提示 */}
-        <div className="pointer-events-none absolute bottom-3 left-3 hidden items-center gap-2 rounded-lg border-2 border-[#13333a] bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-[#49676d] shadow-[3px_3px_0_#c6d4d4] sm:flex">
-          <MousePointerClick className="size-3.5 text-[#0e6f75]" aria-hidden="true" />
+        <div className="pointer-events-none absolute bottom-3 left-3 hidden items-center gap-2 rounded-lg border border-gray-200 bg-white/95 px-3 py-1.5 text-[11px] font-semibold text-gray-600 shadow-sm sm:flex">
+          <MousePointerClick className="size-3.5 text-[#2eaadc]" aria-hidden="true" />
           拖拽移动节点 · 滚轮缩放 · 空白处拖动平移 · 点击叶子节点跳转
         </div>
       </div>
@@ -517,13 +517,13 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
             <a
               key={n.id}
               href={useHash ? `#${n.href}` : n.href}
-              className="nb-card nb-lift flex items-center justify-between px-4 py-3 text-sm font-semibold text-[#13333a]"
+              className="nb-card nb-lift flex items-center justify-between px-4 py-3 text-sm font-semibold text-[#37352f]"
             >
               <span>
                 {n.label}
-                <span className="ml-2 text-xs font-normal text-[#799398]">{n.weight ?? 0} 张</span>
+                <span className="ml-2 text-xs font-normal text-gray-400">{n.weight ?? 0} 张</span>
               </span>
-              <span aria-hidden="true" className="text-[#0e6f75]">→</span>
+              <span aria-hidden="true" className="text-[#2eaadc]">→</span>
             </a>
           ))}
       </div>
