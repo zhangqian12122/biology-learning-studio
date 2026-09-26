@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Search, Sparkles, X } from 'lucide-react';
 
 import { ART_KEYFRAMES, type ArtBundle } from '@/components/cells/art-shared';
 import { artLoaderFor, ATLAS_CATEGORIES, ATLAS_GROUPS, LAB_ONLY_SPECIMEN_IDS, SPECIMENS } from '@/components/cells/specimens';
+import { markSpecimenSeen, useSeenProgress } from '@/lib/progress';
 
 /** 图鉴只保留"结构/模式图"类标本；实验操作类图解移到互动实验页展示。 */
 const ATLAS_SPECIMENS = SPECIMENS.filter((item) => !LAB_ONLY_SPECIMEN_IDS.includes(item.id));
@@ -81,6 +82,7 @@ export function CellsClient() {
   /** ≥1024px 切书页双栏；SSR 先按窄屏渲染，客户端再切换 */
   const [isWide, setIsWide] = useState(false);
   const currentItemRef = useRef<HTMLButtonElement | null>(null);
+  const seenProgress = useSeenProgress();
 
   // 深链：/cells?specimen=xxx 或 /cells?cat=xxx（只在客户端首次挂载后执行一次）
   useEffect(() => {
@@ -104,6 +106,7 @@ export function CellsClient() {
   }, [urlProcessed]);
 
   // 桌面断点（与布局分支保持单一渲染源，避免 WebGL 等重组件双挂载）
+  // useLayoutEffect：在浏览器绘制前完成断点切换，桌面刷新不闪烁、SSR 亦无 hydration 冲突
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 1024px)');
     const update = () => setIsWide(mq.matches);
@@ -180,7 +183,7 @@ export function CellsClient() {
       url.searchParams.delete('specimen');
       url.searchParams.delete('cat');
     }
-    window.history.replaceState(null, '', url.pathname + url.search);
+    window.history.pushState(null, '', url.pathname + url.search);
   };
 
   const toggleGroup = (name: string) =>
@@ -193,6 +196,7 @@ export function CellsClient() {
     setActivePart(null);
     setUseWebGL(false);
     syncUrl(id);
+    markSpecimenSeen(id);
     const { cat, grp } = locateSpecimen(id);
     if (grp) setOpenGroups((prev) => (prev.includes(grp.name) ? prev : [...prev, grp.name]));
     if (cat) setOpenCats((prev) => (prev.includes(cat.name) ? prev : [...prev, cat.name]));
@@ -205,6 +209,20 @@ export function CellsClient() {
   };
 
   // 目录自动滚到当前条目
+  // 浏览器后退/前进：按地址栏同步选中的标本
+  useEffect(() => {
+    const onPop = () => {
+      const want = new URLSearchParams(window.location.search).get('specimen');
+      if (want && ATLAS_SPECIMENS.some((item) => item.id === want)) {
+        setSpecimenId(want);
+        setActivePart(null);
+        setUseWebGL(false);
+      }
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
   useEffect(() => {
     currentItemRef.current?.scrollIntoView({ block: 'nearest' });
   }, [specimen.id, isWide]);
@@ -699,6 +717,9 @@ export function CellsClient() {
                                             {ORDER_NO.get(id)}
                                           </span>
                                           <span className="min-w-0 flex-1 truncate">{sp.name}</span>
+                                          {seenProgress.specimens.includes(id) ? (
+                                            <span aria-hidden="true" className="shrink-0 text-[10px] font-bold text-[#0f7b6c]">✓</span>
+                                          ) : null}
                                           {sp.extension ? <span aria-hidden="true" className="shrink-0 text-[10px]">⚡</span> : null}
                                         </button>
                                       );
@@ -715,8 +736,17 @@ export function CellsClient() {
                 })
               )}
             </nav>
-            <div className="border-t border-gray-200 px-4 py-2 text-[10.5px] leading-4 text-gray-500">
-              ⚡ = 课外拓展档案 · 点章节名收起/展开
+            <div className="border-t border-gray-200 px-4 py-2.5">
+              <div className="flex items-center justify-between text-[10.5px] leading-4 text-gray-500">
+                <span>已看 {seenProgress.specimens.length}/{ATLAS_SPECIMENS.length}</span>
+                <span>⚡ = 课外拓展档案</span>
+              </div>
+              <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-[#e9e7e2]">
+                <div
+                  className="h-full rounded-full bg-[#2eaadc] transition-all duration-300"
+                  style={{ width: `${Math.round((seenProgress.specimens.length / ATLAS_SPECIMENS.length) * 100)}%` }}
+                />
+              </div>
             </div>
           </aside>
 

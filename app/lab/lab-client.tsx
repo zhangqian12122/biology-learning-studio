@@ -52,6 +52,7 @@ import {
 } from 'lucide-react';
 
 import { EXPERIMENT_CATEGORIES, experimentMeta, experimentOrder, textbooks, type ExperimentId } from '@/lib/curriculum';
+import { markExperimentSeen, useSeenProgress } from '@/lib/progress';
 
 const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string }>> = {
   microscope: Microscope,
@@ -564,7 +565,9 @@ export function LabClient() {
   /** ≥1024px 切换为「左目录 + 右内容」双栏；SSR 先按窄屏渲染 */
   const [isWide, setIsWide] = useState(false);
   const currentItemRef = useRef<HTMLButtonElement | null>(null);
+  const seenProgress = useSeenProgress();
 
+  // useLayoutEffect：在浏览器绘制前完成断点切换，桌面刷新不闪烁、SSR 亦无 hydration 冲突
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 1024px)');
     const update = () => setIsWide(mq.matches);
@@ -597,6 +600,19 @@ export function LabClient() {
     if (cat) setOpenCats((prev) => (prev.includes(cat.name) ? prev : [...prev, cat.name]));
   }, [activeExperiment]);
 
+  // 浏览器后退/前进：按地址栏同步选中的实验
+  useEffect(() => {
+    const onPop = () => {
+      const want = new URLSearchParams(window.location.search).get('exp');
+      if (want && want in experimentMeta) {
+        setActiveExperiment(want as ExperimentId);
+        setResetCount((count) => count + 1);
+      }
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
   // 当前条目自动滚入视野
   useEffect(() => {
     currentItemRef.current?.scrollIntoView({ block: 'nearest' });
@@ -605,11 +621,12 @@ export function LabClient() {
   const pickExperiment = (id: ExperimentId) => {
     setActiveExperiment(id);
     preloadExperiment(id);
+    markExperimentSeen(id);
     // 切换实验时同步地址栏：?exp=<id> 可分享、刷新不丢
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
       url.searchParams.set('exp', id);
-      window.history.replaceState(null, '', url.pathname + url.search);
+      window.history.pushState(null, '', url.pathname + url.search);
     }
   };
 
@@ -809,6 +826,9 @@ export function LabClient() {
                         <span aria-hidden="true" className="w-4 shrink-0 text-center text-[10px] leading-none text-gray-300 opacity-0 transition-opacity duration-150 group-hover:opacity-100">⋮⋮</span>
                         <Icon className="size-3.5 shrink-0 text-gray-400" aria-hidden="true" />
                         <span className="min-w-0 flex-1 truncate">{experimentMeta[id].title}</span>
+                        {seenProgress.labs.includes(id) ? (
+                          <span aria-hidden="true" className="shrink-0 text-[10px] font-bold text-[#0f7b6c]">✓</span>
+                        ) : null}
                         {experimentMeta[id].extension ? <span aria-hidden="true" className="shrink-0 text-[10px]">⚡</span> : null}
                       </button>
                     );
@@ -866,6 +886,9 @@ export function LabClient() {
                                         >
                                           <span aria-hidden="true" className="w-4 shrink-0 text-center text-[10px] leading-none text-gray-300 opacity-0 transition-opacity duration-150 group-hover:opacity-100">⋮⋮</span>
                                           <span className="min-w-0 flex-1 truncate">{experimentMeta[id].title}</span>
+                                          {seenProgress.labs.includes(id) ? (
+                                            <span aria-hidden="true" className="shrink-0 text-[10px] font-bold text-[#0f7b6c]">✓</span>
+                                          ) : null}
                                           {experimentMeta[id].extension ? <span aria-hidden="true" className="shrink-0 text-[10px]">⚡</span> : null}
                                         </button>
                                       );
@@ -880,8 +903,17 @@ export function LabClient() {
                 })
               )}
             </nav>
-            <div className="border-t border-gray-200 px-4 py-2 text-[10.5px] leading-4 text-gray-500">
-              ⚡ = 课外拓展 · 悬停条目提前预载
+            <div className="border-t border-gray-200 px-4 py-2.5">
+              <div className="flex items-center justify-between text-[10.5px] leading-4 text-gray-500">
+                <span>已做 {seenProgress.labs.length}/{experimentOrder.length}</span>
+                <span>⚡ = 课外拓展 · 悬停预载</span>
+              </div>
+              <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-[#e9e7e2]">
+                <div
+                  className="h-full rounded-full bg-[#2eaadc] transition-all duration-300"
+                  style={{ width: `${Math.round((seenProgress.labs.length / experimentOrder.length) * 100)}%` }}
+                />
+              </div>
             </div>
           </aside>
 
