@@ -509,24 +509,6 @@ export function GraphClient({ useHash = false }: { useHash?: boolean }) {
         </div>
       </div>
 
-      {/* 底部快捷入口：图鉴档案夹 + 各册实验 */}
-      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {KNOWLEDGE_GRAPH.nodes
-          .filter((n) => n.type === 'atlasCategory')
-          .map((n) => (
-            <a
-              key={n.id}
-              href={useHash ? `#${n.href}` : n.href}
-              className="nb-card nb-lift flex items-center justify-between px-4 py-3 text-sm font-semibold text-[#37352f]"
-            >
-              <span>
-                {n.label}
-                <span className="ml-2 text-xs font-normal text-gray-400">{n.weight ?? 0} 张</span>
-              </span>
-              <span aria-hidden="true" className="text-[#2eaadc]">→</span>
-            </a>
-          ))}
-      </div>
     </div>
   );
 }
