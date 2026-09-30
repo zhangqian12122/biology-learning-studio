@@ -125,7 +125,7 @@ export function HomeClient({ useHashLinks }: { useHashLinks?: boolean }) {
                 return (
                   <Link
                     key={book.id}
-                    href={hrefFor("/lab")}
+                    href={hrefFor(`/lab?book=${book.id}`)}
                     style={{ '--stagger-i': index } as React.CSSProperties}
                     className={cn(
                       'group flex min-h-[240px] flex-col border-4 border-black bg-white p-5',

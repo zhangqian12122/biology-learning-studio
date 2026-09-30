@@ -21,15 +21,34 @@ const CELL_KEYFRAMES = ART_KEYFRAMES;
 const CIRCLED_DIGITS = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩'];
 
 /** 深链初始化：/cells?specimen=xxx 直达标本、/cells?cat=xxx 直达档案夹（知识图谱跳转用） */
-function initialFromUrl() {
+function initialFromUrl(initialSpecimen?: string, initialCat?: string) {
   const fallback = {
     specimenId: ATLAS_SPECIMENS[0].id,
     level: 'home' as 'home' | 'group',
     activeGroup: null as string | null,
     subCategory: null as string | null,
   };
+  if (initialSpecimen || initialCat) {
+    const cat = initialCat ? ATLAS_CATEGORIES.find((c) => c.name === initialCat) : null;
+    const group = initialCat ? ATLAS_GROUPS.find((g) => g.categories.includes(initialCat)) ?? null : null;
+    const ok = !!initialSpecimen && ATLAS_SPECIMENS.some((item) => item.id === initialSpecimen);
+    return {
+      specimenId: ok ? initialSpecimen! : ATLAS_SPECIMENS[0].id,
+      level: group ? ('group' as const) : ('home' as const),
+      activeGroup: group?.name ?? null,
+      subCategory: cat?.name ?? null,
+    };
+  }
   if (typeof window === 'undefined') return fallback;
-  const params = new URLSearchParams(window.location.search);
+  // 静态版参数在 hash 里（#/cells?specimen=xxx），两处都解析
+  const merged = new URLSearchParams(window.location.search);
+  const hi = window.location.hash.indexOf('?');
+  if (hi !== -1) {
+    for (const [k, v] of new URLSearchParams(window.location.hash.slice(hi + 1))) {
+      if (!merged.has(k)) merged.set(k, v);
+    }
+  }
+  const params = merged;
   const catName = params.get('cat');
   const category = catName ? ATLAS_CATEGORIES.find((c) => c.name === catName) : null;
   const group = catName ? ATLAS_GROUPS.find((g) => g.categories.includes(catName)) ?? null : null;
@@ -64,7 +83,14 @@ function locateSpecimen(id: string) {
   return { cat: cat ?? null, grp };
 }
 
-export function CellsClient() {
+export function CellsClient({
+  initialSpecimen,
+  initialCat,
+}: {
+  /** 完整版：由服务端 page 传入 URL 参数（软导航时 props 才可靠） */
+  initialSpecimen?: string;
+  initialCat?: string;
+}) {
   // SSR 安全的默认值；深链参数在 useEffect 中客户端解析
   const [specimenId, setSpecimenId] = useState(ATLAS_SPECIMENS[0].id);
   const [activePart, setActivePart] = useState<number | null>(null);
@@ -88,7 +114,7 @@ export function CellsClient() {
   useEffect(() => {
     if (urlProcessed) return;
     setUrlProcessed(true);
-    const init = initialFromUrl();
+    const init = initialFromUrl(initialSpecimen, initialCat);
     if (init.specimenId !== ATLAS_SPECIMENS[0].id) setSpecimenId(init.specimenId);
     if (init.level !== 'home') setLevel(init.level);
     if (init.activeGroup !== null) setActiveGroup(init.activeGroup);
@@ -103,7 +129,7 @@ export function CellsClient() {
     if (located.cat) targetCats.add(located.cat.name);
     setOpenGroups([...targetGroups]);
     setOpenCats([...targetCats]);
-  }, [urlProcessed]);
+  }, [urlProcessed, initialSpecimen, initialCat]);
 
   // 桌面断点（与布局分支保持单一渲染源，避免 WebGL 等重组件双挂载）
   // useLayoutEffect：在浏览器绘制前完成断点切换，桌面刷新不闪烁、SSR 亦无 hydration 冲突

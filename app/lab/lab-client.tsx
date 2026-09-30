@@ -549,18 +549,52 @@ const LAB_KEYFRAMES = `
 }
 `;
 
-export function LabClient() {
-  // 深链：/lab?exp=xxx 直达某个实验（知识图谱跳转用）
+/** 启动参数：完整版读 ?exp=&book=；静态版参数在 hash 里（#/lab?exp=&book=），两处都解析 */
+function readLaunchParams(): { exp: ExperimentId | null; book: string | null } {
+  if (typeof window === 'undefined') return { exp: null, book: null };
+  const collect = (qs: string) => {
+    const p = new URLSearchParams(qs);
+    return { exp: p.get('exp'), book: p.get('book') };
+  };
+  const fromSearch = collect(window.location.search);
+  const hash = window.location.hash;
+  const qi = hash.indexOf('?');
+  const fromHash = qi !== -1 ? collect(hash.slice(qi + 1)) : { exp: null, book: null };
+  const exp = (fromSearch.exp ?? fromHash.exp) as ExperimentId | null;
+  const book = fromSearch.book ?? fromHash.book;
+  return {
+    exp: exp && exp in experimentMeta ? exp : null,
+    book: book && textbooks.some((b) => b.id === book) ? book : null,
+  };
+}
+
+export function LabClient({
+  initialExp,
+  initialBook,
+}: {
+  /** 完整版：由服务端 page 传入 URL 参数（软导航时 location 尚未更新，props 才可靠） */
+  initialExp?: string;
+  initialBook?: string;
+} = {}) {
+  // 深链：/lab?exp=xxx 直达实验、?book=xxx 定位教材册（知识图谱/首页跳转用）
   const [activeExperiment, setActiveExperiment] = useState<ExperimentId>(() => {
+    const fromProps = initialExp && initialExp in experimentMeta ? (initialExp as ExperimentId) : null;
+    if (fromProps) return fromProps;
     if (typeof window === 'undefined') return 'enzyme';
-    const want = new URLSearchParams(window.location.search).get('exp');
-    return want && want in experimentMeta ? (want as ExperimentId) : 'enzyme';
+    return readLaunchParams().exp ?? 'enzyme';
   });
   const [resetCount, setResetCount] = useState(0);
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
   const [search, setSearch] = useState('');
-  /** 桌面目录：展开的册与分类 */
-  const [openBooks, setOpenBooks] = useState<string[]>([]);
+  /** 桌面目录：展开的册与分类（启动参数指定的册/实验所在册默认展开） */
+  const [openBooks, setOpenBooks] = useState<string[]>(() => {
+    const fromProps = initialBook ?? (activeExperiment !== 'enzyme' || initialExp ? experimentMeta[activeExperiment]?.relatedBook : undefined);
+    if (fromProps) return [fromProps];
+    if (typeof window === 'undefined') return [];
+    const { book, exp } = readLaunchParams();
+    const target = book ?? (exp ? experimentMeta[exp]?.relatedBook : undefined);
+    return target ? [target] : [];
+  });
   const [openCats, setOpenCats] = useState<string[]>([]);
   /** ≥1024px 切换为「左目录 + 右内容」双栏；SSR 先按窄屏渲染 */
   const [isWide, setIsWide] = useState(false);
@@ -593,8 +627,13 @@ export function LabClient() {
     return `${meta.title} ${meta.description} ${meta.kicker}`.toLowerCase().includes(searchLower);
   });
 
-  // 目录：切换实验时自动展开其所在册与分类
+  // 目录：切换实验时自动展开其所在册与分类（首挂载由启动参数决定，跳过）
+  const firstRunRef = useRef(true);
   useEffect(() => {
+    if (firstRunRef.current) {
+      firstRunRef.current = false;
+      return;
+    }
     const { book, cat } = locateExperiment(activeExperiment);
     if (book) setOpenBooks((prev) => (prev.includes(book.id) ? prev : [...prev, book.id]));
     if (cat) setOpenCats((prev) => (prev.includes(cat.name) ? prev : [...prev, cat.name]));
