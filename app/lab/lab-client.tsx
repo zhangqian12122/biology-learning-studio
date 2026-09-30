@@ -52,6 +52,7 @@ import {
 } from 'lucide-react';
 
 import { EXPERIMENT_CATEGORIES, experimentMeta, experimentOrder, textbooks, type ExperimentId } from '@/lib/curriculum';
+import { EXPERIMENT_DIAGRAMS as SHARED_DIAGRAMS } from '@/lib/art-links';
 import { markExperimentSeen, useSeenProgress } from '@/lib/progress';
 
 const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string }>> = {
@@ -62,6 +63,7 @@ const EXPERIMENT_ICONS: Record<ExperimentId, ComponentType<{ className?: string 
   dnaRnaDistribution: Dna,
   cellSizeTransport: Ruler,
   enzyme: FlaskConical,
+  cellFateLab: Layers,
   catalase: Flame,
   amylaseSpecificity: KeyRound,
   yeastRespiration: Bubbles,
@@ -213,6 +215,7 @@ const EXPERIMENT_LOADERS: Record<ExperimentId, () => Promise<{ default: Componen
   dnaRnaDistribution: () => import('@/components/lab/dna-rna-distribution-lab').then(({ DnaRnaDistributionLab }) => ({ default: DnaRnaDistributionLab })),
   cellSizeTransport: () => import('@/components/lab/cell-size-transport-lab').then(({ CellSizeTransportLab }) => ({ default: CellSizeTransportLab })),
   enzyme: () => import('@/components/lab/enzyme-lab').then(({ EnzymeLab }) => ({ default: EnzymeLab })),
+  cellFateLab: () => import('@/components/lab/cell-fate-lab').then(({ CellFateLab }) => ({ default: CellFateLab })),
   catalase: () => import('@/components/lab/catalase-lab').then(({ CatalaseLab }) => ({ default: CatalaseLab })),
   amylaseSpecificity: () => import('@/components/lab/amylase-specificity-lab').then(({ AmylaseSpecificityLab }) => ({ default: AmylaseSpecificityLab })),
   yeastRespiration: () => import('@/components/lab/yeast-respiration-lab').then(({ YeastRespirationLab }) => ({ default: YeastRespirationLab })),
@@ -364,7 +367,7 @@ const SpecimenCard = lazy(() =>
   import('@/components/cells/specimen-card').then((m) => ({ default: m.SpecimenCard })),
 );
 
-const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
+const LOCAL_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   mitosisObservation: ['mitosisStages', 'divisionCurve', 'cellCyclePie'],
   meiosisSlide: ['meiosisStages', 'divisionCurve'],
   traitSeparation: ['artificialPollination'],
@@ -425,6 +428,8 @@ const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = {
   phageTherapy: ['phage'],
   ecoStability: ['ecosystemTypes'],
 };
+
+const EXPERIMENT_DIAGRAMS: Partial<Record<ExperimentId, string[]>> = { ...SHARED_DIAGRAMS, ...LOCAL_DIAGRAMS };
 
 /** 目录条目悬停时提前拉取实验代码，点开时几乎零等待。 */
 function preloadExperiment(id: ExperimentId) {
