@@ -246,7 +246,44 @@ function EnzymeModelSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+
+function EnzymeInhibitionSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 竞争性抑制 */}
+      <g style={dim(active, 0)}>
+        <path d="M90 170 q 40 -46 80 -8 q 22 24 0 48 q -40 40 -80 8 q -24 -24 0 -48 Z" fill="#e8f2fa" stroke="#3a6a8a" strokeWidth="3" />
+        <path d="M118 152 q 24 -10 36 12 q 8 20 -12 26 q -24 6 -32 -12 q -6 -16 8 -26 Z" fill="#c9e0ef" stroke="#3a6a8a" strokeWidth="2" />
+        <rect x="196" y="120" width="58" height="26" rx="12" fill="#4ecdc4" stroke="#2a8a80" strokeWidth="2.4" transform="rotate(-12 225 133)" />
+        <text x="225" y="106" textAnchor="middle" fontSize="12.5" fill="#2a8a80" fontWeight="700">抑制剂（形状相似）</text>
+        <line x1="176" y1="150" x2="208" y2="136" stroke="#2a8a80" strokeWidth="1.6" />
+        <text x="130" y="258" textAnchor="middle" fontSize="12.5" fill="#2a6a8a" fontWeight="700">竞争性抑制：与底物"抢座位"</text>
+        <text x="130" y="278" textAnchor="middle" fontSize="12" fill="#2a6a8a">加大底物浓度可解除抑制</text>
+      </g>
+      {/* 非竞争性抑制 */}
+      <g style={dim(active, 1)}>
+        <path d="M330 170 q 40 -46 80 -8 q 22 24 0 48 q -40 40 -80 8 q -24 -24 0 -48 Z" fill="#fdf1f1" stroke="#a53030" strokeWidth="3" />
+        <path d="M358 152 q 24 -10 36 12 q 8 20 -12 26 q -24 6 -32 -12 q -6 -16 8 -26 Z" fill="#f2d5d5" stroke="#a53030" strokeWidth="2" />
+        <circle cx="452" cy="118" r="18" fill="#a53030" stroke="#7a1f1f" strokeWidth="2.4" />
+        <text x="452" y="86" textAnchor="middle" fontSize="12.5" fill="#a53030" fontWeight="700">抑制剂（结合别处）</text>
+        <line x1="438" y1="132" x2="416" y2="152" stroke="#a53030" strokeWidth="1.6" />
+        <text x="370" y="258" textAnchor="middle" fontSize="12.5" fill="#a53030" fontWeight="700">非竞争性抑制：结合别处使酶"变形"</text>
+        <text x="370" y="278" textAnchor="middle" fontSize="12" fill="#a53030">活性位点被破坏·加大底物也无效</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">应用：许多药物就是酶抑制剂——降压药抑制 ACE、青霉素抑制细菌细胞壁合成酶</text>
+        <text x="260" y="342" textAnchor="middle" fontSize="12" fill="#a5761d">对比记忆：竞争性=抢活性中心（可逆·可解除）；非竞争性=变构失活（底物浓度无关）</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">生物体自身也用抑制剂调节代谢（产物抑制）——负反馈的经典机制</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">酶的抑制剂 · 竞争与非竞争（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const ART: Record<string, { Svg: ComponentType<ArtProps>; Stage3d?: ComponentType<ArtProps>; StageWebGL?: ComponentType<ArtProps> }> = {
+  enzymeInhibition: { Svg: EnzymeInhibitionSvg },
   cytoskeleton: { Svg: CytoskeletonSvg },
   photosyntheticPigments: { Svg: PhotosyntheticPigmentsSvg },
   secretoryProtein: { Svg: SecretoryProteinSvg },

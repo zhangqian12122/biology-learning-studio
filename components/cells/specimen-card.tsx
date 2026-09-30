@@ -32,7 +32,13 @@ export function SpecimenCard({ id }: { id: string }) {
     <div className="rounded-lg border border-[#cfe0e0] bg-[#fbfdfd] p-4">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h3 className="text-sm font-semibold text-[#37352f]">🖼 {specimen.name}</h3>
-        <p className="text-xs text-gray-500">{specimen.kicker}</p>
+        <a
+          href={(typeof window !== 'undefined' && window.location.hash.startsWith('#/') ? '#/cells?specimen=' : '/cells?specimen=') + specimen.id}
+          className="text-xs font-medium text-[#2eaadc] underline-offset-2 hover:underline"
+        >
+          在图鉴中查看 →
+        </a>
+        <p className="w-full text-xs text-gray-500">{specimen.kicker}</p>
       </div>
       <p className="mt-1.5 text-xs leading-5 text-gray-500">{specimen.intro}</p>
 

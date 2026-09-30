@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Search, FlaskConical, Microscope, GraduationCap } from 'lucide-react';
+import { ArrowRight, BookOpen, Search, FlaskConical, Microscope, GraduationCap, Network } from 'lucide-react';
 
 import { experimentOrder, textbooks, type BookId } from '@/lib/curriculum';
 import { cn } from '@/lib/utils';
@@ -194,6 +194,21 @@ export function HomeClient({ useHashLinks }: { useHashLinks?: boolean }) {
               <span className="block text-lg font-black text-black">教学图鉴</span>
               <span className="mt-0.5 block font-mono text-sm text-gray-700">
                 331 张结构模式图 · 点图高亮考点
+              </span>
+            </span>
+            <ArrowRight className="size-5 shrink-0 text-black transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+          </Link>
+          <Link
+            href="/graph"
+            className="group flex items-center gap-4 border-4 border-black bg-[#95e1d3] p-5 pb-lift"
+          >
+            <span aria-hidden="true" className="flex size-12 shrink-0 items-center justify-center border-4 border-black bg-white">
+              <Network className="size-6 text-black" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-lg font-black text-black">知识图谱</span>
+              <span className="mt-0.5 block font-mono text-sm text-gray-700">
+                五册一张网 · 点节点直达实验与图鉴
               </span>
             </span>
             <ArrowRight className="size-5 shrink-0 text-black transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />

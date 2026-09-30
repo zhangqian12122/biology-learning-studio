@@ -566,6 +566,7 @@ export type ExperimentId =
   | 'amylaseSpecificity'
   | 'yeastRespiration'
   | 'enzyme'
+  | 'cellFateLab'
   | 'photosynthesis'
   | 'pigment'
   | 'mitosisObservation'
@@ -1499,6 +1500,13 @@ export const experimentMeta: Record<
     relatedBook: 'regulation',
     relatedModule: '内环境与稳态',
   },
+  cellFateLab: {
+    title: '细胞的命运：衰老、凋亡与癌变',
+    kicker: '必修 1 · 细胞的生命历程',
+    description: '三种命运一键切换：衰老五大特征、凋亡的有序退场、癌变与免疫监视的攻防。',
+    relatedBook: 'molecules',
+    relatedModule: '细胞增殖、分化与衰老',
+  },
   whaleFall: {
     title: '鲸落：深海的生命绿洲',
     kicker: '深海生态 · 课外拓展',
@@ -1813,7 +1821,7 @@ export const EXPERIMENT_CATEGORIES: { name: string; icon: string; ids: Experimen
   {
     name: '细胞与膜',
     icon: '🫧',
-    ids: ['cellMembranePrep', 'plasmolysis'],
+    ids: ['cellMembranePrep', 'plasmolysis', 'cellFateLab'],
   },
   {
     name: '遗传与进化',
@@ -1848,6 +1856,7 @@ export const experimentOrder: ExperimentId[] = [
   'chloroplastStreaming',
   'dnaRnaDistribution',
   'cellSizeTransport',
+  'cellFateLab',
   'plasmolysis',
   'catalase',
   'amylaseSpecificity',

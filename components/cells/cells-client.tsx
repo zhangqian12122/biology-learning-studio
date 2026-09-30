@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Search, Sparkles, X } from 'lucide-react';
 
 import { ART_KEYFRAMES, type ArtBundle } from '@/components/cells/art-shared';
 import { artLoaderFor, ATLAS_CATEGORIES, ATLAS_GROUPS, LAB_ONLY_SPECIMEN_IDS, SPECIMENS } from '@/components/cells/specimens';
+import { experimentsForSpecimen } from '@/lib/art-links';
 import { markSpecimenSeen, useSeenProgress } from '@/lib/progress';
 
 /** 图鉴只保留"结构/模式图"类标本；实验操作类图解移到互动实验页展示。 */
@@ -144,6 +145,8 @@ export function CellsClient({
   const specimen = ATLAS_SPECIMENS.find((item) => item.id === specimenId) ?? ATLAS_SPECIMENS[0];
   const isStoma = specimen.id === 'stoma';
 
+  const hashMode = typeof window !== 'undefined' && window.location.hash.startsWith('#/');
+  const relatedExperiments = experimentsForSpecimen(specimen.id);
   // 图形分片按需加载：主包不含任何 SVG 组件
   const [art, setArt] = useState<ArtBundle | null>(null);
   useEffect(() => {
@@ -558,6 +561,20 @@ export function CellsClient({
               </div>
             </div>
           </div>
+          {relatedExperiments.length > 0 ? (
+            <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
+              <span className="font-medium text-gray-500">相关实验：</span>
+              {relatedExperiments.map((exp) => (
+                <a
+                  key={exp.id}
+                  href={hashMode ? `#/lab?exp=${exp.id}` : `/lab?exp=${exp.id}`}
+                  className="inline-flex min-h-8 items-center rounded-md border border-gray-200 bg-white px-2.5 font-medium text-[#2eaadc] transition-colors duration-150 hover:bg-[#efedea]"
+                >
+                  {exp.title} →
+                </a>
+              ))}
+            </div>
+          ) : null}
           {isStoma ? (
             <p className="mt-2.5 rounded-lg bg-[#f4faf8] px-3 py-2 text-xs leading-5 text-[#5f7076]">
               演示原理：保卫细胞<span className="font-semibold">吸水膨胀</span> → 薄的外壁向外弯曲，增厚的内壁被拉开 → 气孔张开；

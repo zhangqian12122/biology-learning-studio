@@ -275,7 +275,46 @@ function TmvSvg({ active }: { active: number | null; open?: boolean }) {
   );
 }
 
+
+function HbvSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* Dane 颗粒 */}
+      <g style={dim(active, 0)}>
+        <circle cx="180" cy="180" r="94" fill="#f2e2c9" stroke="#8a671b" strokeWidth="3.4" />
+        <circle cx="180" cy="180" r="64" fill="#e8cfa0" stroke="#a5761d" strokeWidth="2.6" />
+        <circle cx="180" cy="180" r="30" fill="#fdf8ea" stroke="#8a671b" strokeWidth="2.2" />
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => {
+          const ang = (i * Math.PI * 2) / 10;
+          return <line key={i} x1={180 + Math.cos(ang) * 64} y1={180 + Math.sin(ang) * 64} x2={180 + Math.cos(ang) * 94} y2={180 + Math.sin(ang) * 94} stroke="#c9a03a" strokeWidth="3" strokeLinecap="round" />;
+        })}
+        <text x="180" y="186" textAnchor="middle" fontSize="11.5" fill="#8a671b" fontWeight="700">环状 DNA</text>
+      </g>
+      {/* 结构标注 */}
+      <g style={dim(active, 1)}>
+        <line x1="104" y1="130" x2="60" y2="102" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="40" y="88" fontSize="12.5" fill="#8a671b" fontWeight="700">包膜：表面抗原 HBsAg</text>
+        <text x="40" y="106" fontSize="12" fill="#8a671b">"两对半"化验查的就是它</text>
+        <line x1="252" y1="136" x2="300" y2="108" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="306" y="102" fontSize="12.5" fill="#a5761d" fontWeight="700">衣壳：核心抗原 HBcAg</text>
+        <line x1="244" y1="230" x2="300" y2="256" stroke="#8a9a9f" strokeWidth="1.6" />
+        <text x="306" y="254" fontSize="12.5" fill="#2c5a84" fontWeight="700">内部：部分双链的环状 DNA</text>
+        <text x="306" y="272" fontSize="12" fill="#3a6a8a">模板链有缺口——病毒的"签名"</text>
+      </g>
+      {/* 考点 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="296" width="448" height="70" rx="12" fill="#fdf1cf" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="320" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">DNA 病毒：以动物细胞为宿主，婴儿感染极易慢性化——"母婴阻断"是防病关键</text>
+        <text x="260" y="342" textAnchor="middle" fontSize="12" fill="#a5761d">传播：血液·母婴·性接触；疫苗（重组表面抗原）1986 年起普及——中国儿童携带率大幅下降</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="11" fill="#a5761d">慢性乙肝可发展为肝硬化、肝癌——乙肝病毒是"致癌病毒"之一</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">乙肝病毒 · 环状 DNA 病毒（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const ART: Record<string, { Svg: ComponentType<ArtProps>; Stage3d?: ComponentType<ArtProps>; StageWebGL?: ComponentType<ArtProps> }> = {
+  hbv: { Svg: HbvSvg },
   sarsCov2: { Svg: SarsCov2Svg },
   hiv: { Svg: HivSvg },
   fluVirus: { Svg: FluVirusSvg },

@@ -280,7 +280,39 @@ function CellDifferentiationSvg({ active }: { active: number | null; open?: bool
   );
 }
 
+
+function CellSenescenceSvg({ active }: { active: number | null; open?: boolean }) {
+  return (
+    <svg viewBox="0 0 520 380" className="h-full w-full" aria-hidden="true">
+      {/* 年轻 vs 衰老对比 */}
+      <g style={dim(active, 0)}>
+        <circle cx="136" cy="150" r="58" fill="#eaf6ea" stroke="#4a8a4a" strokeWidth="3" />
+        <circle cx="136" cy="150" r="18" fill="#c9e8c9" stroke="#3a7a3a" strokeWidth="2" />
+        <text x="136" y="234" textAnchor="middle" fontSize="12.5" fill="#2f6f2a" fontWeight="700">年轻细胞：饱满·代谢旺盛</text>
+      </g>
+      <g style={dim(active, 1)}>
+        <path d="M330 96 q 54 10 58 56 q 4 52 -48 58 q -56 6 -60 -48 q -4 -58 50 -66 Z" fill="#f2ecd8" stroke="#8a671b" strokeWidth="3" />
+        <path d="M346 138 q 24 -12 40 4 q 8 20 -10 30 q -22 10 -34 -6 q -8 -16 4 -28 Z" fill="#d8c49a" stroke="#8a671b" strokeWidth="2.2" />
+        {[[326, 122], [372, 110], [378, 168], [330, 172]].map(([x, y], i) => (
+          <circle key={i} cx={x} cy={y} r="5" fill="#b08a3a" stroke="#7a5a1a" strokeWidth="1.4" />
+        ))}
+        <text x="336" y="240" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="700">衰老细胞：皱缩·色素（脂褐素）·核大深染</text>
+      </g>
+      {/* 五大特征 */}
+      <g style={dim(active, 2)}>
+        <rect x="36" y="272" width="448" height="94" rx="12" fill="#fdf6e3" stroke="#8a671b" strokeWidth="2.4" />
+        <text x="260" y="296" textAnchor="middle" fontSize="12.5" fill="#8a671b" fontWeight="800">细胞衰老的五大特征（高频考点）</text>
+        <text x="260" y="318" textAnchor="middle" fontSize="12" fill="#a5761d">① 水分减少，体积缩小  ② 多种酶活性降低，代谢减慢</text>
+        <text x="260" y="338" textAnchor="middle" fontSize="12" fill="#a5761d">③ 色素（脂褐素）积累  ④ 细胞核增大、染色质收缩深染  ⑤ 膜通透性改变</text>
+        <text x="260" y="358" textAnchor="middle" fontSize="10.5" fill="#a5761d">机制与端粒缩短、DNA 损伤累积有关（见本站"端粒"标本）</text>
+      </g>
+      <text x="508" y="30" textAnchor="end" fontSize="12.5" fill="#799398">细胞衰老 · 五大特征（课外拓展）</text>
+    </svg>
+  );
+}
+
 export const ART: Record<string, { Svg: ComponentType<ArtProps>; Stage3d?: ComponentType<ArtProps>; StageWebGL?: ComponentType<ArtProps> }> = {
+  cellSenescence: { Svg: CellSenescenceSvg },
   telomere: { Svg: TelomereSvg },
   apoptosisVsNecrosis: { Svg: ApoptosisVsNecrosisSvg },
   stemCells: { Svg: StemCellsSvg },
